@@ -1,0 +1,479 @@
+Installing the Amazon Connect Salesforce Lambda Package
+=======================================================
+
+This section will guide you through the installation process of Amazon
+Connect Salesforce Lambda package, which is hosted in AWS Serverless
+Application Repository.
+
+The AWS Serverless Application Repository enables you to quickly deploy
+code samples, components, and complete applications. Each application is
+packaged with an AWS Serverless Application Model (SAM) template that
+defines the AWS resources used. There is no additional charge to use the
+Serverless Application Repository - you only pay for the AWS resources
+used in the applications you deploy.
+
+<img src="../media/image100.png" />
+
+Prerequisites
+-------------
+
+Consider the following prerequisites before you install the Lambda
+package.
+
+### Determine your production Environment
+
+In your installation notes, enter the value for "Production Environment"
+as "true" or "false", depending on whether the Salesforce environment
+that you are deploying the package into is a production or a sandbox.
+For Production, enter "true". For Sandbox enter "false".
+
+### Determine your Consumer Key and Secret
+
+To leverage the full potential of the integration, Salesforce data needs
+to be accessed from AWS environment. The AWS Serverless package comes
+with a set of pre-built queries to lookup, update and create Salesforce
+objects within Amazon Connect Contact Flows, in form of AWS Lambda
+functions.
+
+The Lambda function access Salesforce using the Salesforce REST API. To
+get access to the environment, a Connected App must be configured with
+OAuth settings enabled.
+
+1.  Log in to Salesforce
+
+2.  Navigate to Setup \> Create \> Apps
+
+<img src="../media/image101.png" />
+
+3.  Click on the "New" button for the Connected Apps at the bottom of the page
+
+4.  In the following form, fill out the Connected App Name, API Name and Contact Email with values of your choice. We recommend "Amazon Connect Integration" as the Connected App Name and the default value for the API name.
+
+<img src="../media/image102.png" />
+
+5.  Select the checkbox next to "Enable OAuth Settings" as shown below.
+
+<img src="../media/image103.png" />
+
+6.  Ensure the Callback URL is set to <https://www.salesforce.com>
+
+<img src="../media/image104.png" />
+
+7.  Ensure Selected OAuth Scopes has the following values selected:
+
+a.  Access and manage your data (api)
+
+b.  Access your basic information (id, profile, email, address, phone)
+
+<img src="../media/image105.png" />
+
+8.  Select the checkbox "Require Secret for Web Server Flow"
+
+<img src="../media/image106.png" />
+
+9.  Click "Save" at the bottom of the screen.
+
+10. Click "Continue" on the next screen
+
+<img src="../media/image107.png" />
+
+11. Once the app has been created, on the app's detail screen, please copy the "Consumer Key" value to your installation notes
+
+<img src="../media/image108.png" />
+
+12. Select "Click to reveal" next to Consumer Secret and record this value to "Consumer Secret" in your installation notes.
+
+13. Click "Manage" at the top of the page
+
+<img src="../media/image109.png" />
+
+14. On the page that appears, click "Edit Policies"
+
+15. Set "Permitted Users" to "Admin approved users are pre-authorizes"
+
+<img src="../media/image110.png" />
+
+16. Click "OK" on the pop-up dialog:
+
+<img src="../media/image111.png" />
+
+17. Set "IP Relaxation" to "Relax IP restrictions"
+
+<img src="../media/image112.png" />
+
+18. Click "Save"
+
+### Determine your Username, Password and Security Token
+
+The authentication of the Lambda Functions requires valid user
+credentials. It is a common practice to create an API user account for
+this purpose.
+
+1.  Log in to Salesforce
+
+2.  Navigate to Setup \> Manage Users \> Profiles
+
+3.  Click "New Profile"
+
+4.  Enter the Profile Name (i.e. "API Only")
+
+5.  Select the existing profile to clone (The integration user\'s access to just those objects required for the integration)
+
+<img src="../media/image113.png" />
+
+NOTE: You\'re advised to use a full Salesforce License for the user to
+be able to set the below permissions and have full access to avoid any
+other errors.
+
+6.  Click "Save". A New Profile is created:
+
+<img src="../media/image114.png" />
+
+7.  Scroll down to "Password Policies" and click Edit:
+
+<img src="../media/image115.png" />
+
+8.  Set User password expire in "Never expires". Failure to this may lead to production outages.
+
+<img src="../media/image116.png" />
+
+9.  Under Administrative Permissions, please make sure \"Lightning Experience User\" is unchecked
+
+<img src="../media/image117.png" />
+
+10. Click "Save"
+
+11. Navigate to Setup \> Manage Apps \> Connected Apps
+
+12. Select the app you have created in the previous step (i.e. Amazon Connect Integration)
+
+<img src="../media/image118.png" />
+
+13. Click "Manage Profiles"
+
+<img src="../media/image119.png" />
+
+14. Ensure the "API Only" profile is selected:
+
+<img src="../media/image120.png" />
+
+15. Click "Save" at the bottom of the page
+
+16. Navigate to Setup \> Manage Users \> Users
+
+17. Click "New User"
+
+<img src="../media/image121.png" />
+
+18. Set necessary fields: Last Name, Alias, Email, Username, Nickname
+
+<img src="../media/image122.png" />
+
+19. On the right-hand side, set the User License and Profile
+
+<img src="../media/image123.png" />
+
+20. Click "Save"
+
+21. A confirmation email will be sent, with an activation link. Click the link to activate your user.
+
+<img src="../media/image124.png" />
+
+Change (set) a password for apiuser (Considered a strong that contains
+at least 20 random characters):
+
+<img src="../media/image125.png" />
+
+22. Click "Change Password"
+
+23. Access the apiuser personal settings by selecting the username in the top right corner, then "My Settings".
+
+<img src="../media/image126.png" />
+
+24. Type "Security Token" in the Quick Find box and click "Reset My Security Token".
+
+<img src="../media/image127.png" />
+
+25. Your security token will be emailed to you
+
+<img src="../media/image128.png" />
+
+26. Copy the security token from the email in to your installation notes for the "Access Token" value.
+
+### Store Salesforce credentials in AWS Secrets Manager
+
+To ensure that your Salesforce credentials are secure, the Lambdas
+require that the credentials are stored in AWS Secrets Manager. AWS
+Secrets Manager is a highly secure service that helps you store and
+retrieve secrets.
+
+1.  In a new browser tab, login to the AWS console
+
+2.  Make sure you are in the same region as your Amazon Connect
+    instance. You can set the region by expanding the region selector in
+    the upper right and choosing the region
+
+<img src="../media/image129.png" />
+
+3.  Navigate to the [Secrets Manager
+    console](https://console.aws.amazon.com/secretsmanager/home)
+
+4.  Select **Secrets**
+
+5.  Select **Store a new secret**
+
+6.  Select **Other types of secrets**
+
+7.  Make sure **Secret key/value** is selected
+
+8.  Enter key value pairs that match the following:
+
+    a.  **Key:** Password, **Value:** the password for the API user that
+        you configured in the previous section
+
+    b.  **Key:** ConsumerKey, **Value:** the Consumer Key for the
+        Connected App you created in the previous section
+
+    c.  **Key:** ConsumerSecret, **Value:** the Consumer Secret for the
+        Connected App you created in the previous section
+
+    d.  **Key:** AccessToken, **Value:** this is the access token for
+        the API user that you configured in the previous section
+
+9.  For the encryption key, click "Add new key"
+
+10. Select **Create Key**
+
+11. Make sure key type is set to **symmetric**
+
+12. Give your key an **alias**, like
+    *SalesforceCredentialsSecretsManagerKey*
+
+13. Click Next
+
+14. Select administrators you want to have access permission to change
+    the key policy. Make sure you are being as restrictive as possible
+
+15. Click Next
+
+16. Select the users and roles you want to have access to the Salesforce
+    credentials in Secrets Manager. Make sure you are being as
+    restrictive as possible
+
+17. Click Next
+
+18. Click Finish
+
+19. Navigate back to the Secrets Manager setup tab
+
+20. Select the key you just created
+<img src="../media/image130.png" />
+
+21. Click Next
+
+22. Give your secret a name, like *SalesforceCredentials*
+
+23. Click Next
+
+24. Make sure **Disable automatic rotation** is disabled
+
+25. Click Next
+
+26. Click Store
+
+27. Select the secret you just created, and copy the Secret ARN
+
+<img src="../media/image131.png" />
+
+28. You should now have all of the information you need to install the
+    package
+
+Install the Amazon Connect Salesforce Lambda package
+----------------------------------------------------
+
+1.  Login into your AWS Account
+
+2.  Navigate AWS Serverless Application Repository
+    (<https://aws.amazon.com/serverless/serverlessrepo/>)
+
+<img src="../media/image132.png" />
+
+3.  Click on the Search (magnifying glass) and type in Amazon Connect
+    Salesforce.
+
+<img src="../media/image133.png" />
+
+4.  Select AmazonConnectSalesForceLambdas and click "Deploy"
+
+<img src="../media/image134.png" />
+
+5.  Fill in all Salesforce related fields in "Configure application
+    parameters".\
+    All values should be available in your installation notes:
+
+<img src="../media/image135.png" />
+
+<img src="../media/image136.png" />
+
+6.  The Lambda package includes additional features which can be enabled
+    or disabled, based on particular use-case:
+
+    a.  *PostcallCTRImportEnabled* -- if set to true, the package will
+        include a feature to import Amazon Connect CTRs into your
+        Salesforce Org. Once enabled, you can decide which CTR records
+        should be imported, by setting a custom attribute
+        (*postcallCTRImportEnabled*) in your Contact Flow. This feature
+        requires you to provide *CTRKinesisARN*.
+
+    b.  *PostcallRecordingImportEnabled* -- if set to true, the package
+        will include a feature to import Amazon Connect Call Recording
+        (wav) files into your Salesforce Org. This feature is not
+        required if you only need a call recording link in your
+        Salesforce Org. Once enabled, you can decide which Call
+        Recordings should be imported, by setting a custom attribute
+        (*postcallRecordingImportEnabled*) in your Contact Flow. This
+        feature requires you to provide: *CTRKinesisARN,
+        ConnectRecordingS3BucketName* and *TranscribeOutputS3BucketName*
+
+    c.  *PostcallTranscribeEnabled* -- if set to true, the package will
+        include a feature to transcribe Amazon Connect Call Recordings,
+        using Amazon Transcribe, and provide Speech Analytics, using
+        Amazon Comprehend, then import results into your Salesforce Org.
+        Once enabled, you can decide which Call Recordings should be
+        transcribed and analyzed, by setting custom attributes
+        (*postcallTranscribeEnabled*, *postcallTranscribeLanguage* and
+        *postcallTranscribeComprehendAnalysis*) in your Contact Flow.
+        This feature requires you to provide: *CTRKinesisARN,
+        ConnectRecordingS3BucketName* and *TranscribeOutputS3BucketName*
+
+    d.  *RealtimeReportImportEnabled* -- if set to true, the package
+        will include a feature to publish Amazon Connect Queue Metrics
+        into your Salesforce Org. This feature requires you to provide
+        *AmazonConnectInstanceId*
+
+    e.  *HistoricalReportingImportEnabled* -- if set to true, the
+        package will include a feature to import Amazon Connect Queue
+        and Agent Historical Metrics into your Salesforce Org. This
+        feature requires you to provide *ConnectReportingS3BucketName*
+
+    f.  *CTRKinesisARN* -- please set Amazon Kinesis Stream ARN that is
+        attached to you Amazon Connect instance as Contact Trace Records
+        destination. Amazon Kinesis Firehose is not supported. This
+        parameter is mandatory for certain features, please see above.
+
+    g.  *ConnectRecordingS3BucketName* -- this is the S3 bucket where
+        Amazon Connect stores call recordings. This parameter is
+        mandatory for certain features, please see above.
+
+    h.  *ConnectReportingS3BucketName* -- this is the S3 bucket name
+        where Amazon Connect stores schedule reports. This parameter is
+        mandatory for Historical Reporting Import.
+
+    i.  *AmazonConnectInstanceId* -- this parameter is mandatory for
+        Realtime Reporting Import
+
+    j.  *TranscribeOutputS3BucketName* -- this is the S3 bucket where
+        Amazon Transcribe stores the output. You can use an existing
+        bucket, or create a new one, as the installation process doesn't
+        create one for you. This parameter in mandatory certain
+        features, please see above.
+
+7.  Once completed, click "Deploy" function:
+
+<img src="../media/image137.png" />
+
+8.  The package provides a single Lambda function (sfInvokeAPI) that
+    supports multiple operations, like lookup, create and update. For
+    the initial validation, sample events are provided within the
+    function. Click on the function name and check the list of files in
+    the editor.
+
+<img src="../media/image138.png" />
+
+9.  To validate a phone number lookup, double-click on
+    event-phoneLookup.json file and copy the text in your clipboard.
+
+<img src="../media/image139.png" />
+
+10. In the top-right corner, click the drop-down arrow next to the
+    "Test" button and select "Configure test events"
+
+<img src="../media/image140.png" />
+
+11. Select "Create new test event", set Event name (i.e. phoneLookup)
+    and paste the JSON payload you've copied in the previous step.
+
+<img src="../media/image141.png" />
+
+12. Click "Create" button
+
+13. From the drop-down list, select your "eventLookup" and click "Test"
+    button
+
+<img src="../media/image142.png" />
+
+14. If successful, the result will contain fields defined in "sf_fields"
+    parameter in the invocation event
+
+<img src="../media/image143.png" />
+
+15. As a next step, we are going to use the ContactId provided and
+    create a Case in Salesforce. Double-click on "event-create.json"
+    file and set the ContactId value from the previous step. Copy the
+    JSON text into your clipboard.
+
+<img src="../media/image144.png" />
+
+16. In the top-right corner, click the drop-down arrow next to the
+    "Test" button and select "Configure test events"
+
+<img src="../media/image145.png" />
+
+17. Select "Create new test event", set Event name (i.e. createCase) and
+    paste the JSON payload you've copied in the previous step.
+
+<img src="../media/image146.png" />
+
+18. Click "Create" button
+
+19. From the drop-down list, select your "createCase" and click "Test"
+    button
+
+<img src="../media/image147.png" />
+
+20. If successful, the result will contain a Case Id for newly created
+    case:
+
+<img src="../media/image148.png" />
+
+21. As defined in the event payload, Status is "New" and Priority is
+    "Low". We are going to use the update operation to close the case.
+    Copy the Case Id provided in the previous step, then double-click on
+    "event-update.json" file and paste the Case Id in "sf_id" parameter:
+
+<img src="../media/image149.png" />
+
+22. In the top-right corner, click the drop-down arrow next to the
+    "Test" button and select "Configure test events"
+
+<img src="../media/image150.png" />
+
+23. Select "Create new test event", set Event name (i.e. closeCase) and
+    paste the JSON payload you've copied in the previous step.
+
+<img src="../media/image151.png" />
+
+24. Click "Create" button
+
+25. From the drop-down list, select your "closeCase" and click "Test"
+    button
+
+<img src="../media/image152.png" />
+
+26. If successful, the result will be HTTP code 204 ("No Content"
+    success code):
+
+<img src="../media/image153.png" />
+
+27. Login in to Salesforce and search for Case and it's details. The
+    Case status should be "Closed".
