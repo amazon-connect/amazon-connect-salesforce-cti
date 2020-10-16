@@ -1,5 +1,4 @@
-Outbound Campaign Calls
-=======================
+<h1 id="outbound-campaign-calls"> Outbound Campaign Calls </h1>
 
 The package allows for running Outbound Call Campaigns using Salesforce
 Omni Channel routing and Amazon Connect. To enable outbound campaigns,

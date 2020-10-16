@@ -1,5 +1,4 @@
-Amazon Connect Reports in Salesforce
-====================================
+<h1 id="amazon-connect-reports-in-salesforce"> Amazon Connect Reports in Salesforce </h1>
 
 Out of the box, within Amazon Connect, you can generate a number of
 real-time and historical metric reports to monitor efficiency and
@@ -43,6 +42,7 @@ Historical metrics. By default, you will be able to see the two reports
 needed for this integration: "Contact metrics" and "Agent Performance".
 
 <img src="../media/image251.png" />
+
 <img src="../media/image252.png" />
 
 Click on the "Contact metrics" to open the report and then click on the
@@ -80,6 +80,7 @@ drop-down arrow on the right-hand side and select Schedule.
 Set the report name, for instance *sfIntervalQueue* and click Continue
 
 <img src="../media/image263.png" />
+
 <img src="../media/image264.png" />
 
 On the next screen, set Recurrence as:
@@ -97,6 +98,7 @@ report can be found in Metrics and quality \> Saved Reports \>
 Historical metrics
 
 <img src="../media/image267.png" />
+
 <img src="../media/image268.png" />
 
 Click on the Clock (Schedule Report) icon to see the configuration.
@@ -115,6 +117,7 @@ In your Amazon Connect instance, navigate to Metrics and Quality \>
 Historical metrics.
 
 <img src="../media/image271.png" />
+
 <img src="../media/image252.png" />
 
 Choose the "Agent Performance" metrics to open the report and then click
@@ -152,6 +155,7 @@ drop-down arrow on the right-hand side and select Schedule.
 Set the report name, for instance *sfIntervalAgent* and click Continue
 
 <img src="../media/image279.png" />
+
 <img src="../media/image264.png" />
 
 On the next screen, set Recurrence as:
@@ -167,6 +171,7 @@ report can be found in Metrics and quality \> Saved Reports \>
 Historical metrics
 
 <img src="../media/image267.png" />
+
 <img src="../media/image281.png" />
 
 Click on the Clock (Schedule Report) icon to see the configuration.

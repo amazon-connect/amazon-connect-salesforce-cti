@@ -1,5 +1,7 @@
+<h1 id="key-benefits-and-requirements">Key Benefits and Requirements</h1>
+
 Key Benefits
-============
+------------
 
 The key benefits of the adapter include:
 
@@ -56,14 +58,13 @@ Lightning, we suggest you walk through our Salesforce trailhead
 available at <https://sfdc.co/Amazon-Connect>.
 
 Requirements
-============
+------------
 
 To successfully create, configure, and implement the Amazon Connect CTI
 Adapter for Salesforce, you must ensure that the requirements and
 prerequisites described in this section are in place before you start.
 
-Prerequisites
--------------
+### Prerequisites
 
 To install the Amazon Connect CTI package, you must:
 
@@ -73,8 +74,7 @@ To install the Amazon Connect CTI package, you must:
 2.  Create an Amazon Connect instance
     (<https://aws.amazon.com/connect/>)
 
-Browser Compatibility
----------------------
+### Browser Compatibility
 
 Amazon Connect requires WebRTC to enable soft-phone voice media stream
 and Websockets to enable soft-phone signaling. Consequently, users are
@@ -83,8 +83,7 @@ Firefox. For more information, please see the Amazon Connect
 documentation
 (<https://aws.amazon.com/connect/resources/#Documentation>)
 
-Salesforce Lightning Support
-----------------------------
+### Salesforce Lightning Support
 
 Please note that following features are currently not supported in
 Salesforce Lightning:

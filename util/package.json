@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "mdpdf": "^2.1.2",
+    "remarkable": "^2.0.1"
+  },
+  "scripts": {
+    "build-lightning": "node generatePDF.js lightning",
+    "build-classic": "node generatePDF.js classic",
+    "build-all": "npm run build-lightning && npm run build-classic"
+  }
+}

@@ -1,5 +1,4 @@
-Appendix A: Required Salesforce Configurations
-==============================================
+<h1 id="required-salesforce-configurations" > Appendix A: Required Salesforce Configurations </h1>
 
 In this appendix, we will walk through he configuration of some
 Salesforce entities required to fully integrate Amazon Connect with

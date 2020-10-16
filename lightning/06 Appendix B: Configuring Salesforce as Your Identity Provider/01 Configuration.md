@@ -1,5 +1,4 @@
-Configuration
--------------
+<h2 id="configuration" > Configuration </h2>
 
 ### Prerequisites
 
@@ -35,7 +34,8 @@ embedded in Salesforce.
     Identity Provider**, then select the appropriate certificate and
     select Save.
 
-    <img src="../media/image234.png" />
+    
+<img src="../media/image234.png" />
 
 4.  Choose **Download Metadata** and save the file to your computer.
 
@@ -65,7 +65,8 @@ access required to login to Amazon Connect.
 5.  On the Configure Provider screen, select **SAML** as the Provider
     Type
 
-    <img src="../media/image237.png" />
+    
+<img src="../media/image237.png" />
 
 6.  Set the Provider Name to **SalesforceConnect**
 
@@ -96,7 +97,8 @@ access required to login to Amazon Connect.
     Console access**. The Attribute and Value fields should
     auto-populate
 
-    <img src="../media/image238.png" />
+    
+<img src="../media/image238.png" />
 
 7.  Select **Next: Permissions**
 
@@ -147,7 +149,8 @@ access required to login to Amazon Connect.
 19. In the search field, enter **SalesforceConnectPolicy** and select
     the box to attach the policy.
 
-    <img src="../media/image239.png" />
+    
+<img src="../media/image239.png" />
 
 20. Choose **Next: Tags** and set tags if desired, then choose **Next:
     Review**
@@ -262,7 +265,8 @@ further configuration to complete the SAML integration.
         **Note:** you may be able to see AWS services, but you should have
     no configuration rights.
 
-    <img src="../media/image245.png" />
+    
+<img src="../media/image245.png" />
 
 28. The Federated Login consists of the Role name and your Salesforce
     email address.
@@ -346,7 +350,8 @@ please use the region Console URL. For example:
     c.  From the Instance ARN, copy the portion after the '/'. This is
         the Instance Id
 
-        <img src="../media/image248.png" />
+        
+<img src="../media/image248.png" />
 
 2.  Concatenate the 'IdP-Initiated Login URL' and the 'RelayState', by
     combining the two with "&RelayState=" in between, for example:
@@ -382,14 +387,16 @@ Amazon Connect Contact Control Panel once authentication completes.
 2.  Expand the **navigation menu** by selecting the down arrow and
     choose **AC CTI Adapters**.
 
-    <img src="../media/image114.png" />
+    
+<img src="../media/image114.png" />
 
 3.  Select **ACLightningAdapter**
 
 4.  Scroll down to the Single SignOn (SSO) section and choose the pencil
     icon of either field to edit
 
-    <img src="../media/image115.png" />
+    
+<img src="../media/image115.png" />
 
 5.  For the SSO Url, copy the first part of the SSO URL that you created
     previously, up to the first question mark (do not copy the question
@@ -416,13 +423,15 @@ Amazon Connect Contact Control Panel once authentication completes.
         warning and change the setting to always allow popups from your
         Salesforce org, then refresh the browser again
 
-        <img src="../media/image118.png" />
+        
+<img src="../media/image118.png" />
 
 11. After a few seconds, a new window should pop up for a moment. This
     window is performing the authentication and setting your session
     cookie. Once it does this, it will close automatically.
 
-    <img src="../media/image119.png" />
+    
+<img src="../media/image119.png" />
 
 12. Once the authentication window closes, select the **phone icon** in
     the console toolbar to open the CCP

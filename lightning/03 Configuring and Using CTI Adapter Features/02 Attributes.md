@@ -1,6 +1,4 @@
-
-Attributes
-----------
+<h2 id="attributes" > Attributes </h2>
 
 CTI Attributes provide the ability to reference and display contact
 attribute data within the Amazon Connect Contact Control Panel (CCP).
@@ -85,11 +83,13 @@ named "phone_number"
 
 2.  Expand the **navigation menu** by selecting the down arrow and
     choose **AC CTI Adapters**.
-    <img src="../media/image114.png" />
+    
+<img src="../media/image114.png" />
 
 3.  Select **ACLightningAdapter**
 
 4.  Scroll down to the **Attributes** section and select New
+
 <img src="../media/image123.png" />
 
 5.  Provide a **CTI Attribute Name** value, for example: customer_phone
@@ -108,6 +108,7 @@ named "phone_number"
 11. Set **Default Value** to unk
 
 12. Choose Save
+
 <img src="../media/image124.png" />
 
 13. Refresh your browser
@@ -117,7 +118,8 @@ named "phone_number"
 
 15. Once the call is connected, select the text attribute icon to expand
     the CTI Attributes
-    <img src="../media/image125.png" />
+    
+<img src="../media/image125.png" />
 
 16. Note the Style formatting. Also note that you can quickly copy the
     content of the attribute by selecting the clipboard icon.
@@ -139,11 +141,13 @@ to work, your contact flow must also set a contact attribute named
 
 2.  Expand the **navigation menu** by selecting the down arrow and
     choose **AC CTI Adapters**.
-    <img src="../media/image114.png" />
+    
+<img src="../media/image114.png" />
 
 3.  Select **ACLightningAdapter**
 
 4.  Scroll down to the **Attributes** section and select New
+
 <img src="../media/image123.png" />
 
 5.  Provide a **CTI Attribute Name** value, for example: postal_code
@@ -163,6 +167,7 @@ to work, your contact flow must also set a contact attribute named
 11. Set **Default Value** to unk
 
 12. Choose Save
+
 <img src="../media/image127.png" />
 
 13. Refresh your browser
@@ -172,9 +177,11 @@ to work, your contact flow must also set a contact attribute named
 
 15. Once the call is connected, select the hyperlink attribute icon to
     expand the CTI Attributes
-    <img src="../media/image128.png" />
+    
+<img src="../media/image128.png" />
 
 16. Select the URL and observe the page load
+
 <img src="../media/image129.png" />
 
 17. Disconnect the contact.
@@ -201,7 +208,8 @@ Attributes.
 
     a.  **ShowAttributesIfEmpty** (Boolean, default true): show
         attributes text box when contact has no attributes
-        <img src="../media/image132.png" />
+        
+<img src="../media/image132.png" />
         
     b.  **ShowAllAttributes** (Boolean, default false): show all attributes, including attributes with no values
 

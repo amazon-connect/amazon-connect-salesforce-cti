@@ -1,5 +1,4 @@
-Invoking the Amazon Connect Salesforce Lambda in a Contact Flow
----------------------------------------------------------------
+<h1 id="invoking-the-amazon-connect-salesforce-lambda-in-a-contact-flow"> Invoking the Amazon Connect Salesforce Lambda in a Contact Flow </h1>
 
 The Amazon Connect Contact Flow defines the routing behaviour within
 Amazon Connect, allowing contact center administrators to customize call

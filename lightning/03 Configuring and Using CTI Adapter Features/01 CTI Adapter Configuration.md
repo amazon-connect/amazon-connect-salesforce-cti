@@ -1,8 +1,4 @@
-
-CTI Adapter Configuration
--------------------------
-
-### CTI Adapter Details
+<h2 id="cti-adapter-details"> CTI Adapter Details </h2>
 
 The CTI Adapter configuration begins with the adapter details. These
 fields provide the basic information needed to relate the Adapter to the
@@ -55,7 +51,7 @@ and supervisors that will be using the platform.
     the presence rules to sync state from Amazon Connect to Salesforce
     Omni-Channel.
 
-### Single Sign On (SSO) Settings
+<h3 id="single-sign-on"> Single Sign On (SSO) Settings </h3>
 
 The Amazon Connect CTI Adapter supports single sign on(SSO) via SAML
 integration. This allows customers that use a SAML provider for
@@ -68,7 +64,7 @@ Identity Management in Amazon
 Connect](https://docs.aws.amazon.com/connect/latest/adminguide/configure-saml).
 
 If you wish to use **Salesforce** as your identity provider for Single
-Sign On, please follow the setup instructions in [Appendix B: Configuring Salesforce as Your Identity Provider](https://github.com/blee-amzn/temp-installation-guide-repo/blob/master/Lightning/06%20Appendix%20B:%20Configuring%20Salesforce%20as%20Your%20Identity%20Provider/01%20Configuration.md).
+Sign On, please follow the setup instructions in [Configuring Salesforce as Your Identity Provider](https://github.com/amazon-connect/amazon-connect-salesforce-cti-staging/blob/main/lightning/06%20Appendix%20B:%20Configuring%20Salesforce%20as%20Your%20Identity%20Provider/01%20Configuration.md).
 
 For information about configuring specific SAML providers to work with
 Amazon Connect:
@@ -113,12 +109,14 @@ Contact Control Panel once authentication completes.
 
 2.  Expand the **navigation menu** by selecting the down arrow and
     choose **AC CTI Adapters**.
+
 <img src="../media/image114.png" />
 
 3.  Select **ACLightningAdapter**
 
 4.  Scroll down to the Single SignOn (SSO) section and choose the pencil
     icon of either field to edit
+
 <img src="../media/image115.png" />
 
 5.  For the SSO Url, paste your IdP login URL up to the first question
@@ -129,6 +127,7 @@ Contact Control Panel once authentication completes.
     <pre>https://sts.yourcorp.com/adfs/ls/idpinitiatedsignon.aspx</pre>
 
 6.  Paste this portion of the URL into the **SSO Url** field
+
 <img src="../media/image116.png" />
 
 7.  For the SSO Relay State:
@@ -143,6 +142,7 @@ Contact Control Panel once authentication completes.
     <pre>&RelayState=https://console.aws.amazon.com/connect/federate/instanceId?destination=%2Fconnect%2Fccp</pre>
 
 8.  Example of a completed SSO section (Salesforce is shown)
+
 <img src="../media/image117.png" />
 
 9.  Choose **Save**
@@ -152,11 +152,13 @@ Contact Control Panel once authentication completes.
     a.  **NOTE:** If you receive a blocked popup warning, select the
         warning and change the setting to always allow popups from your
         Salesforce org, then refresh the browser again
+
 <img src="../media/image118.png" />
 
 11. After a few seconds, a new window should pop up for a moment. This
     window is performing the authentication and setting your session
     cookie. Once it does this, it will close automatically.
+
 <img src="../media/image119.png" />
 
 12. Once the authentication window closes, select the **phone icon** in
@@ -165,6 +167,7 @@ Contact Control Panel once authentication completes.
     microphone access. Please accept both.
 
 13. You should now see the authenticated and logged in CCP
+
 <img src="../media/image120.png" />
 
 14. SSO Configuration is complete

@@ -1,5 +1,4 @@
-Amazon Connect Historical Metrics in Salesforce
------------------------------------------------
+<h2 id="amazon-connect-historical-metrics-in-salesforce" > Amazon Connect Historical Metrics in Salesforce </h2>
 
 Amazon Connect can generate a number of historical metric reports to
 monitor efficiency and utilization, agent performance, and other
@@ -37,9 +36,11 @@ Salesforce.
 2.  From the left navigation, choose **Metrics and Quality** then select
     **Historical metrics**
 
-    <img src="../media/image178.png" />
+    
+<img src="../media/image178.png" />
 
 3.  On the **Historical metrics** page, select Contact metrics
+
 <img src="../media/image179.png" />
 
 4.  Once the **Historical metrics: Queues** report loads, select the cog
@@ -98,21 +99,25 @@ Salesforce.
 14. Select the **Delivery Options** tab
 
 15. In the Prefix field, enter **SFDC/Queue**
+
 <img src="../media/image181.png" />
 
 16. Note the File name. The file name contains the bucket, path, and
     filename that will be used when executing the report. You will use
     the **bucket name** and **path** in later steps.
 
-    <img src="../media/image182.png" />
+    
+<img src="../media/image182.png" />
 
 17. Choose **Create**
 
 18. Once the report is created, from the left navigation, choose
     **Metrics and Quality** then select **Historical metrics**
-    <img src="../media/image178.png" />
+    
+<img src="../media/image178.png" />
 
 19. On the **Historical metrics** page, select **Agent performance
+
 <img src="../media/image183.png" />
 
 20. Once the **Historical metrics: Agents** report loads, select the cog
@@ -219,7 +224,8 @@ Salesforce.
     filename that will be used when executing the report. You will use
     the **bucket name** and **path** in later steps.
 
-    <img src="../media/image186.png" />
+    
+<img src="../media/image186.png" />
 
 33. Choose **Create**
 
@@ -243,9 +249,11 @@ Lambda function when the report is generated and stored in S3.
 5.  Expand the Designer section
 
 6.  Select Add trigger
+
 <img src="../media/image187.png" />
 
 7.  In Trigger configuration, select S3 from the dropdown list
+
 <img src="../media/image188.png" />
 
 8.  Referring to the notes from the report configuration earlier, select
@@ -259,6 +267,7 @@ Lambda function when the report is generated and stored in S3.
 11. Set the Suffix to .csv
 
 12. The trigger configuration should now be similar to the following:
+
 <img src="../media/image189.png" />
 
 13. Select **Add**
@@ -282,9 +291,11 @@ Lambda function when the report is generated and stored in S3.
 5.  Expand the Designer section
 
 6.  Select Add trigger
+
 <img src="../media/image187.png" />
 
 7.  In Trigger configuration, select S3 from the dropdown list
+
 <img src="../media/image188.png" />
 
 8.  Referring to the notes from the report configuration earlier, select
@@ -298,6 +309,7 @@ Lambda function when the report is generated and stored in S3.
 11. Set the Suffix to .csv
 
 12. The trigger configuration should now be similar to the following:
+
 <img src="../media/image190.png" />
 
 13. Select **Add**
@@ -323,11 +335,14 @@ imported data.
 3.  In the left Navigation, select **All Folders**
 
 4.  Select the **Amazon Connect Reports** folder
+
 <img src="../media/image191.png" />
 
 5.  In the list of reports, choose Average Handle Time queue report
+
 <img src="../media/image192.png" />
 
 6.  Once the report loads, you should see data (provided calls have
     queued in this Amazon Connect instance today)
-    <img src="../media/image193.png" />
+    
+<img src="../media/image193.png" />

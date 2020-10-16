@@ -1,5 +1,4 @@
-Installation
-============
+<h1> Installation </h1>
 
 The Amazon Connect integration with Salesforce consists of two
 components: The CTI Adapter Managed Package, which is available at no

@@ -1,5 +1,4 @@
-Installing CTI Adapter Managed Package from AppExchange
--------------------------------------------------------
+<h2 id="installing-cti-adapter-managed-package-from-appexchange" > Installing CTI Adapter Managed Package from AppExchange </h2>
 
 The Amazon Connect CTI Adapter for Salesforce provides the core
 integration between the two platforms. It embeds the Amazon Connect
@@ -27,29 +26,35 @@ Marketplace.
     **Search AppExchange** field and press enter
 
 5.  In the **Search Results**, select **Amazon Connect CTI Adapter**
+
 <img src="../media/image3.png" />
 
 6.  On the **Amazon Connect CTI Adapter** detail page, select **Get It
     Now**
+
 <img src="../media/image4.png" />
 
 7.  If you are presented with the Log In to AppExchange screen, select
     **Open Login Screen**. You should then be presented with an Allow
     Access Screen. Choose **Allow**
+
 <img src="../media/image5.png" />
 
 8.  On the **Where do you want to install Amazon Connect CTI Adapter**
     page, choose the **Install Here** button in the Install in This Org
     section
+
 <img src="../media/image6.png" />
 
 9.  On the **Confirm installation details** screen, fill out the **Tell
     us about yourself** form, check the box to **agree with the terms
     and conditions**, and optionally select the box to **allow the
     provider to contact you**. Then select **Confirm and Install**
+
 <img src="../media/image7.png" />
 
 10. Select **Install for All Users**, then choose **Install**
+
 <img src="../media/image8.png" />
 
 11. The CTI Adapter will take some time to install. While it installs,
@@ -57,6 +62,7 @@ Marketplace.
     install screen.**
 
 12. Choose **Done**.
+
 <img src="../media/image9.png" />
 
 13. Once you receive confirmation that the **installation has
@@ -66,10 +72,12 @@ Marketplace.
 
 15. In Quick Find, enter **Installed**, then select Installed Packages
     from the result
+
 <img src="../media/image10.png" />
 
 16. Once the **Installed Packages** page opens, validate that the
     **Amazon Connect -- Universal Package** is installed
+
 <img src="../media/image11.png" />
 
 ### Set Access Permissions
@@ -88,6 +96,7 @@ documentation](https://help.salesforce.com/articleView?id=perm_sets_mass_assign.
 
 3.  Choose **AC_Administrator**, **AC_Agent** or **AC_Manager** as
     appropriate for the user(s)
+
 <img src="../media/image12.png" />
 
 4.  Choose **Manage Assignments**.
@@ -95,6 +104,7 @@ documentation](https://help.salesforce.com/articleView?id=perm_sets_mass_assign.
 5.  Choose **Add Assignments**.
 
 6.  Select the users to assign the permissions, then choose **Assign**.
+
 <img src="../media/image13.png" />
 
 7.  Repeat these steps as needed for all users
@@ -125,17 +135,21 @@ First, you need to add the CTI softphone to your Service Console.
 
 2.  In the **Quick Find** box, type **App Manager**, then choose **App
     Manager** from the result list.
+
 <img src="../media/image17.png" />
 
 3.  Expand the drop-down menu associated to Service Console and select
     **Edit**.
+
 <img src="../media/image18.png" />
 
 4.  Once the **Lightning App Builder** opens, select **Utility Items**
     from the left Navigation
+
 <img src="../media/image19.png" />
 
 5.  Choose **Add Utility Item**, then select **Open CTI Softphone**.
+
 <img src="../media/image20.png" />
 
 6.  Change the Label, if desired, then choose **Save**.
@@ -150,19 +164,23 @@ underlying resources required for the CCP to function.
 1.  Log in into your Salesforce org and go to **Setup**
 
 2.  Copy the entire URL of this page and past it to a text document.
+
 <img src="../media/image21.png" />
 
 3.  In the **Quick Find** field, type **visual**, then select **Visual
     Force Pages** from the results
+
 <img src="../media/image22.png" />
 
 4.  Choose the **AC_LightningAdapter** Visualforce page
+
 <img src="../media/image23.png" />
 
 5.  On the Visualforce detail page, select the **Preview** button. This
     will open a new browser tab showing the page content, which should
     only be a button labelled Sign in to CCP. Copy the entire URL of
     this page and past it to a text document.
+
 <img src="../media/image24.png" />
 
 6.  In a new browser tab, login to the [**AWS
@@ -174,6 +192,7 @@ underlying resources required for the CCP to function.
 8.  Validate that you are in the correct **AWS region** for your
     instance, then select your instance alias from the list of
     instances
+
 <img src="../media/image25.png" />
 
 9.  Choose **Application Integration** from the left navigation
@@ -186,6 +205,7 @@ underlying resources required for the CCP to function.
 
 12. Select Add. You should see your org domain listed in the Approved
     origins section.
+
 <img src="../media/image26.png" />
 
 13. Select + Add origin
@@ -197,6 +217,7 @@ underlying resources required for the CCP to function.
 
 15. Select Add. You should see your org domain listed in the Approved
     origins section
+
 <img src="../media/image27.png" />
 
 #### Modify the Call Center
@@ -210,12 +231,14 @@ configuration, you add users to the Call Center to provide access to it.
 
 2.  In the **Quick Find** field, enter **Call Center**, then select
     **Call Centers** from the result list
+
 <img src="../media/image28.png" />
 
 3.  If you see the **Say Hello to Salesforce Call Center** page, select
     **Continue**
 
 4.  Select **AC Lightning Adapter**
+
 <img src="../media/image29.png" />
 
 5.  On the **AC Lightning Adapter** detail page, select **Edit**
@@ -233,6 +256,7 @@ configuration, you add users to the Call Center to provide access to it.
 
 10. Select the checkbox next to the user to add, then choose **Add to
     Call Center**.
+
 <img src="../media/image30.png" />
 
 11. Repeat the steps to add more users.
@@ -241,18 +265,22 @@ configuration, you add users to the Call Center to provide access to it.
 
 1.  Navigate to **Setup** then in type **Custom Settings** in Quick
     Find
+
 <img src="../media/image31.png" />
 
 2.  Next to the Toolkit for Amazon Connect custom setting, choose
     **Manage**
+
 <img src="../media/image32.png" />
 
 3.  Select **New**
+
 <img src="../media/image33.png" />
 
 4.  On the following page, provide the URL to your Amazon Connect
     instance. The value of the URL field would be in the form of:
     <pre>https://your-instance-alias.awsapps.com</pre>
+
 <img src="../media/image34.png" />
 
 5.  Select **Save**
@@ -273,24 +301,30 @@ conditions.
     **Continue**
 
 4.  On the Softphone Layouts page, choose **New**
+
 <img src="../media/image35.png" />
 
 5.  Enter a name for the layout, such as **AmazonConnectDefault**, then
     select the **Is Default Layout** checkbox.
+
 <img src="../media/image36.png" />
 
 6.  Expand **Display these salesforce.com objects** and select objects
     that CTI Connector should be able to search, for a screen-pop query.
     In this example, Case has been added to the default selection,
     allowing search and screen-pop by CaseID.
+    
+
 <img src="../media/image37.png" />
 
 7.  If desired, configure the search behavior to your requirements
+
 <img src="../media/image38.png" />
 
 8.  Additionally, validate the Screen Pop settings. Please note that the
     default behavior is to not pop a screen if there is more than one
     result
+
 <img src="../media/image39.png" />
 
 9.  Once you have configured the search behavior, choose **Save**
@@ -307,14 +341,17 @@ tie the Lightning CTI adapter settings to the Call Center.
 
 2.  Expand the **navigation menu** by selecting the down arrow and
     choose **Edit**.
+
 <img src="../media/image40.png" />
 
 3.  On the Edit Service Console App Navigation Items page, select **Add
     More Items**
+
 <img src="../media/image41.png" />
 
 4.  Select the **+** next to **AC CTI Adapters** and select the **Add 1
     Nav Item** button
+
 <img src="../media/image42.png" />
 
 5.  If desired, move the **AC CTI Adapters** button up in the navigation
@@ -325,6 +362,7 @@ tie the Lightning CTI adapter settings to the Call Center.
 
 7.  If Recently Viewed is selected, select the drop-down and select
     **All** from the List Views menu.
+
 <img src="../media/image43.png" />
 
 8.  If no ACLightningAdapter entry exists, then select the new button to
@@ -338,6 +376,7 @@ tie the Lightning CTI adapter settings to the Call Center.
 11. Amazon Connect Instance Alias: The alias of your Amazon Connect
     Instance. You can find this in the Amazon Connect Console as shown
     below
+
 <img src="../media/image44.png" />
 
 12. Amazon Connect Instance Region: This is the region that your Amazon
@@ -353,12 +392,14 @@ tie the Lightning CTI adapter settings to the Call Center.
     the Call Center definition
 
 14. Leave all other settings at the default for now, and choose Save
+
 <img src="../media/image45.png" />
 
 15. **Refresh** the browser
 
 16. In the bottom left corner of the Service Console, select the CTI
     Softphone icon
+
 <img src="../media/image46.png" />
 
 17. Select the **Sign in to CCP** button. A new window will pop up.
@@ -367,20 +408,24 @@ tie the Lightning CTI adapter settings to the Call Center.
     **NOTE:** At this point, this process will only work for Amazon
     Connect instances configured for local user storage. If you are
     configuring SAML, please follow the SAML setup process in the
-    [Single Sign On (SSO)](#single-sign-on-sso-settings) section before
+    [Single Sign On](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/01%20CTI%20Adapter%20Configuration.md#-single-sign-on-sso-settings-) section before
     continuing.
+
 <img src="../media/image47.png" />
 
 18. Once Login is successful, the pop-up window will automatically
     close.
 
 19. Expand the status menu and choose Available
+
 <img src="../media/image48.png" />
 
 20. Make an inbound phone call to your Amazon Connect instance. The CCP
     will alert you to the incoming call and allow you to accept it. Once
     you do, the call will be connected
+
 <img src="../media/image49.png" />
+
 <img src="../media/image50.png" />
 
 21. **End the call** and clear the contact
@@ -410,18 +455,22 @@ assigned to it. This will allow us to validate the basic screenpop
 functionality that is provided with the CTI adapter.
 
 1.  Select **Contacts** from the dropdown menu
+
 <img src="../media/image53.png" />
 
 2.  Select **New** from top-right corner
 
 3.  Complete the required fields. Make sure that your phone number is
     entered for the Phone field.
+
 <img src="../media/image54.png" />
 
 4.  Select **Save**
 
 5.  Close the Contact tab by selecting the X next to the name of the
     contact that you just created
+
+
 <img src="../media/image55.png" />
 
 6.  **Refresh** your browser

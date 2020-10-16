@@ -1,5 +1,4 @@
-CTI Adapter Configuration
-=========================
+<h1 id="cti-adapter-configuration"> CTI Adapter Configuration </h1>
 
 The CTI Adapter installed by the managed package provides a number of
 features that change or enhance the functionality of the integration. By
@@ -53,8 +52,7 @@ CTI Adapter Details
     the presence rules to sync state from Amazon Connect to Salesforce
     Omni-Channel.
 
-Single Sign On (SSO) Settings
------------------------------
+<h2 id="single-sign-on" > Single Sign On (SSO) Settings </h2>
 
 The Amazon Connect CTI Adapter supports single sign on(SSO) via SAML
 integration. This allows customers that use a SAML provider for
@@ -123,6 +121,7 @@ Contact Control Panel once authentication completes.
 4.  Scroll down to the Single SignOn (SSO) section and choose the pencil
     icon of either field to edit
     
+
 <img src="../media/image84.png" />
 
 5.  For the SSO Url, paste your IdP login URL up to the first question
@@ -165,6 +164,7 @@ Contact Control Panel once authentication completes.
         warning and change the setting to always allow popups from your
         Salesforce org, then refresh the browser again\
     
+
 <img src="../media/image87.png" />
 
 11. After a few seconds, a new window should pop up for a moment. This

@@ -31,6 +31,12 @@ This guide provides the steps to setup the integrations between Amazon
 Connect and Salesforce using the Amazon Connect CTI Adapter and Amazon
 Connect Lambda Package for Salesforce.
 
+<!-- 
+In order for the table of contents to work with the PDF generator, make sure the header of the section
+the table of contents entry should link to has an id that matches the text of the link, lowercase, and
+with dashes (-) in place for spaces. ex. the 'Key Benefits and Requirements' will navigate to a link 
+with id 'key-benefits-and-requirements'
+-->
 Table of Contents
 ============
 
@@ -52,13 +58,13 @@ Table of Contents
 - Configuring and Using AWS Serverless Application Repository for Salesforce Features
   - [Invoking the Amazon Connect Salesforce Lambda in a Contact Flow](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/01%20Invoking%20the%20Amazon%20Connect%20Salesforce%20Lambda%20in%20a%20Contact%20Flow.md)
 - Appendix A: CTI Flow Sources and Events
-  - [CTI Flow Sources and Events](https://github.com/amazon-connect/amazon-connect-salesforce-cti-staging/blob/master/classic/04%20Appendix%20A:%20CTI%20Flow%20Sources%20and%20Events/01%20CTI%20Flow%20Sources%20and%20Events.md)
+  - [CTI Flow Sources and Events](https://github.com/amazon-connect/amazon-connect-salesforce-cti-staging/blob/main/classic/05%20Appendix%20A:%20CTI%20Flow%20Sources%20and%20Events/01%20CTI%20Flow%20Sources%20and%20Events.md)
 - Appendix B: Configuring Salesforce as Your Identity Provider
-  - [Configuring Salesforce as Your Identity Provider](https://github.com/amazon-connect/amazon-connect-salesforce-cti-staging/blob/master/classic/05%20Appendix%20B:%20Configuring%20Salesforce%20as%20Your%20Identity%20Provider/01%20Configuring%20Salesforce%20as%20Your%20Identity%20Provider.md)
+  - [Configuring Salesforce as Your Identity Provider](https://github.com/amazon-connect/amazon-connect-salesforce-cti-staging/blob/main/classic/06%20Appendix%20B:%20Configuring%20Salesforce%20as%20Your%20Identity%20Provider/01%20Configuring%20Salesforce%20as%20Your%20Identity%20Provider.md)
 - Appendix C: CTI Flow Examples
-  - [CTI Flow Examples](https://github.com/amazon-connect/amazon-connect-salesforce-cti-staging/blob/master/classic/06%20Appendix%20C:%20CTI%20Flow%20Examples/01%20CTI%20Flow%20Examples.md)
+  - [CTI Flow Examples](https://github.com/amazon-connect/amazon-connect-salesforce-cti-staging/blob/main/classic/07%20Appendix%20C:%20CTI%20Flow%20Examples/01%20CTI%20Flow%20Examples.md)
 - Appendix D: CTI Flow Blocks
-  - [CTI Flow Blocks](https://github.com/amazon-connect/amazon-connect-salesforce-cti-staging/blob/master/classic/07%20Appendix%20D:%20CTI%20Flow%20Blocks/01%20CTI%20Flow%20Blocks.md)
+  - [CTI Flow Blocks](https://github.com/amazon-connect/amazon-connect-salesforce-cti-staging/blob/main/classic/08%20Appendix%20D:%20CTI%20Flow%20Blocks/01%20CTI%20Flow%20Blocks.md)
 
 Introduction
 ============

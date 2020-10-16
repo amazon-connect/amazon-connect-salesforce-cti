@@ -1,5 +1,4 @@
-Omnipresence Agent State Sync
-=============================
+<h1 id="omnipresence-agent-state-sync"> Omnipresence Agent State Sync </h1>
 
 Amazon Connect CTI Connector supports the bidirectional synchronization
 of Amazon Connect agent states with Salesforce omnichannel presence

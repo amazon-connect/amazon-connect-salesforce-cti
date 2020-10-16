@@ -1,3 +1,5 @@
+<h2 id="high-velocity-sales" > High Velocity Sales </h2>
+
 What is High Velocity Sales (HVS)?
 ----------------------------------
 
@@ -19,7 +21,8 @@ Velocity Sales in your Salesforce Org.
 
 2.  Toggle "Enable High Velocity Sales Features" from disable to enable
     state
-    <img src="../media/image249.png" />
+    
+<img src="../media/image249.png" />
 
 ### Call Outcomes for Branching
 
@@ -36,7 +39,8 @@ process.
 
 3.  Enter the call result values used by your org next to related call
     outcomes.
-    <img src="../media/image250.png" />
+    
+<img src="../media/image250.png" />
 
 ### Assign HVS permission sets to Connect Users:
 
@@ -65,13 +69,15 @@ Create a Sales Cadence
 
 3.  Enter name and description. Click **Save** button which opens
     **Sales Cadence** builder screen.
-    <img src="../media/image251.png" />
+    
+<img src="../media/image251.png" />
 
 4.  Click + sign in the builder to add a step. Choose a type of step you
     want to add for your sales cadence. Once you finish adding steps,
     click the **Activate** button. Once a sales cadence is active, you
     can add leads, contact, and personal accounts to Sales Cadence.
-    <img src="../media/image252.png" />
+    
+<img src="../media/image252.png" />
 
 ### Assigning Prospects
 
@@ -109,6 +115,7 @@ task page layout to track disposition value for each call.
     layout then remove it from the page layout.)
 
 7.  Choose **Save**
+
 <img src="../media/image254.png" />
 
 ### Setup CTI Flows for High Volume Sales
@@ -122,13 +129,15 @@ Sales.
 
 2.  Expand the **navigation menu** by selecting the down arrow and
     choose **AC CTI Adapters**.
-    <img src="../media/image114.png" />
+    
+<img src="../media/image114.png" />
 
 3.  Select **ACLightningAdapter**
 
 4.  Scroll down to the **Scripts** section
 
 5.  Select New to create a new CTI Flow
+
 <img src="../media/image255.png" />
 
 6.  In the **CTI Flow Name** field, enter **Voice onHvsWorkStart**
@@ -152,13 +161,15 @@ Sales.
 
 14. Click **Upload** and find the file you just created. You should now
     see this:**
-    <img src="../media/image256.png" />
+    
+<img src="../media/image256.png" />
 
 15. Click **Save**
 
 16. Go back to the CTI Adapter page and select **New** in CTI Flows
     section to create another CTI Flow.
-    <img src="../media/image255.png" />
+    
+<img src="../media/image255.png" />
 
 17. In the **CTI Flow Name** field, enter **HVS Voice onConnecting**
 

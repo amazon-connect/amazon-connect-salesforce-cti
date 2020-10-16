@@ -1,5 +1,4 @@
-Accessing the Salesforce API from Amazon Connect Contact Flows Using AWS Lambda
--------------------------------------------------------------------------------
+<h2 id="accessing-the-salesforce-api-from-amazon-connect-contact-flows-using-aws-lambda" > Accessing the Salesforce API from Amazon Connect Contact Flows Using AWS Lambda </h2>
 
 The most commonly used feature of the AWS Serverless Application
 Repository for Salesforce is accessing/updating Salesforce data using
@@ -192,6 +191,7 @@ In the contact flow example below, we deleting an existing case based on
 customer input.
 
 <img src="../media/image160.png" />
+
 <img src="../media/image161.png" />
 
 This operation returns a response of:

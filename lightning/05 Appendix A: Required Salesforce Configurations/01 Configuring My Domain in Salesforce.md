@@ -1,5 +1,4 @@
-Configuring My Domain in Salesforce
------------------------------------
+<h2 id="configuring-my-domain-in-salesforce" > Configuring My Domain in Salesforce </h2>
 
 The latest CTI adapter includes several lighting components that provide
 a better administrative user experience. Salesforce requires that My
@@ -19,22 +18,26 @@ registration to complete.
 
 2.  In the **Quick Find** field, enter **My Domain**, then select **My
     Domain** from the result list
+
 <img src="../media/image223.png" />
 
 3.  In the **My Domain Step 1** section, enter your desired domain name
     and select **Check Availability** to determine if the domain is
     available.
+
 <img src="../media/image224.png" />
 
 4.  If the domain is not available, you will need to try a different
     name.
 
 5.  If the domain is available, select **Register Domain
+
 <img src="../media/image225.png" />
 
 6.  The domain registration process will begin. You will receive an
     email once it is complete. Once you receive the confirmation, you
     may continue with the next section.
+
 <img src="../media/image226.png" />
 
 ### Deploy the Domain to Your Users
@@ -46,10 +49,12 @@ the domain to your users.
 
 2.  In the **Quick Find** field, enter **My Domain**, then select **My
     Domain** from the result list
+
 <img src="../media/image223.png" />
 
 3.  In the **My Domain Step 2** section, note the domain name, then
     select the **Log in** button to login using the new domain.
+
 <img src="../media/image227.png" />
 
 4.  Once the login completes, you should see your new domain in the
@@ -57,10 +62,12 @@ the domain to your users.
     Domain configuration.
 
 5.  Select the Deploy to Users button to deploy your domain
+
 <img src="../media/image228.png" />
 
 6.  You should get a popup message that warns you about the domain
     deployment. Select OK.
+
 <img src="../media/image229.png" />
 
 7.  Deployment should now be complete

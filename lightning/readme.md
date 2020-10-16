@@ -33,6 +33,12 @@ the two primary components of the integration: the Amazon Connect CTI
 Adapter for Salesforce and the AWS Serverless Application Repository for
 Amazon Connect Salesforce integration.
 
+<!-- 
+In order for the table of contents to work with the PDF generator, make sure the header of the section
+the table of contents entry should link to has an id that matches the text of the link, lowercase, and
+with dashes (-) in place for spaces. ex. the 'Key Benefits and Requirements' will navigate to a link 
+with id 'key-benefits-and-requirements'
+-->
 Table of Contents
 ============
 
@@ -54,18 +60,18 @@ Table of Contents
   - [Contact Channel Analytics](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/04%20Contact%20Channel%20Analytics.md)
   - [Contact Trace Record Import](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/05%20Contact%20Trace%20Record%20Import.md)
 - Appendix A: Required Salesforce Configurations
-  - [Configuring My Domain in Salesforce](https://github.com/amazon-connect/amazon-connect-salesforce-cti-staging/blob/master/lightning/05%20Appendix%20A:%20Required%20Salesforce%20Configurations/01%20Configuring%20My%20Domain%20in%20Salesforce.md)
-  - [Configure Salesforce Omnichannel for Testing](https://github.com/amazon-connect/amazon-connect-salesforce-cti-staging/blob/master/lightning/05%20Appendix%20A:%20Required%20Salesforce%20Configurations/02%20Configure%20Salesforce%20Omnichannel%20for%20Testing.md)
+  - [Configuring My Domain in Salesforce](https://github.com/amazon-connect/amazon-connect-salesforce-cti-staging/blob/main/lightning/05%20Appendix%20A:%20Required%20Salesforce%20Configurations/01%20Configuring%20My%20Domain%20in%20Salesforce.md)
+  - [Configure Salesforce Omnichannel for Testing](https://github.com/amazon-connect/amazon-connect-salesforce-cti-staging/blob/main/lightning/05%20Appendix%20A:%20Required%20Salesforce%20Configurations/02%20Configure%20Salesforce%20Omnichannel%20for%20Testing.md)
 - Appendix B: Configuring Salesforce as Your Identity Provider
-  - [Configuration](https://github.com/amazon-connect/amazon-connect-salesforce-cti-staging/blob/master/lightning/06%20Appendix%20B:%20Configuring%20Salesforce%20as%20Your%20Identity%20Provider/01%20Configuration.md)
+  - [Configuration](https://github.com/amazon-connect/amazon-connect-salesforce-cti-staging/blob/main/lightning/06%20Appendix%20B:%20Configuring%20Salesforce%20as%20Your%20Identity%20Provider/01%20Configuration.md)
 - Appendix C: CTI Flow Sources and Events
-  - [CTI Flow Sources and Events](https://github.com/amazon-connect/amazon-connect-salesforce-cti-staging/blob/master/lightning/07%20Appendix%20C:%20CTI%20Flow%20Sources%20and%20Events/01%20CTI%20Flow%20Sources%20and%20Events.md)
+  - [CTI Flow Sources and Events](https://github.com/amazon-connect/amazon-connect-salesforce-cti-staging/blob/main/lightning/07%20Appendix%20C:%20CTI%20Flow%20Sources%20and%20Events/01%20CTI%20Flow%20Sources%20and%20Events.md)
 - Appendix D: CTI Flow Examples
-  - [CTI Flow Examples](https://github.com/amazon-connect/amazon-connect-salesforce-cti-staging/blob/master/lightning/08%20Appendix%20D:%20CTI%20Flow%20Examples/01%20CTI%20Flow%20Examples.md)
+  - [CTI Flow Examples](https://github.com/amazon-connect/amazon-connect-salesforce-cti-staging/blob/main/lightning/08%20Appendix%20D:%20CTI%20Flow%20Examples/01%20CTI%20Flow%20Examples.md)
 - Appendix E: Integration with Salesforce High Velocity Sales
-  - [High Velocity Sales](https://github.com/amazon-connect/amazon-connect-salesforce-cti-staging/blob/master/lightning/09%20Appendix%20E:%20Integration%20with%20Salesforce%20High%20Velocity%20Sales/01%20High%20Velocity%20Sales.md)
+  - [High Velocity Sales](https://github.com/amazon-connect/amazon-connect-salesforce-cti-staging/blob/main/lightning/09%20Appendix%20E:%20Integration%20with%20Salesforce%20High%20Velocity%20Sales/01%20High%20Velocity%20Sales.md)
 - Appendix F: CTI Flow Blocks
-  - [CTI Flow Blocks](https://github.com/amazon-connect/amazon-connect-salesforce-cti-staging/blob/master/lightning/10%20Appendix%20F:%20CTI%20Flow%20Blocks/01%20CTI%20Flow%20Blocks.md)
+  - [CTI Flow Blocks](https://github.com/amazon-connect/amazon-connect-salesforce-cti-staging/blob/main/lightning/10%20Appendix%20F:%20CTI%20Flow%20Blocks/01%20CTI%20Flow%20Blocks.md)
 
 Introduction
 ============

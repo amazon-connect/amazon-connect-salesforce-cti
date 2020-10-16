@@ -1,5 +1,4 @@
-Call Display on the Account Page
-================================
+<h1 id="call-display-on-the-account-page"> Call Display on the Account Page </h1>
 
 The Adapter comes with a Visualforce Page that displays all phone calls
 made using Amazon Connect for an Account. It differs from thee standard

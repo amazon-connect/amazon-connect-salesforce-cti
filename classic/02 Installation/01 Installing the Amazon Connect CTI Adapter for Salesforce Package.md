@@ -1,5 +1,4 @@
-Installing the Amazon Connect CTI Adapter for Salesforce Package
-================================================================
+<h1 id="installing-the-amazon-connect-cti-adapter-for-salesforce-package"> Installing the Amazon Connect CTI Adapter for Salesforce Package </h1>
 
 Lightning Flow Setup Installation 
 ---------------------------------
@@ -39,7 +38,9 @@ Installing from the Salesforce AppExchange
 3.  Open the [Amazon Connect CTI Package URL](https://appexchange.salesforce.com/listingDetail?listingId=a0N3A00000EJH4yUAH), then choose **Install for All Users**.
 
 <img src="../media/image3.png" />
+
 <img src="../media/image4.png" />
+
 <img src="../media/image5.png" />
 
 4.  Choose **Done**. The **Installed Packages** page opens.
@@ -150,6 +151,7 @@ In the Quick Find field, type Visualforce Pages and select Visual Force
 Pages:
 
 <img src="../media/image25.png" />
+
 <img src="../media/image26.png" />
 
 As we are currently setting up the Console experience, click on
@@ -265,6 +267,7 @@ Make an inbound phone call to your Amazon Connect instance. The CCP is
 going to "ring" and you can answer the call.
 
 <img src="../media/image49.png" />
+
 <img src="../media/image50.png" />
 
 Configure Classic Experience
@@ -304,6 +307,7 @@ In the Quick Find field, type Visualforce Pages and select Visual Force
 Pages:
 
 <img src="../media/image25.png" />
+
 <img src="../media/image26.png" />
 
 As we are currently setting up the Classic experience, click on
@@ -400,6 +404,7 @@ Make an inbound phone call to your Amazon Connect instance. The CCP is
 going to "ring" and you can answer the call.
 
 <img src="../media/image66.png" />
+
 <img src="../media/image67.png" />
 
 Some CTI Flow features will reload the page the agent is currently on.

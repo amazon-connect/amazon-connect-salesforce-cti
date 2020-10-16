@@ -1,3 +1,5 @@
+<h1 id="key-benefits-and-requirements">Key Benefits and Requirements</h1>
+
 Key Benefits
 ------------
 

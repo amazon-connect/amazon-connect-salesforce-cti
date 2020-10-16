@@ -1,5 +1,4 @@
-CTI Flows
-=========
+<h1 id="cti-flows"> CTI Flows </h1>
 
 The CTI Adapter provides a mechanism to customize the behavior of the
 adapter based on your business needs without needing to edit the

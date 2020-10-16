@@ -1,0 +1,4 @@
+*.DS_Store
+util/node_modules/*
+util/*.pdf
+util/*temp.md

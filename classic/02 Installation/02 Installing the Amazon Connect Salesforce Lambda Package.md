@@ -1,5 +1,4 @@
-Installing the Amazon Connect Salesforce Lambda Package
-=======================================================
+<h1 id="installing-the-amazon-connect-salesforce-lambda-package"> Installing the Amazon Connect Salesforce Lambda Package </h1>
 
 This section will guide you through the installation process of Amazon
 Connect Salesforce Lambda package, which is hosted in AWS Serverless
@@ -267,6 +266,7 @@ retrieve secrets.
 19. Navigate back to the Secrets Manager setup tab
 
 20. Select the key you just created
+
 <img src="../media/image130.png" />
 
 21. Click Next

@@ -1,5 +1,4 @@
-Contact Trace Record Import
----------------------------
+<h2 id="contact-trace-record-import" > Contact Trace Record Import </h2>
 
 In Amazon Connect, data about contacts is captured in contact trace
 records (CTR). This data can include the amount of time a contact spends
@@ -30,7 +29,8 @@ Record processing to trigger the import task.
 2.  From the left navigation, choose **Routing** then select **Contact
     flows**
 
-    <img src="../media/image201.png" />
+    
+<img src="../media/image201.png" />
 
 3.  Open the contact flow that you want to use to enable call recording
     import.
@@ -66,12 +66,14 @@ Record processing to trigger the import task.
 2.  Expand the **navigation menu** by selecting the down arrow and
     choose **Edit**.
 
-    <img src="../media/image40.png" />
+    
+<img src="../media/image40.png" />
 
 3.  On the Edit Service Console App Navigation Items page, select **Add
     More Items**
 
-    <img src="../media/image41.png" />
+    
+<img src="../media/image41.png" />
 
 4.  Select the **+** next to **AC Contact Trace Records**
 
@@ -80,17 +82,21 @@ Record processing to trigger the import task.
 6.  Change the order of your Navigation Items if desired, then choose
     **Save**
 
-    <img src="../media/image215.png" />
+    
+<img src="../media/image215.png" />
 
 
 7.  Once the save completes, expand the **navigation menu** by selecting
-    the down arrow and choose **AC Contact Trace Records
-    <img src="../media/image216.png" />
+    the down arrow and choose **AC Contact Trace Records**
+    
+<img src="../media/image216.png" />
 
 8.  Change the list view from Recently Viewed to **All**
+
 <img src="../media/image217.png" />
 
 9.  Once the view refreshes, you should see your record(s)
+
 <img src="../media/image218.png" />
 
 10. Select a record to view it
@@ -110,12 +116,14 @@ that you will want to customize this view to show more data.
 2.  In the **Quick Find** field, enter object and choose **Object
     Manager** from the results
 
-    <img src="../media/image219.png" />
+    
+<img src="../media/image219.png" />
 
 3.  In the Object Manager, find the **AC Contact Trace Record** object
     and select it
 
-    <img src="../media/image220.png" />
+    
+<img src="../media/image220.png" />
 
 4.  In the left navigation, choose **Page Layouts**
 
@@ -126,7 +134,8 @@ that you will want to customize this view to show more data.
     Queue Name, Queue Duration, After Contact Work Duration, Agent
     Interaction Duration, and Attributes
     
-    <img src="../media/image221.png" />
+    
+<img src="../media/image221.png" />
 
 7.  **Save** the layout
 
@@ -137,7 +146,8 @@ that you will want to customize this view to show more data.
 10. Expand the **navigation menu** by selecting the down arrow and
     choose **AC Contact Trace Records**
 
-    <img src="../media/image216.png" />
+    
+<img src="../media/image216.png" />
 
 11. Select a contact trace record
 
