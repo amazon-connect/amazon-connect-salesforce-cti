@@ -1,3 +1,14 @@
+```
+To generate a pdf of the lightning installation guide:
+npm run build-lightning
+
+To generate a pdf of the classic installation guide:
+npm run build-classic
+
+To generate both:
+npm run build-all
+```
+
 const fs = require("fs");
 const mdpdf = require("mdpdf");
 const path = require("path");
@@ -51,7 +62,7 @@ files.forEach((file) => {
     fileContents
       .replace(
         // the following regex statement looks for links that point internally to this repo
-        /\[((?!\[).)*\]\((\n)?(https:\/\/(www.)?github.com\/amazon-connect\/amazon-connect-salesforce-cti|(?!http))((?!\().)*(\n)?\)/gs,
+        /\[((?!\[).)*\]\((\n)?(?!http)((?!\().)*(\n)?\)/gs,
         (text) => {
           const section = text
             .substring(text.indexOf("[") + 1, text.indexOf("]"))

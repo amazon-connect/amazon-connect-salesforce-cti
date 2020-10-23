@@ -5,10 +5,10 @@ between Amazon Connect and Salesforce Omnichannel. This allows you to
 tightly control agent availability for different contact/media types
 dependent on current agent state. This section of the guide assumes that
 you have Omnichannel configured appropriately. If you do not and wish to
-test this function, please refer to the section [Configure Salesforce Omnichannel for Testing](https://github.com/amazon-connect/amazon-connect-salesforce-cti-staging/blob/main/lightning/05%20Appendix%20A:%20Required%20Salesforce%20Configurations/02%20Configure%20Salesforce%20Omnichannel%20for%20Testing.md).
+test this function, please refer to the section [Configure Salesforce Omnichannel for Testing](../05%20Appendix%20A%20-%20Required%20Salesforce%20Configurations/02%20Configure%20Salesforce%20Omnichannel%20for%20Testing.md).
 
 NOTE: In order for Presence Sync to work, the CTI Adapter must be
-configured to allow it. See [CTI Adapter Details](../03%20Configuring%20and%20Using%20CTI%20Adapter%20Features01%20CTI%20Adapter%20Configuration.md#cti-adapter-details)
+configured to allow it. See [CTI Adapter Details](../03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/01%20CTI%20Adapter%20Configuration.md)
 for more information.
 
 Presence Sync Rules are evaluated based on specific events. The

@@ -64,7 +64,7 @@ Identity Management in Amazon
 Connect](https://docs.aws.amazon.com/connect/latest/adminguide/configure-saml).
 
 If you wish to use **Salesforce** as your identity provider for Single
-Sign On, please follow the setup instructions in [Configuring Salesforce as Your Identity Provider](https://github.com/amazon-connect/amazon-connect-salesforce-cti-staging/blob/main/lightning/06%20Appendix%20B:%20Configuring%20Salesforce%20as%20Your%20Identity%20Provider/01%20Configuration.md).
+Sign On, please follow the setup instructions in [Configuring Salesforce as Your Identity Provider](../06%20Appendix%20B%20-%20Configuring%20Salesforce%20as%20Your%20Identity%20Provider/01%20Configuration.md).
 
 For information about configuring specific SAML providers to work with
 Amazon Connect:

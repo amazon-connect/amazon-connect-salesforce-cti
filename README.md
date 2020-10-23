@@ -38,3 +38,15 @@ Amazon Connect Salesforce integration.
 The documentation is made available under the Creative Commons Attribution-ShareAlike 4.0 International License. See the LICENSE file.
 
 The sample code within this documentation is made available under the MIT-0 license. See the LICENSE-SAMPLECODE file.
+
+## Contributing
+
+Important rules to keep in mind while contributing to preserve compatibility with our [pdf generator](util/generatePDF.js):
+
+- All folders (to be included in the generated pdf) must lead with numbers-- ex. 01 [title]
+- The pdf generator, when crawling through a folder, will parse first through the readme file, 
+then through the markdown files in the folder ordered lexicographically, then through the subfolders
+ordered lexicographically
+- When linking internally, make sure that the header of the section the link points to has an 
+id that matches the text of the link, lowercase, and with dashes (-) in place for spaces. 
+ex. \[Key Benefits and Requirements\]\(...\) will navigate to a link with id 'key-benefits-and-requirements'
