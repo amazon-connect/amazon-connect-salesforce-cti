@@ -12,8 +12,8 @@ a default setting. This section will detail the options available.
 1.  **CTI Adapter Name:** provide a unique name for this CTI adapter
     definition
 
-2.  **Amazon Connect Instance Alias:** This was configured in a previous
-    section. This is the instance alias for your Amazon Connect
+2.  **Amazon Connect Instance:** This was configured in a previous
+    section. This is the instance url for your Amazon Connect
     instance.
 
 3.  **Amazon Connect Instance Region:** This is the code for the region
