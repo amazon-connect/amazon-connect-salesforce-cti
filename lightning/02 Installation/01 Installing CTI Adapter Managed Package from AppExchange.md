@@ -243,23 +243,25 @@ configuration, you add users to the Call Center to provide access to it.
 
 5.  On the **AC Lightning Adapter** detail page, select **Edit**
 
-6.  Next, change the values for **Softphone Height** **to 570** and the
+6. Replace the **CTI Adapter URL** with the AC Lightning Adapter visualforce page url you copied in the previous section.
+
+7.  Next, change the values for **Softphone Height** **to 570** and the
     **Softphone Width to 330**, and choose **Save.**
 
-7.  Once you return to the AC Lightning Adapter detail page, choose
+8.  Once you return to the AC Lightning Adapter detail page, choose
     **Manage Call Center Users** in the Call Center Users section
 
-8.  On the **AC Lightning Adapter: Manage Users** page, select **Add
+9.  On the **AC Lightning Adapter: Manage Users** page, select **Add
     More Users**.
 
-9.  Set filters (if desired) and then choose **Find**.
+10.  Set filters (if desired) and then choose **Find**.
 
-10. Select the checkbox next to the user to add, then choose **Add to
+11. Select the checkbox next to the user to add, then choose **Add to
     Call Center**.
 
 <img src="../media/image30.png" />
 
-11. Repeat the steps to add more users.
+12. Repeat the steps to add more users.
 
 <h4 class="toc">Configure the Toolkit settings</h4>
 
@@ -373,9 +375,9 @@ tie the Lightning CTI adapter settings to the Call Center.
 
 10. CTI Adapter Name: **ACLightningAdapter**
 
-11. Amazon Connect Instance Alias: The alias of your Amazon Connect
+11. Amazon Connect Instance: The url of your Amazon Connect
     Instance. You can find this in the Amazon Connect Console as shown
-    below
+    below (remove everything after ".com"):
 
 <img src="../media/image44.png" />
 

@@ -356,6 +356,112 @@ The operation returns a response of:
 }
 ```
 
+See the chatter post appear attached to the Subject:
+
 <img src="../media/image190.png" />
 
-See the chatter post appear attached to the Subject:
+Salesforce search
+-------------------------------
+
+This operation is invoked by setting "sf_operation" to
+"search" (case sensitive). In this case, the Lambda
+function uses the Salesforce REST to perform a parameterized search
+(see
+[here](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_search_parameterized.htm)).
+For search, the following parameters are required:
+
+-   q
+
+-   sf_fields
+
+-   sf_object
+
+The following parameters are optional:
+
+-   where
+
+-   overallLimit
+
+See the below example:
+
+<img src="../media/image320.png" /> 58
+
+<img src="../media/image321.png" /> 59
+
+<img src="../media/image322.png" /> 60
+
+<img src="../media/image323.png" /> 61
+
+<img src="../media/image324.png" /> 62
+
+<img src="../media/image325.png" /> 63
+
+The operation returns a response of:
+
+```json
+{
+    "sf_records": [
+        {
+            "Id": "50001000001B9e6AAG", 
+            "Subject": "test subject", 
+            "Status": "New"
+        }, 
+        {
+            "Id": "50001000001B9eWAAS", 
+            "Subject": "test subject", 
+            "Status": "New"
+        }, 
+        {
+            "Id": "50001000001BDgiAAG", 
+            "Subject": "test subject", 
+            "Status": "New"
+        }
+    ], 
+    "sf_count": 3
+}
+```
+
+Salesforce searchOne
+-------------------------------
+
+This operation is invoked by setting "sf_operation" to
+"searchOne" (case sensitive). In this case, the Lambda
+function uses the Salesforce REST to perform a parameterized search
+(see
+[here](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_search_parameterized.htm)).
+For search, the following parameters are required:
+
+-   q
+
+-   sf_fields
+
+-   sf_object
+
+The following parameter is optional:
+
+-   where
+
+See the below example:
+
+<img src="../media/image326.png" />
+
+<img src="../media/image327.png" />
+
+<img src="../media/image322.png" />
+
+<img src="../media/image323.png" />
+
+<img src="../media/image324.png" />
+
+<img src="../media/image325.png" />
+
+The operation returns a response of:
+
+```json
+{
+    "Id": "50001000001BIn6AAG",
+    "Subject": "test subject unique", 
+    "Status": "New", 
+    "sf_count": 1
+}
+```

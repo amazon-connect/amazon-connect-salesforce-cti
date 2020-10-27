@@ -34,6 +34,10 @@ org:
 
 -   **CreateChatterComment:** creates a chatter comment.
 
+-   **Search:** performs a search against the Salesforce instance, returning all results.
+
+-   **SearchOne:** performs a search against the Salesforce instance, returning at most one result.
+
 **NOTE:** naming of the Lambda function will vary based on template
 data, but sfInvokeAPI will always be a part of the name.
 
@@ -191,7 +195,6 @@ In the contact flow example below, we deleting an existing case based on
 customer input.
 
 <img src="../media/image160.png" />
-
 <img src="../media/image161.png" />
 
 This operation returns a response of:
@@ -398,3 +401,111 @@ The operation returns a response of:
 See the chatter post appear attached to the Subject:
 
 <img src="../media/image177.png" />
+
+### Salesforce search
+
+This operation is invoked by setting **sf_operation** to
+**search** (case sensitive). In this case, the Lambda
+function uses the Salesforce REST to perform a parameterized search
+(see
+[here](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_search_parameterized.htm)).
+For search, the following parameters are required:
+
+-   q
+
+-   sf_fields
+
+-   sf_object
+
+The following parameters are optional:
+
+-   where
+
+-   overallLimit
+
+(refer to the api reference for value types)
+
+See the below example:
+
+<img src="../media/image258.png" />
+
+<img src="../media/image259.png" />
+
+<img src="../media/image260.png" />
+
+<img src="../media/image261.png" />
+
+<img src="../media/image262.png" />
+
+<img src="../media/image263.png" />
+
+The operation returns a response of:
+
+```json
+{
+    "sf_records": [
+        {
+            "Id": "50001000001B9e6AAG", 
+            "Subject": "test subject", 
+            "Status": "New"
+        }, 
+        {
+            "Id": "50001000001B9eWAAS", 
+            "Subject": "test subject", 
+            "Status": "New"
+        }, 
+        {
+            "Id": "50001000001BDgiAAG", 
+            "Subject": "test subject", 
+            "Status": "New"
+        }
+    ], 
+    "sf_count": 3
+}
+```
+
+### Salesforce searchOne
+
+This operation is invoked by setting **sf_operation** to
+**searchOne** (case sensitive). In this case, the Lambda
+function uses the Salesforce REST to perform a parameterized search
+(see
+[here](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_search_parameterized.htm)).
+For search, the following parameters are required:
+
+-   q
+
+-   sf_fields
+
+-   sf_object
+
+The following parameter is optional:
+
+-   where
+
+(refer to the api reference for value types)
+
+See the below example:
+
+<img src="../media/image264.png" />
+
+<img src="../media/image265.png" />
+
+<img src="../media/image260.png" />
+
+<img src="../media/image261.png" />
+
+<img src="../media/image262.png" />
+
+<img src="../media/image263.png" />
+
+The operation returns a response of:
+
+```json
+{
+    "Id": "50001000001BIn6AAG",
+    "Subject": "test subject unique", 
+    "Status": "New", 
+    "sf_count": 1
+}
+```

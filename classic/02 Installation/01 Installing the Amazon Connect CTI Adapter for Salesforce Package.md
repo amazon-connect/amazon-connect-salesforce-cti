@@ -136,9 +136,13 @@ In the top navigation bar, select the "+" icon.
 
 Select "AC CTI Adapters"
 
-Create a new adapter. Fill in the CTI Adapter Name, and Amazon Connect
-Instance Alias. For the Call Center Definition Name, type in
-ACConsoleAdapter. Select Save.
+Create a new adapter. Fill in the CTI Adapter Name. For the Call Center Definition Name, type in
+ACConsoleAdapter. For the Amazon Connect Instance, type in the login url to the instance (this can be found
+in the Amazon Connect Instance details page), removing everything after ".com".
+
+<img src="../media/image328.png"/>
+
+Select Save.
 
 <img src="../media/image24.png" />
 
@@ -209,8 +213,9 @@ Select "Amazon Connect CCP Adapter Console 3.9"
 
 <img src="../media/image37.png" />
 
-If a CCP version 1 user interface is desired, remove the '?ccpVersion=2"
-from the CTI Adapter URL. Click on the Save button.
+Replace the **CTI Adapter URL** with the AC Lightning Adapter visualforce page url you copied in the previous section. 
+If you wish to specify your version of the ccp user interface, add "?ccpVersion=x", where x is the version of the ccp
+(either 1 or 2). Click on the Save button.
 
 Click on the "Manage Call Center Users" button at the bottom of the
 page.
@@ -291,9 +296,13 @@ In the top navigation bar, select the "+" icon.
 
 Select "AC CTI Adapters"
 
-Create a new adapter. Fill in the CTI Adapter Name, and Amazon Connect
-Instance Alias. For the Call Center Definition Name, type in
-ACClassicAdapter. Select Save.
+Create a new adapter. Fill in the CTI Adapter Name. For the Call Center Definition Name, type in
+ACConsoleAdapter. For the Amazon Connect Instance, type in the login url to the instance (this can be found
+in the Amazon Connect Instance details page), removing everything after ".com".
+
+<img src="../media/image328.png"/>
+
+Select Save.
 
 <img src="../media/image24.png" />
 
@@ -343,8 +352,9 @@ Select "Amazon Connect CCP Adapter Classic 3.9"
 
 <img src="../media/image56.png" />
 
-If a CCP version 1 user interface is desired, click on the Edit button
-and remove "?ccpVersion=2" from the url and click on the Save button.
+Replace the **CTI Adapter URL** with the AC Lightning Adapter visualforce page url you copied in the previous section. 
+If you wish to specify your version of the ccp user interface, add "?ccpVersion=x", where x is the version of the ccp
+(either 1 or 2). Click on the Save button.
 
 Click on the "Manage Call Center Users" button at the bottom of the
 page.
