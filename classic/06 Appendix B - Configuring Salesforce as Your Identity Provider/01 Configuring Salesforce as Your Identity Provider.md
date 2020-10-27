@@ -1,4 +1,4 @@
-<h1 id="configuring-salesforce-as-your-identity-provider"> Appendix B: Configuring Salesforce as Your Identity Provider </h1>
+<h1 class="toc">Appendix B - Configuring Salesforce as Your Identity Provider</h1>
 
 Amazon Connect supports Security Assertion Markup Language (SAML 2.0) to
 enable single sign on(SSO). Salesforce can act as a single sign on
@@ -8,10 +8,9 @@ establishing the SSO integration between Amazon Connect and Salesforce,
 you will be able to seamlessly login to Salesforce and the same
 credentials will be used to auto-login to Amazon Connect.
 
-Configuration
--------------
+<h2 class="toc">Configuration</h2>
 
-### Prerequisites
+<h3 class="toc">Prerequisites</h3>
 
 To complete the SSO integration between Salesforce and Amazon Connect,
 you need:
@@ -26,7 +25,7 @@ you need:
 4.  Amazon Connect CTI Adapter AppExchange package installed and
     configured
 
-### Configuring Salesforce as an Identity Provider
+<h3 class="toc">Configuring Salesforce as an Identity Provider</h3>
 
 First, we need to enable Salesforce to act as an identity provider
 (IdP). An IdP performs end user authentication and provides the
@@ -34,7 +33,7 @@ credentials to the requesting service provider. In this case, Salesforce
 server as the IdP and Amazon Connect the service provider, while being
 embedded in Salesforce.
 
-#### Setup Identity Provider & Download Metadata
+<h4 class="toc">Setup Identity Provider & Download Metadata</h4>
 
 1.  Log in into your Salesforce org and go to **Setup**.
 
@@ -51,7 +50,7 @@ embedded in Salesforce.
 
 <img src="../media/image307.png" />
 
-### Configure the Identity Provider, Policy, and Role in the AWS Console
+<h3 class="toc">Configure the Identity Provider, Policy, and Role in the AWS Console</h3>
 
 Next, you need to configure the identity provider (Salesforce) in the
 AWS console and provide access to Amazon Connect via IAM policies and
@@ -59,11 +58,11 @@ roles. This allows AWS to acknowledge Salesforce as the identity
 provider and to provide users authenticated through Salesforce with the
 access required to login to Amazon Connect.
 
-#### Configure the Identity Provider
+<h4 class="toc">Configure the Identity Provider</h4>
 
 1.  Login to the [**AWS console**](https://console.aws.amazon.com/)
 
-2.  Open the [AWS Identy and Access Management (IAM)
+2.  Open the [AWS identity and Access Management (IAM)
     Console](https://console.aws.amazon.com/iam/home)
 
 3.  Select **Identity providers
@@ -88,11 +87,11 @@ access required to login to Amazon Connect.
 
 10. The Identity provider has been created
 
-#### Create the IAM Role and Policy
+<h4 class="toc">Create the IAM Role and Policy</h4>
 
 1.  Login to the [**AWS console**](https://console.aws.amazon.com/)
 
-2.  Open the [AWS Identy and Access Management (IAM)
+2.  Open the [AWS identity and Access Management (IAM)
     Console](https://console.aws.amazon.com/iam/home)
 
 3.  Select **Roles,** then choose **Create role**
@@ -167,12 +166,12 @@ access required to login to Amazon Connect.
 
 22. Select Create role
 
-### Complete the Base Salesforce Configuration
+<h3 class="toc">Complete the Base Salesforce Configuration</h3>
 
 Next, you need to configure a Connect App in Salesforce and provide
 further configuration to complete the SAML integration.
 
-####  Create the Connected App in Salesforce
+<h4 class="toc">Create the Connected App in Salesforce</h4>
 
 1.  Log in into your Salesforce org and go to **Setup**
 
@@ -222,7 +221,7 @@ further configuration to complete the SAML integration.
 18. The Value is going to be a combination of the Indentity Provider and
     IAM Role ARNs.
 
-    a.  In a new tab, open the [AWS Identy and Access Management (IAM)
+    a.  In a new tab, open the [AWS identity and Access Management (IAM)
         Console](https://console.aws.amazon.com/iam/home)
 
     b.  On the left navigation, select **Identity providers**
@@ -278,13 +277,13 @@ further configuration to complete the SAML integration.
 
 29. Initial validation is complete
 
-### Complete the Amazon Connect Configuration
+<h3 class="toc">Complete the Amazon Connect Configuration</h3>
 
 The last step in the SAML setup is to add users to Amazon Connect that
 exist in your Salesforce org, then validate login. It is critical that
 the usernames for both platforms match exactly.
 
-#### Add Users to Amazon Connect
+<h4 class="toc">Add Users to Amazon Connect</h4>
 
 1.  In a new browser tab, login to the [AWS
     console](https://console.aws.amazon.com/)
@@ -323,14 +322,14 @@ the usernames for both platforms match exactly.
 
 14. Repeat this process as required for your staff
 
-### Final Configuration for the Lightning Experience
+<h3 class="toc">Final Configuration for the Lightning Experience</h3>
 
 Now that all of the underlying pieces are in place, the last steps are
 to create the Amazon Connect Single Sign On URL and validate that it
 works correctly, then configure the Lightning CTI adapter and login the
 agent.
 
-#### Create the Amazon Connect SSO URL
+<h4 class="toc">Create the Amazon Connect SSO URL</h4>
 
 You create the Amazon Connect SSO URL by combining the IdP-Initiated
 Login URL that you copied earlier, and a relay state URL that will
@@ -381,7 +380,7 @@ please use the region Console URL. For example:
 5.  Once you validate the full URL, you are ready to add it to the
     Lightning Adapter
 
-#### Configure the CTI Lightning Adapter in Salesforce
+<h4 class="toc">Configure the CTI Lightning Adapter in Salesforce For SSO</h4>
 
 Now we are ready to complete the last step in the configuration process:
 Adding the SSO settings for Salesforce to the Lightning Adapter. This

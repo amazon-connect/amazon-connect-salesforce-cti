@@ -1,4 +1,4 @@
-<h2 id="amazon-connect-historical-metrics-in-salesforce" > Amazon Connect Historical Metrics in Salesforce </h2>
+<h2 class="toc">Amazon Connect Historical Metrics in Salesforce</h2>
 
 Amazon Connect can generate a number of historical metric reports to
 monitor efficiency and utilization, agent performance, and other
@@ -14,7 +14,7 @@ Queue interval data from Amazon Connect to Salesforce. Once these have
 been configured and scheduled, you will begin to see data available in
 the reports that have been included with the CTI Adapter.
 
-### Configuring the AWS Services
+<h3 class="toc">Configuring the AWS Services</h3>
 
 When you configure schedule reports to run in Amazon Connect, they are
 saved to your reporting Amazon S3 bucket upon execution. As a part of
@@ -29,7 +29,7 @@ Lambda function included in the AWS Serverless Repository for
 Salesforce. This function will process the report and import the data to
 Salesforce.
 
-#### Configuring the Historical Reports in Amazon Connect
+<h4 class="toc">Configuring the Historical Reports in Amazon Connect</h4>
 
 1.  Login to your Amazon Connect instance as an Administrator
 
@@ -233,7 +233,7 @@ Once you have created the two reports and set their schedule, the next
 thing you will need to do is to configure a trigger that executes a
 Lambda function when the report is generated and stored in S3.
 
-#### Creating the AWS Lambda Trigger for the Queue Data
+<h4 class="toc">Creating the AWS Lambda Trigger for the Queue Data</h4>
 
 1.  In a new browser tab, login to the [AWS
     console](https://console.aws.amazon.com/)
@@ -275,7 +275,7 @@ Lambda function when the report is generated and stored in S3.
 14. If everything has been configured correctly, you should receive a
     success message.
 
-#### Creating the AWS Lambda Trigger for the Agent Data
+<h4 class="toc">Creating the AWS Lambda Trigger for the Agent Data</h4>
 
 1.  In a new browser tab, login to the [AWS
     console](https://console.aws.amazon.com/)
@@ -317,7 +317,7 @@ Lambda function when the report is generated and stored in S3.
 14. If everything has been configured correctly, you should receive a
     success message.
 
-### Verifying the Data Import in Salesforce
+<h3 class="toc">Verifying the Data Import in Salesforce</h3>
 
 Once you have configured the reports and added the triggers, you should
 start to see data in Salesforce after \~30 minutes. The Amazon Connect
@@ -325,7 +325,7 @@ CTI Adapter comes with a predefined set of reports. These reports can be
 customized and additional reports can be created by leveraging the
 imported data.
 
-#### Viewing Amazon Connect Reports in Salesforce
+<h4 class="toc">Viewing Amazon Connect Reports in Salesforce</h4>
 
 1.  Log in into your Salesforce org and go to the **Service Console**
 

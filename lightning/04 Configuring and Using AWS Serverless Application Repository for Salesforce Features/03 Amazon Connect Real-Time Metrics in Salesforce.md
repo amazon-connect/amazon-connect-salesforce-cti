@@ -1,4 +1,4 @@
-<h2 id="amazon-connect-real-time-metrics-in-salesforce" > Amazon Connect Real-Time Metrics in Salesforce </h2>
+<h2 class="toc">Amazon Connect Real-Time Metrics in Salesforce</h2>
 
 The CTI adapter includes real-time reporting tools which provide
 visibility into critical data which help improve the utilization of your
@@ -13,14 +13,14 @@ queue staffing and the distribution of contacts by queue. The second
 view, AC Real Time Queue Metrics, allows you to select a specific queue
 and view the real-time metrics for that queue.
 
-### Deployment and Configuration
+<h3 class="toc">Deployment and Configuration</h3>
 
 Once you have deployed the AWS Serverless Application Repository for
 Salesforce and provided the appropriate credentials, there is no further
 configuration required to make the data flow work. The only remaining
 task is to add the real-time views to your Salesforce console.
 
-#### Adding Real-Time Reports to the Service Console
+<h4 class="toc">Adding Real-Time Reports to the Service Console</h4>
 
 1.  Log in into your Salesforce org and go to the **Service Console**
 

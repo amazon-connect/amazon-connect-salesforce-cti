@@ -1,4 +1,4 @@
-<h1 id="omnipresence-agent-state-sync"> Omnipresence Agent State Sync </h1>
+<h1 class="toc">Omnipresence Agent State Sync</h1>
 
 Amazon Connect CTI Connector supports the bidirectional synchronization
 of Amazon Connect agent states with Salesforce omnichannel presence
@@ -6,8 +6,7 @@ states.
 
 <img src="../media/image90.png" />
 
-Enable Omnichannel
-------------------
+<h2 class="toc">Enable Omnichannel</h2>
 
 In order to sync your Connect User status with your Omni-Channel agent
 status, you must configure Omni-Channel Presence Syncing. This will make
@@ -24,8 +23,7 @@ Place a check in the checkbox for "Enable Omni-Channel".
 
 <img src="../media/image92.png" />
 
-Create Presence Statuses
-------------------------
+<h2 class="toc">Create Presence Statuses</h2>
 
 In this step, we need to add and map Presence Statuses to what is
 defined in Amazon Connect under Users -\> Agent Status.
@@ -44,8 +42,7 @@ associate the presence status.
 
 <img src="../media/image95.png" />
 
-Configure Enabled Service Presences Status Access
--------------------------------------------------
+<h2 class="toc">Configure Enabled Service Presences Status Access</h2>
 
 Next, we need to assign access to these statuses by going to Profiles in
 Salesforce Setup, and ensure that the agent will be able to access the
@@ -62,8 +59,7 @@ you want to have enabled for the user.
 
 <img src="../media/image97.png" />
 
-Configure Presence Status Synchronization Rules
------------------------------------------------
+<h2 class="toc">Configure Presence Status Synchronization Rules</h2>
 
 The Amazon Connect Salesforce CTI Adapter provides a rules-based
 presence status synchronization system allowing for flexibility in
@@ -74,7 +70,7 @@ agent state changes (agent goes on break), system agent state changes
 (answering a call), omnichannel agent work (agent accepts an email), and
 omnichannel workload changes (agent completes an email) as examples.
 
-### Presence Status Configuration Rules
+<h3 class="toc">Presence Status Configuration Rules</h3>
 
 Presence Sync Rules are evaluated based on specific events. The
 available events are:

@@ -1,4 +1,4 @@
-<h2 id="contact-trace-record-import" > Contact Trace Record Import </h2>
+<h2 class="toc">Contact Trace Record Import</h2>
 
 In Amazon Connect, data about contacts is captured in contact trace
 records (CTR). This data can include the amount of time a contact spends
@@ -15,14 +15,14 @@ advanced analysis on it. Additionally, with the AWS Serverless
 Application Repository for Salesforce, you can import Contact Trace
 Records into your Salesforce org.
 
-### Contact Trace Record Import
+<h3 class="toc">Contact Trace Record Import</h3>
 
 Once enabled during the AWS Serverless Application Repository for
 Salesforce, CTR import is activated on a call by call basis by adding a
 specific contact attribute. This attribute is used during Contact Trace
 Record processing to trigger the import task.
 
-#### Enabling Contact Trace Record Import
+<h4 class="toc">Enabling Contact Trace Record Import</h4>
 
 1.  Login to your Amazon Connect instance as an Administrator
 
@@ -59,7 +59,7 @@ Record processing to trigger the import task.
 9.  The Contact Trace Record is emitted shortly after call completion
     and the import happens almost immediately.
 
-#### Adding Contact Trace Records to the Service Console
+<h4 class="toc">Adding Contact Trace Records to the Service Console</h4>
 
 1.  Log in into your Salesforce org and go to the **Service Console**
 
@@ -103,13 +103,13 @@ Record processing to trigger the import task.
 
 11. Note the ContactId value from Amazon Connect
 
-### Display Additional Contact Trace Record Data
+<h3 class="toc">Display Additional Contact Trace Record Data</h3>
 
 By default, the AC Contact Trace Record layout only contains the
 ContactId. However, all of the CTR data has been imported. It is likely
 that you will want to customize this view to show more data.
 
-#### Customizing the AC Contact Trace Record Layout
+<h4 class="toc">Customizing the AC Contact Trace Record Layout</h4>
 
 1.  Log in into your Salesforce org and go to **Setup**
 

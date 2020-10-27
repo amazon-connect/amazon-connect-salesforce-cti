@@ -1,4 +1,4 @@
-<h1 id="cti-flow-sources-and-events" > Appendix C: CTI Flow Sources and Events </h1>
+<h1 class="toc">Appendix C - CTI Flow Sources and Events</h1>
 
 The following sources are defined in the adapter for use with CTI Flows:
 

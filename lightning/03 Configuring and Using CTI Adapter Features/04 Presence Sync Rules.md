@@ -1,14 +1,14 @@
-<h2 id="presence-sync-rules" > Presence Sync Rules </h2>
+<h2 class="toc">Presence Sync Rules</h2>
 
 The CTI Adapter supports bidirectional synchronization of agent state
 between Amazon Connect and Salesforce Omnichannel. This allows you to
 tightly control agent availability for different contact/media types
 dependent on current agent state. This section of the guide assumes that
 you have Omnichannel configured appropriately. If you do not and wish to
-test this function, please refer to the section [Configure Salesforce Omnichannel for Testing](../05%20Appendix%20A%20-%20Required%20Salesforce%20Configurations/02%20Configure%20Salesforce%20Omnichannel%20for%20Testing.md).
+test this function, please refer to the section [Configure Salesforce Omnichannel for Testing](/lightning/05%20Appendix%20A%20-%20Required%20Salesforce%20Configurations/02%20Configure%20Salesforce%20Omnichannel%20for%20Testing.md).
 
 NOTE: In order for Presence Sync to work, the CTI Adapter must be
-configured to allow it. See [CTI Adapter Details](../03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/01%20CTI%20Adapter%20Configuration.md)
+configured to allow it. See [CTI Adapter Details](/lightning/03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/01%20CTI%20Adapter%20Configuration.md)
 for more information.
 
 Presence Sync Rules are evaluated based on specific events. The
@@ -79,7 +79,7 @@ Available comparators are:
 -   **Less than or equal to:** Is Operand A less than or equal to
     Operand B
 
-### Configuring Statuses
+<h3 class="toc">Configuring Statuses</h3>
 
 Presence Sync Rules require statuses in both Amazon Connect and
 Salesforce. In this example, we will add two additional statuses to each
@@ -94,7 +94,7 @@ you will configure the status sync similar to the following example:
   Amazon Connect sets status to Working -- Phone   Omnichannel to Working -- Phone
   Omnichannel sets status to Working -- Media      Amazon Connect to Working - Media
 
-### Create Presence Statuses in Amazon Connect
+<h3 class="toc">Create Presence Statuses in Amazon Connect</h3>
 
 Agents are responsible for setting their status in the Contact Control
 Panel (CCP). Typically, the only time an agent\'s status changes is when
@@ -115,7 +115,7 @@ and resource management.
 **Note:** When you add a new status, it will always be **Custom**, not
 routable.
 
-#### Create an Amazon Connect status
+<h4 class="toc">Create an Amazon Connect status</h4>
 
 1.  Login to your Amazon Connect instance as an Administrator
 
@@ -136,14 +136,14 @@ routable.
 5.  Select Save. Repeat as desired for the remaining statuses that you
     wish to add.
 
-### Create Presence Statuses in Salesforce
+<h3 class="toc">Create Presence Statuses in Salesforce</h3>
 
 You will need to configure presence statuses to reflect the different
 presence states that you wish your Omni-Channel agents to enter. These
 do not need to match agent statuses in Amazon Connect exactly, but it
 does make it easier to track what you are doing.
 
-#### Create a Salesforce presence status
+<h4 class="toc">Create a Salesforce presence status</h4>
 
 1.  Log in into your Salesforce org and go to **Setup**
 
@@ -170,7 +170,7 @@ does make it easier to track what you are doing.
 
 7.  Repeat as necessary for all desired statuses
 
-#### Configure Enabled Service Presences Status Access in Salesforce
+<h4 class="toc">Configure Enabled Service Presences Status Access in Salesforce</h4>
 
 1.  Log in into your Salesforce org and go to **Setup**
 
@@ -195,7 +195,7 @@ does make it easier to track what you are doing.
 
 7.  Repeat as necessary for other statuses or profiles.
 
-### Configure Presence Sync Rules
+<h3 class="toc">Configure Presence Sync Rules</h3>
 
 The CTI Adapter provides a rules-based presence status synchronization
 system allowing for flexibility in mapping agent states between Amazon
@@ -210,7 +210,7 @@ As the scope of presence sync rules can vary wildly, this example will
 show you how to change state based on Amazon Connect agent state change
 and Salesforce agent state change.
 
-#### Create a Presence Sync Rule
+<h4 class="toc">Create a Presence Sync Rule</h4>
 
 1.  Log in into your Salesforce org and go to the **Service Console**
 

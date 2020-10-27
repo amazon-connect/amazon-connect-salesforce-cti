@@ -1,17 +1,17 @@
-<h2 id="configure-salesforce-omnichannel-for-testing" > Configure Salesforce Omnichannel for Testing </h2>
+<h2 class="toc">Configure Salesforce Omnichannel for Testing</h2>
 
 In order to sync your Connect User status with your Omni-Channel agent
 status, you must configure Omni-Channel Presence Syncing. This will make
 your Omni-Channel presence status match your Amazon Connect Agent Status
 and vice versa.
 
-### Enable Omnichannel
+<h3 class="toc">Enable Omnichannel</h3>
 
 First, we must enable omni-channel. Once you enable Omni-Channel, you
 will have access to the other components in Salesforce that will be
 required for Omni-Channel setup.
 
-#### Enable Omnichannel in Your Salesforce Org
+<h4 class="toc">Enable Omnichannel in Your Salesforce Org</h4>
 
 1.  Log in into your Salesforce org and go to **Setup**
 
@@ -26,7 +26,7 @@ required for Omni-Channel setup.
 
 4.  Omni-Channel is now enabled.
 
-### Configure Presence Statuses
+<h3 class="toc">Configure Presence Statuses</h3>
 
 Once you have enabled Omni-Channel, you will need to configure presence
 statuses to reflect the different presence states that you wish your
@@ -34,7 +34,7 @@ Omni-Channel agents to enter. These do not need to match agent statuses
 in Amazon Connect exactly, but it does make it easier to track what you
 are doing.
 
-#### Add a Presence Status
+<h4 class="toc">Add a Presence Status</h4>
 
 1.  Log in into your Salesforce org and go to **Setup**
 
@@ -60,13 +60,13 @@ are doing.
 
 8.  Repeat as necessary for all desired statuses
 
-### Configure Profiles to Use the New Statuses
+<h3 class="toc">Configure Profiles to Use the New Statuses</h3>
 
 Before agents can use the statuses that have been configured, you will
 need to make sure that they have been provided rights to them. This is
 done by modifying the profiles assigned to your agents.
 
-#### Modify Profiles to Use New Statuses
+<h4 class="toc">Modify Profiles to Use New Statuses</h4>
 
 1.  Log in into your Salesforce org and go to **Setup**
 
@@ -90,12 +90,12 @@ done by modifying the profiles assigned to your agents.
 
 7.  Repeat as necessary for other statuses or profiles.
 
-### Add Omni-Channel to the Utility Bar
+<h3 class="toc">Add Omni-Channel to the Utility Bar</h3>
 
 To provide agents access to the Omni-Channel tool, you will need to add
 it to the Service Console.
 
-#### Add the Omni-Channel Utility Item
+<h4 class="toc">Add the Omni-Channel Utility Item</h4>
 
 1.  Log in into your Salesforce org and go to **Setup**
 

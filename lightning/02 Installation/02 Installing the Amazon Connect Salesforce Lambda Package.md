@@ -1,4 +1,4 @@
-<h2 id="installing-the-amazon-connect-salesforce-lambda-package" > Installing the Amazon Connect Salesforce Lambda Package </h2>
+<h2 class="toc">Installing the Amazon Connect Salesforce Lambda Package</h2>
 
 The Amazon Connect Salesforce Lambda package adds considerable
 capability to the integration. It includes data connectivity between
@@ -18,7 +18,7 @@ resources used. There is no additional charge to use the Serverless
 Application Repository - you only pay for the AWS resources used in the
 applications you deploy.
 
-### Prerequisite Configuration and Data Collection
+<h3 class="toc">Prerequisite Configuration and Data Collection</h3>
 
 In order to successfully deploy and utilize the functions in the Amazon
 Connect Salesforce Lambda package, you will need to validate and
@@ -37,7 +37,7 @@ As you are preparing to deploy the package, it is a good idea to open a
 text editor and note information as you configure the environment. We
 will point out the items you will need to provide.
 
-#### Check your Salesforce API Version
+<h4 class="toc">Check your Salesforce API Version</h4>
 
 1.  Log in into your Salesforce org and go to **Setup**
 
@@ -58,7 +58,7 @@ will point out the items you will need to provide.
 
 <img src="../media/image59.png" />
 
-#### Create a New Connected App
+<h4 class="toc">Create a New Connected App</h4>
 
 To leverage the full potential of the integration, Salesforce data needs
 to be accessed from AWS environment. The package comes with a set of
@@ -134,7 +134,7 @@ with OAuth settings enabled.
 
 22. Select **Save**
 
-#### Create a new API user
+<h4 class="toc">Create a new API user</h4>
 
 The Lambda functions authenticate with Salesforce via user credentials.
 It is a common practice to create an API user account for this purpose.
@@ -236,7 +236,7 @@ It is a common practice to create an API user account for this purpose.
 
 30. Copy the security token from the email to your notepad
 
-#### Gather Information from Your Amazon Connect Instance
+<h4 class="toc">Gather Information from Your Amazon Connect Instance</h4>
 
 The last thing to do before you can install the Amazon Connect
 Salesforce Lambda Package is gather some details about your Amazon
@@ -278,7 +278,7 @@ Connect instance. These will be used during the package installation.
 
 <img src="../media/image74.png" />
 
-#### Store Salesforce Credentials in AWS Secrets Manager
+<h4 class="toc">Store Salesforce Credentials in AWS Secrets Manager</h4>
 
 To ensure that your Salesforce credentials are secure, the Lambdas
 require that the credentials are stored in AWS Secrets Manager. AWS
@@ -374,7 +374,7 @@ retrieve secrets.
 30. You should now have all of the information you need to install the
     package
 
-### Install the Amazon Connect Salesforce Lambda package
+<h3 class="toc">Install the Amazon Connect Salesforce Lambda package</h3>
 
 1.  In a new browser tab, login to the [AWS
     console](https://console.aws.amazon.com/)
@@ -524,7 +524,7 @@ retrieve secrets.
 
 <img src="../media/image81.png" />
 
-### Test the Core Functionality
+<h3 class="toc">Test the Core Functionality</h3>
 
 The package provides a core Lambda function (sfInvokeAPI) that supports
 multiple operations, like lookup, create and update. For the initial
@@ -537,7 +537,7 @@ simulate data coming into the function as it would in a typical
 deployment. Each function has a set of test event samples included to
 make validation easier.
 
-#### Validate the core functionality
+<h4 class="toc">Validate the core functionality</h4>
 
 1.  In a new browser tab, login to the [**AWS
     console**](https://console.aws.amazon.com/)
@@ -692,14 +692,14 @@ make validation easier.
 
 40. You have completed core function validation
 
-### Allow Amazon Connect to Access the sfInvokeAPI Lambda Function
+<h3 class="toc">Allow Amazon Connect to Access the sfInvokeAPI Lambda Function</h3>
 
 Once you have validated function, you can use the Amazon Connect console
 to add the sfInvokeAPI Lambda function to your Amazon Connect instance.
 This automatically adds resource permissions that allow Amazon Connect
 to invoke the function.
 
-#### Add the Lambda function to your Amazon Connect instance
+<h4 class="toc">Add the Lambda function to your Amazon Connect instance</h4>
 
 1.  In a new browser tab, login to the [**AWS
     console**](https://console.aws.amazon.com/)

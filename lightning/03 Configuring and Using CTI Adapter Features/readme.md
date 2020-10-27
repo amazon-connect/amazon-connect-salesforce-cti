@@ -1,4 +1,4 @@
-<h1 id="cti-adapter-configuration"> Configuring and Using CTI Adapter Features </h1>
+<h1 class="toc">Configuring and Using CTI Adapter Features</h1>
 
 The CTI Adapter installed by the managed package provides a number of
 features that change or enhance the functionality of the integration. By

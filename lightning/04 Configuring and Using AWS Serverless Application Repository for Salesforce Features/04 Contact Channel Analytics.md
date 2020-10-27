@@ -1,4 +1,4 @@
-<h2 id="contact-channel-analytics" > Contact Channel Analytics </h2>
+<h2 class="toc">Contact Channel Analytics</h2>
 
 In addition to the CTI adapter's native ability to provide direct
 playback links to call recordings in Amazon Connect, the AWS Serverless
@@ -42,7 +42,7 @@ available:
         and Parts of Speech (PoS), and identify word boundaries and
         labels like nouns and adjectives within the text.
 
-### Call Recording Import
+<h3 class="toc">Call Recording Import</h3>
 
 You can import Call Recording (wav) files into your Salesforce Org. This
 allows for easy access to the recordings from within Salesforce and can
@@ -63,7 +63,7 @@ such, CTRs are not generated until the agent leaves the after call work
 state. If you are not seeing a recording import, please make sure the
 agent has completed the call and left the after call work state.
 
-#### Enabling call recording import
+<h4 class="toc">Enabling call recording import</h4>
 
 1.  Login to your Amazon Connect instance as an Administrator
 
@@ -101,7 +101,7 @@ agent has completed the call and left the after call work state.
 
 9.  After a minute or so, the recording should import.
 
-<h4 id="adding-contact-channel-analytics-to-the-service-console"> Adding Contact Channel Analytics to the Service Console </h4>
+<h4 class="toc">Adding Contact Channel Analytics to the Service Console</h4>
 
 1.  Log in into your Salesforce org and go to the **Service Console**
 
@@ -152,7 +152,7 @@ agent has completed the call and left the after call work state.
 12. NOTE: The recording playback, waveform, and transcript views are
     only active when you also choose to activate recording transcripts.
 
-### Recording Transcripts
+<h3 class="toc">Recording Transcripts</h3>
 
 Enabling the Recording Transcripts activates a process to run your
 contact recordings through Amazon Transcribe which uses a deep learning
@@ -166,7 +166,7 @@ Salesforce, recording transcription is activated on a call by call basis
 by adding a specific contact attribute. This attribute is used during
 Contact Trace Record processing to trigger the transcription.
 
-#### Enabling recording transcription
+<h4 class="toc">Enabling recording transcription</h4>
 
 1.  Login to your Amazon Connect instance as an Administrator
 
@@ -215,7 +215,7 @@ Contact Trace Record processing to trigger the transcription.
 9.  The transcription will take at least as long as the call did. Wait
     an appropriate amount of time for the transcription to be available.
 
-#### Accessing transcriptions
+<h4 class="toc">Accessing transcriptions</h4>
 
 1.  Log in into your Salesforce org and go to the **Service Console**
 
@@ -247,7 +247,7 @@ Contact Trace Record processing to trigger the transcription.
 7.  Also note that the transcriptions for each side of the conversation
     are also included as attachments.
 
-### AI Driven Contact Analysis
+<h3 class="toc">AI Driven Contact Analysis</h3>
 
 Enabling the AI Driven Contact Analysis function allows you to process
 the transcribed text using [Amazon
@@ -275,7 +275,7 @@ codes and their functions are:
 
 -   **syn = Syntax Analysis**
 
-#### Enabling AI Driven Contact Analysis
+<h4 class="toc">Enabling AI Driven Contact Analysis</h4>
 
 1.  Login to your Amazon Connect instance as an Administrator
 
@@ -321,7 +321,7 @@ codes and their functions are:
     at least as long as the call did. Wait an appropriate amount of time
     for the analysis to be available.
 
-#### Accessing the AI Driven Contact Analysis
+<h4 class="toc">Accessing the AI Driven Contact Analysis</h4>
 
 1.  Log in into your Salesforce org and go to the **Service Console**
 

@@ -1,4 +1,4 @@
-<h2 id="cti-adapter-details"> CTI Adapter Details </h2>
+<h2 class="toc">CTI Adapter Details</h2>
 
 The CTI Adapter configuration begins with the adapter details. These
 fields provide the basic information needed to relate the Adapter to the
@@ -7,7 +7,7 @@ and supervisors that will be using the platform.
 
 <img src="../media/image113.png" />
 
-#### Update the CTI Adapter Details
+<h4 class="toc">Update the CTI Adapter Details</h4>
 
 1.  **CTI Adapter Name:** provide a unique name for this CTI adapter
     definition
@@ -51,7 +51,7 @@ and supervisors that will be using the platform.
     the presence rules to sync state from Amazon Connect to Salesforce
     Omni-Channel.
 
-<h3 id="single-sign-on"> Single Sign On (SSO) Settings </h3>
+<h3 class="toc">Single Sign On Settings</h3>
 
 The Amazon Connect CTI Adapter supports single sign on(SSO) via SAML
 integration. This allows customers that use a SAML provider for
@@ -64,7 +64,7 @@ Identity Management in Amazon
 Connect](https://docs.aws.amazon.com/connect/latest/adminguide/configure-saml).
 
 If you wish to use **Salesforce** as your identity provider for Single
-Sign On, please follow the setup instructions in [Configuring Salesforce as Your Identity Provider](../06%20Appendix%20B%20-%20Configuring%20Salesforce%20as%20Your%20Identity%20Provider/01%20Configuration.md).
+Sign On, please follow the setup instructions in [Appendix B - Configuring Salesforce as Your Identity Provider](/lightning/06%20Appendix%20B%20-%20Configuring%20Salesforce%20as%20Your%20Identity%20Provider/01%20Configuration.md).
 
 For information about configuring specific SAML providers to work with
 Amazon Connect:
@@ -79,7 +79,7 @@ will need to create the Amazon Connect Single Sign On URL and validate
 that it works correctly, then configure the Lightning CTI adapter and
 login the agent.
 
-#### Identify the SSO URL components
+<h4 class="toc">Identify the SSO URL components</h4>
 
 In order to authenticate with Amazon Connect, you need your IdP login
 URL from your SAML provider and a relay state URL that will redirect the
@@ -98,7 +98,7 @@ please use the region Console URL. For example:
 
 <pre>https://us-west-2.console.aws.amazon.com/connect/federate/<b>{InstanceId}</b>?destination=%2Fconnect%2Fccp</pre>
 
-#### Configure the CTI Lightning Adapter in Salesforce
+<h4 class="toc">Configure the CTI Lightning Adapter in Salesforce</h4>
 
 Now we are ready to complete the last step in the configuration process:
 Adding the SSO settings to the Lightning Adapter. This will configure

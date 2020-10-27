@@ -1,4 +1,4 @@
-<h2 id="configuring-my-domain-in-salesforce" > Configuring My Domain in Salesforce </h2>
+<h2 class="toc">Configuring My Domain in Salesforce</h2>
 
 The latest CTI adapter includes several lighting components that provide
 a better administrative user experience. Salesforce requires that My
@@ -7,7 +7,7 @@ Domain is a fairly simple setup, but it does require some time for the
 changes to propagate, so it will be helpful to complete this
 configuration in advance of your CTI adapter deployment.
 
-### Register Your Domain
+<h3 class="toc">Register Your Domain</h3>
 
 Step 1 in the process is registering your domain in Salesforce. This
 allows you to check availability of the domain and complete the
@@ -40,7 +40,7 @@ registration to complete.
 
 <img src="../media/image226.png" />
 
-### Deploy the Domain to Your Users
+<h3 class="toc">Deploy the Domain to Your Users</h3>
 
 Once the domain registration process completes, you then need to deploy
 the domain to your users.

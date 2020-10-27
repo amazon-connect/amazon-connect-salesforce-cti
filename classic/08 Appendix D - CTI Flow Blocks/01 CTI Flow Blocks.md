@@ -1,4 +1,4 @@
-<h1 id="cti-flow-blocks"> Appendix D: CTI Flow Blocks </h1>
+<h1 class="toc">Appendix D - CTI Flow Blocks</h1>
 
 ### If-else
 

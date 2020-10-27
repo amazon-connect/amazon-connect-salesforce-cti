@@ -1,4 +1,4 @@
-<h1 id="amazon-connect-reports-in-salesforce"> Amazon Connect Reports in Salesforce </h1>
+<h1 class="toc">Amazon Connect Reports in Salesforce</h1>
 
 Out of the box, within Amazon Connect, you can generate a number of
 real-time and historical metric reports to monitor efficiency and

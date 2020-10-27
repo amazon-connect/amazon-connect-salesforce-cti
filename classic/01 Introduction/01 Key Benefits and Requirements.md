@@ -1,7 +1,6 @@
-<h1 id="key-benefits-and-requirements">Key Benefits and Requirements</h1>
+<h1 class="toc">Key Benefits and Requirements</h1>
 
-Key Benefits
-------------
+<h2 class="toc">Key Benefits</h2>
 
 The key benefits of the adapter include:
 
@@ -57,8 +56,7 @@ If you want to quickly get setup with basic CTI capabilities in
 Lightning, we suggest you walk through our Salesforce trailhead
 available at <https://sfdc.co/Amazon-Connect>.
 
-Requirements
-------------
+<h2 class="toc">Requirements</h2>
 
 To successfully create, configure, and implement the Amazon Connect CTI
 Adapter for Salesforce, you must ensure that the requirements and

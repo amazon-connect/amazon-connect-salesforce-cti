@@ -1,4 +1,4 @@
-<h2 id="installing-cti-adapter-managed-package-from-appexchange" > Installing CTI Adapter Managed Package from AppExchange </h2>
+<h2 class="toc">Installing CTI Adapter Managed Package from AppExchange</h2>
 
 The Amazon Connect CTI Adapter for Salesforce provides the core
 integration between the two platforms. It embeds the Amazon Connect
@@ -9,7 +9,7 @@ contact center telephony functions like click-to-dial, and establish
 presence syncing rules for integration with Salesforce Omni-Channel.
 This is the base of the integration.
 
-### Installing the Package
+<h3 class="toc">Installing the Package</h3>
 
 The first step in the deployment of the integration is to install the
 Amazon Connect CTI Adapter managed package from the AppExchange
@@ -80,7 +80,7 @@ Marketplace.
 
 <img src="../media/image11.png" />
 
-### Set Access Permissions
+<h3 class="toc">Set Access Permissions</h3>
 
 All users must be assigned the required permission set to access
 Salesforce metadata. The Amazon Connect CTI Adapter includes two
@@ -109,25 +109,25 @@ documentation](https://help.salesforce.com/articleView?id=perm_sets_mass_assign.
 
 7.  Repeat these steps as needed for all users
 
-### AC_Administrator
+#### AC_Administrator
 
 <img src="../media/image14.png" />
 
-### AC_Manager
+#### AC_Manager
 
 <img src="../media/image15.png" />
 
-### AC_Agent
+#### AC_Agent
 
 <img src="../media/image16.png" />
 
-### Configure the Lightning Experience
+<h3 class="toc">Configure the Lightning Experience</h3>
 
 In this guide, we will configure the CTI Adapter for Service Console
 (Lightning Experience). You may use the same procedure described in this
 section for other applications.
 
-#### Configure Service Console
+<h4 class="toc">Configure Service Console</h4>
 
 First, you need to add the CTI softphone to your Service Console.
 
@@ -154,7 +154,7 @@ First, you need to add the CTI softphone to your Service Console.
 
 6.  Change the Label, if desired, then choose **Save**.
 
-#### Whitelist Your Salesforce Org with Amazon Connect
+<h4 class="toc">Whitelist Your Salesforce Org with Amazon Connect</h4>
 
 In order to embed the Amazon Connect Contact Control Panel (CCP) into
 your Service Console, you need to whitelist two (2) domains for your org
@@ -220,7 +220,7 @@ underlying resources required for the CCP to function.
 
 <img src="../media/image27.png" />
 
-#### Modify the Call Center
+<h4 class="toc">Modify the Call Center</h4>
 
 Now that you have whitelisted the org in the Amazon Connect Console, you
 will need to modify the Call Center that was configured in Salesforce
@@ -261,7 +261,7 @@ configuration, you add users to the Call Center to provide access to it.
 
 11. Repeat the steps to add more users.
 
-#### Configure the Toolkit settings
+<h4 class="toc">Configure the Toolkit settings</h4>
 
 1.  Navigate to **Setup** then in type **Custom Settings** in Quick
     Find
@@ -285,7 +285,7 @@ configuration, you add users to the Call Center to provide access to it.
 
 5.  Select **Save**
 
-### Create the Softphone Layout
+<h4 class="toc">Create the Softphone Layout</h4>
 
 Next, we need to create a softphone layout for the solution. The
 softphone layout settings will tell the console what resources are
@@ -329,13 +329,13 @@ conditions.
 
 9.  Once you have configured the search behavior, choose **Save**
 
-### Initial CTI Adapter Configuration
+<h3 class="toc">Initial CTI Adapter Configuration</h3>
 
 Once we have setup the Call Center, we need to do a final configuration
 of the CTI Adapter before we can test the basic configuration. This will
 tie the Lightning CTI adapter settings to the Call Center.
 
-#### Add the CTI Adapter Console App
+<h4 class="toc">Add the CTI Adapter Console App</h4>
 
 1.  Log in into your Salesforce org and go to the **Service Console**
 
@@ -408,7 +408,7 @@ tie the Lightning CTI adapter settings to the Call Center.
     **NOTE:** At this point, this process will only work for Amazon
     Connect instances configured for local user storage. If you are
     configuring SAML, please follow the SAML setup process in the
-    [Single Sign On](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/01%20CTI%20Adapter%20Configuration.md#-single-sign-on-sso-settings-) section before
+    [Single Sign On Settings](/lightning/03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/01%20CTI%20Adapter%20Configuration.md#single-sign-on-settings) section before
     continuing.
 
 <img src="../media/image47.png" />
@@ -432,7 +432,7 @@ tie the Lightning CTI adapter settings to the Call Center.
 
 22. Set your agent back to **Available**
 
-#### Enhanced Agent Logout 
+<h4 class="toc">Enhanced Agent Logout</h4>
 
 You can configure an agent status within "Manage agent status" with
 "Logout" (case-sensitive) in the status name to enable enhanced agent
@@ -448,7 +448,7 @@ Contact Control Panel:
 
 <img src="../media/image52.png" />
 
-#### Validate Basic Screenpop
+<h4 class="toc">Validate Basic Screenpop</h4>
 
 Next, we will add a contact to Salesforce that has your phone number
 assigned to it. This will allow us to validate the basic screenpop

@@ -4,8 +4,9 @@
     "remarkable": "^2.0.1"
   },
   "scripts": {
-    "build-lightning": "node generatePDF.js lightning",
-    "build-classic": "node generatePDF.js classic",
-    "build-all": "npm run build-lightning && npm run build-classic"
+    "build-pdf": "node generatePDF.js",
+    "build-pdf-all": "npm run build-pdf lightning && npm run build-pdf classic",
+    "build-toc": "node generateTOC.js",
+    "build-toc-all": "npm run build-toc lightning && npm run build-toc classic"
   }
 }

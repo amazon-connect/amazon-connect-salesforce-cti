@@ -1,12 +1,12 @@
-# Amazon Connect CTI Adapter v5 for Salesforce Classic
+<h1> Amazon Connect CTI Adapter v5 for Salesforce Classic</h1>
 
-Setup and Installation Guide
+<h3 align="center"> Setup and Installation Guide</h3>
 
 <p align="center">
   <img src="./media/image1.png" />
 </p>
 
-*September, 2020*
+<h3 align="center"> September, 2020</h3>
 
 *© Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved. SPDX-License-Identifier: CC-BY-SA-4.0*
 
@@ -41,30 +41,75 @@ Table of Contents
 ============
 
 - Introduction
-  - [Key Benefits and Requirements](01%20Introduction/01%20Key%20Benefits%20and%20Requirements.md)
+  - [Key Benefits and Requirements](01%20Introduction/01%20Key%20Benefits%20and%20Requirements.md#key-benefits-and-requirements)
+    - [Key Benefits](01%20Introduction/01%20Key%20Benefits%20and%20Requirements.md#key-benefits)
+    - [Requirements](01%20Introduction/01%20Key%20Benefits%20and%20Requirements.md#requirements)
 - Installation
-  - [Installing the Amazon Connect CTI Adapter for Salesforce Package](02%20Installation/01%20Installing%20the%20Amazon%20Connect%20CTI%20Adapter%20for%20Salesforce%20Package.md)
-  - [Installing the Amazon Connect Salesforce Lambda Package](02%20Installation/02%20Installing%20the%20Amazon%20Connect%20Salesforce%20Lambda%20Package.md)
-  - [Upgrading from an Earlier Version](02%20Installation/03%20Upgrading%20from%20an%20Earlier%20Version.md)
+  - [Installing the Amazon Connect CTI Adapter for Salesforce Package](02%20Installation/01%20Installing%20the%20Amazon%20Connect%20CTI%20Adapter%20for%20Salesforce%20Package.md#installing-the-amazon-connect-cti-adapter-for-salesforce-package)
+    - [Lightning Flow Setup Installation](02%20Installation/01%20Installing%20the%20Amazon%20Connect%20CTI%20Adapter%20for%20Salesforce%20Package.md#lightning-flow-setup-installation)
+    - [Installing from the Salesforce AppExchange](02%20Installation/01%20Installing%20the%20Amazon%20Connect%20CTI%20Adapter%20for%20Salesforce%20Package.md#installing-from-the-salesforce-appexchange)
+    - [Create the Softphone Layout](02%20Installation/01%20Installing%20the%20Amazon%20Connect%20CTI%20Adapter%20for%20Salesforce%20Package.md#create-the-softphone-layout)
+    - [Set Access Permissions](02%20Installation/01%20Installing%20the%20Amazon%20Connect%20CTI%20Adapter%20for%20Salesforce%20Package.md#set-access-permissions)
+    - [Configure Console Experience](02%20Installation/01%20Installing%20the%20Amazon%20Connect%20CTI%20Adapter%20for%20Salesforce%20Package.md#configure-console-experience)
+    - [Configure Classic Experience](02%20Installation/01%20Installing%20the%20Amazon%20Connect%20CTI%20Adapter%20for%20Salesforce%20Package.md#configure-classic-experience)
+  - [Installing the Amazon Connect Salesforce Lambda Package](02%20Installation/02%20Installing%20the%20Amazon%20Connect%20Salesforce%20Lambda%20Package.md#installing-the-amazon-connect-salesforce-lambda-package)
+    - [Salesforce Lambda Prerequisites](02%20Installation/02%20Installing%20the%20Amazon%20Connect%20Salesforce%20Lambda%20Package.md#salesforce-lambda-prerequisites)
+      - [Determine your production Environment](02%20Installation/02%20Installing%20the%20Amazon%20Connect%20Salesforce%20Lambda%20Package.md#determine-your-production-environment)
+      - [Determine your Consumer Key and Secret](02%20Installation/02%20Installing%20the%20Amazon%20Connect%20Salesforce%20Lambda%20Package.md#determine-your-consumer-key-and-secret)
+      - [Determine your Username, Password and Security Token](02%20Installation/02%20Installing%20the%20Amazon%20Connect%20Salesforce%20Lambda%20Package.md#determine-your-username-password-and-security-token)
+      - [Store Salesforce credentials in AWS Secrets Manager](02%20Installation/02%20Installing%20the%20Amazon%20Connect%20Salesforce%20Lambda%20Package.md#store-salesforce-credentials-in-aws-secrets-manager)
+    - [Install the Amazon Connect Salesforce Lambda package](02%20Installation/02%20Installing%20the%20Amazon%20Connect%20Salesforce%20Lambda%20Package.md#install-the-amazon-connect-salesforce-lambda-package)
+  - [Upgrading from an Earlier Version](02%20Installation/03%20Upgrading%20from%20an%20Earlier%20Version.md#upgrading-from-an-earlier-version)
 - Configuring and Using CTI Adapter Features
-  - [CTI Adapter Configuration](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/01%20CTI%20Adapter%20Configuration.md)
-  - [Omnipresence Agent State Sync](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/02%20Omnipresence%20Agent%20State%20Sync.md)
-  - [Contact Attributes Display](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/03%20Contact%20Attributes%20Display.md)
-  - [Call Recording Link for Task](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/04%20Call%20Recording%20Link%20for%20Task.md)
-  - [Call Display on the Account Page](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/05%20Call%20Display%20on%20the%20Account%20Page.md)
-  - [Outbound Campaign Calls](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/06%20Outbound%20Campaign%20Calls.md)
-  - [Amazon Connect Reports in Salesforce](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/07%20Amazon%20Connect%20Reports%20in%20Salesforce.md)
-  - [CTI Flows](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/08%20CTI%20Flows.md)
+  - [CTI Adapter Configuration](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/01%20CTI%20Adapter%20Configuration.md#cti-adapter-configuration)
+    - [CTI Adapter Details](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/01%20CTI%20Adapter%20Configuration.md#cti-adapter-details)
+    - [Single Sign On Settings](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/01%20CTI%20Adapter%20Configuration.md#single-sign-on-settings)
+      - [Identify the SSO URL components](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/01%20CTI%20Adapter%20Configuration.md#identify-the-sso-url-components)
+      - [Configure the CTI Lightning Adapter in Salesforce](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/01%20CTI%20Adapter%20Configuration.md#configure-the-cti-lightning-adapter-in-salesforce)
+  - [Omnipresence Agent State Sync](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/02%20Omnipresence%20Agent%20State%20Sync.md#omnipresence-agent-state-sync)
+    - [Enable Omnichannel](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/02%20Omnipresence%20Agent%20State%20Sync.md#enable-omnichannel)
+    - [Create Presence Statuses](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/02%20Omnipresence%20Agent%20State%20Sync.md#create-presence-statuses)
+    - [Configure Enabled Service Presences Status Access](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/02%20Omnipresence%20Agent%20State%20Sync.md#configure-enabled-service-presences-status-access)
+    - [Configure Presence Status Synchronization Rules](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/02%20Omnipresence%20Agent%20State%20Sync.md#configure-presence-status-synchronization-rules)
+      - [Presence Status Configuration Rules](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/02%20Omnipresence%20Agent%20State%20Sync.md#presence-status-configuration-rules)
+  - [Contact Attributes Display](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/03%20Contact%20Attributes%20Display.md#contact-attributes-display)
+  - [Call Recording Link for Task](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/04%20Call%20Recording%20Link%20for%20Task.md#call-recording-link-for-task)
+  - [Call Display on the Account Page](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/05%20Call%20Display%20on%20the%20Account%20Page.md#call-display-on-the-account-page)
+  - [Outbound Campaign Calls](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/06%20Outbound%20Campaign%20Calls.md#outbound-campaign-calls)
+    - [Create a Queue](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/06%20Outbound%20Campaign%20Calls.md#create-a-queue)
+    - [Create a Service Channel](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/06%20Outbound%20Campaign%20Calls.md#create-a-service-channel)
+    - [Create a Routing Configuration](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/06%20Outbound%20Campaign%20Calls.md#create-a-routing-configuration)
+    - [Outbound Campaign Custom Object Using Salesforce Data Loader](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/06%20Outbound%20Campaign%20Calls.md#outbound-campaign-custom-object-using-salesforce-data-loader)
+  - [Amazon Connect Reports in Salesforce](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/07%20Amazon%20Connect%20Reports%20in%20Salesforce.md#amazon-connect-reports-in-salesforce)
+  - [CTI Flows](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/08%20CTI%20Flows.md#cti-flows)
 - Configuring and Using AWS Serverless Application Repository for Salesforce Features
-  - [Invoking the Amazon Connect Salesforce Lambda in a Contact Flow](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/01%20Invoking%20the%20Amazon%20Connect%20Salesforce%20Lambda%20in%20a%20Contact%20Flow.md)
-- Appendix A - CTI Flow Sources and Events
-  - [CTI Flow Sources and Events](05%20Appendix%20A%20-%20CTI%20Flow%20Sources%20and%20Events/01%20CTI%20Flow%20Sources%20and%20Events.md)
-- Appendix B - Configuring Salesforce as Your Identity Provider
-  - [Configuring Salesforce as Your Identity Provider](06%20Appendix%20B%20-%20Configuring%20Salesforce%20as%20Your%20Identity%20Provider/01%20Configuring%20Salesforce%20as%20Your%20Identity%20Provider.md)
-- Appendix C - CTI Flow Examples
-  - [CTI Flow Examples](07%20Appendix%20C%20-%20CTI%20Flow%20Examples/01%20CTI%20Flow%20Examples.md)
-- Appendix D - CTI Flow Blocks
-  - [CTI Flow Blocks](08%20Appendix%20D%20-%20CTI%20Flow%20Blocks/01%20CTI%20Flow%20Blocks.md)
+  - [Invoking the Amazon Connect Salesforce Lambda in a Contact Flow](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/01%20Invoking%20the%20Amazon%20Connect%20Salesforce%20Lambda%20in%20a%20Contact%20Flow.md#invoking-the-amazon-connect-salesforce-lambda-in-a-contact-flow)
+    - [Salesforce Lookup](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/01%20Invoking%20the%20Amazon%20Connect%20Salesforce%20Lambda%20in%20a%20Contact%20Flow.md#salesforce-lookup)
+    - [Salesforce Create](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/01%20Invoking%20the%20Amazon%20Connect%20Salesforce%20Lambda%20in%20a%20Contact%20Flow.md#salesforce-create)
+    - [Salesforce Update](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/01%20Invoking%20the%20Amazon%20Connect%20Salesforce%20Lambda%20in%20a%20Contact%20Flow.md#salesforce-update)
+    - [Salesforce Phone Lookup](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/01%20Invoking%20the%20Amazon%20Connect%20Salesforce%20Lambda%20in%20a%20Contact%20Flow.md#salesforce-phone-lookup)
+    - [Salesforce query](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/01%20Invoking%20the%20Amazon%20Connect%20Salesforce%20Lambda%20in%20a%20Contact%20Flow.md#salesforce-query)
+    - [Salesforce queryOne](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/01%20Invoking%20the%20Amazon%20Connect%20Salesforce%20Lambda%20in%20a%20Contact%20Flow.md#salesforce-queryone)
+    - [Salesforce createChatterPost](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/01%20Invoking%20the%20Amazon%20Connect%20Salesforce%20Lambda%20in%20a%20Contact%20Flow.md#salesforce-createchatterpost)
+    - [Salesforce createChatterComment](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/01%20Invoking%20the%20Amazon%20Connect%20Salesforce%20Lambda%20in%20a%20Contact%20Flow.md#salesforce-createchattercomment)
+- [Appendix A - CTI Flow Sources and Events](05%20Appendix%20A%20-%20CTI%20Flow%20Sources%20and%20Events/01%20CTI%20Flow%20Sources%20and%20Events.md#appendix-a---cti-flow-sources-and-events)
+- [Appendix B - Configuring Salesforce as Your Identity Provider](06%20Appendix%20B%20-%20Configuring%20Salesforce%20as%20Your%20Identity%20Provider/01%20Configuring%20Salesforce%20as%20Your%20Identity%20Provider.md#appendix-b---configuring-salesforce-as-your-identity-provider)
+  - [Configuration](06%20Appendix%20B%20-%20Configuring%20Salesforce%20as%20Your%20Identity%20Provider/01%20Configuring%20Salesforce%20as%20Your%20Identity%20Provider.md#configuration)
+    - [Prerequisites](06%20Appendix%20B%20-%20Configuring%20Salesforce%20as%20Your%20Identity%20Provider/01%20Configuring%20Salesforce%20as%20Your%20Identity%20Provider.md#prerequisites)
+    - [Configuring Salesforce as an Identity Provider](06%20Appendix%20B%20-%20Configuring%20Salesforce%20as%20Your%20Identity%20Provider/01%20Configuring%20Salesforce%20as%20Your%20Identity%20Provider.md#configuring-salesforce-as-an-identity-provider)
+      - [Setup Identity Provider & Download Metadata](06%20Appendix%20B%20-%20Configuring%20Salesforce%20as%20Your%20Identity%20Provider/01%20Configuring%20Salesforce%20as%20Your%20Identity%20Provider.md#setup-identity-provider--download-metadata)
+    - [Configure the Identity Provider, Policy, and Role in the AWS Console](06%20Appendix%20B%20-%20Configuring%20Salesforce%20as%20Your%20Identity%20Provider/01%20Configuring%20Salesforce%20as%20Your%20Identity%20Provider.md#configure-the-identity-provider-policy-and-role-in-the-aws-console)
+      - [Configure the Identity Provider](06%20Appendix%20B%20-%20Configuring%20Salesforce%20as%20Your%20Identity%20Provider/01%20Configuring%20Salesforce%20as%20Your%20Identity%20Provider.md#configure-the-identity-provider)
+      - [Create the IAM Role and Policy](06%20Appendix%20B%20-%20Configuring%20Salesforce%20as%20Your%20Identity%20Provider/01%20Configuring%20Salesforce%20as%20Your%20Identity%20Provider.md#create-the-iam-role-and-policy)
+    - [Complete the Base Salesforce Configuration](06%20Appendix%20B%20-%20Configuring%20Salesforce%20as%20Your%20Identity%20Provider/01%20Configuring%20Salesforce%20as%20Your%20Identity%20Provider.md#complete-the-base-salesforce-configuration)
+      - [Create the Connected App in Salesforce](06%20Appendix%20B%20-%20Configuring%20Salesforce%20as%20Your%20Identity%20Provider/01%20Configuring%20Salesforce%20as%20Your%20Identity%20Provider.md#create-the-connected-app-in-salesforce)
+    - [Complete the Amazon Connect Configuration](06%20Appendix%20B%20-%20Configuring%20Salesforce%20as%20Your%20Identity%20Provider/01%20Configuring%20Salesforce%20as%20Your%20Identity%20Provider.md#complete-the-amazon-connect-configuration)
+      - [Add Users to Amazon Connect](06%20Appendix%20B%20-%20Configuring%20Salesforce%20as%20Your%20Identity%20Provider/01%20Configuring%20Salesforce%20as%20Your%20Identity%20Provider.md#add-users-to-amazon-connect)
+    - [Final Configuration for the Lightning Experience](06%20Appendix%20B%20-%20Configuring%20Salesforce%20as%20Your%20Identity%20Provider/01%20Configuring%20Salesforce%20as%20Your%20Identity%20Provider.md#final-configuration-for-the-lightning-experience)
+      - [Create the Amazon Connect SSO URL](06%20Appendix%20B%20-%20Configuring%20Salesforce%20as%20Your%20Identity%20Provider/01%20Configuring%20Salesforce%20as%20Your%20Identity%20Provider.md#create-the-amazon-connect-sso-url)
+      - [Configure the CTI Lightning Adapter in Salesforce For SSO](06%20Appendix%20B%20-%20Configuring%20Salesforce%20as%20Your%20Identity%20Provider/01%20Configuring%20Salesforce%20as%20Your%20Identity%20Provider.md#configure-the-cti-lightning-adapter-in-salesforce-for-sso)
+- [Appendix C - CTI Flow Examples](07%20Appendix%20C%20-%20CTI%20Flow%20Examples/01%20CTI%20Flow%20Examples.md#appendix-c---cti-flow-examples)
+- [Appendix D - CTI Flow Blocks](08%20Appendix%20D%20-%20CTI%20Flow%20Blocks/01%20CTI%20Flow%20Blocks.md#appendix-d---cti-flow-blocks)
 
 Introduction
 ============
@@ -182,7 +227,7 @@ Release Notes
 - Fixed issue with state setting when no presence rules defined
 - Fixed issue with Task pop in specific config scenarios
 
-### 3.87 May 2019 
+### 3.87 May 2019
 - NOTE: The "mini" Task page has been deprecated in this release of the adapter. Users requiring custom functionality may use the page and controller code included in this document as a starting point for a custom Task page of their design.
 - Added rules-based configuration of agent presence state between Amazon Connect and Salesforce
 - Added enhanced contact attribute display and configuration including clickable hyperlinks, key-value display options, and key-value formatting
@@ -190,7 +235,7 @@ Release Notes
 - Added functionality to directly pop associated record on click-to-dial avoiding search and pop behavior
 - Fixed issue with callback Task pops not occurring in some cases
 
-### 3.7 May 2019 
+### 3.7 May 2019
 - Unpublished version
 
 ### 3.6 April 2019

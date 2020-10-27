@@ -1,4 +1,4 @@
-<h1 id="installing-the-amazon-connect-salesforce-lambda-package"> Installing the Amazon Connect Salesforce Lambda Package </h1>
+<h1 class="toc">Installing the Amazon Connect Salesforce Lambda Package</h1>
 
 This section will guide you through the installation process of Amazon
 Connect Salesforce Lambda package, which is hosted in AWS Serverless
@@ -13,20 +13,19 @@ used in the applications you deploy.
 
 <img src="../media/image100.png" />
 
-Prerequisites
--------------
+<h2 class="toc">Salesforce Lambda Prerequisites</h2>
 
 Consider the following prerequisites before you install the Lambda
 package.
 
-### Determine your production Environment
+<h3 class="toc">Determine your production Environment</h3>
 
 In your installation notes, enter the value for "Production Environment"
 as "true" or "false", depending on whether the Salesforce environment
 that you are deploying the package into is a production or a sandbox.
 For Production, enter "true". For Sandbox enter "false".
 
-### Determine your Consumer Key and Secret
+<h3 class="toc">Determine your Consumer Key and Secret</h3>
 
 To leverage the full potential of the integration, Salesforce data needs
 to be accessed from AWS environment. The AWS Serverless package comes
@@ -102,7 +101,7 @@ b.  Access your basic information (id, profile, email, address, phone)
 
 18. Click "Save"
 
-### Determine your Username, Password and Security Token
+<h3 class="toc">Determine your Username, Password and Security Token</h3>
 
 The authentication of the Lambda Functions requires valid user
 credentials. It is a common practice to create an API user account for
@@ -199,7 +198,7 @@ at least 20 random characters):
 
 26. Copy the security token from the email in to your installation notes for the "Access Token" value.
 
-### Store Salesforce credentials in AWS Secrets Manager
+<h3 class="toc">Store Salesforce credentials in AWS Secrets Manager</h3>
 
 To ensure that your Salesforce credentials are secure, the Lambdas
 require that the credentials are stored in AWS Secrets Manager. AWS
@@ -288,8 +287,7 @@ retrieve secrets.
 28. You should now have all of the information you need to install the
     package
 
-Install the Amazon Connect Salesforce Lambda package
-----------------------------------------------------
+<h2 class="toc">Install the Amazon Connect Salesforce Lambda package</h2>
 
 1.  Login into your AWS Account
 

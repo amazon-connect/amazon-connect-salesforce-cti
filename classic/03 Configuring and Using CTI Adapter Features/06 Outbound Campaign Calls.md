@@ -1,4 +1,4 @@
-<h1 id="outbound-campaign-calls"> Outbound Campaign Calls </h1>
+<h1 class="toc">Outbound Campaign Calls</h1>
 
 The package allows for running Outbound Call Campaigns using Salesforce
 Omni Channel routing and Amazon Connect. To enable outbound campaigns,
@@ -32,8 +32,7 @@ Place a check in the checkbox for "Enable Omni-Channel".
 
 <img src="../media/image92.png" />
 
-Create a Queue
---------------
+<h2 class="toc">Create a Queue</h2>
 
 Navigate to "Setup" and type "queue" into the Quick Find box, then
 select "Queues" from the menu.
@@ -67,8 +66,7 @@ Now, our queue has been created and assigned to users.
 
 <img src="../media/image229.png" />
 
-Create a Service Channel
-------------------------
+<h2 class="toc">Create a Service Channel</h2>
 
 Click into the Setup search box in the left navigation panel and type
 "Service Channel". Then click "Service Channels".
@@ -89,8 +87,7 @@ Campaign]{.ul} object (step 2). Finally, save the new Service Channel
 
 <img src="../media/image233.png" />
 
-Create a Routing Configuration
-------------------------------
+<h2 class="toc">Create a Routing Configuration</h2>
 
 Now, we need to create a routing configuration. Enter "routing" into the
 search box in the left navigation and click "Routing Configurations".
@@ -145,8 +142,7 @@ Click "Save" to store our changes.
 
 The next steps are to create and configure the Presence Statuses.
 
-Outbound Campaign Custom Object Using Salesforce Data Loader
-------------------------------------------------------------
+<h2 class="toc">Outbound Campaign Custom Object Using Salesforce Data Loader</h2>
 
 The following is a description of the steps using the Salesforce Data
 Loader to insert outbound call campaign records. The Data Loader can be

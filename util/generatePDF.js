@@ -1,18 +1,19 @@
-```
-To generate a pdf of the lightning installation guide:
-npm run build-lightning
+/**
+    To generate a pdf of the lightning installation guide:
+    npm run build-pdf lightning
 
-To generate a pdf of the classic installation guide:
-npm run build-classic
+    To generate a pdf of the classic installation guide:
+    npm run build-pdf classic
 
-To generate both:
-npm run build-all
-```
+    To generate both:
+    npm run build-pdf-all
+*/
 
 const fs = require("fs");
 const mdpdf = require("mdpdf");
 const path = require("path");
 const { Remarkable } = require("remarkable");
+const { searchFoldersForMarkdownFiles, textToId, getHeaderText } = require("./util");
 
 const version = process.argv[2].toLowerCase().trim();
 if (!["lightning", "classic"].includes(version))
@@ -22,61 +23,41 @@ if (!["lightning", "classic"].includes(version))
 const dir = `../${version}`;
 
 const files = [];
-
-const searchFoldersForMarkdownFiles = (folder, files) => {
-  const folders = [];
-  const filesInFolder = [];
-  fs.readdirSync(folder, { withFileTypes: true }).forEach((file) => {
-    if (!file.isDirectory()) {
-      if (file.name.includes(".md")) {
-        filesInFolder.push(`${folder}/${file.name}`);
-      }
-      // ignore folders that don't start with numbers
-    } else if (!isNaN(parseInt(file.name[0]))) {
-      folders.push(file.name);
-    }
-  });
-
-  // readme files in folders should show up first
-  const readmeIndex = filesInFolder.findIndex((file) =>
-    file.toLowerCase().endsWith("/readme.md")
-  );
-  if (readmeIndex > -1) {
-    filesInFolder.splice(0, 0, filesInFolder.splice(readmeIndex, 1)[0]);
-  }
-
-  files.push(...filesInFolder);
-
-  folders.forEach((name) =>
-    searchFoldersForMarkdownFiles(`${folder}/${name}`, files)
-  );
-};
-
-searchFoldersForMarkdownFiles(dir, files);
+searchFoldersForMarkdownFiles([dir], files);
 
 const remarkable = new Remarkable({ breaks: false, html: true });
 
-files.forEach((file) => {
+files.forEach((fileObj) => {
+  const file = `${fileObj.path.join("/")}/${fileObj.filename}`;
   const fileContents = fs.readFileSync(file).toString();
-  const text = remarkable.render(
-    fileContents
-      .replace(
-        // the following regex statement looks for links that point internally to this repo
-        /\[((?!\[).)*\]\((\n)?(?!http)((?!\().)*(\n)?\)/gs,
-        (text) => {
-          const section = text
-            .substring(text.indexOf("[") + 1, text.indexOf("]"))
-            .toLowerCase()
-            .replace(/\ /g, "-");
-          // link with html anchor that points to the link text lowercase, and with dashes (-) in place for spaces.
-          return `${text.substring(0, text.indexOf("]") + 1)}(#${section})\n`;
-        }
-      )
-      // fix image path to be relative to this file
-      .replace(/"(.)+media\/image/g, `"${dir}/media/image`)
-  )
-  // remarkable replaces quotation marks with "&quot;". This causes problems in code blocks.
-  .replace(/&quot;/g, '"');
+  const text = remarkable
+    .render(
+      fileContents
+        .replace(
+          // the following regex statement looks for links that point internally to this repo
+          /\[((?!\[).)*\]\((\n)?(?!http)((?!\().)*(\n)?\)/gs,
+          (text) => {
+            const section = textToId(
+              text.substring(text.indexOf("[") + 1, text.indexOf("]"))
+            );
+            // link with html anchor that points to the link text lowercase, and with dashes (-) in place for spaces.
+            return `${text.substring(0, text.indexOf("]") + 1)}(#${section})\n`;
+          }
+        )
+        // fix image path to be relative to this file
+        .replace(/"(.)+media\/image/g, `"${dir}/media/image`)
+        // add ids to headers
+        .replace(/( )*<h[1-6].*<\/( )*h[1-6]( )*>/g, (header) => {
+          const headerId = textToId(getHeaderText(header));
+          if (header.match(/id( )*=( )*"/)) {
+            return header.replace(/id( )*=( )*"[a-z-:_. ]*"/, ` id="${headerId}"`);
+          } else {
+            return header.replace(/>/, ` id="${headerId}">`);
+          }
+        })
+    )
+    // remarkable replaces quotation marks with "&quot;". This causes problems in code blocks.
+    .replace(/&quot;/g, '"');
   fs.appendFileSync("temp.md", text);
 });
 
