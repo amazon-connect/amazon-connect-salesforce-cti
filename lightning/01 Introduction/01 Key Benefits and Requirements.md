@@ -75,9 +75,9 @@ Adapter from the AppExchange you will need:
 
 1.  Salesforce
 
-    a.  Salesforce org with Lightning experience
+    a. Salesforce org with Lightning experience
 
-    b.  My Domain configured and deployed to users
+    b. My Domain configured and deployed to users
 
 2.  An Amazon Connect instance
 
@@ -93,9 +93,9 @@ from the Serverless Application Repository, you will also need:
 
 2.  Salesforce:
 
-    a.  An API user account
+    a. An API user account
 
-    b.  A new Connected App
+    b. A new Connected App
 
 ### Browser Compatibility
 
