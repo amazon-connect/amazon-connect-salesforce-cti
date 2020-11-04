@@ -42,9 +42,120 @@ available:
         and Parts of Speech (PoS), and identify word boundaries and
         labels like nouns and adjectives within the text.
 
+### Prerequisite Setup
+
+#### Cloudformation Template
+
+To make sure that the AWS resources are set up, make sure that the
+*PostcallRecordingImportEnabled* parameter is set to true in your
+Cloudformation stack:
+
+<img src="../media/image266.png" />
+
+#### AWS Side Setup
+
+1. In a **root AWS account**, navigate to "My Security Credentials" in the AWS console.
+
+<img src="../media/image267.png" />
+
+2. Under "Cloudfront Key Pairs," select **Create New Key Pair**
+
+<img src="../media/image268.png" />
+
+3. In the modal that then pops up, select **Download Private Key File**. Then, copy down the **Access Key ID**.
+
+<img src="../media/image269.png" />
+
+4. Copy and paste the contents of the private key .pem file into a text editor. Replace every newline character with a space, and then delete the last character. This is most easily done using a "find and replace" feature in your text editor.
+
+5. Navigate to the "Secrets Manager" service. Select the **SalesforceCredentials**. 
+
+6. Under the "Secret value" tab, select "Retrieve secret value" and then "Edit".
+
+7. For the **CloudFrontPrivateKey** field, copy and paste the modified contents of the private key .pem file. For the **CloudFrontAccessKeyID** field, copy and paste the **Access Key Id** you recorded above. Your Secrets Manager Secret should look like the following:
+
+<img src="../media/image270.png" />
+
+Please note that your secret may also be formatted stored as a "Secret key/value" secret rather than a "Plaintext" secret; both secret types are valid.
+
+8. Navigate to your Salesforce instance. Navigate to setup, then search for "Visualforce pages."
+
+<img src="../media/image283.png" />
+
+9. Select the **AC_RecordingViewer** visualforce page, and select "preview." Copy the url of the opened page up until ".com".
+
+10. Navigate back to aws, to the s3 bucket where your audio recording files are stored. This s3 bucket should be the same bucket as the **ConnectRecordingS3BucketName** parameter to the serverless application.
+
+11. In the bucket details, select the **Permissions** tab and then the **CORS configuration** tab and paste the following. Replace the AllowedOrigin with the url copied in step 9.
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+    <CORSConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+    <CORSRule>
+        <AllowedOrigin>{url copied in step 9}</AllowedOrigin>
+        <AllowedMethod>GET</AllowedMethod>
+        <AllowedHeader>*</AllowedHeader>
+    </CORSRule>
+</CORSConfiguration>
+```
+
+<img src="../media/image271.png" />
+
+12. Select Save
+
+13. Navigate to the "IAM" aws service. Select **Add User**.
+
+<img src="../media/image272.png" />
+
+14. Give your IAM user a name, like **sfInvokeGenerateAudioRecordingStreamingURLIAMUser**. For the "AWS Access Type", select **Programmatic access**.
+
+<img src="../media/image273.png" />
+
+15. Select Next, then select "Attach existing policies directly." Search for **invokeSfGenerateAudioRecordingStreamingURLPolicy** and select it.
+
+16. Create the user, then copy down the **Access key ID** and the **Secret access key**. These keys will be used in the next section.
+
+<img src="../media/image284.png" />
+
+16. Navigate to the "Lambda" aws service. Search for term "sfgenerate" and copy down the full name of the sfGenerateAudioRecordingStreaming lambda. This will be used in the next section.
+
+<img src="../media/image274.png" />
+
+#### Salesforce Side Setup
+
+1. In Salesforce Setup, search for "Named Credentials." Select **New Named Credential.**
+
+2. For the **Name** and **Label**, enter AwsGenerateAudioRecordingURL.
+
+3. In the **URL** section, enter `https://lambda.{awsRegion}.amazonaws.com/2015-03-31/functions/{lambdaFunctionName}/invocations/`-- replace {awsRegion} with the awsRegion your serverless application resides in (for example, us-east-1), and replace {lambdaFunctionName} with the full name of the sfGenerateAudioRecordingStreaming lambda you recorded in the previous section.
+
+4. For **Identity Type** select **Named Principal**. For the **Authentication Protocol**, select **AWS Signature Version 4**. Fill in the **Access key ID** you recorded in the previous section as "AWS Access Key ID", the **Secret access key** as the "AWS Secret Access Key", the AWS Region, and "lambda" as the "AWS Service."
+
+<img src="../media/image275.png" />
+
+5. Select **save**.
+
+6. In the setup search box, search for "Permission sets". Select the "AC_CallRecording" permission set. Select "Manage Assignments".
+
+<img src="../media/image278.png" />
+
+7. Select "Add Assignments". Add the users that should have access to the audio recordings and select "assign".
+
+<img src="../media/image279.png" />
+
+8. In the setup search box, search for "Object Manager".
+
+9. Select the "AC Contact Channel Analytics" Object, select "Lightning Record Pages", then select "Edit".
+
+10. From the lefthand panel, drag the **Visualforce** component and the **ac_ContactChannelAnalyticsPostTranscriptView** custom component on to the page in the desired position.
+
+<img src="../media/image276.png" />
+
+11. Select the **Visualforce** component that was dragged onto the screen. In the righthand panel that shows up, select the dropdown under "Visualforce page name" and select **AC_RecordingViewer**.
+
 <h3 class="toc">Call Recording Import</h3>
 
-You can import Call Recording (wav) files into your Salesforce Org. This
+You can import Call Recordings into your Salesforce Org. This
 allows for easy access to the recordings from within Salesforce and can
 be used in conjunction with the other contact channel analytics features
 to provide a complete view of the customer interaction.
