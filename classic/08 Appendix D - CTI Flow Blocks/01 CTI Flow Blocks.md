@@ -332,3 +332,59 @@ Concatenates 2 values into a string.
 
 The query to execute an arbitrary SOQL statement and returns the
 results.
+
+### Multiply
+
+Multiply two numbers.
+
+### Divide
+
+Divide two numbers.
+
+### Get Tab Object Map
+
+Returns a map of all visibble primary tabs and their associated objects (if available).
+
+### Close Salesforce Tab
+
+Closes the Salesforce with a given id.
+
+### Delay
+
+Delays execution for a period of time. (Keep in mind that your flow may be stopped if it runs longer than the maximum allowed execution window of 10 seconds.)
+
+### Get Primary Tab Ids
+
+Returns all of the IDs of open primary tabs.
+
+### Get Tabs With Matching Url
+
+Returns the ids of the primary tabs with the url matching a provided string.
+
+### Length
+
+Returns the length of a value.
+
+### Slice
+
+Returns the slice of a value.
+
+### Cast a Value to a Type
+
+Cast an input value to a Javascript type, such as Number or String.
+
+### Get CCP Logs
+
+The command to get the logs of agent from Connect.
+
+### Clear All Properties
+
+Clears all stored properties.
+
+### Unset Property
+
+Removes the value assigned to a property in the local data store.
+
+### Show Attributes
+
+This command displays the contact attributes in the CCP overlay.

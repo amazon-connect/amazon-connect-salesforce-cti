@@ -20,7 +20,7 @@ Velocity Sales in your Salesforce Org.
 
 2.  Toggle "Enable High Velocity Sales Features" from disable to enable
     state
-    
+
 <img src="../media/image249.png" />
 
 <h3 class="toc">Call Outcomes for Branching</h3>
@@ -38,7 +38,7 @@ process.
 
 3.  Enter the call result values used by your org next to related call
     outcomes.
-    
+
 <img src="../media/image250.png" />
 
 <h3 class="toc">Assign HVS permission sets to Connect Users</h3>
@@ -68,14 +68,14 @@ Create a Sales Cadence
 
 3.  Enter name and description. Click **Save** button which opens
     **Sales Cadence** builder screen.
-    
+
 <img src="../media/image251.png" />
 
 4.  Click + sign in the builder to add a step. Choose a type of step you
     want to add for your sales cadence. Once you finish adding steps,
     click the **Activate** button. Once a sales cadence is active, you
     can add leads, contact, and personal accounts to Sales Cadence.
-    
+
 <img src="../media/image252.png" />
 
 <h3 class="toc">Assigning Prospects</h3>
@@ -128,7 +128,7 @@ Sales.
 
 2.  Expand the **navigation menu** by selecting the down arrow and
     choose **AC CTI Adapters**.
-    
+
 <img src="../media/image114.png" />
 
 3.  Select **ACLightningAdapter**
@@ -159,15 +159,15 @@ Sales.
 > {\"actions\":\[{\"id\":\"uid-0\",\"type\":\"SE_Start\",\"meta\":{},\"controls\":{},\"ports\":{\"done\":\"uid-1\"},\"position\":\[-351.5,-206\]},{\"id\":\"uid-1\",\"type\":\"SE_SetProperty\",\"meta\":{},\"controls\":{\"key\":\"hvsWorkId\",\"value\":\"\$.payload.workId\"},\"ports\":{\"done\":\"uid-3\"},\"position\":\[-151,-205\]},{\"id\":\"uid-3\",\"type\":\"SE_SetProperty\",\"meta\":{},\"controls\":{\"key\":\"hvsCompleteWorkWhen\",\"value\":\"\$.payload.completeWorkWhen\"},\"ports\":{\"done\":\"uid-4\"},\"position\":\[-144,-64\]},{\"id\":\"uid-4\",\"type\":\"SE_End\",\"meta\":{},\"controls\":{},\"ports\":{},\"position\":\[221.5,-185\]}\]}
 
 14. Click **Upload** and find the file you just created. You should now
-    see this:**
-    
+    see this:\*\*
+
 <img src="../media/image256.png" />
 
 15. Click **Save**
 
 16. Go back to the CTI Adapter page and select **New** in CTI Flows
     section to create another CTI Flow.
-    
+
 <img src="../media/image255.png" />
 
 17. In the **CTI Flow Name** field, enter **HVS Voice onConnecting**
@@ -182,14 +182,7 @@ Sales.
 
 22. Scroll down and click on the link **HVS Voice onConnecting.**
 
-23. On your desktop, create a file called flow.json, and, paste the
-    following code:
-
-> {\"actions\":\[{\"id\":\"uid-0\",\"type\":\"SE_Start\",\"meta\":{},\"controls\":{},\"ports\":{\"done\":\"uid-10\"},\"position\":\[-380.5,-262\]},{\"id\":\"uid-10\",\"type\":\"SE_SetProperty\",\"meta\":{},\"controls\":{\"key\":\"hvsWasConnected\",\"value\":\"true\"},\"ports\":{\"done\":\"uid-12\"},\"position\":\[-162.60096153846155,-201.99198717948715\]},{\"id\":\"uid-12\",\"type\":\"SE_ContactProperties\",\"meta\":{},\"controls\":{},\"ports\":{\"done\":\"uid-14\"},\"position\":\[-160,-32\]},{\"id\":\"uid-14\",\"type\":\"SE_SFCreateTask\",\"meta\":{},\"controls\":{\"CallObject\":\"\$.actions.uid-12.results.contactId\",\"Type\":\"Call\",\"Status\":\"In
-> Progress\",\"Priority\":\"High\",\"IsClosed\":false,\"TaskSubType\":\"Call\",\"WhoId\":\"\",\"WhatId\":\"\",\"CallDisposition\":\"\",\"CallType\":\"inbound\",\"ActivityDate\":\"\",\"subject1\":\"\$.actions.uid-12.results.type\",\"subject2\":\"\$.actions.uid-12.results.queueName\",\"subject3\":\"\"},\"ports\":{\"success\":\"uid-16\"},\"position\":\[-160.21955128205127,144.5032051282052\]},{\"id\":\"uid-16\",\"type\":\"SE_SetProperty\",\"meta\":{},\"controls\":{\"key\":\"taskId\",\"value\":\"\$.actions.uid-14.results.id\"},\"ports\":{\"done\":\"uid-17\"},\"position\":\[224,144\]},{\"id\":\"uid-17\",\"type\":\"SE_SFScreenpopObject\",\"meta\":{},\"controls\":{\"recordId\":\"\"},\"ports\":{\"success\":\"uid-19\"},\"position\":\[233.90384615384613,-99.59134615384613\]},{\"id\":\"uid-19\",\"type\":\"SE_End\",\"meta\":{},\"controls\":{},\"ports\":{},\"position\":\[594.0921474358975,-56.72596153846149\]}\]}
-
-(Please note: Make sure that the code you copied is valid JSON before
-uploading. You can use an online JSON formatter to be certain.)
+23. On your desktop, create a file called flow.json, and, download and paste [this code](https://connect-blogs.s3.amazonaws.com/Amazon+Connect+Salesforce+CTI+Adapter/Assets/Sample+Flows/hvs.json).
 
 24. Click **Upload** and find the file you just created. You should now
     see this:
@@ -203,14 +196,14 @@ uploading. You can use an online JSON formatter to be certain.)
 
 Per the recipe you created above, a Task (Call Activity) object will
 be created and screen popped as each call is ringing to the agent.
-After each call, Amazon Connect puts the agents into the *After Call
-Work State*. As part of the CTI adapter, it pops up a task record
+After each call, Amazon Connect puts the agents into the _After Call
+Work State_. As part of the CTI adapter, it pops up a task record
 where you can capture standard task related information. The task
 screen also requires an agent to enter the call outcomes.
 
 Upon selecting the call outcome on task page, click save to persist
 data in Salesforce. After completing this action, when user change his
-state from *After Call Work State* to *Available state*, the CTI
+state from _After Call Work State_ to _Available state_, the CTI
 Adapter raises an event to sync the task's call result value with HVS
 Sales Cadence and generate the next outreach activities for associated
 prospect.
