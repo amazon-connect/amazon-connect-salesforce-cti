@@ -6,9 +6,7 @@
   <img src="./media/image1.png" />
 </p>
 
-# <h3 align="center"> September, 2020</h3>
-
-_September, 2020_
+<h3 align="center"> September, 2020</h3>
 
 _© Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved. SPDX-License-Identifier: CC-BY-SA-4.0_
 
@@ -43,8 +41,6 @@ with id 'key-benefits-and-requirements'
 -->
 
 # Table of Contents
-
-> > > > > > > 601f46d... Update release notes
 
 - Introduction
   - [Key Benefits and Requirements](01%20Introduction/01%20Key%20Benefits%20and%20Requirements.md#key-benefits-and-requirements)
