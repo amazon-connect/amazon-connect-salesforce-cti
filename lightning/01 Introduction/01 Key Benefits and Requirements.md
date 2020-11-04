@@ -1,5 +1,6 @@
-Key Benefits
-------------
+<h1 class="toc">Key Benefits and Requirements</h1>
+
+<h2 class="toc">Key Benefits</h2>
 
 The key benefits of the Amazon Connect CTI Adapter are:
 
@@ -61,8 +62,7 @@ If you are using Lighting, you can get a head start by working through
 the [Build an Amazon Connect Integration Salesforce
 Trailhead](https://trailhead.salesforce.com/en/content/learn/projects/build-an-amazon-connect-integration).
 
-Requirements
-------------
+<h2 class="toc">Requirements</h2>
 
 To successfully deploy, configure, and implement the Amazon Connect
 integration with Salesforce, you must ensure that the following

@@ -1,5 +1,4 @@
-Accessing the Salesforce API from Amazon Connect Contact Flows Using AWS Lambda
--------------------------------------------------------------------------------
+<h2 class="toc">Accessing the Salesforce API from Amazon Connect Contact Flows Using AWS Lambda</h2>
 
 The most commonly used feature of the AWS Serverless Application
 Repository for Salesforce is accessing/updating Salesforce data using
@@ -64,7 +63,7 @@ documentation. The core parameters are:
 -   **sf_phone:** contains the phone number used to search when
     performing a phone lookup
 
-### Salesforce Lookup
+<h3 class="toc">Salesforce Lookup</h3>
 
 This operation is invoked by setting **sf_operation** to **lookup**. In
 this case, the Lambda function queries Salesforce for objects based on
@@ -96,7 +95,7 @@ This operation returns a response of:
 }
 ```
 
-### Salesforce Create
+<h3 class="toc">Salesforce Create</h3>
 
 This operation is invoked by setting **sf_operation** to **create**. In
 this case, the Lambda function creates a Salesforce object based on the
@@ -122,7 +121,7 @@ This operation returns a response of:
 }
 ```
 
-### Salesforce Update
+<h3 class="toc">Salesforce Update</h3>
 
 This operation is invoked by setting **sf_operation** to **update**. In
 this case, the Lambda function updates a Salesforce object based on the
@@ -151,7 +150,7 @@ This operation returns a response of:
 
 The "204" status indicates a success.
 
-### Salesforce Phone Lookup
+<h3 class="toc">Salesforce Phone Lookup</h3>
 
 This operation is invoked by setting **sf_operation** to
 **phoneLookup**. In this case, the Lambda function uses Salesforce
@@ -177,7 +176,7 @@ This operation returns a response of:
 }
 ```
 
-### Salesforce Delete
+<h3 class="toc">Salesforce Delete</h3>
 
 This operation is invoked by setting **sf_operation** to **delete**. In
 this case, the Lambda function deletes a Salesforce object based on the
@@ -192,6 +191,7 @@ In the contact flow example below, we deleting an existing case based on
 customer input.
 
 <img src="../media/image160.png" />
+
 <img src="../media/image161.png" />
 
 This operation returns a response of:
@@ -202,7 +202,7 @@ This operation returns a response of:
 }
 ```
 
-### Salesforce query
+<h3 class="toc">Salesforce query</h3>
 
 This operation is invoked by setting **sf_operation** to **query**. In
 this case, the Lambda function uses Salesforce Object Query Language
@@ -247,7 +247,7 @@ This operation returns a response of:
 ```
 
 
-### Salesforce queryOne
+<h3 class="toc">Salesforce queryOne</h3>
 
 This operation is invoked by setting **sf_operation** to **queryOne**
 (case sensitive). In this case, the Lambda function uses Salesforce
@@ -290,7 +290,7 @@ This operation returns a response of:
 }
 ```
 
-### Salesforce createChatterPost
+<h3 class="toc">Salesforce createChatterPost</h3>
 
 This operation is invoked by setting **sf_operation** to
 **createChatterPost** (case sensitive). In this case, the Lambda
@@ -352,7 +352,7 @@ See the chatter post appear attached to the Subject:
 
 <img src="../media/image172.png" />
 
-### Salesforce createChatterComment
+<h3 class="toc">Salesforce createChatterComment</h3>
 
 This operation is invoked by setting **sf_operation** to
 **createChatterComment** (case sensitive). In this case, the Lambda

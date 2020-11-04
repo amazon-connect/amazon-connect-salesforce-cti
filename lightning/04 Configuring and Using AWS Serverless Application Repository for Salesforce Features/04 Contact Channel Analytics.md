@@ -1,5 +1,4 @@
-Contact Channel Analytics
--------------------------
+<h2 class="toc">Contact Channel Analytics</h2>
 
 In addition to the CTI adapter's native ability to provide direct
 playback links to call recordings in Amazon Connect, the AWS Serverless
@@ -43,7 +42,7 @@ available:
         and Parts of Speech (PoS), and identify word boundaries and
         labels like nouns and adjectives within the text.
 
-### Call Recording Import
+<h3 class="toc">Call Recording Import</h3>
 
 You can import Call Recording (wav) files into your Salesforce Org. This
 allows for easy access to the recordings from within Salesforce and can
@@ -64,14 +63,15 @@ such, CTRs are not generated until the agent leaves the after call work
 state. If you are not seeing a recording import, please make sure the
 agent has completed the call and left the after call work state.
 
-#### Enabling call recording import
+<h4 class="toc">Enabling call recording import</h4>
 
 1.  Login to your Amazon Connect instance as an Administrator
 
 2.  From the left navigation, choose **Routing** then select **Contact
     flows**
 
-    <img src="../media/image201.png" />
+    
+<img src="../media/image201.png" />
 
 3.  Open the contact flow that you want to use to enable call recording
     import. This contact flow must have Amazon Connect's native
@@ -101,19 +101,21 @@ agent has completed the call and left the after call work state.
 
 9.  After a minute or so, the recording should import.
 
-#### Adding Contact Channel Analytics to the Service Console
+<h4 class="toc">Adding Contact Channel Analytics to the Service Console</h4>
 
 1.  Log in into your Salesforce org and go to the **Service Console**
 
 2.  Expand the **navigation menu** by selecting the down arrow and
     choose **Edit**.
 
-    <img src="../media/image40.png" />
+    
+<img src="../media/image40.png" />
 
 3.  On the Edit Service Console App Navigation Items page, select **Add
     More Items**
 
-    <img src="../media/image41.png" />
+    
+<img src="../media/image41.png" />
 
 4.  Select the **+** next to **AC Contact Channel Analytics**
 
@@ -122,12 +124,14 @@ agent has completed the call and left the after call work state.
 6.  Change the order of your Navigation Items if desired, then choose
     **Save**
 
-    <img src="../media/image203.png" />
+    
+<img src="../media/image203.png" />
 
 7.  Once the save completes, expand the **navigation menu** by selecting
     the down arrow and choose **AC Contact Channel Analytics**
 
-    <img src="../media/image204.png" />
+    
+<img src="../media/image204.png" />
 
 8.  Change the list view from Recently Viewed to **All**
 
@@ -142,12 +146,13 @@ agent has completed the call and left the after call work state.
 11. In the Notes & Attachments section, you will see the recording file
     attached.
 
-    <img src="../media/image207.png" />
+    
+<img src="../media/image207.png" />
 
 12. NOTE: The recording playback, waveform, and transcript views are
     only active when you also choose to activate recording transcripts.
 
-### Recording Transcripts
+<h3 class="toc">Recording Transcripts</h3>
 
 Enabling the Recording Transcripts activates a process to run your
 contact recordings through Amazon Transcribe which uses a deep learning
@@ -161,14 +166,15 @@ Salesforce, recording transcription is activated on a call by call basis
 by adding a specific contact attribute. This attribute is used during
 Contact Trace Record processing to trigger the transcription.
 
-#### Enabling recording transcription
+<h4 class="toc">Enabling recording transcription</h4>
 
 1.  Login to your Amazon Connect instance as an Administrator
 
 2.  From the left navigation, choose **Routing** then select **Contact
     flows**
 
-    <img src="../media/image201.png" />
+    
+<img src="../media/image201.png" />
 
 3.  Open the contact flow that you want to use to enable call
     transcription. This contact flow must have Amazon Connect's native
@@ -209,17 +215,18 @@ Contact Trace Record processing to trigger the transcription.
 9.  The transcription will take at least as long as the call did. Wait
     an appropriate amount of time for the transcription to be available.
 
-#### Accessing transcriptions
+<h4 class="toc">Accessing transcriptions</h4>
 
 1.  Log in into your Salesforce org and go to the **Service Console**
 
 2.  Expand the **navigation menu** by selecting the down arrow and
     choose AC Contact Channel Analytics. If you have not previously
     added AC Contact Channel Analytics to the navigation menu, complete
-    the steps found
-    [here](#adding-contact-channel-analytics-to-the-service-console).
+    the steps found in 
+    [Adding Contact Channel Analytics to the Service Console](#adding-contact-channel-analytics-to-the-service-console).
 
-    <img src="../media/image209.png" />
+    
+<img src="../media/image209.png" />
 
 3.  Change the list view from Recently Viewed to **All**
 
@@ -234,12 +241,13 @@ Contact Trace Record processing to trigger the transcription.
 6.  Once the record opens, note the recording waveform, playback
     controls, and the visual version of the transcription
 
-    <img src="../media/image211.png" />
+    
+<img src="../media/image211.png" />
 
 7.  Also note that the transcriptions for each side of the conversation
     are also included as attachments.
 
-### AI Driven Contact Analysis
+<h3 class="toc">AI Driven Contact Analysis</h3>
 
 Enabling the AI Driven Contact Analysis function allows you to process
 the transcribed text using [Amazon
@@ -267,14 +275,15 @@ codes and their functions are:
 
 -   **syn = Syntax Analysis**
 
-#### Enabling AI Driven Contact Analysis
+<h4 class="toc">Enabling AI Driven Contact Analysis</h4>
 
 1.  Login to your Amazon Connect instance as an Administrator
 
 2.  From the left navigation, choose **Routing** then select **Contact
     flows**
 
-    <img src="../media/image201.png" />
+    
+<img src="../media/image201.png" />
 
 3.  Open the contact flow that you want to use to enable AI Driven
     Contact Analytics. This contact flow must have Amazon Connect's
@@ -294,6 +303,7 @@ codes and their functions are:
         language detection, and keyphrase
         extraction
             
+
 <img src="../media/image212.png" />
 
 6.  **Save** the Set contact attributes block. Make sure it is
@@ -311,17 +321,18 @@ codes and their functions are:
     at least as long as the call did. Wait an appropriate amount of time
     for the analysis to be available.
 
-#### Accessing the AI Driven Contact Analysis
+<h4 class="toc">Accessing the AI Driven Contact Analysis</h4>
 
 1.  Log in into your Salesforce org and go to the **Service Console**
 
 2.  Expand the **navigation menu** by selecting the down arrow and
     choose AC Contact Channel Analytics. If you have not previously
     added AC Contact Channel Analytics to the navigation menu, complete
-    the steps found
-    [here](#adding-contact-channel-analytics-to-the-service-console).
+    the steps found in
+    [Adding Contact Channel Analytics to the Service Console](#adding-contact-channel-analytics-to-the-service-console).
 
-    <img src="../media/image209.png" />
+    
+<img src="../media/image209.png" />
 
 3.  Change the list view from Recently Viewed to **All**
 
@@ -336,4 +347,5 @@ codes and their functions are:
 6.  Once the record opens, note the Keywords, Sentiment, and Dominant
     Language
 
-    <img src="../media/image213.png" />
+    
+<img src="../media/image213.png" />

@@ -1,5 +1,4 @@
-CTI Adapter Configuration
-=========================
+<h1 class="toc">CTI Adapter Configuration</h1>
 
 The CTI Adapter installed by the managed package provides a number of
 features that change or enhance the functionality of the integration. By
@@ -8,8 +7,7 @@ a default setting. This section will detail the options available.
 
 <img src="../media/image82.png" />
 
-CTI Adapter Details
--------------------
+<h2 class="toc">CTI Adapter Details</h2>
 
 1.  **CTI Adapter Name:** provide a unique name for this CTI adapter
     definition
@@ -53,8 +51,7 @@ CTI Adapter Details
     the presence rules to sync state from Amazon Connect to Salesforce
     Omni-Channel.
 
-Single Sign On (SSO) Settings
------------------------------
+<h2 class="toc">Single Sign On Settings</h2>
 
 The Amazon Connect CTI Adapter supports single sign on(SSO) via SAML
 integration. This allows customers that use a SAML provider for
@@ -67,9 +64,7 @@ Identity Management in Amazon
 Connect](https://docs.aws.amazon.com/connect/latest/adminguide/configure-saml).
 
 If you wish to use **Salesforce** as your identity provider for Single
-Sign On, please follow the setup instructions in [Appendix B:
-Configuring Salesforce as Your Identity
-Provider](#_Appendix_B:_Configuring).
+Sign On, please follow the setup instructions in [Appendix B - Configuring Salesforce as Your Identity Provider](/classic/06%20Appendix%20B%20-%20Configuring%20Salesforce%20as%20Your%20Identity%20Provider/01%20Configuring%20Salesforce%20as%20Your%20Identity%20Provider.md#appendix-b---configuring-salesforce-as-your-identity-provider).
 
 For information about configuring specific SAML providers to work with
 Amazon Connect:
@@ -84,7 +79,7 @@ will need to create the Amazon Connect Single Sign On URL and validate
 that it works correctly, then configure the Lightning CTI adapter and
 login the agent.
 
-#### Identify the SSO URL components
+<h3 class="toc">Identify the SSO URL components</h3>
 
 In order to authenticate with Amazon Connect, you need your IdP login
 URL from your SAML provider and a relay state URL that will redirect the
@@ -104,7 +99,7 @@ please use the region Console URL. For example:
 
 <pre>https://us-west-2.console.aws.amazon.com/connect/federate/<b>{InstanceId}</b>?destination=%2Fconnect%2Fccp</pre>
 
-#### Configure the CTI Lightning Adapter in Salesforce
+<h3 class="toc">Configure the CTI Lightning Adapter in Salesforce</h3>
 
 Now we are ready to complete the last step in the configuration process:
 Adding the SSO settings to the Lightning Adapter. This will configure
@@ -123,6 +118,7 @@ Contact Control Panel once authentication completes.
 4.  Scroll down to the Single SignOn (SSO) section and choose the pencil
     icon of either field to edit
     
+
 <img src="../media/image84.png" />
 
 5.  For the SSO Url, paste your IdP login URL up to the first question
@@ -165,6 +161,7 @@ Contact Control Panel once authentication completes.
         warning and change the setting to always allow popups from your
         Salesforce org, then refresh the browser again\
     
+
 <img src="../media/image87.png" />
 
 11. After a few seconds, a new window should pop up for a moment. This

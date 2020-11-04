@@ -1,5 +1,4 @@
-Invoking the Amazon Connect Salesforce Lambda in a Contact Flow
----------------------------------------------------------------
+<h1 class="toc">Invoking the Amazon Connect Salesforce Lambda in a Contact Flow</h1>
 
 The Amazon Connect Contact Flow defines the routing behaviour within
 Amazon Connect, allowing contact center administrators to customize call
@@ -29,8 +28,7 @@ part of the Adapter.
 The Lambda function supports different operations, based on the
 mandatory input parameter "sf_operation".
 
-Salesforce Lookup
------------------
+<h2 class="toc">Salesforce Lookup</h2>
 
 This operation is invoked by setting "sf_operation" to "lookup". In this
 case, the Lambda function queries Salesforce for objects based on the
@@ -74,8 +72,7 @@ A result example:
 
 <img src="../media/image163.png" />
 
-Salesforce Create
------------------
+<h2 class="toc">Salesforce Create</h2>
 
 This operation is invoked by setting "sf_operation" to "create". In this
 case, the Lambda function creates a Salesforce object based on the
@@ -112,8 +109,7 @@ A result example (providing the newly created Case Id):
 
 <img src="../media/image171.png" />
 
-Salesforce Update
------------------
+<h2 class="toc">Salesforce Update</h2>
 
 This operation is invoked by setting "sf_operation" to "update". In this
 case, the Lambda function updates a Salesforce object based on the
@@ -146,8 +142,7 @@ A result example (HTTP Status Code):
 
 204 is "No Content" success code
 
-Salesforce Phone Lookup
------------------------
+<h2 class="toc">Salesforce Phone Lookup</h2>
 
 This operation is invoked by setting "sf_operation" to "phoneLookup". In
 this case, the Lambda function queries Salesforce for Contacts based on
@@ -177,8 +172,7 @@ A result example:
 
 <img src="../media/image158.png" />
 
-Salesforce query
-----------------
+<h2 class="toc">Salesforce query</h2>
 
 This operation is invoked by setting "sf_operation" to "query". In this
 case, the Lambda function uses Salesforce Object Query Language (SOQL)
@@ -221,8 +215,7 @@ This operation returns a response of:
 }
 ```
 
-Salesforce queryOne
--------------------
+<h2 class="toc">Salesforce queryOne</h2>
 
 This operation is invoked by setting "sf_operation" to "queryOne" (case
 sensitive). In this case, the Lambda function uses Salesforce Object
@@ -268,8 +261,7 @@ This operation returns a response of:
 }
 ```
 
-Salesforce createChatterPost
-----------------------------
+<h2 class="toc">Salesforce createChatterPost</h2>
 
 This operation is invoked by setting "sf_operation" to
 "createChatterPost" (case sensitive). In this case, the Lambda function
@@ -324,8 +316,7 @@ The operation returns a response of:
 <img src="../media/image186.png" />
 the Subject:
 
-Salesforce createChatterComment
--------------------------------
+<h2 class="toc">Salesforce createChatterComment</h2>
 
 This operation is invoked by setting "sf_operation" to
 "createChatterComment" (case sensitive). In this case, the Lambda
