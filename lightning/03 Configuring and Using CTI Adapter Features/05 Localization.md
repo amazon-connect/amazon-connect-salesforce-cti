@@ -16,23 +16,23 @@ Starting from v5.6, Amazon Connect Salesforce CTI adapter is localized in nine n
 
 Change the language by selecting the username in the top right corner, then click on "My Settings".
 
-<img src="../media/image258.png">
+<img src="../media/localization-1.png">
 
 On the setting page on the left panel go to "Personal" and then select "Language & Time Zone".
 
-<img src="../media/image259.png">
+<img src="../media/localization-2.png">
 
 You can then select your preferred language. Note that CTI adapter only have nine languages built within the package. 
 
-<img src="../media/image260.png">
+<img src="../media/localization-3.png">
 
 Click save and the page will reload. That's it. You can check in other pages to see if it actually applies your change. For example here is a screenshot of CTI Flow Editor in Spanish.
 
-<img src="../media/image261.png">
+<img src="../media/localization-4.png">
 
 Click on Phone pannel on the bottom to see if CCP has been localized. If not right click on CCP and reload.
 
-<img src="../media/image262.png">
+<img src="../media/localization-5.png">
 
 Additional Notes
 -------------
@@ -44,6 +44,6 @@ Please note that not all fields can be localized to different languages due to a
 * Flexipages. This means the page with tabs that you can find in AC CTI Adapter page in lightning. 
 
 
-<img src="../media/image263.png">
+<img src="../media/localization-6.png">
 
 * Reports. This is a missing functionality in Salesforce.
