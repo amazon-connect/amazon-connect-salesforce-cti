@@ -1,5 +1,4 @@
-Amazon Connect Historical Metrics in Salesforce
------------------------------------------------
+<h2 class="toc">Amazon Connect Historical Metrics in Salesforce</h2>
 
 Amazon Connect can generate a number of historical metric reports to
 monitor efficiency and utilization, agent performance, and other
@@ -15,7 +14,7 @@ Queue interval data from Amazon Connect to Salesforce. Once these have
 been configured and scheduled, you will begin to see data available in
 the reports that have been included with the CTI Adapter.
 
-### Configuring the AWS Services
+<h3 class="toc">Configuring the AWS Services</h3>
 
 When you configure schedule reports to run in Amazon Connect, they are
 saved to your reporting Amazon S3 bucket upon execution. As a part of
@@ -30,16 +29,18 @@ Lambda function included in the AWS Serverless Repository for
 Salesforce. This function will process the report and import the data to
 Salesforce.
 
-#### Configuring the Historical Reports in Amazon Connect
+<h4 class="toc">Configuring the Historical Reports in Amazon Connect</h4>
 
 1.  Login to your Amazon Connect instance as an Administrator
 
 2.  From the left navigation, choose **Metrics and Quality** then select
     **Historical metrics**
 
-    <img src="../media/image178.png" />
+    
+<img src="../media/image178.png" />
 
 3.  On the **Historical metrics** page, select Contact metrics
+
 <img src="../media/image179.png" />
 
 4.  Once the **Historical metrics: Queues** report loads, select the cog
@@ -98,21 +99,25 @@ Salesforce.
 14. Select the **Delivery Options** tab
 
 15. In the Prefix field, enter **SFDC/Queue**
+
 <img src="../media/image181.png" />
 
 16. Note the File name. The file name contains the bucket, path, and
     filename that will be used when executing the report. You will use
     the **bucket name** and **path** in later steps.
 
-    <img src="../media/image182.png" />
+    
+<img src="../media/image182.png" />
 
 17. Choose **Create**
 
 18. Once the report is created, from the left navigation, choose
     **Metrics and Quality** then select **Historical metrics**
-    <img src="../media/image178.png" />
+    
+<img src="../media/image178.png" />
 
 19. On the **Historical metrics** page, select **Agent performance
+
 <img src="../media/image183.png" />
 
 20. Once the **Historical metrics: Agents** report loads, select the cog
@@ -219,7 +224,8 @@ Salesforce.
     filename that will be used when executing the report. You will use
     the **bucket name** and **path** in later steps.
 
-    <img src="../media/image186.png" />
+    
+<img src="../media/image186.png" />
 
 33. Choose **Create**
 
@@ -227,7 +233,7 @@ Once you have created the two reports and set their schedule, the next
 thing you will need to do is to configure a trigger that executes a
 Lambda function when the report is generated and stored in S3.
 
-#### Creating the AWS Lambda Trigger for the Queue Data
+<h4 class="toc">Creating the AWS Lambda Trigger for the Queue Data</h4>
 
 1.  In a new browser tab, login to the [AWS
     console](https://console.aws.amazon.com/)
@@ -243,9 +249,11 @@ Lambda function when the report is generated and stored in S3.
 5.  Expand the Designer section
 
 6.  Select Add trigger
+
 <img src="../media/image187.png" />
 
 7.  In Trigger configuration, select S3 from the dropdown list
+
 <img src="../media/image188.png" />
 
 8.  Referring to the notes from the report configuration earlier, select
@@ -259,6 +267,7 @@ Lambda function when the report is generated and stored in S3.
 11. Set the Suffix to .csv
 
 12. The trigger configuration should now be similar to the following:
+
 <img src="../media/image189.png" />
 
 13. Select **Add**
@@ -266,7 +275,7 @@ Lambda function when the report is generated and stored in S3.
 14. If everything has been configured correctly, you should receive a
     success message.
 
-#### Creating the AWS Lambda Trigger for the Agent Data
+<h4 class="toc">Creating the AWS Lambda Trigger for the Agent Data</h4>
 
 1.  In a new browser tab, login to the [AWS
     console](https://console.aws.amazon.com/)
@@ -282,9 +291,11 @@ Lambda function when the report is generated and stored in S3.
 5.  Expand the Designer section
 
 6.  Select Add trigger
+
 <img src="../media/image187.png" />
 
 7.  In Trigger configuration, select S3 from the dropdown list
+
 <img src="../media/image188.png" />
 
 8.  Referring to the notes from the report configuration earlier, select
@@ -298,6 +309,7 @@ Lambda function when the report is generated and stored in S3.
 11. Set the Suffix to .csv
 
 12. The trigger configuration should now be similar to the following:
+
 <img src="../media/image190.png" />
 
 13. Select **Add**
@@ -305,7 +317,7 @@ Lambda function when the report is generated and stored in S3.
 14. If everything has been configured correctly, you should receive a
     success message.
 
-### Verifying the Data Import in Salesforce
+<h3 class="toc">Verifying the Data Import in Salesforce</h3>
 
 Once you have configured the reports and added the triggers, you should
 start to see data in Salesforce after \~30 minutes. The Amazon Connect
@@ -313,7 +325,7 @@ CTI Adapter comes with a predefined set of reports. These reports can be
 customized and additional reports can be created by leveraging the
 imported data.
 
-#### Viewing Amazon Connect Reports in Salesforce
+<h4 class="toc">Viewing Amazon Connect Reports in Salesforce</h4>
 
 1.  Log in into your Salesforce org and go to the **Service Console**
 
@@ -323,11 +335,14 @@ imported data.
 3.  In the left Navigation, select **All Folders**
 
 4.  Select the **Amazon Connect Reports** folder
+
 <img src="../media/image191.png" />
 
 5.  In the list of reports, choose Average Handle Time queue report
+
 <img src="../media/image192.png" />
 
 6.  Once the report loads, you should see data (provided calls have
     queued in this Amazon Connect instance today)
-    <img src="../media/image193.png" />
+    
+<img src="../media/image193.png" />

@@ -1,5 +1,4 @@
-Accessing the Salesforce API from Amazon Connect Contact Flows Using AWS Lambda
--------------------------------------------------------------------------------
+<h2 class="toc">Accessing the Salesforce API from Amazon Connect Contact Flows Using AWS Lambda</h2>
 
 The most commonly used feature of the AWS Serverless Application
 Repository for Salesforce is accessing/updating Salesforce data using
@@ -35,6 +34,10 @@ org:
 
 -   **CreateChatterComment:** creates a chatter comment.
 
+-   **Search:** performs a search against the Salesforce instance, returning all results.
+
+-   **SearchOne:** performs a search against the Salesforce instance, returning at most one result.
+
 **NOTE:** naming of the Lambda function will vary based on template
 data, but sfInvokeAPI will always be a part of the name.
 
@@ -64,7 +67,7 @@ documentation. The core parameters are:
 -   **sf_phone:** contains the phone number used to search when
     performing a phone lookup
 
-### Salesforce Lookup
+<h3 class="toc">Salesforce Lookup</h3>
 
 This operation is invoked by setting **sf_operation** to **lookup**. In
 this case, the Lambda function queries Salesforce for objects based on
@@ -96,7 +99,7 @@ This operation returns a response of:
 }
 ```
 
-### Salesforce Create
+<h3 class="toc">Salesforce Create</h3>
 
 This operation is invoked by setting **sf_operation** to **create**. In
 this case, the Lambda function creates a Salesforce object based on the
@@ -122,7 +125,7 @@ This operation returns a response of:
 }
 ```
 
-### Salesforce Update
+<h3 class="toc">Salesforce Update</h3>
 
 This operation is invoked by setting **sf_operation** to **update**. In
 this case, the Lambda function updates a Salesforce object based on the
@@ -151,7 +154,7 @@ This operation returns a response of:
 
 The "204" status indicates a success.
 
-### Salesforce Phone Lookup
+<h3 class="toc">Salesforce Phone Lookup</h3>
 
 This operation is invoked by setting **sf_operation** to
 **phoneLookup**. In this case, the Lambda function uses Salesforce
@@ -177,7 +180,7 @@ This operation returns a response of:
 }
 ```
 
-### Salesforce Delete
+<h3 class="toc">Salesforce Delete</h3>
 
 This operation is invoked by setting **sf_operation** to **delete**. In
 this case, the Lambda function deletes a Salesforce object based on the
@@ -202,7 +205,7 @@ This operation returns a response of:
 }
 ```
 
-### Salesforce query
+<h3 class="toc">Salesforce query</h3>
 
 This operation is invoked by setting **sf_operation** to **query**. In
 this case, the Lambda function uses Salesforce Object Query Language
@@ -215,7 +218,7 @@ Any additional parameters will replace text values in the original query
 so that queries can be dynamic based on values stored within the contact
 flow. For example, the parameter set:
 
--   query: "select {{field}} from {{object}}"
+-   query: "select field from object"
 
 -   field: "Id"
 
@@ -231,7 +234,7 @@ number.
 <img src="../media/image163.png" />
 
 (full text of the value is "select Id from Contact where Phone LIKE
-\'%{{number}}%\'")
+\'%number%\'")
 
 <img src="../media/image164.png" />
 
@@ -247,7 +250,7 @@ This operation returns a response of:
 ```
 
 
-### Salesforce queryOne
+<h3 class="toc">Salesforce queryOne</h3>
 
 This operation is invoked by setting **sf_operation** to **queryOne**
 (case sensitive). In this case, the Lambda function uses Salesforce
@@ -261,7 +264,7 @@ Any additional parameters will replace text values in the original query
 so that queries can be dynamic based on values stored within the contact
 flow. For example, the parameter set:
 
--   query: "select {{field}} from {{object}}"
+-   query: "select field from object"
 
 -   field: "Id"
 
@@ -277,7 +280,7 @@ number.
 <img src="../media/image163.png" />
 
 (full text of the value is "select Id from Contact where Phone LIKE
-\'%{{number}}%\'")
+\'%number%\'")
 
 <img src="../media/image164.png" />
 
@@ -290,7 +293,7 @@ This operation returns a response of:
 }
 ```
 
-### Salesforce createChatterPost
+<h3 class="toc">Salesforce createChatterPost</h3>
 
 This operation is invoked by setting **sf_operation** to
 **createChatterPost** (case sensitive). In this case, the Lambda
@@ -352,7 +355,7 @@ See the chatter post appear attached to the Subject:
 
 <img src="../media/image172.png" />
 
-### Salesforce createChatterComment
+<h3 class="toc">Salesforce createChatterComment</h3>
 
 This operation is invoked by setting **sf_operation** to
 **createChatterComment** (case sensitive). In this case, the Lambda
@@ -398,3 +401,111 @@ The operation returns a response of:
 See the chatter post appear attached to the Subject:
 
 <img src="../media/image177.png" />
+
+### Salesforce search
+
+This operation is invoked by setting **sf_operation** to
+**search** (case sensitive). In this case, the Lambda
+function uses the Salesforce REST to perform a parameterized search
+(see
+[here](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_search_parameterized.htm)).
+For search, the following parameters are required:
+
+-   q
+
+-   sf_fields
+
+-   sf_object
+
+The following parameters are optional:
+
+-   where
+
+-   overallLimit
+
+(refer to the api reference for value types)
+
+See the below example:
+
+<img src="../media/image258.png" />
+
+<img src="../media/image259.png" />
+
+<img src="../media/image260.png" />
+
+<img src="../media/image261.png" />
+
+<img src="../media/image262.png" />
+
+<img src="../media/image263.png" />
+
+The operation returns a response of:
+
+```json
+{
+    "sf_records": [
+        {
+            "Id": "50001000001B9e6AAG", 
+            "Subject": "test subject", 
+            "Status": "New"
+        }, 
+        {
+            "Id": "50001000001B9eWAAS", 
+            "Subject": "test subject", 
+            "Status": "New"
+        }, 
+        {
+            "Id": "50001000001BDgiAAG", 
+            "Subject": "test subject", 
+            "Status": "New"
+        }
+    ], 
+    "sf_count": 3
+}
+```
+
+### Salesforce searchOne
+
+This operation is invoked by setting **sf_operation** to
+**searchOne** (case sensitive). In this case, the Lambda
+function uses the Salesforce REST to perform a parameterized search
+(see
+[here](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_search_parameterized.htm)).
+For search, the following parameters are required:
+
+-   q
+
+-   sf_fields
+
+-   sf_object
+
+The following parameter is optional:
+
+-   where
+
+(refer to the api reference for value types)
+
+See the below example:
+
+<img src="../media/image264.png" />
+
+<img src="../media/image265.png" />
+
+<img src="../media/image260.png" />
+
+<img src="../media/image261.png" />
+
+<img src="../media/image262.png" />
+
+<img src="../media/image263.png" />
+
+The operation returns a response of:
+
+```json
+{
+    "Id": "50001000001BIn6AAG",
+    "Subject": "test subject unique", 
+    "Status": "New", 
+    "sf_count": 1
+}
+```

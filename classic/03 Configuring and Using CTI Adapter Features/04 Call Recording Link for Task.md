@@ -1,5 +1,4 @@
-Call Recording Link for Task
-============================
+<h1 class="toc">Call Recording Link for Task</h1>
 
 The Adapter comes with a Visualforce component that provides users with
 the ability to download a call recording created within Amazon Connect

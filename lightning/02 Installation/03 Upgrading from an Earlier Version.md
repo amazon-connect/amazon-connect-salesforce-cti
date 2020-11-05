@@ -1,5 +1,4 @@
-Upgrading from an Earlier Version
----------------------------------
+<h2 class="toc">Upgrading from an Earlier Version</h2>
 
 If you are upgrading from an earlier version of CTI Adapter, there are a
 few additional things you need to do.
