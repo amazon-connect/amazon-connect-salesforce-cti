@@ -218,7 +218,7 @@ Any additional parameters will replace text values in the original query
 so that queries can be dynamic based on values stored within the contact
 flow. For example, the parameter set:
 
--   query: "select {{field}} from {{object}}"
+-   query: "select field from object"
 
 -   field: "Id"
 
@@ -234,7 +234,7 @@ number.
 <img src="../media/image163.png" />
 
 (full text of the value is "select Id from Contact where Phone LIKE
-\'%{{number}}%\'")
+\'%number%\'")
 
 <img src="../media/image164.png" />
 
@@ -264,7 +264,7 @@ Any additional parameters will replace text values in the original query
 so that queries can be dynamic based on values stored within the contact
 flow. For example, the parameter set:
 
--   query: "select {{field}} from {{object}}"
+-   query: "select field from object"
 
 -   field: "Id"
 
@@ -280,7 +280,7 @@ number.
 <img src="../media/image163.png" />
 
 (full text of the value is "select Id from Contact where Phone LIKE
-\'%{{number}}%\'")
+\'%number%\'")
 
 <img src="../media/image164.png" />
 
