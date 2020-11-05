@@ -75,7 +75,7 @@ with id 'key-benefits-and-requirements'
   - [Upgrading from an Earlier Version](02%20Installation/03%20Upgrading%20from%20an%20Earlier%20Version.md#upgrading-from-an-earlier-version)
 - [Configuring and Using CTI Adapter Features](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/readme.md#configuring-and-using-cti-adapter-features)
   - [CTI Adapter Details](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/01%20CTI%20Adapter%20Configuration.md#cti-adapter-details)
-    - [Update the CTI Adapter Details](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/01%20CTI%20Adapter%20Configuration.md#update-the-cti-adapter-details)
+      - [Update the CTI Adapter Details](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/01%20CTI%20Adapter%20Configuration.md#update-the-cti-adapter-details)
     - [Single Sign On Settings](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/01%20CTI%20Adapter%20Configuration.md#single-sign-on-settings)
       - [Identify the SSO URL components](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/01%20CTI%20Adapter%20Configuration.md#identify-the-sso-url-components)
       - [Configure the CTI Lightning Adapter in Salesforce](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/01%20CTI%20Adapter%20Configuration.md#configure-the-cti-lightning-adapter-in-salesforce)
@@ -96,6 +96,8 @@ with id 'key-benefits-and-requirements'
       - [Configure Enabled Service Presences Status Access in Salesforce](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/04%20Presence%20Sync%20Rules.md#configure-enabled-service-presences-status-access-in-salesforce)
     - [Configure Presence Sync Rules](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/04%20Presence%20Sync%20Rules.md#configure-presence-sync-rules)
       - [Create a Presence Sync Rule](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/04%20Presence%20Sync%20Rules.md#create-a-presence-sync-rule)
+  - [Localization](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/05%20Localization.md#localization)
+  - [Set Agent Status on Session End](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/05%20Set%20Agent%20Status%20on%20Session%20End.md#set-agent-status-on-session-end)
 - [Configuring and Using AWS Serverless Application Repository for Salesforce Features](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/readme.md#configuring-and-using-aws-serverless-application-repository-for-salesforce-features)
   - [Accessing the Salesforce API from Amazon Connect Contact Flows Using AWS Lambda](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/01%20Accessing%20the%20Salesforce%20API%20from%20Amazon%20Connect%20Contact%20Flows%20Using%20AWS%20Lambda.md#accessing-the-salesforce-api-from-amazon-connect-contact-flows-using-aws-lambda)
     - [Salesforce Lookup](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/01%20Accessing%20the%20Salesforce%20API%20from%20Amazon%20Connect%20Contact%20Flows%20Using%20AWS%20Lambda.md#salesforce-lookup)
@@ -118,6 +120,7 @@ with id 'key-benefits-and-requirements'
     - [Deployment and Configuration](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/03%20Amazon%20Connect%20Real-Time%20Metrics%20in%20Salesforce.md#deployment-and-configuration)
       - [Adding Real-Time Reports to the Service Console](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/03%20Amazon%20Connect%20Real-Time%20Metrics%20in%20Salesforce.md#adding-real-time-reports-to-the-service-console)
   - [Contact Channel Analytics](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/04%20Contact%20Channel%20Analytics.md#contact-channel-analytics)
+    - [Prerequisite Setup](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/04%20Contact%20Channel%20Analytics.md#prerequisite-setup)
     - [Call Recording Import](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/04%20Contact%20Channel%20Analytics.md#call-recording-import)
       - [Enabling call recording import](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/04%20Contact%20Channel%20Analytics.md#enabling-call-recording-import)
       - [Adding Contact Channel Analytics to the Service Console](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/04%20Contact%20Channel%20Analytics.md#adding-contact-channel-analytics-to-the-service-console)
@@ -133,7 +136,6 @@ with id 'key-benefits-and-requirements'
       - [Adding Contact Trace Records to the Service Console](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/05%20Contact%20Trace%20Record%20Import.md#adding-contact-trace-records-to-the-service-console)
     - [Display Additional Contact Trace Record Data](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/05%20Contact%20Trace%20Record%20Import.md#display-additional-contact-trace-record-data)
       - [Customizing the AC Contact Trace Record Layout](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/05%20Contact%20Trace%20Record%20Import.md#customizing-the-ac-contact-trace-record-layout)
-  - [ Setting Up Audio Recording Streaming and Transcription in Salesforce ](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/06%20Setting%20Up%20Audio%20Recording%20Streaming%20and%20Transcription%20in%20Salesforce.md#setting-up-audio-recording-streaming-and-transcription-in-salesforce)
 - [Appendix A - Required Salesforce Configurations](05%20Appendix%20A%20-%20Required%20Salesforce%20Configurations/readme.md#appendix-a---required-salesforce-configurations)
   - [Configuring My Domain in Salesforce](05%20Appendix%20A%20-%20Required%20Salesforce%20Configurations/01%20Configuring%20My%20Domain%20in%20Salesforce.md#configuring-my-domain-in-salesforce)
     - [Register Your Domain](05%20Appendix%20A%20-%20Required%20Salesforce%20Configurations/01%20Configuring%20My%20Domain%20in%20Salesforce.md#register-your-domain)
@@ -199,6 +201,9 @@ Connect and Salesforce.
 
 ## 5.6 October 2020
 
+- **Feature**: Change audio recording feature in the Contact Channel Analytics page to use an audio streaming approach
+- **Feature**: Add permission set specifically for the audio recording feature
+- **Feature**: Localization into 9 languages.
 - **Feature**: Add callType to return fields of "Get Contact Properties" block
 - **Feature**: Add formatted phone number to return fields of "Get Contact Properties" block
 - **Feature**: Add script name to CTI flow definition file.
@@ -232,6 +237,7 @@ Connect and Salesforce.
 - **Bugfix**: Agent is able to accept calls when Medialess is turned on.
 - **Feature**: CTI Flow Block - “Get CCP Logs”
   Remove "Initialization" and "Browser" sources
+- **Feature**: Allow users to specify Amazon Connect Instance url in CTI Adapter details in addition to Amazon Connect Instance Alias
 
 ## 5.5 October 2020
 

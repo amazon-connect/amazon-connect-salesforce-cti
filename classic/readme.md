@@ -82,6 +82,7 @@ with id 'key-benefits-and-requirements'
     - [Outbound Campaign Custom Object Using Salesforce Data Loader](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/06%20Outbound%20Campaign%20Calls.md#outbound-campaign-custom-object-using-salesforce-data-loader)
   - [Amazon Connect Reports in Salesforce](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/07%20Amazon%20Connect%20Reports%20in%20Salesforce.md#amazon-connect-reports-in-salesforce)
   - [CTI Flows](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/08%20CTI%20Flows.md#cti-flows)
+    - [Localization](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/09%20Localization.md#localization)
 - Configuring and Using AWS Serverless Application Repository for Salesforce Features
   - [Invoking the Amazon Connect Salesforce Lambda in a Contact Flow](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/01%20Invoking%20the%20Amazon%20Connect%20Salesforce%20Lambda%20in%20a%20Contact%20Flow.md#invoking-the-amazon-connect-salesforce-lambda-in-a-contact-flow)
     - [Salesforce Lookup](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/01%20Invoking%20the%20Amazon%20Connect%20Salesforce%20Lambda%20in%20a%20Contact%20Flow.md#salesforce-lookup)
@@ -132,6 +133,7 @@ used by Amazon Connect to interact with Salesforce.
 
 ## 5.6 October 2020
 
+- **Feature**: Localization into 9 languages.
 - **Feature**: Add callType to return fields of "Get Contact Properties" block
 - **Feature**: Add formatted phone number to return fields of "Get Contact Properties" block
 - **Feature**: Add script name to CTI flow definition file.

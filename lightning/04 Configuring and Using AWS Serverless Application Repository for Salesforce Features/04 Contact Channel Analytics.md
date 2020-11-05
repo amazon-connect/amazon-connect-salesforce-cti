@@ -42,7 +42,7 @@ available:
         and Parts of Speech (PoS), and identify word boundaries and
         labels like nouns and adjectives within the text.
 
-### Prerequisite Setup
+<h3 class="toc">Prerequisite Setup</h3>
 
 #### Cloudformation Template
 
@@ -94,7 +94,7 @@ Please note that your secret may also be formatted stored as a "Secret key/value
     <CORSRule>
         <AllowedOrigin>{url copied in step 9}</AllowedOrigin>
         <AllowedMethod>GET</AllowedMethod>
-        <AllowedHeader>*</AllowedHeader>
+        <AllowedHeader>Access-Control-Allow-Origin</AllowedHeader>
     </CORSRule>
 </CORSConfiguration>
 ```

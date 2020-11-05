@@ -45,7 +45,7 @@ files.forEach((fileObj) => {
           }
         )
         // fix image path to be relative to this file
-        .replace(/"(.)+media\/image/g, `"${dir}/media/image`)
+        .replace(/"(.)+media\//g, `"${dir}/media/`)
         // add ids to headers
         .replace(/( )*<h[1-6].*<\/( )*h[1-6]( )*>/g, (header) => {
           const headerId = textToId(getHeaderText(header));
