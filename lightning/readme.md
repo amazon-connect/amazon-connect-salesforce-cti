@@ -8,7 +8,7 @@
 
 <h3 align="center"> September, 2020</h3>
 
-*© Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved. SPDX-License-Identifier: CC-BY-SA-4.0*
+_© Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved. SPDX-License-Identifier: CC-BY-SA-4.0_
 
 #### Notices
 
@@ -33,14 +33,14 @@ the two primary components of the integration: the Amazon Connect CTI
 Adapter for Salesforce and the AWS Serverless Application Repository for
 Amazon Connect Salesforce integration.
 
-<!-- 
+<!--
 In order for the table of contents to work with the PDF generator, make sure the header of the section
 the table of contents entry should link to has an id that matches the text of the link, lowercase, and
-with dashes (-) in place for spaces. ex. the 'Key Benefits and Requirements' will navigate to a link 
+with dashes (-) in place for spaces. ex. the 'Key Benefits and Requirements' will navigate to a link
 with id 'key-benefits-and-requirements'
 -->
-Table of Contents
-============
+
+# Table of Contents
 
 - Introduction
   - [Key Benefits and Requirements](01%20Introduction/01%20Key%20Benefits%20and%20Requirements.md#key-benefits-and-requirements)
@@ -75,7 +75,7 @@ Table of Contents
   - [Upgrading from an Earlier Version](02%20Installation/03%20Upgrading%20from%20an%20Earlier%20Version.md#upgrading-from-an-earlier-version)
 - [Configuring and Using CTI Adapter Features](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/readme.md#configuring-and-using-cti-adapter-features)
   - [CTI Adapter Details](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/01%20CTI%20Adapter%20Configuration.md#cti-adapter-details)
-      - [Update the CTI Adapter Details](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/01%20CTI%20Adapter%20Configuration.md#update-the-cti-adapter-details)
+    - [Update the CTI Adapter Details](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/01%20CTI%20Adapter%20Configuration.md#update-the-cti-adapter-details)
     - [Single Sign On Settings](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/01%20CTI%20Adapter%20Configuration.md#single-sign-on-settings)
       - [Identify the SSO URL components](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/01%20CTI%20Adapter%20Configuration.md#identify-the-sso-url-components)
       - [Configure the CTI Lightning Adapter in Salesforce](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/01%20CTI%20Adapter%20Configuration.md#configure-the-cti-lightning-adapter-in-salesforce)
@@ -181,8 +181,7 @@ Table of Contents
       - [Configuring the CTI Flow](09%20Appendix%20E%20-%20Integration%20with%20Salesforce%20High%20Velocity%20Sales/01%20High%20Velocity%20Sales.md#configuring-the-cti-flow)
 - [Appendix F - CTI Flow Blocks](10%20Appendix%20F%20-%20CTI%20Flow%20Blocks/01%20CTI%20Flow%20Blocks.md#appendix-f---cti-flow-blocks)
 
-Introduction
-============
+# Introduction
 
 The Amazon Connect CTI integration consists of two components, a
 [managed Salesforce package](https://appexchange.salesforce.com/listingDetail?listingId=a0N3A00000EJH4yUAH)
@@ -196,13 +195,79 @@ Connect and Salesforce.
 
 <img src="./media/image2.png" />
 
-Release Notes
-=============
+# Release Notes
+
+## 5.6 October 2020
+
+- **Feature**: Add callType to return fields of "Get Contact Properties" block
+- **Feature**: Add formatted phone number to return fields of "Get Contact Properties" block
+- **Feature**: Add script name to CTI flow definition file.
+- **Feature**: Remove context from log outputs
+- **Bugfix**: Return field of “Open Primary Tab” was value, not id, as specified. We now provide it in both `value` and `id` fields for backward compatibility.
+- **Feature**: Make the error message shown when the execution runs too long more informative.
+- **Feature**: Make sure the attributes overlay doesn't open automatically when CCP is opened.
+  Documentation: "Create and pop that task" default flow is fixed.
+- **Bugfix**: update return value of "Get Agent Configuration" block to match the documentation.
+- **Feature**: Increase CTI Flow timeout to 10 seconds.
+- **Bugfix**: remove the leading wildcard matcher in "Get Salesforce Contact Id" block query. The wildcard matcher caused performance issues with the query. Going forward make sure the phone number is an exact match to the one in file.
+- **Bugfix**: Ensure “Join Strings” block does not ignore boolean false values.
+- **Bugfix**: Ensure “Log to Console” block does not ignore boolean false values.
+- **Feature**: Add uid field on top of the block on the canvas.
+- **Bugfix**: Remove the loginWindow object from log output because it errors with "Cannot convert object to primitive value."
+- **Bugfix**: ContactChannel object updates to new agent if previous agent rejected or missed a contact
+- **Bugfix**: Changing status to logout now correctly logs agent out
+- **Feature**: Rename "Enable Click to Dial?" to "Can Make Outbound Calls?".
+- **Feature**: CTI Flow Block - math function - “Multiply”
+- **Feature**: CTI Flow Block - math function - “Divide“
+- **Feature**: CTI Flow Block - “Get Tab Object Map”
+- **Feature**: CTI Flow Block - “Close Salesforce Tab”
+- **Feature**: CTI Flow Block - “Delay”
+- **Feature**: CTI Flow Block - “Get Primary Tab Ids”
+- **Feature**: Improve browser log formatting.
+- **Feature**: CTI Flow Block - “Get Tabs With Matching Url”
+- **Feature**: _Update Connect agent status when all Salesforce tabs are closed_: You can set the agent status to a specific state if the SetAgentStatusOnSessionEnd feature is turned on and the agent’s routing profile name includes the value of IfProfileNameIncludes setting, such as “On-Call.” By default, the agent status is set to “Offline” if the feature is enabled and nothing is specified for IfProfileNameIncludes. If this feature is enabled, the agent will be automatically shown as available when they login to Salesforce and the CCP.
+- **Feature**: CTI Flow Block - Length”
+- **Feature**: CTI Flow Block - "Slice"
+- **Feature**: CTI Flow Block - “Cast a Value to a Type”
+- **Bugfix**: Agent is able to accept calls when Medialess is turned on.
+- **Feature**: CTI Flow Block - “Get CCP Logs”
+  Remove "Initialization" and "Browser" sources
+
+## 5.5 October 2020
+
+- **Feature**: CTI Flow Block - "Clear All Properties"
+- **Feature**: CTI Flow Block - "Unset Property"
+- **Feature**: CTI Flow Block - "Show All Attributes"
+- **Bugfix**: Attributes panel can now display attributes of transferred contacts.
+
+## 5.4 Late September 2020
+
+- **Feature**: You can now provide additional ad-hoc fields to "Create a Task" block. (Note: the values of these fields don't have a lookup dropdown yet.)
+- **Feature**: New CTI Block! - You can now create "counters" with the "Update Counter" and read the value of your counters using "Get Counter" block.
+- **Feature**: You can now get the number of open tabs from `openAgentTabs` counter.
+- **Feature**: You can now compare multiple things using "Is One Of?" block in CTI Flows.
+- **Feature**: New CTI Block! - You can now extract a value from a complex value, such as an array or an object, using the "Extract Value" block. (This comes handy when you retrieve a Salesforce object.)
+- **Feature**: New CTI Block! - You can use the Salesforce retrieve API to fetch a record from the server by id using "Retrieve Salesforce Record" block.
+- **Feature**: New CTI Block! - You can use the "Get Salesforce Contact Id" to fetch the id of a Salesforce contact by its phone number.
+- **Feature**: New CTI Block! - You can now show a window alert using "Alert" block.
+- **Feature**: New CTI Block! - You can now use create a complex string using string templates and multiple variables with the help of "String Template" block.
+- **Bugfix**: When a screenpop is "deferred," the CTI Block used to return an inexact match and the Id field in the return value of the block would be blank. This issue has been fixed in this release.
+- **Bugfix**: Presence sync is working again. The current release also reduces the wait threshold between each presence sync update from 1 second to 100ms, i.e. co-occurring events won't get lost anymore (as much).
+- **Bugfix**: The encoding issue affecting "SOQL Block" has been fixed. The single quotes in the SOQL query are no longer encoded as HTML entities.
+- **Bugfix**: To access the return value of another block, power users use "magic strings," e.g. \$.actions.<blockId>.results.<fieldName>, but these strings used to be cleared in the UI when the block is selected on the canvas. This issue is now fixed.
+- **Bugfix**: The spelling of `TaskSubtype` field in "Create a Task" block has been fixed. Your TaskSubtype won't get lost anymore.
+- **Bugfix**: Call recording view for a Case has been fixed.
+- **Bugfix**: "Is Contact Inbound?" block is working again.
+- **Bugfix**: "Is Truthy?" block now works with boolean input values.
+- **Bugfix**: Salesforce UI onNavigationChange event listener is working again.
+- **Bugfix**: We now alert you to change your instance alias if you try to sign in with instance alias set to "default."
 
 ### 5.3 September 2020
+
 - **Bugfix**: Fix the issue that caused ACSFCCP_CallRecordingTask component to not work.
 
 ### 5.1 Late August 2020
+
 - **Bugfix**: Ensure "Get App View" CTI Flow block doesn\'t break the sidebar
 - **Enhancement**: Add "queueARN" field to "Dial Number\" CTI Flow block
 - **Bugfix**: Ensure some required CTI Flow block fields are not shown as "optional"
@@ -211,25 +276,27 @@ Release Notes
 - **Bugfix**: Fix phantom scrollbar on Windows machines
 - **Bugfix**: Fix issue where copying contact attributes to clipboard doesn't work
 - **Bugfix**: Fix issue where "saveLog" CTI Flow block throws an error
-- **Bugfix**: Fix issue with onOffline  Flow event not firing
+- **Bugfix**: Fix issue with onOffline Flow event not firing
 - **Bugfix**: Fix various omnichannel presence sync bugs
 - **Bugfix**: Ensure the CCP default dimensions are adjusted to CCPv2 defaults
 - **Feature:** Add block \"Set Agent Status By Name on Connect.\"
 
 ### 5.0 August 2020
+
 - **This release has new features and updates:** Please test and validate version 5.0 in your Salesforce sandbox before upgrading this in production.
-- **CTI Flows:** CTI Flows replace Lightning CTI Extensions in allowing customers to build their agent  for Lightning and Classic via a drag  drop UI. Many of the CTI blocks are similar to the Lightning CTI Extension script API calls and can be mapped similarly. Lightning CTI Extension scripts are NOT automatically migrated to CTI Flows. When upgrading the  with existing scripts, it will give you the option to download the existing script for reference before building your CTI Flows. We strongly recommend you validate this install/upgrade in a test environment and fully test the CTI Flows against your previous scripts functionality. Please open a support ticket if there is additional functionality you require from your current scripting implementation.
-- **Security Profile improvements:**  AC Administrator, AC Agent, and AC Manager permission sets to enforces objects access and fields level  (FLS) as per Salesforce security guideline for managed package. To  Amazon Connect Objects and fields, user should either one of Amazon Connect permission sets AC Administrator, AC Agent, and AC Manager.
-- **Attributes:** Amazon Connect CCP (Contact Control Panel) in Lightning  Classic now display an overlay for showing attributes consistently.
+- **CTI Flows:** CTI Flows replace Lightning CTI Extensions in allowing customers to build their agent for Lightning and Classic via a drag drop UI. Many of the CTI blocks are similar to the Lightning CTI Extension script API calls and can be mapped similarly. Lightning CTI Extension scripts are NOT automatically migrated to CTI Flows. When upgrading the with existing scripts, it will give you the option to download the existing script for reference before building your CTI Flows. We strongly recommend you validate this install/upgrade in a test environment and fully test the CTI Flows against your previous scripts functionality. Please open a support ticket if there is additional functionality you require from your current scripting implementation.
+- **Security Profile improvements:** AC Administrator, AC Agent, and AC Manager permission sets to enforces objects access and fields level (FLS) as per Salesforce security guideline for managed package. To Amazon Connect Objects and fields, user should either one of Amazon Connect permission sets AC Administrator, AC Agent, and AC Manager.
+- **Attributes:** Amazon Connect CCP (Contact Control Panel) in Lightning Classic now display an overlay for showing attributes consistently.
 - **AWS Secrets Manager** support for storing Salesforce credentials.
 - **VPC Support**: ability to place Lambdas in VPC
-- **New Salesforce API integration:** Exposed new operations in sfinvokeapi  read or create Salesforce records(query queryOne, createChatterPost, createChatterComment, lookup_all, delete)
+- **New Salesforce API integration:** Exposed new operations in sfinvokeapi read or create Salesforce records(query queryOne, createChatterPost, createChatterComment, lookup_all, delete)
 - **Upgrade:** Amazon Connect Streams API bumped up to version 1.5.
-- **Bugfix:** Task creation issue for non connect users - Fixed task trigger apex code, added a validation before  security access check for Amazon  managed package objects
-- **Bugfix:** Contact interaction  fixed.
+- **Bugfix:** Task creation issue for non connect users - Fixed task trigger apex code, added a validation before security access check for Amazon managed package objects
+- **Bugfix:** Contact interaction fixed.
 - **Other minor bugfixes and improvements**
 
 ### 4.5 April 2020
+
 - **This release has new features and updates:** Please test and validate version 4.5 in your Salesforce sandbox before upgrading this in production.
 - **Installation / Configuration:** AC_Administrator permission set has been added to manage CTI Configuration in addition to AC_Manager and AC_Agent. See documentation for further information.
 - **API:** Updated support for CCPv2 in Classic/Console. See documentation for Call Center settings.
@@ -237,6 +304,7 @@ Release Notes
 - **Security:** Improved control access at the object-level, the record-level, and at the field level.
 
 ### 4.4 March 2020
+
 - **This release has significant new features and updates:** Please test and validate version 4.4 in your Salesforce sandbox before upgrading this in production.
 - **Documentation:** Guide has been rewritten and restructured based on feedback.
 - **Installation / Configuration:** Improved installation and configuration guide
@@ -248,13 +316,14 @@ Release Notes
 - **Setup:** Additional CTI Script examples are provided.
 - **Setup:** The ability to place the lightning transcript view on Task, Contact Channel, and Contact Channel Analytics object has been added.
 - **Bugfix:** Updated whitelisting steps to address login popup issue.
-- **Bugfix:** OmniChannel workload  data not being usable has been resolved
+- **Bugfix:** OmniChannel workload data not being usable has been resolved
 - **Bugfix:** CTI Attribute issue when processing multiple pieces of contact attribute data has been resolved.
 - **Bugfix:** The call transcript now scrolls within a fixed region rather than consuming vertical space.
 - **Bugfix:** Finding Task Record in Classic/Console fixed.
 - **Security:** The ability to create, update, and delete AC_CtiAdapter, AC_CtiScript, AC_CtiAttribute and AC_PresenceSyncRule records has been removed from the AC_Agent permission set.
 
 ### 4.2 December 2019
+
 - **This release has significant new features and updates:** Please test and validate version 4.2 in your Salesforce sandbox before upgrading this in production.
 - **Installation / Configuration**: Improved installation and configuration guide
 - **API**: Lightning CCP Extension scripts and reference guide
@@ -263,8 +332,9 @@ Release Notes
 - **Bugfix**: SSO issue has been resolved
 
 ### 4.1 November 2019
+
 - **This release has significant new features and updates:** Please test and validate version 4.1 in your Salesforce sandbox before upgrading this in production. As we look to simplify documentation, this release introduces a new [**Amazon Connect CTI Adapter v4 for Salesforce Lightning**](https://connect-blogs.s3.amazonaws.com/Amazon+Connect+Salesforce+CTI+Adapter/Amazon+Connect+CTI+Adapter+for+Salesforce+Lightning+-+Setup+and+Installation+Guide.pdf) setup and installation guide. Please review this setup guide in detail to see all the latest changes for Lightning CTI Adapter installations.
-- **Classic and Console CTI setup guide:** Please use the [**Amazon Connect CTI Adapter v4 for Salesforce   Classic**](https://connect-blogs.s3.amazonaws.com/Amazon+Connect+Salesforce+CTI+Adapter/Amazon+Connect+CTI+Adapter+for+Salesforce+Classic+-+Setup+and+Installation+Guide.pdf) setup and installation guide for Classic and Console CTI Adapter installations.
+- **Classic and Console CTI setup guide:** Please use the [**Amazon Connect CTI Adapter v4 for Salesforce Classic**](https://connect-blogs.s3.amazonaws.com/Amazon+Connect+Salesforce+CTI+Adapter/Amazon+Connect+CTI+Adapter+for+Salesforce+Classic+-+Setup+and+Installation+Guide.pdf) setup and installation guide for Classic and Console CTI Adapter installations.
 - **Amazon Connect Chat and Contact Control Panel (CCP) v2:** support for Amazon Connect chat and integration of CCP v2. CCP v2 is required for Lightning CTI Adapter installations. CCP v1 is still supported for Classic / Console CTI Adapter installations.
 - **Historical and Real-Time Reporting:** updated historical metric functionality with additional metrics and dashboards. Added real-time metrics and dashboards. This functionality requires an update of AWS Serverless Lambda functions for Salesforce.
 - **Lightning CCP Extensions and configuration:** We have revamped the approach for the Call Center config and have added a new AC CTI Adapters Lighting config page.
