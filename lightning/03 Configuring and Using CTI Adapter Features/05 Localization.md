@@ -1,5 +1,4 @@
-Localization
-=========
+<h2 class="toc">Localization</h2>
 
 Prerequisites
 -------------

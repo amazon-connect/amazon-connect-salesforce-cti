@@ -1,4 +1,4 @@
-# Set Agent Status on Session End
+<h2 class="toc">Set Agent Status on Session End</h2>
 
 This feature automatically sets the status of the agent to "Offline" –– or to any status you choose –– when the agent closes all his Salesforce tabs.
 
