@@ -1,15 +1,14 @@
-Presence Sync Rules
--------------------
+<h2 class="toc">Presence Sync Rules</h2>
 
 The CTI Adapter supports bidirectional synchronization of agent state
 between Amazon Connect and Salesforce Omnichannel. This allows you to
 tightly control agent availability for different contact/media types
 dependent on current agent state. This section of the guide assumes that
 you have Omnichannel configured appropriately. If you do not and wish to
-test this function, please refer to the section [Configure Salesforce Omnichannel for Testing](https://github.com/blee-amzn/temp-installation-guide-repo/blob/master/Lightning/05%20Appendix%20A:%20Required%20Salesforce%20Configurations/02%20Configure%20Salesforce%20Omnichannel%20for%20Testing.md).
+test this function, please refer to the section [Configure Salesforce Omnichannel for Testing](/lightning/05%20Appendix%20A%20-%20Required%20Salesforce%20Configurations/02%20Configure%20Salesforce%20Omnichannel%20for%20Testing.md).
 
 NOTE: In order for Presence Sync to work, the CTI Adapter must be
-configured to allow it. See [CTI Adapter Details](../03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/01%20CTI%20Adapter%20Configuration.md#cti-adapter-details)
+configured to allow it. See [CTI Adapter Details](/lightning/03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/01%20CTI%20Adapter%20Configuration.md)
 for more information.
 
 Presence Sync Rules are evaluated based on specific events. The
@@ -80,7 +79,7 @@ Available comparators are:
 -   **Less than or equal to:** Is Operand A less than or equal to
     Operand B
 
-### Configuring Statuses
+<h3 class="toc">Configuring Statuses</h3>
 
 Presence Sync Rules require statuses in both Amazon Connect and
 Salesforce. In this example, we will add two additional statuses to each
@@ -95,7 +94,7 @@ you will configure the status sync similar to the following example:
   Amazon Connect sets status to Working -- Phone   Omnichannel to Working -- Phone
   Omnichannel sets status to Working -- Media      Amazon Connect to Working - Media
 
-### Create Presence Statuses in Amazon Connect
+<h3 class="toc">Create Presence Statuses in Amazon Connect</h3>
 
 Agents are responsible for setting their status in the Contact Control
 Panel (CCP). Typically, the only time an agent\'s status changes is when
@@ -116,40 +115,43 @@ and resource management.
 **Note:** When you add a new status, it will always be **Custom**, not
 routable.
 
-#### Create an Amazon Connect status
+<h4 class="toc">Create an Amazon Connect status</h4>
 
 1.  Login to your Amazon Connect instance as an Administrator
 
 2.  From the left navigation, choose **Users**, then select **Agent
     status**
 
-    <img src="../media/image145.png" />
+    
+<img src="../media/image145.png" />
 
 3.  Select **Add new agent status**
 
 4.  Provide a Status name and Description. Leave the Enabled checkbox
     selected.
 
-    <img src="../media/image146.png" />
+    
+<img src="../media/image146.png" />
 
 5.  Select Save. Repeat as desired for the remaining statuses that you
     wish to add.
 
-### Create Presence Statuses in Salesforce
+<h3 class="toc">Create Presence Statuses in Salesforce</h3>
 
 You will need to configure presence statuses to reflect the different
 presence states that you wish your Omni-Channel agents to enter. These
 do not need to match agent statuses in Amazon Connect exactly, but it
 does make it easier to track what you are doing.
 
-#### Create a Salesforce presence status
+<h4 class="toc">Create a Salesforce presence status</h4>
 
 1.  Log in into your Salesforce org and go to **Setup**
 
 2.  In the **Quick Find** field, enter presence and choose **Presence
     Statuses** from the results
     
-    <img src="../media/image147.png" />
+    
+<img src="../media/image147.png" />
 
 3.  In the Presence Statuses page, choose New
 
@@ -163,33 +165,37 @@ does make it easier to track what you are doing.
         for details
 
 6.  Choose Save
+
 <img src="../media/image148.png" />
 
 7.  Repeat as necessary for all desired statuses
 
-#### Configure Enabled Service Presences Status Access in Salesforce
+<h4 class="toc">Configure Enabled Service Presences Status Access in Salesforce</h4>
 
 1.  Log in into your Salesforce org and go to **Setup**
 
 2.  In the **Quick Find** field, enter profiles and choose **Profiles**
     from the results
 
-    <img src="../media/image149.png" />
+    
+<img src="../media/image149.png" />
 
 3.  Select the profile assigned to your users
 
 4.  Hover over the Enabled Service Presence Status link and choose Edit
+
 <img src="../media/image150.png" />
 
 5.  Select the available status from the left, then choose the Add
     button to add it the Enabled Service Presence Statuses field
-    <img src="../media/image151.png" />
+    
+<img src="../media/image151.png" />
 
 6.  Select Save
 
 7.  Repeat as necessary for other statuses or profiles.
 
-### Configure Presence Sync Rules
+<h3 class="toc">Configure Presence Sync Rules</h3>
 
 The CTI Adapter provides a rules-based presence status synchronization
 system allowing for flexibility in mapping agent states between Amazon
@@ -204,13 +210,14 @@ As the scope of presence sync rules can vary wildly, this example will
 show you how to change state based on Amazon Connect agent state change
 and Salesforce agent state change.
 
-#### Create a Presence Sync Rule
+<h4 class="toc">Create a Presence Sync Rule</h4>
 
 1.  Log in into your Salesforce org and go to the **Service Console**
 
 2.  Expand the **navigation menu** by selecting the down arrow and
     choose **AC CTI Adapters**.
-    <img src="../media/image114.png" />
+    
+<img src="../media/image114.png" />
 
 3.  Select **ACLightningAdapter**
 
@@ -220,7 +227,8 @@ and Salesforce agent state change.
 
 6.  Provide a **Presence Sync Rule Name** to identify the use case of
     this rule. For example: Connect agent switches to Lunch
-    <img src="../media/image152.png" />
+    
+<img src="../media/image152.png" />
 
 7.  Select **Next**
 
@@ -235,7 +243,8 @@ and Salesforce agent state change.
 
 12. For Operand B Value, enter **Lunch** (Or whatever state you have
     created in Amazon Connect)**
-    <img src="../media/image153.png" />
+    
+<img src="../media/image153.png" />
 
 13. Select **Next**
 
@@ -253,7 +262,8 @@ and Salesforce agent state change.
 18. In the bottom left corner of the Service Console, select the CTI
     Softphone icon
 
-    <img src="../media/image46.png" />
+    
+<img src="../media/image46.png" />
 
 19. Set your Amazon Connect agent status to Lunch
 

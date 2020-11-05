@@ -1,5 +1,4 @@
-Configuring and Using AWS Serverless Application Repository for Salesforce Features
-===================================================================================
+<h1 class="toc">Configuring and Using AWS Serverless Application Repository for Salesforce Features</h1>
 
 The AWS Serverless Application Repository for Salesforce includes a
 number of features that are enabled by default, however they are only

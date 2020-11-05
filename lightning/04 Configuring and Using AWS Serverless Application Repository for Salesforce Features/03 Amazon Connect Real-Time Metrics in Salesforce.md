@@ -1,5 +1,4 @@
-Amazon Connect Real-Time Metrics in Salesforce
-----------------------------------------------
+<h2 class="toc">Amazon Connect Real-Time Metrics in Salesforce</h2>
 
 The CTI adapter includes real-time reporting tools which provide
 visibility into critical data which help improve the utilization of your
@@ -14,26 +13,28 @@ queue staffing and the distribution of contacts by queue. The second
 view, AC Real Time Queue Metrics, allows you to select a specific queue
 and view the real-time metrics for that queue.
 
-### Deployment and Configuration
+<h3 class="toc">Deployment and Configuration</h3>
 
 Once you have deployed the AWS Serverless Application Repository for
 Salesforce and provided the appropriate credentials, there is no further
 configuration required to make the data flow work. The only remaining
 task is to add the real-time views to your Salesforce console.
 
-#### Adding Real-Time Reports to the Service Console
+<h4 class="toc">Adding Real-Time Reports to the Service Console</h4>
 
 1.  Log in into your Salesforce org and go to the **Service Console**
 
 2.  Expand the **navigation menu** by selecting the down arrow and
     choose **Edit**.
 
-    <img src="../media/image40.png" />
+    
+<img src="../media/image40.png" />
 
 3.  On the Edit Service Console App Navigation Items page, select **Add
     More Items**
 
-    <img src="../media/image41.png" />
+    
+<img src="../media/image41.png" />
 
 4.  Select the **+** next to **AC Queue Metrics** and **AC Real Time
     Queue Metrics**
@@ -43,17 +44,20 @@ task is to add the real-time views to your Salesforce console.
 6.  Change the order of your Navigation Items if desired, then choose
     **Save**
 
-    <img src="../media/image194.png" />
+    
+<img src="../media/image194.png" />
 
 7.  Once the save completes, expand the **navigation menu** by selecting
     the down arrow and choose **AC Queue Metrics**
 
-    <img src="../media/image195.png" />
+    
+<img src="../media/image195.png" />
 
 8.  The AC Queue Metrics view will display and any relevant data will
     update every 15 seconds.
 
-    <img src="../media/image196.png" />
+    
+<img src="../media/image196.png" />
 
 9.  Scroll down to view the **AC Contact Metrics Dashboard
 
@@ -62,7 +66,8 @@ task is to add the real-time views to your Salesforce console.
 10. Expand the **navigation menu** by selecting the down arrow and
     choose **AC Real Time Queue Metrics
 
-    <img src="../media/image198.png" />
+    
+<img src="../media/image198.png" />
 
 11. Change the List View to **ALL**
 
@@ -71,4 +76,5 @@ task is to add the real-time views to your Salesforce console.
 12. Select a queue to view the detailed real-time statistics for that
     specific queue
 
-    <img src="../media/image200.png" />
+    
+<img src="../media/image200.png" />

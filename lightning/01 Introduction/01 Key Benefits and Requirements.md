@@ -1,5 +1,6 @@
-Key Benefits
-------------
+<h1 class="toc">Key Benefits and Requirements</h1>
+
+<h2 class="toc">Key Benefits</h2>
 
 The key benefits of the Amazon Connect CTI Adapter are:
 
@@ -61,8 +62,7 @@ If you are using Lighting, you can get a head start by working through
 the [Build an Amazon Connect Integration Salesforce
 Trailhead](https://trailhead.salesforce.com/en/content/learn/projects/build-an-amazon-connect-integration).
 
-Requirements
-------------
+<h2 class="toc">Requirements</h2>
 
 To successfully deploy, configure, and implement the Amazon Connect
 integration with Salesforce, you must ensure that the following
@@ -75,9 +75,9 @@ Adapter from the AppExchange you will need:
 
 1.  Salesforce
 
-    a.  Salesforce org with Lightning experience
+    a. Salesforce org with Lightning experience
 
-    b.  My Domain configured and deployed to users
+    b. My Domain configured and deployed to users
 
 2.  An Amazon Connect instance
 
@@ -93,9 +93,9 @@ from the Serverless Application Repository, you will also need:
 
 2.  Salesforce:
 
-    a.  An API user account
+    a. An API user account
 
-    b.  A new Connected App
+    b. A new Connected App
 
 ### Browser Compatibility
 

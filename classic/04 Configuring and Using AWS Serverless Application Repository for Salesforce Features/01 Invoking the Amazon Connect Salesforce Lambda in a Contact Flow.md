@@ -1,5 +1,4 @@
-Invoking the Amazon Connect Salesforce Lambda in a Contact Flow
----------------------------------------------------------------
+<h1 class="toc">Invoking the Amazon Connect Salesforce Lambda in a Contact Flow</h1>
 
 The Amazon Connect Contact Flow defines the routing behaviour within
 Amazon Connect, allowing contact center administrators to customize call
@@ -29,8 +28,7 @@ part of the Adapter.
 The Lambda function supports different operations, based on the
 mandatory input parameter "sf_operation".
 
-Salesforce Lookup
------------------
+<h2 class="toc">Salesforce Lookup</h2>
 
 This operation is invoked by setting "sf_operation" to "lookup". In this
 case, the Lambda function queries Salesforce for objects based on the
@@ -74,8 +72,7 @@ A result example:
 
 <img src="../media/image163.png" />
 
-Salesforce Create
------------------
+<h2 class="toc">Salesforce Create</h2>
 
 This operation is invoked by setting "sf_operation" to "create". In this
 case, the Lambda function creates a Salesforce object based on the
@@ -112,8 +109,7 @@ A result example (providing the newly created Case Id):
 
 <img src="../media/image171.png" />
 
-Salesforce Update
------------------
+<h2 class="toc">Salesforce Update</h2>
 
 This operation is invoked by setting "sf_operation" to "update". In this
 case, the Lambda function updates a Salesforce object based on the
@@ -146,8 +142,7 @@ A result example (HTTP Status Code):
 
 204 is "No Content" success code
 
-Salesforce Phone Lookup
------------------------
+<h2 class="toc">Salesforce Phone Lookup</h2>
 
 This operation is invoked by setting "sf_operation" to "phoneLookup". In
 this case, the Lambda function queries Salesforce for Contacts based on
@@ -177,8 +172,7 @@ A result example:
 
 <img src="../media/image158.png" />
 
-Salesforce query
-----------------
+<h2 class="toc">Salesforce query</h2>
 
 This operation is invoked by setting "sf_operation" to "query". In this
 case, the Lambda function uses Salesforce Object Query Language (SOQL)
@@ -190,7 +184,7 @@ Any additional parameters will replace text values in the original query
 so that queries can be dynamic based on values stored within the contact
 flow. For example, the parameter set:
 
--   query: "select {{field}} from {{object}}"
+-   query: "select field from object"
 
 -   field: "Id"
 
@@ -204,7 +198,7 @@ In the contact flow example below, we look for a customer by phone number.
 
 <img src="../media/image180.png" />
 
-(full text of the value is "select Id from Contact where Phone LIKE \'%{{number}}%\'")
+(full text of the value is "select Id from Contact where Phone LIKE \'%number%\'")
 
 <img src="../media/image181.png" />
 
@@ -221,8 +215,7 @@ This operation returns a response of:
 }
 ```
 
-Salesforce queryOne
--------------------
+<h2 class="toc">Salesforce queryOne</h2>
 
 This operation is invoked by setting "sf_operation" to "queryOne" (case
 sensitive). In this case, the Lambda function uses Salesforce Object
@@ -236,7 +229,7 @@ Any additional parameters will replace text values in the original query
 so that queries can be dynamic based on values stored within the contact
 flow. For example, the parameter set:
 
--   query: "select {{field}} from {{object}}"
+-   query: "select field from object"
 
 -   field: "Id"
 
@@ -249,7 +242,7 @@ In the contact flow example below, we look for a customer by phone number.
 <img src="../media/image179.png" />
 
 (full text of the value is "select Id from Contact where Phone LIKE
-\'%{{number}}%\'")
+\'%number%\'")
 
 <img src="../media/image181.png" />
 
@@ -268,8 +261,7 @@ This operation returns a response of:
 }
 ```
 
-Salesforce createChatterPost
-----------------------------
+<h2 class="toc">Salesforce createChatterPost</h2>
 
 This operation is invoked by setting "sf_operation" to
 "createChatterPost" (case sensitive). In this case, the Lambda function
@@ -324,8 +316,7 @@ The operation returns a response of:
 <img src="../media/image186.png" />
 the Subject:
 
-Salesforce createChatterComment
--------------------------------
+<h2 class="toc">Salesforce createChatterComment</h2>
 
 This operation is invoked by setting "sf_operation" to
 "createChatterComment" (case sensitive). In this case, the Lambda
@@ -365,6 +356,112 @@ The operation returns a response of:
 }
 ```
 
+See the chatter post appear attached to the Subject:
+
 <img src="../media/image190.png" />
 
-See the chatter post appear attached to the Subject:
+Salesforce search
+-------------------------------
+
+This operation is invoked by setting "sf_operation" to
+"search" (case sensitive). In this case, the Lambda
+function uses the Salesforce REST to perform a parameterized search
+(see
+[here](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_search_parameterized.htm)).
+For search, the following parameters are required:
+
+-   q
+
+-   sf_fields
+
+-   sf_object
+
+The following parameters are optional:
+
+-   where
+
+-   overallLimit
+
+See the below example:
+
+<img src="../media/image320.png" /> 58
+
+<img src="../media/image321.png" /> 59
+
+<img src="../media/image322.png" /> 60
+
+<img src="../media/image323.png" /> 61
+
+<img src="../media/image324.png" /> 62
+
+<img src="../media/image325.png" /> 63
+
+The operation returns a response of:
+
+```json
+{
+    "sf_records": [
+        {
+            "Id": "50001000001B9e6AAG", 
+            "Subject": "test subject", 
+            "Status": "New"
+        }, 
+        {
+            "Id": "50001000001B9eWAAS", 
+            "Subject": "test subject", 
+            "Status": "New"
+        }, 
+        {
+            "Id": "50001000001BDgiAAG", 
+            "Subject": "test subject", 
+            "Status": "New"
+        }
+    ], 
+    "sf_count": 3
+}
+```
+
+Salesforce searchOne
+-------------------------------
+
+This operation is invoked by setting "sf_operation" to
+"searchOne" (case sensitive). In this case, the Lambda
+function uses the Salesforce REST to perform a parameterized search
+(see
+[here](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_search_parameterized.htm)).
+For search, the following parameters are required:
+
+-   q
+
+-   sf_fields
+
+-   sf_object
+
+The following parameter is optional:
+
+-   where
+
+See the below example:
+
+<img src="../media/image326.png" />
+
+<img src="../media/image327.png" />
+
+<img src="../media/image322.png" />
+
+<img src="../media/image323.png" />
+
+<img src="../media/image324.png" />
+
+<img src="../media/image325.png" />
+
+The operation returns a response of:
+
+```json
+{
+    "Id": "50001000001BIn6AAG",
+    "Subject": "test subject unique", 
+    "Status": "New", 
+    "sf_count": 1
+}
+```

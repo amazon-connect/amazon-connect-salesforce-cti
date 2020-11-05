@@ -1,8 +1,6 @@
-Installing the Amazon Connect CTI Adapter for Salesforce Package
-================================================================
+<h1 class="toc">Installing the Amazon Connect CTI Adapter for Salesforce Package</h1>
 
-Lightning Flow Setup Installation 
----------------------------------
+<h2 class="toc">Lightning Flow Setup Installation</h2>
 
 1.  Navigate to **Service Setup** within the Lightning UI under the gear
     icon.
@@ -29,24 +27,25 @@ Lightning Flow Setup Installation
 
 9.  Click Finish. You can also launch the Amazon Connect Setup Guide.
 
-Installing from the Salesforce AppExchange 
-------------------------------------------
+<h2 class="toc">Installing from the Salesforce AppExchange</h2>
 
 1.  Log in into your Salesforce instance and open **Setup**.
 
 <img src="../media/image2.png" />
 
-3.  Open the [Amazon Connect CTI Package URL](https://appexchange.salesforce.com/listingDetail?listingId=a0N3A00000EJH4yUAH), then choose **Install for All Users**.
+2.  Open the [Amazon Connect CTI Package URL](https://appexchange.salesforce.com/listingDetail?listingId=a0N3A00000EJH4yUAH), then choose **Install for All Users**.
 
 <img src="../media/image3.png" />
+
 <img src="../media/image4.png" />
+
 <img src="../media/image5.png" />
 
-4.  Choose **Done**. The **Installed Packages** page opens.
+3.  Choose **Done**. The **Installed Packages** page opens.
 
 <img src="../media/image6.png" />
 
-5.  In the **Quick Find** box, type *Call Center*, then choose **Call Centers**.
+4.  In the **Quick Find** box, type *Call Center*, then choose **Call Centers**.
 
 <img src="../media/image7.png" />
 
@@ -55,8 +54,7 @@ configurations: Classic, Console and Lightning.
 
 <img src="../media/image8.png" />
 
-Create the Softphone Layout
----------------------------
+<h2 class="toc">Create the Softphone Layout</h2>
 
 Next, we need to create a softphone layout for the solution.
 
@@ -87,8 +85,7 @@ Next, we need to create a softphone layout for the solution.
 
 <img src="../media/image15.png" />
 
-Set Access Permissions
-----------------------
+<h2 class="toc">Set Access Permissions</h2>
 
 All users must be assigned the required permission set to access the
 Salesforce metadata included in this package. The Amazon Connect CTI
@@ -124,8 +121,7 @@ softphone.
 
 <img src="../media/image20.png" />
 
-Configure Console Experience
-----------------------------
+<h2 class="toc">Configure Console Experience</h2>
 
 For the Console experience, we are going to use Sample Console
 application, but the procedure is the same for other applications.
@@ -140,9 +136,13 @@ In the top navigation bar, select the "+" icon.
 
 Select "AC CTI Adapters"
 
-Create a new adapter. Fill in the CTI Adapter Name, and Amazon Connect
-Instance Alias. For the Call Center Definition Name, type in
-ACConsoleAdapter. Select Save.
+Create a new adapter. Fill in the CTI Adapter Name. For the Call Center Definition Name, type in
+ACConsoleAdapter. For the Amazon Connect Instance, type in the login url to the instance (this can be found
+in the Amazon Connect Instance details page), removing everything after ".com".
+
+<img src="../media/image328.png"/>
+
+Select Save.
 
 <img src="../media/image24.png" />
 
@@ -150,6 +150,7 @@ In the Quick Find field, type Visualforce Pages and select Visual Force
 Pages:
 
 <img src="../media/image25.png" />
+
 <img src="../media/image26.png" />
 
 As we are currently setting up the Console experience, click on
@@ -212,8 +213,9 @@ Select "Amazon Connect CCP Adapter Console 3.9"
 
 <img src="../media/image37.png" />
 
-If a CCP version 1 user interface is desired, remove the '?ccpVersion=2"
-from the CTI Adapter URL. Click on the Save button.
+Replace the **CTI Adapter URL** with the AC Lightning Adapter visualforce page url you copied in the previous section. 
+If you wish to specify your version of the ccp user interface, add "?ccpVersion=x", where x is the version of the ccp
+(either 1 or 2). Click on the Save button.
 
 Click on the "Manage Call Center Users" button at the bottom of the
 page.
@@ -265,10 +267,10 @@ Make an inbound phone call to your Amazon Connect instance. The CCP is
 going to "ring" and you can answer the call.
 
 <img src="../media/image49.png" />
+
 <img src="../media/image50.png" />
 
-Configure Classic Experience
-----------------------------
+<h2 class="toc">Configure Classic Experience</h2>
 
 The Salesforce Classic is the easiest to configure, but it has some
 limitations. Most important limitation is that, with Classic layout,
@@ -294,9 +296,13 @@ In the top navigation bar, select the "+" icon.
 
 Select "AC CTI Adapters"
 
-Create a new adapter. Fill in the CTI Adapter Name, and Amazon Connect
-Instance Alias. For the Call Center Definition Name, type in
-ACClassicAdapter. Select Save.
+Create a new adapter. Fill in the CTI Adapter Name. For the Call Center Definition Name, type in
+ACConsoleAdapter. For the Amazon Connect Instance, type in the login url to the instance (this can be found
+in the Amazon Connect Instance details page), removing everything after ".com".
+
+<img src="../media/image328.png"/>
+
+Select Save.
 
 <img src="../media/image24.png" />
 
@@ -304,6 +310,7 @@ In the Quick Find field, type Visualforce Pages and select Visual Force
 Pages:
 
 <img src="../media/image25.png" />
+
 <img src="../media/image26.png" />
 
 As we are currently setting up the Classic experience, click on
@@ -345,8 +352,9 @@ Select "Amazon Connect CCP Adapter Classic 3.9"
 
 <img src="../media/image56.png" />
 
-If a CCP version 1 user interface is desired, click on the Edit button
-and remove "?ccpVersion=2" from the url and click on the Save button.
+Replace the **CTI Adapter URL** with the AC Lightning Adapter visualforce page url you copied in the previous section. 
+If you wish to specify your version of the ccp user interface, add "?ccpVersion=x", where x is the version of the ccp
+(either 1 or 2). Click on the Save button.
 
 Click on the "Manage Call Center Users" button at the bottom of the
 page.
@@ -400,6 +408,7 @@ Make an inbound phone call to your Amazon Connect instance. The CCP is
 going to "ring" and you can answer the call.
 
 <img src="../media/image66.png" />
+
 <img src="../media/image67.png" />
 
 Some CTI Flow features will reload the page the agent is currently on.

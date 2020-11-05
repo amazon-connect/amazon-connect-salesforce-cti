@@ -1,6 +1,4 @@
-
-CTI Flows
----------
+<h2 class="toc">CTI Flows</h2>
 
 The CTI Adapter provides a mechanism to customize the behavior of the
 adapter based on your business needs without needing to edit the
@@ -44,8 +42,7 @@ Salesforce Agent or Salesforce UI.
 Each source comes with a set of events that you can hook into, i.e. your
 CTI Flow will be executed when one of these events fire. Typically, you
 will have only one flow for a combination of a source and an event. (You
-can find out more about sources and events in [Appendix
-C](#appendix-c-cti-flow-sources-and-events).)
+can find out more about sources and events in [Appendix C - CTI Flow Sources and Events](/lightning/07%20Appendix%20C%20-%20CTI%20Flow%20Sources%20and%20Events/01%20CTI%20Flow%20Sources%20and%20Events.md).)
 
 For the purposes of this example, we selected **Amazon Connect Voice
 Contact** source and **onConnecting** event. Now click Save and on the
@@ -57,6 +54,7 @@ Let's build a CTI Flow that opens a screenpop in Salesforce when a voice
 call comes.
 
 <img src="../media/image137.png" />
+
 You can start using by dragging the item called **CTI Block** from the sidebar in the Main Menu over the stage,
 which is marked by a grid pattern.
 

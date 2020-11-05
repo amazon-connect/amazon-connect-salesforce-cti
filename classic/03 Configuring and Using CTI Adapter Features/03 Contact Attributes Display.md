@@ -1,5 +1,4 @@
-Contact Attributes Display
-==========================
+<h1 class="toc">Contact Attributes Display</h1>
 
 Amazon Connect allows for user defined Contact Attributes to be attached
 to a phone call within Contact Flows. This can be used to track caller
