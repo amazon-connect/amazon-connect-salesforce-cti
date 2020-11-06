@@ -33,11 +33,9 @@
 
 <img src="../media/image2.png" />
 
-2.  Open the [Amazon Connect CTI Package URL](https://appexchange.salesforce.com/listingDetail?listingId=a0N3A00000EJH4yUAH), then choose **Install for All Users**.
+2.  Open the [Amazon Connect CTI Package URL](https://appexchange.salesforce.com/listingDetail?listingId=a0N3A00000EJH4yUAH), then choose **Install for Admins Only**.
 
 <img src="../media/image3.png" />
-
-<img src="../media/image4.png" />
 
 <img src="../media/image5.png" />
 

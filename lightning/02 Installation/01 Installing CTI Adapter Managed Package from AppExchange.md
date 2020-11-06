@@ -53,7 +53,7 @@ Marketplace.
 
 <img src="../media/image7.png" />
 
-10. Select **Install for All Users**, then choose **Install**
+10. Select **Install for Admins Only**, then choose **Install**
 
 <img src="../media/image8.png" />
 
