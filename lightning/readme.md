@@ -199,7 +199,7 @@ Connect and Salesforce.
 
 # Release Notes
 
-## 5.6 October 2020
+## 5.7 November 2020
 
 - **Feature**: Change audio recording feature in the Contact Channel Analytics page to use an audio streaming approach
 - **Feature**: Add permission set specifically for the audio recording feature
