@@ -131,7 +131,7 @@ used by Amazon Connect to interact with Salesforce.
 
 # Release Notes
 
-## 5.6 October 2020
+## 5.7 November 2020
 
 - **Feature**: Localization into 9 languages.
 - **Feature**: Add callType to return fields of "Get Contact Properties" block
