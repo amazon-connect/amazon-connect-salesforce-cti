@@ -117,9 +117,27 @@ Please note that your secret may also be formatted stored as a "Secret key/value
 
 <img src="../media/image284.png" />
 
-16. Navigate to the "Lambda" aws service. Search for term "sfgenerate" and copy down the full name of the sfGenerateAudioRecordingStreaming lambda. This will be used in the next section.
+17. Navigate to the "Lambda" aws service. Search for term "sfgenerate" and copy down the full name of the sfGenerateAudioRecordingStreaming lambda. This will be used in the next section.
 
 <img src="../media/image274.png" />
+
+18. Navigate back to the "Lambda" aws service main page and navigate to the **us-east-1 region**. Select **create function**.
+
+<img src="../media/audiostreaming0.png" />
+
+19. Enter a function name, like **sfSig4RequestToS3**. 
+
+20. Select **change default execution role**, and **use an existing role**. Search for and select *sfSig4RequestToS3Role*.
+
+<img src="../media/audiostreaming1.png" />
+
+21. Select **create function**. On the next screen, copy and paste the contents from [this file](./sfSig4RequestToS3) into the function body, and then select **Deploy**.
+
+22. Select the actions dropdown, and then select **Deploy to Lambda@Edge**.
+
+23. Select the Cloudfront Distribution that was created by the Salesfore Lambdas serverless application, then check off the "I acknowledge..." check box, then select deploy.
+
+<img src="../media/audiostreaming2.png" />
 
 #### Salesforce Side Setup
 
@@ -142,16 +160,6 @@ Please note that your secret may also be formatted stored as a "Secret key/value
 7. Select "Add Assignments". Add the users that should have access to the audio recordings and select "assign".
 
 <img src="../media/image279.png" />
-
-8. In the setup search box, search for "Object Manager".
-
-9. Select the "AC Contact Channel Analytics" Object, select "Lightning Record Pages", then select "Edit".
-
-10. From the lefthand panel, drag the **Visualforce** component and the **ac_ContactChannelAnalyticsPostTranscriptView** custom component on to the page in the desired position.
-
-<img src="../media/image276.png" />
-
-11. Select the **Visualforce** component that was dragged onto the screen. In the righthand panel that shows up, select the dropdown under "Visualforce page name" and select **AC_RecordingViewer**.
 
 <h3 class="toc">Call Recording Import</h3>
 

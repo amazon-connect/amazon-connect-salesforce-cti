@@ -153,12 +153,9 @@ Sales.
 
 12. Scroll down and click on the link **Voice onHvsWorkStart.**
 
-13. On your desktop, create a file called flow.json, and, paste the
-    following code:
+13. Download this file: [this code](https://github.com/amazon-connect/amazon-connect-salesforce-cti/blob/main/lightning/09%20Appendix%20E%20-%20Integration%20with%20Salesforce%20High%20Velocity%20Sales/hvs2.json).
 
-> {\"actions\":\[{\"id\":\"uid-0\",\"type\":\"SE_Start\",\"meta\":{},\"controls\":{},\"ports\":{\"done\":\"uid-1\"},\"position\":\[-351.5,-206\]},{\"id\":\"uid-1\",\"type\":\"SE_SetProperty\",\"meta\":{},\"controls\":{\"key\":\"hvsWorkId\",\"value\":\"\$.payload.workId\"},\"ports\":{\"done\":\"uid-3\"},\"position\":\[-151,-205\]},{\"id\":\"uid-3\",\"type\":\"SE_SetProperty\",\"meta\":{},\"controls\":{\"key\":\"hvsCompleteWorkWhen\",\"value\":\"\$.payload.completeWorkWhen\"},\"ports\":{\"done\":\"uid-4\"},\"position\":\[-144,-64\]},{\"id\":\"uid-4\",\"type\":\"SE_End\",\"meta\":{},\"controls\":{},\"ports\":{},\"position\":\[221.5,-185\]}\]}
-
-14. Click **Upload** and find the file you just created. You should now
+14. Click **Upload** and find the file you just downloaded. You should now
     see this:\*\*
 
 <img src="../media/image256.png" />
@@ -182,9 +179,9 @@ Sales.
 
 22. Scroll down and click on the link **HVS Voice onConnecting.**
 
-23. On your desktop, create a file called flow.json, and, download and paste [this code](https://connect-blogs.s3.amazonaws.com/Amazon+Connect+Salesforce+CTI+Adapter/Assets/Sample+Flows/hvs.json).
+23. Download this file: [this code](https://github.com/amazon-connect/amazon-connect-salesforce-cti/blob/main/lightning/09%20Appendix%20E%20-%20Integration%20with%20Salesforce%20High%20Velocity%20Sales/hvs2.json).
 
-24. Click **Upload** and find the file you just created. You should now
+24. Click **Upload** and find the file you just downloaded. You should now
     see this:
 
 <img src="../media/image257.png" />
