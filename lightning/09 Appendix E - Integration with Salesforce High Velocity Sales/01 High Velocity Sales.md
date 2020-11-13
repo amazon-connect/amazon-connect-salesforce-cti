@@ -153,7 +153,7 @@ Sales.
 
 12. Scroll down and click on the link **Voice onHvsWorkStart.**
 
-13. Download this file: [this code](https://github.com/amazon-connect/amazon-connect-salesforce-cti/blob/main/lightning/09%20Appendix%20E%20-%20Integration%20with%20Salesforce%20High%20Velocity%20Sales/hvs2.json).
+13. Download this file: [this code](./hvs2.json).
 
 14. Click **Upload** and find the file you just downloaded. You should now
     see this:\*\*
@@ -179,7 +179,7 @@ Sales.
 
 22. Scroll down and click on the link **HVS Voice onConnecting.**
 
-23. Download this file: [this code](https://github.com/amazon-connect/amazon-connect-salesforce-cti/blob/main/lightning/09%20Appendix%20E%20-%20Integration%20with%20Salesforce%20High%20Velocity%20Sales/hvs2.json).
+23. Download this file: [this code](./hvs2.json).
 
 24. Click **Upload** and find the file you just downloaded. You should now
     see this:

@@ -89,6 +89,7 @@ with id 'key-benefits-and-requirements'
   - [CTI Flows](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/03%20CTI%20Flows.md#cti-flows)
   - [Presence Sync Rules](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/04%20Presence%20Sync%20Rules.md#presence-sync-rules)
     - [Configuring Statuses](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/04%20Presence%20Sync%20Rules.md#configuring-statuses)
+    - [Amazon Connect System Statuses](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/04%20Presence%20Sync%20Rules.md#amazon-connect-system-statuses)
     - [Create Presence Statuses in Amazon Connect](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/04%20Presence%20Sync%20Rules.md#create-presence-statuses-in-amazon-connect)
       - [Create an Amazon Connect status](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/04%20Presence%20Sync%20Rules.md#create-an-amazon-connect-status)
     - [Create Presence Statuses in Salesforce](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/04%20Presence%20Sync%20Rules.md#create-presence-statuses-in-salesforce)
