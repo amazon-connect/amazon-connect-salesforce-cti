@@ -37,11 +37,18 @@ files.forEach((fileObj) => {
           // the following regex statement looks for links that point internally to this repo
           /\[((?!\[).)*\]\((\n)?(?!http)((?!\().)*(\n)?\)/gs,
           (text) => {
-            const section = textToId(
-              text.substring(text.indexOf("[") + 1, text.indexOf("]"))
-            );
-            // link with html anchor that points to the link text lowercase, and with dashes (-) in place for spaces.
-            return `${text.substring(0, text.indexOf("]") + 1)}(#${section})\n`;
+            // internal markdown links
+            if (text.toLowerCase().includes(".md")) {
+              const section = textToId(
+                text.substring(text.indexOf("[") + 1, text.indexOf("]"))
+              );
+              // link with html anchor that points to the link text lowercase, and with dashes (-) in place for spaces.
+              return `${text.substring(0, text.indexOf("]") + 1)}(#${section})\n`;
+            } else { // repo file links
+              const fileDirectory = file.substring(2, file.lastIndexOf("/"));
+              const filePath = path.resolve(fileDirectory, text.substring(text.indexOf("(") + 1, text.length - 1)).replace(/ /g, "%20");
+              return `${text.substring(0, text.indexOf("]") + 1)}(https://github.com/amazon-connect/amazon-connect-salesforce-cti/blob/main${filePath})\n`;
+            }
           }
         )
         // fix image path to be relative to this file

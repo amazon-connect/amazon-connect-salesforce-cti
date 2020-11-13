@@ -87,12 +87,23 @@ side of the configuration and prepare rules that sync both clients to
 the same state regardless of which agent sets the status. Essentially,
 you will configure the status sync similar to the following example:
 
-  When a sets status to b                          Set x to y
-  ------------------------------------------------ -----------------------------------
-  Amazon Connect sets status to Available          Omnichannel to Available
-  Omnichannel sets status to Available             Amazon Connect to Available
-  Amazon Connect sets status to Working -- Phone   Omnichannel to Working -- Phone
-  Omnichannel sets status to Working -- Media      Amazon Connect to Working - Media
+| When a sets status to b                        | Set x to y                        |
+|------------------------------------------------|-----------------------------------|
+| Amazon Connect sets status to Available        | Omnichannel to Available          |
+| Omnichannel sets status to Available           | Amazon Connect to Available       |
+| Amazon Connect sets status to Working -- Phone | Omnichannel to Working -- Phone   |
+| Omnichannel sets status to Working -- Media    | Amazon Connect to Working - Media |
+
+<h3 class="toc">Amazon Connect System Statuses</h3>
+
+The following Amazon Connect CCP statuses are system statuses that can be used in presence sync.
+Please note however that these statuses are restricted and you cannot set the Amazon Connect status
+to the below.
+- Busy - agent is in a call
+- Pending - agent is receiving a request for a queue callback
+- PendingBusy - agent is receiving call
+- CallingCustomer - agent is calling customer
+- AfterCallWork - agent is in the after call work screen
 
 <h3 class="toc">Create Presence Statuses in Amazon Connect</h3>
 

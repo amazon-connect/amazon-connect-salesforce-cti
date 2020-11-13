@@ -212,29 +212,35 @@ It is a common practice to create an API user account for this purpose.
 
 23. Choose **Save**
 
-24. A confirmation email with an **activation link** will be sent to the
+24. In **Quick Find**, search for "Permission Sets". Select the **AC_Administrator** permission set.
+
+<img src="../media/lambda-install-0.png" />
+
+25. Select **Manage Assignments**. Add the apiuser you just created to the permission set.
+
+26. A confirmation email with an **activation link** will be sent to the
     email address provided. Choose the link to activate your user and
     set their password
 
-25. Fill out the form to set a password for the API user
+27. Fill out the form to set a password for the API user
 
-26. Select **Change Password**. The API user will log into the
+28. Select **Change Password**. The API user will log into the
     Salesforce Classic view
 
-27. Access the API user's personal settings by selecting the username in
+29. Access the API user's personal settings by selecting the username in
     the top right corner, then choose **My Settings**
 
 <img src="../media/image70.png" />
 
-28. In the **Quick Find** field, type **security** then select **Reset
+30. In the **Quick Find** field, type **security** then select **Reset
     My Security Token** from the results
 
 <img src="../media/image71.png" />
 
-29. Select **Reset Security Token**. Your security token will be emailed
+31. Select **Reset Security Token**. Your security token will be emailed
     to you
 
-30. Copy the security token from the email to your notepad
+32. Copy the security token from the email to your notepad
 
 <h4 class="toc">Gather Information from Your Amazon Connect Instance</h4>
 
