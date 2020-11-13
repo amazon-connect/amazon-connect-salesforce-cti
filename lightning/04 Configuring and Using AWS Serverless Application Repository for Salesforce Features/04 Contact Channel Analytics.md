@@ -88,15 +88,21 @@ Please note that your secret may also be formatted stored as a "Secret key/value
 
 11. In the bucket details, select the **Permissions** tab and then the **CORS configuration** tab and paste the following. Replace the AllowedOrigin with the url copied in step 9.
 
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-    <CORSConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
-    <CORSRule>
-        <AllowedOrigin>{url copied in step 9}</AllowedOrigin>
-        <AllowedMethod>GET</AllowedMethod>
-        <AllowedHeader>Access-Control-Allow-Origin</AllowedHeader>
-    </CORSRule>
-</CORSConfiguration>
+```json
+[
+    {
+        "AllowedHeaders": [
+            "Access-Control-Allow-Origin"
+        ],
+        "AllowedMethods": [
+            "GET"
+        ],
+        "AllowedOrigins": [
+            "{url copied in step 9}"
+        ],
+        "ExposeHeaders": []
+    }
+]
 ```
 
 <img src="../media/image271.png" />
@@ -131,7 +137,7 @@ Please note that your secret may also be formatted stored as a "Secret key/value
 
 <img src="../media/audiostreaming1.png" />
 
-21. Select **create function**. On the next screen, copy and paste the contents from [this file](./sfSig4RequestToS3) into the function body, and then select **Deploy**.
+21. Select **create function**. On the next screen, copy and paste the contents from [this file](./sfSig4RequestToS3.js) into the function body, and then select **Deploy**.
 
 22. Select the actions dropdown, and then select **Deploy to Lambda@Edge**.
 
