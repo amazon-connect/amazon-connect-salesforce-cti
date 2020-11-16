@@ -367,7 +367,7 @@ retrieve secrets.
 
 25. Click Next
 
-26. Make sure **Disable automatic rotation** is disabled
+26. Make sure **Disable automatic rotation** is checked.
 
 27. Click Next
 
