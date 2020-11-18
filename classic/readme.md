@@ -60,6 +60,7 @@ with id 'key-benefits-and-requirements'
       - [Store Salesforce credentials in AWS Secrets Manager](02%20Installation/02%20Installing%20the%20Amazon%20Connect%20Salesforce%20Lambda%20Package.md#store-salesforce-credentials-in-aws-secrets-manager)
     - [Install the Amazon Connect Salesforce Lambda package](02%20Installation/02%20Installing%20the%20Amazon%20Connect%20Salesforce%20Lambda%20Package.md#install-the-amazon-connect-salesforce-lambda-package)
   - [Upgrading from an Earlier Version](02%20Installation/03%20Upgrading%20from%20an%20Earlier%20Version.md#upgrading-from-an-earlier-version)
+    - [CTI Adapter Installation Troubleshooting and Common Issues](02%20Installation/04%20CTI%20Adapter%20Installation%20Troubleshooting.md#cti-adapter-installation-troubleshooting-and-common-issues)
 - Configuring and Using CTI Adapter Features
   - [CTI Adapter Configuration](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/01%20CTI%20Adapter%20Configuration.md#cti-adapter-configuration)
     - [CTI Adapter Details](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/01%20CTI%20Adapter%20Configuration.md#cti-adapter-details)
@@ -131,6 +132,8 @@ application package contains a set of common AWS Lambda functions to be
 used by Amazon Connect to interact with Salesforce.
 
 # Release Notes
+
+Important: when upgrading the CTI Adapter, please make sure that the Salesforce Lambdas are also updated to the newest version.
 
 ## 5.7 November 2020
 

@@ -67,6 +67,11 @@ Cloudformation stack:
 <img src="../media/image269.png" />
 
 4. Copy and paste the contents of the private key .pem file into a text editor. Replace every newline character with a space, and then delete the last character. This is most easily done using a "find and replace" feature in your text editor.
+The resulting string of text should resemble the following:
+
+```
+-----BEGIN RSA PRIVATE KEY----- (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (under 64 character string) -----END RSA PRIVATE KEY-----
+```
 
 5. Navigate to the "Secrets Manager" service. Select the **SalesforceCredentials**. 
 

@@ -73,6 +73,7 @@ with id 'key-benefits-and-requirements'
     - [Allow Amazon Connect to Access the sfInvokeAPI Lambda Function](02%20Installation/02%20Installing%20the%20Amazon%20Connect%20Salesforce%20Lambda%20Package.md#allow-amazon-connect-to-access-the-sfinvokeapi-lambda-function)
       - [Add the Lambda function to your Amazon Connect instance](02%20Installation/02%20Installing%20the%20Amazon%20Connect%20Salesforce%20Lambda%20Package.md#add-the-lambda-function-to-your-amazon-connect-instance)
   - [Upgrading from an Earlier Version](02%20Installation/03%20Upgrading%20from%20an%20Earlier%20Version.md#upgrading-from-an-earlier-version)
+  - [CTI Adapter Installation Troubleshooting and Common Issues](02%20Installation/04%20CTI%20Adapter%20Installation%20Troubleshooting.md#cti-adapter-installation-troubleshooting-and-common-issues)
 - [Configuring and Using CTI Adapter Features](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/readme.md#configuring-and-using-cti-adapter-features)
   - [CTI Adapter Details](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/01%20CTI%20Adapter%20Configuration.md#cti-adapter-details)
       - [Update the CTI Adapter Details](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/01%20CTI%20Adapter%20Configuration.md#update-the-cti-adapter-details)
@@ -200,9 +201,11 @@ Connect and Salesforce.
 
 # Release Notes
 
+Important: when upgrading the CTI Adapter, please make sure that the Salesforce Lambdas are also updated to the newest version.
+
 ## 5.7 November 2020
 
-- **Feature**: Change audio recording feature in the Contact Channel Analytics page to use an audio streaming approach
+- **Feature**: Change audio recording feature in the Contact Channel Analytics page to use an audio streaming approach. Please review [Contact Channel Analytics](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/04%20Contact%20Channel%20Analytics.md#contact-channel-analytics) in order to set the feature up.
 - **Feature**: Add permission set specifically for the audio recording feature
 - **Feature**: Localization into 9 languages.
 - **Feature**: Add callType to return fields of "Get Contact Properties" block
