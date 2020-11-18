@@ -42,9 +42,29 @@ available:
         and Parts of Speech (PoS), and identify word boundaries and
         labels like nouns and adjectives within the text.
 
-<h3 class="toc">Prerequisite Setup</h3>
+<h3 class="toc">Call Recording Import</h3>
 
-#### Cloudformation Template
+You can import Call Recordings into your Salesforce Org. This
+allows for easy access to the recordings from within Salesforce and can
+be used in conjunction with the other contact channel analytics features
+to provide a complete view of the customer interaction.
+
+The import of call recordings is not required to activate the other
+contact channel analytics features.
+
+Once enabled during the AWS Serverless Application Repository for
+Salesforce, recording import is activated on a call by call basis by
+adding a specific contact attribute. This attribute is used during
+Contact Trace Record processing to trigger the call import.
+
+NOTE: After Call Work time is a part of the Contact Trace Record. As
+such, CTRs are not generated until the agent leaves the after call work
+state. If you are not seeing a recording import, please make sure the
+agent has completed the call and left the after call work state.
+
+<h4 class="toc">Prerequisite Setup</h3>
+
+##### Cloudformation Template
 
 To make sure that the AWS resources are set up, make sure that the
 *PostcallRecordingImportEnabled* parameter is set to true in your
@@ -52,46 +72,37 @@ Cloudformation stack:
 
 <img src="../media/image266.png" />
 
-#### AWS Side Setup
+##### AWS Side Setup
 
-1. In a **root AWS account**, navigate to "My Security Credentials" in the AWS console.
+1. See [these steps](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-trusted-signers.html). Follow the sections *Creating key pairs for your signers*, and *Adding a signer to a distribution*.
+Make sure to record the **public key ID**.
 
-<img src="../media/image267.png" />
-
-2. Under "Cloudfront Key Pairs," select **Create New Key Pair**
-
-<img src="../media/image268.png" />
-
-3. In the modal that then pops up, select **Download Private Key File**. Then, copy down the **Access Key ID**.
-
-<img src="../media/image269.png" />
-
-4. Copy and paste the contents of the private key .pem file into a text editor. Replace every newline character with a space, and then delete the last character. This is most easily done using a "find and replace" feature in your text editor.
+2. Copy and paste the contents of the private key .pem file into a text editor. Replace every newline character with a space, and then delete the last character. This is most easily done using a "find and replace" feature in your text editor.
 The resulting string of text should resemble the following:
 
 ```
 -----BEGIN RSA PRIVATE KEY----- (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (under 64 character string) -----END RSA PRIVATE KEY-----
 ```
 
-5. Navigate to the "Secrets Manager" service. Select the **SalesforceCredentials**. 
+3. Navigate to the "Secrets Manager" service. Select the **SalesforceCredentials**. 
 
-6. Under the "Secret value" tab, select "Retrieve secret value" and then "Edit".
+4. Under the "Secret value" tab, select "Retrieve secret value" and then "Edit".
 
-7. For the **CloudFrontPrivateKey** field, copy and paste the modified contents of the private key .pem file. For the **CloudFrontAccessKeyID** field, copy and paste the **Access Key Id** you recorded above. Your Secrets Manager Secret should look like the following:
+5. For the **CloudFrontPrivateKey** field, copy and paste the modified contents of the private key .pem file. For the **CloudFrontAccessKeyID** field, copy and paste the **Access Key Id** you recorded above. Your Secrets Manager Secret should look like the following:
 
 <img src="../media/image270.png" />
 
 Please note that your secret may also be formatted stored as a "Secret key/value" secret rather than a "Plaintext" secret; both secret types are valid.
 
-8. Navigate to your Salesforce instance. Navigate to setup, then search for "Visualforce pages."
+6. Navigate to your Salesforce instance. Navigate to setup, then search for "Visualforce pages."
 
 <img src="../media/image283.png" />
 
-9. Select the **AC_RecordingViewer** visualforce page, and select "preview." Copy the url of the opened page up until ".com".
+7. Select the **AC_RecordingViewer** visualforce page, and select "preview." Copy the url of the opened page up until ".com".
 
-10. Navigate back to aws, to the s3 bucket where your audio recording files are stored. This s3 bucket should be the same bucket as the **ConnectRecordingS3BucketName** parameter to the serverless application.
+8. Navigate back to aws, to the s3 bucket where your audio recording files are stored. This s3 bucket should be the same bucket as the **ConnectRecordingS3BucketName** parameter to the serverless application.
 
-11. In the bucket details, select the **Permissions** tab and then the **CORS configuration** tab and paste the following. Replace the AllowedOrigin with the url copied in step 9.
+9. In the bucket details, select the **Permissions** tab and then the **CORS configuration** tab and paste the following. Replace the AllowedOrigin with the url copied in step 9.
 
 ```json
 [
@@ -112,45 +123,45 @@ Please note that your secret may also be formatted stored as a "Secret key/value
 
 <img src="../media/image271.png" />
 
-12. Select Save
+10. Select Save
 
-13. Navigate to the "IAM" aws service. Select **Add User**.
+11. Navigate to the "IAM" aws service. Select **Add User**.
 
 <img src="../media/image272.png" />
 
-14. Give your IAM user a name, like **sfInvokeGenerateAudioRecordingStreamingURLIAMUser**. For the "AWS Access Type", select **Programmatic access**.
+12. Give your IAM user a name, like **sfInvokeGenerateAudioRecordingStreamingURLIAMUser**. For the "AWS Access Type", select **Programmatic access**.
 
 <img src="../media/image273.png" />
 
-15. Select Next, then select "Attach existing policies directly." Search for **invokeSfGenerateAudioRecordingStreamingURLPolicy** and select it.
+13. Select Next, then select "Attach existing policies directly." Search for **invokeSfGenerateAudioRecordingStreamingURLPolicy** and select it.
 
-16. Create the user, then copy down the **Access key ID** and the **Secret access key**. These keys will be used in the next section.
+14. Create the user, then copy down the **Access key ID** and the **Secret access key**. These keys will be used in the next section.
 
 <img src="../media/image284.png" />
 
-17. Navigate to the "Lambda" aws service. Search for term "sfgenerate" and copy down the full name of the sfGenerateAudioRecordingStreaming lambda. This will be used in the next section.
+15. Navigate to the "Lambda" aws service. Search for term "sfgenerate" and copy down the full name of the sfGenerateAudioRecordingStreaming lambda. This will be used in the next section.
 
 <img src="../media/image274.png" />
 
-18. Navigate back to the "Lambda" aws service main page and navigate to the **us-east-1 region**. Select **create function**.
+16. Navigate back to the "Lambda" aws service main page and navigate to the **us-east-1 region**. Select **create function**.
 
 <img src="../media/audiostreaming0.png" />
 
-19. Enter a function name, like **sfSig4RequestToS3**. 
+17. Enter a function name, like **sfSig4RequestToS3**. 
 
-20. Select **change default execution role**, and **use an existing role**. Search for and select *sfSig4RequestToS3Role*.
+18. Select **change default execution role**, and **use an existing role**. Search for and select *sfSig4RequestToS3Role*.
 
 <img src="../media/audiostreaming1.png" />
 
-21. Select **create function**. On the next screen, copy and paste the contents from [this file](./sfSig4RequestToS3.js) into the function body, and then select **Deploy**.
+19. Select **create function**. On the next screen, copy and paste the contents from [this file](./sfSig4RequestToS3.js) into the function body, and then select **Deploy**.
 
-22. Select the actions dropdown, and then select **Deploy to Lambda@Edge**.
+20. Select the actions dropdown, and then select **Deploy to Lambda@Edge**.
 
-23. Select the Cloudfront Distribution that was created by the Salesfore Lambdas serverless application, then check off the "I acknowledge..." check box, then select deploy.
+21. Select the Cloudfront Distribution that was created by the Salesfore Lambdas serverless application, then check off the "I acknowledge..." check box, then select deploy.
 
 <img src="../media/audiostreaming2.png" />
 
-#### Salesforce Side Setup
+##### Salesforce Side Setup
 
 1. In Salesforce Setup, search for "Named Credentials." Select **New Named Credential.**
 
@@ -171,27 +182,6 @@ Please note that your secret may also be formatted stored as a "Secret key/value
 7. Select "Add Assignments". Add the users that should have access to the audio recordings and select "assign".
 
 <img src="../media/image279.png" />
-
-<h3 class="toc">Call Recording Import</h3>
-
-You can import Call Recordings into your Salesforce Org. This
-allows for easy access to the recordings from within Salesforce and can
-be used in conjunction with the other contact channel analytics features
-to provide a complete view of the customer interaction.
-
-The import of call recordings is not required to activate the other
-contact channel analytics features. Additionally, the import will
-consume storage in your Salesforce Org, approximately 2MB per minute.
-
-Once enabled during the AWS Serverless Application Repository for
-Salesforce, recording import is activated on a call by call basis by
-adding a specific contact attribute. This attribute is used during
-Contact Trace Record processing to trigger the call import.
-
-NOTE: After Call Work time is a part of the Contact Trace Record. As
-such, CTRs are not generated until the agent leaves the after call work
-state. If you are not seeing a recording import, please make sure the
-agent has completed the call and left the after call work state.
 
 <h4 class="toc">Enabling call recording import</h4>
 
@@ -295,6 +285,8 @@ Once enabled during the AWS Serverless Application Repository for
 Salesforce, recording transcription is activated on a call by call basis
 by adding a specific contact attribute. This attribute is used during
 Contact Trace Record processing to trigger the transcription.
+
+Make sure the Salesforce user accessing recording transcription are added to the AC_CallRecording permission set, as described in the previous section.
 
 <h4 class="toc">Enabling recording transcription</h4>
 

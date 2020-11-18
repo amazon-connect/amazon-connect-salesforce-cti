@@ -19,3 +19,7 @@ See the [Upgrading from an Earlier Version](02%20Installation/03%20Upgrading%20f
 #### I upgraded my adapter from v3 to v5 and we lost some screenpop functionality.
 
 All screenpop functionality native to v3 now needs to be recreated using CTI Flows. Please review the [Appendix C - CTI Flow Examples](07%20Appendix%20C%20-%20CTI%20Flow%20Examples/01%20CTI%20Flow%20Examples.md#appendix-c---cti-flow-examples) for more details, all screenpop functionality from v3 has been recreated.
+
+#### Certain picklists are missing picklist items.
+
+When upgrading from a version of the package to a higher version of the package in which new picklist items were added to a picklist, those new picklist items won't be installed. This is a [known Salesforce issue](https://salesforce.stackexchange.com/questions/207367/i-have-a-managed-package-if-i-add-values-a-picklist-will-my-customers-get-it-o).
