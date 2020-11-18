@@ -201,11 +201,11 @@ Connect and Salesforce.
 
 # Release Notes
 
-Important: when upgrading the CTI Adapter, please make sure that the Salesforce Lambdas are also updated to the newest version.
+Important: when upgrading the CTI Adapter, please make sure that the Salesforce Lambdas are also updated to the newest version. Also review the [CTI Adapter Installation Troubleshooting and Common Issues](02%20Installation/04%20CTI%20Adapter%20Installation%20Troubleshooting.md#cti-adapter-installation-troubleshooting-and-common-issues) section for known issues and troubleshooting.
 
 ## 5.7 November 2020
 
-- **Feature**: Change audio recording feature in the Contact Channel Analytics page to use an audio streaming approach. Please review [Contact Channel Analytics](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/04%20Contact%20Channel%20Analytics.md#contact-channel-analytics) in order to set the feature up.
+- **Feature update**: Change audio recording feature in the Contact Channel Analytics page to use an audio streaming approach. Please review the updated [Contact Channel Analytics](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/04%20Contact%20Channel%20Analytics.md#contact-channel-analytics) section for the setup details.
 - **Feature**: Add permission set specifically for the audio recording feature
 - **Feature**: Localization into 9 languages.
 - **Feature**: Add callType to return fields of "Get Contact Properties" block
