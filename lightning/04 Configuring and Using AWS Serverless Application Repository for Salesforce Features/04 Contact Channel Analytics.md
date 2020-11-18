@@ -66,7 +66,7 @@ Cloudformation stack:
 
 <img src="../media/image269.png" />
 
-4. Copy and paste the contents of the private key .pem file into a text editor. Replace every newline character with a space, and then delete the last character. This is most easily done using a "find and replace" feature in your text editor.
+4. Copy and paste the contents of the private key .pem file into a text editor. Remove every newline character, and then delete the last character. This is most easily done using a "find and replace" feature in your text editor.
 The resulting string of text should resemble the following:
 
 ```
