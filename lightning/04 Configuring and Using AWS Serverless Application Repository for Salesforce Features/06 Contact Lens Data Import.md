@@ -2,7 +2,7 @@
 
 Contact Lens for Amazon Connect is a set of machine learning (ML) capabilities integrated into Amazon Connect. With Contact Lens for Amazon Connect, contact center supervisors can better understand the sentiment, trends, and compliance of customer conversions to effectively train agents, replicate successful interactions, and identify crucial company and product feedback. 
 
-Contact Lens are available within your Amazon Connect instance in CTR page, and Contact Lens data also stored in Amazon Connect S3 bucket. With the AWS Serverless Application for Salesforce (Amazon Connect Salesforce Lambda), you can import Contact Lens data into your Salesforce org. 
+Contact Lens are available within your Amazon Connect instance in CTR page, and Contact Lens data are stored in Amazon Connect S3 bucket. With the AWS Serverless Application for Salesforce (Amazon Connect Salesforce Lambda), you can import Contact Lens data into your Salesforce org. 
 
 <h3 class="toc">Contact Lens Import</h3>
 
