@@ -486,27 +486,30 @@ retrieve secrets.
     s.  **AmazonConnectQueueMaxRecords:** Enter record set size for list
         queue query. Max is 100.
 
-    t.  **CTREventSourceMappingMaximumRetryAttempts:** Maximum retry
+    t.  **ContactLensImportEnabled:** true \| false - Set to false if 
+        importing Contact Lens into Salesforce should not be enabled.
+
+    u.  **CTREventSourceMappingMaximumRetryAttempts:** Maximum retry
         attempts on failure for lambdas triggered by Kinesis Events.
 
-    u.  **AmazonConnectQueueMetricsMaxRecords:** Enter record set size
+    v.  **AmazonConnectQueueMetricsMaxRecords:** Enter record set size
         for queue metrics query. Max is 100.
 
-    v.  **PostcallCTRImportEnabled:** true \| false - Set to false if
+    w.  **PostcallCTRImportEnabled:** true \| false - Set to false if
         importing CTRs into Salesforce should not be enabled on the
         package level. This setting can be disabled on a call-by-call
         basis.
 
-    w.  **PostcallRecordingImportEnabled:** true \| false - Set to false
+    x.  **PostcallRecordingImportEnabled:** true \| false - Set to false
         if importing call recordings into Salesforce should not be
         enabled on the package level. This setting can be disabled on a
         call-by-call basis.
 
-    x.  **PostcallTranscribeEnabled:** true \| false - Set to false if
+    y.  **PostcallTranscribeEnabled:** true \| false - Set to false if
         post-call transcription should not be enabled on the package
         level. This setting can be disabled on a call-by-call basis.
 
-    y.  **TranscribeOutputS3BucketName:** This is the S3 bucket where
+    z.  **TranscribeOutputS3BucketName:** This is the S3 bucket where
         Amazon Transcribe stores the output. Typically, this is the same
         bucket that call recordings are stored in, so you can use the
         same value as found in **ConnectRecordingS3BucketName**. Not
