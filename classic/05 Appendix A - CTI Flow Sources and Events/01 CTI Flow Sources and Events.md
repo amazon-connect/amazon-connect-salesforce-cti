@@ -43,7 +43,7 @@ Scripts:
 
     -   onAccepted -- A voice contact is accepted.
 
-    -   onInit -- The voice contact is initialized.
+    -   onPending -- The voice contact is pending.
 
     -   onMissed -- The voice contact is / was missed.
 
@@ -53,19 +53,37 @@ Scripts:
 
     -   onConnected -- The chat contact is connected.
 
-    -   onEnded. The chat contact ended.
+    -   onEnded -- The chat contact ended.
 
     -   onRefresh -- The chat contact is updated.
 
     -   onAccepted -- The chat contact is accepted.
 
-    -   onInit: The chat contact was initialized.
+    -   onPending -- The voice contact is pending.
 
     -   onMessageReceived: A message was received from the customer
 
     -   onMessageSent: A message was sent to the customer
 
     -   onMissed: The chat contact was missed.
+
+-   Amazon Connect Task Contact
+
+    -   onIncoming -- The tasks contact is incoming.
+    
+    -   onConnecting -- The taks contact is connecting.
+
+    -   onConnected -- The task contact is connected.
+
+    -   onEnded -- The task contact ended.
+
+    -   onRefresh -- The task contact is updated.
+
+    -   onAccepted -- The task contact is accepted.
+
+    -   onPending -- The voice contact is pending.
+
+    -   onMissed: The task contact was missed.
 
 -   Salesforce Agent
 
