@@ -4,26 +4,26 @@ The following sources are defined in the adapter for use with CTI Flows:
 
 -   Initialization
 
-    -   onInit: The CTI adapter has initialized.
+    -   onInit -- The CTI adapter has initialized.
 
 -   Amazon Connect Agent
 
-    -   onRefresh: The Connect agent's data was updated.
+    -   onRefresh -- The Connect agent's data was updated.
 
-    -   onStateChange: The Connect agent's state changed.
+    -   onStateChange -- The Connect agent's state changed.
 
-    -   onRoutable: The Connect agent became available for contacts.
+    -   onRoutable -- The Connect agent became available for contacts.
 
-    -   onNotRoutable: The Connect agent became unavailable for
+    -   onNotRoutable -- The Connect agent became unavailable for
         contacts.
 
-    -   onOffline: The Connect agent's state was set to "Offline".
+    -   onOffline -- The Connect agent's state was set to "Offline".
 
-    -   onError: The Connect agent encountered a system error.
+    -   onError -- The Connect agent encountered a system error.
 
-    -   onAfterCallWork: The Connect agent entered "After Call Work".
+    -   onAfterCallWork -- The Connect agent entered "After Call Work".
 
-    -   onInit: The Connect agent has logged in.
+    -   onInit -- The Connect agent has logged in.
 
 -   Amazon Connect Voice Contact
 
@@ -60,11 +60,11 @@ The following sources are defined in the adapter for use with CTI Flows:
 
     -   onPending -- The voice contact is pending.
 
-    -   onMessageReceived: A message was received from the customer
+    -   onMessageReceived -- A message was received from the customer
 
-    -   onMessageSent: A message was sent to the customer
+    -   onMessageSent -- A message was sent to the customer
 
-    -   onMissed: The chat contact was missed.
+    -   onMissed -- The chat contact was missed.
 
 -   Amazon Connect Task Contact
 
@@ -82,7 +82,7 @@ The following sources are defined in the adapter for use with CTI Flows:
 
     -   onPending -- The voice contact is pending.
 
-    -   onMissed: The task contact was missed.
+    -   onMissed -- The task contact was missed.
 
 -   Salesforce Agent
 
@@ -94,7 +94,7 @@ The following sources are defined in the adapter for use with CTI Flows:
 
 -   Salesforce UI
 
-    -   onClickToDial: A phone number, within the Salesforce UI, was
+    -   onClickToDial -- A phone number, within the Salesforce UI, was
         clicked.
 
     -   onNavigationChange
