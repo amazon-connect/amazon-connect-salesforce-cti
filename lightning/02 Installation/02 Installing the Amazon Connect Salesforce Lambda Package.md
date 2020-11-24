@@ -467,8 +467,9 @@ retrieve secrets.
 
     l.  **SalesforceHost:** The full domain for your salesforce org. For
         example
-        [**https://mydevorg-dev-ed.my.salesforce.com**](https://mydevorg-dev-ed.my.salesforce.com).
-        Please make sure that the host starts with "https".
+        `https://mydevorg-dev-ed.my.salesforce.com`.
+        Please make sure that the host starts with `https`, and that the url
+        ends with `.my.salesforce.com`. This url can be found in `Setup` -> `My Domain`.
 
     m.  **SalesforceProduction:** true \| false - True for Production
         Environment, False for Sandbox
