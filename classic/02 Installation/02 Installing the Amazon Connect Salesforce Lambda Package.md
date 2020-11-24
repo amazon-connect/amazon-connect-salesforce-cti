@@ -382,6 +382,12 @@ retrieve secrets.
         create one for you. This parameter in mandatory certain
         features, please see above.
 
+    k.  *SalesforceHost:* The full domain for your salesforce org. For
+        example
+        `https://mydevorg-dev-ed.my.salesforce.com`.
+        Please make sure that the host starts with `https`, and that the url
+        ends with `.my.salesforce.com`. This url can be found in `Setup` -> `My Domain`.
+
 7.  Once completed, click "Deploy" function:
 
 <img src="../media/image137.png" />
