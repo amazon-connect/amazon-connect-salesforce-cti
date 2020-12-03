@@ -261,6 +261,10 @@ The command to determine if the contact is a voice contact.
 
 The command to determine if the contact is a chat contact.
 
+### Is Task Contact?
+
+The command to determine if the contact is an amazon connect task contact.
+
 ### Is Contact Inbound?
 
 The command to determine if the contact is inbound.
