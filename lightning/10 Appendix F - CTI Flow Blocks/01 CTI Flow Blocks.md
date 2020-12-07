@@ -248,6 +248,12 @@ enabled.
 
 Returns the list of dialable countries for the current agent.
 
+### Create Task Contact
+
+The command to create a task contact that is sent to the provided quick 
+connect endpoint. The quick connect must be available to any queue the 
+agent has access too.
+
 ### Get Contact Attribute
 
 The command to get value of an attribute from the contact in the current
