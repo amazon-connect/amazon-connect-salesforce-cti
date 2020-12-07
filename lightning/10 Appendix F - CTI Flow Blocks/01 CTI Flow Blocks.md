@@ -295,6 +295,11 @@ The command to get customer phone number of a contact.
 
 The command to get metadata about a contact interaction.
 
+### Pop Task Reference Urls
+
+The command to pop any reference urls if the contact is a task.
+Returns the number of urls popped.
+
 ### Query value
 
 The query to execute an arbitrary SOQL statement and returns the
