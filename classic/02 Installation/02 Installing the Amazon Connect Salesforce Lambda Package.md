@@ -173,7 +173,13 @@ other errors.
 
 20. Click "Save"
 
-21. A confirmation email will be sent, with an activation link. Click the link to activate your user.
+21. In **Quick Find**, search for "Permission Sets". Select the **AC_Administrator** permission set.
+
+<img src="../media/lambda-install-0.png" />
+
+22. Select **Manage Assignments**. Add the apiuser you just created to the permission set.
+
+23. A confirmation email will be sent, with an activation link. Click the link to activate your user.
 
 <img src="../media/image124.png" />
 
@@ -182,21 +188,21 @@ at least 20 random characters):
 
 <img src="../media/image125.png" />
 
-22. Click "Change Password"
+24. Click "Change Password"
 
-23. Access the apiuser personal settings by selecting the username in the top right corner, then "My Settings".
+25. Access the apiuser personal settings by selecting the username in the top right corner, then "My Settings".
 
 <img src="../media/image126.png" />
 
-24. Type "Security Token" in the Quick Find box and click "Reset My Security Token".
+26. Type "Security Token" in the Quick Find box and click "Reset My Security Token".
 
 <img src="../media/image127.png" />
 
-25. Your security token will be emailed to you
+27. Your security token will be emailed to you
 
 <img src="../media/image128.png" />
 
-26. Copy the security token from the email in to your installation notes for the "Access Token" value.
+28. Copy the security token from the email in to your installation notes for the "Access Token" value.
 
 <h3 class="toc">Store Salesforce credentials in AWS Secrets Manager</h3>
 
@@ -375,6 +381,12 @@ retrieve secrets.
         bucket, or create a new one, as the installation process doesn't
         create one for you. This parameter in mandatory certain
         features, please see above.
+
+    k.  *SalesforceHost:* The full domain for your salesforce org. For
+        example
+        `https://mydevorg-dev-ed.my.salesforce.com`.
+        Please make sure that the host starts with `https`, and that the url
+        ends with `.my.salesforce.com`. This url can be found in `Setup` -> `My Domain`.
 
 7.  Once completed, click "Deploy" function:
 

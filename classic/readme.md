@@ -60,6 +60,7 @@ with id 'key-benefits-and-requirements'
       - [Store Salesforce credentials in AWS Secrets Manager](02%20Installation/02%20Installing%20the%20Amazon%20Connect%20Salesforce%20Lambda%20Package.md#store-salesforce-credentials-in-aws-secrets-manager)
     - [Install the Amazon Connect Salesforce Lambda package](02%20Installation/02%20Installing%20the%20Amazon%20Connect%20Salesforce%20Lambda%20Package.md#install-the-amazon-connect-salesforce-lambda-package)
   - [Upgrading from an Earlier Version](02%20Installation/03%20Upgrading%20from%20an%20Earlier%20Version.md#upgrading-from-an-earlier-version)
+    - [CTI Adapter Installation Troubleshooting and Common Issues](02%20Installation/04%20CTI%20Adapter%20Installation%20Troubleshooting.md#cti-adapter-installation-troubleshooting-and-common-issues)
 - Configuring and Using CTI Adapter Features
   - [CTI Adapter Configuration](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/01%20CTI%20Adapter%20Configuration.md#cti-adapter-configuration)
     - [CTI Adapter Details](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/01%20CTI%20Adapter%20Configuration.md#cti-adapter-details)
@@ -70,10 +71,12 @@ with id 'key-benefits-and-requirements'
     - [Enable Omnichannel](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/02%20Omnipresence%20Agent%20State%20Sync.md#enable-omnichannel)
     - [Create Presence Statuses](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/02%20Omnipresence%20Agent%20State%20Sync.md#create-presence-statuses)
     - [Configure Enabled Service Presences Status Access](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/02%20Omnipresence%20Agent%20State%20Sync.md#configure-enabled-service-presences-status-access)
+      - [Amazon Connect System Statuses](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/02%20Omnipresence%20Agent%20State%20Sync.md#amazon-connect-system-statuses)
     - [Configure Presence Status Synchronization Rules](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/02%20Omnipresence%20Agent%20State%20Sync.md#configure-presence-status-synchronization-rules)
       - [Presence Status Configuration Rules](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/02%20Omnipresence%20Agent%20State%20Sync.md#presence-status-configuration-rules)
   - [Contact Attributes Display](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/03%20Contact%20Attributes%20Display.md#contact-attributes-display)
   - [Call Recording Link for Task](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/04%20Call%20Recording%20Link%20for%20Task.md#call-recording-link-for-task)
+        - [Enabling call recording import](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/04%20Call%20Recording%20Link%20for%20Task.md#enabling-call-recording-import)
   - [Call Display on the Account Page](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/05%20Call%20Display%20on%20the%20Account%20Page.md#call-display-on-the-account-page)
   - [Outbound Campaign Calls](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/06%20Outbound%20Campaign%20Calls.md#outbound-campaign-calls)
     - [Create a Queue](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/06%20Outbound%20Campaign%20Calls.md#create-a-queue)
@@ -130,6 +133,8 @@ application package contains a set of common AWS Lambda functions to be
 used by Amazon Connect to interact with Salesforce.
 
 # Release Notes
+
+Important: when upgrading the CTI Adapter, please make sure that the Salesforce Lambdas are also updated to the newest version.
 
 ## 5.7 November 2020
 

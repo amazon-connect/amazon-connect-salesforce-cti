@@ -73,6 +73,7 @@ with id 'key-benefits-and-requirements'
     - [Allow Amazon Connect to Access the sfInvokeAPI Lambda Function](02%20Installation/02%20Installing%20the%20Amazon%20Connect%20Salesforce%20Lambda%20Package.md#allow-amazon-connect-to-access-the-sfinvokeapi-lambda-function)
       - [Add the Lambda function to your Amazon Connect instance](02%20Installation/02%20Installing%20the%20Amazon%20Connect%20Salesforce%20Lambda%20Package.md#add-the-lambda-function-to-your-amazon-connect-instance)
   - [Upgrading from an Earlier Version](02%20Installation/03%20Upgrading%20from%20an%20Earlier%20Version.md#upgrading-from-an-earlier-version)
+  - [CTI Adapter Installation Troubleshooting and Common Issues](02%20Installation/04%20CTI%20Adapter%20Installation%20Troubleshooting.md#cti-adapter-installation-troubleshooting-and-common-issues)
 - [Configuring and Using CTI Adapter Features](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/readme.md#configuring-and-using-cti-adapter-features)
   - [CTI Adapter Details](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/01%20CTI%20Adapter%20Configuration.md#cti-adapter-details)
       - [Update the CTI Adapter Details](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/01%20CTI%20Adapter%20Configuration.md#update-the-cti-adapter-details)
@@ -89,6 +90,7 @@ with id 'key-benefits-and-requirements'
   - [CTI Flows](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/03%20CTI%20Flows.md#cti-flows)
   - [Presence Sync Rules](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/04%20Presence%20Sync%20Rules.md#presence-sync-rules)
     - [Configuring Statuses](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/04%20Presence%20Sync%20Rules.md#configuring-statuses)
+    - [Amazon Connect System Statuses](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/04%20Presence%20Sync%20Rules.md#amazon-connect-system-statuses)
     - [Create Presence Statuses in Amazon Connect](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/04%20Presence%20Sync%20Rules.md#create-presence-statuses-in-amazon-connect)
       - [Create an Amazon Connect status](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/04%20Presence%20Sync%20Rules.md#create-an-amazon-connect-status)
     - [Create Presence Statuses in Salesforce](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/04%20Presence%20Sync%20Rules.md#create-presence-statuses-in-salesforce)
@@ -120,8 +122,8 @@ with id 'key-benefits-and-requirements'
     - [Deployment and Configuration](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/03%20Amazon%20Connect%20Real-Time%20Metrics%20in%20Salesforce.md#deployment-and-configuration)
       - [Adding Real-Time Reports to the Service Console](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/03%20Amazon%20Connect%20Real-Time%20Metrics%20in%20Salesforce.md#adding-real-time-reports-to-the-service-console)
   - [Contact Channel Analytics](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/04%20Contact%20Channel%20Analytics.md#contact-channel-analytics)
-    - [Prerequisite Setup](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/04%20Contact%20Channel%20Analytics.md#prerequisite-setup)
     - [Call Recording Import](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/04%20Contact%20Channel%20Analytics.md#call-recording-import)
+      - [Prerequisite Setup](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/04%20Contact%20Channel%20Analytics.md#prerequisite-setup)
       - [Enabling call recording import](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/04%20Contact%20Channel%20Analytics.md#enabling-call-recording-import)
       - [Adding Contact Channel Analytics to the Service Console](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/04%20Contact%20Channel%20Analytics.md#adding-contact-channel-analytics-to-the-service-console)
     - [Recording Transcripts](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/04%20Contact%20Channel%20Analytics.md#recording-transcripts)
@@ -136,6 +138,10 @@ with id 'key-benefits-and-requirements'
       - [Adding Contact Trace Records to the Service Console](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/05%20Contact%20Trace%20Record%20Import.md#adding-contact-trace-records-to-the-service-console)
     - [Display Additional Contact Trace Record Data](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/05%20Contact%20Trace%20Record%20Import.md#display-additional-contact-trace-record-data)
       - [Customizing the AC Contact Trace Record Layout](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/05%20Contact%20Trace%20Record%20Import.md#customizing-the-ac-contact-trace-record-layout)
+  - [Postcall Contact Lens Import](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/06%20Contact%20Lens%20Data%20Import.md#postcall-contact-lens-import)
+    - [Contact Lens Import](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/06%20Contact%20Lens%20Data%20Import.md#contact-lens-import)
+      - [Creating the AWS Lambda Trigger for the Contact Lens Data](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/06%20Contact%20Lens%20Data%20Import.md#creating-the-aws-lambda-trigger-for-the-contact-lens-data)
+      - [Enabling Contact Lens Import](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/06%20Contact%20Lens%20Data%20Import.md#enabling-contact-lens-import)
 - [Appendix A - Required Salesforce Configurations](05%20Appendix%20A%20-%20Required%20Salesforce%20Configurations/readme.md#appendix-a---required-salesforce-configurations)
   - [Configuring My Domain in Salesforce](05%20Appendix%20A%20-%20Required%20Salesforce%20Configurations/01%20Configuring%20My%20Domain%20in%20Salesforce.md#configuring-my-domain-in-salesforce)
     - [Register Your Domain](05%20Appendix%20A%20-%20Required%20Salesforce%20Configurations/01%20Configuring%20My%20Domain%20in%20Salesforce.md#register-your-domain)
@@ -199,9 +205,11 @@ Connect and Salesforce.
 
 # Release Notes
 
+Important: when upgrading the CTI Adapter, please make sure that the Salesforce Lambdas are also updated to the newest version. Also review the [CTI Adapter Installation Troubleshooting and Common Issues](02%20Installation/04%20CTI%20Adapter%20Installation%20Troubleshooting.md#cti-adapter-installation-troubleshooting-and-common-issues) section for known issues and troubleshooting.
+
 ## 5.7 November 2020
 
-- **Feature**: Change audio recording feature in the Contact Channel Analytics page to use an audio streaming approach
+- **Feature update**: Change audio recording feature in the Contact Channel Analytics page to use an audio streaming approach. Please review the updated [Contact Channel Analytics](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/04%20Contact%20Channel%20Analytics.md#contact-channel-analytics) section for the setup details.
 - **Feature**: Add permission set specifically for the audio recording feature
 - **Feature**: Localization into 9 languages.
 - **Feature**: Add callType to return fields of "Get Contact Properties" block
