@@ -85,6 +85,16 @@ Scripts:
 
     -   onMissed -- The task contact was missed.
 
+    -   onTransferInitiated -- When the server has initiated the task transfer.
+
+    -   onTransferSucceeded -- When the task transfer has succeeded.
+
+    -   onTransferFailed -- When the task transfer has failed.
+
+    -   onTaskExpiring -- Triggers 2 hours before the task expires.
+
+    -   onTaskExpired -- When the task has expired.
+
 -   Salesforce Agent
 
     -   onStateChange -- The Salesforce agent's state changed.
