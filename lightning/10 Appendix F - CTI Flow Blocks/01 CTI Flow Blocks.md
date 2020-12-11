@@ -295,7 +295,7 @@ The command to get customer phone number of a contact.
 
 The command to get metadata about a contact interaction.
 
-### Pop Task Reference Urls
+### Pop Task Contact's Reference Urls
 
 The command to pop any reference urls if the contact is a task.
 Returns the number of urls popped.
