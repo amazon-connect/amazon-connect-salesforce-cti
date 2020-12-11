@@ -64,17 +64,21 @@ Once enabled during the installation of AWS Serverless Application (Amazon Conne
 4.  In you contact flow, before you transfer to queue, add a new **Set
     contact attributes** block
 
-5. Configure the block to set two contact attributes as follows:
+5. Configure the block to set a few contact attributes:
 
-    **Destination key:** postcallRecordingImportEnabled 
-    
-    **Value**: true
+    * To turn on Contact Lens data import, set ***contactLensImportEnabled*** to ***true***.
 
-    **Destination key:** contactLensImportEnabled 
-    
-    **Value**: true
+        <img src="../media/contactlensattributes-1.png" />
 
-<img src="../media/contactlenslambda-3.png" />
+    * For recording import, there are two options: original call recording and redacted call recording. **Note that you can only import one of the recordings for each contact.**
+
+        * To turn on original recording import, set ***postcallRecordingImportEnabled*** to ***true***
+
+            <img src="../media/contactlensattributes-2.png">
+
+        * To turn on redacted recording import, set ***postcallRedactedRecordingImportEnabled*** to ***true***
+
+            <img src="../media/contactlensattributes-3.png">
 
 6.  **Save** the Set contact attributes block. Make sure it is
     appropriately connected to your contact flow, and **Publish** the
