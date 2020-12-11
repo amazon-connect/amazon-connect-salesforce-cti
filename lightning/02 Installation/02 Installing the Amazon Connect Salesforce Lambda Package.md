@@ -520,8 +520,8 @@ retrieve secrets.
         Amazon Transcribe stores the output. Typically, this is the same
         bucket that call recordings are stored in, so you can use the
         same value as found in **ConnectRecordingS3BucketName**. Not
-        required if both PostcallRecordingImportEnabled and
-        PostcallTranscribeEnabled set to false.
+        required if PostcallRecordingImportEnabled, 
+        PostcallTranscribeEnabled, ContactLensImportEnabled set to false.
 
     z.  **TranscriptionJobCheckWaitTime:** Time between transcription
         job checks
