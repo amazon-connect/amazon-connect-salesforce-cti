@@ -75,8 +75,7 @@ with id 'key-benefits-and-requirements'
     - [Configure Presence Status Synchronization Rules](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/02%20Omnipresence%20Agent%20State%20Sync.md#configure-presence-status-synchronization-rules)
       - [Presence Status Configuration Rules](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/02%20Omnipresence%20Agent%20State%20Sync.md#presence-status-configuration-rules)
   - [Contact Attributes Display](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/03%20Contact%20Attributes%20Display.md#contact-attributes-display)
-  - [Call Recording Link for Task](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/04%20Call%20Recording%20Link%20for%20Task.md#call-recording-link-for-task)
-        - [Enabling call recording import](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/04%20Call%20Recording%20Link%20for%20Task.md#enabling-call-recording-import)
+  - [Call Recording Link for Task](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/04%20Call%20Recording%20Link%20for%20Task.md#call-recording-link-for-task) - [Enabling call recording import](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/04%20Call%20Recording%20Link%20for%20Task.md#enabling-call-recording-import)
   - [Call Display on the Account Page](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/05%20Call%20Display%20on%20the%20Account%20Page.md#call-display-on-the-account-page)
   - [Outbound Campaign Calls](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/06%20Outbound%20Campaign%20Calls.md#outbound-campaign-calls)
     - [Create a Queue](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/06%20Outbound%20Campaign%20Calls.md#create-a-queue)
@@ -135,6 +134,21 @@ used by Amazon Connect to interact with Salesforce.
 # Release Notes
 
 Important: when upgrading the CTI Adapter, please make sure that the Salesforce Lambdas are also updated to the newest version.
+
+## 5.8 December 2020
+
+- **Feature**: Contact Lens Integration
+- **Feature**: Tasks Integration - Added the Amazon Connect Task Contact as a source to CTI Flow in addition to Task specific events
+- **Feature**: CTI Block - Is Task Contact? - Check if the contact is a task
+- **Feature**: CTI Block - Create Task Contact - Creating a new task contact with certain inputs.
+- **Feature**: CTI Block - Pop Task Contact's Reference Urls - Pop any reference urls that are related to the task contact
+- Upgraded Salesforce API to v50.0.
+- **Feature update**: If you have CCP open on multiple tabs, CTI Flows will be executed only on one of them. The execution will be performed on the current tab, by default. If the agent is currently looking at a different site, a random tab will be selected to perform the execution.
+- **Enhancement**: \$User.ProfileId is now available through "userProfile" property.
+- **Enhancement**: CTI Flow execution timeout window has been increased to 60 seconds.
+- **Feature update**: When the CCP popout is opened, we now ask for a confirmation before refreshing or closing the tab that opened it. Note that if you do close the original tab, the pop out might also be closed.
+- **Bugfix**: Voicemail Drops feature has been fixed.
+- **Bugfix**: CTI Flow "Open Subtab" block has been fixed.
 
 ## 5.7 November 2020
 

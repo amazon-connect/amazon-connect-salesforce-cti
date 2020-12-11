@@ -250,8 +250,8 @@ Returns the list of dialable countries for the current agent.
 
 ### Create Task Contact
 
-The command to create a task contact that is sent to the provided quick 
-connect endpoint. The quick connect must be available to any queue the 
+The command to create a task contact that is sent to the provided quick
+connect endpoint. The quick connect must be available to any queue the
 agent has access too.
 
 ### Get Contact Attribute
@@ -403,3 +403,15 @@ Removes the value assigned to a property in the local data store.
 ### Show Attributes
 
 This command displays the contact attributes in the CCP overlay.
+
+### Is Task Contact?
+
+Check if the contact is a task
+
+### Create Task Contact
+
+Creating a new task contact with certain inputs.
+
+### Pop Task Contact's Reference Urls
+
+Pop any reference urls that are related to the task contact

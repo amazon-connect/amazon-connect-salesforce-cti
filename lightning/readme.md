@@ -76,7 +76,7 @@ with id 'key-benefits-and-requirements'
   - [CTI Adapter Installation Troubleshooting and Common Issues](02%20Installation/04%20CTI%20Adapter%20Installation%20Troubleshooting.md#cti-adapter-installation-troubleshooting-and-common-issues)
 - [Configuring and Using CTI Adapter Features](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/readme.md#configuring-and-using-cti-adapter-features)
   - [CTI Adapter Details](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/01%20CTI%20Adapter%20Configuration.md#cti-adapter-details)
-      - [Update the CTI Adapter Details](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/01%20CTI%20Adapter%20Configuration.md#update-the-cti-adapter-details)
+    - [Update the CTI Adapter Details](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/01%20CTI%20Adapter%20Configuration.md#update-the-cti-adapter-details)
     - [Single Sign On Settings](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/01%20CTI%20Adapter%20Configuration.md#single-sign-on-settings)
       - [Identify the SSO URL components](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/01%20CTI%20Adapter%20Configuration.md#identify-the-sso-url-components)
       - [Configure the CTI Lightning Adapter in Salesforce](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/01%20CTI%20Adapter%20Configuration.md#configure-the-cti-lightning-adapter-in-salesforce)
@@ -206,6 +206,21 @@ Connect and Salesforce.
 # Release Notes
 
 Important: when upgrading the CTI Adapter, please make sure that the Salesforce Lambdas are also updated to the newest version. Also review the [CTI Adapter Installation Troubleshooting and Common Issues](02%20Installation/04%20CTI%20Adapter%20Installation%20Troubleshooting.md#cti-adapter-installation-troubleshooting-and-common-issues) section for known issues and troubleshooting.
+
+## 5.8 December 2020
+
+- **Feature**: Contact Lens Integration
+- **Feature**: Tasks Integration - Added the Amazon Connect Task Contact as a source to CTI Flow in addition to Task specific events
+- **Feature**: CTI Block - Is Task Contact? - Check if the contact is a task
+- **Feature**: CTI Block - Create Task Contact - Creating a new task contact with certain inputs.
+- **Feature**: CTI Block - Pop Task Contact's Reference Urls - Pop any reference urls that are related to the task contact
+- Upgraded Salesforce API to v50.0.
+- **Feature update**: If you have CCP open on multiple tabs, CTI Flows will be executed only on one of them. The execution will be performed on the current tab, by default. If the agent is currently looking at a different site, a random tab will be selected to perform the execution.
+- **Enhancement**: \$User.ProfileId is now available through "userProfile" property.
+- **Enhancement**: CTI Flow execution timeout window has been increased to 60 seconds.
+- **Feature update**: When the CCP popout is opened, we now ask for a confirmation before refreshing or closing the tab that opened it. Note that if you do close the original tab, the pop out might also be closed.
+- **Bugfix**: Voicemail Drops feature has been fixed.
+- **Bugfix**: CTI Flow "Open Subtab" block has been fixed.
 
 ## 5.7 November 2020
 
