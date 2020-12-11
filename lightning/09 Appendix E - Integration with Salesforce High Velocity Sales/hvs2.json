@@ -40,7 +40,7 @@
 				"CallDisposition": "",
 				"CallType": "inbound",
 				"ActivityDate": "",
-				"subject1": "$12.results.type",
+				"subject1": "$.actions.uid-12.results.type",
 				"subject2": "$.actions.uid-12.results.queueName",
 				"subject3": "",
 				"TaskSubtype": "Call",
