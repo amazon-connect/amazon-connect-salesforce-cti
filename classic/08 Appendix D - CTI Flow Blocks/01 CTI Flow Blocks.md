@@ -248,6 +248,12 @@ enabled.
 
 Returns the list of dialable countries for the current agent.
 
+### Create Task Contact
+
+The command to create a task contact that is sent to the provided quick
+connect endpoint. The quick connect must be available to any queue the
+agent has access too.
+
 ### Get Contact Attribute
 
 The command to get value of an attribute from the contact in the current
@@ -260,6 +266,10 @@ The command to determine if the contact is a voice contact.
 ### Is Chat Contact?
 
 The command to determine if the contact is a chat contact.
+
+### Is Task Contact?
+
+The command to determine if the contact is an amazon connect task contact.
 
 ### Is Contact Inbound?
 
@@ -284,6 +294,11 @@ The command to get customer phone number of a contact.
 ### Get Contact Interaction Metadata
 
 The command to get metadata about a contact interaction.
+
+### Pop Task Contact's Reference Urls
+
+The command to pop any reference urls if the contact is a task.
+Returns the number of urls popped.
 
 ### Query value
 
@@ -388,3 +403,15 @@ Removes the value assigned to a property in the local data store.
 ### Show Attributes
 
 This command displays the contact attributes in the CCP overlay.
+
+### Is Task Contact?
+
+Check if the contact is a task
+
+### Create Task Contact
+
+Creating a new task contact with certain inputs.
+
+### Pop Task Contact's Reference Urls
+
+Pop any reference urls that are related to the task contact
