@@ -100,6 +100,7 @@ with id 'key-benefits-and-requirements'
       - [Create a Presence Sync Rule](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/04%20Presence%20Sync%20Rules.md#create-a-presence-sync-rule)
   - [Localization](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/05%20Localization.md#localization)
   - [Set Agent Status on Session End](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/05%20Set%20Agent%20Status%20on%20Session%20End.md#set-agent-status-on-session-end)
+  - [Contact Lens](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/06%20Contact%20Lens)
 - [Configuring and Using AWS Serverless Application Repository for Salesforce Features](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/readme.md#configuring-and-using-aws-serverless-application-repository-for-salesforce-features)
   - [Accessing the Salesforce API from Amazon Connect Contact Flows Using AWS Lambda](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/01%20Accessing%20the%20Salesforce%20API%20from%20Amazon%20Connect%20Contact%20Flows%20Using%20AWS%20Lambda.md#accessing-the-salesforce-api-from-amazon-connect-contact-flows-using-aws-lambda)
     - [Salesforce Lookup](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/01%20Accessing%20the%20Salesforce%20API%20from%20Amazon%20Connect%20Contact%20Flows%20Using%20AWS%20Lambda.md#salesforce-lookup)
@@ -207,7 +208,7 @@ Connect and Salesforce.
 
 Important: when upgrading the CTI Adapter, please make sure that the Salesforce Lambdas are also updated to the newest version. Also review the [CTI Adapter Installation Troubleshooting and Common Issues](02%20Installation/04%20CTI%20Adapter%20Installation%20Troubleshooting.md#cti-adapter-installation-troubleshooting-and-common-issues) section for known issues and troubleshooting.
 
-## 5.8 December 2020
+## 5.9 December 2020
 
 - **Feature**: Contact Lens Integration
 - **Feature**: Tasks Integration - Added the Amazon Connect Task Contact as a source to CTI Flow in addition to Task specific events
