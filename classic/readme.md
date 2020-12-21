@@ -135,7 +135,7 @@ used by Amazon Connect to interact with Salesforce.
 
 Important: when upgrading the CTI Adapter, please make sure that the Salesforce Lambdas are also updated to the newest version.
 
-## 5.8 December 2020
+## 5.9 December 2020
 
 - **Feature**: Contact Lens Integration
 - **Feature**: Tasks Integration - Added the Amazon Connect Task Contact as a source to CTI Flow in addition to Task specific events
