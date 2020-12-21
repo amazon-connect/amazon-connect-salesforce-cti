@@ -6,7 +6,7 @@
   <img src="./media/image1.png" />
 </p>
 
-<h3 align="center"> September, 2020</h3>
+<h3 align="center"> December, 2020</h3>
 
 _© Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved. SPDX-License-Identifier: CC-BY-SA-4.0_
 
@@ -135,6 +135,21 @@ used by Amazon Connect to interact with Salesforce.
 # Release Notes
 
 Important: when upgrading the CTI Adapter, please make sure that the Salesforce Lambdas are also updated to the newest version.
+
+## 5.9 December 2020
+
+- **Feature**: Amazon Connect Contact Lens post call integration - Contact Lens transcripts and insights are now supported in CTI contact channel analytics
+- **Feature**: Amazon Connect Tasks support - Added the Amazon Connect Task Contact as a source to CTI Flow in addition to Task specific events
+- **Feature**: CTI Block - Is Task Contact? - Check if the contact is a task
+- **Feature**: CTI Block - Create Task Contact - Creating a new task contact with certain inputs.
+- **Feature**: CTI Block - Pop Task Contact's Reference Urls - Pop any reference urls that are related to the task contact
+- Upgraded Salesforce API to v50.0.
+- **Feature update**: If you have CCP open on multiple tabs, CTI Flows will be executed only on one of them. The execution will be performed on the current tab, by default. If the agent is currently looking at a different site, a random tab will be selected to perform the execution.
+- **Enhancement**: \$User.ProfileId is now available through "userProfile" property.
+- **Enhancement**: CTI Flow execution timeout window has been increased to 60 seconds.
+- **Feature update**: When the CCP popout is opened, we now ask for a confirmation before refreshing or closing the tab that opened it. Note that if you do close the original tab, the pop out might also be closed.
+- **Bugfix**: Voicemail Drops feature has been fixed.
+- **Bugfix**: CTI Flow "Open Subtab" block has been fixed.
 
 ## 5.7 November 2020
 

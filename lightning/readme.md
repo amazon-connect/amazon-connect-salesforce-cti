@@ -6,7 +6,7 @@
   <img src="./media/image1.png" />
 </p>
 
-<h3 align="center"> September, 2020</h3>
+<h3 align="center"> December, 2020</h3>
 
 _© Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved. SPDX-License-Identifier: CC-BY-SA-4.0_
 
@@ -100,6 +100,8 @@ with id 'key-benefits-and-requirements'
       - [Create a Presence Sync Rule](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/04%20Presence%20Sync%20Rules.md#create-a-presence-sync-rule)
   - [Localization](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/05%20Localization.md#localization)
   - [Set Agent Status on Session End](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/05%20Set%20Agent%20Status%20on%20Session%20End.md#set-agent-status-on-session-end)
+  - [Contact Lens](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/06%20Contact%20Lens.md#contact-lens)
+    - [Configuring Related Transcripts List for Case Object](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/06%20Contact%20Lens.md#configuring-related-transcripts-list-for-case-object)
 - [Configuring and Using AWS Serverless Application Repository for Salesforce Features](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/readme.md#configuring-and-using-aws-serverless-application-repository-for-salesforce-features)
   - [Accessing the Salesforce API from Amazon Connect Contact Flows Using AWS Lambda](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/01%20Accessing%20the%20Salesforce%20API%20from%20Amazon%20Connect%20Contact%20Flows%20Using%20AWS%20Lambda.md#accessing-the-salesforce-api-from-amazon-connect-contact-flows-using-aws-lambda)
     - [Salesforce Lookup](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/01%20Accessing%20the%20Salesforce%20API%20from%20Amazon%20Connect%20Contact%20Flows%20Using%20AWS%20Lambda.md#salesforce-lookup)
@@ -122,8 +124,8 @@ with id 'key-benefits-and-requirements'
     - [Deployment and Configuration](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/03%20Amazon%20Connect%20Real-Time%20Metrics%20in%20Salesforce.md#deployment-and-configuration)
       - [Adding Real-Time Reports to the Service Console](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/03%20Amazon%20Connect%20Real-Time%20Metrics%20in%20Salesforce.md#adding-real-time-reports-to-the-service-console)
   - [Contact Channel Analytics](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/04%20Contact%20Channel%20Analytics.md#contact-channel-analytics)
-    - [Prerequisite Setup](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/04%20Contact%20Channel%20Analytics.md#prerequisite-setup)
     - [Call Recording Import](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/04%20Contact%20Channel%20Analytics.md#call-recording-import)
+      - [Prerequisite Setup](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/04%20Contact%20Channel%20Analytics.md#prerequisite-setup)
       - [Enabling call recording import](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/04%20Contact%20Channel%20Analytics.md#enabling-call-recording-import)
       - [Adding Contact Channel Analytics to the Service Console](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/04%20Contact%20Channel%20Analytics.md#adding-contact-channel-analytics-to-the-service-console)
     - [Recording Transcripts](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/04%20Contact%20Channel%20Analytics.md#recording-transcripts)
@@ -138,6 +140,10 @@ with id 'key-benefits-and-requirements'
       - [Adding Contact Trace Records to the Service Console](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/05%20Contact%20Trace%20Record%20Import.md#adding-contact-trace-records-to-the-service-console)
     - [Display Additional Contact Trace Record Data](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/05%20Contact%20Trace%20Record%20Import.md#display-additional-contact-trace-record-data)
       - [Customizing the AC Contact Trace Record Layout](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/05%20Contact%20Trace%20Record%20Import.md#customizing-the-ac-contact-trace-record-layout)
+  - [Postcall Contact Lens Import](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/06%20Contact%20Lens%20Data%20Import.md#postcall-contact-lens-import)
+    - [Contact Lens Import](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/06%20Contact%20Lens%20Data%20Import.md#contact-lens-import)
+      - [Creating the AWS Lambda Trigger for the Contact Lens Data](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/06%20Contact%20Lens%20Data%20Import.md#creating-the-aws-lambda-trigger-for-the-contact-lens-data)
+      - [Enabling Contact Lens Import](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/06%20Contact%20Lens%20Data%20Import.md#enabling-contact-lens-import)
 - [Appendix A - Required Salesforce Configurations](05%20Appendix%20A%20-%20Required%20Salesforce%20Configurations/readme.md#appendix-a---required-salesforce-configurations)
   - [Configuring My Domain in Salesforce](05%20Appendix%20A%20-%20Required%20Salesforce%20Configurations/01%20Configuring%20My%20Domain%20in%20Salesforce.md#configuring-my-domain-in-salesforce)
     - [Register Your Domain](05%20Appendix%20A%20-%20Required%20Salesforce%20Configurations/01%20Configuring%20My%20Domain%20in%20Salesforce.md#register-your-domain)
@@ -202,6 +208,21 @@ Connect and Salesforce.
 # Release Notes
 
 Important: when upgrading the CTI Adapter, please make sure that the Salesforce Lambdas are also updated to the newest version. Also review the [CTI Adapter Installation Troubleshooting and Common Issues](02%20Installation/04%20CTI%20Adapter%20Installation%20Troubleshooting.md#cti-adapter-installation-troubleshooting-and-common-issues) section for known issues and troubleshooting.
+
+## 5.9 December 2020
+
+- **Feature**: Amazon Connect Contact Lens post call integration - Contact Lens transcripts and insights are now supported in CTI contact channel analytics
+- **Feature**: Amazon Connect Tasks support - Added the Amazon Connect Task Contact as a source to CTI Flow in addition to Task specific events
+- **Feature**: CTI Block - Is Task Contact? - Check if the contact is a task
+- **Feature**: CTI Block - Create Task Contact - Creating a new task contact with certain inputs.
+- **Feature**: CTI Block - Pop Task Contact's Reference Urls - Pop any reference urls that are related to the task contact
+- Upgraded Salesforce API to v50.0.
+- **Feature update**: If you have CCP open on multiple tabs, CTI Flows will be executed only on one of them. The execution will be performed on the current tab, by default. If the agent is currently looking at a different site, a random tab will be selected to perform the execution.
+- **Enhancement**: \$User.ProfileId is now available through "userProfile" property.
+- **Enhancement**: CTI Flow execution timeout window has been increased to 60 seconds.
+- **Feature update**: When the CCP popout is opened, we now ask for a confirmation before refreshing or closing the tab that opened it. Note that if you do close the original tab, the pop out might also be closed.
+- **Bugfix**: Voicemail Drops feature has been fixed.
+- **Bugfix**: CTI Flow "Open Subtab" block has been fixed.
 
 ## 5.7 November 2020
 
