@@ -46,19 +46,23 @@ The new record is also associated automatically with a Case and Contact through 
 
 18. Click on "Related Lists" and find "Transcripts" field in the panel.
 
+<img src="../media/cca-related-list-05.png" />
+
 19. Drag "Transcripts" into the "Related Lists" section on the body of the page.
 
 20. Click "Save" and return to the page editor.
 
 21. Focus on the item you droppped in step 15 again.
 
-22. In the right sidebar, under the "Related List" dropdown, find and select "transcripts" field.
+22. In the right sidebar, under the "Related List" dropdown, find and select "Transcripts" field.
 
 23. Click "Save" to save the page layout.
 
 24. Click "Activation..."
 
 25. Go into "App Default." Click on "Assign as App Default."
+
+<img src="../media/cca-related-list-10.png" />
 
 26. Select the apps you'd like the related list to appear. Click "Next" twice, and then finally click "Save."
 
