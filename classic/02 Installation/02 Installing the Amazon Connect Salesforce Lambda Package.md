@@ -127,59 +127,63 @@ other errors.
 
 <img src="../media/image114.png" />
 
-7.  Scroll down to "Password Policies" and click Edit:
+7.  Once the new profile page opens, select the **System Permissions** button
 
-<img src="../media/image115.png" />
-
-8.  Set User password expire in "Never expires". Failure to this may lead to production outages.
-
-<img src="../media/image116.png" />
-
-9.  Under Administrative Permissions, please make sure \"Lightning Experience User\" is unchecked
+8. If the Lightning Experience User checkbox is selected, clear it
 
 <img src="../media/image117.png" />
 
-10. Click "Save"
+9. Save the system permissions, then go back to Profile Overview
 
-11. Navigate to Setup \> Manage Apps \> Connected Apps
+10. Select the *Password Policies* link, click edit
 
-12. Select the app you have created in the previous step (i.e. Amazon Connect Integration)
+<img src="../media/image115.png" />
+
+11. Set **User password expire in** to **Never expires** **NOTE:** Failure to this may lead to production outages.
+
+<img src="../media/image116.png" />
+
+12. Select **Save**
+
+13. Navigate to Setup \> Manage Apps \> Connected Apps
+
+14. Select the app you have created in the previous step (i.e. Amazon Connect Integration)
 
 <img src="../media/image118.png" />
 
-13. Click "Manage Profiles"
+15. Click "Manage Profiles"
 
 <img src="../media/image119.png" />
 
-14. Ensure the "API Only" profile is selected:
+16. Ensure the "API Only" profile is selected:
 
 <img src="../media/image120.png" />
 
-15. Click "Save" at the bottom of the page
+17. Click "Save" at the bottom of the page
 
-16. Navigate to Setup \> Manage Users \> Users
+18. Navigate to Setup \> Manage Users \> Users
 
-17. Click "New User"
+19. Click "New User"
 
 <img src="../media/image121.png" />
 
-18. Set necessary fields: Last Name, Alias, Email, Username, Nickname
+20. Set necessary fields: Last Name, Alias, Email, Username, Nickname
 
 <img src="../media/image122.png" />
 
-19. On the right-hand side, set the User License and Profile
+21. On the right-hand side, set the User License and Profile
 
 <img src="../media/image123.png" />
 
-20. Click "Save"
+22. Click "Save"
 
-21. In **Quick Find**, search for "Permission Sets". Select the **AC_Administrator** permission set.
+23. In **Quick Find**, search for "Permission Sets". Select the **AC_Administrator** permission set.
 
 <img src="../media/lambda-install-0.png" />
 
-22. Select **Manage Assignments**. Add the apiuser you just created to the permission set.
+24. Select **Manage Assignments**. Add the apiuser you just created to the permission set.
 
-23. A confirmation email will be sent, with an activation link. Click the link to activate your user.
+25. A confirmation email will be sent, with an activation link. Click the link to activate your user.
 
 <img src="../media/image124.png" />
 
@@ -188,21 +192,21 @@ at least 20 random characters):
 
 <img src="../media/image125.png" />
 
-24. Click "Change Password"
+26. Click "Change Password"
 
-25. Access the apiuser personal settings by selecting the username in the top right corner, then "My Settings".
+27. Access the apiuser personal settings by selecting the username in the top right corner, then "My Settings".
 
 <img src="../media/image126.png" />
 
-26. Type "Security Token" in the Quick Find box and click "Reset My Security Token".
+28. Type "Security Token" in the Quick Find box and click "Reset My Security Token".
 
 <img src="../media/image127.png" />
 
-27. Your security token will be emailed to you
+29. Your security token will be emailed to you
 
 <img src="../media/image128.png" />
 
-28. Copy the security token from the email in to your installation notes for the "Access Token" value.
+30. Copy the security token from the email in to your installation notes for the "Access Token" value.
 
 <h3 class="toc">Store Salesforce credentials in AWS Secrets Manager</h3>
 
