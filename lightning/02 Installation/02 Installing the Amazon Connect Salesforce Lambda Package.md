@@ -159,19 +159,17 @@ It is a common practice to create an API user account for this purpose.
 
 6.  Select **Save** to create the new profile
 
-7.  Once the new profile page opens, select the **Edit** button
+7.  Once the new profile page opens, select the **System Permissions** button
 
-8.  Scroll down to the Administrative Permissions section
-
-9.  If the Lightning Experience User checkbox is selected, clear it
+8. If the Lightning Experience User checkbox is selected, clear it
 
 <img src="../media/image68.png" />
 
-10. Scroll down to the **Password Policies** section at the bottom of
-    the page
+9. Save the system permissions, then go back to Profile Overview
 
-11. Set **User password expire in** to **Never expires**
-    **NOTE:** Failure to this may lead to production outages.
+10. Select the *Password Policies* link, click edit
+
+11. Set **User password expire in** to **Never expires** **NOTE:** Failure to this may lead to production outages.
 
 12. Select **Save**
 
