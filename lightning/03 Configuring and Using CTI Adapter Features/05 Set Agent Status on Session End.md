@@ -19,3 +19,6 @@ When turned on, the feature will apply to all agents. If you'd rather have it ap
 <img src="../media/04-selective-profile-name.png" />
 
 Now only the agents that have "On-Call" in their Connect routing profile name will be shown as "Offline" when they end their session. Note that this value does not need to be an exact match to the profile name. As long as there is an "On-Call" in the profile name, it will work. This allows you to easily configure it for multiple profiles.
+
+
+Note that this feature does not work with Salesforce Pop-Out utilities. This means that it won't be working if CCP is popped out from utility bar. This is because the pop-out window is a different managed by Salesforce and we are not able to track any session on that window. 
