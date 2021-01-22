@@ -98,7 +98,7 @@ Please note that your secret may also be formatted stored as a "Secret key/value
 
 <img src="../media/image283.png" />
 
-7. Select the **AC_RecordingViewer** visualforce page, and select "preview." Copy the url of the opened page up until ".com".
+7. Select the **AC_RecordingViewer** visualforce page, and select "preview." Copy the url of the opened page up until `.com`. Make sure not to include any characters after `.com` (including `/`)
 
 8. Navigate back to aws, to the s3 bucket where your audio recording files are stored. This s3 bucket should be the same bucket as the **ConnectRecordingS3BucketName** parameter to the serverless application.
 
