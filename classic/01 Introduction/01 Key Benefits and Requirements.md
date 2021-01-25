@@ -48,7 +48,7 @@ We recommend that you initially install the package into your Salesforce
 sandbox. After the package is installed, you can configure your
 Salesforce Call Center configuration within Salesforce.
 
-The next step is to whitelist your Salesforce Visualforce domain within
+The next step is to allowlist your Salesforce Visualforce domain within
 your Amazon Connect Application integration. This allows cross-domain
 access to your Amazon Connect instance.
 

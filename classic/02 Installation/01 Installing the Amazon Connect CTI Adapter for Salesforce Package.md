@@ -18,7 +18,7 @@
 
 7.  Under **Add Voice Service Provider Details**, add the URL to your
     Amazon Connect instance (see instructions below if you are unsure).
-    You will also need to whitelist your Salesforce domain within Amazon
+    You will also need to allowlist your Salesforce domain within Amazon
     Connect.
 
 8.  Under **Who's Answering the Phone?**, select the name of the users

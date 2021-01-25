@@ -154,10 +154,10 @@ First, you need to add the CTI softphone to your Service Console.
 
 6.  Change the Label, if desired, then choose **Save**.
 
-<h4 class="toc">Whitelist Your Salesforce Org with Amazon Connect</h4>
+<h4 class="toc">Allowlist Your Salesforce Org with Amazon Connect</h4>
 
 In order to embed the Amazon Connect Contact Control Panel (CCP) into
-your Service Console, you need to whitelist two (2) domains for your org
+your Service Console, you need to allowlist two (2) domains for your org
 with Amazon Connect. This allows for cross domain access to the
 underlying resources required for the CCP to function.
 
@@ -222,7 +222,7 @@ underlying resources required for the CCP to function.
 
 <h4 class="toc">Modify the Call Center</h4>
 
-Now that you have whitelisted the org in the Amazon Connect Console, you
+Now that you have allowlisted the org in the Amazon Connect Console, you
 will need to modify the Call Center that was configured in Salesforce
 when the AppExchange package was installed. Once you complete the
 configuration, you add users to the Call Center to provide access to it.

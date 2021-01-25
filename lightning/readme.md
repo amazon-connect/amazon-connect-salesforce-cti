@@ -52,7 +52,7 @@ with id 'key-benefits-and-requirements'
     - [Set Access Permissions](02%20Installation/01%20Installing%20CTI%20Adapter%20Managed%20Package%20from%20AppExchange.md#set-access-permissions)
     - [Configure the Lightning Experience](02%20Installation/01%20Installing%20CTI%20Adapter%20Managed%20Package%20from%20AppExchange.md#configure-the-lightning-experience)
       - [Configure Service Console](02%20Installation/01%20Installing%20CTI%20Adapter%20Managed%20Package%20from%20AppExchange.md#configure-service-console)
-      - [Whitelist Your Salesforce Org with Amazon Connect](02%20Installation/01%20Installing%20CTI%20Adapter%20Managed%20Package%20from%20AppExchange.md#whitelist-your-salesforce-org-with-amazon-connect)
+      - [Allowlist Your Salesforce Org with Amazon Connect](02%20Installation/01%20Installing%20CTI%20Adapter%20Managed%20Package%20from%20AppExchange.md#allowlist-your-salesforce-org-with-amazon-connect)
       - [Modify the Call Center](02%20Installation/01%20Installing%20CTI%20Adapter%20Managed%20Package%20from%20AppExchange.md#modify-the-call-center)
       - [Configure the Toolkit settings](02%20Installation/01%20Installing%20CTI%20Adapter%20Managed%20Package%20from%20AppExchange.md#configure-the-toolkit-settings)
       - [Create the Softphone Layout](02%20Installation/01%20Installing%20CTI%20Adapter%20Managed%20Package%20from%20AppExchange.md#create-the-softphone-layout)
@@ -346,7 +346,7 @@ Important: when upgrading the CTI Adapter, please make sure that the Salesforce 
 - **Setup:** CTI Adapter validation is performed upon initialization and will inform the user of common misconfigurations.
 - **Setup:** Additional CTI Script examples are provided.
 - **Setup:** The ability to place the lightning transcript view on Task, Contact Channel, and Contact Channel Analytics object has been added.
-- **Bugfix:** Updated whitelisting steps to address login popup issue.
+- **Bugfix:** Updated allowlisting steps to address login popup issue.
 - **Bugfix:** OmniChannel workload data not being usable has been resolved
 - **Bugfix:** CTI Attribute issue when processing multiple pieces of contact attribute data has been resolved.
 - **Bugfix:** The call transcript now scrolls within a fixed region rather than consuming vertical space.
