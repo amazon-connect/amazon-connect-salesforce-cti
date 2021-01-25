@@ -150,23 +150,23 @@ To edit the sample Task Page Layout, please follow the steps:
 
 1.  Log in to your Salesforce Org
 
-2.  Navigate to **Setup** then in type *Object Manager* in Quick Find
+2.  Navigate to **Setup** then in type *Task* in Quick Find
 
 <img src="../media/audiostreaming14.png" />
 
-3.  Click on the "Task" object
+3.  Click on the "Task Page Layouts" option
 
 <img src="../media/audiostreaming15.png" />
 
-4.  Click on the "Page Layouts"
+4.  Click on "Edit" and the layout designer will open.
 
 <img src="../media/audiostreaming16.png" />
 
-5.  Click on the "*Task Layout*" and the layout designer will open
+5.  Scroll down in the left side of the top box till you see `Visualforce Pages` and click that.
 
 <img src="../media/audiostreaming17.png" />
 
-6.  Drag the "ACSFCCP_CallRecording" item to the desired are of the layout to have that information appear on the agent's screen. The following screenshot shows how the Call Details section could appear when placing the "ACSFCCP_CallRecording" item on the required Task layout.
+6.  Drag the "AC_CallRecordingTask" item to the desired are of the layout to have that information appear on the agent's screen. The following screenshot shows how the Call Details section could appear when placing the "AC_CallRecordingTask" item on the required Task layout.
 
 <img src="../media/audiostreaming18.png" />
 
