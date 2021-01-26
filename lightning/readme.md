@@ -100,7 +100,10 @@ with id 'key-benefits-and-requirements'
       - [Create a Presence Sync Rule](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/04%20Presence%20Sync%20Rules.md#create-a-presence-sync-rule)
   - [Localization](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/05%20Localization.md#localization)
   - [Set Agent Status on Session End](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/05%20Set%20Agent%20Status%20on%20Session%20End.md#set-agent-status-on-session-end)
-  - [Contact Lens](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/06%20Contact%20Lens)
+  - [Contact Lens](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/06%20Contact%20Lens.md#contact-lens)
+    - [Configuring Related Transcripts List for Case Object](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/06%20Contact%20Lens.md#configuring-related-transcripts-list-for-case-object)
+  - [CTI Actions](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/07%20CTI%20Actions.md#cti-actions)
+  - [Recording Controls](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/08%20Recording%20Controls.md)
 - [Configuring and Using AWS Serverless Application Repository for Salesforce Features](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/readme.md#configuring-and-using-aws-serverless-application-repository-for-salesforce-features)
   - [Accessing the Salesforce API from Amazon Connect Contact Flows Using AWS Lambda](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/01%20Accessing%20the%20Salesforce%20API%20from%20Amazon%20Connect%20Contact%20Flows%20Using%20AWS%20Lambda.md#accessing-the-salesforce-api-from-amazon-connect-contact-flows-using-aws-lambda)
     - [Salesforce Lookup](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/01%20Accessing%20the%20Salesforce%20API%20from%20Amazon%20Connect%20Contact%20Flows%20Using%20AWS%20Lambda.md#salesforce-lookup)
@@ -123,9 +126,9 @@ with id 'key-benefits-and-requirements'
     - [Deployment and Configuration](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/03%20Amazon%20Connect%20Real-Time%20Metrics%20in%20Salesforce.md#deployment-and-configuration)
       - [Adding Real-Time Reports to the Service Console](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/03%20Amazon%20Connect%20Real-Time%20Metrics%20in%20Salesforce.md#adding-real-time-reports-to-the-service-console)
   - [Contact Channel Analytics](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/04%20Contact%20Channel%20Analytics.md#contact-channel-analytics)
-    - [Call Recording Import](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/04%20Contact%20Channel%20Analytics.md#call-recording-import)
+    - [Call Recording Streaming](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/04%20Contact%20Channel%20Analytics.md#call-recording-streaming)
       - [Prerequisite Setup](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/04%20Contact%20Channel%20Analytics.md#prerequisite-setup)
-      - [Enabling call recording import](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/04%20Contact%20Channel%20Analytics.md#enabling-call-recording-import)
+      - [Enabling call recording streaming](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/04%20Contact%20Channel%20Analytics.md#enabling-call-recording-streaming)
       - [Adding Contact Channel Analytics to the Service Console](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/04%20Contact%20Channel%20Analytics.md#adding-contact-channel-analytics-to-the-service-console)
     - [Recording Transcripts](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/04%20Contact%20Channel%20Analytics.md#recording-transcripts)
       - [Enabling recording transcription](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/04%20Contact%20Channel%20Analytics.md#enabling-recording-transcription)
@@ -207,6 +210,57 @@ Connect and Salesforce.
 # Release Notes
 
 Important: when upgrading the CTI Adapter, please make sure that the Salesforce Lambdas are also updated to the newest version. Also review the [CTI Adapter Installation Troubleshooting and Common Issues](02%20Installation/04%20CTI%20Adapter%20Installation%20Troubleshooting.md#cti-adapter-installation-troubleshooting-and-common-issues) section for known issues and troubleshooting.
+
+## 5.10 February 2020
+
+- **Feature**: CCP Overlay: CTI Actions
+
+In 5.10 release, we have added the capability to add custom UI triggers for your CTI Flows. We call these triggers CTI Actions. Each CTI Action is a button that can be programmed to trigger a CTI Flows whose source value is "CTI Action," i.e. the CTI Flow needs be configured specifically for use with CTI Actions.
+
+The CTI Actions can be programmed to ask the agent for additional information via a data entry form. You can use the agent's entry in your CTI Flow with the help of "Get Payload" block. This is a great way to ask your agents to enter ad-hoc data about the customer prior to running the CTI Flow.
+
+- **Enhancement**: Voicemail Drops
+
+We have overhauled the Voicemail Drops feature to better integrate with CTI Actions. In the previous incarnation of this feature, the voicemail drops were loaded directly into the CCP Overlay. In the next version of the CTI Adapter, you will need to create a CTI Action, and use the newly added "Leave a Voicemail" block in the CTI Flow of this action where you can configure which voicemail drop and the quick connect name to use for the voicemail.
+
+- **Feature**: CCP Overlay: Recording API integration
+
+The CTI Adapter now includes integration with Connect's recording API. This feature allows the agent to control when to start and stop recording a call. Once the recording has started, they can also pause and resume it. This is a great feature to allow your agents to pause a recording before asking for PII from your customers.
+
+Note that once you stop a recording you cannot start it again. Use pause/resume buttons after you've started recording a call to control your recording.
+
+- **Feature**: CCP Overlay: Data panel to receive data from CTI Flows.
+
+You can now send data from a CTI Flow to the CCP Overlay. The Data panel on CCP Overlay will display any object you pass it from "Send Data to CCP Overlay" block.
+
+- **Feature**: CTI Flow Blocks: "Start Recording" and "Stop Recording"
+
+With "Start Recording" and "Stop Recording" blocks, you can control the voice recording of the call within your CTI Flows.
+
+- **Feature**: CTI Flow Block: "Update Contact Attributes"
+
+You can now update contract attributes using CTI Flows. This block accepts a list of key-value pairs and assigns them to the currently active contact. It may come handy for passing Case id and other important information to the next agent when transferring a call.
+
+- **Feature**: CTI Flow Block: "Get Payload"
+
+The `payload` object contains the arguments passed to the CTI Flow. Now you will be able to use "Get Payload" block to reference a payload key as an input in other blocks on your CTI Flow.
+
+- **Feature**: CTI Flow Block: "Send Data to CCP Overlay"
+
+This block allows you to send data to your agent from a CTI flow. The agent will see this information in the CCP Overlay in a panel entitled "Data."
+
+- **Feature**: CTI Flow Block: "Leave a Voicemail"
+
+This block works with the Voicemail Drops feature. When you configure the voicemailDropName and quickConnectName, it will pass the contact to an IVR to leave a voicemail on the agent's behalf.
+
+- **Enhancement**: "Get Salesforce Contact Id" block now uses FIND syntax to search across multiple fields.
+- **Enhancement**: For the `IfProfileNameIncludes` attribute, you can now specify multiple values.
+- **Enhancement**: When `SetAgentStatusOnSessionEnd` feature is enabled, you can now configure which state the agent should be shown as when they login with the `InitialAgentState` setting.
+- **Bugfix**: Decision blocks no longer requires both sockets to be connected.
+- **Bugfix**: We've fixed a bug where Click to Dial evidently stopped working after first use until the agent refreshed the page.
+- **Bugfix**: We've fixed an error that prevented Contact Lens app resources from being hosted on a different domain than the Salesforce instance.
+- **Bugfix**: We've fixed various issues with Medialess popout not closing after the tabs are closed.
+- **Bugfix**: We've fixed an issue where the login window did not close automatically after logging into the Connect.
 
 ## 5.9 December 2020
 

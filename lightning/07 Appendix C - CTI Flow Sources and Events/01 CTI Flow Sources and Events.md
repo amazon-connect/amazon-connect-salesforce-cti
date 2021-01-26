@@ -2,111 +2,113 @@
 
 The following sources are defined in the adapter for use with CTI Flows:
 
--   Initialization
+- Initialization
 
-    -   onInit -- The CTI adapter has initialized.
+  - onInit -- The CTI adapter has initialized.
 
--   Amazon Connect Agent
+- Amazon Connect Agent
 
-    -   onRefresh -- The Connect agent's data was updated.
+  - onRefresh -- The Connect agent's data was updated.
 
-    -   onStateChange -- The Connect agent's state changed.
+  - onStateChange -- The Connect agent's state changed.
 
-    -   onRoutable -- The Connect agent became available for contacts.
+  - onRoutable -- The Connect agent became available for contacts.
 
-    -   onNotRoutable -- The Connect agent became unavailable for
-        contacts.
+  - onNotRoutable -- The Connect agent became unavailable for
+    contacts.
 
-    -   onOffline -- The Connect agent's state was set to "Offline".
+  - onOffline -- The Connect agent's state was set to "Offline".
 
-    -   onError -- The Connect agent encountered a system error.
+  - onError -- The Connect agent encountered a system error.
 
-    -   onAfterCallWork -- The Connect agent entered "After Call Work".
+  - onAfterCallWork -- The Connect agent entered "After Call Work".
 
-    -   onInit -- The Connect agent has logged in.
+  - onInit -- The Connect agent has logged in.
 
--   Amazon Connect Voice Contact
+- Amazon Connect Voice Contact
 
-    -   onIncoming -- The voice contact is incoming. Note: This event
-        fires for queued callback contact only.
+  - onIncoming -- The voice contact is incoming. Note: This event
+    fires for queued callback contact only.
 
-    -   onConnecting -- The voice contact is connecting. Note. This
-        event fires for inbound and outbound contacts except queued
-        callback contacts.
+  - onConnecting -- The voice contact is connecting. Note. This
+    event fires for inbound and outbound contacts except queued
+    callback contacts.
 
-    -   onConnected -- The voice contact is connected.
+  - onConnected -- The voice contact is connected.
 
-    -   onEnded -- The voice contact is ended or destroyed.
+  - onEnded -- The voice contact is ended or destroyed.
 
-    -   onRefresh -- The voice contact is updated.
+  - onRefresh -- The voice contact is updated.
 
-    -   onAccepted -- A voice contact is accepted.
+  - onAccepted -- A voice contact is accepted.
 
-    -   onPending -- The voice contact is pending.
+  - onPending -- The voice contact is pending.
 
-    -   onMissed -- The voice contact is / was missed.
+  - onMissed -- The voice contact is / was missed.
 
--   Amazon Connect Chat Contact
+- Amazon Connect Chat Contact
 
-    -   onConnecting -- The chat contact is connecting.
+  - onConnecting -- The chat contact is connecting.
 
-    -   onConnected -- The chat contact is connected.
+  - onConnected -- The chat contact is connected.
 
-    -   onEnded -- The chat contact ended.
+  - onEnded -- The chat contact ended.
 
-    -   onRefresh -- The chat contact is updated.
+  - onRefresh -- The chat contact is updated.
 
-    -   onAccepted -- The chat contact is accepted.
+  - onAccepted -- The chat contact is accepted.
 
-    -   onPending -- The voice contact is pending.
+  - onPending -- The voice contact is pending.
 
-    -   onMessageReceived -- A message was received from the customer
+  - onMessageReceived -- A message was received from the customer
 
-    -   onMessageSent -- A message was sent to the customer
+  - onMessageSent -- A message was sent to the customer
 
-    -   onMissed -- The chat contact was missed.
+  - onMissed -- The chat contact was missed.
 
--   Amazon Connect Task Contact
+- Amazon Connect Task Contact
 
-    -   onIncoming -- The tasks contact is incoming.
-    
-    -   onConnecting -- The taks contact is connecting.
+  - onIncoming -- The tasks contact is incoming.
 
-    -   onConnected -- The task contact is connected.
+  - onConnecting -- The taks contact is connecting.
 
-    -   onEnded -- The task contact ended.
+  - onConnected -- The task contact is connected.
 
-    -   onRefresh -- The task contact is updated.
+  - onEnded -- The task contact ended.
 
-    -   onAccepted -- The task contact is accepted.
+  - onRefresh -- The task contact is updated.
 
-    -   onPending -- The voice contact is pending.
+  - onAccepted -- The task contact is accepted.
 
-    -   onMissed -- The task contact was missed.
+  - onPending -- The voice contact is pending.
 
-    -   onTransferInitiated -- When the server has initiated the task transfer.
+  - onMissed -- The task contact was missed.
 
-    -   onTransferSucceeded -- When the task transfer has succeeded.
+  - onTransferInitiated -- When the server has initiated the task transfer.
 
-    -   onTransferFailed -- When the task transfer has failed.
+  - onTransferSucceeded -- When the task transfer has succeeded.
 
-    -   onTaskExpiring -- Triggers 2 hours before the task expires.
+  - onTransferFailed -- When the task transfer has failed.
 
-    -   onTaskExpired -- When the task has expired.
+  - onTaskExpiring -- Triggers 2 hours before the task expires.
 
--   Salesforce Agent
+  - onTaskExpired -- When the task has expired.
 
-    -   onStateChange -- The Salesforce agent's state changed.
+- Salesforce Agent
 
-    -   onWorkAccepted -- The Salesforce agent accepted work.
+  - onStateChange -- The Salesforce agent's state changed.
 
-    -   onWorkloadChanged -- The Salesforce agent's workload changed.
+  - onWorkAccepted -- The Salesforce agent accepted work.
 
--   Salesforce UI
+  - onWorkloadChanged -- The Salesforce agent's workload changed.
 
-    -   onClickToDial -- A phone number, within the Salesforce UI, was
-        clicked.
+- Salesforce UI
 
-    -   onNavigationChange
+  - onClickToDial -- A phone number, within the Salesforce UI, was
+    clicked.
 
-    -   onHvsWorkStart
+  - onNavigationChange
+
+  - onHvsWorkStart
+
+- CTI Action
