@@ -138,7 +138,7 @@ Salesforce.
 24. Select ONLY the following metrics (deselect any others):
     -   After contact work time
 
-    -   Agent on contact tome
+    -   Agent on contact time
 
     -   Agent idle time
 
