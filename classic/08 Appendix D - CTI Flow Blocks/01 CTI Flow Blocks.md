@@ -366,7 +366,7 @@ Closes the Salesforce with a given id.
 
 ### Delay
 
-Delays execution for a period of time. (Keep in mind that your flow may be stopped if it runs longer than the maximum allowed execution window of 10 seconds.)
+Delays execution for a period of time. (Keep in mind that your flow may be stopped if it runs longer than the maximum allowed execution window of 60 seconds.)
 
 ### Get Primary Tab Ids
 
