@@ -18,9 +18,9 @@ When turned on, the feature will apply to all agents. If you'd rather have it ap
 
 <img src="../media/04-selective-profile-name.png" />
 
-Now only the agents that have "On-Call" in their Connect routing profile name will be shown as "Offline" when they end their session.
+Now only the agents that have "On-Call" in their Connect routing profile name will be shown as "Offline" when they end their session. This setting can accept multiple, comma-separated profile names, as well.
 
-As long as "On-Call" is in the profile name of the agent, this will work. This setting can accept multiple, comma-separated profile names, as well.
+You can also have the Status be set to `Logout`, which will append the functionality of the logout feature mentioned [here](</lightning/Installation/01 Installing CTI Adapter Managed Package from AppExchange.md>) - logging the agent out of the CCP upon session ending. It will not log the user out if a call is ongoing.
 
 When your agents log back in, they will be shown as "Available" by default. If you'd like to control which status to set your agents, you can configure it with `InitialAgentState` setting.
 

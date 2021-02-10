@@ -51,6 +51,13 @@ a default setting. This section will detail the options available.
     the presence rules to sync state from Amazon Connect to Salesforce
     Omni-Channel.
 
+10. **Audio Device Settings** Turning this setting on allows the Agent 
+    to setup a custom audio device for their speaker, microphone and 
+    ringer in the adapter.
+
+11. **Phone Type Settings** Turning this setting on allows the Agent to 
+    change their Phone Type in the CCP.
+
 <h2 class="toc">Single Sign On Settings</h2>
 
 The Amazon Connect CTI Adapter supports single sign on(SSO) via SAML
