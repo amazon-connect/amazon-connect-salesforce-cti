@@ -75,7 +75,7 @@ with id 'key-benefits-and-requirements'
     - [Configure Presence Status Synchronization Rules](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/02%20Omnipresence%20Agent%20State%20Sync.md#configure-presence-status-synchronization-rules)
       - [Presence Status Configuration Rules](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/02%20Omnipresence%20Agent%20State%20Sync.md#presence-status-configuration-rules)
   - [Contact Attributes Display](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/03%20Contact%20Attributes%20Display.md#contact-attributes-display)
-  - [Call Recording Link for Task](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/04%20Call%20Recording%20Link%20for%20Task.md#call-recording-link-for-task) - [Enabling call recording import](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/04%20Call%20Recording%20Link%20for%20Task.md#enabling-call-recording-import)
+  - [Call Recording Link for Task](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/04%20Call%20Recording%20Link%20for%20Task.md#call-recording-link-for-task) - [Enabling call recording streaming](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/04%20Call%20Recording%20Link%20for%20Task.md#enabling-call-recording-streaming)
   - [Call Display on the Account Page](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/05%20Call%20Display%20on%20the%20Account%20Page.md#call-display-on-the-account-page)
   - [Outbound Campaign Calls](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/06%20Outbound%20Campaign%20Calls.md#outbound-campaign-calls)
     - [Create a Queue](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/06%20Outbound%20Campaign%20Calls.md#create-a-queue)
@@ -84,7 +84,9 @@ with id 'key-benefits-and-requirements'
     - [Outbound Campaign Custom Object Using Salesforce Data Loader](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/06%20Outbound%20Campaign%20Calls.md#outbound-campaign-custom-object-using-salesforce-data-loader)
   - [Amazon Connect Reports in Salesforce](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/07%20Amazon%20Connect%20Reports%20in%20Salesforce.md#amazon-connect-reports-in-salesforce)
   - [CTI Flows](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/08%20CTI%20Flows.md#cti-flows)
-    - [Localization](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/09%20Localization.md#localization)
+  - [Localization](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/09%20Localization.md#localization)
+  - [CTI Actions](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/10%20CTI%20Actions.md#cti-actions)
+  - [Recording Controls](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/11%20Recording%20Controls.md)
 - Configuring and Using AWS Serverless Application Repository for Salesforce Features
   - [Invoking the Amazon Connect Salesforce Lambda in a Contact Flow](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/01%20Invoking%20the%20Amazon%20Connect%20Salesforce%20Lambda%20in%20a%20Contact%20Flow.md#invoking-the-amazon-connect-salesforce-lambda-in-a-contact-flow)
     - [Salesforce Lookup](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/01%20Invoking%20the%20Amazon%20Connect%20Salesforce%20Lambda%20in%20a%20Contact%20Flow.md#salesforce-lookup)
@@ -134,6 +136,90 @@ used by Amazon Connect to interact with Salesforce.
 # Release Notes
 
 Important: when upgrading the CTI Adapter, please make sure that the Salesforce Lambdas are also updated to the newest version.
+
+## 5.10 February 2020
+
+- **Feature**: CCP Overlay: CTI Actions
+
+In 5.10 release, we have added the capability to add custom UI triggers for your CTI Flows. We call these triggers CTI Actions. Each CTI Action is a button that can be programmed to trigger a CTI Flows whose source value is "CTI Action," i.e. the CTI Flow needs be configured specifically for use with CTI Actions.
+
+The CTI Actions can be programmed to ask the agent for additional information via a data entry form. You can use the agent's entry in your CTI Flow with the help of "Get Payload" block. This is a great way to ask your agents to enter ad-hoc data about the customer prior to running the CTI Flow.
+
+- **Enhancement**: Voicemail Drops
+
+We have overhauled the Voicemail Drops feature to better integrate with CTI Actions. In the previous incarnation of this feature, the voicemail drops were loaded directly into the CCP Overlay. In the next version of the CTI Adapter, you will need to create a CTI Action, and use the newly added "Leave a Voicemail" block in the CTI Flow of this action where you can configure which voicemail drop and the quick connect name to use for the voicemail.
+
+- **Feature**: CCP Overlay: Recording API integration
+
+The CTI Adapter now includes integration with Connect's recording API. This feature allows the agent to control when to start and stop recording a call. Once the recording has started, they can also pause and resume it. This is a great feature to allow your agents to pause a recording before asking for PII from your customers.
+
+Note that once you stop a recording you cannot start it again. Use pause/resume buttons after you've started recording a call to control your recording.
+
+- **Feature**: CCP Overlay: Data panel to receive data from CTI Flows.
+
+You can now send data from a CTI Flow to the CCP Overlay. The Data panel on CCP Overlay will display any object you pass it from "Send Data to CCP Overlay" block.
+
+- **Feature**: CTI Flow Blocks: "Start Recording" and "Stop Recording"
+
+With "Start Recording" and "Stop Recording" blocks, you can control the voice recording of the call within your CTI Flows.
+
+- **Feature**: CTI Flow Block: "Update Contact Attributes"
+
+You can now update contract attributes using CTI Flows. This block accepts a list of key-value pairs and assigns them to the currently active contact. It may come handy for passing Case id and other important information to the next agent when transferring a call.
+
+- **Feature**: CTI Flow Block: "Get Payload"
+
+The `payload` object contains the arguments passed to the CTI Flow. Now you will be able to use "Get Payload" block to reference a payload key as an input in other blocks on your CTI Flow.
+
+- **Feature**: CTI Flow Block: "Send Data to CCP Overlay"
+
+This block allows you to send data to your agent from a CTI flow. The agent will see this information in the CCP Overlay in a panel entitled "Data."
+
+- **Feature**: CTI Flow Block: "Leave a Voicemail"
+
+This block works with the Voicemail Drops feature. When you configure the voicemailDropName and quickConnectName, it will pass the contact to an IVR to leave a voicemail on the agent's behalf.
+
+- **Feature**: CTI Flow Block: "Get Salesforce Lead ID"
+
+This block allows you to get a Salesforce lead by using a phone number.
+
+- **Feature**: CCP Audio Device Config Options
+
+You can now toggle Phone Type Settings and the new Audio Device Settings for Agents to see on their CCP. Audio Device Settings allows the Agents to choose custom/separate audio devices for their speaker, ringer, and microphone.
+
+- **Feature**: Custom Ringtone for chat
+
+You can now configure custom ringtone for chat (separate from softphone) from CTI adapter configuration page.
+
+- **Enhancement**: The Salesforce built-in Cross Site Request Forgery (CSRF) protection are turned on for all Visualforce pages in the CTI adapter packages, which improves organizational security to protect against cross site request forgeries.
+
+- **Enhancement**: "Get Salesforce Contact Id" block now uses FIND syntax to search across multiple fields.
+
+- **Enhancement**: For the `SetAgentStatusOnSessionEnd` attribute, you can now specify multiple values.
+
+- **Enhancement**: When `SetAgentStatusOnSessionEnd` feature is enabled, you can now configure which state the agent should be shown as when they login with the InitialAgentState setting.
+
+- **Enhancement**: When `SetAgentStatusOnSessionEnd` feature is enabled, you can now configure which the agent to logout when all tabs are closed by setting the Status to Logout.
+
+- **Enhancement** We have added `noPopOnEmpty` checkbox to ScreenPopObject CTI Flow Block. Previously, if you passed a null value, Salesforce would pop the User page on Salesforce Classic. This provides functionality to prevent that.
+
+- **Bugfix**: Decision blocks no longer requires both sockets to be connected.
+
+- **Bugfix**: We've fixed a bug where Click to Dial evidently stopped working after first use until the agent refreshed the page.
+
+- **Bugfix**: We've fixed an error that prevented Contact Lens app resources from being hosted on a different domain than the Salesforce instance.
+
+- **Bugfix**: We've fixed an error that prevented Contact Lens app from displaying occasionally when Transcribe was enabled.
+
+- **Bugfix**: Changed the logic for the `IsContactTransfer` CTI Flow Block which caused it to always return true.
+
+- **Bugfix**: We’ve added back the softphone popout functionality for users of Salesforce Classic.
+
+- **Bugfix**: We've fixed various issues with Medialess popout not closing after the tabs are closed.
+
+- **Bugfix**: We've fixed an issue where the login window did not close automatically after logging into the Connect.
+
+- **Bugfix**: We've fixed an issue that prevented Contact Lens view from showing up if the assets were hosted on a different domain.
 
 ## 5.9 December 2020
 
