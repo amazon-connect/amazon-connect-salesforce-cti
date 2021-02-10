@@ -261,6 +261,12 @@ This block allows you to get a Salesforce lead by using a phone number.
 
 You can now toggle Phone Type Settings and the new Audio Device Settings for Agents to see on their CCP. Audio Device Settings allows the Agents to choose custom/separate audio devices for their speaker, ringer, and microphone.
 
+- **Feature**: Custom Ringtone for chat
+
+You can now configure custom ringtone for chat (separate from softphone) from CTI adapter configuration page.
+
+- **Enhancement**: The Salesforce built-in Cross Site Request Forgery (CSRF) protection are turned on for all Visualforce pages in the CTI adapter packages, which improves organizational security to protect against cross site request forgeries.
+
 - **Enhancement**: "Get Salesforce Contact Id" block now uses FIND syntax to search across multiple fields.
 
 - **Enhancement**: For the `SetAgentStatusOnSessionEnd` attribute, you can now specify multiple values.
