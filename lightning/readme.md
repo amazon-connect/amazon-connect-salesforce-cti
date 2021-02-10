@@ -253,13 +253,38 @@ This block allows you to send data to your agent from a CTI flow. The agent will
 
 This block works with the Voicemail Drops feature. When you configure the voicemailDropName and quickConnectName, it will pass the contact to an IVR to leave a voicemail on the agent's behalf.
 
+- **Feature**: CTI Flow Block: "Get Salesforce Lead ID"
+
+This block allows you to get a Salesforce lead by using a phone number.
+
+- **Feature**: CCP Audio Device Config Options
+
+You can now toggle Phone Type Settings and the new Audio Device Settings for Agents to see on their CCP. Audio Device Settings allows the Agents to choose custom/separate audio devices for their speaker, ringer, and microphone.
+
 - **Enhancement**: "Get Salesforce Contact Id" block now uses FIND syntax to search across multiple fields.
-- **Enhancement**: For the `IfProfileNameIncludes` attribute, you can now specify multiple values.
-- **Enhancement**: When `SetAgentStatusOnSessionEnd` feature is enabled, you can now configure which state the agent should be shown as when they login with the `InitialAgentState` setting.
+
+- **Enhancement**: For the `SetAgentStatusOnSessionEnd` attribute, you can now specify multiple values.
+
+- **Enhancement**: When `SetAgentStatusOnSessionEnd` feature is enabled, you can now configure which state the agent should be shown as when they login with the InitialAgentState setting.
+
+- **Enhancement**: When `SetAgentStatusOnSessionEnd` feature is enabled, you can now configure which the agent to logout when all tabs are closed by setting the Status to Logout.
+
+- **Enhancement** We have added `noPopOnEmpty` checkbox to ScreenPopObject CTI Flow Block. Previously, if you passed a null value, Salesforce would pop the User page on Salesforce Classic. This provides functionality to prevent that.
+
 - **Bugfix**: Decision blocks no longer requires both sockets to be connected.
+
 - **Bugfix**: We've fixed a bug where Click to Dial evidently stopped working after first use until the agent refreshed the page.
+
 - **Bugfix**: We've fixed an error that prevented Contact Lens app resources from being hosted on a different domain than the Salesforce instance.
+
+- **Bugfix**: We've fixed an error that prevented Contact Lens app from displaying occasionally when Transcribe was enabled.
+
+- **Bugfix**: Changed the logic for the `IsContactTransfer` CTI Flow Block which caused it to always return true.
+
+- **Bugfix**: We’ve added back the softphone popout functionality for users of Salesforce Classic.
+
 - **Bugfix**: We've fixed various issues with Medialess popout not closing after the tabs are closed.
+
 - **Bugfix**: We've fixed an issue where the login window did not close automatically after logging into the Connect.
 
 ## 5.9 December 2020
