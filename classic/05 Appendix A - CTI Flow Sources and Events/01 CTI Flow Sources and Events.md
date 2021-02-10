@@ -71,7 +71,7 @@ Scripts:
 
   - onIncoming -- The tasks contact is incoming.
 
-  - onConnecting -- The taks contact is connecting.
+  - onConnecting -- The task contact is connecting.
 
   - onConnected -- The task contact is connected.
 

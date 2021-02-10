@@ -70,7 +70,7 @@ The following sources are defined in the adapter for use with CTI Flows:
 
   - onIncoming -- The tasks contact is incoming.
 
-  - onConnecting -- The taks contact is connecting.
+  - onConnecting -- The task contact is connecting.
 
   - onConnected -- The task contact is connected.
 
