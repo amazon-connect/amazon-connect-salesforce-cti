@@ -293,6 +293,8 @@ You can now configure custom ringtone for chat (separate from softphone) from CT
 
 - **Bugfix**: We've fixed an issue where the login window did not close automatically after logging into the Connect.
 
+- **Bugfix**: We've fixed an issue that prevented Contact Lens view from showing up if the assets were hosted on a different domain.
+
 ## 5.9 December 2020
 
 - **Feature**: Contact Lens Integration
