@@ -14,7 +14,7 @@ You can optionally specify a payload to pass to the CTI Flow. This payload can b
 
 ### CCP Overlay
 
-The Actions panel in the CCP Overlay drawer displays the CTI Actions, where your agents can have easy access to them as they are talking to customers..
+The Actions panel in the CCP Overlay drawer displays the CTI Actions, where your agents can have easy access to them as they are talking to customers.
 
 <img src="../media/ccp-overlay-01.png" />
 
