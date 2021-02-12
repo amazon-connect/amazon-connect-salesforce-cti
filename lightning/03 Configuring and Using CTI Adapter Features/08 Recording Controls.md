@@ -8,6 +8,8 @@ This can be useful when you don't want to record every call, and give the agent 
 
 Note that once a recording is stopped, it cannot be restarted. After starting a recording, you should use pause/resume button to control it.
 
+This panel is disabled by default. You can enable it by adding `FEATURE_RECORDING_PANEL` feature flag to your CTI Adapter, with the setting `Enabled:true`.
+
 ## Setup
 
 First, create an IAM user and give it the managed policy `AmazonConnect_FullAccess`.
