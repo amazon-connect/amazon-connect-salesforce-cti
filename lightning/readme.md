@@ -208,6 +208,34 @@ Connect and Salesforce.
 
 Important: when upgrading the CTI Adapter, please make sure that the Salesforce Lambdas are also updated to the newest version. Also review the [CTI Adapter Installation Troubleshooting and Common Issues](02%20Installation/04%20CTI%20Adapter%20Installation%20Troubleshooting.md#cti-adapter-installation-troubleshooting-and-common-issues) section for known issues and troubleshooting.
 
+## 5.10 February 2020
+
+- **Feature**: CCP Audio Device Config Options
+
+You can now toggle Phone Type Settings and the new Audio Device Settings for Agents to see on their CCP. Audio Device Settings allows the Agents to choose custom/separate audio devices for their speaker, ringer, and microphone.
+
+- **Feature**: Custom Ringtone for chat
+
+You can now configure custom ringtone for chat (separate from softphone) from CTI adapter configuration page.
+
+- **Enhancement**: The Salesforce built-in Cross Site Request Forgery (CSRF) protection are turned on for all Visualforce pages in the CTI adapter packages, which improves organizational security to protect against cross site request forgeries.
+
+- **Bugfix**: Decision blocks no longer requires both sockets to be connected.
+
+- **Bugfix**: We've fixed a bug where Click to Dial evidently stopped working after first use until the agent refreshed the page.
+
+- **Bugfix**: We've fixed an error that prevented Contact Lens app resources from being hosted on a different domain than the Salesforce instance.
+
+- **Bugfix**: We've fixed an error that prevented Contact Lens app from displaying occasionally when Transcribe was enabled.
+
+- **Bugfix**: Changed the logic for the `IsContactTransfer` CTI Flow Block which caused it to always return true.
+
+- **Bugfix**: We’ve added back the softphone popout functionality for users of Salesforce Classic.
+
+- **Bugfix**: We've fixed various issues with Medialess popout not closing after the tabs are closed.
+
+- **Bugfix**: We've fixed an issue where the login window did not close automatically after logging into the Connect.
+
 ## 5.9 December 2020
 
 - **Feature**: Contact Lens Integration
