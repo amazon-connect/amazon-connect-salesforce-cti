@@ -157,7 +157,7 @@ You can now configure custom ringtone for chat (separate from softphone) from CT
 
 - **Bugfix**: Changed the logic for the `IsContactTransfer` CTI Flow Block which caused it to always return true.
 
-- **Bugfix**: We’ve added back the softphone popout functionality for users of Salesforce Classic.
+- **Bugfix**: We’ve added back the softphone popout functionality for users of Salesforce Classic Console.
 
 - **Bugfix**: We've fixed various issues with Medialess popout not closing after the tabs are closed.
 
