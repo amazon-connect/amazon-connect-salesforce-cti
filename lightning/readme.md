@@ -218,6 +218,10 @@ You can now toggle Phone Type Settings and the new Audio Device Settings for Age
 
 You can now configure custom ringtone for chat (separate from softphone) from CTI adapter configuration page.
 
+- **Feature**: _Contact Control Panel (CCP) Audio Device Config Options._ You can now toggle Phone Type Settings and the new Audio Device Settings for agents to see on their CCP. Audio Device Settings allows the Agents to choose custom/separate audio devices for their speaker, ringer, and microphone.
+
+- **Feature**: Custom Ringtone for chat. You can now configure custom ringtone for chat (separate from softphone) from CTI adapter configuration page.
+
 - **Enhancement**: The Salesforce built-in Cross Site Request Forgery (CSRF) protection are turned on for all Visualforce pages in the CTI adapter packages, which improves organizational security to protect against cross site request forgeries.
 
 - **Bugfix**: Decision blocks no longer requires both sockets to be connected.
@@ -228,11 +232,13 @@ You can now configure custom ringtone for chat (separate from softphone) from CT
 
 - **Bugfix**: We've fixed an error that prevented Contact Lens app from displaying occasionally when Transcribe was enabled.
 
-- **Bugfix**: Changed the logic for the `IsContactTransfer` CTI Flow Block which caused it to always return true.
+- **Bugfix**: Changed the logic for the IsContactTransfer CTI Flow Block which caused it to always return true.
 
 - **Bugfix**: We've fixed various issues with Medialess popout not closing after the tabs are closed.
 
 - **Bugfix**: We've fixed an issue where the login window did not close automatically after logging into the Connect.
+
+- **Bugfix**: We fixed an issue that prevented upgrading the package if the Case or Contact object contained encrypted fields.
 
 ## 5.9 December 2020
 
