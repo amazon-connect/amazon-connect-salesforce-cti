@@ -52,7 +52,7 @@ with id 'key-benefits-and-requirements'
     - [Set Access Permissions](02%20Installation/01%20Installing%20CTI%20Adapter%20Managed%20Package%20from%20AppExchange.md#set-access-permissions)
     - [Configure the Lightning Experience](02%20Installation/01%20Installing%20CTI%20Adapter%20Managed%20Package%20from%20AppExchange.md#configure-the-lightning-experience)
       - [Configure Service Console](02%20Installation/01%20Installing%20CTI%20Adapter%20Managed%20Package%20from%20AppExchange.md#configure-service-console)
-      - [Whitelist Your Salesforce Org with Amazon Connect](02%20Installation/01%20Installing%20CTI%20Adapter%20Managed%20Package%20from%20AppExchange.md#whitelist-your-salesforce-org-with-amazon-connect)
+      - [Allowlist Your Salesforce Org with Amazon Connect](02%20Installation/01%20Installing%20CTI%20Adapter%20Managed%20Package%20from%20AppExchange.md#allowlist-your-salesforce-org-with-amazon-connect)
       - [Modify the Call Center](02%20Installation/01%20Installing%20CTI%20Adapter%20Managed%20Package%20from%20AppExchange.md#modify-the-call-center)
       - [Configure the Toolkit settings](02%20Installation/01%20Installing%20CTI%20Adapter%20Managed%20Package%20from%20AppExchange.md#configure-the-toolkit-settings)
       - [Create the Softphone Layout](02%20Installation/01%20Installing%20CTI%20Adapter%20Managed%20Package%20from%20AppExchange.md#create-the-softphone-layout)
@@ -102,8 +102,6 @@ with id 'key-benefits-and-requirements'
   - [Set Agent Status on Session End](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/05%20Set%20Agent%20Status%20on%20Session%20End.md#set-agent-status-on-session-end)
   - [Contact Lens](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/06%20Contact%20Lens.md#contact-lens)
     - [Configuring Related Transcripts List for Case Object](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/06%20Contact%20Lens.md#configuring-related-transcripts-list-for-case-object)
-  - [CTI Actions](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/07%20CTI%20Actions.md#cti-actions)
-  - [Recording Controls](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/08%20Recording%20Controls.md)
 - [Configuring and Using AWS Serverless Application Repository for Salesforce Features](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/readme.md#configuring-and-using-aws-serverless-application-repository-for-salesforce-features)
   - [Accessing the Salesforce API from Amazon Connect Contact Flows Using AWS Lambda](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/01%20Accessing%20the%20Salesforce%20API%20from%20Amazon%20Connect%20Contact%20Flows%20Using%20AWS%20Lambda.md#accessing-the-salesforce-api-from-amazon-connect-contact-flows-using-aws-lambda)
     - [Salesforce Lookup](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/01%20Accessing%20the%20Salesforce%20API%20from%20Amazon%20Connect%20Contact%20Flows%20Using%20AWS%20Lambda.md#salesforce-lookup)
@@ -126,9 +124,9 @@ with id 'key-benefits-and-requirements'
     - [Deployment and Configuration](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/03%20Amazon%20Connect%20Real-Time%20Metrics%20in%20Salesforce.md#deployment-and-configuration)
       - [Adding Real-Time Reports to the Service Console](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/03%20Amazon%20Connect%20Real-Time%20Metrics%20in%20Salesforce.md#adding-real-time-reports-to-the-service-console)
   - [Contact Channel Analytics](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/04%20Contact%20Channel%20Analytics.md#contact-channel-analytics)
-    - [Call Recording Streaming](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/04%20Contact%20Channel%20Analytics.md#call-recording-streaming)
+    - [Call Recording Import](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/04%20Contact%20Channel%20Analytics.md#call-recording-import)
       - [Prerequisite Setup](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/04%20Contact%20Channel%20Analytics.md#prerequisite-setup)
-      - [Enabling call recording streaming](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/04%20Contact%20Channel%20Analytics.md#enabling-call-recording-streaming)
+      - [Enabling call recording import](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/04%20Contact%20Channel%20Analytics.md#enabling-call-recording-import)
       - [Adding Contact Channel Analytics to the Service Console](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/04%20Contact%20Channel%20Analytics.md#adding-contact-channel-analytics-to-the-service-console)
     - [Recording Transcripts](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/04%20Contact%20Channel%20Analytics.md#recording-transcripts)
       - [Enabling recording transcription](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/04%20Contact%20Channel%20Analytics.md#enabling-recording-transcription)
@@ -362,7 +360,7 @@ Important: when upgrading the CTI Adapter, please make sure that the Salesforce 
 - **Setup:** CTI Adapter validation is performed upon initialization and will inform the user of common misconfigurations.
 - **Setup:** Additional CTI Script examples are provided.
 - **Setup:** The ability to place the lightning transcript view on Task, Contact Channel, and Contact Channel Analytics object has been added.
-- **Bugfix:** Updated whitelisting steps to address login popup issue.
+- **Bugfix:** Updated allowlisting steps to address login popup issue.
 - **Bugfix:** OmniChannel workload data not being usable has been resolved
 - **Bugfix:** CTI Attribute issue when processing multiple pieces of contact attribute data has been resolved.
 - **Bugfix:** The call transcript now scrolls within a fixed region rather than consuming vertical space.

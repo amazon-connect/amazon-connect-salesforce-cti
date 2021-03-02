@@ -25,13 +25,13 @@ Connect Salesforce Lambda package, you will need to validate and
 configure some items in your Salesforce Org and gather some information
 from your Amazon Connect instance.
 
--   Check your Salesforce API version
+- Check your Salesforce API version
 
--   Create a new Connected App
+- Create a new Connected App
 
--   Create a new API user
+- Create a new API user
 
--   Gather Amazon Connect information
+- Gather Amazon Connect information
 
 As you are preparing to deploy the package, it is a good idea to open a
 text editor and note information as you configure the environment. We
@@ -159,19 +159,17 @@ It is a common practice to create an API user account for this purpose.
 
 6.  Select **Save** to create the new profile
 
-7.  Once the new profile page opens, select the **Edit** button
+7.  Once the new profile page opens, select the **System Permissions** button
 
-8.  Scroll down to the Administrative Permissions section
-
-9.  If the Lightning Experience User checkbox is selected, clear it
+8.  If the Lightning Experience User checkbox is selected, clear it
 
 <img src="../media/image68.png" />
 
-10. Scroll down to the **Password Policies** section at the bottom of
-    the page
+9. Save the system permissions, then go back to Profile Overview
 
-11. Set **User password expire in** to **Never expires**
-    **NOTE:** Failure to this may lead to production outages.
+10. Select the _Password Policies_ link, click edit
+
+11. Set **User password expire in** to **Never expires** **NOTE:** Failure to this may lead to production outages.
 
 12. Select **Save**
 
@@ -196,15 +194,15 @@ It is a common practice to create an API user account for this purpose.
 
 20. Set the required fields as:
 
-    a.  Last Name: apiuser
+    a. Last Name: apiuser
 
-    b.  Alias: apiuser
+    b. Alias: apiuser
 
-    c.  Email: provide a valid email address
+    c. Email: provide a valid email address
 
-    d.  Username: apiuser@\<yoursalesforcedomain\>.com
+    d. Username: apiuser@\<yoursalesforcedomain\>.com
 
-    e.  Nickname: apiuser
+    e. Nickname: apiuser
 
 21. On the right-hand side, set **User License** to **Salesforce**
 
@@ -312,17 +310,17 @@ retrieve secrets.
 
 8.  Enter key value pairs that match the following:
 
-    a.  **Key:** Password, **Value:** the password for the API user that
-        you configured in the previous section
+    a. **Key:** Password, **Value:** the password for the API user that
+    you configured in the previous section
 
-    b.  **Key:** ConsumerKey, **Value:** the Consumer Key for the
-        Connected App you created in the previous section
+    b. **Key:** ConsumerKey, **Value:** the Consumer Key for the
+    Connected App you created in the previous section
 
-    c.  **Key:** ConsumerSecret, **Value:** the Consumer Secret for the
-        Connected App you created in the previous section
+    c. **Key:** ConsumerSecret, **Value:** the Consumer Secret for the
+    Connected App you created in the previous section
 
-    d.  **Key:** AccessToken, **Value:** this is the access token for
-        the API user that you configured in the previous section
+    d. **Key:** AccessToken, **Value:** this is the access token for
+    the API user that you configured in the previous section
 
 9.  For the encryption key, click **Add new key**
 
@@ -331,7 +329,7 @@ retrieve secrets.
 11. Make sure key type is set to **symmetric**
 
 12. Give your key an **alias**, like
-    *SalesforceCredentialsSecretsManagerKey*
+    _SalesforceCredentialsSecretsManagerKey_
 
 13. Click Next
 
@@ -349,7 +347,7 @@ retrieve secrets.
 18. Click Finish
 
 19. Click on the managed key that you just created (which is
-    *SalesforceCredentialsSecretsManagerKey* in this case).
+    _SalesforceCredentialsSecretsManagerKey_ in this case).
 
 20. Note down the ARN. This is SalesforceCredentialsKMSKeyARN that will
     be used later when installing the Amazon Connect Salesforce Lambda
@@ -363,7 +361,7 @@ retrieve secrets.
 
 23. Click Next
 
-24. Give your secret a name, like *SalesforceCredentials*
+24. Give your secret a name, like _SalesforceCredentials_
 
 25. Click Next
 
@@ -418,113 +416,113 @@ retrieve secrets.
 10. Fill in the parameters using the data you gathered in your notepad
     in the previous section using the following notes:
 
-    a.  **Application name:** You can accept the default here or change
-        it as desired
+    a. **Application name:** You can accept the default here or change
+    it as desired
 
-    b.  **CTRKinesisARN:** This is the ARN for the Kinesis stream that
-        was configured for Contact Trace Record streaming in Amazon
-        Connect. This is the complete ARN. Amazon Kinesis Firehose is
-        not supported.
+    b. **CTRKinesisARN:** This is the ARN for the Kinesis stream that
+    was configured for Contact Trace Record streaming in Amazon
+    Connect. This is the complete ARN. Amazon Kinesis Firehose is
+    not supported.
 
-    c.  **ConnectRecordingS3BucketName:** This is the name of the S3
-        bucket used to store recordings for your Amazon Connect
-        instance. This is ONLY the bucket name, no sub-folders or
-        suffixes
+    c. **ConnectRecordingS3BucketName:** This is the name of the S3
+    bucket used to store recordings for your Amazon Connect
+    instance. This is ONLY the bucket name, no sub-folders or
+    suffixes
 
-    d.  **ConnectReportingS3BucketName:** This is the name of the S3
-        bucket used to store exported reports for your Amazon Connect
-        instance. This is ONLY the bucket name, no sub-folders or
-        suffixes
+    d. **ConnectReportingS3BucketName:** This is the name of the S3
+    bucket used to store exported reports for your Amazon Connect
+    instance. This is ONLY the bucket name, no sub-folders or
+    suffixes
 
-    e.  **HistoricalReportingImportEnabled:** true \| false - if set to
-        true, the package will include a feature to import Amazon
-        Connect Queue and Agent Historical Metrics into your Salesforce
-        Org. This feature requires you to provide
-        **ConnectReportingS3BucketName**
+    e. **HistoricalReportingImportEnabled:** true \| false - if set to
+    true, the package will include a feature to import Amazon
+    Connect Queue and Agent Historical Metrics into your Salesforce
+    Org. This feature requires you to provide
+    **ConnectReportingS3BucketName**
 
-    f.  **LambdaLoggingLevel:** DEBUG \| INFO \| WARNING \| ERROR \|
-        CRITICAL - Logging level for Lambda functions
+    f. **LambdaLoggingLevel:** DEBUG \| INFO \| WARNING \| ERROR \|
+    CRITICAL - Logging level for Lambda functions
 
-    g.  **PrivateVpcEnabled:** Set to true if functions should be
-        deployed to a private VPC. Set VpcSecurityGroupList and
-        VpcSubnetList if this is set to true.
+    g. **PrivateVpcEnabled:** Set to true if functions should be
+    deployed to a private VPC. Set VpcSecurityGroupList and
+    VpcSubnetList if this is set to true.
 
-    h.  **RealtimeReportingImportEnabled:** true \| false - if set to
-        true, the package will include a feature to publish Amazon
-        Connect Queue Metrics into your Salesforce Org. This feature
-        requires you to provide **AmazonConnectInstanceId**
+    h. **RealtimeReportingImportEnabled:** true \| false - if set to
+    true, the package will include a feature to publish Amazon
+    Connect Queue Metrics into your Salesforce Org. This feature
+    requires you to provide **AmazonConnectInstanceId**
 
-    i.  **SalesforceAdapterNamespace:** This is the namespace for CTI
-        Adapter managed package. The default value is **amazonconnect**.
-        If a non-managed package is used, leave this field blank.
+    i. **SalesforceAdapterNamespace:** This is the namespace for CTI
+    Adapter managed package. The default value is **amazonconnect**.
+    If a non-managed package is used, leave this field blank.
 
-    j.  **SalesforceCredentialsKMSKeyARN:** This is the ARN for KMS
-        customer managed key that you created in the previous section.
+    j. **SalesforceCredentialsKMSKeyARN:** This is the ARN for KMS
+    customer managed key that you created in the previous section.
 
-    k.  **SalesforceCredentialsSecretsManagerARN:** This is the ARN for
-        the Secrets Manager Secret that you created in the previous
-        section.
+    k. **SalesforceCredentialsSecretsManagerARN:** This is the ARN for
+    the Secrets Manager Secret that you created in the previous
+    section.
 
-    l.  **SalesforceHost:** The full domain for your salesforce org. For
-        example
-        `https://mydevorg-dev-ed.my.salesforce.com`.
-        Please make sure that the host starts with `https`, and that the url
-        ends with `.my.salesforce.com`. This url can be found in `Setup` -> `My Domain`.
+    l. **SalesforceHost:** The full domain for your salesforce org. For
+    example
+    `https://mydevorg-dev-ed.my.salesforce.com`.
+    Please make sure that the host starts with `https`, and that the url
+    ends with `.my.salesforce.com`. This url can be found in `Setup` -> `My Domain`.
 
-    m.  **SalesforceProduction:** true \| false - True for Production
-        Environment, False for Sandbox
+    m. **SalesforceProduction:** true \| false - True for Production
+    Environment, False for Sandbox
 
-    n.  **SalesforceUsername:** The username for the API user that you
-        configured in the previous section
+    n. **SalesforceUsername:** The username for the API user that you
+    configured in the previous section
 
-    o.  **SalesforceVersion:** This is the Salesforce.com API version
-        that you noted in the previous section
+    o. **SalesforceVersion:** This is the Salesforce.com API version
+    that you noted in the previous section
 
-    p.  **VpcSecurityGroupList:** The list of SecurityGroupIds for
-        Virtual Private Cloud (VPC). Not required if PrivateVpcEnabled
-        is set to false.
+    p. **VpcSecurityGroupList:** The list of SecurityGroupIds for
+    Virtual Private Cloud (VPC). Not required if PrivateVpcEnabled
+    is set to false.
 
-    q.  **VpcSubnetList:** The list of Subnets for the Virtual Private
-        Cloud (VPC). Not required if PrivateVpcEnabled is set to false.
+    q. **VpcSubnetList:** The list of Subnets for the Virtual Private
+    Cloud (VPC). Not required if PrivateVpcEnabled is set to false.
 
-    r.  **AmazonConnectInstanceId:** You Amazon Connect Instance Id.
-        Only required if you enable real time reporting
+    r. **AmazonConnectInstanceId:** You Amazon Connect Instance Id.
+    Only required if you enable real time reporting
 
-    s.  **AmazonConnectQueueMaxRecords:** Enter record set size for list
-        queue query. Max is 100.
+    s. **AmazonConnectQueueMaxRecords:** Enter record set size for list
+    queue query. Max is 100.
 
-    t.  **ContactLensImportEnabled:** true \| false - Set to false if 
-        importing Contact Lens into Salesforce should not be enabled.
+    t. **ContactLensImportEnabled:** true \| false - Set to false if
+    importing Contact Lens into Salesforce should not be enabled.
 
-    u.  **CTREventSourceMappingMaximumRetryAttempts:** Maximum retry
-        attempts on failure for lambdas triggered by Kinesis Events.
+    u. **CTREventSourceMappingMaximumRetryAttempts:** Maximum retry
+    attempts on failure for lambdas triggered by Kinesis Events.
 
-    v.  **AmazonConnectQueueMetricsMaxRecords:** Enter record set size
-        for queue metrics query. Max is 100.
+    v. **AmazonConnectQueueMetricsMaxRecords:** Enter record set size
+    for queue metrics query. Max is 100.
 
-    w.  **PostcallCTRImportEnabled:** true \| false - Set to false if
-        importing CTRs into Salesforce should not be enabled on the
-        package level. This setting can be disabled on a call-by-call
-        basis.
+    w. **PostcallCTRImportEnabled:** true \| false - Set to false if
+    importing CTRs into Salesforce should not be enabled on the
+    package level. This setting can be disabled on a call-by-call
+    basis.
 
-    x.  **PostcallRecordingImportEnabled:** true \| false - Set to false
-        if importing call recordings into Salesforce should not be
-        enabled on the package level. This setting can be disabled on a
-        call-by-call basis.
+    x. **PostcallRecordingImportEnabled:** true \| false - Set to false
+    if importing call recordings into Salesforce should not be
+    enabled on the package level. This setting can be disabled on a
+    call-by-call basis.
 
-    y.  **PostcallTranscribeEnabled:** true \| false - Set to false if
-        post-call transcription should not be enabled on the package
-        level. This setting can be disabled on a call-by-call basis.
+    y. **PostcallTranscribeEnabled:** true \| false - Set to false if
+    post-call transcription should not be enabled on the package
+    level. This setting can be disabled on a call-by-call basis.
 
-    z.  **TranscribeOutputS3BucketName:** This is the S3 bucket where
-        Amazon Transcribe stores the output. Typically, this is the same
-        bucket that call recordings are stored in, so you can use the
-        same value as found in **ConnectRecordingS3BucketName**. Not
-        required if PostcallRecordingImportEnabled, 
-        PostcallTranscribeEnabled, ContactLensImportEnabled set to false.
+    z. **TranscribeOutputS3BucketName:** This is the S3 bucket where
+    Amazon Transcribe stores the output. Typically, this is the same
+    bucket that call recordings are stored in, so you can use the
+    same value as found in **ConnectRecordingS3BucketName**. Not
+    required if PostcallRecordingImportEnabled,
+    PostcallTranscribeEnabled, ContactLensImportEnabled set to false.
 
-    z.  **TranscriptionJobCheckWaitTime:** Time between transcription
-        job checks
+    z. **TranscriptionJobCheckWaitTime:** Time between transcription
+    job checks
 
 11. Once you have completed the form, select **Deploy**
 
@@ -662,7 +660,7 @@ make validation easier.
     **event-update.json** tab.
 
 30. In the top-right corner, select drop-down arrow next to **Test** and
-    choose **Configure test events
+    choose \*\*Configure test events
 
 <img src="../media/image95.png" />
 
@@ -730,7 +728,6 @@ to invoke the function.
 
 6.  Choose **Add Lambda Function**. Confirm that the ARN of the function
     is added under **Lambda Functions**.
-    
 
 <img src="../media/image103.png" />
 

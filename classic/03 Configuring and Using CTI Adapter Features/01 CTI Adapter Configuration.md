@@ -51,11 +51,11 @@ a default setting. This section will detail the options available.
     the presence rules to sync state from Amazon Connect to Salesforce
     Omni-Channel.
 
-10. **Audio Device Settings** Turning this setting on allows the Agent 
-    to setup a custom audio device for their speaker, microphone and 
+10. **Audio Device Settings** Turning this setting on allows the Agent
+    to setup a custom audio device for their speaker, microphone and
     ringer in the adapter.
 
-11. **Phone Type Settings** Turning this setting on allows the Agent to 
+11. **Phone Type Settings** Turning this setting on allows the Agent to
     change their Phone Type in the CCP.
 
 <h2 class="toc">Single Sign On Settings</h2>
@@ -76,10 +76,10 @@ Sign On, please follow the setup instructions in [Appendix B - Configuring Sales
 For information about configuring specific SAML providers to work with
 Amazon Connect:
 
--   [AWS Single
-    Sign-On](https://aws.amazon.com/blogs/contact-center/enabling-federation-with-aws-single-sign-on-and-amazon-connect/)
+- [AWS Single
+  Sign-On](https://aws.amazon.com/blogs/contact-center/enabling-federation-with-aws-single-sign-on-and-amazon-connect/)
 
--   [Okta](https://aws.amazon.com/blogs/contact-center/configure-single-sign-on-for-amazon-connect-using-okta/)
+- [Okta](https://aws.amazon.com/blogs/contact-center/configure-single-sign-on-for-amazon-connect-using-okta/)
 
 Once you have your SAML integration working with Amazon Connect, you
 will need to create the Amazon Connect Single Sign On URL and validate
@@ -124,13 +124,12 @@ Contact Control Panel once authentication completes.
 
 4.  Scroll down to the Single SignOn (SSO) section and choose the pencil
     icon of either field to edit
-    
 
 <img src="../media/image84.png" />
 
 5.  For the SSO Url, paste your IdP login URL up to the first question
     mark (if one exists). A couple of examples are provided:
-    
+
     Salesforce:
     <pre>https://mXXXXXXrun-dev-ed.my.salesforce.com/idp/login?app=0sp0N000000Caid</pre>
 
@@ -164,10 +163,9 @@ Contact Control Panel once authentication completes.
 
 10. **Refresh** your browser to make the changes take effect
 
-    a.  **NOTE:** If you receive a blocked popup warning, select the
-        warning and change the setting to always allow popups from your
-        Salesforce org, then refresh the browser again\
-    
+    a. **NOTE:** If you receive a blocked popup warning, select the
+    warning and change the setting to always allow popups from your
+    Salesforce org, then refresh the browser again\
 
 <img src="../media/image87.png" />
 

@@ -36,7 +36,6 @@ Salesforce.
 2.  From the left navigation, choose **Metrics and Quality** then select
     **Historical metrics**
 
-    
 <img src="../media/image178.png" />
 
 3.  On the **Historical metrics** page, select Contact metrics
@@ -48,11 +47,11 @@ Salesforce.
 
 5.  On the **Interval & Tim**e range tab, set the parameters as follows:
 
-    a.  Interval: 30 minutes
+    a. Interval: 30 minutes
 
-    b.  Time Zone: UTC
+    b. Time Zone: UTC
 
-    c.  Time Range: Last 24 Hours
+    c. Time Range: Last 24 Hours
 
 6.  Leave the **Groupings** and **Filters** tabs set to their defaults
 
@@ -60,19 +59,19 @@ Salesforce.
 
 8.  Select ALL selectable options EXCEPT:
 
-    a.  Callback contacts handled
+    a. Callback contacts handled
 
-    b.  API contact handled
+    b. API contact handled
 
-    c.  Callback Contacts
+    c. Callback Contacts
 
-    d.  API Contacts
+    d. API Contacts
 
-    e.  Contacts answered in 25 seconds
+    e. Contacts answered in 25 seconds
 
-    f.  Contacts transferred out internal
+    f. Contacts transferred out internal
 
-    g.  Contacts transferred out external
+    g. Contacts transferred out external
 
 9.  Select **Apply**
 
@@ -86,13 +85,13 @@ Salesforce.
 13. On the **Recurrence** tab in the Schedule Report setup, set the
     options as:
 
-    a.  Generate this report: Hourly
+    a. Generate this report: Hourly
 
-    b.  Every: 0.5 hour(s)
+    b. Every: 0.5 hour(s)
 
-    c.  Starting at: 1AM
+    c. Starting at: 1AM
 
-    d.  For the Previous: 0.5 hour(s)
+    d. For the Previous: 0.5 hour(s)
 
 <img src="../media/image180.png" />
 
@@ -106,17 +105,16 @@ Salesforce.
     filename that will be used when executing the report. You will use
     the **bucket name** and **path** in later steps.
 
-    
 <img src="../media/image182.png" />
 
 17. Choose **Create**
 
 18. Once the report is created, from the left navigation, choose
     **Metrics and Quality** then select **Historical metrics**
-    
+
 <img src="../media/image178.png" />
 
-19. On the **Historical metrics** page, select **Agent performance
+19. On the **Historical metrics** page, select \*\*Agent performance
 
 <img src="../media/image183.png" />
 
@@ -125,72 +123,73 @@ Salesforce.
 
 21. On the **Interval & Tim**e range tab, set the parameters as follows:
 
-    a.  Interval: 30 minutes
+    a. Interval: 30 minutes
 
-    b.  Time Zone: UTC
+    b. Time Zone: UTC
 
-    c.  Time Range: Last 24 Hours
+    c. Time Range: Last 24 Hours
 
 22. Leave the **Groupings** and **Filters** tabs set to their defaults
 
 23. Select the **Metrics** Tab.
 
 24. Select ONLY the following metrics (deselect any others):
-    -   After contact work time
 
-    -   Agent on contact tome
+    - After contact work time
 
-    -   Agent idle time
+    - Agent on contact time
 
-    -   Non-Productive Time
+    - Agent idle time
 
-    -   Average after contact work time
+    - Non-Productive Time
 
-    -   Average handle time
+    - Average after contact work time
 
-    -   Average customer hold time
+    - Average handle time
 
-    -   Average agent interaction and customer hold time
+    - Average customer hold time
 
-    -   Average agent interaction time
+    - Average agent interaction and customer hold time
 
-    -   Contacts agent hung up first
+    - Average agent interaction time
 
-    -   Contacts consulted
+    - Contacts agent hung up first
 
-    -   Contacts handled
+    - Contacts consulted
 
-    -   Contacts handled incoming
+    - Contacts handled
 
-    -   Contacts handled outbound
+    - Contacts handled incoming
 
-    -   Contacts put on hold
+    - Contacts handled outbound
 
-    -   Contacts hold disconnect
+    - Contacts put on hold
 
-    -   Contacts transferred out
+    - Contacts hold disconnect
 
-    -   Contacts transferred out internal
+    - Contacts transferred out
 
-    -   Contacts transferred out external
+    - Contacts transferred out internal
 
-    -   Error status time
+    - Contacts transferred out external
 
-    -   Agent answer rate
+    - Error status time
 
-    -   Agent non-response
+    - Agent answer rate
 
-    -   Occupancy
+    - Agent non-response
 
-    -   Online time
+    - Occupancy
 
-    -   Agent interaction and hold time
+    - Online time
 
-    -   Agent interaction time
+    - Agent interaction and hold time
 
-    -   Average outbound agent interaction time
+    - Agent interaction time
 
-    -   Average outbound after contact work time
+    - Average outbound agent interaction time
+
+    - Average outbound after contact work time
 
 25. Select **Apply**
 
@@ -204,13 +203,13 @@ Salesforce.
 29. On the **Recurrence** tab in the Schedule Report setup, set the
     options as:
 
-    a.  Generate this report: Hourly
+    a. Generate this report: Hourly
 
-    b.  Every: 0.5 hour(s)
+    b. Every: 0.5 hour(s)
 
-    c.  Starting at: 1AM
+    c. Starting at: 1AM
 
-    d.  For the Previous: 0.5 hour(s)
+    d. For the Previous: 0.5 hour(s)
 
 <img src="../media/image184.png" />
 
@@ -224,7 +223,6 @@ Salesforce.
     filename that will be used when executing the report. You will use
     the **bucket name** and **path** in later steps.
 
-    
 <img src="../media/image186.png" />
 
 33. Choose **Create**
@@ -344,5 +342,5 @@ imported data.
 
 6.  Once the report loads, you should see data (provided calls have
     queued in this Amazon Connect instance today)
-    
+
 <img src="../media/image193.png" />

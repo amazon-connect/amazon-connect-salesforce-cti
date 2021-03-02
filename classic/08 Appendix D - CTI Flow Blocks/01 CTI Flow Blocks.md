@@ -419,27 +419,3 @@ Creating a new task contact with certain inputs.
 ### Pop Task Contact's Reference Urls
 
 Pop any reference urls that are related to the task contact
-
-### Start Recording
-
-Use the contact recording API to start recording the call.
-
-### Stop Recording
-
-Use the contact recording API to stop recording the call.
-
-### Update Contact Attributes
-
-Use the Connect API to update the attributes of the current contact.
-
-### Get Payload
-
-Retrieve the payload of the CTI Flow. (The payload can be configured by CTI Actions.)
-
-### Send Data to CCP Overlay
-
-Send an object to Data panel of CCP Overlay.
-
-### Leave a Voicemail
-
-Use Voicemail drops to leave a voicemail.

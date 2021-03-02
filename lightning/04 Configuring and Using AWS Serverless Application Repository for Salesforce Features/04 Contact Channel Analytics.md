@@ -67,8 +67,8 @@ agent has completed the call and left the after call work state.
 ##### Cloudformation Template
 
 To make sure that the AWS resources are set up, make sure that the
-_PostcallRecordingImportEnabled_ parameter is set to true in your
-Cloudformation stack:
+
+_PostcallRecordingImportEnabled_ parameter is set to true in your Cloudformation stack:
 
 <img src="../media/image266.png" />
 
@@ -98,7 +98,7 @@ Please note that your secret may also be formatted stored as a "Secret key/value
 
 <img src="../media/image283.png" />
 
-7. Select the **AC_RecordingViewer** visualforce page, and select "preview." Copy the url of the opened page up until ".com".
+7. Select the **AC_RecordingViewer** visualforce page, and select "preview." Copy the url of the opened page up until `.com`. Make sure not to include any characters after `.com`.
 
 8. Navigate back to aws, to the s3 bucket where your audio recording files are stored. This s3 bucket should be the same bucket as the **ConnectRecordingS3BucketName** parameter to the serverless application.
 
@@ -195,7 +195,7 @@ Please note that your secret may also be formatted stored as a "Secret key/value
 
 5.  Configure the block to set a contact attribute as follows:
 
-    a. **Destination key:** postcallRecordingImportEnabled
+a. **Destination key:** postcallRecordingImportEnabled
 
     b. **Value:** true
 
@@ -302,11 +302,12 @@ Make sure the Salesforce user accessing recording transcription are added to the
 
     2.  Attribute 2: specifies the transcription language
 
-        -a. **Destination key**: postcallTranscribeLanguage
+        a. **Destination key**: postcallTranscribeLanguage
 
         b. **Value**: en-US (See [Amazon Transcribe API
-        Reference](https://docs.aws.amazon.com/transcribe/latest/dg/API_StartTranscriptionJob.html#transcribe-StartTranscriptionJob-request-LanguageCode)
-        for valid language codes)
+
+Reference](https://docs.aws.amazon.com/transcribe/latest/dg/API_StartTranscriptionJob.html#transcribe-StartTranscriptionJob-request-LanguageCode)
+for valid language codes)
 
 <img src="../media/image208.png" />
 
@@ -330,9 +331,7 @@ Make sure the Salesforce user accessing recording transcription are added to the
 
 2.  Expand the **navigation menu** by selecting the down arrow and
     choose AC Contact Channel Analytics. If you have not previously
-    added AC Contact Channel Analytics to the navigation menu, complete
-    the steps found in
-    [Adding Contact Channel Analytics to the Service Console](#adding-contact-channel-analytics-to-the-service-console).
+    added AC Contact Channel Analytics to the navigation menu, complete the steps found in [Adding Contact Channel Analytics to the Service Console](#adding-contact-channel-analytics-to-the-service-console).
 
 <img src="../media/image209.png" />
 
