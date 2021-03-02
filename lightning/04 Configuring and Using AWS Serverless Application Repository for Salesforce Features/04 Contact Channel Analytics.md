@@ -10,41 +10,41 @@ This processing is done post-call, using the Contact Trace Record (CTR)
 as the initiation path. The following quality analytics options are
 available:
 
--   **Call Recording Import:** imports the actual audio file into
-    Salesforce. This option is not mandatory for the others to function.
+- **Call Recording Streaming:** streams the actual audio file into
+  Salesforce. This option is not mandatory for the others to function.
 
--   **Recording Transcript:** you can choose to have your call
-    recordings transcribed to text and presented in a visual format that
-    resembles a chat conversation. This allows for quick scanning of a
-    call to identify key segments of conversation. This option is
-    required if you wish to include the next level of analysis
+- **Recording Transcript:** you can choose to have your call
+  recordings transcribed to text and presented in a visual format that
+  resembles a chat conversation. This allows for quick scanning of a
+  call to identify key segments of conversation. This option is
+  required if you wish to include the next level of analysis
 
--   **AI-Driven Contact Analysis:** once the recordings have been
-    transcribed to text, you can also indicate that you wish to do
-    further analysis of the conversation using [Amazon
-    Comprehend](https://aws.amazon.com/comprehend/). Available options
-    are:
+- **AI-Driven Contact Analysis:** once the recordings have been
+  transcribed to text, you can also indicate that you wish to do
+  further analysis of the conversation using [Amazon
+  Comprehend](https://aws.amazon.com/comprehend/). Available options
+  are:
 
-    -   **Sentiment Analysis:** returns the overall sentiment of the
-        conversation (Positive, Negative, Neutral, or Mixed).
+  - **Sentiment Analysis:** returns the overall sentiment of the
+    conversation (Positive, Negative, Neutral, or Mixed).
 
-    -   **Keyphrase Extraction:** returns the key phrases or talking
-        points and a confidence score to support that this is a key
-        phrase.
+  - **Keyphrase Extraction:** returns the key phrases or talking
+    points and a confidence score to support that this is a key
+    phrase.
 
-    -   **Language Detection:** returns the dominant language with a
-        confidence score to support that a language is dominant
+  - **Language Detection:** returns the dominant language with a
+    confidence score to support that a language is dominant
 
-    -   **Custom Entities:** allows you to customize the AI to identify
-        terms that are specific to your domain
+  - **Custom Entities:** allows you to customize the AI to identify
+    terms that are specific to your domain
 
-    -   **Syntax Analysis:** analyze the transcript using tokenization
-        and Parts of Speech (PoS), and identify word boundaries and
-        labels like nouns and adjectives within the text.
+  - **Syntax Analysis:** analyze the transcript using tokenization
+    and Parts of Speech (PoS), and identify word boundaries and
+    labels like nouns and adjectives within the text.
 
-<h3 class="toc">Call Recording Import</h3>
+<h3 class="toc">Call Recording Streaming</h3>
 
-You can import Call Recordings into your Salesforce Org. This
+You can stream Call Recordings in your Salesforce Org. This
 allows for easy access to the recordings from within Salesforce and can
 be used in conjunction with the other contact channel analytics features
 to provide a complete view of the customer interaction.
@@ -67,24 +67,24 @@ agent has completed the call and left the after call work state.
 ##### Cloudformation Template
 
 To make sure that the AWS resources are set up, make sure that the
-*PostcallRecordingImportEnabled* parameter is set to true in your
+_PostcallRecordingImportEnabled_ parameter is set to true in your
 Cloudformation stack:
 
 <img src="../media/image266.png" />
 
 ##### AWS Side Setup
 
-1. See [these steps](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-trusted-signers.html). Follow the sections *Creating key pairs for your signers*, and *Adding a signer to a distribution*.
-Make sure to record the **public key ID**.
+1. See [these steps](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-trusted-signers.html). Follow the sections _Creating key pairs for your signers_, and _Adding a signer to a distribution_.
+   Make sure to record the **public key ID**.
 
 2. Copy and paste the contents of the private key .pem file into a text editor. Replace every newline character with a space, and then delete the last character. This is most easily done using a "find and replace" feature in your text editor.
-The resulting string of text should resemble the following:
+   The resulting string of text should resemble the following:
 
 ```
 -----BEGIN RSA PRIVATE KEY----- (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (under 64 character string) -----END RSA PRIVATE KEY-----
 ```
 
-3. Navigate to the "Secrets Manager" service. Select the **SalesforceCredentials**. 
+3. Navigate to the "Secrets Manager" service. Select the **SalesforceCredentials**.
 
 4. Under the "Secret value" tab, select "Retrieve secret value" and then "Edit".
 
@@ -106,18 +106,12 @@ Please note that your secret may also be formatted stored as a "Secret key/value
 
 ```json
 [
-    {
-        "AllowedHeaders": [
-            "Access-Control-Allow-Origin"
-        ],
-        "AllowedMethods": [
-            "GET"
-        ],
-        "AllowedOrigins": [
-            "{url copied in step 9}"
-        ],
-        "ExposeHeaders": []
-    }
+  {
+    "AllowedHeaders": ["Access-Control-Allow-Origin"],
+    "AllowedMethods": ["GET"],
+    "AllowedOrigins": ["{url copied in step 9}"],
+    "ExposeHeaders": []
+  }
 ]
 ```
 
@@ -147,9 +141,9 @@ Please note that your secret may also be formatted stored as a "Secret key/value
 
 <img src="../media/audiostreaming0.png" />
 
-17. Enter a function name, like **sfSig4RequestToS3**. 
+17. Enter a function name, like **sfSig4RequestToS3**.
 
-18. Select **change default execution role**, and **use an existing role**. Search for and select *sfSig4RequestToS3Role*.
+18. Select **change default execution role**, and **use an existing role**. Search for and select _sfSig4RequestToS3Role_.
 
 <img src="../media/audiostreaming1.png" />
 
@@ -183,14 +177,13 @@ Please note that your secret may also be formatted stored as a "Secret key/value
 
 <img src="../media/image279.png" />
 
-<h4 class="toc">Enabling call recording import</h4>
+<h4 class="toc">Enabling call recording streaming</h4>
 
 1.  Login to your Amazon Connect instance as an Administrator
 
 2.  From the left navigation, choose **Routing** then select **Contact
     flows**
 
-    
 <img src="../media/image201.png" />
 
 3.  Open the contact flow that you want to use to enable call recording
@@ -202,9 +195,9 @@ Please note that your secret may also be formatted stored as a "Secret key/value
 
 5.  Configure the block to set a contact attribute as follows:
 
-    a.  **Destination key:** postcallRecordingImportEnabled
+    a. **Destination key:** postcallRecordingImportEnabled
 
-    b.  **Value:** true
+    b. **Value:** true
 
 <img src="../media/image202.png" />
 
@@ -228,13 +221,11 @@ Please note that your secret may also be formatted stored as a "Secret key/value
 2.  Expand the **navigation menu** by selecting the down arrow and
     choose **Edit**.
 
-    
 <img src="../media/image40.png" />
 
 3.  On the Edit Service Console App Navigation Items page, select **Add
     More Items**
 
-    
 <img src="../media/image41.png" />
 
 4.  Select the **+** next to **AC Contact Channel Analytics**
@@ -244,13 +235,11 @@ Please note that your secret may also be formatted stored as a "Secret key/value
 6.  Change the order of your Navigation Items if desired, then choose
     **Save**
 
-    
 <img src="../media/image203.png" />
 
 7.  Once the save completes, expand the **navigation menu** by selecting
     the down arrow and choose **AC Contact Channel Analytics**
 
-    
 <img src="../media/image204.png" />
 
 8.  Change the list view from Recently Viewed to **All**
@@ -266,7 +255,6 @@ Please note that your secret may also be formatted stored as a "Secret key/value
 11. In the Notes & Attachments section, you will see the recording file
     attached.
 
-    
 <img src="../media/image207.png" />
 
 12. NOTE: The recording playback, waveform, and transcript views are
@@ -295,7 +283,6 @@ Make sure the Salesforce user accessing recording transcription are added to the
 2.  From the left navigation, choose **Routing** then select **Contact
     flows**
 
-    
 <img src="../media/image201.png" />
 
 3.  Open the contact flow that you want to use to enable call
@@ -309,17 +296,17 @@ Make sure the Salesforce user accessing recording transcription are added to the
 
     1.  Attribute 1: enables the transcription process
 
-        a.  **Destination key**: postcallTranscribeEnabled
+        a. **Destination key**: postcallTranscribeEnabled
 
-        b.  **Value**: true
+        b. **Value**: true
 
     2.  Attribute 2: specifies the transcription language
 
         -a. **Destination key**: postcallTranscribeLanguage
 
         b. **Value**: en-US (See [Amazon Transcribe API
-            Reference](https://docs.aws.amazon.com/transcribe/latest/dg/API_StartTranscriptionJob.html#transcribe-StartTranscriptionJob-request-LanguageCode)
-            for valid language codes)
+        Reference](https://docs.aws.amazon.com/transcribe/latest/dg/API_StartTranscriptionJob.html#transcribe-StartTranscriptionJob-request-LanguageCode)
+        for valid language codes)
 
 <img src="../media/image208.png" />
 
@@ -344,10 +331,9 @@ Make sure the Salesforce user accessing recording transcription are added to the
 2.  Expand the **navigation menu** by selecting the down arrow and
     choose AC Contact Channel Analytics. If you have not previously
     added AC Contact Channel Analytics to the navigation menu, complete
-    the steps found in 
+    the steps found in
     [Adding Contact Channel Analytics to the Service Console](#adding-contact-channel-analytics-to-the-service-console).
 
-    
 <img src="../media/image209.png" />
 
 3.  Change the list view from Recently Viewed to **All**
@@ -363,7 +349,6 @@ Make sure the Salesforce user accessing recording transcription are added to the
 6.  Once the record opens, note the recording waveform, playback
     controls, and the visual version of the transcription
 
-    
 <img src="../media/image211.png" />
 
 7.  Also note that the transcriptions for each side of the conversation
@@ -387,15 +372,15 @@ is triggered by a code. You can use one code in your contact attribute,
 or string multiple together as a comma separated list. The available
 codes and their functions are:
 
--   **snt = Sentiment Analysis**
+- **snt = Sentiment Analysis**
 
--   **kw = Keyphrase Extraction**
+- **kw = Keyphrase Extraction**
 
--   **dl = Language Detection**
+- **dl = Language Detection**
 
--   **ne = Custom Entities**
+- **ne = Custom Entities**
 
--   **syn = Syntax Analysis**
+- **syn = Syntax Analysis**
 
 <h4 class="toc">Enabling AI Driven Contact Analysis</h4>
 
@@ -404,7 +389,6 @@ codes and their functions are:
 2.  From the left navigation, choose **Routing** then select **Contact
     flows**
 
-    
 <img src="../media/image201.png" />
 
 3.  Open the contact flow that you want to use to enable AI Driven
@@ -417,14 +401,13 @@ codes and their functions are:
 
 5.  Configure the block to set a contact attribute as follows:
 
-    a.  **Destination key:** postcallTranscribeComprehendAnalysis
+    a. **Destination key:** postcallTranscribeComprehendAnalysis
 
-    b.  **Value:** snt,dl,kw,syn
+    b. **Value:** snt,dl,kw,syn
 
         - In this example, we are performing sentiment analysis,
         language detection, and keyphrase
         extraction
-            
 
 <img src="../media/image212.png" />
 
@@ -453,7 +436,6 @@ codes and their functions are:
     the steps found in
     [Adding Contact Channel Analytics to the Service Console](#adding-contact-channel-analytics-to-the-service-console).
 
-    
 <img src="../media/image209.png" />
 
 3.  Change the list view from Recently Viewed to **All**
@@ -469,5 +451,4 @@ codes and their functions are:
 6.  Once the record opens, note the Keywords, Sentiment, and Dominant
     Language
 
-    
 <img src="../media/image213.png" />

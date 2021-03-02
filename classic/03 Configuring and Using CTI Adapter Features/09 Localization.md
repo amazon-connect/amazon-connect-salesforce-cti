@@ -1,17 +1,16 @@
 <h2 class="toc">Localization</h2>
 
-Prerequisites
--------------
-CTI Adapter will use Translation Workbench to maintain translated values for metadata and data labels in your Salesforce org. In order for that to work, you need to enable Translation Workbench in your org. 
+## Prerequisites
+
+CTI Adapter will use Translation Workbench to maintain translated values for metadata and data labels in your Salesforce org. In order for that to work, you need to enable Translation Workbench in your org.
 
 1. From Setup, in the Quick Find box, enter Translation Language Settings, and then select Translation Language Settings.
 
 2. On the welcome page, click Enable.
 
-Setting you preferred language
--------------
+## Setting you preferred language
 
-Starting from v5.6, Amazon Connect Salesforce CTI adapter is localized in nine new languages: Spanish, French, Brazilian Portuguese, Korean, Italian, German, (Simplified/Traditional) Chinese, and Japanese. 
+Starting from v5.6, Amazon Connect Salesforce CTI adapter is localized in nine new languages: Spanish, French, Brazilian Portuguese, Korean, Italian, German, (Simplified/Traditional) Chinese, and Japanese.
 
 Change the language by selecting the username in the top right corner, then click on "My Settings".
 
@@ -21,7 +20,7 @@ On the setting page on the left panel go to "Personal" and then select "Language
 
 <img src="../media/localization-2.png">
 
-You can then select your preferred language. Note that CTI adapter only have nine languages built within the package. 
+You can then select your preferred language. Note that CTI adapter only have nine languages built within the package.
 
 <img src="../media/localization-3.png">
 
@@ -33,16 +32,14 @@ Click on Phone pannel on the bottom to see if CCP has been localized. If not rig
 
 <img src="../media/localization-5.png">
 
-Additional Notes
--------------
+## Additional Notes
 
 Please note that not all fields can be localized to different languages due to a couple reasons. Here are places that cannot be localized:
 
-* Dashboard. Salesforce dashboards do not support localization.
+- Dashboard. Salesforce dashboards do not support localization.
 
-* Flexipages. This means the page with tabs that you can find in AC CTI Adapter page in lightning. 
-
+- Flexipages. This means the page with tabs that you can find in AC CTI Adapter page in lightning.
 
 <img src="../media/localization-6.png">
 
-* Reports. This is a missing functionality in Salesforce.
+- Reports. This is a missing functionality in Salesforce.
