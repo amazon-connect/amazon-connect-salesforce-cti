@@ -7,24 +7,24 @@ from a Salesforce page.
 ##### Cloudformation Template
 
 To make sure that the AWS resources are set up, make sure that the
-*PostcallRecordingImportEnabled* parameter is set to true in your
+_PostcallRecordingImportEnabled_ parameter is set to true in your
 Cloudformation stack:
 
 <img src="../media/audiostreaming0.png" />
 
 ##### AWS Side Setup
 
-1. See [these steps](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-trusted-signers.html). Follow the sections *Creating key pairs for your signers*, and *Adding a signer to a distribution*.
-Make sure to record the **public key ID**.
+1. See [these steps](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-trusted-signers.html). Follow the sections _Creating key pairs for your signers_, and _Adding a signer to a distribution_.
+   Make sure to record the **public key ID**.
 
 2. Copy and paste the contents of the private key .pem file into a text editor. Replace every newline character with a space, and then delete the last character. This is most easily done using a "find and replace" feature in your text editor.
-The resulting string of text should resemble the following:
+   The resulting string of text should resemble the following:
 
 ```
 -----BEGIN RSA PRIVATE KEY----- (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (under 64 character string) -----END RSA PRIVATE KEY-----
 ```
 
-3. Navigate to the "Secrets Manager" service. Select the **SalesforceCredentials**. 
+3. Navigate to the "Secrets Manager" service. Select the **SalesforceCredentials**.
 
 4. Under the "Secret value" tab, select "Retrieve secret value" and then "Edit".
 
@@ -46,18 +46,12 @@ Please note that your secret may also be formatted stored as a "Secret key/value
 
 ```json
 [
-    {
-        "AllowedHeaders": [
-            "Access-Control-Allow-Origin"
-        ],
-        "AllowedMethods": [
-            "GET"
-        ],
-        "AllowedOrigins": [
-            "{url copied in step 9}"
-        ],
-        "ExposeHeaders": []
-    }
+  {
+    "AllowedHeaders": ["Access-Control-Allow-Origin"],
+    "AllowedMethods": ["GET"],
+    "AllowedOrigins": ["{url copied in step 9}"],
+    "ExposeHeaders": []
+  }
 ]
 ```
 
@@ -87,9 +81,9 @@ Please note that your secret may also be formatted stored as a "Secret key/value
 
 <img src="../media/audiostreaming8.png" />
 
-17. Enter a function name, like **sfSig4RequestToS3**. 
+17. Enter a function name, like **sfSig4RequestToS3**.
 
-18. Select **change default execution role**, and **use an existing role**. Search for and select *sfSig4RequestToS3Role*.
+18. Select **change default execution role**, and **use an existing role**. Search for and select _sfSig4RequestToS3Role_.
 
 <img src="../media/audiostreaming9.png" />
 
@@ -115,7 +109,7 @@ Please note that your secret may also be formatted stored as a "Secret key/value
 
 5. Select **save**.
 
-<h4 class="toc">Enabling call recording import</h4>
+<h4 class="toc">Enabling call recording streaming</h4>
 
 1.  Login to your Amazon Connect instance as an Administrator
 
@@ -133,9 +127,9 @@ Please note that your secret may also be formatted stored as a "Secret key/value
 
 5.  Configure the block to set a contact attribute as follows:
 
-    a.  **Destination key:** postcallRecordingImportEnabled
+    a. **Destination key:** postcallRecordingImportEnabled
 
-    b.  **Value:** true
+    b. **Value:** true
 
 <img src="../media/audiostreaming13.png" />
 
@@ -150,7 +144,7 @@ To edit the sample Task Page Layout, please follow the steps:
 
 1.  Log in to your Salesforce Org
 
-2.  Navigate to **Setup** then in type *Object Manager* in Quick Find
+2.  Navigate to **Setup** then in type _Object Manager_ in Quick Find
 
 <img src="../media/audiostreaming14.png" />
 
@@ -162,7 +156,7 @@ To edit the sample Task Page Layout, please follow the steps:
 
 <img src="../media/audiostreaming16.png" />
 
-5.  Click on the "*Task Layout*" and the layout designer will open
+5.  Click on the "_Task Layout_" and the layout designer will open
 
 <img src="../media/audiostreaming17.png" />
 

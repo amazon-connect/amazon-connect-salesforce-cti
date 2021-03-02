@@ -131,7 +131,7 @@ records. Not to be consued with \"Screenpop Search.\"
 
 ### Run Apex
 
-The command to run an apex function.
+The command to run an apex method. Make sure the apex method is in a class that extends the AC_Utils class, and your class must be specified in the extensions list of `AC_CtiScript__c.page` Visualforce page. [See the Salesforce documentation for an example.](https://developer.salesforce.com/docs/atlas.en-us.salesforce_profile_tabs_cheatsheet.meta/salesforce_profile_tabs_cheatsheet/salesforce_profile_sample_visualforce_page.htm)
 
 ### Get Agent State from Salesforce
 
@@ -305,6 +305,10 @@ Returns the number of urls popped.
 The query to execute an arbitrary SOQL statement and returns the
 results.
 
+### Get Salesforce Lead Id
+
+The command to get a salesforce lead id using a formatted phone number.
+
 ### Open Salesforce Primary Tab
 
 Opens a new primary tab to display the content of the specified URL.
@@ -415,3 +419,27 @@ Creating a new task contact with certain inputs.
 ### Pop Task Contact's Reference Urls
 
 Pop any reference urls that are related to the task contact
+
+### Start Recording
+
+Use the contact recording API to start recording the call.
+
+### Stop Recording
+
+Use the contact recording API to stop recording the call.
+
+### Update Contact Attributes
+
+Use the Connect API to update the attributes of the current contact.
+
+### Get Payload
+
+Retrieve the payload of the CTI Flow. (The payload can be configured by CTI Actions.)
+
+### Send Data to CCP Overlay
+
+Send an object to Data panel of CCP Overlay.
+
+### Leave a Voicemail
+
+Use Voicemail drops to leave a voicemail.
