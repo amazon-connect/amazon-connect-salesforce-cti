@@ -195,7 +195,7 @@ Please note that your secret may also be formatted stored as a "Secret key/value
 
 5.  Configure the block to set a contact attribute as follows:
 
-a. **Destination key:** postcallRecordingImportEnabled
+    a. **Destination key:** postcallRecordingImportEnabled
 
     b. **Value:** true
 

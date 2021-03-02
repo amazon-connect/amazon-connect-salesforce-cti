@@ -53,10 +53,12 @@ and supervisors that will be using the platform.
 
 10. **Audio Device Settings** Turning this setting on allows the Agent
     to setup a custom audio device for their speaker, microphone and
-    ringer in the adapter.
+    ringer in the adapter. (Speaker and Ringer settings not available on Firefox).
+    You may have to add this field to the layout manually. [See troubleshooting](/lightning/02%20Installation/04%20CTI%20Adapter%20Installation%20Troubleshooting.md).
 
 11. **Phone Type Settings** Turning this setting on allows the Agent to
-    change their Phone Type in the CCP.
+    change their Phone Type in the CCP. You may have to add this field to
+    the layout manually. [See troubleshooting](/lightning/02%20Installation/04%20CTI%20Adapter%20Installation%20Troubleshooting.md).
 
 <h3 class="toc">Single Sign On Settings</h3>
 

@@ -139,7 +139,7 @@ Important: when upgrading the CTI Adapter, please make sure that the Salesforce 
 
 - **Feature**: _Contact Control Panel (CCP) Audio Device settings option._ Admins can toggle Phone type settings and the new [Audio Devices settings](https://docs.aws.amazon.com/connect/latest/adminguide/audio-device-settings.html) for agents to see on their CCP. [Audio Device settings](https://docs.aws.amazon.com/connect/latest/adminguide/audio-device-settings.html) allow the agents to choose audio devices for their speaker, microphone, and ringer.
 - **Feature**: _Custom Ringtone for chat_. Admins can configure a custom ringtone for chat (separate from CCP) from the CTI Adapter configuration page.
-- **Enhancement**: The Salesforce built-in Cross Site Request Forgery (CSRF) protection is enabled for all Visualforce pages in the CTI Adapter package which improves organizational security to protect against cross site request forgeries.
+- **Enhancement**: The Salesforce built-in Cross Site Request Forgery (CSRF) protection is enabled for Visualforce pages in the CTI Adapter package which improves organizational security to protect against cross site request forgeries.
 - **Bugfix**: Decision blocks no longer requires both sockets to be connected.
 - **Bugfix**: Click to Dial stopped working after first use until the agent refreshed the page.
 - **Bugfix**: Error that prevented Contact Lens app resources from being hosted on a different domain than the Salesforce instance.
