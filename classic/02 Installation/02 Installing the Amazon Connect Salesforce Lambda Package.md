@@ -59,9 +59,9 @@ OAuth settings enabled.
 
 7.  Ensure Selected OAuth Scopes has the following values selected:
 
-a.  Access and manage your data (api)
+a. Access and manage your data (api)
 
-b.  Access your basic information (id, profile, email, address, phone)
+b. Access your basic information (id, profile, email, address, phone)
 
 <img src="../media/image105.png" />
 
@@ -129,13 +129,13 @@ other errors.
 
 7.  Once the new profile page opens, select the **System Permissions** button
 
-8. If the Lightning Experience User checkbox is selected, clear it
+8.  If the Lightning Experience User checkbox is selected, clear it
 
 <img src="../media/image117.png" />
 
 9. Save the system permissions, then go back to Profile Overview
 
-10. Select the *Password Policies* link, click edit
+10. Select the _Password Policies_ link, click edit
 
 <img src="../media/image115.png" />
 
@@ -236,17 +236,17 @@ retrieve secrets.
 
 8.  Enter key value pairs that match the following:
 
-    a.  **Key:** Password, **Value:** the password for the API user that
-        you configured in the previous section
+    a. **Key:** Password, **Value:** the password for the API user that
+    you configured in the previous section
 
-    b.  **Key:** ConsumerKey, **Value:** the Consumer Key for the
-        Connected App you created in the previous section
+    b. **Key:** ConsumerKey, **Value:** the Consumer Key for the
+    Connected App you created in the previous section
 
-    c.  **Key:** ConsumerSecret, **Value:** the Consumer Secret for the
-        Connected App you created in the previous section
+    c. **Key:** ConsumerSecret, **Value:** the Consumer Secret for the
+    Connected App you created in the previous section
 
-    d.  **Key:** AccessToken, **Value:** this is the access token for
-        the API user that you configured in the previous section
+    d. **Key:** AccessToken, **Value:** this is the access token for
+    the API user that you configured in the previous section
 
 9.  For the encryption key, click "Add new key"
 
@@ -255,7 +255,7 @@ retrieve secrets.
 11. Make sure key type is set to **symmetric**
 
 12. Give your key an **alias**, like
-    *SalesforceCredentialsSecretsManagerKey*
+    _SalesforceCredentialsSecretsManagerKey_
 
 13. Click Next
 
@@ -280,7 +280,7 @@ retrieve secrets.
 
 21. Click Next
 
-22. Give your secret a name, like *SalesforceCredentials*
+22. Give your secret a name, like _SalesforceCredentials_
 
 23. Click Next
 
@@ -326,71 +326,71 @@ retrieve secrets.
 6.  The Lambda package includes additional features which can be enabled
     or disabled, based on particular use-case:
 
-    a.  *PostcallCTRImportEnabled* -- if set to true, the package will
-        include a feature to import Amazon Connect CTRs into your
-        Salesforce Org. Once enabled, you can decide which CTR records
-        should be imported, by setting a custom attribute
-        (*postcallCTRImportEnabled*) in your Contact Flow. This feature
-        requires you to provide *CTRKinesisARN*.
+    a. _PostcallCTRImportEnabled_ -- if set to true, the package will
+    include a feature to import Amazon Connect CTRs into your
+    Salesforce Org. Once enabled, you can decide which CTR records
+    should be imported, by setting a custom attribute
+    (_postcallCTRImportEnabled_) in your Contact Flow. This feature
+    requires you to provide _CTRKinesisARN_.
 
-    b.  *PostcallRecordingImportEnabled* -- if set to true, the package
-        will include a feature to import Amazon Connect Call Recording
-        (wav) files into your Salesforce Org. This feature is not
-        required if you only need a call recording link in your
-        Salesforce Org. Once enabled, you can decide which Call
-        Recordings should be imported, by setting a custom attribute
-        (*postcallRecordingImportEnabled*) in your Contact Flow. This
-        feature requires you to provide: *CTRKinesisARN,
-        ConnectRecordingS3BucketName* and *TranscribeOutputS3BucketName*
+    b. _PostcallRecordingImportEnabled_ -- if set to true, the package
+    will include a feature to import Amazon Connect Call Recording
+    (wav) files into your Salesforce Org. This feature is not
+    required if you only need a call recording link in your
+    Salesforce Org. Once enabled, you can decide which Call
+    Recordings should be imported, by setting a custom attribute
+    (_postcallRecordingImportEnabled_) in your Contact Flow. This
+    feature requires you to provide: _CTRKinesisARN,
+    ConnectRecordingS3BucketName_ and _TranscribeOutputS3BucketName_
 
-    c.  *PostcallTranscribeEnabled* -- if set to true, the package will
-        include a feature to transcribe Amazon Connect Call Recordings,
-        using Amazon Transcribe, and provide Speech Analytics, using
-        Amazon Comprehend, then import results into your Salesforce Org.
-        Once enabled, you can decide which Call Recordings should be
-        transcribed and analyzed, by setting custom attributes
-        (*postcallTranscribeEnabled*, *postcallTranscribeLanguage* and
-        *postcallTranscribeComprehendAnalysis*) in your Contact Flow.
-        This feature requires you to provide: *CTRKinesisARN,
-        ConnectRecordingS3BucketName* and *TranscribeOutputS3BucketName*
+    c. _PostcallTranscribeEnabled_ -- if set to true, the package will
+    include a feature to transcribe Amazon Connect Call Recordings,
+    using Amazon Transcribe, and provide Speech Analytics, using
+    Amazon Comprehend, then import results into your Salesforce Org.
+    Once enabled, you can decide which Call Recordings should be
+    transcribed and analyzed, by setting custom attributes
+    (_postcallTranscribeEnabled_, _postcallTranscribeLanguage_ and
+    _postcallTranscribeComprehendAnalysis_) in your Contact Flow.
+    This feature requires you to provide: _CTRKinesisARN,
+    ConnectRecordingS3BucketName_ and _TranscribeOutputS3BucketName_
 
-    d.  *RealtimeReportImportEnabled* -- if set to true, the package
-        will include a feature to publish Amazon Connect Queue Metrics
-        into your Salesforce Org. This feature requires you to provide
-        *AmazonConnectInstanceId*
+    d. _RealtimeReportImportEnabled_ -- if set to true, the package
+    will include a feature to publish Amazon Connect Queue Metrics
+    into your Salesforce Org. This feature requires you to provide
+    _AmazonConnectInstanceId_
 
-    e.  *HistoricalReportingImportEnabled* -- if set to true, the
-        package will include a feature to import Amazon Connect Queue
-        and Agent Historical Metrics into your Salesforce Org. This
-        feature requires you to provide *ConnectReportingS3BucketName*
+    e. _HistoricalReportingImportEnabled_ -- if set to true, the
+    package will include a feature to import Amazon Connect Queue
+    and Agent Historical Metrics into your Salesforce Org. This
+    feature requires you to provide _ConnectReportingS3BucketName_
 
-    f.  *CTRKinesisARN* -- please set Amazon Kinesis Stream ARN that is
-        attached to you Amazon Connect instance as Contact Trace Records
-        destination. Amazon Kinesis Firehose is not supported. This
-        parameter is mandatory for certain features, please see above.
+    f. _CTRKinesisARN_ -- please set Amazon Kinesis Stream ARN that is
+    attached to you Amazon Connect instance as Contact Trace Records
+    destination. Amazon Kinesis Firehose is not supported. This
+    parameter is mandatory for certain features, please see above.
 
-    g.  *ConnectRecordingS3BucketName* -- this is the S3 bucket where
-        Amazon Connect stores call recordings. This parameter is
-        mandatory for certain features, please see above.
+    g. _ConnectRecordingS3BucketName_ -- this is the S3 bucket where
+    Amazon Connect stores call recordings. This parameter is
+    mandatory for certain features, please see above.
 
-    h.  *ConnectReportingS3BucketName* -- this is the S3 bucket name
-        where Amazon Connect stores schedule reports. This parameter is
-        mandatory for Historical Reporting Import.
+    h. _ConnectReportingS3BucketName_ -- this is the S3 bucket name
+    where Amazon Connect stores schedule reports. This parameter is
+    mandatory for Historical Reporting Import.
 
-    i.  *AmazonConnectInstanceId* -- this parameter is mandatory for
-        Realtime Reporting Import
+    i. _AmazonConnectInstanceId_ -- this parameter is mandatory for
+    Realtime Reporting Import
 
-    j.  *TranscribeOutputS3BucketName* -- this is the S3 bucket where
-        Amazon Transcribe stores the output. You can use an existing
-        bucket, or create a new one, as the installation process doesn't
-        create one for you. This parameter in mandatory certain
-        features, please see above.
+    j. _TranscribeOutputS3BucketName_ -- this is the S3 bucket where
+    Amazon Transcribe stores the output. You can use an existing
+    bucket, or create a new one, as the installation process doesn't
+    create one for you. This parameter in mandatory certain
+    features, please see above.
 
-    k.  *SalesforceHost:* The full domain for your salesforce org. For
-        example
-        `https://mydevorg-dev-ed.my.salesforce.com`.
-        Please make sure that the host starts with `https`, and that the url
-        ends with `.my.salesforce.com`. This url can be found in `Setup` -> `My Domain`.
+    k. _SalesforceHost:_ The full domain for your salesforce org. For
+    example
+    `https://mydevorg-dev-ed.my.salesforce.com`.
+    Please make sure that the host starts with `https`, and that the url
+    ends with `.my.salesforce.com`. This url can be found in `Setup` -> `My Domain`.
 
 7.  Once completed, click "Deploy" function:
 

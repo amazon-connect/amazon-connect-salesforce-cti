@@ -305,6 +305,10 @@ Returns the number of urls popped.
 The query to execute an arbitrary SOQL statement and returns the
 results.
 
+### Get Salesforce Lead Id
+
+The command to get a salesforce lead id using a formatted phone number.
+
 ### Open Salesforce Primary Tab
 
 Opens a new primary tab to display the content of the specified URL.
@@ -366,7 +370,7 @@ Closes the Salesforce with a given id.
 
 ### Delay
 
-Delays execution for a period of time. (Keep in mind that your flow may be stopped if it runs longer than the maximum allowed execution window of 10 seconds.)
+Delays execution for a period of time. (Keep in mind that your flow may be stopped if it runs longer than the maximum allowed execution window of 60 seconds.)
 
 ### Get Primary Tab Ids
 

@@ -43,7 +43,7 @@
 
 <img src="../media/image6.png" />
 
-4.  In the **Quick Find** box, type *Call Center*, then choose **Call Centers**.
+4.  In the **Quick Find** box, type _Call Center_, then choose **Call Centers**.
 
 <img src="../media/image7.png" />
 
@@ -58,13 +58,13 @@ Next, we need to create a softphone layout for the solution.
 
 <img src="../media/image9.png" />
 
-6.  In the **Quick Find** box, type *Softphone Layouts*, then choose **Softphone Layouts**.
+6.  In the **Quick Find** box, type _Softphone Layouts_, then choose **Softphone Layouts**.
 
 7.  Choose **New**.
 
 <img src="../media/image10.png" />
 
-8.  Enter a name for the layout, such as *AmazonConnectDefault*, then select the **Is Default Layout** checkbox.
+8.  Enter a name for the layout, such as _AmazonConnectDefault_, then select the **Is Default Layout** checkbox.
 
 <img src="../media/image11.png" />
 
@@ -93,7 +93,7 @@ softphone.
 
 1.  Log in into your Salesforce Org.
 
-2. Navigate to **Setup** \> **Manage Users** \> **Permission Sets**.
+2.  Navigate to **Setup** \> **Manage Users** \> **Permission Sets**.
 
 <img src="../media/image16.png" />
 
@@ -211,7 +211,7 @@ Select "Amazon Connect CCP Adapter Console 3.9"
 
 <img src="../media/image37.png" />
 
-Replace the **CTI Adapter URL** with the AC Lightning Adapter visualforce page url you copied in the previous section. 
+Replace the **CTI Adapter URL** with the AC Lightning Adapter visualforce page url you copied in the previous section.
 If you wish to specify your version of the ccp user interface, add "?ccpVersion=x", where x is the version of the ccp
 (either 1 or 2). Click on the Save button.
 
@@ -350,7 +350,7 @@ Select "Amazon Connect CCP Adapter Classic 3.9"
 
 <img src="../media/image56.png" />
 
-Replace the **CTI Adapter URL** with the AC Lightning Adapter visualforce page url you copied in the previous section. 
+Replace the **CTI Adapter URL** with the AC Lightning Adapter visualforce page url you copied in the previous section.
 If you wish to specify your version of the ccp user interface, add "?ccpVersion=x", where x is the version of the ccp
 (either 1 or 2). Click on the Save button.
 

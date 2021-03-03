@@ -6,7 +6,7 @@
   <img src="./media/image1.png" />
 </p>
 
-<h3 align="center"> December, 2020</h3>
+<h3 align="center"> February, 2021</h3>
 
 _© Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved. SPDX-License-Identifier: CC-BY-SA-4.0_
 
@@ -75,8 +75,7 @@ with id 'key-benefits-and-requirements'
     - [Configure Presence Status Synchronization Rules](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/02%20Omnipresence%20Agent%20State%20Sync.md#configure-presence-status-synchronization-rules)
       - [Presence Status Configuration Rules](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/02%20Omnipresence%20Agent%20State%20Sync.md#presence-status-configuration-rules)
   - [Contact Attributes Display](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/03%20Contact%20Attributes%20Display.md#contact-attributes-display)
-  - [Call Recording Link for Task](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/04%20Call%20Recording%20Link%20for%20Task.md#call-recording-link-for-task)
-        - [Enabling call recording import](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/04%20Call%20Recording%20Link%20for%20Task.md#enabling-call-recording-import)
+  - [Call Recording Link for Task](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/04%20Call%20Recording%20Link%20for%20Task.md#call-recording-link-for-task) - [Enabling call recording import](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/04%20Call%20Recording%20Link%20for%20Task.md#enabling-call-recording-import)
   - [Call Display on the Account Page](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/05%20Call%20Display%20on%20the%20Account%20Page.md#call-display-on-the-account-page)
   - [Outbound Campaign Calls](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/06%20Outbound%20Campaign%20Calls.md#outbound-campaign-calls)
     - [Create a Queue](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/06%20Outbound%20Campaign%20Calls.md#create-a-queue)
@@ -85,7 +84,7 @@ with id 'key-benefits-and-requirements'
     - [Outbound Campaign Custom Object Using Salesforce Data Loader](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/06%20Outbound%20Campaign%20Calls.md#outbound-campaign-custom-object-using-salesforce-data-loader)
   - [Amazon Connect Reports in Salesforce](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/07%20Amazon%20Connect%20Reports%20in%20Salesforce.md#amazon-connect-reports-in-salesforce)
   - [CTI Flows](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/08%20CTI%20Flows.md#cti-flows)
-    - [Localization](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/09%20Localization.md#localization)
+  - [Localization](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/09%20Localization.md#localization)
 - Configuring and Using AWS Serverless Application Repository for Salesforce Features
   - [Invoking the Amazon Connect Salesforce Lambda in a Contact Flow](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/01%20Invoking%20the%20Amazon%20Connect%20Salesforce%20Lambda%20in%20a%20Contact%20Flow.md#invoking-the-amazon-connect-salesforce-lambda-in-a-contact-flow)
     - [Salesforce Lookup](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/01%20Invoking%20the%20Amazon%20Connect%20Salesforce%20Lambda%20in%20a%20Contact%20Flow.md#salesforce-lookup)
@@ -136,10 +135,24 @@ used by Amazon Connect to interact with Salesforce.
 
 Important: when upgrading the CTI Adapter, please make sure that the Salesforce Lambdas are also updated to the newest version.
 
+## 5.10 February 2020
+
+- **Feature**: _Contact Control Panel (CCP) Audio Device settings option._ Admins can toggle Phone type settings and the new [Audio Devices settings](https://docs.aws.amazon.com/connect/latest/adminguide/audio-device-settings.html) for agents to see on their CCP. [Audio Device settings](https://docs.aws.amazon.com/connect/latest/adminguide/audio-device-settings.html) allow the agents to choose audio devices for their speaker, microphone, and ringer.
+- **Feature**: _Custom Ringtone for chat_. Admins can configure a custom ringtone for chat (separate from CCP) from the CTI Adapter configuration page.
+- **Enhancement**: The Salesforce built-in Cross Site Request Forgery (CSRF) protection is enabled for Visualforce pages in the CTI Adapter package which improves organizational security to protect against cross site request forgeries.
+- **Bugfix**: Decision blocks no longer requires both sockets to be connected.
+- **Bugfix**: Click to Dial stopped working after first use until the agent refreshed the page.
+- **Bugfix**: Error that prevented Contact Lens app resources from being hosted on a different domain than the Salesforce instance.
+- **Bugfix**: Error that prevented Contact Lens app from displaying intermittently when Transcribe was enabled.
+- **Bugfix**: Changed the logic for the IsContactTransfer CTI Flow Block which always returned true.
+- **Bugfix**: Medialess popout not closing after Salesforce tabs are closed.
+- **Bugfix**: Login window did not close automatically after logging into Connect.
+- **Bugfix**: Unable to upgrade the package if the Case or Contact object contained encrypted fields.
+
 ## 5.9 December 2020
 
-- **Feature**: Amazon Connect Contact Lens post call integration - Contact Lens transcripts and insights are now supported in CTI contact channel analytics
-- **Feature**: Amazon Connect Tasks support - Added the Amazon Connect Task Contact as a source to CTI Flow in addition to Task specific events
+- **Feature**: Contact Lens Integration
+- **Feature**: Tasks Integration - Added the Amazon Connect Task Contact as a source to CTI Flow in addition to Task specific events
 - **Feature**: CTI Block - Is Task Contact? - Check if the contact is a task
 - **Feature**: CTI Block - Create Task Contact - Creating a new task contact with certain inputs.
 - **Feature**: CTI Block - Pop Task Contact's Reference Urls - Pop any reference urls that are related to the task contact

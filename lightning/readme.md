@@ -6,7 +6,7 @@
   <img src="./media/image1.png" />
 </p>
 
-<h3 align="center"> December, 2020</h3>
+<h3 align="center"> February, 2021</h3>
 
 _© Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved. SPDX-License-Identifier: CC-BY-SA-4.0_
 
@@ -76,7 +76,7 @@ with id 'key-benefits-and-requirements'
   - [CTI Adapter Installation Troubleshooting and Common Issues](02%20Installation/04%20CTI%20Adapter%20Installation%20Troubleshooting.md#cti-adapter-installation-troubleshooting-and-common-issues)
 - [Configuring and Using CTI Adapter Features](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/readme.md#configuring-and-using-cti-adapter-features)
   - [CTI Adapter Details](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/01%20CTI%20Adapter%20Configuration.md#cti-adapter-details)
-      - [Update the CTI Adapter Details](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/01%20CTI%20Adapter%20Configuration.md#update-the-cti-adapter-details)
+    - [Update the CTI Adapter Details](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/01%20CTI%20Adapter%20Configuration.md#update-the-cti-adapter-details)
     - [Single Sign On Settings](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/01%20CTI%20Adapter%20Configuration.md#single-sign-on-settings)
       - [Identify the SSO URL components](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/01%20CTI%20Adapter%20Configuration.md#identify-the-sso-url-components)
       - [Configure the CTI Lightning Adapter in Salesforce](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/01%20CTI%20Adapter%20Configuration.md#configure-the-cti-lightning-adapter-in-salesforce)
@@ -209,10 +209,24 @@ Connect and Salesforce.
 
 Important: when upgrading the CTI Adapter, please make sure that the Salesforce Lambdas are also updated to the newest version. Also review the [CTI Adapter Installation Troubleshooting and Common Issues](02%20Installation/04%20CTI%20Adapter%20Installation%20Troubleshooting.md#cti-adapter-installation-troubleshooting-and-common-issues) section for known issues and troubleshooting.
 
+## 5.10 February 2020
+
+- **Feature**: _Contact Control Panel (CCP) Audio Device settings option._ Admins can toggle Phone type settings and the new [Audio Devices settings](https://docs.aws.amazon.com/connect/latest/adminguide/audio-device-settings.html) for agents to see on their CCP. [Audio Device settings](https://docs.aws.amazon.com/connect/latest/adminguide/audio-device-settings.html) allow the agents to choose audio devices for their speaker, microphone, and ringer.
+- **Feature**: _Custom Ringtone for chat_. Admins can configure a custom ringtone for chat (separate from CCP) from the CTI Adapter configuration page.
+- **Enhancement**: The Salesforce built-in Cross Site Request Forgery (CSRF) protection is enabled for Visualforce pages in the CTI Adapter package which improves organizational security to protect against cross site request forgeries.
+- **Bugfix**: Decision blocks no longer requires both sockets to be connected.
+- **Bugfix**: Click to Dial stopped working after first use until the agent refreshed the page.
+- **Bugfix**: Error that prevented Contact Lens app resources from being hosted on a different domain than the Salesforce instance.
+- **Bugfix**: Error that prevented Contact Lens app from displaying intermittently when Transcribe was enabled.
+- **Bugfix**: Changed the logic for the IsContactTransfer CTI Flow Block which always returned true.
+- **Bugfix**: Medialess popout not closing after Salesforce tabs are closed.
+- **Bugfix**: Login window did not close automatically after logging into Connect.
+- **Bugfix**: Unable to upgrade the package if the Case or Contact object contained encrypted fields.
+
 ## 5.9 December 2020
 
-- **Feature**: Amazon Connect Contact Lens post call integration - Contact Lens transcripts and insights are now supported in CTI contact channel analytics
-- **Feature**: Amazon Connect Tasks support - Added the Amazon Connect Task Contact as a source to CTI Flow in addition to Task specific events
+- **Feature**: Contact Lens Integration
+- **Feature**: Tasks Integration - Added the Amazon Connect Task Contact as a source to CTI Flow in addition to Task specific events
 - **Feature**: CTI Block - Is Task Contact? - Check if the contact is a task
 - **Feature**: CTI Block - Create Task Contact - Creating a new task contact with certain inputs.
 - **Feature**: CTI Block - Pop Task Contact's Reference Urls - Pop any reference urls that are related to the task contact
