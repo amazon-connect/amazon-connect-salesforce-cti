@@ -154,10 +154,10 @@ First, you need to add the CTI softphone to your Service Console.
 
 6.  Change the Label, if desired, then choose **Save**.
 
-<h4 class="toc">Whitelist Your Salesforce Org with Amazon Connect</h4>
+<h4 class="toc">Allowlist Your Salesforce Org with Amazon Connect</h4>
 
 In order to embed the Amazon Connect Contact Control Panel (CCP) into
-your Service Console, you need to whitelist two (2) domains for your org
+your Service Console, you need to allowlist two (2) domains for your org
 with Amazon Connect. This allows for cross domain access to the
 underlying resources required for the CCP to function.
 
@@ -222,10 +222,7 @@ underlying resources required for the CCP to function.
 
 <h4 class="toc">Modify the Call Center</h4>
 
-Now that you have whitelisted the org in the Amazon Connect Console, you
-will need to modify the Call Center that was configured in Salesforce
-when the AppExchange package was installed. Once you complete the
-configuration, you add users to the Call Center to provide access to it.
+Now that you have allowlisted the org in the Amazon Connect Console, you will need to modify the Call Center that was configured in Salesforce when the AppExchange package was installed. Once you complete the configuration, you add users to the Call Center to provide access to it.
 
 1.  Log in into your Salesforce org and go to **Setup**
 
@@ -243,7 +240,7 @@ configuration, you add users to the Call Center to provide access to it.
 
 5.  On the **AC Lightning Adapter** detail page, select **Edit**
 
-6. Replace the **CTI Adapter URL** with the AC Lightning Adapter visualforce page url you copied in the previous section.
+6.  Replace the **CTI Adapter URL** with the AC Lightning Adapter visualforce page url you copied in the previous section.
 
 7.  Next, change the values for **Softphone Height** **to 570** and the
     **Softphone Width to 330**, and choose **Save.**
@@ -254,7 +251,7 @@ configuration, you add users to the Call Center to provide access to it.
 9.  On the **AC Lightning Adapter: Manage Users** page, select **Add
     More Users**.
 
-10.  Set filters (if desired) and then choose **Find**.
+10. Set filters (if desired) and then choose **Find**.
 
 11. Select the checkbox next to the user to add, then choose **Add to
     Call Center**.
@@ -315,7 +312,6 @@ conditions.
     that CTI Connector should be able to search, for a screen-pop query.
     In this example, Case has been added to the default selection,
     allowing search and screen-pop by CaseID.
-    
 
 <img src="../media/image37.png" />
 
@@ -471,7 +467,6 @@ functionality that is provided with the CTI adapter.
 
 5.  Close the Contact tab by selecting the X next to the name of the
     contact that you just created
-
 
 <img src="../media/image55.png" />
 

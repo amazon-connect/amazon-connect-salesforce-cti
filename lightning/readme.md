@@ -6,7 +6,7 @@
   <img src="./media/image1.png" />
 </p>
 
-<h3 align="center"> September, 2020</h3>
+<h3 align="center"> February, 2021</h3>
 
 _© Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved. SPDX-License-Identifier: CC-BY-SA-4.0_
 
@@ -52,7 +52,7 @@ with id 'key-benefits-and-requirements'
     - [Set Access Permissions](02%20Installation/01%20Installing%20CTI%20Adapter%20Managed%20Package%20from%20AppExchange.md#set-access-permissions)
     - [Configure the Lightning Experience](02%20Installation/01%20Installing%20CTI%20Adapter%20Managed%20Package%20from%20AppExchange.md#configure-the-lightning-experience)
       - [Configure Service Console](02%20Installation/01%20Installing%20CTI%20Adapter%20Managed%20Package%20from%20AppExchange.md#configure-service-console)
-      - [Whitelist Your Salesforce Org with Amazon Connect](02%20Installation/01%20Installing%20CTI%20Adapter%20Managed%20Package%20from%20AppExchange.md#whitelist-your-salesforce-org-with-amazon-connect)
+      - [Allowlist Your Salesforce Org with Amazon Connect](02%20Installation/01%20Installing%20CTI%20Adapter%20Managed%20Package%20from%20AppExchange.md#allowlist-your-salesforce-org-with-amazon-connect)
       - [Modify the Call Center](02%20Installation/01%20Installing%20CTI%20Adapter%20Managed%20Package%20from%20AppExchange.md#modify-the-call-center)
       - [Configure the Toolkit settings](02%20Installation/01%20Installing%20CTI%20Adapter%20Managed%20Package%20from%20AppExchange.md#configure-the-toolkit-settings)
       - [Create the Softphone Layout](02%20Installation/01%20Installing%20CTI%20Adapter%20Managed%20Package%20from%20AppExchange.md#create-the-softphone-layout)
@@ -102,8 +102,6 @@ with id 'key-benefits-and-requirements'
   - [Set Agent Status on Session End](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/05%20Set%20Agent%20Status%20on%20Session%20End.md#set-agent-status-on-session-end)
   - [Contact Lens](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/06%20Contact%20Lens.md#contact-lens)
     - [Configuring Related Transcripts List for Case Object](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/06%20Contact%20Lens.md#configuring-related-transcripts-list-for-case-object)
-  - [CTI Actions](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/07%20CTI%20Actions.md#cti-actions)
-  - [Recording Controls](03%20Configuring%20and%20Using%20CTI%20Adapter%20Features/08%20Recording%20Controls.md)
 - [Configuring and Using AWS Serverless Application Repository for Salesforce Features](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/readme.md#configuring-and-using-aws-serverless-application-repository-for-salesforce-features)
   - [Accessing the Salesforce API from Amazon Connect Contact Flows Using AWS Lambda](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/01%20Accessing%20the%20Salesforce%20API%20from%20Amazon%20Connect%20Contact%20Flows%20Using%20AWS%20Lambda.md#accessing-the-salesforce-api-from-amazon-connect-contact-flows-using-aws-lambda)
     - [Salesforce Lookup](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/01%20Accessing%20the%20Salesforce%20API%20from%20Amazon%20Connect%20Contact%20Flows%20Using%20AWS%20Lambda.md#salesforce-lookup)
@@ -126,9 +124,9 @@ with id 'key-benefits-and-requirements'
     - [Deployment and Configuration](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/03%20Amazon%20Connect%20Real-Time%20Metrics%20in%20Salesforce.md#deployment-and-configuration)
       - [Adding Real-Time Reports to the Service Console](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/03%20Amazon%20Connect%20Real-Time%20Metrics%20in%20Salesforce.md#adding-real-time-reports-to-the-service-console)
   - [Contact Channel Analytics](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/04%20Contact%20Channel%20Analytics.md#contact-channel-analytics)
-    - [Call Recording Streaming](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/04%20Contact%20Channel%20Analytics.md#call-recording-streaming)
+    - [Call Recording Import](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/04%20Contact%20Channel%20Analytics.md#call-recording-import)
       - [Prerequisite Setup](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/04%20Contact%20Channel%20Analytics.md#prerequisite-setup)
-      - [Enabling call recording streaming](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/04%20Contact%20Channel%20Analytics.md#enabling-call-recording-streaming)
+      - [Enabling call recording import](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/04%20Contact%20Channel%20Analytics.md#enabling-call-recording-import)
       - [Adding Contact Channel Analytics to the Service Console](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/04%20Contact%20Channel%20Analytics.md#adding-contact-channel-analytics-to-the-service-console)
     - [Recording Transcripts](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/04%20Contact%20Channel%20Analytics.md#recording-transcripts)
       - [Enabling recording transcription](04%20Configuring%20and%20Using%20AWS%20Serverless%20Application%20Repository%20for%20Salesforce%20Features/04%20Contact%20Channel%20Analytics.md#enabling-recording-transcription)
@@ -211,7 +209,7 @@ Connect and Salesforce.
 
 Important: when upgrading the CTI Adapter, please make sure that the Salesforce Lambdas are also updated to the newest version. Also review the [CTI Adapter Installation Troubleshooting and Common Issues](02%20Installation/04%20CTI%20Adapter%20Installation%20Troubleshooting.md#cti-adapter-installation-troubleshooting-and-common-issues) section for known issues and troubleshooting.
 
-## 5.10 February 2020
+## 5.11 April 2021
 
 - **Feature**: CCP Overlay: CTI Actions
 
@@ -257,16 +255,6 @@ This block works with the Voicemail Drops feature. When you configure the voicem
 
 This block allows you to get a Salesforce lead by using a phone number.
 
-- **Feature**: CCP Audio Device Config Options
-
-You can now toggle Phone Type Settings and the new Audio Device Settings for Agents to see on their CCP. Audio Device Settings allows the Agents to choose custom/separate audio devices for their speaker, ringer, and microphone.
-
-- **Feature**: Custom Ringtone for chat
-
-You can now configure custom ringtone for chat (separate from softphone) from CTI adapter configuration page.
-
-- **Enhancement**: The Salesforce built-in Cross Site Request Forgery (CSRF) protection are turned on for all Visualforce pages in the CTI adapter packages, which improves organizational security to protect against cross site request forgeries.
-
 - **Enhancement**: "Get Salesforce Contact Id" block now uses FIND syntax to search across multiple fields.
 
 - **Enhancement**: For the `SetAgentStatusOnSessionEnd` attribute, you can now specify multiple values.
@@ -277,23 +265,19 @@ You can now configure custom ringtone for chat (separate from softphone) from CT
 
 - **Enhancement** We have added `noPopOnEmpty` checkbox to ScreenPopObject CTI Flow Block. Previously, if you passed a null value, Salesforce would pop the User page on Salesforce Classic. This provides functionality to prevent that.
 
+## 5.10 February 2021
+
+- **Feature**: _Contact Control Panel (CCP) Audio Device settings option._ Admins can toggle Phone type settings and the new [Audio Devices settings](https://docs.aws.amazon.com/connect/latest/adminguide/audio-device-settings.html) for agents to see on their CCP. [Audio Device settings](https://docs.aws.amazon.com/connect/latest/adminguide/audio-device-settings.html) allow the agents to choose audio devices for their speaker, microphone, and ringer.
+- **Feature**: _Custom Ringtone for chat_. Admins can configure a custom ringtone for chat (separate from CCP) from the CTI Adapter configuration page.
+- **Enhancement**: The Salesforce built-in Cross Site Request Forgery (CSRF) protection is enabled for Visualforce pages in the CTI Adapter package which improves organizational security to protect against cross site request forgeries.
 - **Bugfix**: Decision blocks no longer requires both sockets to be connected.
-
-- **Bugfix**: We've fixed a bug where Click to Dial evidently stopped working after first use until the agent refreshed the page.
-
-- **Bugfix**: We've fixed an error that prevented Contact Lens app resources from being hosted on a different domain than the Salesforce instance.
-
-- **Bugfix**: We've fixed an error that prevented Contact Lens app from displaying occasionally when Transcribe was enabled.
-
-- **Bugfix**: Changed the logic for the `IsContactTransfer` CTI Flow Block which caused it to always return true.
-
-- **Bugfix**: We’ve added back the softphone popout functionality for users of Salesforce Classic.
-
-- **Bugfix**: We've fixed various issues with Medialess popout not closing after the tabs are closed.
-
-- **Bugfix**: We've fixed an issue where the login window did not close automatically after logging into the Connect.
-
-- **Bugfix**: We've fixed an issue that prevented Contact Lens view from showing up if the assets were hosted on a different domain.
+- **Bugfix**: Click to Dial stopped working after first use until the agent refreshed the page.
+- **Bugfix**: Error that prevented Contact Lens app resources from being hosted on a different domain than the Salesforce instance.
+- **Bugfix**: Error that prevented Contact Lens app from displaying intermittently when Transcribe was enabled.
+- **Bugfix**: Changed the logic for the IsContactTransfer CTI Flow Block which always returned true.
+- **Bugfix**: Medialess popout not closing after Salesforce tabs are closed.
+- **Bugfix**: Login window did not close automatically after logging into Connect.
+- **Bugfix**: Unable to upgrade the package if the Case or Contact object contained encrypted fields.
 
 ## 5.9 December 2020
 
@@ -432,7 +416,7 @@ You can now configure custom ringtone for chat (separate from softphone) from CT
 - **Setup:** CTI Adapter validation is performed upon initialization and will inform the user of common misconfigurations.
 - **Setup:** Additional CTI Script examples are provided.
 - **Setup:** The ability to place the lightning transcript view on Task, Contact Channel, and Contact Channel Analytics object has been added.
-- **Bugfix:** Updated whitelisting steps to address login popup issue.
+- **Bugfix:** Updated allowlisting steps to address login popup issue.
 - **Bugfix:** OmniChannel workload data not being usable has been resolved
 - **Bugfix:** CTI Attribute issue when processing multiple pieces of contact attribute data has been resolved.
 - **Bugfix:** The call transcript now scrolls within a fixed region rather than consuming vertical space.

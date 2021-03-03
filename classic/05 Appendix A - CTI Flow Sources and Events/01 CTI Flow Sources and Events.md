@@ -71,7 +71,7 @@ Scripts:
 
   - onIncoming -- The tasks contact is incoming.
 
-  - onConnecting -- The task contact is connecting.
+  - onConnecting -- The taks contact is connecting.
 
   - onConnected -- The task contact is connected.
 
@@ -111,5 +111,3 @@ Scripts:
   - onNavigationChange
 
   - onHvsWorkStart
-
-- CTI Action
