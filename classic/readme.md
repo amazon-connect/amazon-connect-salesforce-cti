@@ -181,7 +181,7 @@ Important: when upgrading the CTI Adapter, please make sure that the Salesforce 
 - **Bugfix**: Ensure “Join Strings” block does not ignore boolean false values.
 - **Bugfix**: Ensure “Log to Console” block does not ignore boolean false values.
 - **Feature**: Add uid field on top of the block on the canvas.
-- **Bugfix**: Remove the loginWindow object from log output because it errors with "Cannot convert object to primitive value."
+- **Bugfix**: Remove the loginWindow object from log output because it errors with "Cannot convert object to primitive value.
 - **Bugfix**: ContactChannel object updates to new agent if previous agent rejected or missed a contact
 - **Bugfix**: Changing status to logout now correctly logs agent out
 - **Feature**: Rename "Enable Click to Dial?" to "Can Make Outbound Calls?".
