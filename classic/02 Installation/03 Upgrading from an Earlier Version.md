@@ -1,6 +1,6 @@
 <h1 class="toc">Upgrading from an Earlier Version</h1>
 
-If you are upgrading from an earlier version of CTI Adapter, there are a
+If you are upgrading from an earlier major version of the CTI Adapter (v4.x or earlier), there are a
 few additional things you need to do.
 
 1.  Go to the **Setup** section and search for **Object Manager**.
