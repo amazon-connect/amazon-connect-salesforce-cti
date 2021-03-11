@@ -135,6 +135,10 @@ used by Amazon Connect to interact with Salesforce.
 
 Important: when upgrading the CTI Adapter, please make sure that the Salesforce Lambdas are also updated to the newest version.
 
+## 5.11 March 2020
+
+- **Bugfix**: Addressed trigger issue that prevented community and partner users from updating Contact and Case records.
+
 ## 5.10 February 2020
 
 - **Feature**: _Contact Control Panel (CCP) Audio Device settings option._ Admins can toggle Phone type settings and the new [Audio Devices settings](https://docs.aws.amazon.com/connect/latest/adminguide/audio-device-settings.html) for agents to see on their CCP. [Audio Device settings](https://docs.aws.amazon.com/connect/latest/adminguide/audio-device-settings.html) allow the agents to choose audio devices for their speaker, microphone, and ringer.
@@ -181,7 +185,7 @@ Important: when upgrading the CTI Adapter, please make sure that the Salesforce 
 - **Bugfix**: Ensure “Join Strings” block does not ignore boolean false values.
 - **Bugfix**: Ensure “Log to Console” block does not ignore boolean false values.
 - **Feature**: Add uid field on top of the block on the canvas.
-- **Bugfix**: Remove the loginWindow object from log output because it errors with "Cannot convert object to primitive value."
+- **Bugfix**: Remove the loginWindow object from log output because it errors with "Cannot convert object to primitive value.
 - **Bugfix**: ContactChannel object updates to new agent if previous agent rejected or missed a contact
 - **Bugfix**: Changing status to logout now correctly logs agent out
 - **Feature**: Rename "Enable Click to Dial?" to "Can Make Outbound Calls?".
