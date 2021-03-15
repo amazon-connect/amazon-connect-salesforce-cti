@@ -209,7 +209,7 @@ Connect and Salesforce.
 
 Important: when upgrading the CTI Adapter, please make sure that the Salesforce Lambdas are also updated to the newest version. Also review the [CTI Adapter Installation Troubleshooting and Common Issues](02%20Installation/04%20CTI%20Adapter%20Installation%20Troubleshooting.md#cti-adapter-installation-troubleshooting-and-common-issues) section for known issues and troubleshooting.
 
-## 5.11 March 2020
+## 5.11 March 2021
 
 - **Bugfix**: Addressed trigger issue that prevented community and partner users from updating Contact and Case records.
 
