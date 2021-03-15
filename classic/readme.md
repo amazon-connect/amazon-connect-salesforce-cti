@@ -135,7 +135,7 @@ used by Amazon Connect to interact with Salesforce.
 
 Important: when upgrading the CTI Adapter, please make sure that the Salesforce Lambdas are also updated to the newest version.
 
-## 5.11 March 2020
+## 5.11 March 2021
 
 - **Bugfix**: Addressed trigger issue that prevented community and partner users from updating Contact and Case records.
 
