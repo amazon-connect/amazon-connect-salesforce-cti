@@ -213,7 +213,7 @@ Important: when upgrading the CTI Adapter, please make sure that the Salesforce 
 
 - **Bugfix**: Addressed trigger issue that prevented community and partner users from updating Contact and Case records.
 
-## 5.10 February 2020
+## 5.10 February 2021
 
 - **Feature**: _Contact Control Panel (CCP) Audio Device settings option._ Admins can toggle Phone type settings and the new [Audio Devices settings](https://docs.aws.amazon.com/connect/latest/adminguide/audio-device-settings.html) for agents to see on their CCP. [Audio Device settings](https://docs.aws.amazon.com/connect/latest/adminguide/audio-device-settings.html) allow the agents to choose audio devices for their speaker, microphone, and ringer.
 - **Feature**: _Custom Ringtone for chat_. Admins can configure a custom ringtone for chat (separate from CCP) from the CTI Adapter configuration page.
