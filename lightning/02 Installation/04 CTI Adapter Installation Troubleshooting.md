@@ -12,6 +12,16 @@ This can happen if the customer has checked “Enable clickjack protection” on
 
 <img src="../media/troubleshooting1.png" />
 
+#### What are the Disable X Trigger options in the Custom Settings?
+
+<img src="../media/troubleshooting4.png">
+
+These are options we provide that allow you to toggle certain functionality in the adapter.
+- CCA Case Trigger - This trigger looks for any ContactChannelAnalytics records that could be related to a updated/inserted Case, and creates a relationsihp between the two records.
+- CCA Contact Trigger - This trigger looks for any ContactChannelAnalytics records that could be related to a updated/inserted Contact, and creates a relationsihp between the two records.
+- Case Contact CCA Trigger - This trigger looks for any Case/Contact records that could be related to an updated/inserted ContactChannelAnalytics record, and creates a relationsihp between the records.
+- Task Trigger - This trigger creates a ContactChannel record for any inserted/updated task that with a `CallObject` field that does not currently have a ContactChannel record created before.
+
 #### I upgraded my adapter to v5, but I don’t see the CTI Flows feature.
 
 See the [Upgrading from an Earlier Version](02%20Installation/03%20Upgrading%20from%20an%20Earlier%20Version.md#upgrading-from-an-earlier-version) section of the installation guide.

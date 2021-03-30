@@ -135,6 +135,13 @@ used by Amazon Connect to interact with Salesforce.
 
 Important: when upgrading the CTI Adapter, please make sure that the Salesforce Lambdas are also updated to the newest version.
 
+## 5.12 March 2021
+
+- **Feature**: Added custom setting which will allow customers to enable and disable non-essential triggers (They are disabled by default now).
+- **Bugfix**: Addressed additional trigger issue that prevented orgs with 200k+ CCA records from updating Case and Contact records.
+- **Bugfix**: Addressed issue where AC Permission sets did not include the CustomerEndpointAddress field for the ContactChannelAnalytics object.
+- **Bugfix**: Addressed issue where AC Permission sets did not include the MedialessPopout page.
+
 ## 5.11 March 2021
 
 - **Bugfix**: Addressed trigger issue that prevented community and partner users from updating Contact and Case records.
