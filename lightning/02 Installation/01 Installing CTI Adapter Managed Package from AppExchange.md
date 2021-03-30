@@ -282,6 +282,10 @@ Now that you have allowlisted the org in the Amazon Connect Console, you will ne
 
 <img src="../media/image34.png" />
 
+You will also see the option to enable and disable certain 
+triggers in the package, which you can configure to meet your needs. You
+can change these whenever you would like to. For more details, see the troubleshooting section. 
+
 5.  Select **Save**
 
 <h4 class="toc">Create the Softphone Layout</h4>
