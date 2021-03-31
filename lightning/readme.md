@@ -6,7 +6,7 @@
   <img src="./media/image1.png" />
 </p>
 
-<h3 align="center"> February, 2021</h3>
+<h3 align="center"> March, 2021</h3>
 
 _© Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved. SPDX-License-Identifier: CC-BY-SA-4.0_
 
@@ -211,7 +211,7 @@ Important: when upgrading the CTI Adapter, please make sure that the Salesforce 
 
 ## 5.12 March 2021
 
-- **Feature**: Added custom setting which will allow customers to enable and disable non-essential triggers (They are disabled by default now).
+- **Feature**: Added custom setting which will allow customers to enable and disable non-essential triggers (They are disabled by default now). [More details in the troubleshooting section](02%20Installation/04%20CTI%20Adapter%20Installation%20Troubleshooting.md#What%20are%20the%20Disable%20X%20Trigger%20options%20in%20the%20Custom%20Settings?)
 - **Bugfix**: Addressed additional trigger issue that prevented orgs with 200k+ CCA records from updating Case and Contact records.
 - **Bugfix**: Addressed issue where AC Permission sets did not include the CustomerEndpointAddress field for the ContactChannelAnalytics object.
 - **Bugfix**: Addressed issue where AC Permission sets did not include the MedialessPopout page.
