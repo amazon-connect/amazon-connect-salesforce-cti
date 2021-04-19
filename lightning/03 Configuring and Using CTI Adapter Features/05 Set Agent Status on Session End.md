@@ -1,6 +1,6 @@
 <h2 class="toc">Set Agent Status on Session End</h2>
 
-This feature automatically sets the status of the agent to "Offline" –– or to any status you choose –– when the agent closes all his Salesforce tabs.
+This feature automatically sets the status of the agent to "Offline" –– or to any status you choose –– when the agent closes all his Salesforce tabs. **Disclaimer:** This feature will popup a window to perform the logout functionality. This window must stay open for the feature to work, but it does not have to be visible (i.e. can be put in the background).
 
 You can configure this feature by heading to the feature panel on your CTI Adapter and clicking new.
 
