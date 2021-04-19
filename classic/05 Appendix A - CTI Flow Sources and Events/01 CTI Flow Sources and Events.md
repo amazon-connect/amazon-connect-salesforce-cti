@@ -47,6 +47,8 @@ Scripts:
 
   - onMissed -- The voice contact is / was missed.
 
+  - onDestroy - The voice contact is destroyed.
+
 - Amazon Connect Chat Contact
 
   - onConnecting -- The chat contact is connecting.
@@ -67,6 +69,8 @@ Scripts:
 
   - onMissed -- The chat contact was missed.
 
+  - onDestroy - The chat contact is destroyed.
+
 - Amazon Connect Task Contact
 
   - onIncoming -- The tasks contact is incoming.
@@ -84,6 +88,8 @@ Scripts:
   - onPending -- The voice contact is pending.
 
   - onMissed -- The task contact was missed.
+
+  - onDestroy - The task contact is destroyed.
 
   - onTransferInitiated -- When the server has initiated the task transfer.
 

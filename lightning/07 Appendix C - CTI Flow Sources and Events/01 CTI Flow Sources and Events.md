@@ -46,6 +46,8 @@ The following sources are defined in the adapter for use with CTI Flows:
 
   - onMissed -- The voice contact is / was missed.
 
+  - onDestroy - The voice contact is destroyed.
+
 - Amazon Connect Chat Contact
 
   - onConnecting -- The chat contact is connecting.
@@ -66,6 +68,8 @@ The following sources are defined in the adapter for use with CTI Flows:
 
   - onMissed -- The chat contact was missed.
 
+  - onDestroy - The chat contact is destroyed.
+
 - Amazon Connect Task Contact
 
   - onIncoming -- The tasks contact is incoming.
@@ -83,6 +87,8 @@ The following sources are defined in the adapter for use with CTI Flows:
   - onPending -- The voice contact is pending.
 
   - onMissed -- The task contact was missed.
+
+  - onDestroy - The task contact is destroyed.
 
   - onTransferInitiated -- When the server has initiated the task transfer.
 
