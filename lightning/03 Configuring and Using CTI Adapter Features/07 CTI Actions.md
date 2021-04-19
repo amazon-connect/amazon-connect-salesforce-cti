@@ -33,3 +33,21 @@ Just as your agents can send data to the CTI Flow, they can receive data as well
 This is what your block will look like in your CTI Flow.
 
 <img src="../media/ccp-overlay-6-data.png" />
+
+### Upgrading from an earlier version
+
+If you are upgrading from an earlier version of CTI Adapter, there are a few additional things you need to do.
+
+1. Go to the Setup section and search for Object Manager.
+2. In Object Manager section, search for “AC CTI Script”
+3. Open up the first item on the list: AC CTI Script
+4. On the left sidebar, click on Page Layouts
+5. Click on Page Layout Assignment
+6. On the next page, click on Edit Assignments
+7. Click on the grey bar at the top of the table to select all rows.
+8. Open the Page Layout to Use dropdown and select _AC CTI Flow Layout – April 2021_.
+9. Click Save and go back to Page Layouts.
+10. Click on the dropdown next to the item labelled AC CTI Script Layout and click Delete.
+11. Confirm Yes in the next dialogue where you will be asked “Are you sure?”
+12. If you see a screen titled Deletion Problems, find and click Delete.
+13. You will be asked which layout you want to replace it with. Select _AC CTI Flow Layout – April 2021_ and click Replace.
