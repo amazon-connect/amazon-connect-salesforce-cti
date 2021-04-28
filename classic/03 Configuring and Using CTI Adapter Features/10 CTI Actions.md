@@ -33,3 +33,16 @@ Just as your agents can send data to the CTI Flow, they can receive data as well
 This is what your block will look like in your CTI Flow.
 
 <img src="../media/ccp-overlay-6-data.png" />
+
+### Upgrading from an earlier version
+
+If you are upgrading from an earlier version of CTI Adapter, there are a few additional things you need to do.
+
+1. Go to Setup
+2. In "Quick Find," search for "Picklist Value Sets" and click on the result.
+3. Select "AC_CtiScriptSource" on "Picklist Value Sets" page.
+4. Scroll down to "Values" section
+5. Click "New" to add a new value.
+6. In the textarea, enter "ctiAction" and save
+7. Scroll down to the new field you added, "ctiAction," and click "Edit."
+8. Update the label to "CTI Action" and save.
