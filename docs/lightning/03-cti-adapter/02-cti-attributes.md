@@ -3,6 +3,8 @@ id: 02-cti-attributes
 title: CTI Attributes
 ---
 
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
 CTI Attributes provide the ability to reference and display contact
 attribute data within the Amazon Connect Contact Control Panel (CCP).
 This allows for easy access to data or URLs that may be necessary for
@@ -61,7 +63,7 @@ configuration with the following information:
 Once you set the CTI attributes, you access them by choosing the
 appropriate icon during a connected contact
 
-<img src="/img/lightning/image121.png" />
+<img src={useBaseUrl('/img/lightning/image121.png')} />
 
 ### CTI Attributes Example Walkthrough
 
@@ -80,20 +82,20 @@ the customer to indicate their phone number of record. In order for this
 example to work, your contact flow must also set a contact attribute
 named "phone_number"
 
-<img src="/img/lightning/image122.png" />
+<img src={useBaseUrl('/img/lightning/image122.png')} />
 
 1.  Log in into your Salesforce org and go to the **Service Console**
 
 2.  Expand the **navigation menu** by selecting the down arrow and
     choose **AC CTI Adapters**.
     
-<img src="/img/lightning/image114.png" />
+<img src={useBaseUrl('/img/lightning/image114.png')} />
 
 3.  Select **ACLightningAdapter**
 
 4.  Scroll down to the **Attributes** section and select New
 
-<img src="/img/lightning/image123.png" />
+<img src={useBaseUrl('/img/lightning/image123.png')} />
 
 5.  Provide a **CTI Attribute Name** value, for example: customer_phone
 
@@ -112,7 +114,7 @@ named "phone_number"
 
 12. Choose Save
 
-<img src="/img/lightning/image124.png" />
+<img src={useBaseUrl('/img/lightning/image124.png')} />
 
 13. Refresh your browser
 
@@ -122,7 +124,7 @@ named "phone_number"
 15. Once the call is connected, select the text attribute icon to expand
     the CTI Attributes
     
-<img src="/img/lightning/image125.png" />
+<img src={useBaseUrl('/img/lightning/image125.png')} />
 
 16. Note the Style formatting. Also note that you can quickly copy the
     content of the attribute by selecting the clipboard icon.
@@ -138,20 +140,20 @@ attribute using a data query into Salesforce. In order for this example
 to work, your contact flow must also set a contact attribute named
 "postal_code"
 
-<img src="/img/lightning/image126.png" />
+<img src={useBaseUrl('/img/lightning/image126.png')} />
 
 1.  Log in into your Salesforce org and go to the **Service Console**
 
 2.  Expand the **navigation menu** by selecting the down arrow and
     choose **AC CTI Adapters**.
     
-<img src="/img/lightning/image114.png" />
+<img src={useBaseUrl('/img/lightning/image114.png')} />
 
 3.  Select **ACLightningAdapter**
 
 4.  Scroll down to the **Attributes** section and select New
 
-<img src="/img/lightning/image123.png" />
+<img src={useBaseUrl('/img/lightning/image123.png')} />
 
 5.  Provide a **CTI Attribute Name** value, for example: postal_code
 
@@ -171,7 +173,7 @@ to work, your contact flow must also set a contact attribute named
 
 12. Choose Save
 
-<img src="/img/lightning/image127.png" />
+<img src={useBaseUrl('/img/lightning/image127.png')} />
 
 13. Refresh your browser
 
@@ -181,11 +183,11 @@ to work, your contact flow must also set a contact attribute named
 15. Once the call is connected, select the hyperlink attribute icon to
     expand the CTI Attributes
     
-<img src="/img/lightning/image128.png" />
+<img src={useBaseUrl('/img/lightning/image128.png')} />
 
 16. Select the URL and observe the page load
 
-<img src="/img/lightning/image129.png" />
+<img src={useBaseUrl('/img/lightning/image129.png')} />
 
 17. Disconnect the contact.
 
@@ -198,12 +200,12 @@ Attributes.
 
 1.  In Service Console, navigate to your CTI Adapter
 
-<img src="/img/lightning/image130.png" />
+<img src={useBaseUrl('/img/lightning/image130.png')} />
 
 2.  Scroll down to the features section of your AC CTI Adapter and
     select **new**
 
-<img src="/img/lightning/image131.png" />
+<img src={useBaseUrl('/img/lightning/image131.png')} />
 
 3.  Set the AC Feature Name to **FEATURE_CTI_ATTRIBUTES**
 
@@ -214,6 +216,6 @@ Attributes.
         
     b.  **ShowAllAttributes** (Boolean, default false): show all attributes, including attributes with no values
 
-<img src="/img/lightning/image132.png" />
+<img src={useBaseUrl('/img/lightning/image132.png')} />
 
 5.  Select **Save**

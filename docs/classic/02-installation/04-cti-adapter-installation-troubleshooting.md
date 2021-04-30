@@ -3,11 +3,13 @@ id: 04-cti-adapter-installation-troubleshooting
 title: CTI Adapter Installation Troubleshooting and Common Issues
 ---
 
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
 #### I upgraded my adapter to v5.10, but I cannot see the CCP Config changes
 
 There is a bug with Salesforce that doesn't update a page layout when you upgrade a package. To fix this, go to Setup and search for `Objects` and click the option under `Create`. Once you're on the Custom Object page, search for the `AC CTI Adapter` object and click on it. Then go into `Page Layouts` and click `Edit` on the layout you are using (Typically `AC CTI Adapter Layout - August 2020`).  Then, drag and drop the `Audio Device Settings` and `Page Layout Settings` into the desired spot on the page. Finally hit save.
 
-<img src="/img/lightning/troubleshooting2.png" />
+<img src={useBaseUrl('/img/lightning/troubleshooting2.png')} />
 
 #### Error “refused to run the JavaScript URL because it violates the following Content Security Policy directive...”
 
@@ -15,11 +17,11 @@ This is an allowlisting issue, please review the installation and ensure that bo
 
 #### Error “refused to frame” Visualforce page
 
-<img src="/img/classic/troubleshooting0.png" />
+<img src={useBaseUrl('/img/classic/troubleshooting0.png')} />
 
 This can happen if the customer has checked “Enable clickjack protection” on Salesforce session settings. The solution is to uncheck that. 
 
-<img src="/img/classic/troubleshooting1.png" />
+<img src={useBaseUrl('/img/classic/troubleshooting1.png')} />
 
 #### I upgraded my adapter to v5, but I don’t see the CTI Flows feature.
 
@@ -37,4 +39,4 @@ When upgrading from a version of the package to a higher version of the package 
 
 There is a bug with Salesforce that doesn't update a page layout when you upgrade a package. To fix this, go to Setup and search for `Objects` and click the option under `Create`. Once you're on the Custom Object page, search for the `AC CTI Adapter` object and click on it. Then go into `Page Layouts` and click `Edit` on the layout you are using (Typically `AC CTI Adapter Layout - August 2020`). Then, drag and drop the `Audio Device Settings` and `Page Layout Settings` into the desired spot on the page. Finally hit save.
 
-<img src="/img/classic/troubleshooting2.png" />
+<img src={useBaseUrl('/img/classic/troubleshooting2.png')} />

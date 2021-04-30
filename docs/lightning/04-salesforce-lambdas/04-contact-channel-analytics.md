@@ -3,6 +3,8 @@ id: 04-contact-channel-analytics
 title: Contact Channel Analytics
 ---
 
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
 In addition to the CTI adapter's native ability to provide direct
 playback links to call recordings in Amazon Connect, the AWS Serverless
 Application Repository for Salesforce includes several functions that
@@ -73,7 +75,7 @@ To make sure that the AWS resources are set up, make sure that the
 _PostcallRecordingImportEnabled_ parameter is set to true in your
 Cloudformation stack:
 
-<img src="/img/lightning/image266.png" />
+<img src={useBaseUrl('/img/lightning/image266.png')} />
 
 ##### AWS Side Setup
 
@@ -93,13 +95,13 @@ Cloudformation stack:
 
 5. For the **CloudFrontPrivateKey** field, copy and paste the modified contents of the private key .pem file. For the **CloudFrontAccessKeyID** field, copy and paste the **Access Key Id** you recorded above. Your Secrets Manager Secret should look like the following:
 
-<img src="/img/lightning/image270.png" />
+<img src={useBaseUrl('/img/lightning/image270.png')} />
 
 Please note that your secret may also be formatted stored as a "Secret key/value" secret rather than a "Plaintext" secret; both secret types are valid.
 
 6. Navigate to your Salesforce instance. Navigate to setup, then search for "Visualforce pages."
 
-<img src="/img/lightning/image283.png" />
+<img src={useBaseUrl('/img/lightning/image283.png')} />
 
 7. Select the **AC_RecordingViewer** visualforce page, and select "preview." Copy the url of the opened page up until `.com`. Make sure not to include any characters after `.com`.
 
@@ -118,37 +120,37 @@ Please note that your secret may also be formatted stored as a "Secret key/value
 ]
 ```
 
-<img src="/img/lightning/image271.png" />
+<img src={useBaseUrl('/img/lightning/image271.png')} />
 
 10. Select Save
 
 11. Navigate to the "IAM" aws service. Select **Add User**.
 
-<img src="/img/lightning/image272.png" />
+<img src={useBaseUrl('/img/lightning/image272.png')} />
 
 12. Give your IAM user a name, like **sfInvokeGenerateAudioRecordingStreamingURLIAMUser**. For the "AWS Access Type", select **Programmatic access**.
 
-<img src="/img/lightning/image273.png" />
+<img src={useBaseUrl('/img/lightning/image273.png')} />
 
 13. Select Next, then select "Attach existing policies directly." Search for **invokeSfGenerateAudioRecordingStreamingURLPolicy** and select it.
 
 14. Create the user, then copy down the **Access key ID** and the **Secret access key**. These keys will be used in the next section.
 
-<img src="/img/lightning/image284.png" />
+<img src={useBaseUrl('/img/lightning/image284.png')} />
 
 15. Navigate to the "Lambda" aws service. Search for term "sfgenerate" and copy down the full name of the sfGenerateAudioRecordingStreaming lambda. This will be used in the next section.
 
-<img src="/img/lightning/image274.png" />
+<img src={useBaseUrl('/img/lightning/image274.png')} />
 
 16. Navigate back to the "Lambda" aws service main page and navigate to the **us-east-1 region**. Select **create function**.
 
-<img src="/img/lightning/audiostreaming0.png" />
+<img src={useBaseUrl('/img/lightning/audiostreaming0.png')} />
 
 17. Enter a function name, like **sfSig4RequestToS3**.
 
 18. Select **change default execution role**, and **use an existing role**. Search for and select _sfSig4RequestToS3Role_.
 
-<img src="/img/lightning/audiostreaming1.png" />
+<img src={useBaseUrl('/img/lightning/audiostreaming1.png')} />
 
 19. Select **create function**. On the next screen, copy and paste the contents from [this file](/docs/lightning/04-salesforce-lambdas/sfSig4RequestToS3.js) into the function body, and then select **Deploy**.
 
@@ -156,7 +158,7 @@ Please note that your secret may also be formatted stored as a "Secret key/value
 
 21. Select the Cloudfront Distribution that was created by the Salesfore Lambdas serverless application, then check off the "I acknowledge..." check box, then select deploy.
 
-<img src="/img/lightning/audiostreaming2.png" />
+<img src={useBaseUrl('/img/lightning/audiostreaming2.png')} />
 
 ##### Salesforce Side Setup
 
@@ -168,17 +170,17 @@ Please note that your secret may also be formatted stored as a "Secret key/value
 
 4. For **Identity Type** select **Named Principal**. For the **Authentication Protocol**, select **AWS Signature Version 4**. Fill in the **Access key ID** you recorded in the previous section as "AWS Access Key ID", the **Secret access key** as the "AWS Secret Access Key", the AWS Region, and "lambda" as the "AWS Service."
 
-<img src="/img/lightning/image275.png" />
+<img src={useBaseUrl('/img/lightning/image275.png')} />
 
 5. Select **save**.
 
 6. In the setup search box, search for "Permission sets". Select the "AC_CallRecording" permission set. Select "Manage Assignments".
 
-<img src="/img/lightning/image278.png" />
+<img src={useBaseUrl('/img/lightning/image278.png')} />
 
 7. Select "Add Assignments". Add the users that should have access to the audio recordings and select "assign".
 
-<img src="/img/lightning/image279.png" />
+<img src={useBaseUrl('/img/lightning/image279.png')} />
 
 #### Enabling call recording streaming
 
@@ -187,7 +189,7 @@ Please note that your secret may also be formatted stored as a "Secret key/value
 2.  From the left navigation, choose **Routing** then select **Contact
     flows**
 
-<img src="/img/lightning/image201.png" />
+<img src={useBaseUrl('/img/lightning/image201.png')} />
 
 3.  Open the contact flow that you want to use to enable call recording
     import. This contact flow must have Amazon Connect's native
@@ -202,7 +204,7 @@ Please note that your secret may also be formatted stored as a "Secret key/value
 
     b. **Value:** true
 
-<img src="/img/lightning/image202.png" />
+<img src={useBaseUrl('/img/lightning/image202.png')} />
 
 6.  **Save** the Set contact attributes block. Make sure it is
     appropriately connected to your contact flow, and **Publish** the
@@ -224,12 +226,12 @@ Please note that your secret may also be formatted stored as a "Secret key/value
 2.  Expand the **navigation menu** by selecting the down arrow and
     choose **Edit**.
 
-<img src="/img/lightning/image40.png" />
+<img src={useBaseUrl('/img/lightning/image40.png')} />
 
 3.  On the Edit Service Console App Navigation Items page, select **Add
     More Items**
 
-<img src="/img/lightning/image41.png" />
+<img src={useBaseUrl('/img/lightning/image41.png')} />
 
 4.  Select the **+** next to **AC Contact Channel Analytics**
 
@@ -238,27 +240,27 @@ Please note that your secret may also be formatted stored as a "Secret key/value
 6.  Change the order of your Navigation Items if desired, then choose
     **Save**
 
-<img src="/img/lightning/image203.png" />
+<img src={useBaseUrl('/img/lightning/image203.png')} />
 
 7.  Once the save completes, expand the **navigation menu** by selecting
     the down arrow and choose **AC Contact Channel Analytics**
 
-<img src="/img/lightning/image204.png" />
+<img src={useBaseUrl('/img/lightning/image204.png')} />
 
 8.  Change the list view from Recently Viewed to **All**
 
-<img src="/img/lightning/image205.png" />
+<img src={useBaseUrl('/img/lightning/image205.png')} />
 
 9.  Once the view refreshes, you should see your record(s)
 
-<img src="/img/lightning/image206.png" />
+<img src={useBaseUrl('/img/lightning/image206.png')} />
 
 10. Select the recording to open it
 
 11. In the Notes & Attachments section, you will see the recording file
     attached.
 
-<img src="/img/lightning/image207.png" />
+<img src={useBaseUrl('/img/lightning/image207.png')} />
 
 12. NOTE: The recording playback, waveform, and transcript views are
     only active when you also choose to activate recording transcripts.
@@ -286,7 +288,7 @@ Make sure the Salesforce user accessing recording transcription are added to the
 2.  From the left navigation, choose **Routing** then select **Contact
     flows**
 
-<img src="/img/lightning/image201.png" />
+<img src={useBaseUrl('/img/lightning/image201.png')} />
 
 3.  Open the contact flow that you want to use to enable call
     transcription. This contact flow must have Amazon Connect's native
@@ -311,7 +313,7 @@ Make sure the Salesforce user accessing recording transcription are added to the
         Reference](https://docs.aws.amazon.com/transcribe/latest/dg/API_StartTranscriptionJob.html#transcribe-StartTranscriptionJob-request-LanguageCode)
         for valid language codes)
 
-<img src="/img/lightning/image208.png" />
+<img src={useBaseUrl('/img/lightning/image208.png')} />
 
 6.  **Save** the Set contact attributes block. Make sure it is
     appropriately connected to your contact flow, and **Publish** the
@@ -337,22 +339,22 @@ Make sure the Salesforce user accessing recording transcription are added to the
     the steps found in
     [Adding Contact Channel Analytics to the Service Console](#adding-contact-channel-analytics-to-the-service-console).
 
-<img src="/img/lightning/image209.png" />
+<img src={useBaseUrl('/img/lightning/image209.png')} />
 
 3.  Change the list view from Recently Viewed to **All**
 
-<img src="/img/lightning/image205.png" />
+<img src={useBaseUrl('/img/lightning/image205.png')} />
 
 4.  Once the view refreshes, you should see your record(s)
 
-<img src="/img/lightning/image210.png" />
+<img src={useBaseUrl('/img/lightning/image210.png')} />
 
 5.  Select a record to view the details.
 
 6.  Once the record opens, note the recording waveform, playback
     controls, and the visual version of the transcription
 
-<img src="/img/lightning/image211.png" />
+<img src={useBaseUrl('/img/lightning/image211.png')} />
 
 7.  Also note that the transcriptions for each side of the conversation
     are also included as attachments.
@@ -392,7 +394,7 @@ codes and their functions are:
 2.  From the left navigation, choose **Routing** then select **Contact
     flows**
 
-<img src="/img/lightning/image201.png" />
+<img src={useBaseUrl('/img/lightning/image201.png')} />
 
 3.  Open the contact flow that you want to use to enable AI Driven
     Contact Analytics. This contact flow must have Amazon Connect's
@@ -412,7 +414,7 @@ codes and their functions are:
         language detection, and keyphrase
         extraction
 
-<img src="/img/lightning/image212.png" />
+<img src={useBaseUrl('/img/lightning/image212.png')} />
 
 6.  **Save** the Set contact attributes block. Make sure it is
     appropriately connected to your contact flow, and **Publish** the
@@ -439,19 +441,19 @@ codes and their functions are:
     the steps found in
     [Adding Contact Channel Analytics to the Service Console](#adding-contact-channel-analytics-to-the-service-console).
 
-<img src="/img/lightning/image209.png" />
+<img src={useBaseUrl('/img/lightning/image209.png')} />
 
 3.  Change the list view from Recently Viewed to **All**
 
-<img src="/img/lightning/image205.png" />
+<img src={useBaseUrl('/img/lightning/image205.png')} />
 
 4.  Once the view refreshes, you should see your record(s)
 
-<img src="/img/lightning/image210.png" />
+<img src={useBaseUrl('/img/lightning/image210.png')} />
 
 5.  Select a record to view the details.
 
 6.  Once the record opens, note the Keywords, Sentiment, and Dominant
     Language
 
-<img src="/img/lightning/image213.png" />
+<img src={useBaseUrl('/img/lightning/image213.png')} />

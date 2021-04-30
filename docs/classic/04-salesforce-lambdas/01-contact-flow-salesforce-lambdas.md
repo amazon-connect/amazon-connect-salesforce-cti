@@ -3,6 +3,8 @@ id: 01-contact-flow-salesforce-lambdas
 title: Invoking the Amazon Connect Salesforce Lambda in a Contact Flow
 ---
 
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
 The Amazon Connect Contact Flow defines the routing behaviour within
 Amazon Connect, allowing contact center administrators to customize call
 flow behaviour such as playing prompts, invoking Lambda functions for
@@ -49,31 +51,31 @@ you have granted Amazon Connect to invoke the Lambda Function.
 
 Example for phone number lookup:
 
-<img src="/img/classic/image154.png" />
+<img src={useBaseUrl('/img/classic/image154.png')} />
 
-<img src="/img/classic/image155.png" />
+<img src={useBaseUrl('/img/classic/image155.png')} />
 
-<img src="/img/classic/image156.png" />
+<img src={useBaseUrl('/img/classic/image156.png')} />
 
-<img src="/img/classic/image157.png" />
+<img src={useBaseUrl('/img/classic/image157.png')} />
 
 A result example:
 
-<img src="/img/classic/image158.png" />
+<img src={useBaseUrl('/img/classic/image158.png')} />
 
 Example for Case lookup:
 
-<img src="/img/classic/image159.png" />
+<img src={useBaseUrl('/img/classic/image159.png')} />
 
-<img src="/img/classic/image160.png" />
+<img src={useBaseUrl('/img/classic/image160.png')} />
 
-<img src="/img/classic/image161.png" />
+<img src={useBaseUrl('/img/classic/image161.png')} />
 
-<img src="/img/classic/image162.png" />
+<img src={useBaseUrl('/img/classic/image162.png')} />
 
 A result example:
 
-<img src="/img/classic/image163.png" />
+<img src={useBaseUrl('/img/classic/image163.png')} />
 
 ## Salesforce Create
 
@@ -91,26 +93,26 @@ you have granted Amazon Connect to invoke the Lambda Function.
 
 An example for Case creation:
 
-<img src="/img/classic/image164.png" />
+<img src={useBaseUrl('/img/classic/image164.png')} />
 
-<img src="/img/classic/image165.png" />
+<img src={useBaseUrl('/img/classic/image165.png')} />
 
-<img src="/img/classic/image166.png" />
+<img src={useBaseUrl('/img/classic/image166.png')} />
 
-<img src="/img/classic/image167.png" />
+<img src={useBaseUrl('/img/classic/image167.png')} />
 
-<img src="/img/classic/image168.png" />
+<img src={useBaseUrl('/img/classic/image168.png')} />
 
 Contact Id is usually received as a result of a previous phone lookup,
 but it can be also stored as an Attribute (i.e. sf_contact_id)
 
-<img src="/img/classic/image169.png" />
+<img src={useBaseUrl('/img/classic/image169.png')} />
 
-<img src="/img/classic/image170.png" />
+<img src={useBaseUrl('/img/classic/image170.png')} />
 
 A result example (providing the newly created Case Id):
 
-<img src="/img/classic/image171.png" />
+<img src={useBaseUrl('/img/classic/image171.png')} />
 
 ## Salesforce Update
 
@@ -128,20 +130,20 @@ you have granted Amazon Connect to invoke the Lambda Function.
 
 An example for Case update:
 
-<img src="/img/classic/image172.png" />
+<img src={useBaseUrl('/img/classic/image172.png')} />
 
-<img src="/img/classic/image173.png" />
+<img src={useBaseUrl('/img/classic/image173.png')} />
 
-<img src="/img/classic/image174.png" />
+<img src={useBaseUrl('/img/classic/image174.png')} />
 
 Case Id is usually received as a result of a previous case lookup, but
 it can be also stored as an Attribute (i.e. sf_case_id)
 
-<img src="/img/classic/image175.png" />
+<img src={useBaseUrl('/img/classic/image175.png')} />
 
 A result example (HTTP Status Code):
 
-<img src="/img/classic/image176.png" />
+<img src={useBaseUrl('/img/classic/image176.png')} />
 
 204 is "No Content" success code
 
@@ -165,15 +167,15 @@ you have granted Amazon Connect to invoke the Lambda Function.
 
 Example for phone number lookup:
 
-<img src="/img/classic/image177.png" />
+<img src={useBaseUrl('/img/classic/image177.png')} />
 
-<img src="/img/classic/image156.png" />
+<img src={useBaseUrl('/img/classic/image156.png')} />
 
-<img src="/img/classic/image178.png" />
+<img src={useBaseUrl('/img/classic/image178.png')} />
 
 A result example:
 
-<img src="/img/classic/image158.png" />
+<img src={useBaseUrl('/img/classic/image158.png')} />
 
 ## Salesforce query
 
@@ -195,15 +197,15 @@ flow. For example, the parameter set:
 
 Will result in the query: "select Id from Task".
 
-<img src="/img/classic/image179.png" />
+<img src={useBaseUrl('/img/classic/image179.png')} />
 
 In the contact flow example below, we look for a customer by phone number.
 
-<img src="/img/classic/image180.png" />
+<img src={useBaseUrl('/img/classic/image180.png')} />
 
 (full text of the value is "select Id from Contact where Phone LIKE \'%number%\'")
 
-<img src="/img/classic/image181.png" />
+<img src={useBaseUrl('/img/classic/image181.png')} />
 
 This operation returns a response of:
 
@@ -242,14 +244,14 @@ Will result in the query: "select Id from Task".
 
 In the contact flow example below, we look for a customer by phone number.
 
-<img src="/img/classic/image179.png" />
+<img src={useBaseUrl('/img/classic/image179.png')} />
 
 (full text of the value is "select Id from Contact where Phone LIKE
 \'%number%\'")
 
-<img src="/img/classic/image181.png" />
+<img src={useBaseUrl('/img/classic/image181.png')} />
 
-<img src="/img/classic/image180.png" />
+<img src={useBaseUrl('/img/classic/image180.png')} />
 
 This operation returns a response of:
 
@@ -298,13 +300,13 @@ Will result in the message: "Please help me with case 1234".
 
 In the contact flow example below, we leave a chatter post on a contact.
 
-<img src="/img/classic/image182.png" />
+<img src={useBaseUrl('/img/classic/image182.png')} />
 
-<img src="/img/classic/image183.png" />
+<img src={useBaseUrl('/img/classic/image183.png')} />
 
-<img src="/img/classic/image184.png" />
+<img src={useBaseUrl('/img/classic/image184.png')} />
 
-<img src="/img/classic/image185.png" />
+<img src={useBaseUrl('/img/classic/image185.png')} />
 
 (full text of the value is "I had a problem during the call. My contact id is {{contactId}}.")
 
@@ -316,7 +318,7 @@ The operation returns a response of:
 }
 ```
 
-<img src="/img/classic/image186.png" />
+<img src={useBaseUrl('/img/classic/image186.png')} />
 the Subject:
 
 ## Salesforce createChatterComment
@@ -345,11 +347,11 @@ within the contact flow. For example, the parameter set:
 
 In the contact flow example below, we leave a comment on a chatter post.
 
-<img src="/img/classic/image187.png" />
+<img src={useBaseUrl('/img/classic/image187.png')} />
 
-<img src="/img/classic/image188.png" />
+<img src={useBaseUrl('/img/classic/image188.png')} />
 
-<img src="/img/classic/image189.png" />
+<img src={useBaseUrl('/img/classic/image189.png')} />
 
 The operation returns a response of:
 
@@ -361,7 +363,7 @@ The operation returns a response of:
 
 See the chatter post appear attached to the Subject:
 
-<img src="/img/classic/image190.png" />
+<img src={useBaseUrl('/img/classic/image190.png')} />
 
 Salesforce search
 -------------------------------
@@ -387,17 +389,17 @@ The following parameters are optional:
 
 See the below example:
 
-<img src="/img/classic/image320.png" /> 58
+<img src={useBaseUrl('/img/classic/image320.png')} /> 58
 
-<img src="/img/classic/image321.png" /> 59
+<img src={useBaseUrl('/img/classic/image321.png')} /> 59
 
-<img src="/img/classic/image322.png" /> 60
+<img src={useBaseUrl('/img/classic/image322.png')} /> 60
 
-<img src="/img/classic/image323.png" /> 61
+<img src={useBaseUrl('/img/classic/image323.png')} /> 61
 
-<img src="/img/classic/image324.png" /> 62
+<img src={useBaseUrl('/img/classic/image324.png')} /> 62
 
-<img src="/img/classic/image325.png" /> 63
+<img src={useBaseUrl('/img/classic/image325.png')} /> 63
 
 The operation returns a response of:
 
@@ -446,17 +448,17 @@ The following parameter is optional:
 
 See the below example:
 
-<img src="/img/classic/image326.png" />
+<img src={useBaseUrl('/img/classic/image326.png')} />
 
-<img src="/img/classic/image327.png" />
+<img src={useBaseUrl('/img/classic/image327.png')} />
 
-<img src="/img/classic/image322.png" />
+<img src={useBaseUrl('/img/classic/image322.png')} />
 
-<img src="/img/classic/image323.png" />
+<img src={useBaseUrl('/img/classic/image323.png')} />
 
-<img src="/img/classic/image324.png" />
+<img src={useBaseUrl('/img/classic/image324.png')} />
 
-<img src="/img/classic/image325.png" />
+<img src={useBaseUrl('/img/classic/image325.png')} />
 
 The operation returns a response of:
 

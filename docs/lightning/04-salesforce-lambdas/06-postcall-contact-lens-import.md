@@ -3,6 +3,8 @@ id: 06-postcall-contact-lens-import
 title: Postcall Contact Lens Import
 ---
 
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
 Contact Lens for Amazon Connect is a set of machine learning (ML) capabilities integrated into Amazon Connect. With Contact Lens for Amazon Connect, contact center supervisors can better understand the sentiment, trends, and compliance of customer conversions to effectively train agents, replicate successful interactions, and identify crucial company and product feedback. 
 
 Contact Lens are available within your Amazon Connect instance in CTR page, and Contact Lens data are stored in Amazon Connect S3 bucket. With the AWS Serverless Application for Salesforce (Amazon Connect Salesforce Lambda), you can import Contact Lens data into your Salesforce org. 
@@ -31,11 +33,11 @@ Once enabled during the installation of AWS Serverless Application (Amazon Conne
 
 8. Select Add trigger
 
-<img src="/img/lightning/contactlenslambda-1.png" />
+<img src={useBaseUrl('/img/lightning/contactlenslambda-1.png')} />
 
 9. In Trigger congiguration, select S3 from the dropdown list
 
-<img src="/img/lightning/image188.png" />
+<img src={useBaseUrl('/img/lightning/image188.png')} />
 
 10. Select the bucket of your Amazon Connect instace. You can find your Amazon Connect bucket name by clicking on your Amazon Connect instance alias in Amazon Connect console.
 
@@ -47,7 +49,7 @@ Once enabled during the installation of AWS Serverless Application (Amazon Conne
 
 14. The trigger configuration should now be similar to the following:
 
-<img src="/img/lightning/contactlenslambda-2.png" />
+<img src={useBaseUrl('/img/lightning/contactlenslambda-2.png')} />
 
 15. Select **Add**
 
@@ -59,7 +61,7 @@ Once enabled during the installation of AWS Serverless Application (Amazon Conne
 
 2. From the left navigation, choose **Routing** then select **Contact         flows**
 
-<img src="/img/lightning/image201.png" />
+<img src={useBaseUrl('/img/lightning/image201.png')} />
 
 3.  Open the contact flow that you want to use to enable Contact Lens
     import.
@@ -71,17 +73,17 @@ Once enabled during the installation of AWS Serverless Application (Amazon Conne
 
     * To turn on Contact Lens data import, set ***contactLensImportEnabled*** to ***true***.
 
-        <img src="/img/lightning/contactlensattributes-1.png" />
+        <img src={useBaseUrl('/img/lightning/contactlensattributes-1.png')} />
 
     * For recording import, there are two options: original call recording and redacted call recording. **Note that you can only import one of the recordings for each contact.**
 
         * To turn on original recording import, set ***postcallRecordingImportEnabled*** to ***true***
 
-            <img src="/img/lightning/contactlensattributes-2.png"/>
+            <img src={useBaseUrl('/img/lightning/contactlensattributes-2.png')} />
 
         * To turn on redacted recording import, set ***postcallRedactedRecordingImportEnabled*** to ***true***
 
-            <img src="/img/lightning/contactlensattributes-3.png"/>
+            <img src={useBaseUrl('/img/lightning/contactlensattributes-3.png')} />
 
 6.  **Save** the Set contact attributes block. Make sure it is
     appropriately connected to your contact flow, and **Publish** the

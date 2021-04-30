@@ -3,6 +3,8 @@ id: 02-installing-salesforce-lambdas
 title: Installing the Amazon Connect Salesforce Lambda Package
 ---
 
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
 The Amazon Connect Salesforce Lambda package adds considerable
 capability to the integration. It includes data connectivity between
 Amazon Connect and Salesforce for typical tasks like lookups, case
@@ -47,19 +49,19 @@ will point out the items you will need to provide.
 2.  In the **Quick Find** field, type **apex**, then select **Apex
     Classes** from the results
 
-<img src="/img/lightning/image56.png" />
+<img src={useBaseUrl('/img/lightning/image56.png')} />
 
 3.  Select New
 
-<img src="/img/lightning/image57.png" />
+<img src={useBaseUrl('/img/lightning/image57.png')} />
 
 4.  Select the Version Settings tab
 
-<img src="/img/lightning/image58.png" />
+<img src={useBaseUrl('/img/lightning/image58.png')} />
 
 5.  Note the Salesforce.com API version in your notepad
 
-<img src="/img/lightning/image59.png" />
+<img src={useBaseUrl('/img/lightning/image59.png')} />
 
 #### Create a New Connected App
 
@@ -79,22 +81,22 @@ with OAuth settings enabled.
 
 3.  In the upper right corner, select **New Connected App**
 
-<img src="/img/lightning/image60.png" />
+<img src={useBaseUrl('/img/lightning/image60.png')} />
 
 4.  On the New Connected App form, enter a name for the Connected App,
     such as **Amazon Connect Integration** and press tab. This will
     populate the API Name automatically. Then provide a contact email
     address
 
-<img src="/img/lightning/image61.png" />
+<img src={useBaseUrl('/img/lightning/image61.png')} />
 
 5.  Select the checkbox to **Enable OAuth Settings**
 
-<img src="/img/lightning/image62.png" />
+<img src={useBaseUrl('/img/lightning/image62.png')} />
 
 6.  Set the **Callback URL** to https://www.salesforce.com
 
-<img src="/img/lightning/image63.png" />
+<img src={useBaseUrl('/img/lightning/image63.png')} />
 
 7.  In the Selected OAuth Scopes section, select the following and add
     them to the Selected OAuth Scopes:
@@ -108,7 +110,7 @@ with OAuth settings enabled.
 11. The **API (Enable OAuth Settings)** section should now look like
     this
 
-<img src="/img/lightning/image64.png" />
+<img src={useBaseUrl('/img/lightning/image64.png')} />
 
 12. Select **Save** at the bottom of the screen.
 
@@ -133,7 +135,7 @@ with OAuth settings enabled.
 
 21. The OAuth Policies section should now look like the following
 
-<img src="/img/lightning/image65.png" />
+<img src={useBaseUrl('/img/lightning/image65.png')} />
 
 22. Select **Save**
 
@@ -149,7 +151,7 @@ It is a common practice to create an API user account for this purpose.
 
 3.  Select New Profile
 
-<img src="/img/lightning/image66.png" />
+<img src={useBaseUrl('/img/lightning/image66.png')} />
 
 4.  Provide a Profile Name, such as **API_ONLY**
 
@@ -158,7 +160,7 @@ It is a common practice to create an API user account for this purpose.
     user to be able to set the below permissions and have full access to
     avoid any other errors.
 
-<img src="/img/lightning/image67.png" />
+<img src={useBaseUrl('/img/lightning/image67.png')} />
 
 6.  Select **Save** to create the new profile
 
@@ -168,7 +170,7 @@ It is a common practice to create an API user account for this purpose.
 
 9.  If the Lightning Experience User checkbox is selected, clear it
 
-<img src="/img/lightning/image68.png" />
+<img src={useBaseUrl('/img/lightning/image68.png')} />
 
 10. Scroll down to the **Password Policies** section at the bottom of
     the page
@@ -181,7 +183,7 @@ It is a common practice to create an API user account for this purpose.
 13. In the **Quick Find** field, type **connect**, then select **Manage
     Connected Apps** from the results
 
-<img src="/img/lightning/image69.png" />
+<img src={useBaseUrl('/img/lightning/image69.png')} />
 
 14. Select the app you have created earlier, **Amazon Connect
     Integration**
@@ -217,7 +219,7 @@ It is a common practice to create an API user account for this purpose.
 
 24. In **Quick Find**, search for "Permission Sets". Select the **AC_Administrator** permission set.
 
-<img src="/img/lightning/lambda-install-0.png" />
+<img src={useBaseUrl('/img/lightning/lambda-install-0.png')} />
 
 25. Select **Manage Assignments**. Add the apiuser you just created to the permission set.
 
@@ -233,12 +235,12 @@ It is a common practice to create an API user account for this purpose.
 29. Access the API user's personal settings by selecting the username in
     the top right corner, then choose **My Settings**
 
-<img src="/img/lightning/image70.png" />
+<img src={useBaseUrl('/img/lightning/image70.png')} />
 
 30. In the **Quick Find** field, type **security** then select **Reset
     My Security Token** from the results
 
-<img src="/img/lightning/image71.png" />
+<img src={useBaseUrl('/img/lightning/image71.png')} />
 
 31. Select **Reset Security Token**. Your security token will be emailed
     to you
@@ -263,7 +265,7 @@ Connect instance. These will be used during the package installation.
     instance/ in the Instance ARN and paste it to your notepad. This is
     your Instance ID.
 
-<img src="/img/lightning/image72.png" />
+<img src={useBaseUrl('/img/lightning/image72.png')} />
 
 5.  In the left nav, select **Data storage**
 
@@ -271,7 +273,7 @@ Connect instance. These will be used during the package installation.
     recordings and Exported Reports. The bucket name is everything
     preceding the first / in the XX will be stored here sections
 
-<img src="/img/lightning/image73.png" />
+<img src={useBaseUrl('/img/lightning/image73.png')} />
 
 7.  In the left nav, select **Data streaming**
 
@@ -285,7 +287,7 @@ Connect instance. These will be used during the package installation.
 
 10. On the stream detail page, copy the entire value for Stream ARN
 
-<img src="/img/lightning/image74.png" />
+<img src={useBaseUrl('/img/lightning/image74.png')} />
 
 #### Store Salesforce Credentials in AWS Secrets Manager
 
@@ -300,7 +302,7 @@ retrieve secrets.
     instance. You can set the region by expanding the region selector in
     the upper right and choosing the region
 
-<img src="/img/lightning/image75.png" />
+<img src={useBaseUrl('/img/lightning/image75.png')} />
 
 3.  Navigate to the [Secrets Manager
     console](https://console.aws.amazon.com/secretsmanager/home)
@@ -362,7 +364,7 @@ retrieve secrets.
 
 22. Select the key you just created
 
-<img src="/img/lightning/image76.png" />
+<img src={useBaseUrl('/img/lightning/image76.png')} />
 
 23. Click Next
 
@@ -378,7 +380,7 @@ retrieve secrets.
 
 29. Select the secret you just created, and copy the Secret ARN
 
-<img src="/img/lightning/image77.png" />
+<img src={useBaseUrl('/img/lightning/image77.png')} />
 
 30. You should now have all of the information you need to install the
     package
@@ -402,18 +404,18 @@ retrieve secrets.
 
 6.  In the left navigation, select **Available Applications**
 
-<img src="/img/lightning/image78.png" />
+<img src={useBaseUrl('/img/lightning/image78.png')} />
 
 7.  In the search area, make sure that **Public applications** is
     selected, check the box for **Show apps that create custom IAM roles
     or resource policies**, and enter **Salesforce** in the search
     field, this will automatically filter the available packages
 
-<img src="/img/lightning/image79.png" />
+<img src={useBaseUrl('/img/lightning/image79.png')} />
 
 8.  Select AmazonConnectSalesForceLambda
 
-<img src="/img/lightning/image80.png" />
+<img src={useBaseUrl('/img/lightning/image80.png')} />
 
 9.  When the Application loads, scroll down to the **Application
     settings** section
@@ -535,7 +537,7 @@ retrieve secrets.
     by the UI. Once it has completely deployed, you will receive a
     notification on the screen
 
-<img src="/img/lightning/image81.png" />
+<img src={useBaseUrl('/img/lightning/image81.png')} />
 
 ### Test the Core Functionality
 
@@ -561,7 +563,7 @@ make validation easier.
 3.  In the Filter field, enter sfInvokeAPI and press enter, this will
     filter your list out to the core function that we just installed
 
-<img src="/img/lightning/image82.png" />
+<img src={useBaseUrl('/img/lightning/image82.png')} />
 
 4.  Select the **function name.** First, we will validate a phone number
     lookup.
@@ -569,7 +571,7 @@ make validation easier.
 5.  In the Environment pane, double-click the event-phoneLookup.json
     file
 
-<img src="/img/lightning/image83.png" />
+<img src={useBaseUrl('/img/lightning/image83.png')} />
 
 6.  The test even JSON will open in the Lambda editor
 
@@ -579,7 +581,7 @@ make validation easier.
     NOTE: The phone number must be in [E.164
     format](https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-contact-control-panel.html#international-calls-ccp)
 
-<img src="/img/lightning/image84.png" />
+<img src={useBaseUrl('/img/lightning/image84.png')} />
 
 8.  Select the entire JSON event and copy it, then close the
     **event-phoneLookup.json** tab.
@@ -587,7 +589,7 @@ make validation easier.
 9.  In the top-right corner, select drop-down arrow next to **Test** and
     choose **Configure test events**
 
-<img src="/img/lightning/image85.png" />
+<img src={useBaseUrl('/img/lightning/image85.png')} />
 
 10. Select the radio button for **Create new test event** and provide an
     event name, for example: **phoneLookup**
@@ -595,21 +597,21 @@ make validation easier.
 11. Select the existing event JSON and **delete** it. Paste the modified
     JSON payload you copied from the **event-phoneLookup.json** file
 
-<img src="/img/lightning/image86.png" />
+<img src={useBaseUrl('/img/lightning/image86.png')} />
 
 12. Select **Create** to save your test event
 
 13. By default, your new test event should be selected in the drop-down
     list to the left of the Test button.
 
-<img src="/img/lightning/image87.png" />
+<img src={useBaseUrl('/img/lightning/image87.png')} />
 
 14. Select **Test**
 
 15. If successful, the result will contain fields defined in "sf_fields"
     parameter in the invocation event
 
-<img src="/img/lightning/image88.png" />
+<img src={useBaseUrl('/img/lightning/image88.png')} />
 
 16. Copy the value for the **Id** key in the response. Next, we are
     going to use that Id to create a Case in Salesforce.
@@ -618,7 +620,7 @@ make validation easier.
     file. Replace the existing ContactId value with the ID value you
     copied previously.
 
-<img src="/img/lightning/image89.png" />
+<img src={useBaseUrl('/img/lightning/image89.png')} />
 
 18. Select the entire JSON event and copy it, then close the
     **event-create.json** tab.
@@ -626,7 +628,7 @@ make validation easier.
 19. In the top-right corner, select drop-down arrow next to **Test** and
     choose **Configure test events**
 
-<img src="/img/lightning/image90.png" />
+<img src={useBaseUrl('/img/lightning/image90.png')} />
 
 20. Select the radio button for **Create new test event** and provide an
     event name, for example: **createCase**
@@ -634,20 +636,20 @@ make validation easier.
 21. Select the existing event JSON and **delete** it. Paste the modified
     JSON payload you copied from the **event-create.json** file
 
-<img src="/img/lightning/image91.png" />
+<img src={useBaseUrl('/img/lightning/image91.png')} />
 
 22. Select **Create** to save your test event
 
 23. By default, your new test event should be selected in the drop-down
     list to the left of the Test button.
 
-<img src="/img/lightning/image92.png" />
+<img src={useBaseUrl('/img/lightning/image92.png')} />
 
 24. Select **Test**
 
 25. If successful, the result will contain the Case Id
 
-<img src="/img/lightning/image93.png" />
+<img src={useBaseUrl('/img/lightning/image93.png')} />
 
 26. Copy the value for the **Id** key in the response.
 
@@ -659,7 +661,7 @@ make validation easier.
     and replace the existing Case Id in "sf_id" parameter with the new
     one you copied from the last test result
 
-<img src="/img/lightning/image94.png" />
+<img src={useBaseUrl('/img/lightning/image94.png')} />
 
 29. Select the **entire JSON event** and copy it, then close the
     **event-update.json** tab.
@@ -667,7 +669,7 @@ make validation easier.
 30. In the top-right corner, select drop-down arrow next to **Test** and
     choose **Configure test events
 
-<img src="/img/lightning/image95.png" />
+<img src={useBaseUrl('/img/lightning/image95.png')} />
 
 31. Select the radio button for **Create new test event** and provide an
     event name, for example: **updateCase**
@@ -675,33 +677,33 @@ make validation easier.
 32. Select the existing event JSON and **delete** it. Paste the modified
     JSON payload you copied from the **event-update.json** file
 
-<img src="/img/lightning/image96.png" />
+<img src={useBaseUrl('/img/lightning/image96.png')} />
 
 33. Select **Create** to save your test event
 
 34. By default, your new test event should be selected in the drop-down
     list to the left of the Test button.
 
-<img src="/img/lightning/image97.png" />
+<img src={useBaseUrl('/img/lightning/image97.png')} />
 
 35. Select **Test**
 
 36. If successful, the result will be the **HTTP 204** No Content
     success status response code
 
-<img src="/img/lightning/image98.png" />
+<img src={useBaseUrl('/img/lightning/image98.png')} />
 
 37. Log in into your Salesforce org and go to the **Service Console**
 
 38. In the search box, change the object type to Cases and type Amazon
     Connect Case, then press enter
 
-<img src="/img/lightning/image99.png" />
+<img src={useBaseUrl('/img/lightning/image99.png')} />
 
 39. You should find 1 case opened by the API user, and the status should
     be closed
 
-<img src="/img/lightning/image100.png" />
+<img src={useBaseUrl('/img/lightning/image100.png')} />
 
 40. You have completed core function validation
 
@@ -724,18 +726,18 @@ to invoke the function.
 
 4.  In the navigation pane, choose **Contact flows**.
 
-<img src="/img/lightning/image101.png" />
+<img src={useBaseUrl('/img/lightning/image101.png')} />
 
 5.  For **AWS Lambda**, select the function that includes sfInvokeAPI in
     the name
 
-<img src="/img/lightning/image102.png" />
+<img src={useBaseUrl('/img/lightning/image102.png')} />
 
 6.  Choose **Add Lambda Function**. Confirm that the ARN of the function
     is added under **Lambda Functions**.
     
 
-<img src="/img/lightning/image103.png" />
+<img src={useBaseUrl('/img/lightning/image103.png')} />
 
 7.  The AWS Lambda function has been added to your Amazon Connect
     instance.

@@ -3,6 +3,8 @@ id: 03-contact-attributes-display
 title: Contact Attributes Display
 ---
 
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
 Amazon Connect allows for user defined Contact Attributes to be attached
 to a phone call within Contact Flows. This can be used to track caller
 inputs, IVR selections, outcomes of an interaction with Amazon Lex, or
@@ -19,7 +21,7 @@ To configure a contact attribute for display within embedded CCP:
 
 In the top navigation bar, select the "+" icon.
 
-<img src="/img/classic/image22.png" />
+<img src={useBaseUrl('/img/classic/image22.png')} />
 
 Select "AC CTI Adapters"
 
@@ -31,15 +33,15 @@ ACConsoleAdapter. Select Save.
 
 2.  From the top right corner, select the **Sales** application.
 
-<img src="/img/classic/image21.png" />
+<img src={useBaseUrl('/img/classic/image21.png')} />
 
-<img src="/img/classic/image23.png" />
+<img src={useBaseUrl('/img/classic/image23.png')} />
 3. Select **AC CTI Adapters** and select your adapter
 
 4.  Scroll down to the attributes section and select **New AC CTI
     Attribute**
 
-<img src="/img/classic/image191.png" />
+<img src={useBaseUrl('/img/classic/image191.png')} />
 
 5.  Provide a **CTI Attribute Name**, for example: authenticated
 
@@ -58,28 +60,28 @@ ACConsoleAdapter. Select Save.
 
 12. Choose **Save**
 
-<img src="/img/classic/image192.png" />
+<img src={useBaseUrl('/img/classic/image192.png')} />
 
 13. Open the Amazon Connect Contact Flow Designer and drop *Set \> Set
     Contact Attributes* block to your Contact Flow. Set the attribute
     based on your business logic. For example:
 
-<img src="/img/classic/image193.png" />
+<img src={useBaseUrl('/img/classic/image193.png')} />
 
 14. Place and inbound call and ask to speak with an agent. Accept the
     incoming call and check if Contact Attribute is displayed in the
     embedded CCP.
 
-<img src="/img/classic/image194.png" />
+<img src={useBaseUrl('/img/classic/image194.png')} />
 
 There are additional features that can be used to further customize CTI
 attributes.
 
-<img src="/img/classic/image195.png" />
+<img src={useBaseUrl('/img/classic/image195.png')} />
 
 1.   In the Sales application, navigate to your CTI Adapter your CTI Adapter
 
-<img src="/img/classic/image196.png" />
+<img src={useBaseUrl('/img/classic/image196.png')} />
 
 2.  Scroll down to the Features section. Select **New AC Feature**.
 
@@ -92,6 +94,6 @@ attributes.
 
     b. **ShowAllAttributes** (Boolean, default false): show all attributes, including attributes with no value
 
-<img src="/img/classic/image197.png" />
+<img src={useBaseUrl('/img/classic/image197.png')} />
 
 5.  Select **Save**

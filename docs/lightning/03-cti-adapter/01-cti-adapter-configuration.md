@@ -3,12 +3,14 @@ id: 01-cti-adapter-configuration
 title: CTI Adapter Details
 ---
 
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
 The CTI Adapter configuration begins with the adapter details. These
 fields provide the basic information needed to relate the Adapter to the
 call center configuration in Salesforce and, ultimately, to the agents
 and supervisors that will be using the platform.
 
-<img src="/img/lightning/image113.png" />
+<img src={useBaseUrl('/img/lightning/image113.png')} />
 
 #### Update the CTI Adapter Details
 
@@ -122,14 +124,14 @@ Contact Control Panel once authentication completes.
 2.  Expand the **navigation menu** by selecting the down arrow and
     choose **AC CTI Adapters**.
 
-<img src="/img/lightning/image114.png" />
+<img src={useBaseUrl('/img/lightning/image114.png')} />
 
 3.  Select **ACLightningAdapter**
 
 4.  Scroll down to the Single SignOn (SSO) section and choose the pencil
     icon of either field to edit
 
-<img src="/img/lightning/image115.png" />
+<img src={useBaseUrl('/img/lightning/image115.png')} />
 
 5.  For the SSO Url, paste your IdP login URL up to the first question
     mark (if one exists). A couple of examples are provided:
@@ -140,7 +142,7 @@ Contact Control Panel once authentication completes.
 
 6.  Paste this portion of the URL into the **SSO Url** field
 
-<img src="/img/lightning/image116.png" />
+<img src={useBaseUrl('/img/lightning/image116.png')} />
 
 7.  For the SSO Relay State:
     IF you had a question mark in your login URL, paste everything AFTER
@@ -155,7 +157,7 @@ Contact Control Panel once authentication completes.
 
 8.  Example of a completed SSO section (Salesforce is shown)
 
-<img src="/img/lightning/image117.png" />
+<img src={useBaseUrl('/img/lightning/image117.png')} />
 
 9.  Choose **Save**
 
@@ -165,13 +167,13 @@ Contact Control Panel once authentication completes.
         warning and change the setting to always allow popups from your
         Salesforce org, then refresh the browser again
 
-<img src="/img/lightning/image118.png" />
+<img src={useBaseUrl('/img/lightning/image118.png')} />
 
 11. After a few seconds, a new window should pop up for a moment. This
     window is performing the authentication and setting your session
     cookie. Once it does this, it will close automatically.
 
-<img src="/img/lightning/image119.png" />
+<img src={useBaseUrl('/img/lightning/image119.png')} />
 
 12. Once the authentication window closes, select the **phone icon** in
     the console toolbar to open the CCP
@@ -180,6 +182,6 @@ Contact Control Panel once authentication completes.
 
 13. You should now see the authenticated and logged in CCP
 
-<img src="/img/lightning/image120.png" />
+<img src={useBaseUrl('/img/lightning/image120.png')} />
 
 14. SSO Configuration is complete
