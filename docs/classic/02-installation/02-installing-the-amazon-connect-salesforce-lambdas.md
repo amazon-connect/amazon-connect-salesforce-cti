@@ -3,6 +3,8 @@ id: 02-installing-the-amazon-connect-salesforce-lambdas
 title: Installing the Amazon Connect Salesforce Lambda Package
 ---
 
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
 This section will guide you through the installation process of Amazon
 Connect Salesforce Lambda package, which is hosted in AWS Serverless
 Application Repository.
@@ -14,7 +16,7 @@ defines the AWS resources used. There is no additional charge to use the
 Serverless Application Repository - you only pay for the AWS resources
 used in the applications you deploy.
 
-<img src="/img/classic/image100.png" />
+<img src={useBaseUrl('/img/classic/image100.png')} />
 
 ## Salesforce Lambda Prerequisites
 
@@ -44,21 +46,21 @@ OAuth settings enabled.
 
 2.  Navigate to Setup \> Create \> Apps
 
-<img src="/img/classic/image101.png" />
+<img src={useBaseUrl('/img/classic/image101.png')} />
 
 3.  Click on the "New" button for the Connected Apps at the bottom of the page
 
 4.  In the following form, fill out the Connected App Name, API Name and Contact Email with values of your choice. We recommend "Amazon Connect Integration" as the Connected App Name and the default value for the API name.
 
-<img src="/img/classic/image102.png" />
+<img src={useBaseUrl('/img/classic/image102.png')} />
 
 5.  Select the checkbox next to "Enable OAuth Settings" as shown below.
 
-<img src="/img/classic/image103.png" />
+<img src={useBaseUrl('/img/classic/image103.png')} />
 
 6.  Ensure the Callback URL is set to <https://www.salesforce.com>
 
-<img src="/img/classic/image104.png" />
+<img src={useBaseUrl('/img/classic/image104.png')} />
 
 7.  Ensure Selected OAuth Scopes has the following values selected:
 
@@ -66,41 +68,41 @@ a.  Access and manage your data (api)
 
 b.  Access your basic information (id, profile, email, address, phone)
 
-<img src="/img/classic/image105.png" />
+<img src={useBaseUrl('/img/classic/image105.png')} />
 
 8.  Select the checkbox "Require Secret for Web Server Flow"
 
-<img src="/img/classic/image106.png" />
+<img src={useBaseUrl('/img/classic/image106.png')} />
 
 9.  Click "Save" at the bottom of the screen.
 
 10. Click "Continue" on the next screen
 
-<img src="/img/classic/image107.png" />
+<img src={useBaseUrl('/img/classic/image107.png')} />
 
 11. Once the app has been created, on the app's detail screen, please copy the "Consumer Key" value to your installation notes
 
-<img src="/img/classic/image108.png" />
+<img src={useBaseUrl('/img/classic/image108.png')} />
 
 12. Select "Click to reveal" next to Consumer Secret and record this value to "Consumer Secret" in your installation notes.
 
 13. Click "Manage" at the top of the page
 
-<img src="/img/classic/image109.png" />
+<img src={useBaseUrl('/img/classic/image109.png')} />
 
 14. On the page that appears, click "Edit Policies"
 
 15. Set "Permitted Users" to "Admin approved users are pre-authorizes"
 
-<img src="/img/classic/image110.png" />
+<img src={useBaseUrl('/img/classic/image110.png')} />
 
 16. Click "OK" on the pop-up dialog:
 
-<img src="/img/classic/image111.png" />
+<img src={useBaseUrl('/img/classic/image111.png')} />
 
 17. Set "IP Relaxation" to "Relax IP restrictions"
 
-<img src="/img/classic/image112.png" />
+<img src={useBaseUrl('/img/classic/image112.png')} />
 
 18. Click "Save"
 
@@ -120,7 +122,7 @@ this purpose.
 
 5.  Select the existing profile to clone (The integration user\'s access to just those objects required for the integration)
 
-<img src="/img/classic/image113.png" />
+<img src={useBaseUrl('/img/classic/image113.png')} />
 
 NOTE: You\'re advised to use a full Salesforce License for the user to
 be able to set the below permissions and have full access to avoid any
@@ -128,23 +130,23 @@ other errors.
 
 6.  Click "Save". A New Profile is created:
 
-<img src="/img/classic/image114.png" />
+<img src={useBaseUrl('/img/classic/image114.png')} />
 
 7.  Once the new profile page opens, select the **System Permissions** button
 
 8.  If the Lightning Experience User checkbox is selected, clear it
 
-<img src="/img/classic/image117.png" />
+<img src={useBaseUrl('/img/classic/image117.png')} />
 
 9. Save the system permissions, then go back to Profile Overview
 
 10. Select the _Password Policies_ link, click edit
 
-<img src="/img/classic/image115.png" />
+<img src={useBaseUrl('/img/classic/image115.png')} />
 
 11. Set **User password expire in** to **Never expires** **NOTE:** Failure to this may lead to production outages.
 
-<img src="/img/classic/image116.png" />
+<img src={useBaseUrl('/img/classic/image116.png')} />
 
 12. Select **Save**
 
@@ -152,15 +154,15 @@ other errors.
 
 14. Select the app you have created in the previous step (i.e. Amazon Connect Integration)
 
-<img src="/img/classic/image118.png" />
+<img src={useBaseUrl('/img/classic/image118.png')} />
 
 15. Click "Manage Profiles"
 
-<img src="/img/classic/image119.png" />
+<img src={useBaseUrl('/img/classic/image119.png')} />
 
 16. Ensure the "API Only" profile is selected:
 
-<img src="/img/classic/image120.png" />
+<img src={useBaseUrl('/img/classic/image120.png')} />
 
 17. Click "Save" at the bottom of the page
 
@@ -168,46 +170,46 @@ other errors.
 
 19. Click "New User"
 
-<img src="/img/classic/image121.png" />
+<img src={useBaseUrl('/img/classic/image121.png')} />
 
 20. Set necessary fields: Last Name, Alias, Email, Username, Nickname
 
-<img src="/img/classic/image122.png" />
+<img src={useBaseUrl('/img/classic/image122.png')} />
 
 21. On the right-hand side, set the User License and Profile
 
-<img src="/img/classic/image123.png" />
+<img src={useBaseUrl('/img/classic/image123.png')} />
 
 22. Click "Save"
 
 23. In **Quick Find**, search for "Permission Sets". Select the **AC_Administrator** permission set.
 
-<img src="/img/classic/lambda-install-0.png" />
+<img src={useBaseUrl('/img/classic/lambda-install-0.png')} />
 
 24. Select **Manage Assignments**. Add the apiuser you just created to the permission set.
 
 25. A confirmation email will be sent, with an activation link. Click the link to activate your user.
 
-<img src="/img/classic/image124.png" />
+<img src={useBaseUrl('/img/classic/image124.png')} />
 
 Change (set) a password for apiuser (Considered a strong that contains
 at least 20 random characters):
 
-<img src="/img/classic/image125.png" />
+<img src={useBaseUrl('/img/classic/image125.png')} />
 
 26. Click "Change Password"
 
 27. Access the apiuser personal settings by selecting the username in the top right corner, then "My Settings".
 
-<img src="/img/classic/image126.png" />
+<img src={useBaseUrl('/img/classic/image126.png')} />
 
 28. Type "Security Token" in the Quick Find box and click "Reset My Security Token".
 
-<img src="/img/classic/image127.png" />
+<img src={useBaseUrl('/img/classic/image127.png')} />
 
 29. Your security token will be emailed to you
 
-<img src="/img/classic/image128.png" />
+<img src={useBaseUrl('/img/classic/image128.png')} />
 
 30. Copy the security token from the email in to your installation notes for the "Access Token" value.
 
@@ -224,7 +226,7 @@ retrieve secrets.
     instance. You can set the region by expanding the region selector in
     the upper right and choosing the region
 
-<img src="/img/classic/image129.png" />
+<img src={useBaseUrl('/img/classic/image129.png')} />
 
 3.  Navigate to the [Secrets Manager
     console](https://console.aws.amazon.com/secretsmanager/home)
@@ -279,7 +281,7 @@ retrieve secrets.
 
 20. Select the key you just created
 
-<img src="/img/classic/image130.png" />
+<img src={useBaseUrl('/img/classic/image130.png')} />
 
 21. Click Next
 
@@ -295,7 +297,7 @@ retrieve secrets.
 
 27. Select the secret you just created, and copy the Secret ARN
 
-<img src="/img/classic/image131.png" />
+<img src={useBaseUrl('/img/classic/image131.png')} />
 
 28. You should now have all of the information you need to install the
     package
@@ -307,24 +309,24 @@ retrieve secrets.
 2.  Navigate AWS Serverless Application Repository
     (<https://aws.amazon.com/serverless/serverlessrepo/>)
 
-<img src="/img/classic/image132.png" />
+<img src={useBaseUrl('/img/classic/image132.png')} />
 
 3.  Click on the Search (magnifying glass) and type in Amazon Connect
     Salesforce.
 
-<img src="/img/classic/image133.png" />
+<img src={useBaseUrl('/img/classic/image133.png')} />
 
 4.  Select AmazonConnectSalesForceLambdas and click "Deploy"
 
-<img src="/img/classic/image134.png" />
+<img src={useBaseUrl('/img/classic/image134.png')} />
 
 5.  Fill in all Salesforce related fields in "Configure application
     parameters".\
     All values should be available in your installation notes:
 
-<img src="/img/classic/image135.png" />
+<img src={useBaseUrl('/img/classic/image135.png')} />
 
-<img src="/img/classic/image136.png" />
+<img src={useBaseUrl('/img/classic/image136.png')} />
 
 6.  The Lambda package includes additional features which can be enabled
     or disabled, based on particular use-case:
@@ -397,7 +399,7 @@ retrieve secrets.
 
 7.  Once completed, click "Deploy" function:
 
-<img src="/img/classic/image137.png" />
+<img src={useBaseUrl('/img/classic/image137.png')} />
 
 8.  The package provides a single Lambda function (sfInvokeAPI) that
     supports multiple operations, like lookup, create and update. For
@@ -405,92 +407,92 @@ retrieve secrets.
     function. Click on the function name and check the list of files in
     the editor.
 
-<img src="/img/classic/image138.png" />
+<img src={useBaseUrl('/img/classic/image138.png')} />
 
 9.  To validate a phone number lookup, double-click on
     event-phoneLookup.json file and copy the text in your clipboard.
 
-<img src="/img/classic/image139.png" />
+<img src={useBaseUrl('/img/classic/image139.png')} />
 
 10. In the top-right corner, click the drop-down arrow next to the
     "Test" button and select "Configure test events"
 
-<img src="/img/classic/image140.png" />
+<img src={useBaseUrl('/img/classic/image140.png')} />
 
 11. Select "Create new test event", set Event name (i.e. phoneLookup)
     and paste the JSON payload you've copied in the previous step.
 
-<img src="/img/classic/image141.png" />
+<img src={useBaseUrl('/img/classic/image141.png')} />
 
 12. Click "Create" button
 
 13. From the drop-down list, select your "eventLookup" and click "Test"
     button
 
-<img src="/img/classic/image142.png" />
+<img src={useBaseUrl('/img/classic/image142.png')} />
 
 14. If successful, the result will contain fields defined in "sf_fields"
     parameter in the invocation event
 
-<img src="/img/classic/image143.png" />
+<img src={useBaseUrl('/img/classic/image143.png')} />
 
 15. As a next step, we are going to use the ContactId provided and
     create a Case in Salesforce. Double-click on "event-create.json"
     file and set the ContactId value from the previous step. Copy the
     JSON text into your clipboard.
 
-<img src="/img/classic/image144.png" />
+<img src={useBaseUrl('/img/classic/image144.png')} />
 
 16. In the top-right corner, click the drop-down arrow next to the
     "Test" button and select "Configure test events"
 
-<img src="/img/classic/image145.png" />
+<img src={useBaseUrl('/img/classic/image145.png')} />
 
 17. Select "Create new test event", set Event name (i.e. createCase) and
     paste the JSON payload you've copied in the previous step.
 
-<img src="/img/classic/image146.png" />
+<img src={useBaseUrl('/img/classic/image146.png')} />
 
 18. Click "Create" button
 
 19. From the drop-down list, select your "createCase" and click "Test"
     button
 
-<img src="/img/classic/image147.png" />
+<img src={useBaseUrl('/img/classic/image147.png')} />
 
 20. If successful, the result will contain a Case Id for newly created
     case:
 
-<img src="/img/classic/image148.png" />
+<img src={useBaseUrl('/img/classic/image148.png')} />
 
 21. As defined in the event payload, Status is "New" and Priority is
     "Low". We are going to use the update operation to close the case.
     Copy the Case Id provided in the previous step, then double-click on
     "event-update.json" file and paste the Case Id in "sf_id" parameter:
 
-<img src="/img/classic/image149.png" />
+<img src={useBaseUrl('/img/classic/image149.png')} />
 
 22. In the top-right corner, click the drop-down arrow next to the
     "Test" button and select "Configure test events"
 
-<img src="/img/classic/image150.png" />
+<img src={useBaseUrl('/img/classic/image150.png')} />
 
 23. Select "Create new test event", set Event name (i.e. closeCase) and
     paste the JSON payload you've copied in the previous step.
 
-<img src="/img/classic/image151.png" />
+<img src={useBaseUrl('/img/classic/image151.png')} />
 
 24. Click "Create" button
 
 25. From the drop-down list, select your "closeCase" and click "Test"
     button
 
-<img src="/img/classic/image152.png" />
+<img src={useBaseUrl('/img/classic/image152.png')} />
 
 26. If successful, the result will be HTTP code 204 ("No Content"
     success code):
 
-<img src="/img/classic/image153.png" />
+<img src={useBaseUrl('/img/classic/image153.png')} />
 
 27. Login in to Salesforce and search for Case and it's details. The
     Case status should be "Closed".

@@ -3,6 +3,8 @@ id: 01-installing-package-from-appexchange
 title: Installing CTI Adapter Managed Package from AppExchange
 ---
 
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
 The Amazon Connect CTI Adapter for Salesforce provides the core
 integration between the two platforms. It embeds the Amazon Connect
 Contact Control Panel into Salesforce which provides telephony control
@@ -30,35 +32,35 @@ Marketplace.
 
 5.  In the **Search Results**, select **Amazon Connect CTI Adapter**
 
-<img src="/img/lightning/image3.png" />
+<img src={useBaseUrl('/img/lightning/image3.png')} />
 
 6.  On the **Amazon Connect CTI Adapter** detail page, select **Get It
     Now**
 
-<img src="/img/lightning/image4.png" />
+<img src={useBaseUrl('/img/lightning/image4.png')} />
 
 7.  If you are presented with the Log In to AppExchange screen, select
     **Open Login Screen**. You should then be presented with an Allow
     Access Screen. Choose **Allow**
 
-<img src="/img/lightning/image5.png" />
+<img src={useBaseUrl('/img/lightning/image5.png')} />
 
 8.  On the **Where do you want to install Amazon Connect CTI Adapter**
     page, choose the **Install Here** button in the Install in This Org
     section
 
-<img src="/img/lightning/image6.png" />
+<img src={useBaseUrl('/img/lightning/image6.png')} />
 
 9.  On the **Confirm installation details** screen, fill out the **Tell
     us about yourself** form, check the box to **agree with the terms
     and conditions**, and optionally select the box to **allow the
     provider to contact you**. Then select **Confirm and Install**
 
-<img src="/img/lightning/image7.png" />
+<img src={useBaseUrl('/img/lightning/image7.png')} />
 
 10. Select **Install for Admins Only**, then choose **Install**
 
-<img src="/img/lightning/image8.png" />
+<img src={useBaseUrl('/img/lightning/image8.png')} />
 
 11. The CTI Adapter will take some time to install. While it installs,
     you will be presented with the **This app is taking a long time to
@@ -66,7 +68,7 @@ Marketplace.
 
 12. Choose **Done**.
 
-<img src="/img/lightning/image9.png" />
+<img src={useBaseUrl('/img/lightning/image9.png')} />
 
 13. Once you receive confirmation that the **installation has
     completed** via email, return to the browser
@@ -76,12 +78,12 @@ Marketplace.
 15. In Quick Find, enter **Installed**, then select Installed Packages
     from the result
 
-<img src="/img/lightning/image10.png" />
+<img src={useBaseUrl('/img/lightning/image10.png')} />
 
 16. Once the **Installed Packages** page opens, validate that the
     **Amazon Connect -- Universal Package** is installed
 
-<img src="/img/lightning/image11.png" />
+<img src={useBaseUrl('/img/lightning/image11.png')} />
 
 ### Set Access Permissions
 
@@ -100,7 +102,7 @@ documentation](https://help.salesforce.com/articleView?id=perm_sets_mass_assign.
 3.  Choose **AC_Administrator**, **AC_Agent** or **AC_Manager** as
     appropriate for the user(s)
 
-<img src="/img/lightning/image12.png" />
+<img src={useBaseUrl('/img/lightning/image12.png')} />
 
 4.  Choose **Manage Assignments**.
 
@@ -108,21 +110,21 @@ documentation](https://help.salesforce.com/articleView?id=perm_sets_mass_assign.
 
 6.  Select the users to assign the permissions, then choose **Assign**.
 
-<img src="/img/lightning/image13.png" />
+<img src={useBaseUrl('/img/lightning/image13.png')} />
 
 7.  Repeat these steps as needed for all users
 
 #### AC_Administrator
 
-<img src="/img/lightning/image14.png" />
+<img src={useBaseUrl('/img/lightning/image14.png')} />
 
 #### AC_Manager
 
-<img src="/img/lightning/image15.png" />
+<img src={useBaseUrl('/img/lightning/image15.png')} />
 
 #### AC_Agent
 
-<img src="/img/lightning/image16.png" />
+<img src={useBaseUrl('/img/lightning/image16.png')} />
 
 ### Configure the Lightning Experience
 
@@ -139,21 +141,21 @@ First, you need to add the CTI softphone to your Service Console.
 2.  In the **Quick Find** box, type **App Manager**, then choose **App
     Manager** from the result list.
 
-<img src="/img/lightning/image17.png" />
+<img src={useBaseUrl('/img/lightning/image17.png')} />
 
 3.  Expand the drop-down menu associated to Service Console and select
     **Edit**.
 
-<img src="/img/lightning/image18.png" />
+<img src={useBaseUrl('/img/lightning/image18.png')} />
 
 4.  Once the **Lightning App Builder** opens, select **Utility Items**
     from the left Navigation
 
-<img src="/img/lightning/image19.png" />
+<img src={useBaseUrl('/img/lightning/image19.png')} />
 
 5.  Choose **Add Utility Item**, then select **Open CTI Softphone**.
 
-<img src="/img/lightning/image20.png" />
+<img src={useBaseUrl('/img/lightning/image20.png')} />
 
 6.  Change the Label, if desired, then choose **Save**.
 
@@ -168,23 +170,23 @@ underlying resources required for the CCP to function.
 
 2.  Copy the entire URL of this page and past it to a text document.
 
-<img src="/img/lightning/image21.png" />
+<img src={useBaseUrl('/img/lightning/image21.png')} />
 
 3.  In the **Quick Find** field, type **visual**, then select **Visual
     Force Pages** from the results
 
-<img src="/img/lightning/image22.png" />
+<img src={useBaseUrl('/img/lightning/image22.png')} />
 
 4.  Choose the **AC_LightningAdapter** Visualforce page
 
-<img src="/img/lightning/image23.png" />
+<img src={useBaseUrl('/img/lightning/image23.png')} />
 
 5.  On the Visualforce detail page, select the **Preview** button. This
     will open a new browser tab showing the page content, which should
     only be a button labelled Sign in to CCP. Copy the entire URL of
     this page and past it to a text document.
 
-<img src="/img/lightning/image24.png" />
+<img src={useBaseUrl('/img/lightning/image24.png')} />
 
 6.  In a new browser tab, login to the [**AWS
     console**](https://console.aws.amazon.com/)
@@ -196,7 +198,7 @@ underlying resources required for the CCP to function.
     instance, then select your instance alias from the list of
     instances
 
-<img src="/img/lightning/image25.png" />
+<img src={useBaseUrl('/img/lightning/image25.png')} />
 
 9.  Choose **Application Integration** from the left navigation
 
@@ -209,7 +211,7 @@ underlying resources required for the CCP to function.
 12. Select Add. You should see your org domain listed in the Approved
     origins section.
 
-<img src="/img/lightning/image26.png" />
+<img src={useBaseUrl('/img/lightning/image26.png')} />
 
 13. Select + Add origin
 
@@ -221,7 +223,7 @@ underlying resources required for the CCP to function.
 15. Select Add. You should see your org domain listed in the Approved
     origins section
 
-<img src="/img/lightning/image27.png" />
+<img src={useBaseUrl('/img/lightning/image27.png')} />
 
 #### Modify the Call Center
 
@@ -235,14 +237,14 @@ configuration, you add users to the Call Center to provide access to it.
 2.  In the **Quick Find** field, enter **Call Center**, then select
     **Call Centers** from the result list
 
-<img src="/img/lightning/image28.png" />
+<img src={useBaseUrl('/img/lightning/image28.png')} />
 
 3.  If you see the **Say Hello to Salesforce Call Center** page, select
     **Continue**
 
 4.  Select **AC Lightning Adapter**
 
-<img src="/img/lightning/image29.png" />
+<img src={useBaseUrl('/img/lightning/image29.png')} />
 
 5.  On the **AC Lightning Adapter** detail page, select **Edit**
 
@@ -262,7 +264,7 @@ configuration, you add users to the Call Center to provide access to it.
 11. Select the checkbox next to the user to add, then choose **Add to
     Call Center**.
 
-<img src="/img/lightning/image30.png" />
+<img src={useBaseUrl('/img/lightning/image30.png')} />
 
 12. Repeat the steps to add more users.
 
@@ -271,22 +273,22 @@ configuration, you add users to the Call Center to provide access to it.
 1.  Navigate to **Setup** then in type **Custom Settings** in Quick
     Find
 
-<img src="/img/lightning/image31.png" />
+<img src={useBaseUrl('/img/lightning/image31.png')} />
 
 2.  Next to the Toolkit for Amazon Connect custom setting, choose
     **Manage**
 
-<img src="/img/lightning/image32.png" />
+<img src={useBaseUrl('/img/lightning/image32.png')} />
 
 3.  Select **New**
 
-<img src="/img/lightning/image33.png" />
+<img src={useBaseUrl('/img/lightning/image33.png')} />
 
 4.  On the following page, provide the URL to your Amazon Connect
     instance. The value of the URL field would be in the form of:
     <pre>https://your-instance-alias.awsapps.com</pre>
 
-<img src="/img/lightning/image34.png" />
+<img src={useBaseUrl('/img/lightning/image34.png')} />
 
 You will also see the option to enable and disable certain 
 triggers in the package, which you can configure to meet your needs. You
@@ -311,12 +313,12 @@ conditions.
 
 4.  On the Softphone Layouts page, choose **New**
 
-<img src="/img/lightning/image35.png" />
+<img src={useBaseUrl('/img/lightning/image35.png')} />
 
 5.  Enter a name for the layout, such as **AmazonConnectDefault**, then
     select the **Is Default Layout** checkbox.
 
-<img src="/img/lightning/image36.png" />
+<img src={useBaseUrl('/img/lightning/image36.png')} />
 
 6.  Expand **Display these salesforce.com objects** and select objects
     that CTI Connector should be able to search, for a screen-pop query.
@@ -324,17 +326,17 @@ conditions.
     allowing search and screen-pop by CaseID.
     
 
-<img src="/img/lightning/image37.png" />
+<img src={useBaseUrl('/img/lightning/image37.png')} />
 
 7.  If desired, configure the search behavior to your requirements
 
-<img src="/img/lightning/image38.png" />
+<img src={useBaseUrl('/img/lightning/image38.png')} />
 
 8.  Additionally, validate the Screen Pop settings. Please note that the
     default behavior is to not pop a screen if there is more than one
     result
 
-<img src="/img/lightning/image39.png" />
+<img src={useBaseUrl('/img/lightning/image39.png')} />
 
 9.  Once you have configured the search behavior, choose **Save**
 
@@ -351,17 +353,17 @@ tie the Lightning CTI adapter settings to the Call Center.
 2.  Expand the **navigation menu** by selecting the down arrow and
     choose **Edit**.
 
-<img src="/img/lightning/image40.png" />
+<img src={useBaseUrl('/img/lightning/image40.png')} />
 
 3.  On the Edit Service Console App Navigation Items page, select **Add
     More Items**
 
-<img src="/img/lightning/image41.png" />
+<img src={useBaseUrl('/img/lightning/image41.png')} />
 
 4.  Select the **+** next to **AC CTI Adapters** and select the **Add 1
     Nav Item** button
 
-<img src="/img/lightning/image42.png" />
+<img src={useBaseUrl('/img/lightning/image42.png')} />
 
 5.  If desired, move the **AC CTI Adapters** button up in the navigation
     Items menu by dragging it up or down the list, then choose **Save**
@@ -372,7 +374,7 @@ tie the Lightning CTI adapter settings to the Call Center.
 7.  If Recently Viewed is selected, select the drop-down and select
     **All** from the List Views menu.
 
-<img src="/img/lightning/image43.png" />
+<img src={useBaseUrl('/img/lightning/image43.png')} />
 
 8.  If no ACLightningAdapter entry exists, then select the new button to
     configure your AC CTI adapters, otherwise select the
@@ -386,7 +388,7 @@ tie the Lightning CTI adapter settings to the Call Center.
     Instance. You can find this in the Amazon Connect Console as shown
     below (remove everything after ".com"):
 
-<img src="/img/lightning/image44.png" />
+<img src={useBaseUrl('/img/lightning/image44.png')} />
 
 12. Amazon Connect Instance Region: This is the region that your Amazon
     Connect instance is deployed in. For this field, you will enter the
@@ -402,14 +404,14 @@ tie the Lightning CTI adapter settings to the Call Center.
 
 14. Leave all other settings at the default for now, and choose Save
 
-<img src="/img/lightning/image45.png" />
+<img src={useBaseUrl('/img/lightning/image45.png')} />
 
 15. **Refresh** the browser
 
 16. In the bottom left corner of the Service Console, select the CTI
     Softphone icon
 
-<img src="/img/lightning/image46.png" />
+<img src={useBaseUrl('/img/lightning/image46.png')} />
 
 17. Select the **Sign in to CCP** button. A new window will pop up.
     Enter your Amazon Connect login credentials and select **Sign In**.
@@ -420,22 +422,22 @@ tie the Lightning CTI adapter settings to the Call Center.
     [Single Sign On Settings](/docs/lightning/03-cti-adapter/01-cti-adapter-configuration#single-sign-on-settings) section before
     continuing.
 
-<img src="/img/lightning/image47.png" />
+<img src={useBaseUrl('/img/lightning/image47.png')} />
 
 18. Once Login is successful, the pop-up window will automatically
     close.
 
 19. Expand the status menu and choose Available
 
-<img src="/img/lightning/image48.png" />
+<img src={useBaseUrl('/img/lightning/image48.png')} />
 
 20. Make an inbound phone call to your Amazon Connect instance. The CCP
     will alert you to the incoming call and allow you to accept it. Once
     you do, the call will be connected
 
-<img src="/img/lightning/image49.png" />
+<img src={useBaseUrl('/img/lightning/image49.png')} />
 
-<img src="/img/lightning/image50.png" />
+<img src={useBaseUrl('/img/lightning/image50.png')} />
 
 21. **End the call** and clear the contact
 
@@ -450,12 +452,12 @@ Panel, it will first set the agent in an offline status. It will then
 logout the agent in Connect and the AWS Console. Here is an example of
 the agent status configured within Connect:
 
-<img src="/img/lightning/image51.png" />
+<img src={useBaseUrl('/img/lightning/image51.png')} />
 
 Here is an example of an agent selecting the "Logout" status within the
 Contact Control Panel:
 
-<img src="/img/lightning/image52.png" />
+<img src={useBaseUrl('/img/lightning/image52.png')} />
 
 #### Validate Basic Screenpop
 
@@ -465,14 +467,14 @@ functionality that is provided with the CTI adapter.
 
 1.  Select **Contacts** from the dropdown menu
 
-<img src="/img/lightning/image53.png" />
+<img src={useBaseUrl('/img/lightning/image53.png')} />
 
 2.  Select **New** from top-right corner
 
 3.  Complete the required fields. Make sure that your phone number is
     entered for the Phone field.
 
-<img src="/img/lightning/image54.png" />
+<img src={useBaseUrl('/img/lightning/image54.png')} />
 
 4.  Select **Save**
 
@@ -480,7 +482,7 @@ functionality that is provided with the CTI adapter.
     contact that you just created
 
 
-<img src="/img/lightning/image55.png" />
+<img src={useBaseUrl('/img/lightning/image55.png')} />
 
 6.  **Refresh** your browser
 

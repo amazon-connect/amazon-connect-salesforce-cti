@@ -3,6 +3,8 @@ id: 03-real-time-metrics
 title: Amazon Connect Real-Time Metrics in Salesforce
 ---
 
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
 The CTI adapter includes real-time reporting tools which provide
 visibility into critical data which help improve the utilization of your
 agents and allows insight into overall queue performance. Once you have
@@ -31,13 +33,13 @@ task is to add the real-time views to your Salesforce console.
     choose **Edit**.
 
     
-<img src="/img/lightning/image40.png" />
+<img src={useBaseUrl('/img/lightning/image40.png')} />
 
 3.  On the Edit Service Console App Navigation Items page, select **Add
     More Items**
 
     
-<img src="/img/lightning/image41.png" />
+<img src={useBaseUrl('/img/lightning/image41.png')} />
 
 4.  Select the **+** next to **AC Queue Metrics** and **AC Real Time
     Queue Metrics**
@@ -48,36 +50,36 @@ task is to add the real-time views to your Salesforce console.
     **Save**
 
     
-<img src="/img/lightning/image194.png" />
+<img src={useBaseUrl('/img/lightning/image194.png')} />
 
 7.  Once the save completes, expand the **navigation menu** by selecting
     the down arrow and choose **AC Queue Metrics**
 
     
-<img src="/img/lightning/image195.png" />
+<img src={useBaseUrl('/img/lightning/image195.png')} />
 
 8.  The AC Queue Metrics view will display and any relevant data will
     update every 15 seconds.
 
     
-<img src="/img/lightning/image196.png" />
+<img src={useBaseUrl('/img/lightning/image196.png')} />
 
 9.  Scroll down to view the **AC Contact Metrics Dashboard
 
-<img src="/img/lightning/image197.png" />
+<img src={useBaseUrl('/img/lightning/image197.png')} />
 
 10. Expand the **navigation menu** by selecting the down arrow and
     choose **AC Real Time Queue Metrics
 
     
-<img src="/img/lightning/image198.png" />
+<img src={useBaseUrl('/img/lightning/image198.png')} />
 
 11. Change the List View to **ALL**
 
-<img src="/img/lightning/image199.png" />
+<img src={useBaseUrl('/img/lightning/image199.png')} />
 
 12. Select a queue to view the detailed real-time statistics for that
     specific queue
 
     
-<img src="/img/lightning/image200.png" />
+<img src={useBaseUrl('/img/lightning/image200.png')} />

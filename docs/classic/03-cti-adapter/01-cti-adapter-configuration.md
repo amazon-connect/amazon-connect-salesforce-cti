@@ -3,12 +3,14 @@ id: 01-cti-adapter-configuration
 title: CTI Adapter Configuration
 ---
 
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
 The CTI Adapter installed by the managed package provides a number of
 features that change or enhance the functionality of the integration. By
 default, many of these features have been configured during install with
 a default setting. This section will detail the options available.
 
-<img src="/img/classic/image82.png" />
+<img src={useBaseUrl('/img/classic/image82.png')} />
 
 ## CTI Adapter Details
 
@@ -123,7 +125,7 @@ Contact Control Panel once authentication completes.
 2.  Expand the **navigation menu** by selecting the down arrow and
     choose **AC CTI Adapters**.
 
-<img src="/img/classic/image83.png" />
+<img src={useBaseUrl('/img/classic/image83.png')} />
 
 3.  Select **ACLightningAdapter**
 
@@ -131,7 +133,7 @@ Contact Control Panel once authentication completes.
     icon of either field to edit
     
 
-<img src="/img/classic/image84.png" />
+<img src={useBaseUrl('/img/classic/image84.png')} />
 
 5.  For the SSO Url, paste your IdP login URL up to the first question
     mark (if one exists). A couple of examples are provided:
@@ -144,7 +146,7 @@ Contact Control Panel once authentication completes.
 
 6.  Paste this portion of the URL into the **SSO Url** field
 
-<img src="/img/classic/image85.png" />
+<img src={useBaseUrl('/img/classic/image85.png')} />
 
 7.  For the SSO Relay State:
 
@@ -163,7 +165,7 @@ Contact Control Panel once authentication completes.
 
 8.  Example of a completed SSO section (Salesforce is shown)
 
-<img src="/img/classic/image86.png" />
+<img src={useBaseUrl('/img/classic/image86.png')} />
 
 9.  Choose **Save**
 
@@ -174,13 +176,13 @@ Contact Control Panel once authentication completes.
         Salesforce org, then refresh the browser again
     
 
-<img src="/img/classic/image87.png" />
+<img src={useBaseUrl('/img/classic/image87.png')} />
 
 11. After a few seconds, a new window should pop up for a moment. This
     window is performing the authentication and setting your session
     cookie. Once it does this, it will close automatically.
 
-<img src="/img/classic/image88.png" />
+<img src={useBaseUrl('/img/classic/image88.png')} />
 
 12. Once the authentication window closes, select the **phone icon** in
     the console toolbar to open the CCP
@@ -189,6 +191,6 @@ Contact Control Panel once authentication completes.
 
 13. You should now see the authenticated and logged in CCP
 
-<img src="/img/classic/image89.png" />
+<img src={useBaseUrl('/img/classic/image89.png')} />
 
 SSO Configuration is complete

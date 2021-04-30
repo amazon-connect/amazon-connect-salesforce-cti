@@ -3,6 +3,8 @@ id: 02-historical-metrics
 title: Amazon Connect Historical Metrics in Salesforce
 ---
 
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
 Amazon Connect can generate a number of historical metric reports to
 monitor efficiency and utilization, agent performance, and other
 information about your contact center. Amazon Connect provides you the
@@ -40,11 +42,11 @@ Salesforce.
     **Historical metrics**
 
     
-<img src="/img/lightning/image178.png" />
+<img src={useBaseUrl('/img/lightning/image178.png')} />
 
 3.  On the **Historical metrics** page, select Contact metrics
 
-<img src="/img/lightning/image179.png" />
+<img src={useBaseUrl('/img/lightning/image179.png')} />
 
 4.  Once the **Historical metrics: Queues** report loads, select the cog
     in the upper right to edit the report
@@ -97,31 +99,31 @@ Salesforce.
 
     d.  For the Previous: 0.5 hour(s)
 
-<img src="/img/lightning/image180.png" />
+<img src={useBaseUrl('/img/lightning/image180.png')} />
 
 14. Select the **Delivery Options** tab
 
 15. In the Prefix field, enter **SFDC/Queue**
 
-<img src="/img/lightning/image181.png" />
+<img src={useBaseUrl('/img/lightning/image181.png')} />
 
 16. Note the File name. The file name contains the bucket, path, and
     filename that will be used when executing the report. You will use
     the **bucket name** and **path** in later steps.
 
     
-<img src="/img/lightning/image182.png" />
+<img src={useBaseUrl('/img/lightning/image182.png')} />
 
 17. Choose **Create**
 
 18. Once the report is created, from the left navigation, choose
     **Metrics and Quality** then select **Historical metrics**
     
-<img src="/img/lightning/image178.png" />
+<img src={useBaseUrl('/img/lightning/image178.png')} />
 
 19. On the **Historical metrics** page, select **Agent performance
 
-<img src="/img/lightning/image183.png" />
+<img src={useBaseUrl('/img/lightning/image183.png')} />
 
 20. Once the **Historical metrics: Agents** report loads, select the cog
     in the upper right to edit the report
@@ -215,20 +217,20 @@ Salesforce.
 
     d.  For the Previous: 0.5 hour(s)
 
-<img src="/img/lightning/image184.png" />
+<img src={useBaseUrl('/img/lightning/image184.png')} />
 
 30. Select the **Delivery Options** tab
 
 31. In the Prefix field, enter **SFDC/Agent**
 
-<img src="/img/lightning/image185.png" />
+<img src={useBaseUrl('/img/lightning/image185.png')} />
 
 32. Note the File name. The file name contains the bucket, path, and
     filename that will be used when executing the report. You will use
     the **bucket name** and **path** in later steps.
 
     
-<img src="/img/lightning/image186.png" />
+<img src={useBaseUrl('/img/lightning/image186.png')} />
 
 33. Choose **Create**
 
@@ -253,11 +255,11 @@ Lambda function when the report is generated and stored in S3.
 
 6.  Select Add trigger
 
-<img src="/img/lightning/image187.png" />
+<img src={useBaseUrl('/img/lightning/image187.png')} />
 
 7.  In Trigger configuration, select S3 from the dropdown list
 
-<img src="/img/lightning/image188.png" />
+<img src={useBaseUrl('/img/lightning/image188.png')} />
 
 8.  Referring to the notes from the report configuration earlier, select
     the appropriate bucket
@@ -271,7 +273,7 @@ Lambda function when the report is generated and stored in S3.
 
 12. The trigger configuration should now be similar to the following:
 
-<img src="/img/lightning/image189.png" />
+<img src={useBaseUrl('/img/lightning/image189.png')} />
 
 13. Select **Add**
 
@@ -295,11 +297,11 @@ Lambda function when the report is generated and stored in S3.
 
 6.  Select Add trigger
 
-<img src="/img/lightning/image187.png" />
+<img src={useBaseUrl('/img/lightning/image187.png')} />
 
 7.  In Trigger configuration, select S3 from the dropdown list
 
-<img src="/img/lightning/image188.png" />
+<img src={useBaseUrl('/img/lightning/image188.png')} />
 
 8.  Referring to the notes from the report configuration earlier, select
     the appropriate bucket
@@ -313,7 +315,7 @@ Lambda function when the report is generated and stored in S3.
 
 12. The trigger configuration should now be similar to the following:
 
-<img src="/img/lightning/image190.png" />
+<img src={useBaseUrl('/img/lightning/image190.png')} />
 
 13. Select **Add**
 
@@ -339,13 +341,13 @@ imported data.
 
 4.  Select the **Amazon Connect Reports** folder
 
-<img src="/img/lightning/image191.png" />
+<img src={useBaseUrl('/img/lightning/image191.png')} />
 
 5.  In the list of reports, choose Average Handle Time queue report
 
-<img src="/img/lightning/image192.png" />
+<img src={useBaseUrl('/img/lightning/image192.png')} />
 
 6.  Once the report loads, you should see data (provided calls have
     queued in this Amazon Connect instance today)
     
-<img src="/img/lightning/image193.png" />
+<img src={useBaseUrl('/img/lightning/image193.png')} />

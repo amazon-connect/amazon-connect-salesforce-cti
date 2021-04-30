@@ -3,6 +3,8 @@ id: 02-configure-salesforce-omnichannel
 title: Configure Salesforce Omnichannel for Testing
 ---
 
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
 In order to sync your Connect User status with your Omni-Channel agent
 status, you must configure Omni-Channel Presence Syncing. This will make
 your Omni-Channel presence status match your Amazon Connect Agent Status
@@ -21,11 +23,11 @@ required for Omni-Channel setup.
 2.  In the **Quick Find** field, enter omni and choose **Omni-Channel
     Settings** from the results
 
-<img src="/img/lightning/image230.png" />
+<img src={useBaseUrl('/img/lightning/image230.png')} />
 
 3.  Select the checkbox for Enable Omni-Channel and choose Save
 
-<img src="/img/lightning/image231.png" />
+<img src={useBaseUrl('/img/lightning/image231.png')} />
 
 4.  Omni-Channel is now enabled.
 
@@ -44,7 +46,7 @@ are doing.
 2.  In the **Quick Find** field, enter presence and choose **Presence
     Statuses** from the results
 
-<img src="/img/lightning/image147.png" />
+<img src={useBaseUrl('/img/lightning/image147.png')} />
 
 3.  In the Presence Statuses page, choose New
 
@@ -59,7 +61,7 @@ are doing.
 
 7.  Choose Save
 
-<img src="/img/lightning/image148.png" />
+<img src={useBaseUrl('/img/lightning/image148.png')} />
 
 8.  Repeat as necessary for all desired statuses
 
@@ -76,18 +78,18 @@ done by modifying the profiles assigned to your agents.
 2.  In the **Quick Find** field, enter profiles and choose **Profiles**
     from the results
 
-<img src="/img/lightning/image149.png" />
+<img src={useBaseUrl('/img/lightning/image149.png')} />
 
 3.  Select the profile assigned to your users
 
 4.  Hover over the Enabled Service Presence Status link and choose Edit
 
-<img src="/img/lightning/image150.png" />
+<img src={useBaseUrl('/img/lightning/image150.png')} />
 
 5.  Select the available status from the left, then choose the Add
     button to add it the Enabled Service Presence Statuses field
 
-<img src="/img/lightning/image151.png" />
+<img src={useBaseUrl('/img/lightning/image151.png')} />
 
 6.  Select Save
 
@@ -105,21 +107,21 @@ it to the Service Console.
 2.  In the **Quick Find** box, type **App Manager**, then choose **App
     Manager** from the result list.
 
-<img src="/img/lightning/image17.png" />
+<img src={useBaseUrl('/img/lightning/image17.png')} />
 
 3.  Expand the drop-down menu associated to Service Console and select
     **Edit**.
 
-<img src="/img/lightning/image18.png" />
+<img src={useBaseUrl('/img/lightning/image18.png')} />
 
 4.  Once the **Lightning App Builder** opens, select **Utility Items**
     from the left Navigation
 
-<img src="/img/lightning/image19.png" />
+<img src={useBaseUrl('/img/lightning/image19.png')} />
 
 5.  Choose Add Utility Item, then select Omni-Channel
 
-<img src="/img/lightning/image232.png" />
+<img src={useBaseUrl('/img/lightning/image232.png')} />
 
 6.  Adjust the order of the utility items as desired and select Save.
 
@@ -127,4 +129,4 @@ it to the Service Console.
 
 8.  You should now see the Omni-Channel utility item.
 
-<img src="/img/lightning/image233.png" />
+<img src={useBaseUrl('/img/lightning/image233.png')} />

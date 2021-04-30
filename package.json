@@ -21,7 +21,11 @@
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "papersaurus": "1.4.0",
-    "@bojl/docusaurus-pdf": "1.2.0"
+    "@bojl/docusaurus-pdf": "1.2.0",
+    "is-svg": ">=4.2.2",
+    "react-dev-utils": ">=11.0.4",
+    "immer": ">=8.0.1",
+    "highlight.js": ">=10.4.1"
   },
   "browserslist": {
     "production": [

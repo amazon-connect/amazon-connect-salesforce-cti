@@ -4,10 +4,12 @@ title: Notices
 hide_title: true
 ---
 
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
 <h3 align="center">Setup and Installation Guide</h3>
 
 <p align="center">
-  <img src="/img/lightning/image1.png" />
+  <img src={useBaseUrl('/img/lightning/image1.png')} />
 </p>
 
 <h3 align="center">March, 2021</h3>

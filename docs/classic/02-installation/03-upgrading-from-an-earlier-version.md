@@ -3,6 +3,8 @@ id: 03-upgrading-from-an-earlier-version
 title: Upgrading from an Earlier Version
 ---
 
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
 If you are upgrading from an earlier version of CTI Adapter, there are a
 few additional things you need to do.
 
@@ -10,7 +12,7 @@ few additional things you need to do.
 
 2.  In Object Manager section, search for "AC CTI"
 
-<img src="/img/classic/image73.png" />
+<img src={useBaseUrl('/img/classic/image73.png')} />
 
 3.  Open up **AC CTI Adapter**
 
@@ -22,9 +24,9 @@ few additional things you need to do.
 
 7.  Click on the grey bar at the top of the table to select all rows.
 
-<img src="/img/classic/image74.png" />
+<img src={useBaseUrl('/img/classic/image74.png')} />
 
-<img src="/img/classic/image75.png" />
+<img src={useBaseUrl('/img/classic/image75.png')} />
 
 8.  Open the **Page Layout to Use** dropdown and select **AC CTI Adapter
     Layout -- August 2020**.
@@ -40,12 +42,12 @@ few additional things you need to do.
 12. If you see a screen titled **Deletion Problems**, find and click
     **Delete**.
 
-<img src="/img/classic/image76.png" />
+<img src={useBaseUrl('/img/classic/image76.png')} />
 
 13. You will be asked which layout you want to replace it with. Select
     **AC CTI Adapter Layout -- August 2020** and click **Replace.**
 
-<img src="/img/classic/image77.png" />
+<img src={useBaseUrl('/img/classic/image77.png')} />
 
 Now we are going to do the same thing for **AC CTI Script Layout**.
 
@@ -59,9 +61,9 @@ Now we are going to do the same thing for **AC CTI Script Layout**.
 
 5.  Click on the grey bar at the top of the table to select all rows.
 
-<img src="/img/classic/image78.png" />
+<img src={useBaseUrl('/img/classic/image78.png')} />
 
-<img src="/img/classic/image79.png" />
+<img src={useBaseUrl('/img/classic/image79.png')} />
 
 6.  Open the **Page Layout to Use** dropdown and select **AC CTI Flow
     Layout**.
@@ -77,19 +79,19 @@ Now we are going to do the same thing for **AC CTI Script Layout**.
 10. If you see a screen titled **Deletion Problems**, find and click
     **Delete**.
 
-<img src="/img/classic/image76.png" />
+<img src={useBaseUrl('/img/classic/image76.png')} />
 
 11. You will be asked which layout you want to replace it with. Select
     **AC CTI Flow Layout** and click **Replace.**
 
-<img src="/img/classic/image80.png" />
+<img src={useBaseUrl('/img/classic/image80.png')} />
 
 12. Go to your **CTI Adapter**.
 
 13. Click on any of the CTI Flows and scroll down to the section labeled
     **CTI Flow**. You should see something like this:
 
-<img src="/img/classic/image81.png" />
+<img src={useBaseUrl('/img/classic/image81.png')} />
 
 14. Click **Download** and save your script before clicking
     **Continue**.

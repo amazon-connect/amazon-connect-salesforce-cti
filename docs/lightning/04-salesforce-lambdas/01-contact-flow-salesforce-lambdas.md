@@ -3,6 +3,8 @@ id: 01-contact-flow-salesforce-lambdas
 title: Accessing the Salesforce API from Amazon Connect Contact Flows Using AWS Lambda
 ---
 
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
 The most commonly used feature of the AWS Serverless Application
 Repository for Salesforce is accessing/updating Salesforce data using
 the sfInvokeAPI Lambda function. This function allows an Amazon Connect
@@ -91,7 +93,7 @@ results. If you want to have all results returned from Salesforce, set
 In the contact flow example below, we are looking for a specific case
 based on customer input.
 
-<img src="/img/lightning/image156.png" />
+<img src={useBaseUrl('/img/lightning/image156.png')} />
 
 This operation returns a response of:
 
@@ -118,7 +120,7 @@ required:
 In the contact flow example below, we creating a new case based on
 customer input.
 
-<img src="/img/lightning/image157.png" />
+<img src={useBaseUrl('/img/lightning/image157.png')} />
 
 This operation returns a response of:
 
@@ -145,7 +147,7 @@ required:
 
 In the contact flow example below, we are updating a specific case.
 
-<img src="/img/lightning/image158.png" />
+<img src={useBaseUrl('/img/lightning/image158.png')} />
 
 This operation returns a response of:
 
@@ -171,7 +173,7 @@ For phoneLookup, the following parameters are required:
 In the contact flow example below, we look for a customer by phone
 number.
 
-<img src="/img/lightning/image159.png" />
+<img src={useBaseUrl('/img/lightning/image159.png')} />
 
 This operation returns a response of:
 
@@ -197,8 +199,8 @@ required:
 In the contact flow example below, we deleting an existing case based on
 customer input.
 
-<img src="/img/lightning/image160.png" />
-<img src="/img/lightning/image161.png" />
+<img src={useBaseUrl('/img/lightning/image160.png')} />
+<img src={useBaseUrl('/img/lightning/image161.png')} />
 
 This operation returns a response of:
 
@@ -232,14 +234,14 @@ Will result in the query: "select Id from Task".
 In the contact flow example below, we look for a customer by phone
 number.
 
-<img src="/img/lightning/image162.png" />
+<img src={useBaseUrl('/img/lightning/image162.png')} />
 
-<img src="/img/lightning/image163.png" />
+<img src={useBaseUrl('/img/lightning/image163.png')} />
 
 (full text of the value is "select Id from Contact where Phone LIKE
 '%number%'")
 
-<img src="/img/lightning/image164.png" />
+<img src={useBaseUrl('/img/lightning/image164.png')} />
 
 This operation returns a response of:
 
@@ -278,14 +280,14 @@ Will result in the query: "select Id from Task".
 In the contact flow example below, we look for a customer by phone
 number.
 
-<img src="/img/lightning/image165.png" />
+<img src={useBaseUrl('/img/lightning/image165.png')} />
 
-<img src="/img/lightning/image163.png" />
+<img src={useBaseUrl('/img/lightning/image163.png')} />
 
 (full text of the value is "select Id from Contact where Phone LIKE
 '%number%'")
 
-<img src="/img/lightning/image164.png" />
+<img src={useBaseUrl('/img/lightning/image164.png')} />
 
 This operation returns a response of:
 
@@ -331,20 +333,20 @@ Will result in the message: "Please help me with case 1234".
 
 In the contact flow example below, we leave a chatter post on a contact.
 
-<img src="/img/lightning/image166.png" />
+<img src={useBaseUrl('/img/lightning/image166.png')} />
 
-<img src="/img/lightning/image167.png" />
+<img src={useBaseUrl('/img/lightning/image167.png')} />
 
-<img src="/img/lightning/image168.png" />
+<img src={useBaseUrl('/img/lightning/image168.png')} />
 
-<img src="/img/lightning/image169.png" />
+<img src={useBaseUrl('/img/lightning/image169.png')} />
 
-<img src="/img/lightning/image170.png" />
+<img src={useBaseUrl('/img/lightning/image170.png')} />
 
 (full text of the value is "I had a problem during the call. My contact
 id is `contactId`.")
 
-<img src="/img/lightning/image171.png" />
+<img src={useBaseUrl('/img/lightning/image171.png')} />
 
 The operation returns a response of:
 
@@ -356,7 +358,7 @@ The operation returns a response of:
 
 See the chatter post appear attached to the Subject:
 
-<img src="/img/lightning/image172.png" />
+<img src={useBaseUrl('/img/lightning/image172.png')} />
 
 ### Salesforce createChatterComment
 
@@ -385,13 +387,13 @@ within the contact flow. For example, the parameter set:
 
 In the contact flow example below, we leave a comment on a chatter post.
 
-<img src="/img/lightning/image173.png" />
+<img src={useBaseUrl('/img/lightning/image173.png')} />
 
-<img src="/img/lightning/image174.png" />
+<img src={useBaseUrl('/img/lightning/image174.png')} />
 
-<img src="/img/lightning/image175.png" />
+<img src={useBaseUrl('/img/lightning/image175.png')} />
 
-<img src="/img/lightning/image176.png" />
+<img src={useBaseUrl('/img/lightning/image176.png')} />
 
 The operation returns a response of:
 
@@ -403,7 +405,7 @@ The operation returns a response of:
 
 See the chatter post appear attached to the Subject:
 
-<img src="/img/lightning/image177.png" />
+<img src={useBaseUrl('/img/lightning/image177.png')} />
 
 ### Salesforce search
 
@@ -430,17 +432,17 @@ The following parameters are optional:
 
 See the below example:
 
-<img src="/img/lightning/image258.png" />
+<img src={useBaseUrl('/img/lightning/image258.png')} />
 
-<img src="/img/lightning/image259.png" />
+<img src={useBaseUrl('/img/lightning/image259.png')} />
 
-<img src="/img/lightning/image260.png" />
+<img src={useBaseUrl('/img/lightning/image260.png')} />
 
-<img src="/img/lightning/image261.png" />
+<img src={useBaseUrl('/img/lightning/image261.png')} />
 
-<img src="/img/lightning/image262.png" />
+<img src={useBaseUrl('/img/lightning/image262.png')} />
 
-<img src="/img/lightning/image263.png" />
+<img src={useBaseUrl('/img/lightning/image263.png')} />
 
 The operation returns a response of:
 
@@ -490,17 +492,17 @@ The following parameter is optional:
 
 See the below example:
 
-<img src="/img/lightning/image264.png" />
+<img src={useBaseUrl('/img/lightning/image264.png')} />
 
-<img src="/img/lightning/image265.png" />
+<img src={useBaseUrl('/img/lightning/image265.png')} />
 
-<img src="/img/lightning/image260.png" />
+<img src={useBaseUrl('/img/lightning/image260.png')} />
 
-<img src="/img/lightning/image261.png" />
+<img src={useBaseUrl('/img/lightning/image261.png')} />
 
-<img src="/img/lightning/image262.png" />
+<img src={useBaseUrl('/img/lightning/image262.png')} />
 
-<img src="/img/lightning/image263.png" />
+<img src={useBaseUrl('/img/lightning/image263.png')} />
 
 The operation returns a response of:
 

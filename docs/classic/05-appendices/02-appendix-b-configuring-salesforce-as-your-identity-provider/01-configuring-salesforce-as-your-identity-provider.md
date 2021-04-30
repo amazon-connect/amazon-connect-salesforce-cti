@@ -3,6 +3,8 @@ id: 01-configuring-salesforce-as-your-identity-provider
 title: "Appendix B: Configuring Salesforce as Your Identity Provider"
 ---
 
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
 Amazon Connect supports Security Assertion Markup Language (SAML 2.0) to
 enable single sign on(SSO). Salesforce can act as a single sign on
 identity provider to service providers, allowing end users to easily and
@@ -47,11 +49,11 @@ embedded in Salesforce.
     Identity Provider**, then select the appropriate certificate and
     select Save.
 
-<img src="/img/classic/image306.png" />
+<img src={useBaseUrl('/img/classic/image306.png')} />
 
 4.  Choose **Download Metadata** and save the file to your computer.
 
-<img src="/img/classic/image307.png" />
+<img src={useBaseUrl('/img/classic/image307.png')} />
 
 ### Configure the Identity Provider, Policy, and Role in the AWS Console
 
@@ -70,14 +72,14 @@ access required to login to Amazon Connect.
 
 3.  Select **Identity providers**
 
-<img src="/img/classic/image308.png" />
+<img src={useBaseUrl('/img/classic/image308.png')} />
 
 4.  Choose **Create Provider**
 
 5.  On the Configure Provider screen, select **SAML** as the Provider
     Type
 
-<img src="/img/classic/image309.png" />
+<img src={useBaseUrl('/img/classic/image309.png')} />
 
 6.  Set the Provider Name to **SalesforceConnect**
 
@@ -108,7 +110,7 @@ access required to login to Amazon Connect.
     Console access**. The Attribute and Value fields should
     auto-populate
 
-<img src="/img/classic/image310.png" />
+<img src={useBaseUrl('/img/classic/image310.png')} />
 
 7.  Select **Next: Permissions**
 
@@ -159,7 +161,7 @@ access required to login to Amazon Connect.
 19. In the search field, enter **SalesforceConnectPolicy** and select
     the box to attach the policy.
 
-<img src="/img/classic/image311.png" />
+<img src={useBaseUrl('/img/classic/image311.png')} />
 
 20. Choose **Next: Tags** and set tags if desired, then choose **Next:
     Review**
@@ -188,7 +190,7 @@ further configuration to complete the SAML integration.
 
 5.  Provide an email contact address
 
-<img src="/img/classic/image312.png" />
+<img src={useBaseUrl('/img/classic/image312.png')} />
 
 6.  In the Web App Settings section, choose **Enable SAML**
 
@@ -201,7 +203,7 @@ further configuration to complete the SAML integration.
 
 10. Set Subject Type as **Persistent ID**
 
-<img src="/img/classic/image313.png" />
+<img src={useBaseUrl('/img/classic/image313.png')} />
 
 11. Choose **Save**. The screen should refresh and the new Connected App
     should be displayed
@@ -215,7 +217,7 @@ further configuration to complete the SAML integration.
 
 15. Select **Save**
 
-<img src="/img/classic/image314.png" />
+<img src={useBaseUrl('/img/classic/image314.png')} />
 
 16. Select New again to configure another custom attribute
 
@@ -249,7 +251,7 @@ further configuration to complete the SAML integration.
 
 19. Select **Save**
 
-<img src="/img/classic/image315.png" />
+<img src={useBaseUrl('/img/classic/image315.png')} />
 
 20. At the top of the Connected App description, select **Manage**
 
@@ -273,7 +275,7 @@ further configuration to complete the SAML integration.
         **Note:** you may be able to see AWS services, but you should have
     no configuration rights.
 
-<img src="/img/classic/image316.png" />
+<img src={useBaseUrl('/img/classic/image316.png')} />
 
 28. The Federated Login consists of the Role name and your Salesforce
     email address.
@@ -298,7 +300,7 @@ the usernames for both platforms match exactly.
 
 4.  Choose **Login as administrator**
 
-<img src="/img/classic/image317.png" />
+<img src={useBaseUrl('/img/classic/image317.png')} />
 
 5.  Within the Amazon Connect administration portal, select **Users**
     then choose **User Management**
@@ -317,7 +319,7 @@ the usernames for both platforms match exactly.
 
 11. Set the **Security Profile**. In this example, *Admin* is shown
 
-<img src="/img/classic/image318.png" />
+<img src={useBaseUrl('/img/classic/image318.png')} />
 
 12. Select **Save**
 
@@ -359,7 +361,7 @@ please use the region Console URL. For example:
     c.  From the Instance ARN, copy the portion after the '/'. This is
         the Instance Id
 
-<img src="/img/classic/image319.png" />
+<img src={useBaseUrl('/img/classic/image319.png')} />
 
 2.  Concatenate the 'IdP-Initiated Login URL' and the 'RelayState', by
     combining the two with "&RelayState=" in between, for example:
@@ -395,14 +397,14 @@ Amazon Connect Contact Control Panel once authentication completes.
 2.  Expand the **navigation menu** by selecting the down arrow and
     choose **AC CTI Adapters**.
 
-<img src="/img/classic/image83.png" />
+<img src={useBaseUrl('/img/classic/image83.png')} />
 
 3.  Select **ACLightningAdapter**
 
 4.  Scroll down to the Single SignOn (SSO) section and choose the pencil
     icon of either field to edit
 
-<img src="/img/classic/image84.png" />
+<img src={useBaseUrl('/img/classic/image84.png')} />
 
 5.  For the SSO Url, copy the first part of the SSO URL that you created
     previously, up to the first question mark (do not copy the question
@@ -412,7 +414,7 @@ Amazon Connect Contact Control Panel once authentication completes.
 
 6.  Paste this portion of the URL into the **SSO Url** field
 
-<img src="/img/classic/image85.png" />
+<img src={useBaseUrl('/img/classic/image85.png')} />
 
 7.  For the SSO Relay State, copy everything AFTER the question mark (do
     not copy the question mark), for example:
@@ -421,7 +423,7 @@ Amazon Connect Contact Control Panel once authentication completes.
 
 8.  Paste this portion of the URL into the **SSO Relay State** field
 
-<img src="/img/classic/image86.png" />
+<img src={useBaseUrl('/img/classic/image86.png')} />
 
 9.  Choose **Save**
 
@@ -432,13 +434,13 @@ Amazon Connect Contact Control Panel once authentication completes.
         Salesforce org, then refresh the browser again
 
 
-<img src="/img/classic/image87.png" />
+<img src={useBaseUrl('/img/classic/image87.png')} />
 
 11. After a few seconds, a new window should pop up for a moment. This
     window is performing the authentication and setting your session
     cookie. Once it does this, it will close automatically.
 
-<img src="/img/classic/image88.png" />
+<img src={useBaseUrl('/img/classic/image88.png')} />
 
 12. Once the authentication window closes, select the **phone icon** in
     the console toolbar to open the CCP
@@ -447,6 +449,6 @@ Amazon Connect Contact Control Panel once authentication completes.
 
 13. You should now see the authenticated and logged in CCP
 
-<img src="/img/classic/image89.png" />
+<img src={useBaseUrl('/img/classic/image89.png')} />
 
 Configuration is complete

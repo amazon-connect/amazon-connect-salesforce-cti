@@ -3,6 +3,8 @@ id: 05-contact-trace-record-import
 title: Contact Trace Record Import
 ---
 
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
 In Amazon Connect, data about contacts is captured in contact trace
 records (CTR). This data can include the amount of time a contact spends
 in each state: customer on hold, customer in queue, agent interaction
@@ -33,7 +35,7 @@ Record processing to trigger the import task.
     flows**
 
     
-<img src="/img/lightning/image201.png" />
+<img src={useBaseUrl('/img/lightning/image201.png')} />
 
 3.  Open the contact flow that you want to use to enable call recording
     import.
@@ -47,7 +49,7 @@ Record processing to trigger the import task.
 
     b.  **Value:** true
 
-<img src="/img/lightning/image214.png" />
+<img src={useBaseUrl('/img/lightning/image214.png')} />
 
 6.  **Save** the Set contact attributes block. Make sure it is
     appropriately connected to your contact flow, and **Publish** the
@@ -70,13 +72,13 @@ Record processing to trigger the import task.
     choose **Edit**.
 
     
-<img src="/img/lightning/image40.png" />
+<img src={useBaseUrl('/img/lightning/image40.png')} />
 
 3.  On the Edit Service Console App Navigation Items page, select **Add
     More Items**
 
     
-<img src="/img/lightning/image41.png" />
+<img src={useBaseUrl('/img/lightning/image41.png')} />
 
 4.  Select the **+** next to **AC Contact Trace Records**
 
@@ -86,21 +88,21 @@ Record processing to trigger the import task.
     **Save**
 
     
-<img src="/img/lightning/image215.png" />
+<img src={useBaseUrl('/img/lightning/image215.png')} />
 
 
 7.  Once the save completes, expand the **navigation menu** by selecting
     the down arrow and choose **AC Contact Trace Records**
     
-<img src="/img/lightning/image216.png" />
+<img src={useBaseUrl('/img/lightning/image216.png')} />
 
 8.  Change the list view from Recently Viewed to **All**
 
-<img src="/img/lightning/image217.png" />
+<img src={useBaseUrl('/img/lightning/image217.png')} />
 
 9.  Once the view refreshes, you should see your record(s)
 
-<img src="/img/lightning/image218.png" />
+<img src={useBaseUrl('/img/lightning/image218.png')} />
 
 10. Select a record to view it
 
@@ -120,13 +122,13 @@ that you will want to customize this view to show more data.
     Manager** from the results
 
     
-<img src="/img/lightning/image219.png" />
+<img src={useBaseUrl('/img/lightning/image219.png')} />
 
 3.  In the Object Manager, find the **AC Contact Trace Record** object
     and select it
 
     
-<img src="/img/lightning/image220.png" />
+<img src={useBaseUrl('/img/lightning/image220.png')} />
 
 4.  In the left navigation, choose **Page Layouts**
 
@@ -138,7 +140,7 @@ that you will want to customize this view to show more data.
     Interaction Duration, and Attributes
     
     
-<img src="/img/lightning/image221.png" />
+<img src={useBaseUrl('/img/lightning/image221.png')} />
 
 7.  **Save** the layout
 
@@ -150,10 +152,10 @@ that you will want to customize this view to show more data.
     choose **AC Contact Trace Records**
 
     
-<img src="/img/lightning/image216.png" />
+<img src={useBaseUrl('/img/lightning/image216.png')} />
 
 11. Select a contact trace record
 
 12. You should now see your modified layout
 
-<img src="/img/lightning/image222.png" />
+<img src={useBaseUrl('/img/lightning/image222.png')} />

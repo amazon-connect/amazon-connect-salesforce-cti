@@ -1,13 +1,13 @@
 module.exports = {
   title: 'Amazon Connect Salesforce CTI Adapter',
   tagline: 'Setup and Installation Guide',
-  url: 'https://reimagined-umbrella-4a08ed5f.pages.github.io/',
-  baseUrl: '/',
+  url: 'https://amazon-connect.github.io/amazon-connect-salesforce-cti/',
+  baseUrl: '/amazon-connect-salesforce-cti/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.png',
   organizationName: 'amazon-connect',
-  projectName: 'amazon-connect-salesforce-cti-staging',
+  projectName: 'amazon-connect-salesforce-cti',
   themeConfig: {
     navbar: {
       title: 'Amazon Connect Salesforce CTI Adapter',

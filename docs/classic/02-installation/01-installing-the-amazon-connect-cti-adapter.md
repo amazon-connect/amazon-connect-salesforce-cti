@@ -3,6 +3,8 @@ id: 01-installing-the-amazon-connect-cti-adapter
 title: Installing the Amazon Connect CTI Adapter for Salesforce Package
 ---
 
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
 ## Lightning Flow Setup Installation
 
 1.  Navigate to **Service Setup** within the Lightning UI under the gear
@@ -34,57 +36,57 @@ title: Installing the Amazon Connect CTI Adapter for Salesforce Package
 
 1.  Log in into your Salesforce instance and open **Setup**.
 
-<img src="/img/classic/image2.png" />
+<img src={useBaseUrl('/img/classic/image2.png')} />
 
 2.  Open the [Amazon Connect CTI Package URL](https://appexchange.salesforce.com/listingDetail?listingId=a0N3A00000EJH4yUAH), then choose **Install for Admins Only**.
 
-<img src="/img/classic/image3.png" />
+<img src={useBaseUrl('/img/classic/image3.png')} />
 
-<img src="/img/classic/image5.png" />
+<img src={useBaseUrl('/img/classic/image5.png')} />
 
 3.  Choose **Done**. The **Installed Packages** page opens.
 
-<img src="/img/classic/image6.png" />
+<img src={useBaseUrl('/img/classic/image6.png')} />
 
 4.  In the **Quick Find** box, type *Call Center*, then choose **Call Centers**.
 
-<img src="/img/classic/image7.png" />
+<img src={useBaseUrl('/img/classic/image7.png')} />
 
 The Call Centers page opens. You should see 3 Call Center
 configurations: Classic, Console and Lightning.
 
-<img src="/img/classic/image8.png" />
+<img src={useBaseUrl('/img/classic/image8.png')} />
 
 ## Create the Softphone Layout
 
 Next, we need to create a softphone layout for the solution.
 
-<img src="/img/classic/image9.png" />
+<img src={useBaseUrl('/img/classic/image9.png')} />
 
 6.  In the **Quick Find** box, type *Softphone Layouts*, then choose **Softphone Layouts**.
 
 7.  Choose **New**.
 
-<img src="/img/classic/image10.png" />
+<img src={useBaseUrl('/img/classic/image10.png')} />
 
 8.  Enter a name for the layout, such as *AmazonConnectDefault*, then select the **Is Default Layout** checkbox.
 
-<img src="/img/classic/image11.png" />
+<img src={useBaseUrl('/img/classic/image11.png')} />
 
 9.  Expand "Display these salesforce.com objects" and select objects that CTI Connector should be able to search, for a screen-pop query. In this example, besides default selection, I'm adding "Case", as I want to search and screen-pop by CaseID.
 
-<img src="/img/classic/image12.png" />
+<img src={useBaseUrl('/img/classic/image12.png')} />
 
 10. If necessary, configure the search behavior in the case that one or multiple records are found upon CTI search.
 
-<img src="/img/classic/image13.png" />
+<img src={useBaseUrl('/img/classic/image13.png')} />
 
 11. In this example, keep the default configuration, then choose
     **Save**.
 
-<img src="/img/classic/image14.png" />
+<img src={useBaseUrl('/img/classic/image14.png')} />
 
-<img src="/img/classic/image15.png" />
+<img src={useBaseUrl('/img/classic/image15.png')} />
 
 ## Set Access Permissions
 
@@ -98,11 +100,11 @@ softphone.
 
 2. Navigate to **Setup** \> **Manage Users** \> **Permission Sets**.
 
-<img src="/img/classic/image16.png" />
+<img src={useBaseUrl('/img/classic/image16.png')} />
 
 2.  Choose **AC_Manager**.
 
-<img src="/img/classic/image17.png" />
+<img src={useBaseUrl('/img/classic/image17.png')} />
 
 3.  Choose **Manage Assignments**.
 
@@ -112,28 +114,28 @@ softphone.
 
 ### AC_Administrator
 
-<img src="/img/classic/image18.png" />
+<img src={useBaseUrl('/img/classic/image18.png')} />
 
 ### AC_Manager
 
-<img src="/img/classic/image19.png" />
+<img src={useBaseUrl('/img/classic/image19.png')} />
 
 ### AC_Agent
 
-<img src="/img/classic/image20.png" />
+<img src={useBaseUrl('/img/classic/image20.png')} />
 
 ## Configure Console Experience
 
 For the Console experience, we are going to use Sample Console
 application, but the procedure is the same for other applications.
 
-<img src="/img/classic/image21.png" />
+<img src={useBaseUrl('/img/classic/image21.png')} />
 
 In the top navigation bar, select the "+" icon.
 
-<img src="/img/classic/image22.png" />
+<img src={useBaseUrl('/img/classic/image22.png')} />
 
-<img src="/img/classic/image23.png" />
+<img src={useBaseUrl('/img/classic/image23.png')} />
 
 Select "AC CTI Adapters"
 
@@ -141,23 +143,23 @@ Create a new adapter. Fill in the CTI Adapter Name. For the Call Center Definiti
 ACConsoleAdapter. For the Amazon Connect Instance, type in the login url to the instance (this can be found
 in the Amazon Connect Instance details page), removing everything after ".com".
 
-<img src="/img/classic/image328.png"/>
+<img src={useBaseUrl('/img/classic/image328.png')} />
 
 Select Save.
 
-<img src="/img/classic/image24.png" />
+<img src={useBaseUrl('/img/classic/image24.png')} />
 
 In the Quick Find field, type Visualforce Pages and select Visual Force
 Pages:
 
-<img src="/img/classic/image25.png" />
+<img src={useBaseUrl('/img/classic/image25.png')} />
 
-<img src="/img/classic/image26.png" />
+<img src={useBaseUrl('/img/classic/image26.png')} />
 
 As we are currently setting up the Console experience, click on
 AC_ConsoleAdapter page.
 
-<img src="/img/classic/image27.png" />
+<img src={useBaseUrl('/img/classic/image27.png')} />
 
 Click on the **Preview** button. A new browser tab will open with the
 URL of this page. It's going to be in this format:
@@ -168,35 +170,35 @@ This is what we are going to use as "Origin URL" in our Amazon Connect
 configuration. From AWS Console, select Amazon Connect service and then
 select your Amazon Connect instance:
 
-<img src="/img/classic/image28.png" />
+<img src={useBaseUrl('/img/classic/image28.png')} />
 
 Select "Application Integration" on the left-hand side:
 
-<img src="/img/classic/image29.png" />
+<img src={useBaseUrl('/img/classic/image29.png')} />
 
 Click on "Add origin" link and enter the origin URL
 
-<img src="/img/classic/image30.png" />
+<img src={useBaseUrl('/img/classic/image30.png')} />
 
 Click "Add" button
 
-<img src="/img/classic/image31.png" />
+<img src={useBaseUrl('/img/classic/image31.png')} />
 
 From the Setup screen, type Apps in Quick Find field and select
 Build\>Create\>Apps:
 
-<img src="/img/classic/image32.png" />
+<img src={useBaseUrl('/img/classic/image32.png')} />
 
 You will be able to see all applications that are available in your
 account.
 
-<img src="/img/classic/image33.png" />
+<img src={useBaseUrl('/img/classic/image33.png')} />
 
 Click "Edit" next to the Sample Console application.
 
 Scroll to the bottom of the page and "Assign to Profiles"
 
-<img src="/img/classic/image34.png" />
+<img src={useBaseUrl('/img/classic/image34.png')} />
 
 In this example, I'm assigning Sample console as Visible to System
 Administrator.
@@ -206,13 +208,13 @@ Choose **Save**.
 From Setup, type Call Centers in the Quick Find field and select Call
 Centers.
 
-<img src="/img/classic/image35.png" />
+<img src={useBaseUrl('/img/classic/image35.png')} />
 
-<img src="/img/classic/image36.png" />
+<img src={useBaseUrl('/img/classic/image36.png')} />
 
 Select "Amazon Connect CCP Adapter Console 3.9"
 
-<img src="/img/classic/image37.png" />
+<img src={useBaseUrl('/img/classic/image37.png')} />
 
 Replace the **CTI Adapter URL** with the AC Lightning Adapter visualforce page url you copied in the previous section. 
 If you wish to specify your version of the ccp user interface, add "?ccpVersion=x", where x is the version of the ccp
@@ -221,55 +223,55 @@ If you wish to specify your version of the ccp user interface, add "?ccpVersion=
 Click on the "Manage Call Center Users" button at the bottom of the
 page.
 
-<img src="/img/classic/image38.png" />
+<img src={useBaseUrl('/img/classic/image38.png')} />
 
-<img src="/img/classic/image39.png" />
+<img src={useBaseUrl('/img/classic/image39.png')} />
 
-<img src="/img/classic/image40.png" />
+<img src={useBaseUrl('/img/classic/image40.png')} />
 
 Set filters and click on the Find button. Select the checkbox next to
 the user and click "Add to Call Center" button.
 
-<img src="/img/classic/image41.png" />
+<img src={useBaseUrl('/img/classic/image41.png')} />
 
 Repeat the steps to add more users.
 
-<img src="/img/classic/image42.png" />
+<img src={useBaseUrl('/img/classic/image42.png')} />
 
 From the top-right corner, select Sample Console application.
 
-<img src="/img/classic/image43.png" />
+<img src={useBaseUrl('/img/classic/image43.png')} />
 
 In the bottom-right corner, you will be able to see the Phone button.
 
-<img src="/img/classic/image44.png" />
+<img src={useBaseUrl('/img/classic/image44.png')} />
 
 Click on the Phone button to open the softphone pop-up.
 
-<img src="/img/classic/image45.png" />
+<img src={useBaseUrl('/img/classic/image45.png')} />
 
 You will need to Sign in into your Amazon Connect CCP. Click on the Sign
 in to CCP button. A new modal pop-up will show, asking you to enter your
 credentials.
 
-<img src="/img/classic/image46.png" />
+<img src={useBaseUrl('/img/classic/image46.png')} />
 
 Enter your credentials and click Sign in. Allow Microphone access (if
 asked by browser). Once login is successful, the pop-up window will
 automatically close.
 
-<img src="/img/classic/image47.png" />
+<img src={useBaseUrl('/img/classic/image47.png')} />
 
 Select "Change status" and select "Available".
 
-<img src="/img/classic/image48.png" />
+<img src={useBaseUrl('/img/classic/image48.png')} />
 
 Make an inbound phone call to your Amazon Connect instance. The CCP is
 going to "ring" and you can answer the call.
 
-<img src="/img/classic/image49.png" />
+<img src={useBaseUrl('/img/classic/image49.png')} />
 
-<img src="/img/classic/image50.png" />
+<img src={useBaseUrl('/img/classic/image50.png')} />
 
 ## Configure Classic Experience
 
@@ -285,15 +287,15 @@ functionality.
 
 First, we have to configure Amazon Connect integration.
 
-<img src="/img/classic/image21.png" />
+<img src={useBaseUrl('/img/classic/image21.png')} />
 
 From the top right corner, select the Sales application.
 
 In the top navigation bar, select the "+" icon.
 
-<img src="/img/classic/image22.png" />
+<img src={useBaseUrl('/img/classic/image22.png')} />
 
-<img src="/img/classic/image23.png" />
+<img src={useBaseUrl('/img/classic/image23.png')} />
 
 Select "AC CTI Adapters"
 
@@ -301,23 +303,23 @@ Create a new adapter. Fill in the CTI Adapter Name. For the Call Center Definiti
 ACConsoleAdapter. For the Amazon Connect Instance, type in the login url to the instance (this can be found
 in the Amazon Connect Instance details page), removing everything after ".com".
 
-<img src="/img/classic/image328.png"/>
+<img src={useBaseUrl('/img/classic/image328.png')} />
 
 Select Save.
 
-<img src="/img/classic/image24.png" />
+<img src={useBaseUrl('/img/classic/image24.png')} />
 
 In the Quick Find field, type Visualforce Pages and select Visual Force
 Pages:
 
-<img src="/img/classic/image25.png" />
+<img src={useBaseUrl('/img/classic/image25.png')} />
 
-<img src="/img/classic/image26.png" />
+<img src={useBaseUrl('/img/classic/image26.png')} />
 
 As we are currently setting up the Classic experience, click on
 AC_ClassicAdapter page
 
-<img src="/img/classic/image51.png" />
+<img src={useBaseUrl('/img/classic/image51.png')} />
 
 Click on the Preview button. New browser tab will open with the URL of
 this page. It's going to be in this format:
@@ -328,30 +330,30 @@ This is what we are going to use as "Origin URL" in our Amazon Connect
 configuration. From AWS Console, select Amazon Connect service and then
 select your Amazon Connect instance:
 
-<img src="/img/classic/image52.png" />
+<img src={useBaseUrl('/img/classic/image52.png')} />
 
 Select "Application Integration" on the left-hand side:
 
-<img src="/img/classic/image53.png" />
+<img src={useBaseUrl('/img/classic/image53.png')} />
 
 Click on "Add origin" link and enter the origin URL
 
-<img src="/img/classic/image54.png" />
+<img src={useBaseUrl('/img/classic/image54.png')} />
 
 Click "Add" button
 
-<img src="/img/classic/image55.png" />
+<img src={useBaseUrl('/img/classic/image55.png')} />
 
 From the Salesforce Classic layout, select Setup then type Call Centers
 in the Quick Find field and select Call Centers.
 
-<img src="/img/classic/image35.png" />
+<img src={useBaseUrl('/img/classic/image35.png')} />
 
-<img src="/img/classic/image36.png" />
+<img src={useBaseUrl('/img/classic/image36.png')} />
 
 Select "Amazon Connect CCP Adapter Classic 3.9"
 
-<img src="/img/classic/image56.png" />
+<img src={useBaseUrl('/img/classic/image56.png')} />
 
 Replace the **CTI Adapter URL** with the AC Lightning Adapter visualforce page url you copied in the previous section. 
 If you wish to specify your version of the ccp user interface, add "?ccpVersion=x", where x is the version of the ccp
@@ -360,57 +362,57 @@ If you wish to specify your version of the ccp user interface, add "?ccpVersion=
 Click on the "Manage Call Center Users" button at the bottom of the
 page.
 
-<img src="/img/classic/image38.png" />
+<img src={useBaseUrl('/img/classic/image38.png')} />
 
-<img src="/img/classic/image57.png" />
+<img src={useBaseUrl('/img/classic/image57.png')} />
 
 Click on the "Add More Users" button.
 
-<img src="/img/classic/image58.png" />
+<img src={useBaseUrl('/img/classic/image58.png')} />
 
 Set filters and click on the Find button. Select the checkbox next to
 the user and click "Add to Call Center" button.
 
-<img src="/img/classic/image59.png" />
+<img src={useBaseUrl('/img/classic/image59.png')} />
 
 Repeat the steps to add more users.
 
-<img src="/img/classic/image60.png" />
+<img src={useBaseUrl('/img/classic/image60.png')} />
 
 From the top-right corner, select Sales application.
 
-<img src="/img/classic/image21.png" />
+<img src={useBaseUrl('/img/classic/image21.png')} />
 
 On the left-hand side, you will be able to see the Phone container.
 
-<img src="/img/classic/image61.png" />
+<img src={useBaseUrl('/img/classic/image61.png')} />
 
 You will need to Sign in into your Amazon Connect CCP. Click on the Sign
 in to CCP button. A new browser tab will open, asking you to enter your
 credentials.
 
-<img src="/img/classic/image62.png" />
+<img src={useBaseUrl('/img/classic/image62.png')} />
 
 Enter your credentials and click Sign in. Allow Microphone access (if
 asked by browser). Once Login is successful, the new tab with CCP will
 stay open, as this tab is going to carry the audio for voice calls.
 
-<img src="/img/classic/image63.png" />
+<img src={useBaseUrl('/img/classic/image63.png')} />
 
 Switch back to Salesforce tab in your browser.
 
-<img src="/img/classic/image64.png" />
+<img src={useBaseUrl('/img/classic/image64.png')} />
 
 Select "Change status" and select "Available".
 
-<img src="/img/classic/image65.png" />
+<img src={useBaseUrl('/img/classic/image65.png')} />
 
 Make an inbound phone call to your Amazon Connect instance. The CCP is
 going to "ring" and you can answer the call.
 
-<img src="/img/classic/image66.png" />
+<img src={useBaseUrl('/img/classic/image66.png')} />
 
-<img src="/img/classic/image67.png" />
+<img src={useBaseUrl('/img/classic/image67.png')} />
 
 Some CTI Flow features will reload the page the agent is currently on.
 The page is fully reloaded, but the softphone preserved the audio
@@ -421,11 +423,11 @@ also run in a separate browser window, if preferred.
 Go to Salesforce Setup page and type Call Centers in Quick Find, then
 select Call Centers.
 
-<img src="/img/classic/image68.png" />
+<img src={useBaseUrl('/img/classic/image68.png')} />
 
 Select "Amazon Connect CCP Classic"
 
-<img src="/img/classic/image69.png" />
+<img src={useBaseUrl('/img/classic/image69.png')} />
 
 Click on the Edit button and find the "Amazon Connect CCP Login Popup"
 field. By default, this field is set to "false", which means that Login
@@ -437,16 +439,16 @@ You may also notice that "Amazon Connect CCP Medialess" field is set to
 any media. Set the value to "true" and click on the Save button. Go back
 to Sales application. If CCP is already logged in, please log out.
 
-<img src="/img/classic/image70.png" />
+<img src={useBaseUrl('/img/classic/image70.png')} />
 
 Click on the "Sign in to CCP" button and new browser window will open,
 asking you for credentials.
 
-<img src="/img/classic/image71.png" />
+<img src={useBaseUrl('/img/classic/image71.png')} />
 
 Enter your credentials and click Sign In. The CCP application will
 login, but popup window will stay open and it will host the 2^nd^ CCP
 which will carry the audio stream. This window can be minimized or moved
 to 2^nd^ screen.
 
-<img src="/img/classic/image72.png" />
+<img src={useBaseUrl('/img/classic/image72.png')} />

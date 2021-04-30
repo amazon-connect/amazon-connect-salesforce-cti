@@ -3,6 +3,8 @@ id: 04-call-recording-link-for-task
 title: Call Recording Link for Task
 ---
 
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
 The Adapter comes with a Visualforce component that provides users with
 the ability to download a call recording created within Amazon Connect
 from a Salesforce page.
@@ -13,7 +15,7 @@ To make sure that the AWS resources are set up, make sure that the
 _PostcallRecordingImportEnabled_ parameter is set to true in your
 Cloudformation stack:
 
-<img src="/img/classic/audiostreaming0.png" />
+<img src={useBaseUrl('/img/classic/audiostreaming0.png')} />
 
 ##### AWS Side Setup
 
@@ -33,13 +35,13 @@ Cloudformation stack:
 
 5. For the **CloudFrontPrivateKey** field, copy and paste the modified contents of the private key .pem file. For the **CloudFrontAccessKeyID** field, copy and paste the **Access Key Id** you recorded above. Your Secrets Manager Secret should look like the following:
 
-<img src="/img/classic/audiostreaming1.png" />
+<img src={useBaseUrl('/img/classic/audiostreaming1.png')} />
 
 Please note that your secret may also be formatted stored as a "Secret key/value" secret rather than a "Plaintext" secret; both secret types are valid.
 
 6. Navigate to your Salesforce instance. Navigate to setup, then search for "Visualforce pages."
 
-<img src="/img/classic/audiostreaming2.png" />
+<img src={useBaseUrl('/img/classic/audiostreaming2.png')} />
 
 7. Select the **ACSFCCP_CallRecordingTask** visualforce page, and select "preview." Copy the url of the opened page up until `.com`. Make sure not to include any characters after `.com`.
 
@@ -58,37 +60,37 @@ Please note that your secret may also be formatted stored as a "Secret key/value
 ]
 ```
 
-<img src="/img/classic/audiostreaming3.png" />
+<img src={useBaseUrl('/img/classic/audiostreaming3.png')} />
 
 10. Select Save
 
 11. Navigate to the "IAM" aws service. Select **Add User**.
 
-<img src="/img/classic/audiostreaming4.png" />
+<img src={useBaseUrl('/img/classic/audiostreaming4.png')} />
 
 12. Give your IAM user a name, like **sfInvokeGenerateAudioRecordingStreamingURLIAMUser**. For the "AWS Access Type", select **Programmatic access**.
 
-<img src="/img/classic/audiostreaming5.png" />
+<img src={useBaseUrl('/img/classic/audiostreaming5.png')} />
 
 13. Select Next, then select "Attach existing policies directly." Search for **invokeSfGenerateAudioRecordingStreamingURLPolicy** and select it.
 
 14. Create the user, then copy down the **Access key ID** and the **Secret access key**. These keys will be used in the next section.
 
-<img src="/img/classic/audiostreaming6.png" />
+<img src={useBaseUrl('/img/classic/audiostreaming6.png')} />
 
 15. Navigate to the "Lambda" aws service. Search for term "sfgenerate" and copy down the full name of the sfGenerateAudioRecordingStreaming lambda. This will be used in the next section.
 
-<img src="/img/classic/audiostreaming7.png" />
+<img src={useBaseUrl('/img/classic/audiostreaming7.png')} />
 
 16. Navigate back to the "Lambda" aws service main page and navigate to the **us-east-1 region**. Select **create function**.
 
-<img src="/img/classic/audiostreaming8.png" />
+<img src={useBaseUrl('/img/classic/audiostreaming8.png')} />
 
 17. Enter a function name, like **sfSig4RequestToS3**.
 
 18. Select **change default execution role**, and **use an existing role**. Search for and select _sfSig4RequestToS3Role_.
 
-<img src="/img/classic/audiostreaming9.png" />
+<img src={useBaseUrl('/img/classic/audiostreaming9.png')} />
 
 19. Select **create function**. On the next screen, copy and paste the contents from [this file](/docs/lightning/04-salesforce-lambdas/sfSig4RequestToS3.js) into the function body, and then select **Deploy**.
 
@@ -96,7 +98,7 @@ Please note that your secret may also be formatted stored as a "Secret key/value
 
 21. Select the Cloudfront Distribution that was created by the Salesfore Lambdas serverless application, then check off the "I acknowledge..." check box, then select deploy.
 
-<img src="/img/classic/audiostreaming10.png" />
+<img src={useBaseUrl('/img/classic/audiostreaming10.png')} />
 
 ##### Salesforce Side Setup
 
@@ -108,7 +110,7 @@ Please note that your secret may also be formatted stored as a "Secret key/value
 
 4. For **Identity Type** select **Named Principal**. For the **Authentication Protocol**, select **AWS Signature Version 4**. Fill in the **Access key ID** you recorded in the previous section as "AWS Access Key ID", the **Secret access key** as the "AWS Secret Access Key", the AWS Region, and "lambda" as the "AWS Service."
 
-<img src="/img/classic/audiostreaming11.png" />
+<img src={useBaseUrl('/img/classic/audiostreaming11.png')} />
 
 5. Select **save**.
 
@@ -119,7 +121,7 @@ Please note that your secret may also be formatted stored as a "Secret key/value
 2.  From the left navigation, choose **Routing** then select **Contact
     flows**
 
-<img src="/img/classic/audiostreaming12.png" />
+<img src={useBaseUrl('/img/classic/audiostreaming12.png')} />
 
 3.  Open the contact flow that you want to use to enable call recording
     import. This contact flow must have Amazon Connect's native
@@ -134,7 +136,7 @@ Please note that your secret may also be formatted stored as a "Secret key/value
 
     b. **Value:** true
 
-<img src="/img/classic/audiostreaming13.png" />
+<img src={useBaseUrl('/img/classic/audiostreaming13.png')} />
 
 6.  **Save** the Set contact attributes block. Make sure it is
     appropriately connected to your contact flow, and **Publish** the
@@ -149,22 +151,22 @@ To edit the sample Task Page Layout, please follow the steps:
 
 2.  Navigate to **Setup** then in type _Object Manager_ in Quick Find
 
-<img src="/img/classic/audiostreaming14.png" />
+<img src={useBaseUrl('/img/classic/audiostreaming14.png')} />
 
 3.  Click on the "Task" object
 
-<img src="/img/classic/audiostreaming15.png" />
+<img src={useBaseUrl('/img/classic/audiostreaming15.png')} />
 
 4.  Click on the "Page Layouts"
 
-<img src="/img/classic/audiostreaming16.png" />
+<img src={useBaseUrl('/img/classic/audiostreaming16.png')} />
 
 5.  Click on the "_Task Layout_" and the layout designer will open
 
-<img src="/img/classic/audiostreaming17.png" />
+<img src={useBaseUrl('/img/classic/audiostreaming17.png')} />
 
 6.  Drag the "ACSFCCP_CallRecording" item to the desired are of the layout to have that information appear on the agent's screen. The following screenshot shows how the Call Details section could appear when placing the "ACSFCCP_CallRecording" item on the required Task layout.
 
-<img src="/img/classic/audiostreaming18.png" />
+<img src={useBaseUrl('/img/classic/audiostreaming18.png')} />
 
 7.  To have access to the recording, the user must have an active session with Amazon Connect. This can be achieved by either logging in to the CCP softphone, or by logging in to Amazon Connect outside of Salesforce. After the session is established, a page refresh should make the player appear.

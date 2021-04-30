@@ -3,11 +3,13 @@ id: 02-omnipresence-agent-state-sync
 title: Omnipresence Agent State Sync
 ---
 
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
 Amazon Connect CTI Connector supports the bidirectional synchronization
 of Amazon Connect agent states with Salesforce omnichannel presence
 states.
 
-<img src="/img/classic/image90.png" />
+<img src={useBaseUrl('/img/classic/image90.png')} />
 
 ## Enable Omnichannel
 
@@ -20,30 +22,30 @@ First, we must enable omni-channel. To do this, navigate to "Setup" and
 type "omni" into the Quick Find box, then select "Omni-Channel Settings"
 from the menu.
 
-<img src="/img/classic/image91.png" />
+<img src={useBaseUrl('/img/classic/image91.png')} />
 
 Place a check in the checkbox for "Enable Omni-Channel".
 
-<img src="/img/classic/image92.png" />
+<img src={useBaseUrl('/img/classic/image92.png')} />
 
 ## Create Presence Statuses
 
 In this step, we need to add and map Presence Statuses to what is
 defined in Amazon Connect under Users -\> Agent Status.
 
-<img src="/img/classic/image93.png" />
+<img src={useBaseUrl('/img/classic/image93.png')} />
 
 Open the Setup in your Salesforce Org and type "presence", then select
 "Presence Statuses" from the menu. Click the "New" button and add
 statuses to match what is defined in Amazon Connect.
 
-<img src="/img/classic/image94.png" />
+<img src={useBaseUrl('/img/classic/image94.png')} />
 
 Each status is flagged as either Online or Busy. For each status that is
 marked as Online, you will need to specify a service channel to
 associate the presence status.
 
-<img src="/img/classic/image95.png" />
+<img src={useBaseUrl('/img/classic/image95.png')} />
 
 ## Configure Enabled Service Presences Status Access
 
@@ -55,12 +57,12 @@ In the Salesforce Setup, under Manage Users, select Profiles, then
 select the user profile to edit. Scroll down the page until you find the
 section labeled "Enabled Service Presence Status Access".
 
-<img src="/img/classic/image96.png" />
+<img src={useBaseUrl('/img/classic/image96.png')} />
 
 Click the "Edit" button and on the next page, "Add" presence statuses
 you want to have enabled for the user.
 
-<img src="/img/classic/image97.png" />
+<img src={useBaseUrl('/img/classic/image97.png')} />
 
 ### Amazon Connect System Statuses
 
@@ -154,7 +156,7 @@ Available comparators are:
 -   **Less than or equal to:** Is Operand A less than or equal to
     Operand B
 
-<img src="/img/classic/image98.png" />
+<img src={useBaseUrl('/img/classic/image98.png')} />
 
 The configuration setting illustrated in the previous example, are
 described below:
@@ -178,7 +180,7 @@ described below:
 
 Example rule:
 
-<img src="/img/classic/image99.png" />
+<img src={useBaseUrl('/img/classic/image99.png')} />
 
 Summary: This rule is triggered when the Connect agent's state is
 changed (Source). If their state is changed to the static value (Operand

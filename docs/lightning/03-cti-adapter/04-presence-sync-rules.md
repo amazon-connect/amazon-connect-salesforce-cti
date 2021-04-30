@@ -3,6 +3,8 @@ id: 04-presence-sync-rules
 title: Presence Sync Rules
 ---
 
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
 The CTI Adapter supports bidirectional synchronization of agent state
 between Amazon Connect and Salesforce Omnichannel. This allows you to
 tightly control agent availability for different contact/media types
@@ -137,7 +139,7 @@ routable.
     status**
 
     
-<img src="/img/lightning/image145.png" />
+<img src={useBaseUrl('/img/lightning/image145.png')} />
 
 3.  Select **Add new agent status**
 
@@ -145,7 +147,7 @@ routable.
     selected.
 
     
-<img src="/img/lightning/image146.png" />
+<img src={useBaseUrl('/img/lightning/image146.png')} />
 
 5.  Select Save. Repeat as desired for the remaining statuses that you
     wish to add.
@@ -165,7 +167,7 @@ does make it easier to track what you are doing.
     Statuses** from the results
     
     
-<img src="/img/lightning/image147.png" />
+<img src={useBaseUrl('/img/lightning/image147.png')} />
 
 3.  In the Presence Statuses page, choose New
 
@@ -180,7 +182,7 @@ does make it easier to track what you are doing.
 
 6.  Choose Save
 
-<img src="/img/lightning/image148.png" />
+<img src={useBaseUrl('/img/lightning/image148.png')} />
 
 7.  Repeat as necessary for all desired statuses
 
@@ -192,18 +194,18 @@ does make it easier to track what you are doing.
     from the results
 
     
-<img src="/img/lightning/image149.png" />
+<img src={useBaseUrl('/img/lightning/image149.png')} />
 
 3.  Select the profile assigned to your users
 
 4.  Hover over the Enabled Service Presence Status link and choose Edit
 
-<img src="/img/lightning/image150.png" />
+<img src={useBaseUrl('/img/lightning/image150.png')} />
 
 5.  Select the available status from the left, then choose the Add
     button to add it the Enabled Service Presence Statuses field
     
-<img src="/img/lightning/image151.png" />
+<img src={useBaseUrl('/img/lightning/image151.png')} />
 
 6.  Select Save
 
@@ -231,7 +233,7 @@ and Salesforce agent state change.
 2.  Expand the **navigation menu** by selecting the down arrow and
     choose **AC CTI Adapters**.
     
-<img src="/img/lightning/image114.png" />
+<img src={useBaseUrl('/img/lightning/image114.png')} />
 
 3.  Select **ACLightningAdapter**
 
@@ -242,7 +244,7 @@ and Salesforce agent state change.
 6.  Provide a **Presence Sync Rule Name** to identify the use case of
     this rule. For example: Connect agent switches to Lunch
     
-<img src="/img/lightning/image152.png" />
+<img src={useBaseUrl('/img/lightning/image152.png')} />
 
 7.  Select **Next**
 
@@ -258,7 +260,7 @@ and Salesforce agent state change.
 12. For Operand B Value, enter **Lunch** (Or whatever state you have
     created in Amazon Connect)**
     
-<img src="/img/lightning/image153.png" />
+<img src={useBaseUrl('/img/lightning/image153.png')} />
 
 13. Select **Next**
 
@@ -277,15 +279,15 @@ and Salesforce agent state change.
     Softphone icon
 
     
-<img src="/img/lightning/image46.png" />
+<img src={useBaseUrl('/img/lightning/image46.png')} />
 
 19. Set your Amazon Connect agent status to Lunch
 
-<img src="/img/lightning/image154.png" />
+<img src={useBaseUrl('/img/lightning/image154.png')} />
 
 20. Observe that the Omni-Channel status switches to Lunch
 
-<img src="/img/lightning/image155.png" />
+<img src={useBaseUrl('/img/lightning/image155.png')} />
 
 21. Repeat this process as desired to configure your presence sync
     rules.

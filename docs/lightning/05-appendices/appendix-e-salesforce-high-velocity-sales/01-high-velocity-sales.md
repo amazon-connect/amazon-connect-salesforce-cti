@@ -3,6 +3,8 @@ id: 01-high-velocity-sales
 title: "Appendix E: Integration with Salesforce High Velocity Sales"
 ---
 
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
 ### What is High Velocity Sales?
 
 Salesforce HVS (HVS) is a process for your inside sales team to follow a
@@ -24,7 +26,7 @@ Velocity Sales in your Salesforce Org.
 2.  Toggle "Enable High Velocity Sales Features" from disable to enable
     state
 
-<img src="/img/lightning/image249.png" />
+<img src={useBaseUrl('/img/lightning/image249.png')} />
 
 ### Call Outcomes for Branching
 
@@ -42,7 +44,7 @@ process.
 3.  Enter the call result values used by your org next to related call
     outcomes.
 
-<img src="/img/lightning/image250.png" />
+<img src={useBaseUrl('/img/lightning/image250.png')} />
 
 ### Assign HVS permission sets to Connect Users
 
@@ -72,14 +74,14 @@ Create a Sales Cadence
 3.  Enter name and description. Click **Save** button which opens
     **Sales Cadence** builder screen.
 
-<img src="/img/lightning/image251.png" />
+<img src={useBaseUrl('/img/lightning/image251.png')} />
 
 4.  Click + sign in the builder to add a step. Choose a type of step you
     want to add for your sales cadence. Once you finish adding steps,
     click the **Activate** button. Once a sales cadence is active, you
     can add leads, contact, and personal accounts to Sales Cadence.
 
-<img src="/img/lightning/image252.png" />
+<img src={useBaseUrl('/img/lightning/image252.png')} />
 
 ### Assigning Prospects
 
@@ -87,7 +89,7 @@ You can assign a prospect to a Sales Cadence either on a prospect detail
 page or through an automated flow. In this example, using prospect
 detail page to assign a sales cadence.
 
-<img src="/img/lightning/image253.png" />
+<img src={useBaseUrl('/img/lightning/image253.png')} />
 
 Click **Add to Sales Cadence** button to add this prospect to a Sales
 Cadence.
@@ -118,7 +120,7 @@ task page layout to track disposition value for each call.
 
 7.  Choose **Save**
 
-<img src="/img/lightning/image254.png" />
+<img src={useBaseUrl('/img/lightning/image254.png')} />
 
 ### Setup CTI Flows for High Volume Sales
 
@@ -132,7 +134,7 @@ Sales.
 2.  Expand the **navigation menu** by selecting the down arrow and
     choose **AC CTI Adapters**.
 
-<img src="/img/lightning/image114.png" />
+<img src={useBaseUrl('/img/lightning/image114.png')} />
 
 3.  Select **ACLightningAdapter**
 
@@ -140,7 +142,7 @@ Sales.
 
 5.  Select New to create a new CTI Flow
 
-<img src="/img/lightning/image255.png" />
+<img src={useBaseUrl('/img/lightning/image255.png')} />
 
 6.  In the **CTI Flow Name** field, enter **Voice onHvsWorkStart**
 
@@ -161,14 +163,14 @@ Sales.
 14. Click **Upload** and find the file you just downloaded. You should now
     see this:\*\*
 
-<img src="/img/lightning/image256.png" />
+<img src={useBaseUrl('/img/lightning/image256.png')} />
 
 15. Click **Save**
 
 16. Go back to the CTI Adapter page and select **New** in CTI Flows
     section to create another CTI Flow.
 
-<img src="/img/lightning/image255.png" />
+<img src={useBaseUrl('/img/lightning/image255.png')} />
 
 17. In the **CTI Flow Name** field, enter **HVS Voice onConnecting**
 
@@ -187,7 +189,7 @@ Sales.
 24. Click **Upload** and find the file you just downloaded. You should now
     see this:
 
-<img src="/img/lightning/image257.png" />
+<img src={useBaseUrl('/img/lightning/image257.png')} />
 
 25. Click **Save**
 
