@@ -1,9 +1,7 @@
-import useBaseUrl from "@docusaurus/useBaseUrl";
-
 # Amazon Connect Salesforce CTI Adapter Setup and Installation Guide
 
 <p align="center">
-  <img src={useBaseUrl('/static/img/lightning/image1.png')} />
+  <img src="./static/img/lightning/image1.png" />
 </p>
 
 This website is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern static website generator. This guide details the integration between Amazon Connect and Salesforce Lightning. It covers the installation, configuration, and operation of the two primary components of the integration: the Amazon Connect CTI Adapter for Salesforce and the AWS Serverless Application Repository for Amazon Connect Salesforce integration.
