@@ -26,6 +26,11 @@ module.exports = {
           position: 'left',
         },
         {
+          href: 'https://github.com/amazon-connect/amazon-connect-salesforce-cti/tree/main/pdf',
+          label: 'PDF',
+          position: 'right',
+        },
+        {
           href: 'https://github.com/amazon-connect/amazon-connect-salesforce-cti',
           label: 'GitHub',
           position: 'right',
