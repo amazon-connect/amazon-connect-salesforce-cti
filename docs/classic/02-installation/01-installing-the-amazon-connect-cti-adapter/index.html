@@ -7,15 +7,15 @@
 <link rel="alternate" type="application/rss+xml" href="/amazon-connect-salesforce-cti/blog/rss.xml" title="Amazon Connect Salesforce CTI Adapter Blog RSS Feed">
 <link rel="alternate" type="application/atom+xml" href="/amazon-connect-salesforce-cti/blog/atom.xml" title="Amazon Connect Salesforce CTI Adapter Blog Atom Feed"><title data-react-helmet="true">Installing the Amazon Connect CTI Adapter for Salesforce Package | Amazon Connect Salesforce CTI Adapter</title><meta data-react-helmet="true" name="twitter:card" content="summary_large_image"><meta data-react-helmet="true" name="docusaurus_locale" content="en"><meta data-react-helmet="true" name="docusaurus_version" content="current"><meta data-react-helmet="true" name="docusaurus_tag" content="docs-default-current"><meta data-react-helmet="true" property="og:title" content="Installing the Amazon Connect CTI Adapter for Salesforce Package | Amazon Connect Salesforce CTI Adapter"><meta data-react-helmet="true" name="description" content="Lightning Flow Setup Installation"><meta data-react-helmet="true" property="og:description" content="Lightning Flow Setup Installation"><meta data-react-helmet="true" property="og:url" content="https://amazon-connect.github.io/amazon-connect-salesforce-cti//amazon-connect-salesforce-cti/docs/classic/02-installation/01-installing-the-amazon-connect-cti-adapter"><link data-react-helmet="true" rel="shortcut icon" href="/amazon-connect-salesforce-cti/img/favicon.png"><link data-react-helmet="true" rel="canonical" href="https://amazon-connect.github.io/amazon-connect-salesforce-cti//amazon-connect-salesforce-cti/docs/classic/02-installation/01-installing-the-amazon-connect-cti-adapter"><link rel="stylesheet" href="/amazon-connect-salesforce-cti/styles.58bbe32c.css">
 <link rel="preload" href="/amazon-connect-salesforce-cti/styles.63fe7873.js" as="script">
-<link rel="preload" href="/amazon-connect-salesforce-cti/runtime~main.510d193a.js" as="script">
-<link rel="preload" href="/amazon-connect-salesforce-cti/main.32f197c7.js" as="script">
+<link rel="preload" href="/amazon-connect-salesforce-cti/runtime~main.4ce51c9a.js" as="script">
+<link rel="preload" href="/amazon-connect-salesforce-cti/main.1f40a29e.js" as="script">
 <link rel="preload" href="/amazon-connect-salesforce-cti/1.248d282d.js" as="script">
-<link rel="preload" href="/amazon-connect-salesforce-cti/2.50de5ed5.js" as="script">
-<link rel="preload" href="/amazon-connect-salesforce-cti/64.1c62a108.js" as="script">
+<link rel="preload" href="/amazon-connect-salesforce-cti/2.3bbe7633.js" as="script">
+<link rel="preload" href="/amazon-connect-salesforce-cti/64.5f26236b.js" as="script">
 <link rel="preload" href="/amazon-connect-salesforce-cti/65.b29e5dff.js" as="script">
 <link rel="preload" href="/amazon-connect-salesforce-cti/935f2afb.eecfa4f8.js" as="script">
-<link rel="preload" href="/amazon-connect-salesforce-cti/17896441.e5a93c90.js" as="script">
-<link rel="preload" href="/amazon-connect-salesforce-cti/68942107.344851bc.js" as="script">
+<link rel="preload" href="/amazon-connect-salesforce-cti/17896441.cef83546.js" as="script">
+<link rel="preload" href="/amazon-connect-salesforce-cti/68942107.235051cd.js" as="script">
 </head>
 <body>
 <script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){var t=null;try{t=localStorage.getItem("theme")}catch(t){}return t}();t(null!==e?e:"light")}()</script><div id="__docusaurus">
@@ -95,14 +95,14 @@ login, but popup window will stay open and it will host the 2^nd^ CCP
 which will carry the audio stream. This window can be minimized or moved
 to 2^nd^ screen.</p><img src="/amazon-connect-salesforce-cti/img/classic/image72.png"></div></article><div class="margin-vert--xl"><div class="row"><div class="col"><a href="https://github.com/amazon-connect/amazon-connect-salesforce-cti/docs/classic/02-installation/01-installing-the-amazon-connect-cti-adapter.md" target="_blank" rel="noreferrer noopener"><svg fill="currentColor" height="1.2em" width="1.2em" preserveAspectRatio="xMidYMid meet" role="img" viewBox="0 0 40 40" class="iconEdit_2LL7"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div></div></div><div class="margin-vert--lg"><nav class="pagination-nav" aria-label="Blog list page navigation"><div class="pagination-nav__item"><a class="pagination-nav__link" href="/amazon-connect-salesforce-cti/docs/classic/01-introduction/01-key-benefits-and-requirements"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">« Key Benefits and Requirements</div></a></div><div class="pagination-nav__item pagination-nav__item--next"><a class="pagination-nav__link" href="/amazon-connect-salesforce-cti/docs/classic/02-installation/02-installing-the-amazon-connect-salesforce-lambdas"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Installing the Amazon Connect Salesforce Lambda Package »</div></a></div></nav></div></div></div><div class="col col--3"><div class="tableOfContents_2xL- thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#lightning-flow-setup-installation" class="table-of-contents__link">Lightning Flow Setup Installation</a></li><li><a href="#installing-from-the-salesforce-appexchange" class="table-of-contents__link">Installing from the Salesforce AppExchange</a></li><li><a href="#create-the-softphone-layout" class="table-of-contents__link">Create the Softphone Layout</a></li><li><a href="#set-access-permissions" class="table-of-contents__link">Set Access Permissions</a><ul><li><a href="#ac_administrator" class="table-of-contents__link">AC_Administrator</a></li><li><a href="#ac_manager" class="table-of-contents__link">AC_Manager</a></li><li><a href="#ac_agent" class="table-of-contents__link">AC_Agent</a></li></ul></li><li><a href="#configure-console-experience" class="table-of-contents__link">Configure Console Experience</a></li><li><a href="#configure-classic-experience" class="table-of-contents__link">Configure Classic Experience</a></li></ul></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.</div></div></div></footer></div>
 <script src="/amazon-connect-salesforce-cti/styles.63fe7873.js"></script>
-<script src="/amazon-connect-salesforce-cti/runtime~main.510d193a.js"></script>
-<script src="/amazon-connect-salesforce-cti/main.32f197c7.js"></script>
+<script src="/amazon-connect-salesforce-cti/runtime~main.4ce51c9a.js"></script>
+<script src="/amazon-connect-salesforce-cti/main.1f40a29e.js"></script>
 <script src="/amazon-connect-salesforce-cti/1.248d282d.js"></script>
-<script src="/amazon-connect-salesforce-cti/2.50de5ed5.js"></script>
-<script src="/amazon-connect-salesforce-cti/64.1c62a108.js"></script>
+<script src="/amazon-connect-salesforce-cti/2.3bbe7633.js"></script>
+<script src="/amazon-connect-salesforce-cti/64.5f26236b.js"></script>
 <script src="/amazon-connect-salesforce-cti/65.b29e5dff.js"></script>
 <script src="/amazon-connect-salesforce-cti/935f2afb.eecfa4f8.js"></script>
-<script src="/amazon-connect-salesforce-cti/17896441.e5a93c90.js"></script>
-<script src="/amazon-connect-salesforce-cti/68942107.344851bc.js"></script>
+<script src="/amazon-connect-salesforce-cti/17896441.cef83546.js"></script>
+<script src="/amazon-connect-salesforce-cti/68942107.235051cd.js"></script>
 </body>
 </html>
