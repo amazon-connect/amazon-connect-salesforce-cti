@@ -265,6 +265,26 @@ Please note that your secret may also be formatted stored as a "Secret key/value
 12. NOTE: The recording playback, waveform, and transcript views are
     only active when you also choose to activate recording transcripts.
 
+#### Common Audio Streaming Setup Issues
+
+1. Verify that the Secrets Manager secret contains both the `CloudFrontPrivateKey` and `CloudFrontAccessKeyID` items.
+
+2. Verify that your Cloudfront distribution's behavior is set to use `Trusted Key Groups`, and that the correct Key Group is selected.
+
+<img src={useBaseUrl('/img/shared/audiostreamingkeygroups.png')} />
+
+3. Verify that your Cloudfront distribution's behavior contains the sfSig4RequestToS3 edge lambda
+
+<img src={useBaseUrl('/img/shared/audiostreamingedgelambda.png')} />
+
+4. Verify that your S3 bucket CORS configuration is correct
+
+<img src={useBaseUrl('/img/shared/audiostreamingcorsconfiguration.png')} />
+
+5. Verify that your named credentials are correctly set up
+
+6. Verify that your user is added to the AC_CallRecording permission set
+
 ### Recording Transcripts
 
 Enabling the Recording Transcripts activates a process to run your

@@ -285,8 +285,9 @@ configuration, you add users to the Call Center to provide access to it.
 <img src={useBaseUrl('/img/lightning/image33.png')} />
 
 4.  On the following page, provide the URL to your Amazon Connect
-    instance. The value of the URL field would be in the form of:
-    <pre>https://your-instance-alias.awsapps.com</pre>
+    instance. This value can be found in your Amazon Connect console.
+
+<img src={useBaseUrl('/img/lightning/amazonconnectconsoleaccessurl.png')} />
 
 <img src={useBaseUrl('/img/lightning/image34.png')} />
 

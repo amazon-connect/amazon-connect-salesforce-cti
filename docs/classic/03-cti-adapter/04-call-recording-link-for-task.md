@@ -60,7 +60,7 @@ Please note that your secret may also be formatted stored as a "Secret key/value
 ]
 ```
 
-<img src={useBaseUrl('/img/classic/audiostreaming3.png')} />
+<img src={useBaseUrl('/img/lightning/image271.png')} />
 
 10. Select Save
 
@@ -170,3 +170,24 @@ To edit the sample Task Page Layout, please follow the steps:
 <img src={useBaseUrl('/img/classic/audiostreaming18.png')} />
 
 7.  To have access to the recording, the user must have an active session with Amazon Connect. This can be achieved by either logging in to the CCP softphone, or by logging in to Amazon Connect outside of Salesforce. After the session is established, a page refresh should make the player appear.
+
+
+#### Common Audio Streaming Setup Issues
+
+1. Verify that the Secrets Manager secret contains both the `CloudFrontPrivateKey` and `CloudFrontAccessKeyID` items.
+
+2. Verify that your Cloudfront distribution's behavior is set to use `Trusted Key Groups`, and that the correct Key Group is selected.
+
+<img src={useBaseUrl('/img/shared/audiostreamingkeygroups.png')} />
+
+3. Verify that your Cloudfront distribution's behavior contains the sfSig4RequestToS3 edge lambda
+
+<img src={useBaseUrl('/img/shared/audiostreamingedgelambda.png')} />
+
+4. Verify that your S3 bucket CORS configuration is correct
+
+<img src={useBaseUrl('/img/shared/audiostreamingcorsconfiguration.png')} />
+
+5. Verify that your named credentials are correctly set up
+
+6. Verify that your user is added to the AC_CallRecording permission set

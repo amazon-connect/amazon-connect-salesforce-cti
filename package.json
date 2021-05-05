@@ -6,7 +6,7 @@
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
     "build": "docusaurus build",
-    "build-pdf": "docusaurus build && docusaurus-pdf from-build build/ docs/lightning/notices / --output-file pdf/lightning.pdf && docusaurus-pdf from-build build/ docs/classic/notices / --output-file pdf/classic.pdf",
+    "build-pdf": "docusaurus build && docusaurus-pdf from-build build/ docs/lightning/notices /amazon-connect-salesforce-cti/ --output-file pdf/lightning.pdf && docusaurus-pdf from-build build/ docs/classic/notices /amazon-connect-salesforce-cti/ --output-file pdf/classic.pdf",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "serve": "docusaurus serve",
