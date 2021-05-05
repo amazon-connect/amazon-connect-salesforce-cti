@@ -47,11 +47,13 @@ This block works with the beta Voicemail Drops feature. When you configure the v
 
 - **Enhancement:** "Get Salesforce Contact Id" block now uses FIND syntax to search across multiple fields.
 
+- **BugFix:** For the `SetAgentStatusOnSessionEnd` feature, it would occasionally fail if the agent hadn't interacted with the webpage. We solve this by creating a popout to monitor the agent session.
+
 - **Enhancement:** For the `SetAgentStatusOnSessionEnd` attribute, you can now specify multiple values.
 
 - **Enhancement:** When `SetAgentStatusOnSessionEnd` feature is enabled, you can now configure which state the agent should be shown as when they login with the InitialAgentState setting.
 
-- **Enhancement:** When `SetAgentStatusOnSessionEnd` feature is enabled, you can now configure which the agent to logout when all tabs are closed by setting the Status to Logout.
+- **Enhancement:** When `SetAgentStatusOnSessionEnd` feature is enabled, you can now configure which agent to logout when all tabs are closed by setting the Status to Logout.
 
 - **Bugfix:** Addressed issue that caused CTI Flows to be run on every open Salesforce tab.
 
