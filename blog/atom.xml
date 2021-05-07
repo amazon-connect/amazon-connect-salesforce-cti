@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://amazon-connect.github.io/amazon-connect-salesforce-cti-staging/blog</id>
+    <id>https://amazon-connect.github.io/amazon-connect-salesforce-cti/blog</id>
     <title>Amazon Connect Salesforce CTI Adapter Blog</title>
     <updated>2015-10-25T23:29:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://amazon-connect.github.io/amazon-connect-salesforce-cti-staging/blog"/>
+    <link rel="alternate" href="https://amazon-connect.github.io/amazon-connect-salesforce-cti/blog"/>
     <subtitle>Amazon Connect Salesforce CTI Adapter Blog</subtitle>
-    <icon>https://amazon-connect.github.io/amazon-connect-salesforce-cti-staging/img/favicon.png</icon>
+    <icon>https://amazon-connect.github.io/amazon-connect-salesforce-cti/img/favicon.png</icon>
 </feed>
