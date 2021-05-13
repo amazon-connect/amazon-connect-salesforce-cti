@@ -37,6 +37,10 @@ module.exports = {
         },
       ],
     },
+    algolia: {
+      apiKey: 'ea20bc7278c46a0a0c12a518a6aa7c04',
+      indexName: 'amazon-connect-salesforce-cti'
+    },
     footer: {
       style: 'dark',
       // links: [
