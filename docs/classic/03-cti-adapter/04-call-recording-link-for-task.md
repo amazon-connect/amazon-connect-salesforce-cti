@@ -92,7 +92,7 @@ Please note that your secret may also be formatted stored as a "Secret key/value
 
 <img src={useBaseUrl('/img/classic/audiostreaming9.png')} />
 
-19. Select **create function**. On the next screen, copy and paste the contents from [this file](/docs/lightning/04-salesforce-lambdas/sfSig4RequestToS3.js) into the function body, and then select **Deploy**.
+19. Select **create function**. On the next screen, copy and paste the contents from [this file](https://github.com/amazon-connect/amazon-connect-salesforce-cti/blob/main/docs/lightning/04-salesforce-lambdas/sfSig4RequestToS3.js) into the function body, and then select **Deploy**.
 
 20. Select the actions dropdown, and then select **Deploy to Lambda@Edge**.
 
