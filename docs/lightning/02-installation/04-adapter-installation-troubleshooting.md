@@ -50,8 +50,3 @@ Copy the full url of the lightning adapter visualforce page into the call center
 #### Certain picklists are missing picklist items.
 
 When upgrading from a version of the package to a higher version of the package in which new picklist items were added to a picklist, those new picklist items won't be installed. This is a [known Salesforce issue](https://salesforce.stackexchange.com/questions/207367/i-have-a-managed-package-if-i-add-values-a-picklist-will-my-customers-get-it-o).
-
-#### I upgraded my adapter to v5.10, but I cannot see the CCP Config changes
-
-There is a bug with Salesforce that doesn't update a page layout when you upgrade a package. To fix this, go to Setup and search for `Object Manager`. Once you're on the Object Manager page, search for the `AC CTI Adapter` object and click on it. Then go into `Page Layouts` and click on the layout you are using (Typically `AC CTI Adapter Layout - August 2020`). Then, drag and drop the `Audio Device Settings` and `Page Layout Settings` into the desired spot on the page. Finally, hit save.
-<img src={useBaseUrl('/img/lightning/troubleshooting3.png')} />
