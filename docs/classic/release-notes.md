@@ -5,6 +5,15 @@ title: Release Notes
 
 Important: when upgrading the CTI Adapter, please make sure that the Salesforce Lambdas are also updated to the newest version.
 
+## 5.14 June 2021
+
+- **Bugfix:** The issue that caused an Attribute label to not display properly in the attributes panel has been fixed.
+- **Bugfix:** The issue that caused AC Queue Metrics tab's name showing blank has been fixed.
+- **Bugfix:** The issue that caused the Recording Panel button to fail when a url is used for connect instance alias has been fixed.
+- **Enhancement:** We now make it possible for voicemail drops to work with queue callbacks.
+- **Enhancement:** You can now configure the CT Action Recording Panel's initial state using contact attributes. If you're recording your call, make sure to add an attribute named `RECORDING_STARTED` whose value is `true` in your Contact Flow.
+- **Enhancement:** We have added `IfCurrentAgentState` tag to `SetAgentStatusOnSessionEnd` feature, which allows customers to condition this feature on the Agent's current state.
+
 ## 5.13 April 2021
 
 - **Feature: CTI Actions - programmable buttons within the CCP overlay**
