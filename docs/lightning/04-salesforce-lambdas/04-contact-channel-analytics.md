@@ -107,14 +107,14 @@ Please note that your secret may also be formatted stored as a "Secret key/value
 
 8. Navigate back to aws, to the s3 bucket where your audio recording files are stored. This s3 bucket should be the same bucket as the **ConnectRecordingS3BucketName** parameter to the serverless application.
 
-9. In the bucket details, select the **Permissions** tab and then the **CORS configuration** tab and paste the following. Replace the AllowedOrigin with the url copied in step 9.
+9. In the bucket details, select the **Permissions** tab and then the **CORS configuration** tab and paste the following. Replace the AllowedOrigin with the url copied in step 9. Additionally, add in the `...lightning.force.com` url to your instance to the configuration.
 
 ```json
 [
   {
     "AllowedHeaders": ["Access-Control-Allow-Origin"],
     "AllowedMethods": ["GET"],
-    "AllowedOrigins": ["{url copied in step 9}"],
+    "AllowedOrigins": ["{url copied in step 9}", "https://{instanceName}.lightning.force.com/"],
     "ExposeHeaders": []
   }
 ]
