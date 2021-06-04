@@ -14,18 +14,18 @@
     "init-githooks": "git config core.hooksPath .githooks"
   },
   "dependencies": {
-    "@docusaurus/core": "2.0.0-alpha.70",
-    "@docusaurus/preset-classic": "2.0.0-alpha.70",
+    "@bojl/docusaurus-pdf": "1.2.0",
+    "@docusaurus/core": "^2.0.0-beta.ff31de0ff",
+    "@docusaurus/preset-classic": "^2.0.0-beta.ff31de0ff",
     "@mdx-js/react": "^1.6.21",
     "clsx": "^1.1.1",
-    "react": "^16.8.4",
-    "react-dom": "^16.8.4",
-    "papersaurus": "1.4.0",
-    "@bojl/docusaurus-pdf": "1.2.0",
-    "is-svg": ">=4.2.2",
-    "react-dev-utils": ">=11.0.4",
+    "highlight.js": ">=10.4.1",
     "immer": ">=8.0.1",
-    "highlight.js": ">=10.4.1"
+    "is-svg": ">=4.2.2",
+    "papersaurus": "1.4.0",
+    "react": "^16.8.4",
+    "react-dev-utils": ">=11.0.4",
+    "react-dom": "^16.8.4"
   },
   "browserslist": {
     "production": [
