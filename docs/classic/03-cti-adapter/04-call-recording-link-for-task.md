@@ -165,7 +165,7 @@ To edit the sample Task Page Layout, please follow the steps:
 
 <img src={useBaseUrl('/img/classic/audiostreaming17.png')} />
 
-6.  Drag the "AC_CallRecordingTask" item to the desired are of the layout to have that information appear on the agent's screen. The following screenshot shows how the Call Details section could appear when placing the "AC_CallRecordingTask" item on the required Task layout.
+6.  Drag the "AC_CallRecordingTask" or "ACSFCCP_CallRecording" (legacy page) item to the desired are of the layout to have that information appear on the agent's screen. The following screenshot shows how the Call Details section could appear when placing the "AC_CallRecordingTask" item on the required Task layout.
 
 <img src={useBaseUrl('/img/classic/audiostreaming18.png')} />
 
