@@ -149,11 +149,7 @@ To edit the sample Task Page Layout, please follow the steps:
 
 1.  Log in to your Salesforce Org
 
-<<<<<<< HEAD:docs/classic/03-cti-adapter/04-call-recording-link-for-task.md
-2.  Navigate to **Setup** then in type _Object Manager_ in Quick Find
-=======
 2.  Navigate to **Setup** then in type *Task* in Quick Find
->>>>>>> 37ddbcf... Fixing documentation for call recording link in classic mode:classic/03 Configuring and Using CTI Adapter Features/04 Call Recording Link for Task.md
 
 <img src={useBaseUrl('/img/classic/audiostreaming14.png')} />
 
@@ -165,15 +161,11 @@ To edit the sample Task Page Layout, please follow the steps:
 
 <img src={useBaseUrl('/img/classic/audiostreaming16.png')} />
 
-<<<<<<< HEAD:docs/classic/03-cti-adapter/04-call-recording-link-for-task.md
-5.  Click on the "_Task Layout_" and the layout designer will open
-=======
 5.  Scroll down in the left side of the top box till you see `Visualforce Pages` and click that.
->>>>>>> 37ddbcf... Fixing documentation for call recording link in classic mode:classic/03 Configuring and Using CTI Adapter Features/04 Call Recording Link for Task.md
 
 <img src={useBaseUrl('/img/classic/audiostreaming17.png')} />
 
-6.  Drag the "AC_CallRecordingTask" or "ACSFCCP_CallRecordingTask" (Legacy page) item to the desired are of the layout to have that information appear on the agent's screen. The following screenshot shows how the Call Details section could appear when placing the "AC_CallRecordingTask" item on the required Task layout.
+6.  Drag the "AC_CallRecordingTask" item to the desired are of the layout to have that information appear on the agent's screen. The following screenshot shows how the Call Details section could appear when placing the "AC_CallRecordingTask" item on the required Task layout.
 
 <img src={useBaseUrl('/img/classic/audiostreaming18.png')} />
 
