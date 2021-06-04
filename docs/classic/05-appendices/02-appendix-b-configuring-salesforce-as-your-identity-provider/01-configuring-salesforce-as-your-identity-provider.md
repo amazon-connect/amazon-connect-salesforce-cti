@@ -427,6 +427,8 @@ Amazon Connect Contact Control Panel once authentication completes.
 
 9.  Choose **Save**
 
+> **Note: With the new Amazon Connect instance urls (`*.my.connect.aws`) you must put the full URL into the `Amazon Connect Instance` field in the AC CTI Adapter record for SSO to work. Ex: using `https://myinstance.my.connect.aws` instead of `my instance`.**
+
 10. **Refresh** your browser to make the changes take effect
 
     a.  **NOTE:** If you receive a blocked popup warning, select the
