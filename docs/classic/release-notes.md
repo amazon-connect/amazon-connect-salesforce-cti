@@ -26,7 +26,7 @@ The CTI Adapter now includes integration with Connect's recording API. This feat
 
 - **Enhancement: Voicemail Drops (beta)**
 
-The **[beta Voicemail Drops](/docs/classic/03-cti-adapter/10-voicemail-drops)** feature now integrates with CTI Actions. In the beta, voicemail drops were loaded directly into the CCP Overlay. As of 5.13, you will need to create a CTI Action, and use the newly added "Leave a Voicemail" block in the CTI Flow where you can configure the specific voicemail drop and the quick connect name to use for the voicemail.
+The **[beta Voicemail Drops](/docs/lightning/03-cti-adapter/10-voicemail-drops)** feature now integrates with CTI Actions. In the beta, voicemail drops were loaded directly into the CCP Overlay. As of 5.13, you will need to create a CTI Action, and use the newly added "Leave a Voicemail" block in the CTI Flow where you can configure the specific voicemail drop and the quick connect name to use for the voicemail.
 
 - **Feature: CCP Overlay: Data panel to receive data from CTI Flows.**
 
