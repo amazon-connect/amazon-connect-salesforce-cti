@@ -77,6 +77,8 @@ Cloudformation stack:
 
 <img src={useBaseUrl('/img/lightning/image266.png')} />
 
+> **Note:** If you are expecting more than 1000 concurrent calls, you may have to increase the timeout for the `sfCTRTrigger` lambda.
+
 ##### AWS Side Setup
 
 1. See [these steps](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-trusted-signers.html). Follow the sections _Creating key pairs for your signers_, and _Adding a signer to a distribution_.
