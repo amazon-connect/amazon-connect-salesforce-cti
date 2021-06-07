@@ -64,6 +64,8 @@ Record processing to trigger the import task.
 9.  The Contact Trace Record is emitted shortly after call completion
     and the import happens almost immediately.
 
+> **Note:** If you are expecting more than 1000 concurrent calls, you may have to increase the timeout for the `sfCTRTrigger` lambda.
+
 #### Adding Contact Trace Records to the Service Console
 
 1.  Log in into your Salesforce org and go to the **Service Console**
