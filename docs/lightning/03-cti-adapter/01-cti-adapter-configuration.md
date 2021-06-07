@@ -93,6 +93,8 @@ will need to create the Amazon Connect Single Sign On URL and validate
 that it works correctly, then configure the Lightning CTI adapter and
 login the agent.
 
+> **Note: With the new Amazon Connect instance urls (`*.my.connect.aws`) you must put the full URL into the `Amazon Connect Instance` field in the AC CTI Adapter record for SSO to work. Ex: using `https://myinstance.my.connect.aws` instead of `my instance`.**
+
 #### Identify the SSO URL components
 
 In order to authenticate with Amazon Connect, you need your IdP login
