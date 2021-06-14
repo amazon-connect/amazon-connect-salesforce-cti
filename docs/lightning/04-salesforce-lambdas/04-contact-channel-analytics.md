@@ -95,7 +95,7 @@ Cloudformation stack:
 
 4. Under the "Secret value" tab, select "Retrieve secret value" and then "Edit".
 
-5. For the **CloudFrontPrivateKey** field, copy and paste the modified contents of the private key .pem file. For the **CloudFrontAccessKeyID** field, copy and paste the **Access Key Id** you recorded above. Your Secrets Manager Secret should look like the following:
+5. For the **CloudFrontPrivateKey** field, copy and paste the modified contents of the private key .pem file. For the **CloudFrontAccessKeyID** field, copy and paste the **public key ID** you recorded above. Your Secrets Manager Secret should look like the following:
 
 <img src={useBaseUrl('/img/lightning/image270.png')} />
 
@@ -168,9 +168,9 @@ Please note that your secret may also be formatted stored as a "Secret key/value
 
 2. For the **Name** and **Label**, enter AwsGenerateAudioRecordingURL.
 
-3. In the **URL** section, enter `https://lambda.{awsRegion}.amazonaws.com/2015-03-31/functions/{lambdaFunctionName}/invocations/`-- replace {awsRegion} with the awsRegion your serverless application resides in (for example, us-east-1), and replace {lambdaFunctionName} with the full name of the sfGenerateAudioRecordingStreaming lambda you recorded in the previous section.
+3. In the **URL** section, enter `https://lambda.{awsRegion}.amazonaws.com/2015-03-31/functions/{lambdaFunctionName}/invocations`-- replace {awsRegion} with the awsRegion your serverless application resides in (for example, us-east-1), and replace {lambdaFunctionName} with the full name of the sfGenerateAudioRecordingStreaming lambda you recorded in the previous section.
 
-4. For **Identity Type** select **Named Principal**. For the **Authentication Protocol**, select **AWS Signature Version 4**. Fill in the **Access key ID** you recorded in the previous section as "AWS Access Key ID", the **Secret access key** as the "AWS Secret Access Key", the AWS Region, and "lambda" as the "AWS Service."
+4. For **Identity Type** select **Named Principal**. For the **Authentication Protocol**, select **AWS Signature Version 4**. Fill in the **Access key ID** you recorded in the previous section as "AWS Access Key ID", the **Secret access key** as the "AWS Secret Access Key", the AWS Region would be where your application resides in (for example, us-east-1), and at last the "lambda" as the "AWS Service."
 
 <img src={useBaseUrl('/img/lightning/image275.png')} />
 
