@@ -5,10 +5,12 @@ module.exports = {
     'lightning/introduction/01-key-benefits',
     {
       Installation: [
-        'lightning/installation/01-installing-package-from-appexchange',
-        'lightning/installation/02-installing-salesforce-lambdas',
-        'lightning/installation/03-upgrading-from-an-earlier-version',
-        'lightning/installation/04-adapter-installation-troubleshooting',
+        'lightning/installation/01-installation',
+        'lightning/installation/02-guided-setup',
+        'lightning/installation/03-managed-package-manual-setup',
+        'lightning/installation/04-salesforce-lambdas-manual-setup',
+        'lightning/installation/05-upgrading-from-an-earlier-version',
+        'lightning/installation/06-adapter-installation-troubleshooting',
       ],
     },
     {
@@ -23,6 +25,7 @@ module.exports = {
         'lightning/cti-adapter/08-cti-actions',
         'lightning/cti-adapter/09-recording-controls',
         'lightning/cti-adapter/10-voicemail-drops',
+        'lightning/cti-adapter/11-chat-widget-integration',
       ],
     },
     {
@@ -61,10 +64,12 @@ module.exports = {
     },
     {
       Installation: [
-        'classic/installation/01-installing-the-amazon-connect-cti-adapter',
-        'classic/installation/02-installing-the-amazon-connect-salesforce-lambdas',
-        'classic/installation/03-upgrading-from-an-earlier-version',
-        'classic/installation/04-cti-adapter-installation-troubleshooting',
+        'classic/installation/01-installation',
+        'classic/installation/02-guided-setup',
+        'classic/installation/03-managed-package-manual-setup',
+        'classic/installation/04-salesforce-lambdas-manual-setup',
+        'classic/installation/05-upgrading-from-an-earlier-version',
+        'classic/installation/06-cti-adapter-installation-troubleshooting',
       ],
     },
     {
@@ -72,7 +77,7 @@ module.exports = {
         'classic/cti-adapter/01-cti-adapter-configuration',
         'classic/cti-adapter/02-omnipresence-agent-state-sync',
         'classic/cti-adapter/03-contact-attributes-display',
-        'classic/cti-adapter/04-call-recording-link-for-task',
+        'classic/cti-adapter/04-call-recording-playback', 
         'classic/cti-adapter/05-call-display-account-page',
         'classic/cti-adapter/06-outbound-campaign-calls',
         'classic/cti-adapter/07-amazon-connect-reports',
@@ -80,6 +85,7 @@ module.exports = {
         'classic/cti-adapter/09-localization',
         'classic/cti-adapter/10-cti-actions',
         'classic/cti-adapter/11-recording-controls',
+        'classic/cti-adapter/12-chat-widget-integration',
       ],
     },
     {

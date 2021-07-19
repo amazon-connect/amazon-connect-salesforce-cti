@@ -47,7 +47,7 @@ Salesforce Agent or Salesforce UI.
 Each source comes with a set of events that you can hook into, i.e. your
 CTI Flow will be executed when one of these events fire. Typically, you
 will have only one flow for a combination of a source and an event. (You
-can find out more about sources and events in [Appendix C - CTI Flow Sources and Events](/docs/lightning/05-appendices/appendix-c-cti-flow-sources-and-events/01-cti-flow-sources-and-events).)
+can find out more about sources and events in [Appendix C - CTI Flow Sources and Events](/docs/lightning/appendices/appendix-c-cti-flow-sources-and-events/01-cti-flow-sources-and-events).)
 
 For the purposes of this example, we selected **Amazon Connect Voice
 Contact** source and **onConnecting** event. Now click Save and on the

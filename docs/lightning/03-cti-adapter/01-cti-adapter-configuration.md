@@ -59,11 +59,11 @@ and supervisors that will be using the platform.
 10. **Audio Device Settings** Turning this setting on allows the Agent 
     to setup a custom audio device for their speaker, microphone and 
     ringer in the adapter (Speaker and Ringer settings not available on Firefox). 
-    You may have to add this field to the layout manually. [See troubleshooting](/docs/lightning/02-installation/04-adapter-installation-troubleshooting).
+    You may have to add this field to the layout manually. [See troubleshooting](/docs/lightning/installation/06-adapter-installation-troubleshooting).
 
 11. **Phone Type Settings** Turning this setting on allows the Agent to 
     change their Phone Type in the CCP. You may have to add this field to 
-    the layout manually. [See troubleshooting](/docs/lightning/02-installation/04-adapter-installation-troubleshooting).
+    the layout manually. [See troubleshooting](/docs/lightning/installation/06-adapter-installation-troubleshooting).
 
 ### Single Sign On Settings
 
@@ -78,7 +78,7 @@ Identity Management in Amazon
 Connect](https://docs.aws.amazon.com/connect/latest/adminguide/configure-saml).
 
 If you wish to use **Salesforce** as your identity provider for Single
-Sign On, please follow the setup instructions in [Appendix B - Configuring Salesforce as Your Identity Provider](/docs/lightning/05-appendices/appendix-b-configuring-salesforce-as-your-identity-provider/01-configuration).
+Sign On, please follow the setup instructions in [Appendix B - Configuring Salesforce as Your Identity Provider](/docs/lightning/appendices/appendix-b-configuring-salesforce-as-your-identity-provider/01-configuration).
 
 For information about configuring specific SAML providers to work with
 Amazon Connect:

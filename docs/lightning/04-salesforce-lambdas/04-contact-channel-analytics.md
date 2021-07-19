@@ -67,8 +67,6 @@ such, CTRs are not generated until the agent leaves the after call work
 state. If you are not seeing a recording import, please make sure the
 agent has completed the call and left the after call work state.
 
-#### Prerequisite Setup
-
 ##### Cloudformation Template
 
 To make sure that the AWS resources are set up, make sure that the
@@ -78,113 +76,6 @@ Cloudformation stack:
 <img src={useBaseUrl('/img/lightning/image266.png')} />
 
 > **Note:** If you are expecting more than 1000 concurrent calls, you may have to increase the timeout for the `sfCTRTrigger` lambda.
-
-##### AWS Side Setup
-
-1. See [these steps](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-trusted-signers.html). Follow the sections _Creating key pairs for your signers_, and _Adding a signer to a distribution_.
-   Make sure to record the **public key ID**.
-
-2. Copy and paste the contents of the private key .pem file into a text editor. Replace every newline character with a space, and then delete the last character. This is most easily done using a "find and replace" feature in your text editor.
-   The resulting string of text should resemble the following:
-
-```
------BEGIN RSA PRIVATE KEY----- (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (64 character string) (under 64 character string) -----END RSA PRIVATE KEY-----
-```
-
-3. Navigate to the "Secrets Manager" service. Select the **SalesforceCredentials**.
-
-4. Under the "Secret value" tab, select "Retrieve secret value" and then "Edit".
-
-5. For the **CloudFrontPrivateKey** field, copy and paste the modified contents of the private key .pem file. For the **CloudFrontAccessKeyID** field, copy and paste the **public key ID** you recorded above. Your Secrets Manager Secret should look like the following:
-
-<img src={useBaseUrl('/img/lightning/image270.png')} />
-
-Please note that your secret may also be formatted stored as a "Secret key/value" secret rather than a "Plaintext" secret; both secret types are valid.
-
-6. Navigate to your Salesforce instance. Navigate to setup, then search for "Visualforce pages."
-
-<img src={useBaseUrl('/img/lightning/image283.png')} />
-
-7. Select the **AC_RecordingViewer** visualforce page, and select "preview." Copy the url of the opened page up until `.com`. Make sure not to include any characters after `.com`.
-
-8. Navigate back to aws, to the s3 bucket where your audio recording files are stored. This s3 bucket should be the same bucket as the **ConnectRecordingS3BucketName** parameter to the serverless application.
-
-9. In the bucket details, select the **Permissions** tab and then the **CORS configuration** tab and paste the following. Replace the AllowedOrigin with the url copied in step 9. Additionally, add in the `...lightning.force.com` url to your instance to the configuration.
-
-```json
-[
-  {
-    "AllowedHeaders": ["Access-Control-Allow-Origin"],
-    "AllowedMethods": ["GET"],
-    "AllowedOrigins": ["{url copied in step 9}", "https://{instanceName}.lightning.force.com/"],
-    "ExposeHeaders": []
-  }
-]
-```
-
-<img src={useBaseUrl('/img/lightning/image271.png')} />
-
-10. Select Save
-
-11. Navigate to the "IAM" aws service. Select **Add User**.
-
-<img src={useBaseUrl('/img/lightning/image272.png')} />
-
-12. Give your IAM user a name, like **sfInvokeGenerateAudioRecordingStreamingURLIAMUser**. For the "AWS Access Type", select **Programmatic access**.
-
-<img src={useBaseUrl('/img/lightning/image273.png')} />
-
-13. Select Next, then select "Attach existing policies directly." Search for **invokeSfGenerateAudioRecordingStreamingURLPolicy** and select it.
-
-14. Create the user, then copy down the **Access key ID** and the **Secret access key**. These keys will be used in the next section.
-
-<img src={useBaseUrl('/img/lightning/image284.png')} />
-
-15. Navigate to the "Lambda" aws service. Search for term "sfgenerate" and copy down the full name of the sfGenerateAudioRecordingStreaming lambda. This will be used in the next section.
-
-<img src={useBaseUrl('/img/lightning/image274.png')} />
-
-16. Navigate back to the "Lambda" aws service main page and navigate to the **us-east-1 region**. Select **create function**.
-
-<img src={useBaseUrl('/img/lightning/audiostreaming0.png')} />
-
-17. Enter a function name, like **sfSig4RequestToS3**.
-
-18. Select **change default execution role**, and **use an existing role**. Search for and select _sfSig4RequestToS3Role_.
-
-<img src={useBaseUrl('/img/lightning/audiostreaming1.png')} />
-
-19. Select **create function**. On the next screen, copy and paste the contents from [this file](https://github.com/amazon-connect/amazon-connect-salesforce-cti/blob/main/docs/lightning/04-salesforce-lambdas/sfSig4RequestToS3.js) into the function body, and then select **Deploy**.
-
-20. Select the actions dropdown, and then select **Deploy to Lambda@Edge**.
-
-21. Select the Cloudfront Distribution that was created by the Salesfore Lambdas serverless application, then check off the "I acknowledge..." check box, then select deploy.
-
-<img src={useBaseUrl('/img/lightning/audiostreaming2.png')} />
-
-##### Salesforce Side Setup
-
-1. In Salesforce Setup, search for "Named Credentials." Select **New Named Credential.**
-
-2. For the **Name** and **Label**, enter AwsGenerateAudioRecordingURL.
-
-3. In the **URL** section, enter `https://lambda.{awsRegion}.amazonaws.com/2015-03-31/functions/{lambdaFunctionName}/invocations/`-- replace {awsRegion} with the awsRegion your serverless application resides in (for example, us-east-1), and replace {lambdaFunctionName} with the full name of the sfGenerateAudioRecordingStreaming lambda you recorded in the previous section.
-
-> Note: There is an intermittent bug with salesfore where the trailing `/` causes an error. Try using `https://lambda.{awsRegion}.amazonaws.com/2015-03-31/functions/{lambdaFunctionName}/invocations` as the **URL** if you see an error message such as *The request signature we calculated does not match the signature you provided. Check your AWS Secret Access Key and signing method. Consult the service documentation for details.*
-
-4. For **Identity Type** select **Named Principal**. For the **Authentication Protocol**, select **AWS Signature Version 4**. Fill in the **Access key ID** you recorded in the previous section as "AWS Access Key ID", the **Secret access key** as the "AWS Secret Access Key", the AWS Region your application resides in (for example, us-east-1), and "lambda" as the "AWS Service".
-
-<img src={useBaseUrl('/img/lightning/image275.png')} />
-
-5. Select **save**.
-
-6. In the setup search box, search for "Permission sets". Select the "AC_CallRecording" permission set. Select "Manage Assignments".
-
-<img src={useBaseUrl('/img/lightning/image278.png')} />
-
-7. Select "Add Assignments". Add the users that should have access to the audio recordings and select "assign".
-
-<img src={useBaseUrl('/img/lightning/image279.png')} />
 
 #### Enabling call recording streaming
 
@@ -222,6 +113,19 @@ Please note that your secret may also be formatted stored as a "Secret key/value
     work
 
 9.  After a minute or so, the recording should import.
+
+#### Adding users to the AC_CallRecording permission set
+
+This step is only necessary for non admin user accounts.
+
+1. In the setup search box, search for "Permission sets". Select the "AC_CallRecording" permission set. Select "Manage Assignments".
+
+<img src={useBaseUrl('/img/lightning/image278.png')} />
+
+2. Select "Add Assignments". Add the users that should have access to the audio recordings and select "assign".
+
+<img src={useBaseUrl('/img/lightning/image279.png')} />
+
 
 #### Adding Contact Channel Analytics to the Service Console
 
@@ -268,26 +172,6 @@ Please note that your secret may also be formatted stored as a "Secret key/value
 
 12. NOTE: The recording playback, waveform, and transcript views are
     only active when you also choose to activate recording transcripts.
-
-#### Common Audio Streaming Setup Issues
-
-1. Verify that the Secrets Manager secret contains both the `CloudFrontPrivateKey` and `CloudFrontAccessKeyID` items.
-
-2. Verify that your Cloudfront distribution's behavior is set to use `Trusted Key Groups`, and that the correct Key Group is selected.
-
-<img src={useBaseUrl('/img/shared/audiostreamingkeygroups.png')} />
-
-3. Verify that your Cloudfront distribution's behavior contains the sfSig4RequestToS3 edge lambda
-
-<img src={useBaseUrl('/img/shared/audiostreamingedgelambda.png')} />
-
-4. Verify that your S3 bucket CORS configuration is correct
-
-<img src={useBaseUrl('/img/shared/audiostreamingcorsconfiguration.png')} />
-
-5. Verify that your named credentials are correctly set up
-
-6. Verify that your user is added to the AC_CallRecording permission set
 
 ### Recording Transcripts
 
