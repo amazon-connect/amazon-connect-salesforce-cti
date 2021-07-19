@@ -33,7 +33,7 @@ From this example, only agents who have a current status of "Available" or "At L
 
 The example above also utilitzes the `SessionEndTimer` feature as well. This delays the state change for the desired amount of time (default of 5 seconds). In the example above it sets the delay to 20 seconds. This feature is useful to account for agent's with slow internet refreshing their page - with 5 seconds, it may change the state of the agent before the refresh loads all of the assets again, while 20 seconds could be enough time for the assets to load, and stop the state change.
 
-You can also have the Status be set to `Logout`, which will append the functionality of the logout feature mentioned [here](/docs/lightning/02-installation/01-installing-package-from-appexchange) - logging the agent out of the CCP upon session ending. It will not log the user out if a call is ongoing.
+You can also have the Status be set to `Logout`, which will append the functionality of the logout feature mentioned [here](/docs/lightning/installation/01-installing-package-from-appexchange) - logging the agent out of the CCP upon session ending. It will not log the user out if a call is ongoing.
 
 When your agents log back in, they will be shown as "Available" by default. If you'd like to control which status to set your agents, you can configure it with `InitialAgentState` setting.
 

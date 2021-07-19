@@ -3,7 +3,17 @@ id: release-notes
 title: Release Notes
 ---
 
-Important: when upgrading the CTI Adapter, please make sure that the Salesforce Lambdas are also updated to the newest version. Also review the [CTI Adapter Installation Troubleshooting and Common Issues](/docs/lightning/02-installation/04-adapter-installation-troubleshooting) section for known issues and troubleshooting.
+Important: when upgrading the CTI Adapter, please make sure that the Salesforce Lambdas are also updated to the newest version. Also review the [CTI Adapter Installation Troubleshooting and Common Issues](/docs/lightning/installation/06-adapter-installation-troubleshooting) section for known issues and troubleshooting.
+
+## 5.15 July 2021
+
+- **Feature: Guided Setup** The Guided Setup feature helps make the setup process easier. See [Guided Setup](/docs/lightning/installation/02-guided-setup) for more details.
+- **Feature: Chat Widget Integration for SalesForce Experience Cloud** Added VisualForce Page component that allows you to add Amazon Connect Chat Widget in Your Experience Cloud Site.
+- **Enhancement:** Changed the default audio recording component in the Contact Channel Analytics for easier setup. See [Contact Channel Analytics](/docs/lightning/salesforce-lambdas/04-contact-channel-analytics) for more details.
+- **Enhancement:** Created the ExecuteAwsService service for simpler communication between Salesforce and AWS. **WARNING:** If you are using Contact Lens for audio recording you *must* replace your existing AwsGenerateAudioRecordingUrl named credential with with the ExecuteAwsService named credential. See [here](/docs/lightning/installation/01-installation#setting-up-the-executeawsservice-named-credential) for more details.
+- **Bug Fix:** Fixed an issue with the lambda package that caused Contact Lens Call Recording Streaming to be broken for redacted calls.
+- **Bug Fix:** Fixed an issue that caused the "Clear All Properties" CTI Flow Block to clear properties important to the CTI adpater working.
+- **Bug Fix:** Added the `DISCONNECT` field to the `Initiation Method` field in Contact Trace Records.
 
 ## 5.14 June 2021
 
@@ -18,7 +28,7 @@ Important: when upgrading the CTI Adapter, please make sure that the Salesforce 
 
 - **Feature: CTI Actions - programmable buttons within the CCP overlay**
 
-In this release, we have added a feature called CTI Action which are programmable buttons for your CTI Flows. Each CTI Action is a button that can be programmed to trigger a CTI Flows whose source value is "CTI Action." In addition, CTI Actions can be programmed to ask the agent for additional information via a data entry form. You can use the agent's entry in your CTI Flow with the help of "Get Payload" block. This is a great way to ask your agents to enter ad-hoc data prior to running the CTI Flow to provide additional information as part of a workflow to automate case creation, or start a customer refund process. **If you are upgrading from a previous version of the CTI Adapter, please be sure to review the [additional setup steps required](/docs/lightning/03-cti-adapter/08-cti-actions#upgrading-from-an-earlier-version) for CTI Actions.**
+In this release, we have added a feature called CTI Action which are programmable buttons for your CTI Flows. Each CTI Action is a button that can be programmed to trigger a CTI Flows whose source value is "CTI Action." In addition, CTI Actions can be programmed to ask the agent for additional information via a data entry form. You can use the agent's entry in your CTI Flow with the help of "Get Payload" block. This is a great way to ask your agents to enter ad-hoc data prior to running the CTI Flow to provide additional information as part of a workflow to automate case creation, or start a customer refund process. **If you are upgrading from a previous version of the CTI Adapter, please be sure to review the [additional setup steps required](/docs/lightning/cti-adapter/08-cti-actions#upgrading-from-an-earlier-version) for CTI Actions.**
 
 - **Feature: CTI Actions: recording API integration within the CCP overlay**
 
@@ -26,7 +36,7 @@ The CTI Adapter now includes integration with Connect's recording API. This feat
 
 - **Enhancement: Voicemail Drops (beta)**
 
-The **[beta Voicemail Drops](/docs/lightning/03-cti-adapter/10-voicemail-drops)** feature now integrates with CTI Actions. In the beta, voicemail drops were loaded directly into the CCP Overlay. As of 5.13, you will need to create a CTI Action, and use the newly added "Leave a Voicemail" block in the CTI Flow where you can configure the specific voicemail drop and the quick connect name to use for the voicemail.
+The **[beta Voicemail Drops](/docs/lightning/cti-adapter/10-voicemail-drops)** feature now integrates with CTI Actions. In the beta, voicemail drops were loaded directly into the CCP Overlay. As of 5.13, you will need to create a CTI Action, and use the newly added "Leave a Voicemail" block in the CTI Flow where you can configure the specific voicemail drop and the quick connect name to use for the voicemail.
 
 - **Feature: CCP Overlay: Data panel to receive data from CTI Flows.**
 
@@ -72,7 +82,7 @@ This block works with the beta Voicemail Drops feature. When you configure the v
 
 ## 5.12 March 2021
 
-- **Feature**: Added custom setting which will allow customers to enable and disable non-essential triggers (They are disabled by default now). [More details in the troubleshooting section](/docs/lightning/02-installation/04-adapter-installation-troubleshooting)
+- **Feature**: Added custom setting which will allow customers to enable and disable non-essential triggers (They are disabled by default now). [More details in the troubleshooting section](/docs/lightning/installation/06-adapter-installation-troubleshooting)
 - **Bugfix**: Addressed additional trigger issue that prevented orgs with 200k+ CCA records from updating Case and Contact records.
 - **Bugfix**: Addressed issue where AC Permission sets did not include the CustomerEndpointAddress field for the ContactChannelAnalytics object.
 - **Bugfix**: Addressed issue where AC Permission sets did not include the MedialessPopout page.
@@ -112,7 +122,7 @@ This block works with the beta Voicemail Drops feature. When you configure the v
 
 ## 5.7 November 2020
 
-- **Feature update**: Change audio recording feature in the Contact Channel Analytics page to use an audio streaming approach. Please review the updated [Contact Channel Analytics](/docs/lightning/04-salesforce-lambdas/04-contact-channel-analytics) section for the setup details.
+- **Feature update**: Change audio recording feature in the Contact Channel Analytics page to use an audio streaming approach. Please review the updated [Contact Channel Analytics](/docs/lightning/salesforce-lambdas/04-contact-channel-analytics) section for the setup details.
 - **Feature**: Add permission set specifically for the audio recording feature
 - **Feature**: Localization into 9 languages.
 - **Feature**: Add callType to return fields of "Get Contact Properties" block
