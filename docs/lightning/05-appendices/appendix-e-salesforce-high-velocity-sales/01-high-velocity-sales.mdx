@@ -158,14 +158,14 @@ Sales.
 
 12. Scroll down and click on the link **Voice onHvsWorkStart.**
 
-<!-- 13. Download this file: [this code](./hvs2.json). -->
+13. <a target="_blank" href={useBaseUrl('/json/lightning/onHvsWorkStart.json')} download="onHvsWorkStart.json">Download this file</a>
 
 14. Click **Upload** and find the file you just downloaded. You should now
     see this:\*\*
 
 <img src={useBaseUrl('/img/lightning/image256.png')} />
 
-15. Click **Save**
+15. Click **Save.** This creates a CTI Flow that is invoked when you start a HVS work and capture the workId for the third CTI Flow below.
 
 16. Go back to the CTI Adapter page and select **New** in CTI Flows
     section to create another CTI Flow.
@@ -180,32 +180,56 @@ Sales.
 
 20. For the **Event**, select **onConnecting**
 
-21. Provide a **Description**
+21. Provide a **Description** and Save
 
 22. Scroll down and click on the link **HVS Voice onConnecting.**
 
-<!-- 23. Download this file: [this code](./hvs2.json). -->
+23. <a target="_blank" href={useBaseUrl('/json/lightning/onConnecting.json')} download="onConnecting.json">Download this file</a>
 
 24. Click **Upload** and find the file you just downloaded. You should now
     see this:
 
 <img src={useBaseUrl('/img/lightning/image257.png')} />
 
-25. Click **Save**
+25. Click **Save.** This creates a CTI Flow creates task for the voice contact and save the taskId for the third CTI Flow below. If you already have a CTI Flow that creates task for voice contact, you do not need to add this one but just need to add a `Set Property` CTI Block to save the taskId
 
-26. Once you've created the flows refresh your browser and the new
+26. Go back to the CTI Adapter page and select **New** in CTI Flows
+    section to create another CTI Flow.
+
+<img src={useBaseUrl('/img/lightning/image255.png')} />
+
+27. In the **CTI Flow Name** field, enter **HVS Voice onRoutable.**
+
+28. Make sure the checkbox for **Active** is selected
+
+29. For the **Source**, select **Voice onRoutable**
+
+30. For the **Event**, select **onRoutable**
+
+31. Provide a **Description** and Save
+
+32. Scroll down and click on the link **HVS Voice onRoutable**
+
+33. <a target="_blank" href={useBaseUrl('/json/lightning/onRoutable.json')} download="onRoutable.json">Download this file</a>
+
+34. Click **Upload** and find the file you just downloaded. You should now
+    see this:
+
+<img src={useBaseUrl('/img/lightning/image284.png')} />
+
+35. Click **Save.** This CTI Flow is executed before your agent is back to routable and retrieves the call result based on the task Id you set in the second CTI Flow, and use it to complete the HVS work
+
+36. Once you've created the flows refresh your browser and the new
     scripts will take effect.
 
-Per the recipe you created above, a Task (Call Activity) object will
-be created and screen popped as each call is ringing to the agent.
-After each call, Amazon Connect puts the agents into the _After Call
-Work State_. As part of the CTI adapter, it pops up a task record
-where you can capture standard task related information. The task
-screen also requires an agent to enter the call outcomes.
-
-Upon selecting the call outcome on task page, click save to persist
-data in Salesforce. After completing this action, when user change his
-state from _After Call Work State_ to _Available state_, the CTI
-Adapter raises an event to sync the task's call result value with HVS
-Sales Cadence and generate the next outreach activities for associated
-prospect.
+### Expected Behavior
+1. Adding Lead to the Sales Cadence you created
+<img src={useBaseUrl('/img/lightning/image285.png')} />
+2. Make a call to the lead using the call button
+<img src={useBaseUrl('/img/lightning/image286.png')} />
+3. A outbound call is made and a task is created and popup
+<img src={useBaseUrl('/img/lightning/image287.png')} />
+4. While agent is in After Call Work status, Agent update the Call Result of the popup task and click Save.
+<img src={useBaseUrl('/img/lightning/image288.png')} />
+5. Agent click Close Contact to be available for the next call. The third CTI Flow will be invoked to retrieve the call result and the Sales Cadence Steps for this lead will be updated (highlighted in red below). The popup task should be linked to the lead as well (highlighted in orange below).
+<img src={useBaseUrl('/img/lightning/image289.png')} />
