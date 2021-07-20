@@ -35,7 +35,7 @@ To start using this feature, you can either follow the steps below to setup an E
 
 * Follow instructions [here](https://docs.aws.amazon.com/connect/latest/adminguide/add-chat-to-website.html) to setup your Chat Widget and copy the script to a text editor.
 * Go to Service Console
-* Go to AC CTI Adapter
+* Go to AC CTI Adapter. If the CTI Adapter Owner is `Amazon Connect - Universal Package`, please update it to yourself or any other real user.
 * Go to Features tab
 * Click New to create a new Feature
 * In the Name field, put FEATURE_CHAT_WIDGET
@@ -126,7 +126,7 @@ Note: If you want to setup chat widget for authorized user group only, you could
 
 * Follow instructions [here](https://docs.aws.amazon.com/connect/latest/adminguide/add-chat-to-website.html) to setup your Chat Widget and copy the script to a text editor.
 * Go to Service Console
-* Go to AC CTI Adapter
+* Go to AC CTI Adapter. If the CTI Adapter Owner is `Amazon Connect - Universal Package`, please update it to yourself or any other real user.
 * Go to Features tab
 * Click New to create a new Feature
 * In the Name field, put FEATURE_CHAT_WIDGET
