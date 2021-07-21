@@ -202,7 +202,7 @@ Sales.
 
 28. Make sure the checkbox for **Active** is selected
 
-29. For the **Source**, select **Voice onRoutable**
+29. For the **Source**, select **Amazon Connect Agent**
 
 30. For the **Event**, select **onRoutable**
 
