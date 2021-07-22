@@ -8,7 +8,7 @@ Important: when upgrading the CTI Adapter, please make sure that the Salesforce 
 ## 5.15 July 2021
 
 - **Feature: Guided Setup** The Guided Setup feature helps make the setup process easier. See [Guided Setup](/docs/lightning/installation/02-guided-setup) for more details.
-- **Feature: Chat Widget Integration for SalesForce Service and Sales Cloud** Added VisualForce Page component that allows you to add Amazon Connect Chat Widget in your Salesforce communities website.
+- **Feature: Chat Widget Integration for SalesForce Experience Cloud** Added VisualForce Page component that allows you to add Amazon Connect Chat Widget in your Salesforce Experience Cloud Site.
 - **Enhancement:** Changed the default audio recording component in the Contact Channel Analytics for easier setup. See [Contact Channel Analytics](/docs/lightning/salesforce-lambdas/04-contact-channel-analytics) for more details.
 - **Enhancement:** Created the ExecuteAwsService service for simpler communication between Salesforce and AWS. **WARNING:** If you are using Contact Lens for audio recording you *must* replace your existing AwsGenerateAudioRecordingUrl named credential with with the ExecuteAwsService named credential. See [here](/docs/lightning/installation/01-installation#setting-up-the-executeawsservice-named-credential) for more details.
 - **Bug Fix:** Fixed an issue with the lambda package that caused Contact Lens Call Recording Streaming to be broken for redacted calls.
