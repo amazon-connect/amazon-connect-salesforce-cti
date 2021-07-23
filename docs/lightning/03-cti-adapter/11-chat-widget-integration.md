@@ -4,9 +4,13 @@ title: Chat Widget Integration
 ---
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
-SalesForce Experience Cloud allows you to setup a website for your customers easily, with the included template, you can setup a help center, or a customer service website with just a few clicks. Amazon Connect CTI Adapter now provides you a chat-widget component, and you can use it in the Experience Cloud Builder App to add the Amazon Connect Chat Widget to any page you want.
+SalesForce Experience Cloud allows you to setup a website for your customers easily, with the included template, you can setup a help center, or a customer service website with just a few clicks. Amazon Connect CTI Adapter now provides you a chat-widget component, and you can use it in the Experience Cloud Builder App to add the Amazon Connect Chat Widget to any page you want. 
+
+The screenshot below shows an example of having the chat widget added to a help center website. Please note that this feature does not support **Build Your Own(LWR)** and **Salesforce Tabs + Visualforce** template.
+
+<img src={useBaseUrl('/img/lightning/chatwidget-(10).png')} />
  
-To start using this feature, you can either follow the steps below to setup an Experience Cloud Site for testing purpose, or you can skip to the next section if you are already familiar with SalesForce Experience Cloud
+To start using this feature, you can either follow the steps below to setup an Experience Cloud Site for testing purpose, or you can skip to the next section if you are already familiar with SalesForce Experience Cloud.
  
 **Setup experience cloud site:**
 
