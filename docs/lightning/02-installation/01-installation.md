@@ -58,7 +58,7 @@ Marketplace.
 
 <img src={useBaseUrl('/img/lightning/image7.png')} />
 
-10. Select **Install for Admins Only**, then choose **Install**
+10. Select **Install for Admins Only**, then choose **Install**. **THIS SELECTION IS VERY IMPORTANT** - if you select the wrong option, then standard users may have access to objects and pages that they shouldn't have access to.
 
 <img src={useBaseUrl('/img/lightning/image8.png')} />
 
@@ -152,6 +152,10 @@ in and retrieve data from your AWS account. Setting up this Named Credential is 
 to use the features that rely on it (Guided Setup and Contact Lens). In addition, you can alter the permissions given
 to the `sfExecuteAwsService` lambda to match your security requirements (NOTE: if you choose to do so, do so after you
 configure up the lambdas as some permissions are added/removed based on how the lambdas are configured).
+
+Before you create the ExecuteAwsService Named Credential, **confirm that the application was installed for admins only**. If not, then standard users may be able to invoke methods that call named credentials. If you did this by accident, then you will have to [manually edit the profiles](/docs/lightning/installation/06-adapter-installation-troubleshooting#how-to-remove-permissions-to-visualforce-pages-apex-classes-for-a-desired-profile) to remove the permissions to the objects and pages created by the app.
+
+<img src={useBaseUrl('/img/lightning/image8.png')} />
 
 1. Navigate to the IAM console in your AWS account, select the **Users** tab, and select **Add Users** to create a new user.
 
