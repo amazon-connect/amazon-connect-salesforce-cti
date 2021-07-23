@@ -34,3 +34,15 @@ All screenpop functionality native to v3 now needs to be recreated using CTI Flo
 #### Certain picklists are missing picklist items.
 
 When upgrading from a version of the package to a higher version of the package in which new picklist items were added to a picklist, those new picklist items won't be installed. This is a [known Salesforce issue](https://salesforce.stackexchange.com/questions/207367/i-have-a-managed-package-if-i-add-values-a-picklist-will-my-customers-get-it-o).
+
+#### How to remove permissions to Visualforce pages, Apex classes for a desired profile
+
+1. Navigate to **Setup** and search for "Profiles".
+
+2. Select the desired profile.
+
+3. Select either **Visualforce Page Access** or **Apex Class Access**.
+
+<img src={useBaseUrl('/img/shared/removepermissionstroublshooting0.png')} />
+
+4. Select **Edit** and remove any desired permissions. All permissions can be removed because permissions are managed through permission sets, not through profiles.
