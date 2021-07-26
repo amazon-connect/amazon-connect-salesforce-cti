@@ -7,6 +7,8 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 Below are manual setup instructions for the Salesforce CTI Adapter Managed Package. After following the below steps, be sure to follow the instructions for setting up the Salesforce Lambdas [here](/docs/classic/installation/04-salesforce-lambdas-manual-setup).
 
+Before proceeding, please **confirm that the application was installed for admins only** (see [installation](/docs/classic/installation/01-installation) for more details). If you did this by accident, then you will have to [manually edit the profiles](/docs/classic/installation/06-cti-adapter-installation-troubleshooting#how-to-remove-permissions-to-visualforce-pages-apex-classes-for-a-desired-profile) to remove the permissions to the objects and pages created by the app.
+
 ## Lightning Flow Setup Installation
 
 1.  Navigate to **Service Setup** within the Lightning UI under the gear
