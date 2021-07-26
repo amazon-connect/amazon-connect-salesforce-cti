@@ -7,6 +7,8 @@ Important: when upgrading the CTI Adapter, please make sure that the Salesforce 
 
 ## 5.15 July 2021
 
+When installing v5.15, please **confirm that the application was installed for admins only** (see [installation](/docs/lightning/installation/01-installation) for more details). If you did this by accident, then you will have to [manually edit the profiles](/docs/lightning/installation/06-adapter-installation-troubleshooting#how-to-remove-permissions-to-visualforce-pages-apex-classes-for-a-desired-profile) to remove the permissions to the objects and pages created by the app.
+
 - **Feature: Guided Setup** The Guided Setup feature helps make the setup process easier. See [Guided Setup](/docs/lightning/installation/02-guided-setup) for more details.
 - **Feature: Chat Widget Integration for SalesForce Experience Cloud(formerly Community Cloud)** Added VisualForce Page component that allows you to add Amazon Connect Chat Widget in your Salesforce Experience Cloud Site.
 - **Enhancement:** Changed the default audio recording component in the Contact Channel Analytics for easier setup. See [Contact Channel Analytics](/docs/lightning/salesforce-lambdas/04-contact-channel-analytics) for more details.
