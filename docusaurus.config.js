@@ -10,7 +10,7 @@ module.exports = {
   projectName: 'amazon-connect-salesforce-cti',
   themeConfig: {
     navbar: {
-      title: 'Amazon Connect Salesforce CTI Adapter',
+      title: 'v5.15',
       logo: {
         src: 'img/logo.svg',
       },
@@ -24,6 +24,11 @@ module.exports = {
           to: 'docs/classic/notices',
           label: 'Classic',
           position: 'left',
+        },
+        {
+          href: '/docs/other/earlier-versions',
+          label: 'Earlier Versions',
+          position: 'right',
         },
         {
           href: 'https://github.com/amazon-connect/amazon-connect-salesforce-cti/tree/main/pdf',
