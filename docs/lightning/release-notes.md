@@ -8,7 +8,7 @@ Important: when upgrading the CTI Adapter, please make sure that the Salesforce 
 ## 5.16 August 2021
 
 - **Feature:** Added a `callIncomingDuration` field to the `Contact Interaction Metadata` CTI Flow block, which captures the time between the call coming into an agent and it being accepted/missed/declined.
-- **Feature:** Moved the medialess popout page to be an optional feature. Learn how to enabled it [here](/docs/lightning/03-cti-adapter/01-cti-adapter-configuration#medialess-popout-ccp)
+- **Feature:** Moved the medialess popout page to be an optional feature. Learn how to enabled it [here](/docs/lightning/cti-adapter/01-cti-adapter-configuration#medialess-popout-ccp)
 - **Bug Fix:** Fixed an issue where the `callInteractionDuration` would be too large if the call is missed. It is now defaulted to 0 if the call is not picked up.
 - **Bug Fix:** Fixed an issue with the medialess adapter where media was still coming through the adapter and causing audio quality issues. Now, when the medialess option is checked, this will disable the allowFramedSoftphone option in CCP config, and media will not be sent through the CCP embedded on Salesforce.
 - **Bug Fix:** Fixed an issue where Agents couldn't see some CTI Actions if more than 20 CTI Actions are set up. Now, a scroll bar should appear to navigate to all of them.
