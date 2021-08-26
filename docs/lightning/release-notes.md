@@ -5,6 +5,20 @@ title: Release Notes
 
 Important: when upgrading the CTI Adapter, please make sure that the Salesforce Lambdas are also updated to the newest version. Also review the [CTI Adapter Installation Troubleshooting and Common Issues](/docs/lightning/installation/06-adapter-installation-troubleshooting) section for known issues and troubleshooting.
 
+## 5.16 August 2021
+
+- **Feature:** Added a `callIncomingDuration` field to the `Contact Interaction Metadata` CTI Flow block, which captures the time between the call coming into an agent and it being accepted/missed/declined.
+- **Feature:** Moved the medialess popout page to be an optional feature. Learn how to enabled it [here](/docs/lightning/03-cti-adapter/01-cti-adapter-configuration#medialess-popout-ccp)
+- **Bug Fix:** Fixed an issue where the `callInteractionDuration` would be too large if the call is missed. It is now defaulted to 0 if the call is not picked up.
+- **Bug Fix:** Fixed an issue with the medialess adapter where media was still coming through the adapter and causing audio quality issues. Now, when the medialess option is checked, this will disable the allowFramedSoftphone option in CCP config, and media will not be sent through the CCP embedded on Salesforce.
+- **Bug Fix:** Fixed an issue where Agents couldn't see some CTI Actions if more than 20 CTI Actions are set up. Now, a scroll bar should appear to navigate to all of them.
+- **Bug Fix:** Fixed an issue with the isInbound CTI Flow block, which would return false if the Customer hangs up the error before the Agent could answer the call, even if it was inbound.
+- **Bug Fix:** Fixed an issue with the InitialAgentStatus sub-feature of SetAgentStatusOnSessionEnd, which would not follow the IfProfileNameIncludes condition.
+- **Bug Fix:** Fixed an issue with CCP overlay where if no additional data is added, including Title, Instructions and Fields, the right pointing caret icon will be displayed for detailed form view. Now the execute button will be displayed in this case.
+- **Bug Fix:** Fixed an issue with CCP overlay where the order parameter was not affecting the sorting of the CTI Actions in the overlay.
+- **Bug Fix:** Fixed an issue with the CCP Element Editor where typing the CTI Action name first caused the cursor to move out of the input box.
+- **Bug Fix:** Fixed an issue with the Set Agent Salesforce State CTI Flow block.
+
 ## 5.15 July 2021
 
 When installing v5.15, please **confirm that the application was installed for admins only** (see [installation](/docs/lightning/installation/01-installation) for more details). If you did this by accident, then you will have to [manually edit the profiles](/docs/lightning/installation/06-adapter-installation-troubleshooting#how-to-remove-permissions-to-visualforce-pages-apex-classes-for-a-desired-profile) to remove the permissions to the objects and pages created by the app.

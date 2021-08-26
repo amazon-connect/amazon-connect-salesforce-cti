@@ -65,6 +65,16 @@ a default setting. This section will detail the options available.
     change their Phone Type in the CCP. You may have to add this field to 
     the layout manually. [See troubleshooting](/docs/classic/installation/06-cti-adapter-installation-troubleshooting)
 
+#### Medialess Popout CCP
+To enable a popout CCP for agents to use, you need to enable it using `Features`. 
+
+1. Open the CTI Adapter that you have medialess enabled on.
+2. In the bottom tabs, select the `Features` section and click `New`.
+3. Set the `AC Feature Name` to be **EnableMedialessPopout**
+4. Set the `Value` to be **Enabled:true**
+5. Ensure that the `Active` checkbox is checked, then hit Save.
+6. Now refresh your page, and you should see the a popup created, which you can use to handle media.
+
 ## Single Sign On Settings
 
 The Amazon Connect CTI Adapter supports single sign on(SSO) via SAML
