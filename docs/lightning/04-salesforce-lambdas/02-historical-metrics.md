@@ -107,7 +107,7 @@ Salesforce.
     
 <img src={useBaseUrl('/img/lightning/image178.png')} />
 
-19. On the **Historical metrics** page, select **Agent performance
+19. On the **Historical metrics** page, select **Agent performance**
 
 <img src={useBaseUrl('/img/lightning/image183.png')} />
 
@@ -126,7 +126,10 @@ Salesforce.
 
 23. Select the **Metrics** Tab.
 
-24. Select ONLY the following metrics (deselect any others):
+24. Select the following metrics (deselect any others):
+
+**Note** You should be able to use all metrics, but these are the important ones.
+
     -   After contact work time
 
     -   Agent on contact time
