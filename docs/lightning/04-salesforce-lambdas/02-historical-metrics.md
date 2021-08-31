@@ -63,21 +63,7 @@ Salesforce.
 
 7.  Select the **Metrics** Tab.
 
-8.  Select ALL selectable options EXCEPT:
-
-    a.  Callback contacts handled
-
-    b.  API contact handled
-
-    c.  Callback Contacts
-
-    d.  API Contacts
-
-    e.  Contacts answered in 25 seconds
-
-    f.  Contacts transferred out internal
-
-    g.  Contacts transferred out external
+8.  Select ALL selectable options
 
 9.  Select **Apply**
 
