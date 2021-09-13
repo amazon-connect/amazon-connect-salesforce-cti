@@ -252,7 +252,13 @@ This operation returns a response of:
     ],
     "sf_count": 1
 }
+
 ```
+
+Due to the `sf_records` value being a complex object, 
+the query oparation function cannot be used from directly within a contact flow. 
+See, [https://docs.aws.amazon.com/connect/latest/adminguide/connect-lambda-functions.html#verify-function](Amazon Connect Administrator Guide)
+for futher details.
 
 
 ### Salesforce queryOne
@@ -468,6 +474,11 @@ The operation returns a response of:
     "sf_count": 3
 }
 ```
+
+Due to the `sf_records` value being a complex object, 
+the search function cannot be used from directly within a contact flow. 
+See, [https://docs.aws.amazon.com/connect/latest/adminguide/connect-lambda-functions.html#verify-function](Amazon Connect Administrator Guide)
+for futher details.
 
 ### Salesforce searchOne
 
