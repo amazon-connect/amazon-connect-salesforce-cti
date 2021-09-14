@@ -47,6 +47,12 @@ available:
     and Parts of Speech (PoS), and identify word boundaries and
     labels like nouns and adjectives within the text.
 
+If you would like to set up streaming with Contact Lens, please finish the
+[Call Recording Streaming](#call-recording-streaming) section below and then
+follow the [Contact Lens Streaming](docs/lightning/cti-adapter/07-contact-lens) 
+instructions and possibly the [Post Call Contact Lens Import](docs/lightning/salesforce-lambdas/06-postcall-contact-lens-import) 
+instructions.
+
 ### Call Recording Streaming
 
 You can stream Call Recordings in your Salesforce Org. This
@@ -112,7 +118,9 @@ Cloudformation stack:
     the audio, then end the call. Make sure the agent exits after call
     work
 
-9.  After a minute or so, the recording should import.
+9.  After a minute or so, a new Contact Channel Analytics record should be
+    imported, and when opening it, you should be able to stream the audio.
+    (See section [Adding Contact Channel Analytics to the Service Console](#adding-contact-channel-analytics-to-the-service-console). below).
 
 #### Adding users to the AC_CallRecording permission set
 
@@ -165,8 +173,7 @@ This step is only necessary for non admin user accounts.
 
 10. Select the recording to open it
 
-11. In the Notes & Attachments section, you will see the recording file
-    attached.
+11. In the top right, you will see a button to stream the recording.
 
 <img src={useBaseUrl('/img/lightning/image207.png')} />
 
@@ -259,8 +266,7 @@ Make sure the Salesforce user accessing recording transcription are added to the
 
 5.  Select a record to view the details.
 
-6.  Once the record opens, note the recording waveform, playback
-    controls, and the visual version of the transcription
+6.  Once the record opens, note the recording, and the visual version of the transcription
 
 <img src={useBaseUrl('/img/lightning/image211.png')} />
 
