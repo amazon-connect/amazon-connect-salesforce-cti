@@ -21,6 +21,8 @@ configuration with the following information:
     this attribute configuration. This is not the name or key of the
     attribute itself.
 
+    > Note: in v5.16 there is a bug where this has to be the same as the contact attribute name/key.
+
 -   **Label:** will be displayed in the CCP as the label for the
     attribute value.
 
