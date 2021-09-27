@@ -63,21 +63,7 @@ Salesforce.
 
 7.  Select the **Metrics** Tab.
 
-8.  Select ALL selectable options EXCEPT:
-
-    a.  Callback contacts handled
-
-    b.  API contact handled
-
-    c.  Callback Contacts
-
-    d.  API Contacts
-
-    e.  Contacts answered in 25 seconds
-
-    f.  Contacts transferred out internal
-
-    g.  Contacts transferred out external
+8.  Select ALL selectable options
 
 9.  Select **Apply**
 
@@ -121,7 +107,7 @@ Salesforce.
     
 <img src={useBaseUrl('/img/lightning/image178.png')} />
 
-19. On the **Historical metrics** page, select **Agent performance
+19. On the **Historical metrics** page, select **Agent performance**
 
 <img src={useBaseUrl('/img/lightning/image183.png')} />
 
@@ -140,10 +126,13 @@ Salesforce.
 
 23. Select the **Metrics** Tab.
 
-24. Select ONLY the following metrics (deselect any others):
+24. Select the following metrics (deselect any others):
+
+**Note** You should be able to use all metrics, but these are the important ones.
+
     -   After contact work time
 
-    -   Agent on contact tome
+    -   Agent on contact time
 
     -   Agent idle time
 
@@ -160,8 +149,6 @@ Salesforce.
     -   Average agent interaction time
 
     -   Contacts agent hung up first
-
-    -   Contacts consulted
 
     -   Contacts handled
 

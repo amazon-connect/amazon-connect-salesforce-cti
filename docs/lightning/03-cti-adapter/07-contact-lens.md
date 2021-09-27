@@ -162,6 +162,10 @@ Please note that your secret may also be formatted stored as a "Secret key/value
 
 <img src={useBaseUrl('/img/lightning/audiostreaming2.png')} />
 
+#### Post Call Contat Lens Data Import
+
+If you want to import Contact Lens data, please follow the steps for [Post Call Contact Lens Import](docs/lightning/salesforce-lambdas/06-postcall-contact-lens-import).
+
 #### Common Audio Streaming Setup Issues
 
 1. Verify that the Secrets Manager secret contains both the `CloudFrontPrivateKey` and `CloudFrontAccessKeyID` items.
