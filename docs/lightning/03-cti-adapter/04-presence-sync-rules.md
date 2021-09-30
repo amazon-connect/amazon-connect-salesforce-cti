@@ -16,6 +16,8 @@ NOTE: In order for Presence Sync to work, the CTI Adapter must be
 configured to allow it. See [CTI Adapter Details](/docs/lightning/cti-adapter/01-cti-adapter-configuration)
 for more information.
 
+NOTE: After Salesforce Winter ’22 Release, users need to have View Setup and Configuration OR View DeveloperName permission via a profile or permission set to use this feature. See [New Permission Requirements for DeveloperName Field](https://help.salesforce.com/s/articleView?id=000362829&type=1) for more information.
+
 Presence Sync Rules are evaluated based on specific events. The
 available events are:
 
