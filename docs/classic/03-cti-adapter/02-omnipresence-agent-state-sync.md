@@ -11,6 +11,8 @@ states.
 
 <img src={useBaseUrl('/img/classic/image90.png')} />
 
+NOTE: After Salesforce Winter ’22 Release, users need to have View Setup and Configuration OR View DeveloperName permission via a profile or permission set to use this feature. See [New Permission Requirements for DeveloperName Field](https://help.salesforce.com/s/articleView?id=000362829&type=1) for more information.
+
 ## Enable Omnichannel
 
 In order to sync your Connect User status with your Omni-Channel agent
