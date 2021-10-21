@@ -43,7 +43,7 @@ will point out the items you will need to provide.
 
 <img src={useBaseUrl('/img/lightning/image58.png')} />
 
-5.  Note the Salesforce.com API version in your notepad
+5.  Note the Salesforce.com API version in your notepad. The pattern of this value is ```vXX.X```.
 
 <img src={useBaseUrl('/img/lightning/image59.png')} />
 
@@ -467,7 +467,7 @@ retrieve secrets.
         configured in the previous section
 
     o.  **SalesforceVersion:** This is the Salesforce.com API version
-        that you noted in the previous section
+        that you noted in the previous section. The pattern of this value is ```vXX.X```.
 
     p.  **VpcSecurityGroupList:** The list of SecurityGroupIds for
         Virtual Private Cloud (VPC). Not required if PrivateVpcEnabled
