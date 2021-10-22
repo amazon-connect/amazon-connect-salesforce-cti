@@ -280,7 +280,7 @@ conditions.
 
 <img src={useBaseUrl('/img/lightning/image58.png')} />
 
-5.  Note the Salesforce.com API version in your notepad
+5.  Note the Salesforce.com API version in your notepad. The pattern of this value is ```vXX.X```.
 
 <img src={useBaseUrl('/img/lightning/image59.png')} />
 
