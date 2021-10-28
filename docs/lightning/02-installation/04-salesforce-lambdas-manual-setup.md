@@ -464,7 +464,7 @@ retrieve secrets.
         Environment, False for Sandbox
 
     n.  **SalesforceUsername:** The username for the API user that you
-        configured in the previous section
+        configured in the previous section. Salesforce usernames are in the form of an email address.
 
     o.  **SalesforceVersion:** This is the Salesforce.com API version
         that you noted in the previous section. The pattern of this value is ```vXX.X```.
