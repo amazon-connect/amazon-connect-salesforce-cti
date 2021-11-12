@@ -3,7 +3,10 @@ id: release-notes
 title: Release Notes
 ---
 
-Important: when upgrading the CTI Adapter, please make sure that the Salesforce Lambdas are also updated to the newest version. Also review the [CTI Adapter Installation Troubleshooting and Common Issues](/docs/lightning/installation/06-adapter-installation-troubleshooting) section for known issues and troubleshooting.
+### WebRTC Plan-B Deprecation
+The Plan-B deprecation should not affect any current users of the CTI Adapter, as we utilize the embedded CCP and do not build in connect-rtc-js seperately. 
+
+**Important:** when upgrading the CTI Adapter, please make sure that the Salesforce Lambdas are also updated to the newest version. Also review the [CTI Adapter Installation Troubleshooting and Common Issues](/docs/lightning/installation/06-adapter-installation-troubleshooting) section for known issues and troubleshooting.
 
 ## 5.16 August 2021
 
