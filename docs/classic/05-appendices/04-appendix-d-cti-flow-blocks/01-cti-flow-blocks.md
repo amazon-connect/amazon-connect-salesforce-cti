@@ -446,3 +446,11 @@ Send an object to Data panel of CCP Overlay.
 ### Leave a Voicemail
 
 Use Voicemail drops to leave a voicemail.
+
+### Destroy Agent Connection to Live Contact
+
+Destroys destroy the agent's connection to any live contact that is currently being handled by the CTI Flow. This is being deprecated for contacts in ACW. Use the ClearContact block for Clear ACW functionality.
+
+### Clear Contact
+
+Clears a contact that is no longer being worked on - i.e. it\'s one of ERROR, ACW, MISSED, REJECTED.

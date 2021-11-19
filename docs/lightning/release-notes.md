@@ -8,6 +8,21 @@ The Plan-B deprecation should not affect any current users of the CTI Adapter, a
 
 **Important:** when upgrading the CTI Adapter, please make sure that the Salesforce Lambdas are also updated to the newest version. Also review the [CTI Adapter Installation Troubleshooting and Common Issues](/docs/lightning/installation/06-adapter-installation-troubleshooting) section for known issues and troubleshooting.
 
+## 5.17 November 2021
+
+- **Feature:** Added the integration with Amazon Connect Wisdom, which delivers articles and article recommendations to agents. See [here](/docs/lightning/cti-adapter/12-wisdom-integration) for more details.
+- **Feature:** Added the integration with Voice id, which provides real-time caller authentication. See [here](/docs/lightning/cti-adapter/13-voice-id) for more details.
+- **Bug Fix:** Fixed a bug where CTI Actions would only load if you switched overlay tabs. Now they will load immediately.
+- **Bug Fix:** Fixed a few bugs with Contact Attributes Overlay. 
+  - Where you needed to set they would not populate in the overlay unless the CTI Attribute Name value was the same as the contact attribute key.
+  - Selecting DisplayValue of `Key` did not show just the Key value.
+  - When using the ShowAllAttributes feature, the already configured CTI Attributes did not maintain the same HTML formatting as before.
+- **Bug Fix:** Fixed a bug where DialedNumber__c was not filled on outbound calls.
+- **Bug Fix:** Fixed a bug where Update Contact Attributes didn't work for Chat or Task contacts.
+- **Bug Fix:** Fixed a bug where the CTI Flow payload would only contain the CTI Action Additional Data when both CTI Action Payload and Additional Data are configured. Now the CTI Flow payload will have both the CTI Action Payload and Additional Data
+- **Enhancement:** Added two new CTI Flow Blocks - Destroy Live Contact and Clear Contact. 
+
+
 ## 5.16 August 2021
 
 - **Feature:** Added a `callIncomingDuration` field to the `Contact Interaction Metadata` CTI Flow block, which captures the time between the call coming into an agent and it being accepted/missed/declined.
