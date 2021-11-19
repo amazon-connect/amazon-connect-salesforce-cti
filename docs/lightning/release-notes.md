@@ -4,7 +4,7 @@ title: Release Notes
 ---
 
 ### WebRTC Plan-B Deprecation
-The Plan-B deprecation should not affect any current users of the CTI Adapter, as we utilize the embedded CCP and do not build in connect-rtc-js seperately. 
+The Plan-B deprecation should not affect any current users of the CTI Adapter, as we utilize the embedded CCP and do not build in connect-rtc-js separately. 
 
 **Important:** when upgrading the CTI Adapter, please make sure that the Salesforce Lambdas are also updated to the newest version. Also review the [CTI Adapter Installation Troubleshooting and Common Issues](/docs/lightning/installation/06-adapter-installation-troubleshooting) section for known issues and troubleshooting.
 
@@ -14,7 +14,7 @@ The Plan-B deprecation should not affect any current users of the CTI Adapter, a
 - **Feature:** Simplify the contact center authentication procedure with the integration of [Amazon Connect Voice ID](https://aws.amazon.com/connect/voice-id/) to make voice interactions faster and more secure. Amazon Connect Voice ID analyzes caller's unique voice characteristics using machine learning to help verify identity in real-time and display a confidence score and status within the Contact Control Panel (CCP) in the CTI Adapter. Using CTI Actions and Flows, you can automate fraud case creation or route the call to fraud agents based on the outcome of the Voice ID interaction. See [here](/docs/lightning/cti-adapter/13-voice-id) for more details
 - **Bug Fix:** Fixed issue where CTI Actions would would not load immediately until you switched overlay tabs. 
 - **Bug Fix:** Fixed following issues with Contact Attributes Overlay:
-    - Setting contact attributes would not populate in the overlay unless the CTI Attribute Name value was the same as the contact attribute key.
+    - Contact attributes would not populate in the overlay unless the CTI Attribute Name value was the same as the contact attribute key.
     - Selecting DisplayValue of Key did not show just the Key value.
     - When using the ShowAllAttributes feature, the already configured CTI Attributes did not maintain the same HTML formatting as before.
 - **Bug Fix**: Fixed issue where DialedNumber__c was not filled for outbound calls.
