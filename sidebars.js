@@ -26,6 +26,8 @@ module.exports = {
         'lightning/cti-adapter/09-recording-controls',
         'lightning/cti-adapter/10-voicemail-drops',
         'lightning/cti-adapter/11-chat-widget-integration',
+        'lightning/cti-adapter/12-wisdom-integration',
+        'lightning/cti-adapter/13-voice-id',
       ],
     },
     {
@@ -86,6 +88,8 @@ module.exports = {
         'classic/cti-adapter/10-cti-actions',
         'classic/cti-adapter/11-recording-controls',
         'classic/cti-adapter/12-chat-widget-integration',
+        'classic/cti-adapter/13-wisdom-integration',
+        'classic/cti-adapter/14-voice-id',
       ],
     },
     {
