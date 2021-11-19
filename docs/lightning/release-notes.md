@@ -10,17 +10,17 @@ The Plan-B deprecation should not affect any current users of the CTI Adapter, a
 
 ## 5.17 November 2021
 
-- **Feature:** Added the integration with Amazon Connect Wisdom, which delivers articles and article recommendations to agents. See [here](/docs/lightning/cti-adapter/12-wisdom-integration) for more details.
-- **Feature:** Added the integration with Voice id, which provides real-time caller authentication. See [here](/docs/lightning/cti-adapter/13-voice-id) for more details.
-- **Bug Fix:** Fixed a bug where CTI Actions would only load if you switched overlay tabs. Now they will load immediately.
-- **Bug Fix:** Fixed a few bugs with Contact Attributes Overlay. 
-  - Where you needed to set they would not populate in the overlay unless the CTI Attribute Name value was the same as the contact attribute key.
-  - Selecting DisplayValue of `Key` did not show just the Key value.
-  - When using the ShowAllAttributes feature, the already configured CTI Attributes did not maintain the same HTML formatting as before.
-- **Bug Fix:** Fixed a bug where DialedNumber__c was not filled on outbound calls.
-- **Bug Fix:** Fixed a bug where Update Contact Attributes didn't work for Chat or Task contacts.
-- **Bug Fix:** Fixed a bug where the CTI Flow payload would only contain the CTI Action Additional Data when both CTI Action Payload and Additional Data are configured. Now the CTI Flow payload will have both the CTI Action Payload and Additional Data
-- **Enhancement:** Added two new CTI Flow Blocks - Destroy Live Contact and Clear Contact. 
+- **Feature:** Reduce the time agents spend searching for answers with the integration of [Amazon Connect Wisdom](https://aws.amazon.com/connect/wisdom/), which delivers articles and article recommendations to agents.  When used with Contact Lens real-time, Wisdom is designed to detect customer issues during calls and proactively provide knowledge article recommendations in real-time. The Wisdom widget can be configured within the agent’s Contact Control Panel (CCP) or alongside the agent’s Salesforce Lightning screen layout for cases, contacts and accounts. See [here](/docs/lightning/cti-adapter/12-wisdom-integration) for more details.
+- **Feature:** Simplify the contact center authentication procedure with the integration of [Amazon Connect Voice ID](https://aws.amazon.com/connect/voice-id/) to make voice interactions faster and more secure. Amazon Connect Voice ID analyzes caller's unique voice characteristics using machine learning to help verify identity in real-time and display a confidence score and status within the Contact Control Panel (CCP) in the CTI Adapter. Using CTI Actions and Flows, you can automate fraud case creation or route the call to fraud agents based on the outcome of the Voice ID interaction. See [here](/docs/lightning/cti-adapter/13-voice-id) for more details
+- **Bug Fix:** Fixed issue where CTI Actions would would not load immediately until you switched overlay tabs. 
+- **Bug Fix:** Fixed following issues with Contact Attributes Overlay:
+    - Setting contact attributes would not populate in the overlay unless the CTI Attribute Name value was the same as the contact attribute key.
+    - Selecting DisplayValue of Key did not show just the Key value.
+    - When using the ShowAllAttributes feature, the already configured CTI Attributes did not maintain the same HTML formatting as before.
+- **Bug Fix**: Fixed issue where DialedNumber__c was not filled for outbound calls.
+- **Bug Fix**: Fixed issue where Update Contact Attributes didn't work for Chat or Task contacts.
+- **Bug Fix**: Fixed issue where the CTI Flow payload would only contain the CTI Action Additional Data when both CTI Action Payload and Additional Data are configured. Now the CTI Flow payload will have both the CTI Action Payload and Additional Data
+- **Enhancement:** Added two new CTI Flow Blocks - Destroy Live Contact and Clear Contact.
 
 
 ## 5.16 August 2021
