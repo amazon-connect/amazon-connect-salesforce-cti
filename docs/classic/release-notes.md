@@ -8,6 +8,14 @@ The Plan-B deprecation should not affect any current users of the CTI Adapter, a
 
 **Important:** when upgrading the CTI Adapter, please make sure that the Salesforce Lambdas are also updated to the newest version.
 
+## 5.18 January 2022
+
+- **Bug Fix:** Updated the **Get Salesforce Contact ID** block to accept E.164 numbers.
+- **Bug Fix:** Fixed **onMessage** event name and label which was causing CTI flows to not trigger.
+- **Bug Fix:** Fixed stray template tag in `ac_contactChannelListView` causing Spring ’22 package installation failure.
+- **Bug Fix:** Fixed issue where switching contact tabs didn’t update the CCP overlay attributes.
+
+
 ## 5.17 November 2021
 
 - **Feature:** Added the integration with Amazon Connect Wisdom, which delivers articles and article recommendations to agents. See [here](/docs/classic/cti-adapter/13-wisdom-integration) for more details.
