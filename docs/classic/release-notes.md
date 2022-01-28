@@ -2,8 +2,12 @@
 id: release-notes
 title: Release Notes
 ---
+### Important Notes
 
-### WebRTC Plan-B Deprecation
+#### Spring '22 Release
+The Salesforce Spring '22 release introduces a change that will likely cause the installation of any version of the adapter before 5.18 to fail. This issue will not affect anyone who uses a version of the adapter before 5.18, only those who want to install an older version.
+
+#### WebRTC Plan-B Deprecation
 The Plan-B deprecation should not affect any current users of the CTI Adapter, as we utilize the embedded CCP and do not build in connect-rtc-js seperately. 
 
 **Important:** when upgrading the CTI Adapter, please make sure that the Salesforce Lambdas are also updated to the newest version.
