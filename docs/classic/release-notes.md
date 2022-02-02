@@ -5,7 +5,7 @@ title: Release Notes
 ### Important Notes
 
 #### Spring '22 Release
-The Salesforce Spring '22 release introduces a change that will likely cause an install or update to any version of the adapter before 5.18 to fail. In addition if you are using the `ac_PhoneCallListView` component in any version of the adapter, the loading of your component will fail. This component has been depricated in v5.18.
+The Salesforce Spring '22 release introduces a change that will likely cause an install or update to any version of the adapter before 5.18 to fail. In addition if you are using the `ac_PhoneCallListView` component in any version of the adapter, the loading of your component may fail. This component has been depricated in v5.18.
 
 #### WebRTC Plan-B Deprecation
 The Plan-B deprecation should not affect any current users of the CTI Adapter, as we utilize the embedded CCP and do not build in connect-rtc-js seperately. 
