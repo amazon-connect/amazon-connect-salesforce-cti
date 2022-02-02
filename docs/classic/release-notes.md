@@ -5,7 +5,7 @@ title: Release Notes
 ### Important Notes
 
 #### Spring '22 Release
-The Salesforce Spring '22 release introduces a change that will likely cause the installation of any version of the adapter before 5.18 to fail. This issue will not affect anyone who uses a version of the adapter before 5.18, only those who want to install an older version.
+The Salesforce Spring '22 release introduces a change that will likely cause an install or update to any version of the adapter before 5.18 to fail. In addition if you are using the `ac_PhoneCallListView` component in any version of the adapter, the loading of your component will fail. This component has been depricated in v5.18.
 
 #### WebRTC Plan-B Deprecation
 The Plan-B deprecation should not affect any current users of the CTI Adapter, as we utilize the embedded CCP and do not build in connect-rtc-js seperately. 
@@ -17,6 +17,7 @@ The Plan-B deprecation should not affect any current users of the CTI Adapter, a
 - **Bug Fix:** Updated the **Get Salesforce Contact ID** block to accept E.164 numbers.
 - **Bug Fix:** Fixed **onMessage** event name and label which was causing CTI flows to not trigger.
 - **Bug Fix:** Fixed stray template tag in `ac_contactChannelListView` causing Spring ’22 package installation failure.
+- **Bug Fix:** Depricated `ac_PhoneCallListView` LWC, as it is an artifact of an old version of the adapter and was causing Spring ’22 package installation failure.
 - **Bug Fix:** Fixed issue where switching contact tabs didn’t update the CCP overlay attributes.
 
 
