@@ -20,6 +20,7 @@ The Plan-B deprecation should not affect any current users of the CTI Adapter, a
 - **Bug Fix:** Fixed stray template tag in `ac_contactChannelListView` causing Spring ’22 package installation failure.
 - **Bug Fix:** Depricated `ac_PhoneCallListView` LWC, as it is an artifact of an old version of the adapter and was causing Spring ’22 package installation failure.
 - **Bug Fix:** Fixed issue where switching contact tabs didn’t update the CCP overlay attributes.
+- **Bug Fix:** Fixed issue where some `sfInvoke` operations were returning complex JSON objects that don't work with Connect Contact Flows
 
 
 ## 5.17 November 2021
