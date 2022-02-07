@@ -104,6 +104,28 @@ This operation returns a response of:
 }
 ```
 
+For **lookup_all** the operation returns a response of:
+
+```json
+{
+    "sf_records_0_Id": "5006g00000AaIs7AAF",
+    "sf_records_1_Id": "5006g00000AaIs7AAE",
+    "sf_count": 2
+}
+```
+
+Note that `sf_count` is the count of records matched and not the count of fields in the response. This means all fields that start with `sf_records_i_` count as one record. If the query above returned the Name as well as the Id the response will be:
+
+```json
+{
+    "sf_records_0_Id": "5006g00000AaIs7AAF",
+    "sf_records_0_Name": "Name0",
+    "sf_records_1_Id": "5006g00000AaIs7AAE",
+    "sf_records_1_Name": "Name1",
+    "sf_count": 2
+}
+```
+
 ### Salesforce Create
 
 This operation is invoked by setting **sf_operation** to **create**. In
@@ -247,13 +269,21 @@ This operation returns a response of:
 
 ```json
 {
-    "sf_records": [
-        { "Id": "00303000001RZfIAAW" }
-    ],
+    "sf_records_0_Id": "00303000001RZfIAAW",
     "sf_count": 1
 }
 ```
+Note that `sf_count` is the count of records matched and not the count of fields in the response. This means all fields that start with `sf_records_i_` count as one record. If the query above returned the Name as well as the Id and matched more than one record, the response will be:
 
+```json
+{
+    "sf_records_0_Id": "00303000001RZfIAAW",
+    "sf_records_0_Name": "Name0",
+    "sf_records_1_Id": "00303000001RZfIAAE",
+    "sf_records_1_Name": "Name1",
+    "sf_count": 2
+}
+```
 
 ### Salesforce queryOne
 
@@ -448,26 +478,20 @@ The operation returns a response of:
 
 ```json
 {
-    "sf_records": [
-        {
-            "Id": "50001000001B9e6AAG", 
-            "Subject": "test subject", 
-            "Status": "New"
-        }, 
-        {
-            "Id": "50001000001B9eWAAS", 
-            "Subject": "test subject", 
-            "Status": "New"
-        }, 
-        {
-            "Id": "50001000001BDgiAAG", 
-            "Subject": "test subject", 
-            "Status": "New"
-        }
-    ], 
+    "sf_records_0_Id": "50001000001B9e6AAG",
+    "sf_records_0_Subject": "test subject",
+    "sf_records_0_Status": "New",
+    "sf_records_1_Id": "50001000001B9eWAAS",
+    "sf_records_1_Subject": "test subject",
+    "sf_records_1_Status": "New",
+    "sf_records_2_Id": "50001000001BDgiAAG",
+    "sf_records_2_Subject": "test subject",
+    "sf_records_2_Status": "New",
     "sf_count": 3
 }
 ```
+
+Note that `sf_count` is the count of records matched and not the count of fields in the response. This means all fields that start with `sf_records_i_` count as one record.
 
 ### Salesforce searchOne
 
