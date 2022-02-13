@@ -38,5 +38,5 @@ Add the Voice Id component to the contacts page:
 Add the Voice Id component to the Task/Cases page:
 1. Open the task record page, and Edit Page (same steps as Contacts).
 2. Find `ac_VoiceIdChannelDetailView` in the custom components list, drag and drop it into the page.
-3. Save and return to the record page. Click activate and assign as Org Default if prompted.
+3. Save and return to the record page. Click activate and assign as App Default if prompted.
 <img src={useBaseUrl('/img/shared/voiceid6.png')} />
