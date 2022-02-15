@@ -67,6 +67,16 @@ title: "Appendix D: CTI Flow Examples"
 
 [Download](https://connect-blogs.s3.amazonaws.com/Amazon+Connect+Salesforce+CTI+Adapter/Assets/Sample+Flows/08-create-task.json)
 
+### Create a Task (Call Activity) and Pop That Task using CTI Actions
+
+**Source**: CTI Action
+
+**Event**: N/A
+
+[More details](/docs/lightning/cti-adapter/08-cti-actions#example)
+
+[Download](https://connect-blogs.s3.amazonaws.com/Amazon+Connect+Salesforce+CTI+Adapter/Assets/Sample+Flows/10-Create+Callback+Task.json)
+
 ### Default CTI Flows
 
 The following zip file includes default flows, which are automatically
