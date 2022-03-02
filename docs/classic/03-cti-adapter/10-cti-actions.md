@@ -13,7 +13,7 @@ You can configure a CTI Action in the CCP Element Editor page.
 
 Make sure that you have created a CTI Flow and it uses the source "CTI Action." Only these CTI Flows will be displayed in the dropdown field.
 
-You can optionally specify a payload to pass to the CTI Flow. This allows your agents to enter additional data about the customer or information about the call to pass into the CTI Flow. The CCP Element Editor gives you the ability to add input fields into your form.
+You can optionally specify a payload to pass to the CTI Flow. This allows your agents to enter additional data about the customer or information about the call to pass into the CTI Flow. The CCP Element Editor gives you the ability to add input fields into your form. These fields can be accessed in the CTI Flow through `$.payload.fieldKey`.
 
 <img src={useBaseUrl('/img/classic/ccp-element-editor-03.png')} />
 
@@ -23,11 +23,52 @@ You can optionally specify a payload to pass to the CTI Flow. This allows your a
 
 The **Actions** panel in the CCP overlay drawer displays the CTI Action buttons where your agents have easy access to them as they are interacting with customers.
 
+*The screenshots below are showcasing the CTI Actions and their behavior in the CCP Overlay panel, not the individual CTI Flows shown.*
+
 <img src={useBaseUrl('/img/classic/ccp-overlay-01.png')} />
 
 If a CTI Action requires additional input by the agent, its name will be followed by an arrow and when the agent clicks on this button, it will open the configured form. Otherwise, it will be shown with an "Execute" button next to its name.
 
 <img src={useBaseUrl('/img/classic/ccp-overlay-02-detail.png')} />
+
+### Example
+In this section we demonstrate how to use CTI Actions and how they interact with CTI Flows through an example.
+
+Here we setup a CTI Action and Flow to create a Salesforce Task to callback a customer and pop it. The end goal is to have a Task with the subject *Callback - FirstName - LastName* and the number to callback in the comments section of the Task. If a contact exists for that number, we will also link it in the Task.
+We use a CTI Action to do this to let the agent enter the customer's first and last name and callback number if it is different from the number used to call in.
+This action looks like this in the CCP Overlay.
+
+<img src={useBaseUrl('/img/shared/CallbackCustomerInfoCtiActionOverlay.png')} />
+
+To achieve this, we need to setup a CTI Action then a CTI Flow.
+
+First, we setup the CTI Action. To do that we need to have created a CTI Flow with the **CTI Actions** as source. For now we create an empty Flow, which we will build later, just to reference it in the Action.
+
+The first step is to name and link the Action to a Flow.
+
+<img src={useBaseUrl('/img/shared/CtiActionName.png')} />
+
+The second step is to add hardcoded fields to the payload, if desired. In this example we add part of the Task subject as hardcoded fields to demonstrate the functionality.
+
+<img src={useBaseUrl('/img/shared/CtiActionPayload.png')} />
+
+Finally, as shown previously, the action is a form, that means it has additional data that the agent can provide. Below are images showing how they are setup for this example.
+
+<img src={useBaseUrl('/img/shared/CtiActionAddDataOverview.png')} />
+<img src={useBaseUrl('/img/shared/CtiActionAddDataFields.png')} />
+<img src={useBaseUrl('/img/shared/CtiActionAddDataFN.png')} />
+<img src={useBaseUrl('/img/shared/CtiActionAddDataLN.png')} />
+<img src={useBaseUrl('/img/shared/CtiActionAddDataCbNumber.png')} />
+
+
+Then, we setup the CTI Flow. As mentioned above, it's possible to have the callback number different from the number used to call in, or it could be the same. If it's the same, we don't want the agent to enter the number again, in fact we can get that number in the CTI Flow. In the flow we use the **Get Contact Properties** block to get the phone number of the contact. Then using the **Is Truthy?** block, we check if the agent entered a callback number in the form or not. Depending on wether they did or not, we get the Salesforce Contact and create a Task using the correct callback number.
+In the Flow we reference the CTI Action fields by using `$.payload.fieldKey` for both the hardcoded payload and the fields in the additional data form (Take a look at the **Create a Task** blocks in the flow below).
+
+<img src={useBaseUrl('/img/shared/CtiActioCtiFlow.png')} />
+
+[Download Flow](https://connect-blogs.s3.amazonaws.com/Amazon+Connect+Salesforce+CTI+Adapter/Assets/Sample+Flows/10-Create+Callback+Task.json)
+
+To test this action, you can place or accept a call from the CCP, open the overlay, fill in the form then submit it. If everything is setup correctly, a Task should pop up with the desired information.
 
 ### Receiving Data from CTI Flows
 
