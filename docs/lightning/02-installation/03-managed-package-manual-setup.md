@@ -215,11 +215,17 @@ configuration, you add users to the Call Center to provide access to it.
 
 <img src={useBaseUrl('/img/lightning/image34.png')} />
 
-You will also see the option to enable and disable certain 
+5.  You will also see the option to enable and disable certain 
 triggers in the package, which you can configure to meet your needs. You
-can change these whenever you would like to. For more details, see the troubleshooting section. 
+can change these whenever you would like to. For more details, see below
 
-5.  Select **Save**
+These are options we provide that allow you to toggle certain functionality in the adapter.
+- CCA Case Trigger - This trigger looks for any ContactChannelAnalytics records that could be related to a updated/inserted Case, and creates a relationsihp between the two records. This trigger uses batching to process the update requests.
+- CCA Contact Trigger - This trigger looks for any ContactChannelAnalytics records that could be related to a updated/inserted Contact, and creates a relationsihp between the two records. This trigger uses batching to process the update requests.
+- Case Contact CCA Trigger - This trigger looks for any Case/Contact records that could be related to an updated/inserted ContactChannelAnalytics record, and creates a relationsihp between the records.
+- Task Trigger - This trigger creates a ContactChannel record for any inserted/updated task that with a `CallObject` field that does not currently have a ContactChannel record created before.
+
+6.  Select **Save**
 
 #### Create the Softphone Layout
 

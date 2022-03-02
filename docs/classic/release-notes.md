@@ -65,6 +65,7 @@ When installing v5.15, please **confirm that the application was installed for a
 
 ## 5.14 June 2021
 
+- **BugFix:** Added batch processing to CCA Case Trigger and CCA Contact Trigger.
 - **Bugfix:** The issue that caused an Attribute label to not display properly in the attributes panel has been fixed.
 - **Bugfix:** The issue that caused AC Queue Metrics tab's name showing blank has been fixed.
 - **Bugfix:** The issue that caused the Recording Panel button to fail when a url is used for connect instance alias has been fixed.
