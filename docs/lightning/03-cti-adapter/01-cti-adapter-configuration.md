@@ -186,8 +186,10 @@ Contact Control Panel once authentication completes.
     Note: You may also receive popups to allow notifications and
     microphone access. Please accept both.
 
-12. You should now see the authenticated and logged in CCP
+12. Click the Sign into CCP button
+
+13. You should now see the authenticated and logged in CCP
 
 <img src={useBaseUrl('/img/lightning/image120.png')} />
 
-13. SSO Configuration is complete
+14. SSO Configuration is complete
