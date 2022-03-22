@@ -340,13 +340,7 @@ You create the Amazon Connect SSO URL by combining the IdP-Initiated
 Login URL that you copied earlier, and a relay state URL that will
 redirect the authenticated user to your Amazon Connect instance.
 
-The 'RelayState' will be in the following format:
-
-<pre>https://console.aws.amazon.com/connect/federate/<b>InstanceId</b>?destination=%2Fconnect%2Fccp</pre>
-
-Please note that "console.aws.amazon.com" refers to US-East-1 region (N.
-Virginia). If your Amazon Connect instance is in a different region,
-please use the region Console URL. For example:
+The 'RelayState' will be in the following format (replace `us-west-2` with the region you are using):
 
 <pre>https://us-west-2.console.aws.amazon.com/connect/federate/<b>InstanceId</b>?destination=%2Fconnect%2Fccp</pre>
 
@@ -366,7 +360,7 @@ please use the region Console URL. For example:
 2.  Concatenate the 'IdP-Initiated Login URL' and the 'RelayState', by
     combining the two with "&RelayState=" in between, for example:
 
-<pre>https://mXXXXXXrun-dev-ed.my.salesforce.com/idp/login?app=0sp0N000000Caid&RelayState=https://console.aws.amazon.com/connect/federate/<b>InstanceId</b>?destination=%2Fconnect%2Fccp</pre>
+<pre>https://mXXXXXXrun-dev-ed.my.salesforce.com/idp/login?app=0sp0N000000Caid&RelayState=https://us-west-2.console.aws.amazon.com/connect/federate/<b>InstanceId</b>?destination=%2Fconnect%2Fccp</pre>
 
 3.  This is the Final SSO URL, needed for the Amazon Connect Lightning
     CTI Adapter Configuration.
@@ -410,7 +404,7 @@ Amazon Connect Contact Control Panel once authentication completes.
     previously, up to the first question mark (do not copy the question
     mark), for example:
 
-    `https://mXXXXXXrun-dev-ed.my.salesforce.com/idp/login?app=0sp0N000000Caid&RelayState=https://console.aws.amazon.com/connect/federate/<b>InstanceId</b>?destination=%2Fconnect%2Fccp`
+    `https://mXXXXXXrun-dev-ed.my.salesforce.com/idp/login?app=0sp0N000000Caid&RelayState=https://us-west-2.console.aws.amazon.com/connect/federate/<b>InstanceId</b>?destination=%2Fconnect%2Fccp`
 
 6.  Paste this portion of the URL into the **SSO Url** field
 
@@ -419,7 +413,7 @@ Amazon Connect Contact Control Panel once authentication completes.
 7.  For the SSO Relay State, copy everything AFTER the question mark (do
     not copy the question mark), for example:
 
-    `https://mXXXXXXrun-dev-ed.my.salesforce.com/idp/login?app=0sp0N000000Caid&RelayState=https://console.aws.amazon.com/connect/federate/<b>InstanceId</b>?destination=%2Fconnect%2Fccp`
+    `https://mXXXXXXrun-dev-ed.my.salesforce.com/idp/login?app=0sp0N000000Caid&RelayState=https://us-west-2.console.aws.amazon.com/connect/federate/<b>InstanceId</b>?destination=%2Fconnect%2Fccp`
 
 8.  Paste this portion of the URL into the **SSO Relay State** field
 
