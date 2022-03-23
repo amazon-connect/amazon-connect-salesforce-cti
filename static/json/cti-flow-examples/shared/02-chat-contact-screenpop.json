@@ -1,0 +1,117 @@
+{
+    "actions": [
+        {
+            "id": "uid-0",
+            "type": "SE_Start",
+            "meta": {},
+            "controls": {},
+            "ports": {
+                "done": "uid-1"
+            },
+            "position": [
+                -450.5,
+                -249
+            ]
+        },
+        {
+            "id": "uid-1",
+            "type": "SE_ContactGetAttributeValue",
+            "meta": {
+                "title": "Get Contact Attribute: 'acsf-screenpop-record'"
+            },
+            "controls": {
+                "attributeName": "acsf-screenpop-record",
+                "defaultValue": ""
+            },
+            "ports": {
+                "done": "uid-3"
+            },
+            "position": [
+                -288,
+                -512
+            ]
+        },
+        {
+            "id": "uid-3",
+            "type": "SE_SFScreenpopObject",
+            "meta": {},
+            "controls": {
+                "recordId": "$.actions.uid-1.results.value",
+                "noPopOnEmpty": false
+            },
+            "ports": {
+                "success": "uid-13",
+                "failure": "uid-5"
+            },
+            "position": [
+                128,
+                -416
+            ]
+        },
+        {
+            "id": "uid-5",
+            "type": "SE_ContactGetAttributeValue",
+            "meta": {
+                "title": "Get Contact Attribute: 'acsf-screenpop-search'"
+            },
+            "controls": {
+                "attributeName": "acsf-screenpop-search",
+                "defaultValue": ""
+            },
+            "ports": {
+                "done": "uid-6"
+            },
+            "position": [
+                96,
+                -192
+            ]
+        },
+        {
+            "id": "uid-6",
+            "type": "SE_SFSearchAndScreenpop",
+            "meta": {},
+            "controls": {
+                "searchParams": "$.actions.uid-5.results.value",
+                "queryParams": "",
+                "defaultFieldValues": {},
+                "deferred": false,
+                "callType": "inbound"
+            },
+            "ports": {
+                "success": "uid-13",
+                "failure": "uid-14"
+            },
+            "position": [
+                96,
+                48
+            ]
+        },
+        {
+            "id": "uid-13",
+            "type": "SE_End",
+            "meta": {},
+            "controls": {},
+            "ports": {},
+            "position": [
+                1126.9375,
+                -67.64453125
+            ]
+        },
+        {
+            "id": "uid-14",
+            "type": "SE_Log",
+            "meta": {},
+            "controls": {
+                "level": "debug",
+                "message": ""
+            },
+            "ports": {
+                "done": "uid-13"
+            },
+            "position": [
+                574.4375,
+                152.35546875
+            ]
+        }
+    ]
+}

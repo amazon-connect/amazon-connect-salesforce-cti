@@ -1,0 +1,93 @@
+{
+    "actions": [
+        {
+            "id": "uid-0",
+            "type": "SE_Start",
+            "meta": {},
+            "controls": {},
+            "ports": {
+                "done": "uid-22"
+            },
+            "position": [
+                -450.5,
+                -249
+            ]
+        },
+        {
+            "id": "uid-13",
+            "type": "SE_End",
+            "meta": {},
+            "controls": {},
+            "ports": {},
+            "position": [
+                688,
+                -48
+            ]
+        },
+        {
+            "id": "uid-22",
+            "type": "SE_ContactCustomerPhoneNumber",
+            "meta": {},
+            "controls": {},
+            "ports": {
+                "done": "uid-25"
+            },
+            "position": [
+                -256,
+                -240
+            ]
+        },
+        {
+            "id": "uid-25",
+            "type": "SE_CoreFormatPhoneNumber",
+            "meta": {},
+            "controls": {
+                "phoneNumber": "$.actions.uid-22.results.phone",
+                "countryCode": "US"
+            },
+            "ports": {
+                "done": "uid-27"
+            },
+            "position": [
+                96,
+                -256
+            ]
+        },
+        {
+            "id": "uid-27",
+            "type": "SE_SFSearchAndScreenpop",
+            "meta": {},
+            "controls": {
+                "searchParams": "$.actions.uid-25.results.value",
+                "queryParams": "",
+                "defaultFieldValues": {},
+                "deferred": false,
+                "callType": "inbound"
+            },
+            "ports": {
+                "success": "uid-13",
+                "failure": "uid-29"
+            },
+            "position": [
+                445.130810110223,
+                -263.50751673472223
+            ]
+        },
+        {
+            "id": "uid-29",
+            "type": "SE_Log",
+            "meta": {},
+            "controls": {
+                "level": "debug",
+                "message": "$.actions.uid-22.results.phone"
+            },
+            "ports": {
+                "done": "uid-13"
+            },
+            "position": [
+                264.3311777581084,
+                -64.8266020620689
+            ]
+        }
+    ]
+}

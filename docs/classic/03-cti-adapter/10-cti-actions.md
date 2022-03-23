@@ -66,7 +66,7 @@ In the Flow we reference the CTI Action fields by using `$.payload.fieldKey` for
 
 <img src={useBaseUrl('/img/shared/CtiActioCtiFlow.png')} />
 
-[Download Flow](https://connect-blogs.s3.amazonaws.com/Amazon+Connect+Salesforce+CTI+Adapter/Assets/Sample+Flows/10-Create+Callback+Task.json)
+<a target="_blank" href={useBaseUrl('/json/cti-flow-examples/shared/10-Create+Callback+Task.json')} download="10-Create+Callback+Task.json">Download Flow</a>
 
 To test this action, you can place or accept a call from the CCP, open the overlay, fill in the form then submit it. If everything is setup correctly, a Task should pop up with the desired information.
 

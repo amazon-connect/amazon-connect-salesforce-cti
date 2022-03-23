@@ -1,0 +1,183 @@
+{
+    "actions": [
+        {
+            "id": "uid-0",
+            "type": "SE_Start",
+            "meta": {},
+            "controls": {},
+            "ports": {
+                "done": "uid-5"
+            },
+            "position": [
+                -896,
+                -128
+            ]
+        },
+        {
+            "id": "uid-1",
+            "type": "SE_End",
+            "meta": {},
+            "controls": {},
+            "ports": {},
+            "position": [
+                1104,
+                -80
+            ]
+        },
+        {
+            "id": "uid-5",
+            "type": "SE_ContactProperties",
+            "meta": {},
+            "controls": {},
+            "ports": {
+                "done": "uid-3"
+            },
+            "position": [
+                -704,
+                -128
+            ]
+        },
+        {
+            "id": "uid-9",
+            "type": "SE_SFCreateTask",
+            "meta": {},
+            "controls": {
+                "CallObject": "$.actions.uid-5.results.contactId",
+                "Type": "Call",
+                "Status": "Complete",
+                "Priority": "low",
+                "IsClosed": false,
+                "TaskSubtype": "Call",
+                "WhoId": "$.actions.uid-26.results.sfContactId",
+                "WhatId": "",
+                "CallDisposition": "",
+                "CallDurationInSeconds": "",
+                "CallType": "outbound",
+                "ActivityDate": "",
+                "subject1": "$.payload.SubjectPrepend",
+                "subject2": "$.payload.FirstName",
+                "subject3": "$.payload.LastName",
+                "otherTaskFields": {
+                    "Description": "$.actions.uid-5.results.formattedPhoneNumber"
+                }
+            },
+            "ports": {
+                "success": "uid-15"
+            },
+            "position": [
+                352,
+                128
+            ]
+        },
+        {
+            "id": "uid-11",
+            "type": "SE_SFCreateTask",
+            "meta": {},
+            "controls": {
+                "CallObject": "$.actions.uid-5.results.contactId",
+                "Type": "Call",
+                "Status": "In Progress",
+                "Priority": "low",
+                "IsClosed": false,
+                "TaskSubtype": "Call",
+                "WhoId": "$.actions.uid-24.results.sfContactId",
+                "WhatId": "",
+                "CallDisposition": "",
+                "CallDurationInSeconds": "",
+                "CallType": "inbound",
+                "ActivityDate": "",
+                "subject1": "$.payload.SubjectPrepend",
+                "subject2": "$.payload.FirstName",
+                "subject3": "$.payload.LastName",
+                "otherTaskFields": {
+                    "Description": "$.payload.CallbackPhone"
+                }
+            },
+            "ports": {
+                "success": "uid-17"
+            },
+            "position": [
+                336,
+                -128
+            ]
+        },
+        {
+            "id": "uid-15",
+            "type": "SE_SFScreenpopObject",
+            "meta": {},
+            "controls": {
+                "recordId": "$.actions.uid-9.results.id",
+                "noPopOnEmpty": false
+            },
+            "ports": {
+                "success": "uid-1"
+            },
+            "position": [
+                704,
+                128
+            ]
+        },
+        {
+            "id": "uid-17",
+            "type": "SE_SFScreenpopObject",
+            "meta": {},
+            "controls": {
+                "recordId": "$.actions.uid-11.results.id",
+                "noPopOnEmpty": false
+            },
+            "ports": {
+                "success": "uid-1"
+            },
+            "position": [
+                688,
+                -128
+            ]
+        },
+        {
+            "id": "uid-3",
+            "type": "SE_CoreTruthy",
+            "meta": {},
+            "controls": {
+                "value": "$.payload.CallbackPhone"
+            },
+            "ports": {
+                "true": "uid-24",
+                "false": "uid-26"
+            },
+            "position": [
+                -320,
+                -160
+            ]
+        },
+        {
+            "id": "uid-24",
+            "type": "SE_SFGetContactId",
+            "meta": {},
+            "controls": {
+                "formattedPhoneNumber": "$.payload.CallbackPhone"
+            },
+            "ports": {
+                "success": "uid-11"
+            },
+            "position": [
+                0,
+                -128
+            ]
+        },
+        {
+            "id": "uid-26",
+            "type": "SE_SFGetContactId",
+            "meta": {},
+            "controls": {
+                "formattedPhoneNumber": "$.actions.uid-5.results.formattedPhoneNumber"
+            },
+            "ports": {
+                "success": "uid-9"
+            },
+            "position": [
+                -16,
+                128
+            ]
+        }
+    ]
+}
