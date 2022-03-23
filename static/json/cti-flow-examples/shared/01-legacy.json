@@ -1,0 +1,129 @@
+{
+    "actions": [
+        {
+            "id": "uid-0",
+            "type": "SE_Start",
+            "meta": {},
+            "controls": {},
+            "ports": {
+                "done": "uid-1"
+            },
+            "position": [
+                -450.5,
+                -249
+            ]
+        },
+        {
+            "id": "uid-1",
+            "type": "SE_ContactGetAttributeValue",
+            "meta": {},
+            "controls": {
+                "attributeName": "acsf-screenpop-record",
+                "defaultValue": ""
+            },
+            "ports": {
+                "done": "uid-6"
+            },
+            "position": [
+                -272,
+                -240
+            ]
+        },
+        {
+            "id": "uid-6",
+            "type": "SE_SFSearchAndScreenpop",
+            "meta": {},
+            "controls": {
+                "searchParams": "$.actions.uid-1.results.value",
+                "queryParams": "",
+                "defaultFieldValues": {},
+                "deferred": false,
+                "callType": "inbound"
+            },
+            "ports": {
+                "success": "uid-8",
+                "failure": "uid-14"
+            },
+            "position": [
+                64,
+                -240
+            ]
+        },
+        {
+            "id": "uid-8",
+            "type": "SE_ContactCustomerPhoneNumber",
+            "meta": {},
+            "controls": {},
+            "ports": {
+                "done": "uid-10"
+            },
+            "position": [
+                400,
+                -240
+            ]
+        },
+        {
+            "id": "uid-10",
+            "type": "SE_CoreFormatPhoneNumber",
+            "meta": {},
+            "controls": {
+                "phoneNumber": "$.actions.uid-8.results.phone",
+                "countryCode": "US"
+            },
+            "ports": {
+                "done": "uid-12"
+            },
+            "position": [
+                400,
+                -80
+            ]
+        },
+        {
+            "id": "uid-12",
+            "type": "SE_SFSearchAndScreenpop",
+            "meta": {},
+            "controls": {
+                "searchParams": "$.actions.uid-10.results.value",
+                "queryParams": "",
+                "defaultFieldValues": {},
+                "deferred": false,
+                "callType": "inbound"
+            },
+            "ports": {
+                "success": "uid-13",
+                "failure": "uid-14"
+            },
+            "position": [
+                752,
+                -80
+            ]
+        },
+        {
+            "id": "uid-13",
+            "type": "SE_End",
+            "meta": {},
+            "controls": {},
+            "ports": {},
+            "position": [
+                1126.9375,
+                -67.64453125
+            ]
+        },
+        {
+            "id": "uid-14",
+            "type": "SE_Log",
+            "meta": {},
+            "controls": {
+                "level": "debug",
+                "message": "$.actions.uid-1.results.value"
+            },
+            "ports": {
+                "done": "uid-13"
+            },
+            "position": [
+                574.4375,
+                152.35546875
+            ]
+        }
+    ]
+}
