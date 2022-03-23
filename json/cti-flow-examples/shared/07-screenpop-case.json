@@ -1,0 +1,113 @@
+{
+    "actions": [
+        {
+            "id": "uid-0",
+            "type": "SE_Start",
+            "meta": {},
+            "controls": {},
+            "ports": {
+                "done": "uid-1"
+            },
+            "position": [
+                -417.5,
+                -130
+            ]
+        },
+        {
+            "id": "uid-1",
+            "type": "SE_ContactGetAttributeValue",
+            "meta": {},
+            "controls": {
+                "attributeName": "caseNumber",
+                "defaultValue": ""
+            },
+            "ports": {
+                "done": "uid-3"
+            },
+            "position": [
+                -208,
+                -210
+            ]
+        },
+        {
+            "id": "uid-3",
+            "type": "SE_CoreTruthy",
+            "meta": {},
+            "controls": {
+                "value": "$.actions.uid-1.results.value"
+            },
+            "ports": {
+                "true": "uid-5",
+                "false": "uid-7"
+            },
+            "position": [
+                -224,
+                -48
+            ]
+        },
+        {
+            "id": "uid-5",
+            "type": "SE_SFSearchAndScreenpop",
+            "meta": {},
+            "controls": {
+                "searchParams": "$.actions.uid-1.results.value",
+                "queryParams": "",
+                "defaultFieldValues": {},
+                "deferred": false,
+                "callType": "inbound"
+            },
+            "ports": {
+                "success": "uid-9",
+                "failure": "uid-10"
+            },
+            "position": [
+                112,
+                -16
+            ]
+        },
+        {
+            "id": "uid-7",
+            "type": "SE_SFScreenpopNewRecord",
+            "meta": {},
+            "controls": {
+                "entityName": "Case",
+                "defaultFieldValues": {}
+            },
+            "ports": {
+                "success": "uid-9",
+                "failure": "uid-10"
+            },
+            "position": [
+                112,
+                176
+            ]
+        },
+        {
+            "id": "uid-9",
+            "type": "SE_End",
+            "meta": {},
+            "controls": {},
+            "ports": {},
+            "position": [
+                512.11328125,
+                103.61328125
+            ]
+        },
+        {
+            "id": "uid-10",
+            "type": "SE_Log",
+            "meta": {},
+            "controls": {
+                "level": "debug",
+                "message": "$.actions.uid-1.results.value"
+            },
+            "ports": {
+                "done": "uid-9"
+            },
+            "position": [
+                395.61328125,
+                272.61328125
+            ]
+        }
+    ]
+}
