@@ -114,13 +114,7 @@ authenticated user to your Amazon Connect instance.
 Your IdP Login URL will resemble the following (Salesforce is shown):
 <pre>https://m******run-dev-ed.my.salesforce.com/idp/login?app=0sp0N000000Caid</pre>
 
-The 'RelayState' will be in the following format:
-
-<pre>https://console.aws.amazon.com/connect/federate/<b>InstanceId</b>?destination=%2Fconnect%2Fccp</pre>
-
-Please note that "console.aws.amazon.com" refers to US-East-1 region (N.
-Virginia). If your Amazon Connect instance is in a different region,
-please use the region Console URL. For example:
+The 'RelayState' will be in the following format (replace `us-west-2` with the region you are using):
 
 <pre>https://us-west-2.console.aws.amazon.com/connect/federate/<b>InstanceId</b>?destination=%2Fconnect%2Fccp</pre>
 
@@ -161,11 +155,11 @@ Contact Control Panel once authentication completes.
     the question mar into the SSO Relay state field, then add
     &RelayState= to the end, and append your relay state URL.
     For example:
-    <pre>app=0sp0N000000Caid&RelayState=https://console.aws.amazon.com/connect/federate/<b>InstanceId</b>?destination=%2Fconnect%2Fccp</pre>
+    <pre>app=0sp0N000000Caid&RelayState=https://us-west-2.console.aws.amazon.com/connect/federate/<b>InstanceId</b>?destination=%2Fconnect%2Fccp</pre>
     IF you did not have a Question Mark, then enter &RelayState= into
     the SSO Relay State field and append your relay statue URL to it.
     For example:
-    <pre>&RelayState=https://console.aws.amazon.com/connect/federate/<b>instanceId</b>?destination=%2Fconnect%2Fccp</pre>
+    <pre>&RelayState=https://us-west-2.console.aws.amazon.com/connect/federate/<b>instanceId</b>?destination=%2Fconnect%2Fccp</pre>
 
 8.  Example of a completed SSO section (Salesforce is shown)
 
