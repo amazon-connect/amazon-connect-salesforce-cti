@@ -181,16 +181,12 @@ Contact Control Panel once authentication completes.
 
 <img src={useBaseUrl('/img/lightning/image118.png')} />
 
-11. After a few seconds, a new window should pop up for a moment. This
-    window is performing the authentication and setting your session
-    cookie. Once it does this, it will close automatically.
-
-<img src={useBaseUrl('/img/lightning/image119.png')} />
-
-12. Once the authentication window closes, select the **phone icon** in
+11. Select the **phone icon** in
     the console toolbar to open the CCP
     Note: You may also receive popups to allow notifications and
     microphone access. Please accept both.
+
+12. Click the Sign into CCP button
 
 13. You should now see the authenticated and logged in CCP
 
