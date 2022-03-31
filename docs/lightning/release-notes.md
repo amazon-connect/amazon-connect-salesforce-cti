@@ -13,6 +13,13 @@ The Plan-B deprecation should not affect any current users of the CTI Adapter, a
 
 **Important:** when upgrading the CTI Adapter, please make sure that the Salesforce Lambdas are also updated to the newest version. Also review the [CTI Adapter Installation Troubleshooting and Common Issues](/docs/lightning/installation/06-adapter-installation-troubleshooting) section for known issues and troubleshooting.
 
+## 5.19 April 2022
+
+- **Enhancement:** replace call recording audio streaming via cloudfront distribution with the connect native get-recording endpoint. This change makes it so that the cloudfront infrastructure and associated setup process is no longer necessary. Please note that this change will remove audio recording infrastructure from your AWS account, please make sure to test this change before fully deploying.
+- **Enhancement:** add IgnorePermissionSet setting to FEATURE_WISDOM_PANEL feature. The setting determines whether the AC_CallRecording/AC_Administrator permission set is checked before showing Wisdom to the logged in user.
+- **Bug fix:** CTI Flows on contact events will fire after the page was reloaded during a contact’s life cycle
+- **Bug fix:** Fixed an issue where we would create a CCACase or CCAContact batch job even if there were no updates to any related fields.
+
 ## 5.18 January 2022
 
 - **Bug Fix:** Updated the **Get Salesforce Contact ID** block to accept E.164 numbers.

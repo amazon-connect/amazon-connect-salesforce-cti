@@ -124,7 +124,7 @@ Cloudformation stack:
 
 #### Adding users to the AC_CallRecording permission set
 
-This step is only necessary for non admin user accounts.
+This step is only necessary for non admin user accounts for the non contact lens case.
 
 1. In the setup search box, search for "Permission sets". Select the "AC_CallRecording" permission set. Select "Manage Assignments".
 

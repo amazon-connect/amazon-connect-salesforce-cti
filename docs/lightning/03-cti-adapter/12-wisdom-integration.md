@@ -29,7 +29,12 @@ Salesforce users accessing Amazon Connect Wisdom in Salesforce must belong to ei
     - AC Feature Name - FEATURE_WISDOM_PANEL
     - Value - Enabled: true
 <img src={useBaseUrl('/img/shared/wisdom2.png')} />
-4. Open the ccp, observe that there is a tab with Wisdom in the CCP Overlay.
+4. In addition, you can also include the `IgnorePermissionSet` setting to the value of the feature on a new line. This setting will show Wisdom if it is enabled regardless of whether the
+logged in user belongs to the *AC_Wisdom* or the *AC_Administrator* permission set. This setting is required if the logged in user has the `View Setup and Configuration` profile setting set to false.
+    - IgnorePermissionSet: true
+
+<img src={useBaseUrl('/img/shared/wisdom10.png')} />
+5. Open the ccp, observe that there is a tab with Wisdom in the CCP Overlay.
 
 <img src={useBaseUrl('/img/shared/wisdom0.png')} />
 
