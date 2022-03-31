@@ -1,0 +1,98 @@
+{
+    "actions": [
+        {
+            "id": "uid-0",
+            "type": "SE_Start",
+            "meta": {},
+            "controls": {},
+            "ports": {
+                "done": "uid-1"
+            },
+            "position": [
+                -313.5,
+                -109
+            ]
+        },
+        {
+            "id": "uid-1",
+            "type": "SE_ContactGetAttributeValue",
+            "meta": {
+                "title": "Get Contact Attribute: emailAddress"
+            },
+            "controls": {
+                "attributeName": "emailAddress",
+                "defaultValue": ""
+            },
+            "ports": {
+                "done": "uid-6"
+            },
+            "position": [
+                -48,
+                -112
+            ]
+        },
+        {
+            "id": "uid-3",
+            "type": "SE_SFSearchAndScreenpop",
+            "meta": {},
+            "controls": {
+                "searchParams": "$.actions.uid-1.results.value",
+                "queryParams": "",
+                "defaultFieldValues": {},
+                "deferred": false,
+                "callType": "inbound"
+            },
+            "ports": {
+                "success": "uid-5",
+                "failure": "uid-8"
+            },
+            "position": [
+                -48,
+                80
+            ]
+        },
+        {
+            "id": "uid-5",
+            "type": "SE_End",
+            "meta": {},
+            "controls": {},
+            "ports": {},
+            "position": [
+                464,
+                160
+            ]
+        },
+        {
+            "id": "uid-6",
+            "type": "SE_CoreTruthy",
+            "meta": {},
+            "controls": {
+                "value": ""
+            },
+            "ports": {
+                "true": "uid-3",
+                "false": "uid-5"
+            },
+            "position": [
+                314.0234375,
+                -100.58984375
+            ]
+        },
+        {
+            "id": "uid-8",
+            "type": "SE_Log",
+            "meta": {},
+            "controls": {
+                "level": "debug",
+                "message": "test"
+            },
+            "ports": {
+                "done": "uid-5"
+            },
+            "position": [
+                83.0234375,
+                246.41015625
+            ]
+        }
+    ]
+}

@@ -1,0 +1,76 @@
+{
+    "actions": [
+        {
+            "id": "uid-0",
+            "type": "SE_Start",
+            "meta": {},
+            "controls": {},
+            "ports": {
+                "done": "uid-16"
+            },
+            "position": [
+                -450.5,
+                -249
+            ]
+        },
+        {
+            "id": "uid-13",
+            "type": "SE_End",
+            "meta": {},
+            "controls": {},
+            "ports": {},
+            "position": [
+                464,
+                -256
+            ]
+        },
+        {
+            "id": "uid-16",
+            "type": "SE_CoreFormatPhoneNumberE164",
+            "meta": {},
+            "controls": {
+                "phoneNumber": "$.payload.number",
+                "countryCode": "US"
+            },
+            "ports": {
+                "done": "uid-18"
+            },
+            "position": [
+                -256,
+                -240
+            ]
+        },
+        {
+            "id": "uid-18",
+            "type": "SE_AgentDialNumber",
+            "meta": {},
+            "controls": {
+                "phoneNumber": "$.actions.uid-16.results.value"
+            },
+            "ports": {
+                "success": "uid-13",
+                "failure": "uid-20"
+            },
+            "position": [
+                96,
+                -240
+            ]
+        },
+        {
+            "id": "uid-20",
+            "type": "SE_Log",
+            "meta": {},
+            "controls": {
+                "level": "debug",
+                "message": "error"
+            },
+            "ports": {
+                "done": "uid-13"
+            },
+            "position": [
+                96,
+                -80
+            ]
+        }
+    ]
+}
