@@ -10,6 +10,9 @@ The Salesforce Spring '22 release introduces a change that will likely cause an 
 #### WebRTC Plan-B Deprecation
 The Plan-B deprecation should not affect any current users of the CTI Adapter, as we utilize the embedded CCP and do not build in connect-rtc-js seperately. 
 
+#### Installing as Admin
+Please **confirm that the application was installed for admins only** (see [installation](/docs/classic/installation/01-installation) for more details). If you did this by accident, then you will have to [manually edit the profiles](/docs/classic/installation/06-cti-adapter-installation-troubleshooting#how-to-remove-permissions-to-visualforce-pages-apex-classes-for-a-desired-profile) to remove the permissions to the objects and pages created by the app. If you are updating the package, please verify that all users have the proper AC permission set.
+
 **Important:** when upgrading the CTI Adapter, please make sure that the Salesforce Lambdas are also updated to the newest version.
 
 ## 5.19 April 2022
