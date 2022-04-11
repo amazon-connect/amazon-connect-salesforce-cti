@@ -5,7 +5,7 @@ title: CTI Actions
 
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
-Customers can now extend their Contact Control Panel (CCP) with customizable buttons called CTI Actions. These buttons can be configured in Salesforce and used to simplify common agent actions. For example, you can add a button that transfers calls to a manager, start and stop recordings, automate case creation, or start a customer refund process. CTI Actions are configured in the CTI Adapter’s Actions Admin panel to execute [CTI Flows](https://aws.amazon.com/blogs/contact-center/automate-agent-workflows-with-salesforce-cti-adapter/) which are process blocks that enable you to easily design agent workflows within our Salesforce integration.
+Customers can now extend their Contact Control Panel (CCP) with customizable buttons called CTI Actions. These buttons can be configured in Salesforce and used to simplify common agent actions. For example, you can add a button that starts and stops recordings, automate case creation, or start a customer refund process. CTI Actions are configured in the CTI Adapter’s Actions Admin panel to execute [CTI Flows](https://aws.amazon.com/blogs/contact-center/automate-agent-workflows-with-salesforce-cti-adapter/) which are process blocks that enable you to easily design agent workflows within our Salesforce integration.
 
 You can configure a CTI Action in the CCP Element Editor page.
 
