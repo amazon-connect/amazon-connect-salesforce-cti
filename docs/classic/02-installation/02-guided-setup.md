@@ -52,15 +52,13 @@ OAuth settings enabled.
 
 7.  Ensure Selected OAuth Scopes has the following values selected:
 
-a.  Access and manage your data (api)
+a.  Access the identity URL service (id, profile, email, address, phone)
 
-b.  Access your basic information (id, profile, email, address, phone)
+b.  Manage user data via APIs (api)
+
+8.  Select the checkbox "Require Secret for Web Server Flow", and the checkbox "Require Secret For Refresh Token Flow"
 
 <img src={useBaseUrl('/img/classic/image105.png')} />
-
-8.  Select the checkbox "Require Secret for Web Server Flow"
-
-<img src={useBaseUrl('/img/classic/image106.png')} />
 
 9.  Click "Save" at the bottom of the screen.
 

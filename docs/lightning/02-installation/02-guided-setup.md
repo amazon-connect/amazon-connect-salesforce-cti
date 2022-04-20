@@ -66,11 +66,11 @@ with OAuth settings enabled.
 7.  In the Selected OAuth Scopes section, select the following and add
     them to the Selected OAuth Scopes:
 
-8.  Access and manage your data (api)
+8.  Access the identity URL service (id, profile, email, address, phone)
 
-9.  Access your basic information (id, profile, email, address, phone)
+9.  Manage user data via APIs (api)
 
-10. Select the checkbox for Require Secret for Web Server Flow
+10. Select the checkbox for Require Secret for Web Server Flow, and the checkbox for Require Secret For Refresh Token Flow
 
 11. The **API (Enable OAuth Settings)** section should now look like
     this
