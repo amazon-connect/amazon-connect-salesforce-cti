@@ -52,7 +52,7 @@ sandbox. After the package is installed, you can configure your
 Salesforce Call Center configuration within Salesforce.
 
 The next step is to allowlist your Salesforce Visualforce domain within
-your Amazon Connect Application integration. This allows cross-domain
+your Amazon Connect Approved Origins. This allows cross-domain
 access to your Amazon Connect instance.
 
 If you want to quickly get setup with basic CTI capabilities in

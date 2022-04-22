@@ -172,7 +172,7 @@ URL of this page. It's going to be in this format:
 
 This is what we are going to use as "Origin URL" in our Amazon Connect
 configuration. From AWS Console, select Amazon Connect service and then
-select your Amazon Connect instance, and select "Application Integration" 
+select your Amazon Connect instance, and select "Approved Origins" 
 on the left-hand side:
 
 <img src={useBaseUrl('/img/classic/image53.png')} />

@@ -294,7 +294,7 @@ the usernames for both platforms match exactly.
 
 3.  Select the name (alias) of your Amazon Connect instance
 
-4.  Choose **Login as administrator**
+4.  Choose **Log in for emergency access**
 
 <img src={useBaseUrl('/img/shared/image08.png')} />
 

@@ -75,7 +75,7 @@ with OAuth settings enabled.
 11. The **API (Enable OAuth Settings)** section should now look like
     this
 
-<img src={useBaseUrl('/img/lightning/image64.png')} />
+<img src={useBaseUrl('/img/shared/guidedsetup4.png')} />
 
 12. Select **Save** at the bottom of the screen.
 

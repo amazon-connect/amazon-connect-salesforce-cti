@@ -124,7 +124,7 @@ underlying resources required for the CCP to function.
 
 <img src={useBaseUrl('/img/lightning/image25.png')} />
 
-9.  Choose **Application Integration** from the left navigation
+9.  Choose **Approved Origins** from the left navigation
 
 10. Select + Add origin
 
