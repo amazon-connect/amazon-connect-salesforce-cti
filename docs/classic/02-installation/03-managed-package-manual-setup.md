@@ -172,21 +172,18 @@ URL of this page. It's going to be in this format:
 
 This is what we are going to use as "Origin URL" in our Amazon Connect
 configuration. From AWS Console, select Amazon Connect service and then
-select your Amazon Connect instance:
+select your Amazon Connect instance, and select "Application Integration" 
+on the left-hand side:
 
-<img src={useBaseUrl('/img/classic/image28.png')} />
-
-Select "Application Integration" on the left-hand side:
-
-<img src={useBaseUrl('/img/classic/image29.png')} />
+<img src={useBaseUrl('/img/classic/image53.png')} />
 
 Click on "Add origin" link and enter the origin URL
 
-<img src={useBaseUrl('/img/classic/image30.png')} />
+<img src={useBaseUrl('/img/classic/image54.png')} />
 
 Click "Add" button
 
-<img src={useBaseUrl('/img/classic/image31.png')} />
+<img src={useBaseUrl('/img/classic/image55.png')} />
 
 From the Setup screen, type Apps in Quick Find field and select
 Build\>Create\>Apps:
@@ -332,11 +329,8 @@ this page. It's going to be in this format:
 
 This is what we are going to use as "Origin URL" in our Amazon Connect
 configuration. From AWS Console, select Amazon Connect service and then
-select your Amazon Connect instance:
-
-<img src={useBaseUrl('/img/classic/image52.png')} />
-
-Select "Application Integration" on the left-hand side:
+select your Amazon Connect instance, then select "Approved origins" 
+on the left-hand side:
 
 <img src={useBaseUrl('/img/classic/image53.png')} />
 

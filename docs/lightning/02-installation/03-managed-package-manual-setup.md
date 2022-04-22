@@ -317,9 +317,10 @@ tie the Lightning CTI adapter settings to the Call Center.
 
 11. Amazon Connect Instance: The url of your Amazon Connect
     Instance. You can find this in the Amazon Connect Console as shown
-    below (remove everything after ".com"):
+    below (if your Amazon Connect instance uses the `https://(instancename).awsapps.com/connect/login`
+    domain, then remove everything after ".com"):
 
-<img src={useBaseUrl('/img/lightning/image44.png')} />
+<img src={useBaseUrl('/img/shared/image04.png')} />
 
 12. Amazon Connect Instance Region: This is the region that your Amazon
     Connect instance is deployed in. For this field, you will enter the

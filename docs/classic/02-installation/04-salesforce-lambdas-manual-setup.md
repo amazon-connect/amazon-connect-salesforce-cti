@@ -123,6 +123,8 @@ other errors.
 
 7.  Once the new profile page opens, select the **System Permissions** button
 
+<img src={useBaseUrl('/img/shared/usersetup1.png')} />
+
 8.  If the Lightning Experience User checkbox is selected, clear it
 
 <img src={useBaseUrl('/img/classic/image117.png')} />
@@ -130,6 +132,8 @@ other errors.
 9. Save the system permissions, then go back to Profile Overview
 
 10. Select the _Password Policies_ link, click edit
+
+<img src={useBaseUrl('/img/shared/usersetup2.png')} />
 
 <img src={useBaseUrl('/img/classic/image115.png')} />
 
@@ -278,7 +282,7 @@ retrieve secrets.
 
 23. Click Next
 
-24. Make sure **Disable automatic rotation** is disabled
+24. Make sure **automatic rotation** is disabled.
 
 25. Click Next
 

@@ -74,12 +74,12 @@ access required to login to Amazon Connect.
 
 <img src={useBaseUrl('/img/classic/image308.png')} />
 
-4.  Choose **Create Provider**
+4.  Choose **Add Provider**
 
 5.  On the Configure Provider screen, select **SAML** as the Provider
     Type
 
-<img src={useBaseUrl('/img/classic/image309.png')} />
+<img src={useBaseUrl('/img/shared/image07.png')} />
 
 6.  Set the Provider Name to **SalesforceConnect**
 
@@ -300,7 +300,7 @@ the usernames for both platforms match exactly.
 
 4.  Choose **Login as administrator**
 
-<img src={useBaseUrl('/img/classic/image317.png')} />
+<img src={useBaseUrl('/img/shared/image08.png')} />
 
 5.  Within the Amazon Connect administration portal, select **Users**
     then choose **User Management**
@@ -355,7 +355,7 @@ The 'RelayState' will be in the following format (replace `us-west-2` with the r
     c.  From the Instance ARN, copy the portion after the '/'. This is
         the Instance Id
 
-<img src={useBaseUrl('/img/classic/image319.png')} />
+<img src={useBaseUrl('/img/shared/image05.png')} />
 
 2.  Concatenate the 'IdP-Initiated Login URL' and the 'RelayState', by
     combining the two with "&RelayState=" in between, for example:

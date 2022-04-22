@@ -148,42 +148,48 @@ It is a common practice to create an API user account for this purpose.
 
 6.  Select **Save** to create the new profile
 
-7.  Once the new profile page opens, select the **Edit** button
+7.  Once the new profile page opens, scroll down to and select the **System Permissions** section
 
-8.  Scroll down to the Administrative Permissions section
+<img src={useBaseUrl('/img/shared/usersetup1.png')} />
 
-9.  If the Lightning Experience User checkbox is selected, clear it
+8.  When the next page opens, select **edit**
 
-<img src={useBaseUrl('/img/lightning/image68.png')} />
+9.  Make sure the **Lightning Experience User** option is unselected
 
-10. Scroll down to the **Password Policies** section at the bottom of
-    the page
+<img src={useBaseUrl('/img/lightning/image290.png')} />
 
-11. Set **User password expire in** to **Never expires**
-    **NOTE:** Failure to this may lead to production outages.
+10. Select **Save**, and confirm the changes
 
-12. Select **Save**
+11. Go back to the Profile Overview, scroll down, and select **Password Policies**
 
-13. In the **Quick Find** field, type **connect**, then select **Manage
+<img src={useBaseUrl('/img/shared/usersetup2.png')} />
+
+12. Select **Edit**.
+
+13. Set **User passwords expire in** to **Never expires** NOTE: Failure to this may lead to production outages. 
+
+14. Select **Save**.
+
+15. In the **Quick Find** field, type **connect**, then select **Manage
     Connected Apps** from the results
 
 <img src={useBaseUrl('/img/lightning/image69.png')} />
 
-14. Select the app you have created earlier, **Amazon Connect
+16. Select the app you have created earlier, **Amazon Connect
     Integration**
 
-15. In the profiles section, select **Manage Profiles**
+17. In the profiles section, select **Manage Profiles**
 
-16. Select the new **API_Only** profile that you just created
+18. Select the new **API_Only** profile that you just created
 
-17. Select **Save** at the bottom of the page
+19. Select **Save** at the bottom of the page
 
-18. In the **Quick Find** field, type **users** then select **Users**
+20. In the **Quick Find** field, type **users** then select **Users**
     from the results
 
-19. Select New User
+21. Select New User
 
-20. Set the required fields as:
+22. Set the required fields as:
 
     a.  Last Name: apiuser
 
@@ -195,41 +201,41 @@ It is a common practice to create an API user account for this purpose.
 
     e.  Nickname: apiuser
 
-21. On the right-hand side, set **User License** to **Salesforce**
+23. On the right-hand side, set **User License** to **Salesforce**
 
-22. Set Profile to API_ONLY
+24. Set Profile to API_ONLY
 
-23. Choose **Save**
+25. Choose **Save**
 
-24. In **Quick Find**, search for "Permission Sets". Select the **AC_Administrator** permission set.
+26. In **Quick Find**, search for "Permission Sets". Select the **AC_Administrator** permission set.
 
 <img src={useBaseUrl('/img/lightning/lambda-install-0.png')} />
 
-25. Select **Manage Assignments**. Add the apiuser you just created to the permission set.
+27. Select **Manage Assignments**. Add the apiuser you just created to the permission set.
 
-26. A confirmation email with an **activation link** will be sent to the
+28. A confirmation email with an **activation link** will be sent to the
     email address provided. Choose the link to activate your user and
     set their password
 
-27. Fill out the form to set a password for the API user
+29. Fill out the form to set a password for the API user
 
-28. Select **Change Password**. The API user will log into the
+30. Select **Change Password**. The API user will log into the
     Salesforce Classic view
 
-29. Access the API user's personal settings by selecting the username in
+31. Access the API user's personal settings by selecting the username in
     the top right corner, then choose **My Settings**
 
 <img src={useBaseUrl('/img/lightning/image70.png')} />
 
-30. In the **Quick Find** field, type **security** then select **Reset
+32. In the **Quick Find** field, type **security** then select **Reset
     My Security Token** from the results
 
 <img src={useBaseUrl('/img/lightning/image71.png')} />
 
-31. Select **Reset Security Token**. Your security token will be emailed
+33. Select **Reset Security Token**. Your security token will be emailed
     to you
 
-32. Copy the security token from the email to your notepad
+34. Copy the security token from the email to your notepad
 
 #### Gather Information from Your Amazon Connect Instance
 
@@ -249,7 +255,7 @@ Connect instance. These will be used during the package installation.
     instance/ in the Instance ARN and paste it to your notepad. This is
     your Instance ID.
 
-<img src={useBaseUrl('/img/lightning/image72.png')} />
+<img src={useBaseUrl('/img/shared/image05.png')} />
 
 5.  In the left nav, select **Data storage**
 
@@ -257,7 +263,7 @@ Connect instance. These will be used during the package installation.
     recordings and Exported Reports. The bucket name is everything
     preceding the first / in the XX will be stored here sections
 
-<img src={useBaseUrl('/img/lightning/image73.png')} />
+<img src={useBaseUrl('/img/shared/image06.png')} />
 
 7.  In the left nav, select **Data streaming**
 
@@ -356,7 +362,7 @@ retrieve secrets.
 
 25. Click Next
 
-26. Make sure **Disable automatic rotation** is checked.
+26. Make sure **automatic rotation** is disabled.
 
 27. Click Next
 
@@ -710,18 +716,18 @@ to invoke the function.
 
 4.  In the navigation pane, choose **Contact flows**.
 
-<img src={useBaseUrl('/img/lightning/image101.png')} />
+<img src={useBaseUrl('/img/shared/image01.png')} />
 
 5.  For **AWS Lambda**, select the function that includes sfInvokeAPI in
     the name
 
-<img src={useBaseUrl('/img/lightning/image102.png')} />
+<img src={useBaseUrl('/img/shared/image02.png')} />
 
 6.  Choose **Add Lambda Function**. Confirm that the ARN of the function
     is added under **Lambda Functions**.
     
 
-<img src={useBaseUrl('/img/lightning/image103.png')} />
+<img src={useBaseUrl('/img/shared/image03.png')} />
 
 7.  The AWS Lambda function has been added to your Amazon Connect
     instance.
