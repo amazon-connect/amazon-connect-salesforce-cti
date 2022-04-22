@@ -52,15 +52,13 @@ OAuth settings enabled.
 
 7.  Ensure Selected OAuth Scopes has the following values selected:
 
-a.  Access and manage your data (api)
+a.  Access the identity URL service (id, profile, email, address, phone)
 
-b.  Access your basic information (id, profile, email, address, phone)
+b.  Manage user data via APIs (api)
 
-<img src={useBaseUrl('/img/classic/image105.png')} />
+8.  Select the checkbox "Require Secret for Web Server Flow", and the checkbox "Require Secret For Refresh Token Flow"
 
-8.  Select the checkbox "Require Secret for Web Server Flow"
-
-<img src={useBaseUrl('/img/classic/image106.png')} />
+<img src={useBaseUrl('/img/shared/guidedsetup4.png')} />
 
 9.  Click "Save" at the bottom of the screen.
 
@@ -106,9 +104,11 @@ Guided Setup feature links to them.
 
 2.  Select your Instance Alias
 
-3.  On the Overview page for your instance, copy the Login URL up until the `/` (if your login url has one).
+3.  On the Overview page for your instance, copy the Login URL 
+    (if your Amazon Connect instance uses the `https://(instancename).awsapps.com/connect/login`
+    domain, then remove everything after ".com"):
 
-<img src={useBaseUrl('/img/shared/guidedsetup4.png')} />
+<img src={useBaseUrl('/img/shared/image04.png')} />
 
 ### Add users to the Call Center
 
@@ -256,6 +256,8 @@ other errors.
 
 7.  Once the new profile page opens, select the **System Permissions** button
 
+<img src={useBaseUrl('/img/shared/usersetup1.png')} />
+
 8.  If the Lightning Experience User checkbox is selected, clear it
 
 <img src={useBaseUrl('/img/classic/image117.png')} />
@@ -263,6 +265,8 @@ other errors.
 9. Save the system permissions, then go back to Profile Overview
 
 10. Select the _Password Policies_ link, click edit
+
+<img src={useBaseUrl('/img/shared/usersetup2.png')} />
 
 <img src={useBaseUrl('/img/classic/image115.png')} />
 
@@ -418,7 +422,7 @@ retrieve secrets.
 
 25. Click Next
 
-26. Make sure **Disable automatic rotation** is checked.
+26. Make sure **automatic rotation** is disabled.
 
 27. Click Next
 
