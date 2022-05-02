@@ -155,8 +155,9 @@ Guided Setup feature links to them.
 ### Add users to a Permission Set
 
 All users must be assigned the required permission set to access
-Salesforce metadata. The Amazon Connect CTI Adapter includes two
-Permission Sets, one for agents and one for managers, that grant users
+Salesforce metadata. The Amazon Connect CTI Adapter includes
+Permission Sets-- one for agents, one for managers, one for
+administrators, and a few for specific features, that grant users
 the appropriate access for their role. More information on assigning
 user permissions can be found in the [Salesforce help
 documentation](https://help.salesforce.com/articleView?id=perm_sets_mass_assign.htm&type=5).

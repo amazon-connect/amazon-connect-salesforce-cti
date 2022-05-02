@@ -114,10 +114,10 @@ it to the Service Console.
 
 <img src={useBaseUrl('/img/lightning/image18.png')} />
 
-4.  Once the **Lightning App Builder** opens, select **Utility Items**
+4.  Once the **Lightning App Builder** opens, select **Utility Items (Desktop Only)**
     from the left Navigation
 
-<img src={useBaseUrl('/img/lightning/image19.png')} />
+<img src={useBaseUrl('/img/shared/image10.png')} />
 
 5.  Choose Add Utility Item, then select Omni-Channel
 

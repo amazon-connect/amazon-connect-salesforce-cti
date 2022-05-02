@@ -324,71 +324,113 @@ retrieve secrets.
 6.  The Lambda package includes additional features which can be enabled
     or disabled, based on particular use-case:
 
-    a.  *PostcallCTRImportEnabled* -- if set to true, the package will
-        include a feature to import Amazon Connect CTRs into your
-        Salesforce Org. Once enabled, you can decide which CTR records
-        should be imported, by setting a custom attribute
-        (*postcallCTRImportEnabled*) in your Contact Flow. This feature
-        requires you to provide *CTRKinesisARN*.
+    1.  **Application name:** You can accept the default here or change
+        it as desired
 
-    b.  *PostcallRecordingImportEnabled* -- if set to true, the package
-        will include a feature to import Amazon Connect Call Recording
-        (wav) files into your Salesforce Org. This feature is not
-        required if you only need a call recording link in your
-        Salesforce Org. Once enabled, you can decide which Call
-        Recordings should be imported, by setting a custom attribute
-        (*postcallRecordingImportEnabled*) in your Contact Flow. This
-        feature requires you to provide: *CTRKinesisARN,
-        ConnectRecordingS3BucketName* and *TranscribeOutputS3BucketName*
+    2.  **AmazonConnectInstanceId:** You Amazon Connect Instance Id.
+    Only required if you enable real time reporting
 
-    c.  *PostcallTranscribeEnabled* -- if set to true, the package will
-        include a feature to transcribe Amazon Connect Call Recordings,
-        using Amazon Transcribe, and provide Speech Analytics, using
-        Amazon Comprehend, then import results into your Salesforce Org.
-        Once enabled, you can decide which Call Recordings should be
-        transcribed and analyzed, by setting custom attributes
-        (*postcallTranscribeEnabled*, *postcallTranscribeLanguage* and
-        *postcallTranscribeComprehendAnalysis*) in your Contact Flow.
-        This feature requires you to provide: *CTRKinesisARN,
-        ConnectRecordingS3BucketName* and *TranscribeOutputS3BucketName*
+    3.  **CTRKinesisARN:** This is the ARN for the Kinesis stream that
+        was configured for Contact Trace Record streaming in Amazon
+        Connect. This is the complete ARN. Amazon Kinesis Firehose is
+        not supported.
 
-    d.  *RealtimeReportImportEnabled* -- if set to true, the package
-        will include a feature to publish Amazon Connect Queue Metrics
-        into your Salesforce Org. This feature requires you to provide
-        *AmazonConnectInstanceId*
+    4.  **ConnectReportingS3BucketName:** This is the name of the S3
+        bucket used to store exported reports for your Amazon Connect
+        instance. This is ONLY the bucket name, no sub-folders or
+        suffixes
+    
+    5.  **HistoricalReportingImportEnabled:** true \| false - if set to
+        true, the package will include a feature to import Amazon
+        Connect Queue and Agent Historical Metrics into your Salesforce
+        Org. This feature requires you to provide
+        **ConnectReportingS3BucketName**
+    
+    6.  **LambdaLoggingLevel:** DEBUG \| INFO \| WARNING \| ERROR \|
+        CRITICAL - Logging level for Lambda functions
 
-    e.  *HistoricalReportingImportEnabled* -- if set to true, the
-        package will include a feature to import Amazon Connect Queue
-        and Agent Historical Metrics into your Salesforce Org. This
-        feature requires you to provide *ConnectReportingS3BucketName*
+    7.  **PrivateVpcEnabled:** Set to true if functions should be
+        deployed to a private VPC. Set VpcSecurityGroupList and
+        VpcSubnetList if this is set to true.
+    
+    8.  **RealtimeReportingImportEnabled:** true \| false - if set to
+        true, the package will include a feature to publish Amazon
+        Connect Queue Metrics into your Salesforce Org. This feature
+        requires you to provide **AmazonConnectInstanceId**
+    
+    9.  **SalesforceAdapterNamespace:** This is the namespace for CTI
+        Adapter managed package. The default value is **amazonconnect**.
+        If a non-managed package is used, leave this field blank.
 
-    f.  *CTRKinesisARN* -- please set Amazon Kinesis Stream ARN that is
-        attached to you Amazon Connect instance as Contact Trace Records
-        destination. Amazon Kinesis Firehose is not supported. This
-        parameter is mandatory for certain features, please see above.
+    10.  **SalesforceCredentialsKMSKeyARN:** This is the ARN for KMS
+        customer managed key that you created in the previous section.
 
-    g.  *ConnectRecordingS3BucketName* -- this is the S3 bucket where
-        Amazon Connect stores call recordings. This parameter is
-        mandatory for certain features, please see above.
-
-    h.  *ConnectReportingS3BucketName* -- this is the S3 bucket name
-        where Amazon Connect stores schedule reports. This parameter is
-        mandatory for Historical Reporting Import.
-
-    i.  *AmazonConnectInstanceId* -- this parameter is mandatory for
-        Realtime Reporting Import
-
-    j.  *TranscribeOutputS3BucketName* -- this is the S3 bucket where
-        Amazon Transcribe stores the output. You can use an existing
-        bucket, or create a new one, as the installation process doesn't
-        create one for you. This parameter in mandatory certain
-        features, please see above.
-
-    k.  *SalesforceHost:* The full domain for your salesforce org. For
+    11.  **SalesforceCredentialsSecretsManagerARN:** This is the ARN for
+        the Secrets Manager Secret that you created in the previous
+        section.
+    
+    12.  **SalesforceHost:** The full domain for your salesforce org. For
         example
         `https://mydevorg-dev-ed.my.salesforce.com`.
         Please make sure that the host starts with `https`, and that the url
         ends with `.my.salesforce.com`. This url can be found in `Setup` -> `My Domain`.
+    
+    13.  **SalesforceProduction:** true \| false - True for Production
+        Environment, False for Sandbox
+    
+    14.  **SalesforceUsername:** The username for the API user that you
+        configured in the previous section. Salesforce usernames are in the form of an email address.
+
+    15.  **SalesforceVersion:** This is the Salesforce.com API version
+        that you noted in the previous section. The pattern of this value is ```vXX.X```.
+    
+    16.  **TranscribeOutputS3BucketName:** This is the S3 bucket where
+        Amazon Transcribe stores the output. Typically, this is the same
+        bucket that call recordings are stored in, so you can use the
+        same value as found in **ConnectRecordingS3BucketName**. Not
+        required if PostcallRecordingImportEnabled, 
+        PostcallTranscribeEnabled, ContactLensImportEnabled set to false.
+
+    17.  **VpcSecurityGroupList:** The list of SecurityGroupIds for
+        Virtual Private Cloud (VPC). Not required if PrivateVpcEnabled
+        is set to false.
+
+    18.  **VpcSubnetList:** The list of Subnets for the Virtual Private
+        Cloud (VPC). Not required if PrivateVpcEnabled is set to false.
+
+    19.  **AmazonConnectQueueMaxRecords:** Enter record set size for list
+        queue query. Max is 100.
+    
+    20.  **AmazonConnectQueueMetricsMaxRecords:** Enter record set size
+        for queue metrics query. Max is 100.
+
+    21.  **CTREventSourceMappingMaximumRetryAttempts:** Maximum retry
+        attempts on failure for lambdas triggered by Kinesis Events.
+
+    22.  **ConnectRecordingS3BucketName:** This is the name of the S3
+        bucket used to store recordings for your Amazon Connect
+        instance. This is ONLY the bucket name, no sub-folders or
+        suffixes
+
+    23.  **ContactLensImportEnabled:** true \| false - Set to false if 
+        importing Contact Lens into Salesforce should not be enabled.
+
+    24.  **PostcallCTRImportEnabled:** true \| false - Set to false if
+        importing CTRs into Salesforce should not be enabled on the
+        package level. This setting can be disabled on a call-by-call
+        basis.
+
+    25.  **PostcallRecordingImportEnabled:** true \| false - Set to false
+        if importing call recordings into Salesforce should not be
+        enabled on the package level. This setting can be disabled on a
+        call-by-call basis.
+
+    26.  **PostcallTranscribeEnabled:** true \| false - Set to false if
+        post-call transcription should not be enabled on the package
+        level. This setting can be disabled on a call-by-call basis.
+
+    27.  **TranscriptionJobCheckWaitTime:** Time between transcription
+        job checks
 
 7.  Once completed, click "Deploy" function:
 

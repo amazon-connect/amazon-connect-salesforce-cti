@@ -32,7 +32,7 @@ Marketplace.
 
 5.  In the **Search Results**, select **Amazon Connect CTI Adapter**
 
-<img src={useBaseUrl('/img/lightning/image3.png')} />
+<img src={useBaseUrl('/img/shared/image09.png')} />
 
 6.  On the **Amazon Connect CTI Adapter** detail page, select **Get It
     Now**
