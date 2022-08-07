@@ -400,6 +400,14 @@ It is a common practice to create an API user account for this purpose.
 32. In the **Quick Find** field, type **security** then select **Reset
     My Security Token** from the results
 
+    - If the menu does not appear, refer to [this](https://help.salesforce.com/s/articleView?id=000331668&type=1) document.
+
+    - If the problem persists, go to the following URL. (unofficial)
+
+        - Production: https://login.salesforce.com/_ui/system/security/ResetApiTokenEdit
+
+        - Sandbox: https://test.salesforce.com/_ui/system/security/ResetApiTokenEdit
+
 <img src={useBaseUrl('/img/lightning/image71.png')} />
 
 33. Select **Reset Security Token**. Your security token will be emailed
