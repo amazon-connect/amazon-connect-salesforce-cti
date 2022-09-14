@@ -5,11 +5,14 @@ title: Release Notes
 
 ### Important Notes
 
+#### Salesforce Enhanced Domains
+If you enable [enhanced domains](https://help.salesforce.com/s/articleView?id=sf.domain_name_enhanced_enable.htm&type=5) for your Salesforce organization, you must remember to update the new syntax for all of your domains that have been allow-listed in the Amazon Connect AWS Console.
+
 #### Spring '22 Release
 The Salesforce Spring '22 release introduces a change that will likely cause an install or update to any version of the adapter before 5.18 to fail. In addition if you are using the `ac_PhoneCallListView` component in any version of the adapter, the loading of your component may fail. This component has been depricated in v5.18.
 
 #### WebRTC Plan-B Deprecation
-The Plan-B deprecation should not affect any current users of the CTI Adapter, as we utilize the embedded CCP and do not build in connect-rtc-js seperately. 
+The Plan-B deprecation should not affect any current users of the CTI Adapter, as we utilize the embedded CCP and do not build in connect-rtc-js seperately.
 
 #### Installing as Admin
 Please **confirm that the application was installed for admins only** (see [installation](/docs/lightning/installation/01-installation) for more details). If you did this by accident, then you will have to [manually edit the profiles](/docs/lightning/installation/06-adapter-installation-troubleshooting#how-to-remove-permissions-to-visualforce-pages-apex-classes-for-a-desired-profile) to remove the permissions to the objects and pages created by the app. If you are updating the package, please verify that all users have the proper AC permission set.
@@ -38,14 +41,14 @@ Please **confirm that the application was installed for admins only** (see [inst
 - **Feature:** Added the integration with Amazon Connect Wisdom, which delivers articles and article recommendations to agents. See [here](/docs/lightning/cti-adapter/12-wisdom-integration) for more details.
 - **Feature:** Added the integration with Voice id, which provides real-time caller authentication. See [here](/docs/lightning/cti-adapter/13-voice-id) for more details.
 - **Bug Fix:** Fixed a bug where CTI Actions would only load if you switched overlay tabs. Now they will load immediately.
-- **Bug Fix:** Fixed a few bugs with Contact Attributes Overlay. 
+- **Bug Fix:** Fixed a few bugs with Contact Attributes Overlay.
   - Where you needed to set they would not populate in the overlay unless the CTI Attribute Name value was the same as the contact attribute key.
   - Selecting DisplayValue of `Key` did not show just the Key value.
   - When using the ShowAllAttributes feature, the already configured CTI Attributes did not maintain the same HTML formatting as before.
 - **Bug Fix:** Fixed a bug where DialedNumber__c was not filled on outbound calls.
 - **Bug Fix:** Fixed a bug where Update Contact Attributes didn't work for Chat or Task contacts.
 - **Bug Fix:** Fixed a bug where the CTI Flow payload would only contain the CTI Action Additional Data when both CTI Action Payload and Additional Data are configured. Now the CTI Flow payload will have both the CTI Action Payload and Additional Data
-- **Enhancement:** Added two new CTI Flow Blocks - Destroy Live Contact and Clear Contact. 
+- **Enhancement:** Added two new CTI Flow Blocks - Destroy Live Contact and Clear Contact.
 
 
 ## 5.16 August 2021
