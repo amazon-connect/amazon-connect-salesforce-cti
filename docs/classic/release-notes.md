@@ -4,11 +4,14 @@ title: Release Notes
 ---
 ### Important Notes
 
+#### Salesforce Enhanced Domains
+Salesforce is making changes to the instance domains on account of the [enhanced domains](https://help.salesforce.com/s/articleView?id=sf.domain_name_enhanced_enable.htm&type=5) feature in the Spring 23 release. Once this feature is enabled, you must migrate the CTI adapter to using these new domains. Additional details will be added shortly.
+
 #### Spring '22 Release
 The Salesforce Spring '22 release introduces a change that will likely cause an install or update to any version of the adapter before 5.18 to fail. In addition if you are using the `ac_PhoneCallListView` component in any version of the adapter, the loading of your component may fail. This component has been depricated in v5.18.
 
 #### WebRTC Plan-B Deprecation
-The Plan-B deprecation should not affect any current users of the CTI Adapter, as we utilize the embedded CCP and do not build in connect-rtc-js seperately. 
+The Plan-B deprecation should not affect any current users of the CTI Adapter, as we utilize the embedded CCP and do not build in connect-rtc-js seperately.
 
 #### Installing as Admin
 Please **confirm that the application was installed for admins only** (see [installation](/docs/classic/installation/01-installation) for more details). If you did this by accident, then you will have to [manually edit the profiles](/docs/classic/installation/06-cti-adapter-installation-troubleshooting#how-to-remove-permissions-to-visualforce-pages-apex-classes-for-a-desired-profile) to remove the permissions to the objects and pages created by the app. If you are updating the package, please verify that all users have the proper AC permission set.
@@ -37,14 +40,14 @@ Please **confirm that the application was installed for admins only** (see [inst
 - **Feature:** Added the integration with Amazon Connect Wisdom, which delivers articles and article recommendations to agents. See [here](/docs/classic/cti-adapter/13-wisdom-integration) for more details.
 - **Feature:** Added the integration with Voice id, which provides real-time caller authentication. See [here](/docs/classic/cti-adapter/14-voice-id) for more details.
 - **Bug Fix:** Fixed a bug where CTI Actions would only load if you switched overlay tabs. Now they will load immediately.
-- **Bug Fix:** Fixed a few bugs with Contact Attributes Overlay. 
+- **Bug Fix:** Fixed a few bugs with Contact Attributes Overlay.
   - Where you needed to set they would not populate in the overlay unless the CTI Attribute Name value was the same as the contact attribute key.
   - Selecting DisplayValue of `Key` did not show just the Key value.
   - When using the ShowAllAttributes feature, the already configured CTI Attributes did not maintain the same HTML formatting as before.
 - **Bug Fix:** Fixed a bug where DialedNumber__c was not filled on outbound calls.
 - **Bug Fix:** Fixed a bug where Update Contact Attributes didn't work for Chat or Task contacts.
 - **Bug Fix:** Fixed a bug where the CTI Flow payload would only contain the CTI Action Additional Data when both CTI Action Payload and Additional Data are configured. Now the CTI Flow payload will have both the CTI Action Payload and Additional Data
-- **Enhancement:** Added two new CTI Flow Blocks - Destroy Live Contact and Clear Contact. 
+- **Enhancement:** Added two new CTI Flow Blocks - Destroy Live Contact and Clear Contact.
 
 
 ## 5.16 August 2021
@@ -67,7 +70,7 @@ When installing v5.15, please **confirm that the application was installed for a
 
 - **Feature: Guided Setup** The Guided Setup feature helps make the setup process easier. See [Guided Setup](/docs/classic/installation/02-guided-setup) for more details.
 - **Feature: Chat Widget Integration for SalesForce Experience Cloud(formerly Community Cloud)** Added VisualForce Page component that allows you to add Amazon Connect Chat Widget in your Salesforce Experience Cloud Site.
-- **Enhancement:** Changed the default audio recording component in the Contact Channel Analytics for easier setup. See [Call Recording Playback](/docs/classic/cti-adapter/04-call-recording-playback) for more details. 
+- **Enhancement:** Changed the default audio recording component in the Contact Channel Analytics for easier setup. See [Call Recording Playback](/docs/classic/cti-adapter/04-call-recording-playback) for more details.
 - **Enhancement:** Created the ExecuteAwsService service for simpler communication between Salesforce and AWS. **WARNING:** If you are using Contact Lens for audio recording you *must* replace your existing AwsGenerateAudioRecordingUrl named credential with with the ExecuteAwsService named credential. See [here](/docs/classic/installation/01-installation#setting-up-the-executeawsservice-named-credential) for more details.
 - **Bug Fix:** Fixed an issue with the lambda package that caused Contact Lens Call Recording Streaming to be broken for redacted calls.
 - **Bug Fix:** Fixed an issue that caused the "Clear All Properties" CTI Flow Block to clear properties important to the CTI adpater working.
