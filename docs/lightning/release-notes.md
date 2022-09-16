@@ -6,7 +6,7 @@ title: Release Notes
 ### Important Notes
 
 #### Salesforce Enhanced Domains
-If you enable [enhanced domains](https://help.salesforce.com/s/articleView?id=sf.domain_name_enhanced_enable.htm&type=5) for your Salesforce organization, you must remember to update the new syntax for all of your domains that have been allow-listed in the Amazon Connect AWS Console.
+Salesforce is making changes to the instance domains on account of the [enhanced domains](https://help.salesforce.com/s/articleView?id=sf.domain_name_enhanced_enable.htm&type=5) feature in the Spring 23 release. Once this feature is enabled, you must migrate the CTI adapter to using these new domains. Additional details will be added shortly.
 
 #### Spring '22 Release
 The Salesforce Spring '22 release introduces a change that will likely cause an install or update to any version of the adapter before 5.18 to fail. In addition if you are using the `ac_PhoneCallListView` component in any version of the adapter, the loading of your component may fail. This component has been depricated in v5.18.
