@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="generator" content="Docusaurus v2.0.0-beta.2">
 <link rel="search" type="application/opensearchdescription+xml" title="Amazon Connect Salesforce CTI Adapter" href="/amazon-connect-salesforce-cti/opensearch.xml"><title data-react-helmet="true">Setting Up The Salesforce Lambdas Manually | Amazon Connect Salesforce CTI Adapter</title><meta data-react-helmet="true" property="og:url" content="https://amazon-connect.github.io/amazon-connect-salesforce-cti//amazon-connect-salesforce-cti/docs/classic/installation/04-salesforce-lambdas-manual-setup"><meta data-react-helmet="true" name="docsearch:language" content="en"><meta data-react-helmet="true" name="docsearch:version" content="current"><meta data-react-helmet="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-react-helmet="true" property="og:title" content="Setting Up The Salesforce Lambdas Manually | Amazon Connect Salesforce CTI Adapter"><meta data-react-helmet="true" name="description" content="Below are manual setup instructions for the Salesforce Lambdas."><meta data-react-helmet="true" property="og:description" content="Below are manual setup instructions for the Salesforce Lambdas."><link data-react-helmet="true" rel="shortcut icon" href="/amazon-connect-salesforce-cti/img/favicon.png"><link data-react-helmet="true" rel="canonical" href="https://amazon-connect.github.io/amazon-connect-salesforce-cti//amazon-connect-salesforce-cti/docs/classic/installation/04-salesforce-lambdas-manual-setup"><link data-react-helmet="true" rel="alternate" href="https://amazon-connect.github.io/amazon-connect-salesforce-cti//amazon-connect-salesforce-cti/docs/classic/installation/04-salesforce-lambdas-manual-setup" hreflang="en"><link data-react-helmet="true" rel="alternate" href="https://amazon-connect.github.io/amazon-connect-salesforce-cti//amazon-connect-salesforce-cti/docs/classic/installation/04-salesforce-lambdas-manual-setup" hreflang="x-default"><link data-react-helmet="true" rel="preconnect" href="https://BH4D9OD16A-dsn.algolia.net" crossorigin="anonymous"><link rel="stylesheet" href="/amazon-connect-salesforce-cti/assets/css/styles.2f50ecb5.css">
-<link rel="preload" href="/amazon-connect-salesforce-cti/assets/js/runtime~main.de10d300.js" as="script">
-<link rel="preload" href="/amazon-connect-salesforce-cti/assets/js/main.58c4fa48.js" as="script">
+<link rel="preload" href="/amazon-connect-salesforce-cti/assets/js/runtime~main.741021db.js" as="script">
+<link rel="preload" href="/amazon-connect-salesforce-cti/assets/js/main.b26b9678.js" as="script">
 </head>
 <body>
 <script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){var t=null;try{t=localStorage.getItem("theme")}catch(t){}return t}();t(null!==e?e:"light")}()</script><div id="__docusaurus">
@@ -45,51 +45,61 @@ package</li></ol><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedA
 Salesforce.</li></ol><img src="/amazon-connect-salesforce-cti/img/classic/image133.png"><ol start="4"><li>Select AmazonConnectSalesForceLambdas and click &quot;Deploy&quot;</li></ol><img src="/amazon-connect-salesforce-cti/img/classic/image134.png"><ol start="5"><li>Fill in all Salesforce related fields in &quot;Configure application
 parameters&quot;.\
 All values should be available in your installation notes:</li></ol><img src="/amazon-connect-salesforce-cti/img/classic/image135.png"><img src="/amazon-connect-salesforce-cti/img/classic/image136.png"><ol start="6"><li><p>The Lambda package includes additional features which can be enabled
-or disabled, based on particular use-case:</p><p>a.  <em>PostcallCTRImportEnabled</em> -- if set to true, the package will
-include a feature to import Amazon Connect CTRs into your
-Salesforce Org. Once enabled, you can decide which CTR records
-should be imported, by setting a custom attribute
-(<em>postcallCTRImportEnabled</em>) in your Contact Flow. This feature
-requires you to provide <em>CTRKinesisARN</em>.</p><p>b.  <em>PostcallRecordingImportEnabled</em> -- if set to true, the package
-will include a feature to import Amazon Connect Call Recording
-(wav) files into your Salesforce Org. This feature is not
-required if you only need a call recording link in your
-Salesforce Org. Once enabled, you can decide which Call
-Recordings should be imported, by setting a custom attribute
-(<em>postcallRecordingImportEnabled</em>) in your Contact Flow. This
-feature requires you to provide: <em>CTRKinesisARN,
-ConnectRecordingS3BucketName</em> and <em>TranscribeOutputS3BucketName</em></p><p>c.  <em>PostcallTranscribeEnabled</em> -- if set to true, the package will
-include a feature to transcribe Amazon Connect Call Recordings,
-using Amazon Transcribe, and provide Speech Analytics, using
-Amazon Comprehend, then import results into your Salesforce Org.
-Once enabled, you can decide which Call Recordings should be
-transcribed and analyzed, by setting custom attributes
-(<em>postcallTranscribeEnabled</em>, <em>postcallTranscribeLanguage</em> and
-<em>postcallTranscribeComprehendAnalysis</em>) in your Contact Flow.
-This feature requires you to provide: <em>CTRKinesisARN,
-ConnectRecordingS3BucketName</em> and <em>TranscribeOutputS3BucketName</em></p><p>d.  <em>RealtimeReportImportEnabled</em> -- if set to true, the package
-will include a feature to publish Amazon Connect Queue Metrics
-into your Salesforce Org. This feature requires you to provide
-<em>AmazonConnectInstanceId</em></p><p>e.  <em>HistoricalReportingImportEnabled</em> -- if set to true, the
-package will include a feature to import Amazon Connect Queue
-and Agent Historical Metrics into your Salesforce Org. This
-feature requires you to provide <em>ConnectReportingS3BucketName</em></p><p>f.  <em>CTRKinesisARN</em> -- please set Amazon Kinesis Stream ARN that is
-attached to you Amazon Connect instance as Contact Trace Records
-destination. Amazon Kinesis Firehose is not supported. This
-parameter is mandatory for certain features, please see above.</p><p>g.  <em>ConnectRecordingS3BucketName</em> -- this is the S3 bucket where
-Amazon Connect stores call recordings. This parameter is
-mandatory for certain features, please see above.</p><p>h.  <em>ConnectReportingS3BucketName</em> -- this is the S3 bucket name
-where Amazon Connect stores schedule reports. This parameter is
-mandatory for Historical Reporting Import.</p><p>i.  <em>AmazonConnectInstanceId</em> -- this parameter is mandatory for
-Realtime Reporting Import</p><p>j.  <em>TranscribeOutputS3BucketName</em> -- this is the S3 bucket where
-Amazon Transcribe stores the output. You can use an existing
-bucket, or create a new one, as the installation process doesn&#x27;t
-create one for you. This parameter in mandatory certain
-features, please see above.</p><p>k.  <em>SalesforceHost:</em> The full domain for your salesforce org. For
+or disabled, based on particular use-case:</p><ol><li><p><strong>Application name:</strong> You can accept the default here or change
+it as desired</p></li><li><p><strong>AmazonConnectInstanceId:</strong> You Amazon Connect Instance Id.
+Only required if you enable real time reporting</p></li><li><p><strong>CTRKinesisARN:</strong> This is the ARN for the Kinesis stream that
+was configured for Contact Trace Record streaming in Amazon
+Connect. This is the complete ARN. Amazon Kinesis Firehose is
+not supported.</p></li><li><p><strong>ConnectReportingS3BucketName:</strong> This is the name of the S3
+bucket used to store exported reports for your Amazon Connect
+instance. This is ONLY the bucket name, no sub-folders or
+suffixes</p></li><li><p><strong>HistoricalReportingImportEnabled:</strong> true | false - if set to
+true, the package will include a feature to import Amazon
+Connect Queue and Agent Historical Metrics into your Salesforce
+Org. This feature requires you to provide
+<strong>ConnectReportingS3BucketName</strong></p></li><li><p><strong>LambdaLoggingLevel:</strong> DEBUG | INFO | WARNING | ERROR |
+CRITICAL - Logging level for Lambda functions</p></li><li><p><strong>PrivateVpcEnabled:</strong> Set to true if functions should be
+deployed to a private VPC. Set VpcSecurityGroupList and
+VpcSubnetList if this is set to true.</p></li><li><p><strong>RealtimeReportingImportEnabled:</strong> true | false - if set to
+true, the package will include a feature to publish Amazon
+Connect Queue Metrics into your Salesforce Org. This feature
+requires you to provide <strong>AmazonConnectInstanceId</strong></p></li><li><p><strong>SalesforceAdapterNamespace:</strong> This is the namespace for CTI
+Adapter managed package. The default value is <strong>amazonconnect</strong>.
+If a non-managed package is used, leave this field blank.</p></li><li><p><strong>SalesforceCredentialsKMSKeyARN:</strong> This is the ARN for KMS
+customer managed key that you created in the previous section.</p></li><li><p><strong>SalesforceCredentialsSecretsManagerARN:</strong> This is the ARN for
+the Secrets Manager Secret that you created in the previous
+section.</p></li><li><p><strong>SalesforceHost:</strong> The full domain for your salesforce org. For
 example
 <code>https://mydevorg-dev-ed.my.salesforce.com</code>.
 Please make sure that the host starts with <code>https</code>, and that the url
-ends with <code>.my.salesforce.com</code>. This url can be found in <code>Setup</code> -&gt; <code>My Domain</code>.</p></li><li><p>Once completed, click &quot;Deploy&quot; function:</p></li></ol><img src="/amazon-connect-salesforce-cti/img/classic/image137.png"><ol start="8"><li>The package provides a single Lambda function (sfInvokeAPI) that
+ends with <code>.my.salesforce.com</code>. This url can be found in <code>Setup</code> -&gt; <code>My Domain</code>.</p></li><li><p><strong>SalesforceProduction:</strong> true | false - True for Production
+Environment, False for Sandbox</p></li><li><p><strong>SalesforceUsername:</strong> The username for the API user that you
+configured in the previous section. Salesforce usernames are in the form of an email address.</p></li><li><p><strong>SalesforceVersion:</strong> This is the Salesforce.com API version
+that you noted in the previous section. The pattern of this value is <code>vXX.X</code>.</p></li><li><p><strong>TranscribeOutputS3BucketName:</strong> This is the S3 bucket where
+Amazon Transcribe stores the output. Typically, this is the same
+bucket that call recordings are stored in, so you can use the
+same value as found in <strong>ConnectRecordingS3BucketName</strong>. Not
+required if PostcallRecordingImportEnabled,
+PostcallTranscribeEnabled, ContactLensImportEnabled set to false.</p></li><li><p><strong>VpcSecurityGroupList:</strong> The list of SecurityGroupIds for
+Virtual Private Cloud (VPC). Not required if PrivateVpcEnabled
+is set to false.</p></li><li><p><strong>VpcSubnetList:</strong> The list of Subnets for the Virtual Private
+Cloud (VPC). Not required if PrivateVpcEnabled is set to false.</p></li><li><p><strong>AmazonConnectQueueMaxRecords:</strong> Enter record set size for list
+queue query. Max is 100.</p></li><li><p><strong>AmazonConnectQueueMetricsMaxRecords:</strong> Enter record set size
+for queue metrics query. Max is 100.</p></li><li><p><strong>CTREventSourceMappingMaximumRetryAttempts:</strong> Maximum retry
+attempts on failure for lambdas triggered by Kinesis Events.</p></li><li><p><strong>ConnectRecordingS3BucketName:</strong> This is the name of the S3
+bucket used to store recordings for your Amazon Connect
+instance. This is ONLY the bucket name, no sub-folders or
+suffixes</p></li><li><p><strong>ContactLensImportEnabled:</strong> true | false - Set to false if
+importing Contact Lens into Salesforce should not be enabled.</p></li><li><p><strong>PostcallCTRImportEnabled:</strong> true | false - Set to false if
+importing CTRs into Salesforce should not be enabled on the
+package level. This setting can be disabled on a call-by-call
+basis.</p></li><li><p><strong>PostcallRecordingImportEnabled:</strong> true | false - Set to false
+if importing call recordings into Salesforce should not be
+enabled on the package level. This setting can be disabled on a
+call-by-call basis.</p></li><li><p><strong>PostcallTranscribeEnabled:</strong> true | false - Set to false if
+post-call transcription should not be enabled on the package
+level. This setting can be disabled on a call-by-call basis.</p></li><li><p><strong>TranscriptionJobCheckWaitTime:</strong> Time between transcription
+job checks</p></li></ol></li><li><p>Once completed, click &quot;Deploy&quot; function:</p></li></ol><img src="/amazon-connect-salesforce-cti/img/classic/image137.png"><ol start="8"><li>The package provides a single Lambda function (sfInvokeAPI) that
 supports multiple operations, like lookup, create and update. For
 the initial validation, sample events are provided within the
 function. Click on the function name and check the list of files in
@@ -114,7 +124,7 @@ paste the JSON payload you&#x27;ve copied in the previous step.</li></ol><img sr
 button</p></li></ol><img src="/amazon-connect-salesforce-cti/img/classic/image152.png"><ol start="26"><li>If successful, the result will be HTTP code 204 (&quot;No Content&quot;
 success code):</li></ol><img src="/amazon-connect-salesforce-cti/img/classic/image153.png"><ol start="27"><li>Login in to Salesforce and search for Case and it&#x27;s details. The
 Case status should be &quot;Closed&quot;.</li></ol></div><footer class="row docusaurus-mt-lg"><div class="col"><a href="https://github.com/amazon-connect/amazon-connect-salesforce-cti/docs/classic/02-installation/04-salesforce-lambdas-manual-setup.md" target="_blank" rel="noreferrer noopener"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_2_ui" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_3DPF"></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages navigation"><div class="pagination-nav__item"><a class="pagination-nav__link" href="/amazon-connect-salesforce-cti/docs/classic/installation/03-managed-package-manual-setup"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">« Setting Up The CTI Adapter Managed Package Manually</div></a></div><div class="pagination-nav__item pagination-nav__item--next"><a class="pagination-nav__link" href="/amazon-connect-salesforce-cti/docs/classic/installation/05-upgrading-from-an-earlier-version"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Upgrading from an Earlier Version »</div></a></div></nav></div></div><div class="col col--3"><div class="tableOfContents_35-E thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#salesforce-lambda-prerequisites" class="table-of-contents__link">Salesforce Lambda Prerequisites</a><ul><li><a href="#determine-your-production-environment" class="table-of-contents__link">Determine your production Environment</a></li><li><a href="#determine-your-consumer-key-and-secret" class="table-of-contents__link">Determine your Consumer Key and Secret</a></li><li><a href="#determine-your-username-password-and-security-token" class="table-of-contents__link">Determine your Username, Password and Security Token</a></li><li><a href="#store-salesforce-credentials-in-aws-secrets-manager" class="table-of-contents__link">Store Salesforce credentials in AWS Secrets Manager</a></li></ul></li><li><a href="#install-the-amazon-connect-salesforce-lambda-package" class="table-of-contents__link">Install the Amazon Connect Salesforce Lambda package</a></li></ul></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.</div></div></div></footer></div>
-<script src="/amazon-connect-salesforce-cti/assets/js/runtime~main.de10d300.js"></script>
-<script src="/amazon-connect-salesforce-cti/assets/js/main.58c4fa48.js"></script>
+<script src="/amazon-connect-salesforce-cti/assets/js/runtime~main.741021db.js"></script>
+<script src="/amazon-connect-salesforce-cti/assets/js/main.b26b9678.js"></script>
 </body>
 </html>
