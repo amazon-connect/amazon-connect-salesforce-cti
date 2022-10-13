@@ -14,13 +14,13 @@
     "init-githooks": "git config core.hooksPath .githooks"
   },
   "dependencies": {
-    "@docusaurus/core": "2.0.0-beta.2",
-    "@docusaurus/preset-classic": "2.0.0-beta.2",
+    "@bojl/docusaurus-pdf": "1.5.0",
+    "@docusaurus/core": "2.1.0",
+    "@docusaurus/preset-classic": "2.1.0",
     "@mdx-js/react": "^1.6.21",
     "clsx": "^1.1.1",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
-    "@bojl/docusaurus-pdf": "1.2.0",
     "is-svg": ">=4.2.2",
     "react-dev-utils": ">=11.0.4",
     "immer": ">=9.0.6",
