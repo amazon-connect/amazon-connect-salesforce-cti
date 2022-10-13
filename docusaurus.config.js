@@ -43,8 +43,9 @@ module.exports = {
       ],
     },
     algolia: {
-      apiKey: 'ea20bc7278c46a0a0c12a518a6aa7c04',
-      indexName: 'amazon-connect-salesforce-cti'
+      apiKey: '8690f15e0161bbc9353e85d4c0860fa5',
+      indexName: 'amazon-connect-salesforce-cti',
+      appId: 'UE7MTAXIA1'
     },
     footer: {
       style: 'dark',
@@ -68,8 +69,7 @@ module.exports = {
       //   },
       // ],
       copyright: `Copyright © ${new Date().getFullYear()} Amazon.com, Inc. or its affiliates. All Rights Reserved.`,
-    },
-    sidebarCollapsible: false,
+    }
   },
   presets: [
     [
@@ -79,6 +79,7 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl:
             'https://github.com/amazon-connect/amazon-connect-salesforce-cti',
+          sidebarCollapsible: false,
         },
         blog: {
           showReadingTime: true,
