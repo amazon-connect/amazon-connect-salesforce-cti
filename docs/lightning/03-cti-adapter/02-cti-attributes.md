@@ -90,7 +90,7 @@ named "phone_number"
 
 2.  Expand the **navigation menu** by selecting the down arrow and
     choose **AC CTI Adapters**.
-    
+
 <img src={useBaseUrl('/img/lightning/image114.png')} />
 
 3.  Select **ACLightningAdapter**
@@ -125,7 +125,7 @@ named "phone_number"
 
 15. Once the call is connected, select the text attribute icon to expand
     the CTI Attributes
-    
+
 <img src={useBaseUrl('/img/lightning/image125.png')} />
 
 16. Note the Style formatting. Also note that you can quickly copy the
@@ -148,7 +148,7 @@ to work, your contact flow must also set a contact attribute named
 
 2.  Expand the **navigation menu** by selecting the down arrow and
     choose **AC CTI Adapters**.
-    
+
 <img src={useBaseUrl('/img/lightning/image114.png')} />
 
 3.  Select **ACLightningAdapter**
@@ -175,7 +175,7 @@ to work, your contact flow must also set a contact attribute named
 
 12. Choose Save
 
-<img src={useBaseUrl('/img/lightning/image127.png')} />
+<img src={useBaseUrl('/img/lightning/image291.png')} />
 
 13. Refresh your browser
 
@@ -184,7 +184,7 @@ to work, your contact flow must also set a contact attribute named
 
 15. Once the call is connected, select the hyperlink attribute icon to
     expand the CTI Attributes
-    
+
 <img src={useBaseUrl('/img/lightning/image128.png')} />
 
 16. Select the URL and observe the page load
@@ -214,8 +214,8 @@ Attributes.
 4.  Fill the value text box to contain the following settings:
 
     a.  **ShowAttributesIfEmpty** (Boolean, default true): show
-    attributes text box when contact has no attributes 
-        
+    attributes text box when contact has no attributes
+
     b.  **ShowAllAttributes** (Boolean, default false): show all attributes, including attributes with no values
 
 <img src={useBaseUrl('/img/lightning/image132.png')} />
