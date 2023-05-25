@@ -166,9 +166,10 @@ AC_ConsoleAdapter page.
 <img src={useBaseUrl('/img/classic/image27.png')} />
 
 Click on the **Preview** button. A new browser tab will open with the
-URL of this page. It's going to be in this format:
-
-<pre>https://sfdcInstance--amazonconnect.visualforce.com/apex/AC_ConsoleAdapter</pre>
+URL of this page. If you are using the "enhanced domains" update, it will be in this format:
+<pre>https://XXXXXXXX--amazonconnect.sandbox.vf.force.com/AC_ConsoleAdapter</pre>
+Otherwise, it will be in this format:
+<pre>https://XXXXXXXX--amazonconnect.visualforce.com/apex/AC_ConsoleAdapter</pre>
 
 This is what we are going to use as "Origin URL" in our Amazon Connect
 configuration. From AWS Console, select Amazon Connect service and then
@@ -322,10 +323,11 @@ AC_ClassicAdapter page
 
 <img src={useBaseUrl('/img/classic/image51.png')} />
 
-Click on the Preview button. New browser tab will open with the URL of
-this page. It's going to be in this format:
-
-<pre>https://sfdcInstance--amazonconnect.visualforce.com/apex/AC_ClassicAdapter</pre>
+Click on the **Preview** button. A new browser tab will open with the
+URL of this page. If you are using the "enhanced domains" update, it will be in this format:
+<pre>https://XXXXXXXX--amazonconnect.sandbox.vf.force.com/AC_ConsoleAdapter</pre>
+Otherwise, it will be in this format:
+<pre>https://XXXXXXXX--amazonconnect.visualforce.com/apex/AC_ConsoleAdapter</pre>
 
 This is what we are going to use as "Origin URL" in our Amazon Connect
 configuration. From AWS Console, select Amazon Connect service and then

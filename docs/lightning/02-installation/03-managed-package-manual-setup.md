@@ -129,8 +129,12 @@ underlying resources required for the CCP to function.
 10. Select + Add origin
 
 11. In the Enter origin URL field, enter the URL of the page that you
-    copied in step 2. Only enter the url through the .com, for example:
-    <pre>https://XXXXXXXX-dev-ed-.lightning.force.com</pre>
+    copied in step 2. Only enter the url through the .com. If you are
+    on the "enhanced domains" update, then your url will match the
+    following format:
+    <pre>https://XXXXXXXX.sandbox.lightning.force.com</pre>
+    otherwise, it will match the following format:
+    <pre>https://XXXXXXXX.lightning.force.com</pre>
 
 12. Select Add. You should see your org domain listed in the Approved
     origins section.
@@ -140,9 +144,12 @@ underlying resources required for the CCP to function.
 13. Select + Add origin
 
 14. In the Enter origin URL field, enter the URL of the visualforce page
-    that you copied in step 5. Only enter the url through the .com, for
-    example:
-    <pre>https://XXXXXXXX-dev-ed--amazonconnect.visualforce.com</pre>
+    that you copied in step 5. Only enter the url through the .com. If you are
+    on the "enhanced domains" update, then your url will match the
+    following format:
+    <pre>https://XXXXXXXX--amazonconnect.sandbox.vf.force.com</pre>
+    otherwise, it will match the following format:
+    <pre>https://XXXXXXXX--amazonconnect.visualforce.com</pre>
 
 15. Select Add. You should see your org domain listed in the Approved
     origins section
