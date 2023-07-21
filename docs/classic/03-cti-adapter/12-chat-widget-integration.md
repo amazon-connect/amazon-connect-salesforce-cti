@@ -124,9 +124,10 @@ Example:
   </html>
 </apex:page>
 ```
-  * 
-    * For "AC_ChatWidget" Visual force page:
-    
+  * For "AC_ChatWidget" Visual force page:
+  
+
+
   ```
 <apex:page id="AC_ChatWidget" showHeader="false" sideBar="false" docType="html-5.0">
   <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
@@ -143,7 +144,7 @@ Example:
   </html>
 </apex:page>
 ```
-Example: 
+Example:
 
 ```
 <apex:page id="AC_ChatWidget" showHeader="false" sideBar="false" docType="html-5.0">

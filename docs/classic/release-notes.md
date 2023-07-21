@@ -23,7 +23,7 @@ Please **confirm that the application was installed for admins only** (see [inst
 - **Enhancement:** Amazon Connect Streams API Upgrade : The Amazon Connect Streams API has been upgraded to version 2.2.0 for improved performance and functionality.
 - **Enhancement:** CCP Element Editor Permission Change : For CCP Element Editor, editing features was previously available to users assigned to permission sets Agent (AC_Agent), Manager (AC_Manager), and Administrator (AC_Administrator). Starting from this version, only users with the Administrator permission set (AC_Administrator) will be able to view and edit feature. This change is designed to restrict modification access of CCP Overlay Elements.
 - **Enhancement:** Chat Widget Integration Setup Process Changes: The setup process for Chat Widget Integration has been updated to enhance the integration experience and security.
-- **Backward Incompatibility Notice::** Chat Widget Integration Update : Customers who have previously set up Chat Widget Integration will need to redo the setup process due to changes introduced in this version. This ensures compatibility with the latest enhancements.
+- **Backward Incompatibility Notice::** Chat Widget Integration Update : Customers who have previously set up Chat Widget Integration will need to redo the setup process due to changes introduced in this version. This ensures compatibility with the latest enhancements. *Note: To avoid any downtime of feature, set up should be completed before upgrading the version*
 - **Security:** Improved Amazon Connect Instance Security : Throttling mechanisms have been introduced to enhance the security of Amazon Connect Instances, ensuring a safer environment for users and their data.
 
 ## 5.19 April 2022
