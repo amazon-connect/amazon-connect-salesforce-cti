@@ -5,6 +5,9 @@ title: Release Notes
 
 ### Important Notes
 
+#### Summer '23 Release
+The Salesforce summer release '23 blocks Username-Password Flow by default (see more details [here](https://help.salesforce.com/s/articleView?id=release-notes.rn_security_username-password_flow_blocked_by_default.htm&release=244&type=5)). If your org uses this version of Salesforce, please unblock the flow by following [these](/docs/lightning/installation/02-guided-setup#allowing-the-api-user-to-authenticate-using-password) instructions.
+
 #### Salesforce Enhanced Domains
 Salesforce is making changes to the instance domains on account of the [enhanced domains](https://help.salesforce.com/s/articleView?id=sf.domain_name_enhanced_enable.htm&type=5) feature in the Spring 23 release. Once this feature is enabled, you must migrate the CTI adapter to using these new domains. See [here](/docs/other/sf-enhanced-domains-migration) for migration instructions.
 
@@ -18,6 +21,14 @@ The Plan-B deprecation should not affect any current users of the CTI Adapter, a
 Please **confirm that the application was installed for admins only** (see [installation](/docs/lightning/installation/01-installation) for more details). If you did this by accident, then you will have to [manually edit the profiles](/docs/lightning/installation/06-adapter-installation-troubleshooting#how-to-remove-permissions-to-visualforce-pages-apex-classes-for-a-desired-profile) to remove the permissions to the objects and pages created by the app. If you are updating the package, please verify that all users have the proper AC permission set.
 
 **Important:** when upgrading the CTI Adapter, please make sure that the Salesforce Lambdas are also updated to the newest version. Also review the [CTI Adapter Installation Troubleshooting and Common Issues](/docs/lightning/installation/06-adapter-installation-troubleshooting) section for known issues and troubleshooting.
+
+## 5.20.1 July 2023
+
+- **Enhancement:** Amazon Connect Streams API Upgrade : The Amazon Connect Streams API has been upgraded to version 2.2.0 for improved performance and functionality.
+- **Enhancement:** CCP Element Editor Permission Change : For CCP Element Editor, editing features was previously available to users assigned to permission sets Agent (AC_Agent), Manager (AC_Manager), and Administrator (AC_Administrator). Starting from this version, only users with the Administrator permission set (AC_Administrator) will be able to view and edit feature. This change is designed to restrict modification access of CCP Overlay Elements.
+- **Enhancement:** Chat Widget Integration Setup Process Changes: The setup process for Chat Widget Integration has been updated to enhance the integration experience and security.
+- **Backward Incompatibility Notice::** Chat Widget Integration Update : Customers who have previously set up Chat Widget Integration will need to redo the setup process due to changes introduced in this version. This ensures compatibility with the latest enhancements.*Note: To avoid any downtime of feature, set up should be completed before upgrading the version*
+- **Security:** Improved Amazon Connect Instance Security : Throttling mechanisms have been introduced to enhance the security of Amazon Connect Instances, ensuring a safer environment for users and their data.
 
 ## 5.19 April 2022
 

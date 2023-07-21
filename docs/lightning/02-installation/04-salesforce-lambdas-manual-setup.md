@@ -26,7 +26,7 @@ As you are preparing to deploy the package, it is a good idea to open a
 text editor and note information as you configure the environment. We
 will point out the items you will need to provide.
 
-#### Check your Salesforce API Version
+### Check your Salesforce API Version
 
 1.  Log in into your Salesforce org and go to **Setup**
 
@@ -78,9 +78,9 @@ with OAuth settings enabled.
 
 <img src={useBaseUrl('/img/lightning/image62.png')} />
 
-6.  Set the **Callback URL** to https://www.salesforce.com
+6.  Set the **Callback URL** to your domain url. Find the domain at _Setup_ -> _My Domain_.
 
-<img src={useBaseUrl('/img/lightning/image63.png')} />
+<img src={useBaseUrl('/img/lightning/image293.png')} />
 
 7.  In the Selected OAuth Scopes section, select the following and add
     them to the Selected OAuth Scopes:
@@ -123,7 +123,7 @@ with OAuth settings enabled.
 
 22. Select **Save**
 
-#### Create a new API user
+### Create a new API user
 
 The Lambda functions authenticate with Salesforce via user credentials.
 It is a common practice to create an API user account for this purpose.
@@ -166,7 +166,7 @@ It is a common practice to create an API user account for this purpose.
 
 12. Select **Edit**.
 
-13. Set **User passwords expire in** to **Never expires** NOTE: Failure to this may lead to production outages. 
+13. Set **User passwords expire in** to **Never expires** NOTE: Failure to this may lead to production outages.
 
 14. Select **Save**.
 
@@ -237,7 +237,13 @@ It is a common practice to create an API user account for this purpose.
 
 34. Copy the security token from the email to your notepad
 
-#### Gather Information from Your Amazon Connect Instance
+#### Allowing the API user to authenticate using password
+
+The api user created above authenticates using username-password flow in Salesforce. This flow needs to be unblocked and to do that, go to _Setup_ and in the Quick Find box, search for __OAuth and OpenID Connect Settings__. After that, make sure that the toggles for __Allow OAuth Username-Password Flows__ and __Allow OAuth User-Agent Flows__ are turned ON, as shown in below image.
+
+<img src={useBaseUrl('/img/lightning/image292.png')} />
+
+### Gather Amazon Connect information
 
 The last thing to do before you can install the Amazon Connect
 Salesforce Lambda Package is gather some details about your Amazon
@@ -428,25 +434,25 @@ retrieve secrets.
         bucket used to store exported reports for your Amazon Connect
         instance. This is ONLY the bucket name, no sub-folders or
         suffixes
-    
+
     5.  **HistoricalReportingImportEnabled:** true \| false - if set to
         true, the package will include a feature to import Amazon
         Connect Queue and Agent Historical Metrics into your Salesforce
         Org. This feature requires you to provide
         **ConnectReportingS3BucketName**
-    
+
     6.  **LambdaLoggingLevel:** DEBUG \| INFO \| WARNING \| ERROR \|
         CRITICAL - Logging level for Lambda functions
 
     7.  **PrivateVpcEnabled:** Set to true if functions should be
         deployed to a private VPC. Set VpcSecurityGroupList and
         VpcSubnetList if this is set to true.
-    
+
     8.  **RealtimeReportingImportEnabled:** true \| false - if set to
         true, the package will include a feature to publish Amazon
         Connect Queue Metrics into your Salesforce Org. This feature
         requires you to provide **AmazonConnectInstanceId**
-    
+
     9.  **SalesforceAdapterNamespace:** This is the namespace for CTI
         Adapter managed package. The default value is **amazonconnect**.
         If a non-managed package is used, leave this field blank.
@@ -457,27 +463,27 @@ retrieve secrets.
     11.  **SalesforceCredentialsSecretsManagerARN:** This is the ARN for
         the Secrets Manager Secret that you created in the previous
         section.
-    
+
     12.  **SalesforceHost:** The full domain for your salesforce org. For
         example
         `https://mydevorg-dev-ed.my.salesforce.com`.
         Please make sure that the host starts with `https`, and that the url
         ends with `.my.salesforce.com`. This url can be found in `Setup` -> `My Domain`.
-    
+
     13.  **SalesforceProduction:** true \| false - True for Production
         Environment, False for Sandbox
-    
+
     14.  **SalesforceUsername:** The username for the API user that you
         configured in the previous section. Salesforce usernames are in the form of an email address.
 
     15.  **SalesforceVersion:** This is the Salesforce.com API version
         that you noted in the previous section. The pattern of this value is ```vXX.X```.
-    
+
     16.  **TranscribeOutputS3BucketName:** This is the S3 bucket where
         Amazon Transcribe stores the output. Typically, this is the same
         bucket that call recordings are stored in, so you can use the
         same value as found in **ConnectRecordingS3BucketName**. Not
-        required if PostcallRecordingImportEnabled, 
+        required if PostcallRecordingImportEnabled,
         PostcallTranscribeEnabled, ContactLensImportEnabled set to false.
 
     17.  **VpcSecurityGroupList:** The list of SecurityGroupIds for
@@ -489,7 +495,7 @@ retrieve secrets.
 
     19.  **AmazonConnectQueueMaxRecords:** Enter record set size for list
         queue query. Max is 100.
-    
+
     20.  **AmazonConnectQueueMetricsMaxRecords:** Enter record set size
         for queue metrics query. Max is 100.
 
@@ -501,7 +507,7 @@ retrieve secrets.
         instance. This is ONLY the bucket name, no sub-folders or
         suffixes
 
-    23.  **ContactLensImportEnabled:** true \| false - Set to false if 
+    23.  **ContactLensImportEnabled:** true \| false - Set to false if
         importing Contact Lens into Salesforce should not be enabled.
 
     24.  **PostcallCTRImportEnabled:** true \| false - Set to false if
@@ -725,7 +731,7 @@ to invoke the function.
 
 6.  Choose **Add Lambda Function**. Confirm that the ARN of the function
     is added under **Lambda Functions**.
-    
+
 
 <img src={useBaseUrl('/img/shared/image03.png')} />
 

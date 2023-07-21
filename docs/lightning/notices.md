@@ -12,7 +12,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
   <img src={useBaseUrl('/img/lightning/image1.png')} />
 </p>
 
-<h3 align="center">April, 2022</h3>
+<h3 align="center">July, 2023</h3>
 
 *© Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved. SPDX-License-Identifier: CC-BY-SA-4.0*
 

@@ -49,9 +49,9 @@ OAuth settings enabled.
 
 <img src={useBaseUrl('/img/classic/image103.png')} />
 
-6.  Ensure the Callback URL is set to <https://www.salesforce.com>
+6.  Set the **Callback URL** to your domain url. Find the domain at _Setup_ -> _My Domain_.
 
-<img src={useBaseUrl('/img/classic/image104.png')} />
+<img src={useBaseUrl('/img/lightning/image293.png')} />
 
 7.  Ensure Selected OAuth Scopes has the following values selected:
 
@@ -206,6 +206,12 @@ at least 20 random characters):
 
 30. Copy the security token from the email in to your installation notes for the "Access Token" value.
 
+### Allowing the API user to authenticate using password
+
+The api user created above authenticates using username-password flow in Salesforce. This flow needs to be unblocked and to do that, go to _Setup_ and in the Quick Find box, search for __OAuth and OpenID Connect Settings__. After that, make sure that the toggles for __Allow OAuth Username-Password Flows__ and __Allow OAuth User-Agent Flows__ are turned ON, as shown in below image.
+
+<img src={useBaseUrl('/img/lightning/image292.png')} />
+
 ### Store Salesforce credentials in AWS Secrets Manager
 
 To ensure that your Salesforce credentials are secure, the Lambdas
@@ -339,25 +345,25 @@ retrieve secrets.
         bucket used to store exported reports for your Amazon Connect
         instance. This is ONLY the bucket name, no sub-folders or
         suffixes
-    
+
     5.  **HistoricalReportingImportEnabled:** true \| false - if set to
         true, the package will include a feature to import Amazon
         Connect Queue and Agent Historical Metrics into your Salesforce
         Org. This feature requires you to provide
         **ConnectReportingS3BucketName**
-    
+
     6.  **LambdaLoggingLevel:** DEBUG \| INFO \| WARNING \| ERROR \|
         CRITICAL - Logging level for Lambda functions
 
     7.  **PrivateVpcEnabled:** Set to true if functions should be
         deployed to a private VPC. Set VpcSecurityGroupList and
         VpcSubnetList if this is set to true.
-    
+
     8.  **RealtimeReportingImportEnabled:** true \| false - if set to
         true, the package will include a feature to publish Amazon
         Connect Queue Metrics into your Salesforce Org. This feature
         requires you to provide **AmazonConnectInstanceId**
-    
+
     9.  **SalesforceAdapterNamespace:** This is the namespace for CTI
         Adapter managed package. The default value is **amazonconnect**.
         If a non-managed package is used, leave this field blank.
@@ -368,27 +374,27 @@ retrieve secrets.
     11.  **SalesforceCredentialsSecretsManagerARN:** This is the ARN for
         the Secrets Manager Secret that you created in the previous
         section.
-    
+
     12.  **SalesforceHost:** The full domain for your salesforce org. For
         example
         `https://mydevorg-dev-ed.my.salesforce.com`.
         Please make sure that the host starts with `https`, and that the url
         ends with `.my.salesforce.com`. This url can be found in `Setup` -> `My Domain`.
-    
+
     13.  **SalesforceProduction:** true \| false - True for Production
         Environment, False for Sandbox
-    
+
     14.  **SalesforceUsername:** The username for the API user that you
         configured in the previous section. Salesforce usernames are in the form of an email address.
 
     15.  **SalesforceVersion:** This is the Salesforce.com API version
         that you noted in the previous section. The pattern of this value is ```vXX.X```.
-    
+
     16.  **TranscribeOutputS3BucketName:** This is the S3 bucket where
         Amazon Transcribe stores the output. Typically, this is the same
         bucket that call recordings are stored in, so you can use the
         same value as found in **ConnectRecordingS3BucketName**. Not
-        required if PostcallRecordingImportEnabled, 
+        required if PostcallRecordingImportEnabled,
         PostcallTranscribeEnabled, ContactLensImportEnabled set to false.
 
     17.  **VpcSecurityGroupList:** The list of SecurityGroupIds for
@@ -400,7 +406,7 @@ retrieve secrets.
 
     19.  **AmazonConnectQueueMaxRecords:** Enter record set size for list
         queue query. Max is 100.
-    
+
     20.  **AmazonConnectQueueMetricsMaxRecords:** Enter record set size
         for queue metrics query. Max is 100.
 
@@ -412,7 +418,7 @@ retrieve secrets.
         instance. This is ONLY the bucket name, no sub-folders or
         suffixes
 
-    23.  **ContactLensImportEnabled:** true \| false - Set to false if 
+    23.  **ContactLensImportEnabled:** true \| false - Set to false if
         importing Contact Lens into Salesforce should not be enabled.
 
     24.  **PostcallCTRImportEnabled:** true \| false - Set to false if
