@@ -46,9 +46,9 @@ OAuth settings enabled.
 
 <img src={useBaseUrl('/img/classic/image103.png')} />
 
-6.  Ensure the Callback URL is set to <https://www.salesforce.com>
+6.  Set the **Callback URL** to your domain url. Find the domain at _Setup_ -> _My Domain_.
 
-<img src={useBaseUrl('/img/classic/image104.png')} />
+<img src={useBaseUrl('/img/lightning/image293.png')} />
 
 7.  Ensure Selected OAuth Scopes has the following values selected:
 
@@ -104,7 +104,7 @@ Guided Setup feature links to them.
 
 2.  Select your Instance Alias
 
-3.  On the Overview page for your instance, copy the Login URL 
+3.  On the Overview page for your instance, copy the Login URL
     (if your Amazon Connect instance uses the `https://(instancename).awsapps.com/connect/login`
     domain, then remove everything after ".com"):
 
@@ -339,6 +339,12 @@ at least 20 random characters):
 <img src={useBaseUrl('/img/classic/image128.png')} />
 
 30. Copy the security token from the email in to your installation notes for the "Access Token" value.
+
+### Allowing the API user to authenticate using password
+
+The api user created above authenticates using username-password flow in Salesforce. This flow needs to be unblocked and to do that, go to _Setup_ and in the Quick Find box, search for __OAuth and OpenID Connect Settings__. After that, make sure that the toggles for __Allow OAuth Username-Password Flows__ and __Allow OAuth User-Agent Flows__ are turned ON, as shown in below image.
+
+<img src={useBaseUrl('/img/lightning/image292.png')} />
 
 ### Setting up the SecretsManager Secret
 

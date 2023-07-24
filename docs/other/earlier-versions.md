@@ -2,7 +2,7 @@
 id: earlier-versions
 title: Earlier Documentation Versions
 ---
-
+- [v5.19](https://github.com/amazon-connect/amazon-connect-salesforce-cti/tree/v5.19/pdf)
 - [v5.18](https://github.com/amazon-connect/amazon-connect-salesforce-cti/tree/v5.18/pdf)
 - [v5.17](https://github.com/amazon-connect/amazon-connect-salesforce-cti/tree/v5.17/pdf)
 - [v5.16](https://github.com/amazon-connect/amazon-connect-salesforce-cti/tree/v5.16/pdf)

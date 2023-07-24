@@ -59,9 +59,9 @@ with OAuth settings enabled.
 
 <img src={useBaseUrl('/img/lightning/image62.png')} />
 
-6.  Set the **Callback URL** to https://www.salesforce.com
+6.  Set the **Callback URL** to your domain url. Find the domain at _Setup_ -> _My Domain_.
 
-<img src={useBaseUrl('/img/lightning/image63.png')} />
+<img src={useBaseUrl('/img/lightning/image293.png')} />
 
 7.  In the Selected OAuth Scopes section, select the following and add
     them to the Selected OAuth Scopes:
@@ -116,7 +116,7 @@ Guided Setup feature links to them.
 
 2.  Select your Instance Alias
 
-3.  On the Overview page for your instance, copy the Login URL 
+3.  On the Overview page for your instance, copy the Login URL
     (if your Amazon Connect instance uses the `https://(instancename).awsapps.com/connect/login`
     domain, then remove everything after ".com"):
 
@@ -217,7 +217,7 @@ documentation](https://help.salesforce.com/articleView?id=perm_sets_mass_assign.
 
 <img src={useBaseUrl('/img/lightning/image34.png')} />
 
-5.  You will also see the option to enable and disable certain 
+5.  You will also see the option to enable and disable certain
 triggers in the package, which you can configure to meet your needs. You
 can change these whenever you would like to. For more details, see below
 
@@ -336,7 +336,7 @@ It is a common practice to create an API user account for this purpose.
 
 12. Select **Edit**.
 
-13. Set **User passwords expire in** to **Never expires** NOTE: Failure to this may lead to production outages. 
+13. Set **User passwords expire in** to **Never expires** NOTE: Failure to this may lead to production outages.
 
 14. Select **Save**.
 
@@ -406,6 +406,12 @@ It is a common practice to create an API user account for this purpose.
     to you
 
 34. Copy the security token from the email to your notepad
+
+### Allowing the API user to authenticate using password
+
+The api user created above authenticates using username-password flow in Salesforce. This flow needs to be unblocked and to do that, go to _Setup_ and in the Quick Find box, search for __OAuth and OpenID Connect Settings__. After that, make sure that the toggles for __Allow OAuth Username-Password Flows__ and __Allow OAuth User-Agent Flows__ are turned ON, as shown in below image.
+
+<img src={useBaseUrl('/img/lightning/image292.png')} />
 
 ### Setting up the SecretsManager Secret
 
@@ -696,7 +702,7 @@ to invoke the function.
 
 6.  Choose **Add Lambda Function**. Confirm that the ARN of the function
     is added under **Lambda Functions**.
-    
+
 
 <img src={useBaseUrl('/img/shared/image03.png')} />
 
