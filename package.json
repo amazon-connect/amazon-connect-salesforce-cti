@@ -21,7 +21,7 @@
     "clsx": "^1.1.1",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
-    "is-svg": ">=4.2.2",
+    "is-svg": ">=5.0.0",
     "react-dev-utils": ">=11.0.4",
     "immer": ">=9.0.6",
     "highlight.js": ">=10.4.1",
