@@ -2,7 +2,18 @@
 id: release-notes
 title: Release Notes
 ---
+
 ### Important Notes
+
+#### Google Chrome third-party cookies support
+
+The CTI Adapter v5.21 now provides support for third party cookies (see [Amazon Connect third party cookie documentation](https://docs.aws.amazon.com/connect/latest/adminguide/admin-3pcookies.html)). After you upgrade to the latest version of the CTI Adapter (v5.21+), agents will be prompted to allow third-party cookies from Amazon Connect: 
+1. When agents open the CCP within the CTI Adapter, a new **Allow access to cookies** banner appears. It has one action button: **Grant access**.
+2. When agents choose **Grant access**, the browser displays a prompt to authorize the use of third-party cookies.
+3. Agents must select **Allow** on this second pop-up, and then proceed to log in.
+
+**Note**: If the agent does not follow steps above, please see [our documentation](https://docs.aws.amazon.com/connect/latest/adminguide/admin-3pcookies.html#upgrade3p-agent-exp) on how to resolve. 
+
 #### Summer '23 Release
 The Salesforce summer release '23 blocks Username-Password Flow by default (see more details [here](https://help.salesforce.com/s/articleView?id=release-notes.rn_security_username-password_flow_blocked_by_default.htm&release=244&type=5)). If your org uses this version of Salesforce, please unblock the flow by following [these](/docs/classic/installation/02-guided-setup#allowing-the-api-user-to-authenticate-using-password) instructions.
 
@@ -19,6 +30,10 @@ The Plan-B deprecation should not affect any current users of the CTI Adapter, a
 Please **confirm that the application was installed for admins only** (see [installation](/docs/classic/installation/01-installation) for more details). If you did this by accident, then you will have to [manually edit the profiles](/docs/classic/installation/06-cti-adapter-installation-troubleshooting#how-to-remove-permissions-to-visualforce-pages-apex-classes-for-a-desired-profile) to remove the permissions to the objects and pages created by the app. If you are updating the package, please verify that all users have the proper AC permission set.
 
 **Important:** when upgrading the CTI Adapter, please make sure that the Salesforce Lambdas are also updated to the newest version.
+
+## 5.21 October 2023
+
+- **Enhancement:** Google Chrome third party cookie support : Salesforce CTI Adapter v5.21 enables requests for third party cookies within Salesforce domains to support Amazon Connect. See [Amazon Connect third party cookie documentation](https://docs.aws.amazon.com/connect/latest/adminguide/admin-3pcookies.html) for further information.
 
 ## 5.20.1 July 2023
 
