@@ -31,6 +31,11 @@ Please **confirm that the application was installed for admins only** (see [inst
 
 **Important:** when upgrading the CTI Adapter, please make sure that the Salesforce Lambdas are also updated to the newest version. Also review the [CTI Adapter Installation Troubleshooting and Common Issues](/docs/lightning/installation/06-adapter-installation-troubleshooting) section for known issues and troubleshooting.
 
+## 5.21.1 November 2023
+
+- **Bug fix:** Google Chrome third party cookie support for GovCloud instances: The v5.21.1 patch includes updated third party cookie support for GovCloud instances. 
+- **Enhancement:** [Python 3.10 runtime](https://aws.amazon.com/blogs/compute/python-3-10-runtime-now-available-in-aws-lambda/) now available in Amazon Connect Salesforce Lambda package v5.19.7 to address AWS ending support for Python 3.7 in AWS Lambda.
+
 ## 5.21 October 2023
 
 - **Enhancement:** Google Chrome third party cookie support : Salesforce CTI Adapter v5.21 enables requests for third party cookies within Salesforce domains to support Amazon Connect. See [Amazon Connect third party cookie documentation](https://docs.aws.amazon.com/connect/latest/adminguide/admin-3pcookies.html) for further information.
