@@ -20,7 +20,7 @@ org:
 -   **Update:** updates a Salesforce object based on the parameters
     passed to it
 
--   **Phone Lookup:** uses Salesforce Object Search Language (SOLS) to
+-   **Phone Lookup:** uses Salesforce Object Search Language (SOSL) to
     construct text-based search queries against the search index, which
     gives significant performance improvement when searching phone
     number fields.
@@ -185,7 +185,7 @@ The "204" status indicates a success.
 
 This operation is invoked by setting **sf_operation** to
 **phoneLookup**. In this case, the Lambda function uses Salesforce
-Object Search Language (SOLS) to construct text-based search queries.
+Object Search Language (SOSL) to construct text-based search queries.
 For phoneLookup, the following parameters are required:
 
 -   sf_phone
