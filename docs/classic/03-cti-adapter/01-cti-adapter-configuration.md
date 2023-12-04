@@ -50,7 +50,9 @@ a default setting. This section will detail the options available.
     separate CCP. Selecting the medialess option will configure the
     Salesforce CCP to run in medialess mode, which provides the data
     that Salesforce needs for screenpop while the audio is streamed to a
-    local CCP.
+    local CCP. IMPORTANT NOTE: if medialess mode is enabled, then the ccp
+    embedded in Salesforce won't make and accept calls normally, the
+    separate ccp will be responsible for making and accepting calls.
 
 9.  **Presence Sync Enabled:** This setting allows the adapter to use
     the presence rules to sync state from Amazon Connect to Salesforce
