@@ -119,7 +119,7 @@ The command to screenpop a list view.
 ### Screenpop Search
 
 The command to screenpop search results based upon the search input. Not
-to be consued with "Search And Screenpop."
+to be confused with "Search And Screenpop."
 
 ### Screenpop New Record
 
@@ -130,7 +130,7 @@ specified default field values.
 
 This command searches objects specified in the softphone layout for a
 given string. Returns search results and screen pops any matching
-records. Not to be consued with "Screenpop Search."
+records. Not to be confused with "Screenpop Search."
 
 ### Run Apex
 
@@ -312,6 +312,18 @@ results.
 
 The command to get a salesforce lead id using a formatted phone number.
 
+### Get Salesforce Contact Id
+
+The query to get the Id of the Salesforce Contact with the formatted phone number.
+
+### Retrieve Salesforce Record
+
+Retrieves a Salesforce record by Id. Note use this block in with the "Extract Value" block to obtain the value of a specific field.
+
+### Extract Value 
+
+This utility allows you to access the inner value of an object or an array at the designated key path
+
 ### Open Salesforce Primary Tab
 
 Opens a new primary tab to display the content of the specified URL.
@@ -349,11 +361,6 @@ Checks whether a text input ends with one of the values.
 ### Join Strings
 
 Concatenates 2 values into a string.
-
-### SOQL Query
-
-The query to execute an arbitrary SOQL statement and returns the
-results.
 
 ### Multiply
 
@@ -407,10 +414,6 @@ Clears all stored properties.
 
 Removes the value assigned to a property in the local data store.
 
-### Show Attributes
-
-This command displays the contact attributes in the CCP overlay.
-
 ### Is Task Contact?
 
 Check if the contact is a task
@@ -418,10 +421,6 @@ Check if the contact is a task
 ### Create Task Contact
 
 Creating a new task contact with certain inputs.
-
-### Pop Task Contact's Reference Urls
-
-Pop any reference urls that are related to the task contact
 
 ### Start Recording
 

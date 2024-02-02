@@ -47,6 +47,18 @@ When upgrading from a version of the package to a higher version of the package 
 
 4. Select **Edit** and remove any desired permissions. All permissions can be removed because permissions are managed through permission sets, not through profiles.
 
+### Browser refreshing when trying to open lightning components
+
+This issue was first seen when trying to use the screenPop() method provided by Salesforce (this is the method we use for our Screenpop CTI Flow blocks).
+
+#### How do you fix it? 
+
+Remove the "&0.source=aloha" value from the browser. This can often be added to the current URL when a Salesforce page is navigated through the use of a bookmark.
+
+#### Why does this happen?
+
+The cause of this issue is correlated with the presence of “&0.source=aloha” in the home page URL after logging into Salesforce. For context on what this value means, you can consult [this reference](https://salesforce.stackexchange.com/questions/187349/forcenavigatetourl-inserts-source-aloha-in-the-url-which-breaks-page). This code is set by Salesforce to forcefully navigate a user to a url, which is needed in cases when a user tries to navigate to a salesforce page that can only be viewed by a logged in user. After logging in, this code is still present, and this is why this issue occurs. When this value is present, opening new tabs would result in the entire browser refreshing because it's still forcefully trying to navigate the user. This browser refresh eventually converts incoming calls to missed calls, which is the expected behavior while using the CTI Adapter.
+
 #### What are the Disable X Trigger options in the Custom Settings?
 
 <img src={useBaseUrl('/img/lightning/troubleshooting4.png')} />

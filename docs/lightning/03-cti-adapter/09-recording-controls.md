@@ -25,7 +25,26 @@ Copy the access key and secret of this user (from the "Security credentials" tab
 
 <img src={useBaseUrl('/img/shared/ccp-overlay-6-named-credentials.png')} />
 
-Fill in `https://connect.us-east-1.amazonaws.com` as the url. For Identity Type, select "Named Principal" and for "Authentication Protocol" select "AWS Signature Version 4." Then fill in the "AWS Access Key Id" and "AWS Access Secret" fields with your IAM user credentials. And for AWS Region, use the region of your Connect instance. And for the AWS Service, fill in `connect`.
+Fill in `https://connect.{region}.amazonaws.com` as the url. The region in the url needs to match the region for your connect instance / CTI Adapter, so if the CTI Adapter region is `us-west-2`, your url should be: `https://connect.us-west-2.amazonaws.com`
+
+For Identity Type, select "Named Principal" and for "Authentication Protocol" select "AWS Signature Version 4." Then fill in the "AWS Access Key Id" and "AWS Access Secret" fields with your IAM user credentials. And for AWS Region, use the region of your Connect instance. And for the AWS Service, fill in `connect`.
+
+## Using Recording Controls with Contact Flows
+This feature can sometimes cause issues if an existing contact flow manages call recording, which is common with Contact Lens. If you’re using this feature with Contact Channel Analytics or Contact Trace Records enabled, make sure your amazon connect contact flow does not enable call recording by default. If you still wish to generate Contact Channel Analytics / Contact Trace Records, then you should disable call recording in the contact flow block and leave the other settings the same. For reference, here is a valid configuration with Contact Lens and CTR enabled:
+
+<img src={useBaseUrl('/img/lightning/recordingcontrolscontactflows1.png')} />
+
+<img src={useBaseUrl('/img/lightning/recordingcontrolscontactflows2.png')} />
+
+
+## Recording Named Credential
+
+Starting with version v5.22, you now have an area in the CTI Adapter to specify the recording Named Credential you wish to use with the adapter. Follow the instructions in the "Setup" section above to create the Named Credentials. Once you have the names for the Named Credentials, add them directly to the Adapters you wish to use.
+
+**CTI Adapter Named Credential Location:**
+<img src={useBaseUrl('/img/lightning/ctiadapterGR-1.png')} />
+
+Note: In v5.22+, if you have "Recording Controls" enabled and you do not explicitly set a Named Credential on the CTI Adapter, it will assume "AmazonConnectAPI" by default.
 
 ## Synchronizing Recording State with Contact Attributes
 

@@ -50,30 +50,25 @@ a default setting. This section will detail the options available.
     separate CCP. Selecting the medialess option will configure the
     Salesforce CCP to run in medialess mode, which provides the data
     that Salesforce needs for screenpop while the audio is streamed to a
-    local CCP.
+    local CCP. [See more information here](/docs/classic/cti-adapter/15-medialess)
 
 9.  **Presence Sync Enabled:** This setting allows the adapter to use
     the presence rules to sync state from Amazon Connect to Salesforce
     Omni-Channel.
 
-10. **Audio Device Settings** Turning this setting on allows the Agent 
+10. **Early Get User Media (GUM)**: When enabled, the CCP will capture the agent's 
+    browser microphone media stream before the contact arrives to reduce the call setup latency. If disabled, CCP will only capture agent media stream after the contact arrives.
+
+    Note: Enabling this feature may lead to draining in wireless headset batteries and/or impacted music/video audio quality when the agent is not on the call. [Link to streams documentation](https://github.com/amazon-connect/amazon-connect-streams/blob/master/Documentation.md#initialization)
+
+11. **Audio Device Settings** Turning this setting on allows the Agent 
     to setup a custom audio device for their speaker, microphone and 
     ringer in the adapter (Speaker and Ringer settings not available on Firefox). 
     You may have to add this field to the layout manually. [See troubleshooting](/docs/classic/installation/06-cti-adapter-installation-troubleshooting).
 
-11. **Phone Type Settings** Turning this setting on allows the Agent to 
+12. **Phone Type Settings** Turning this setting on allows the Agent to 
     change their Phone Type in the CCP. You may have to add this field to 
     the layout manually. [See troubleshooting](/docs/classic/installation/06-cti-adapter-installation-troubleshooting)
-
-#### Medialess Popout CCP
-To enable a popout CCP for agents to use, you need to enable it using `Features`. 
-
-1. Open the CTI Adapter that you have medialess enabled on.
-2. In the bottom tabs, select the `Features` section and click `New`.
-3. Set the `AC Feature Name` to be **EnableMedialessPopout**
-4. Set the `Value` to be **Enabled:true**
-5. Ensure that the `Active` checkbox is checked, then hit Save.
-6. Now refresh your page, and you should see the a popup created, which you can use to handle media.
 
 ## Single Sign On Settings
 

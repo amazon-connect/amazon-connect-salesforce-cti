@@ -11,8 +11,8 @@ The screenshot below shows an example of having the chat widget added to a help 
 <img src={useBaseUrl('/img/lightning/chatwidget-(10).png')} />
  
 To start using this feature, you can either follow the steps below to setup an Experience Cloud Site for testing purpose, or you can skip to the next section if you are already familiar with SalesForce Experience Cloud.
- 
-**Setup experience cloud site:**
+
+## Setup Experience Cloud Site
 
 * Go to Setup
 * Search for Digital Experience
@@ -26,7 +26,7 @@ To start using this feature, you can either follow the steps below to setup an E
 <img src={useBaseUrl('/img/lightning/chatwidget-(1).png')} />
 * This will be the place to setup chat widget feature in the following sections. You can get yourself familiar with this Builder before moving to the next section.
 
-**Setup Chat Widget in Amazon Connect**
+## Setup Chat Widget in Amazon Connect 
 * Follow instructions [here](https://docs.aws.amazon.com/connect/latest/adminguide/add-chat-to-website.html) to setup your Chat Widget and copy the script to a text editor.
 * Example of Script:
 
@@ -57,7 +57,7 @@ amazon_connect('authenticate', function(callback) {
 });
 ```
 
-**Create Required Visualforce Pages**
+## Create Required Visualforce Pages
 * Navigate to the Salesforce Setup by clicking on the gear icon in the top-right corner of the page.
 * In the Setup menu, search for "Visualforce Pages" in the quick find box and click on that.
 * On the "Visualforce Pages" page, click on the "New" button.
@@ -175,7 +175,7 @@ Example:
 * Final page should look like below image. Click on Save button. <img src={useBaseUrl('/img/lightning/chatwidget-(17).png')} />
 
  
-**Setup chat widget for your experience cloud sites.**
+## Setup Chat Widget for your Experience Cloud Sites
 
 * Option 1: Setting up using out-of-box VisualForce page. Choose this if you need the chat widget only on one specific page. 
 * Option 2: Setting up using Lightning Component based on VisualForce page. Choose this if you need the chat widget only on one specific page but you don’t have the license for the VisualForce page component in the experience cloud builder. It is a workaround for Option1.
@@ -247,8 +247,29 @@ Note: If you want to setup chat widget for authorized user group only, you could
     * The published website URL to chat widget allow-list origin, remove everything after .com
 *** Verify the change:***
 Open your published website in a incognito window, you should be able to use chat widget to chat as a customer and chat to your agent without login
+
+## MultiChat Management
+
+The Amazon Connect CTI Adapter enables Agents concurrently managing multiple Chat contacts efficiently. In the process of handling multiple Chat contacts, Agents need to switch between these chat contacts. With help of the MultiChat Management feature, agents will able to easily identify the contact while switching.
+
+The Amazon Connect CTI Adapter provides a CTI Flow Event called "onViewContact" specifically designed for the "Amazon Connect Chat Contact" CTI Flow Source. It is available in versions v5.22+. With this event, when agents navigate between multiple chat contacts, the associated CTI Flow can be triggered. For example, a CTI Flow attached to Source : "Amazon Connect Chat Contact" | Event : "onViewContact" can be enabled to execute a ScreenPop action, revealing a related Salesforce object linked to the active Chat contact. Consequently, as agents switch between Chat contacts, the respective object for the ongoing chat will automatically open in the background within the Salesforce window. This functionality serves as a valuable identifier for the currently active Chat contact, enhancing the agent's workflow and efficiency.
  
- 
- 
- 
- 
+### Recommendations
+
+* It's essential to acknowledge that the "onViewContact" event can be triggered multiple times during the lifecycle of a single Chat contact.
+* The advisable practice is to utilize only ScreenPop CTI Flow blocks within the CTI Flow associated with the "onViewContact" event. 
+    * Examples of CTI Flow blocks include:  Screenpop Object, Screenpop Object Home, Screenpop Search, Search And Screenpop
+* Additionally, it is best to avoid using any CTI Flow block that creates Salesforce objects, as it can result in the creation of multiple objects for a single contact during its lifecycle.
+* The CTI Flow connected to the "onViewContact" CTI Flow Event is only activated after the Chat contact is in "Connected" Contact state. As a result, it is preferable to create and screen-pop the Salesforce object during the initial connection phase using the "onConnecting" or "onConnected" CTI Flow events. Subsequently, leverage the "onViewContact" CTI Flow Event to screen-pop Salesforce objects when switching between multiple connected Chat contacts. Please find the example attached in below Section.
+
+### Example Use
+
+* Log into your Salesforce instance and open the relevant AC CTI Adapter.
+* Configure CTI Flow:
+    * Source: “Amazon Connect Chat Contact” | Event: “onConnected” -  SalesforceContactCreation.json 
+    * Source: “Amazon Connect Chat Contact” | Event: “onViewContact” -ScreenPopContact-MultiChat.json 
+* Agent Experience: 
+    * Agents receives a new Chat contact.
+    * Agent clicks on “Accept Chat” and contact is in “Connected” State.
+    * CTI Flow attached to “onConnected” CTI Flow events is triggered and it creates Salesforce contact record with contactId as name and ScreenPop it.
+    * Agent switches from one Chat contact to another, CTI Flow attached to “onViewContact” is triggered and it screenPops the relevant Salesforce Contact record of that visible Chat Contact.

@@ -49,8 +49,8 @@ available:
 
 If you would like to set up streaming with Contact Lens, please finish the
 [Call Recording Streaming](#call-recording-streaming) section below and then
-follow the [Contact Lens Streaming](docs/lightning/cti-adapter/07-contact-lens) 
-instructions and possibly the [Post Call Contact Lens Import](docs/lightning/salesforce-lambdas/06-postcall-contact-lens-import) 
+follow the [Contact Lens Streaming](/docs/lightning/cti-adapter/07-contact-lens) 
+instructions and possibly the [Post Call Contact Lens Import](/docs/lightning/salesforce-lambdas/06-postcall-contact-lens-import) 
 instructions.
 
 ### Call Recording Streaming
