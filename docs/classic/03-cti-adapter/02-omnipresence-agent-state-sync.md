@@ -24,6 +24,8 @@ First, we must enable omni-channel. To do this, navigate to "Setup" and
 type "omni" into the Quick Find box, then select "Omni-Channel Settings"
 from the menu.
 
+Note: Presence Sync is not supported for Salesforce Classic Adapters but it is supported for Salesforce Console Adapters. This feature is not turned on by default.
+
 <img src={useBaseUrl('/img/classic/image91.png')} />
 
 Place a check in the checkbox for "Enable Omni-Channel".
@@ -98,8 +100,11 @@ available events are:
 
 -   **Salesforce Agent State Change:** The Salesforce agent's state has
     changed.
+    - If a rule is set up with this event and the new state is set to "Offline", this will not trigger Salesforce Agent Logout
 
--   **Salesforce Agent Logout:** The Salesforce agent has logged out.
+-   **Salesforce Agent Logout:** The Salesforce agent has logged out 
+    - Logging out of Omnichannel does not automatically log you out of Connect or set CCP to offline. If you want this functionality, you will need to set up a Presence Sync rule.
+    - Rules triggered by Salesforce Agent Logout will only work if the rule is set to trigger when Salesforce New Agent Status is equal to the exact value "Offline" (case sensitive without quotes)
 
 -   **Salesforce Work Accepted:** The Salesforce agent has accepted
     work.
@@ -188,4 +193,3 @@ Summary: This rule is triggered when the Connect agent's state is
 changed (Source). If their state is changed to the static value (Operand
 B) "Lunch" (Operand B Value), then the Salesforce Agent's state
 (Destination) is set to Lunch (Value).
-

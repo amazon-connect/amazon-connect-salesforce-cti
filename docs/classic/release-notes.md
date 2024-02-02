@@ -31,6 +31,30 @@ Please **confirm that the application was installed for admins only** (see [inst
 
 **Important:** when upgrading the CTI Adapter, please make sure that the Salesforce Lambdas are also updated to the newest version.
 
+## 5.22 February 2024
+- **Note:** If you wish to use the v5.22 lambdas, you will need to upgrade your CTI Adapter to v5.22. Consult the [compatibility chart](/docs/classic/installation/04-salesforce-lambdas-manual-setup#compatibility-table).
+- **Feature:** Citrix Support: Enabled native VDI support for Citrix. [See Documentation](/docs/lightning/cti-adapter/14-medialess#set-up-for-citrix-vdi-platform).
+- **Feature:** Early Get User Media(GUM): Enabled support for the CCP feature EarlyGUM. [See Documentation](/docs/lightning/cti-adapter/01-cti-adapter-configuration#update-the-cti-adapter-details)
+- **Feature:** MultiChat Management: Provided support for Multi-Chat Management. [See Documentation](/docs/lightning/cti-adapter/11-chat-widget-integration#multichat-management).
+- **Enhancement:** Amazon Q: Amazon Q has undergone a change and goes by a new name. As such, it has been reflected in our documentation. Here is the documentation for [Amazon Q](https://aws.amazon.com/q/)
+- **Enhancement:** Recording Controls: Updated the Recording Controls feature to allow users to specify the Named Credential they want to use per CTI Adapter in the "Recording Named Credential" field. This field will not be use if this feature is enabled. If the feature is enabled but no value is provided, a default value of "AmazonConnectAPI" will be assumed.
+- **Enhancement:** Salesforce Lambdas: 
+  - Provided support for queue names with special characters.
+  - Updated the Salesforce Lambdas to support new fields for Agent Performance, Historic Queue Metrics, and Contact Lens.
+- **Enhancement:** Troubleshooting: Added new section with additional troubleshooting for known problems
+- **Enhancement:** Triggers:
+  - Fixed typo in CCA Case Trigger + CCA Contact Trigger
+- **Enhancement:** Presence Sync:
+  - Clarified in our documentation that Presence Sync is not supported in Salesforce Classic adapters. It's listed under the section for Salesforce classic, so this was done to prevent confusion
+- **Bug Fix:** AC Contact Channels: `InteractionDuration` value will be updated only once after the call ends.
+- **Bug Fix:** Phone numbers: Upgraded the library responsible for formatting numbers to latest version to support calls to more regions.
+- **Bug Fix:** Guided Setup: Improved the process to allowlist user URLs.
+ - **Bug Fix:** Recording Controls: Recording Controls tab will now be visible on the first session load in the user's salesforce instance.
+- **Documentation Change:** Medialess: Created new documentation page for setting up medialess ([Link to page](/docs/lightning/cti-adapter/14-medialess)).
+- **Documentation Change:** Historical Metrics: Added clarifying information to setup historical metrics.
+- **Documentation Change:** Upgrading from an earlier version: Added new documentation on upgrading [Salesforce Lambdas](docs/lightning/installation/05-upgrading-from-an-earlier-version)
+- **Documentation Change:** CTI Flow Blocks: Updated with latest CTI Flow blocks. Added new section about accessing CTI flow block values ([Link to section](/docs/lightning/cti-adapter/03-cti-flows#accessing-cti-flow-block-values)).
+
 ## 5.21.1 November 2023
 
 - **Bug fix:** Google Chrome third party cookie support for GovCloud instances: The v5.21.1 patch includes updated third party cookie support for GovCloud instances. 
@@ -67,7 +91,7 @@ Please **confirm that the application was installed for admins only** (see [inst
 
 ## 5.17 November 2021
 
-- **Feature:** Added the integration with Amazon Connect Wisdom, which delivers articles and article recommendations to agents. See [here](/docs/classic/cti-adapter/13-wisdom-integration) for more details.
+- **Feature:** Added the integration with Wisdom, which delivers articles and article recommendations to agents. See [here](/docs/classic/cti-adapter/13-amazonq-integration) for more details.
 - **Feature:** Added the integration with Voice id, which provides real-time caller authentication. See [here](/docs/classic/cti-adapter/14-voice-id) for more details.
 - **Bug Fix:** Fixed a bug where CTI Actions would only load if you switched overlay tabs. Now they will load immediately.
 - **Bug Fix:** Fixed a few bugs with Contact Attributes Overlay.
@@ -83,7 +107,7 @@ Please **confirm that the application was installed for admins only** (see [inst
 ## 5.16 August 2021
 
 - **Feature:** Added a `callIncomingDuration` field to the `Contact Interaction Metadata` CTI Flow block, which captures the time between the call coming into an agent and it being accepted/missed/declined.
-- **Feature:** Moved the medialess popout page to be an optional feature. Learn how to enabled it [here](/docs/lightning/cti-adapter/01-cti-adapter-configuration#medialess-popout-ccp)
+- **Feature:** Moved the medialess popout page to be an optional feature. Learn how to enabled it [here](/docs/classic/cti-adapter/15-medialess)
 - **Bug Fix:** Fixed an issue where the `callInteractionDuration` would be too large if the call is missed. It is now defaulted to 0 if the call is not picked up.
 - **Bug Fix:** Fixed an issue with the medialess adapter where media was still coming through the adapter and causing audio quality issues. Now, when the medialess option is checked, this will disable the allowFramedSoftphone option in CCP config, and media will not be sent through the CCP embedded on Salesforce.
 - **Bug Fix:** Fixed an issue where Agents couldn't see some CTI Actions if more than 20 CTI Actions are set up. Now, a scroll bar should appear to navigate to all of them.
