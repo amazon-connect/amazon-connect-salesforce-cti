@@ -119,7 +119,7 @@ The command to screenpop a list view.
 ### Screenpop Search
 
 The command to screenpop search results based upon the search input. Not
-to be consued with "Search And Screenpop."
+to be confused with "Search And Screenpop."
 
 ### Screenpop New Record
 
@@ -130,7 +130,7 @@ specified default field values.
 
 This command searches objects specified in the softphone layout for a
 given string. Returns search results and screen pops any matching
-records. Not to be consued with "Screenpop Search."
+records. Not to be confused with "Screenpop Search."
 
 ### Run Apex
 
