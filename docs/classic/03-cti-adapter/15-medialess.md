@@ -26,23 +26,36 @@ The Amazon Connect CTI Adapter enables the operation of a cloud contact center i
 
 ### Set Up for CITRIX VDI Platform
 
-1. Login into your VDI environment.
+CTI Adapter enables agents to leverage Citrix remote desktop applications to offload audio processing to their local device and to automatically redirect audio to CTI Aadpter opened in remote application. In order to know about audio improvement in CCP using VDI, refer to [Amazon Connect audio optimization for Citrix cloud desktops](https://docs.aws.amazon.com/connect/latest/adminguide/using-ccp-vdi-citrix-step-by-step.html). Additionally, refer to [System Requirements](https://docs.aws.amazon.com/connect/latest/adminguide/using-ccp-vdi-citrix-step-by-step.html#using-ccp-vdi-citrix-step-by-step-requirements) for using the Citrix Unitied Communications SDK with Amazon Connect
+ 
 
-2. Log In Salesforce instance 
+Once the Citrix Workspace is ready to use, make the below changes in CTI Adapter which can be used in the workspace. 
 
-3. Open the relevant AC CTI Adapter.
+1. Log in to Salesforce instance 
+
+2. Open the relevant AC CTI Adapter.
 
     a. In the bottom tabs, select the `Features` section and click `New`.
 
 5. Set the `AC Feature Name` to be VDIPlatform
 
-6. Set the `Value` to be Name:CITRIX
+6. Set the `Value` to be `Name:CITRIX`
 
-    a. Ensure that the `Active` checkbox is checked, then hit Save.
+    a. Ensure that the `Active` checkbox is checked, then hit __Save__.
 
-8. Launch the SoftPhone and log in to CCP.
+8. Refresh the browser tab and launch the SoftPhone to log in to CCP.
 
 9. Verify the configuration by initiating a Voice contact. 
+
+<div class="grey-box"> Note that once this feature is active in CTI Adapter, the CCP can be only used in a CITRIX environment, otherwise it will show an error as shown below. 
+
+<img src={useBaseUrl('/img/lightning/ccp-in-vdi-in-local.png')} />
+</div> 
+<div class="grey-box">
+  The Device Settings for the CCP which is opened in a Citrix environment, cannot be managed directly from the CCP level itself. In order to change the device settings for the CCP, for example changing the device input device, it has to be done from the OS level settings</div> 
+<div class="grey-box">
+  A VDI Platform should be set only if the Medialess settings are disabled. Therefore, if you want to set any VDI Platfrom, then disable Medialess from CTI Adapter. Similarly, if you want to use Medialess Settings, then first disable VDI Platfrom Settings from Features </div> 
+
 
 
 ### Set Up for Other VDI Platforms

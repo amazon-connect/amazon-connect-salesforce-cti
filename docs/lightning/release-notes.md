@@ -33,7 +33,7 @@ Please **confirm that the application was installed for admins only** (see [inst
 
 ## 5.22 February 2024
 - **Note:** If you wish to use the v5.22 lambdas, you will need to upgrade your CTI Adapter to v5.22. Consult the [compatibility chart](/docs/lightning/installation/04-salesforce-lambdas-manual-setup#compatibility-table).
-- **Feature:** Citrix Support: Enabled native VDI support for Citrix. [See Documentation](/docs/lightning/cti-adapter/14-medialess#set-up-for-citrix-vdi-platform).
+- **Feature:** Citrix Support: CTI Adapter now provides audio optimization for Citrix Workspace. [See Documentation](/docs/lightning/cti-adapter/14-medialess#set-up-for-citrix-vdi-platform).
 - **Feature:** Early Get User Media(GUM): Enabled support for the CCP feature EarlyGUM. [See Documentation](/docs/lightning/cti-adapter/01-cti-adapter-configuration#update-the-cti-adapter-details)
 - **Feature:** MultiChat Management: Provided support for Multi-Chat Management. [See Documentation](/docs/lightning/cti-adapter/11-chat-widget-integration#multichat-management).
 - **Enhancement:** Amazon Q: Amazon Q has undergone a change and goes by a new name. As such, it has been reflected in our documentation. Here is the documentation for [Amazon Q](https://aws.amazon.com/q/)
