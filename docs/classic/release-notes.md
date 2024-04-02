@@ -32,6 +32,7 @@ Please **confirm that the application was installed for admins only** (see [inst
 **Important:** when upgrading the CTI Adapter, please make sure that the Salesforce Lambdas are also updated to the newest version.
 
 ## 5.22 February 2024
+- **Known Issue in v5.22 - Playback of Connect call recordings on Lightning Task or Case:** If you are utilizing the CTI Adapter's functionality for enabling call recording streaming and playback on the Classic Task or Case page, we recommend not upgrade to CTI Adapter version 5.22 as we have discovered an issue where the playback of the call recording does not work as expected. An upcoming release v5.23 is planned to fix this issue, and hence we advise customers to pause upgrading to v5.22.
 - **Note:** If you wish to use the v5.22 lambdas, you will need to upgrade your CTI Adapter to v5.22. Consult the [compatibility chart](/docs/classic/installation/04-salesforce-lambdas-manual-setup#compatibility-table).
 - **Feature:** Citrix Support: Enabled native VDI support for Citrix. [See Documentation](/docs/lightning/cti-adapter/14-medialess#set-up-for-citrix-vdi-platform).
 - **Feature:** Early Get User Media(GUM): Enabled support for the CCP feature EarlyGUM. [See Documentation](/docs/lightning/cti-adapter/01-cti-adapter-configuration#update-the-cti-adapter-details)

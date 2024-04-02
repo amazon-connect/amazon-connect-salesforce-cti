@@ -3,6 +3,8 @@ id: release-notes
 title: Release Notes
 ---
 
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
 ### Important Notes
 
 #### Google Chrome third-party cookies support
@@ -32,6 +34,18 @@ Please **confirm that the application was installed for admins only** (see [inst
 **Important:** when upgrading the CTI Adapter, please make sure that the Salesforce Lambdas are also updated to the newest version. Also review the [CTI Adapter Installation Troubleshooting and Common Issues](/docs/lightning/installation/06-adapter-installation-troubleshooting) section for known issues and troubleshooting.
 
 ## 5.22 February 2024
+- **Known Issue in v5.22 - Playback of Connect call recordings on Lightning Task or Case:** If you are utilizing the CTI Adapter's functionality for enabling call recording streaming and playback on the Lightning Task or Case page, we recommend not upgrade to CTI Adapter version 5.22 as we have discovered an issue where the playback of the call recording does not work as expected. An upcoming release v5.23 is planned to fix this issue, and hence we advise customers to pause upgrading to v5.22.  If you have upgraded to v5.22, the workaround is to use the [Connect Contact Channel Analytics (CCA)](/docs/lightning/salesforce-lambdas/04-contact-channel-analytics) page to access call recordings. To view recordings associated with a specific task or case, please copy the CallObject property and utilize it as a filter on the contactId field within CCAs.
+
+  In order to view the recordings for a Task, perform the below steps. Note that these are similar for Cases.
+
+  * Ensure Contact Channel Analytics is configured within the Salesforce environment, if not already done. Refer to the CTI Adapter documentation for guidance on setting up CCAs.
+  * Navigate to the task for which you wish to access the recording. Copy the value of the "Call Object Identifier" field from the user interface. For any task to display call recordings, it must have a valid call identifier value. If this field is not visible in the UI, ensure it is added to the Tasks layout. Follow the [provided guide](https://help.salesforce.com/s/articleView?id=sf.admin_local_name_fields_lex.htm&type=5) to add the field to the layout.
+  <img src={useBaseUrl('/img/lightning/v5.22-bug-img2.png')} />
+  * Once you have copied the call identifier object to the clipboard, proceed to the CCA pages and utilize the Salesforce Filter to paste the value, isolating the CCA recording associated for the contact. Click on the CCA record to view the call recording.
+  <img src={useBaseUrl('/img/lightning/v5.22-bug-img3.png')} />
+  <img src={useBaseUrl('/img/lightning/v5.22-bug-img1.png')} />
+
+
 - **Note:** If you wish to use the v5.22 lambdas, you will need to upgrade your CTI Adapter to v5.22. Consult the [compatibility chart](/docs/lightning/installation/04-salesforce-lambdas-manual-setup#compatibility-table).
 - **Feature:** Citrix Support: CTI Adapter now provides audio optimization for Citrix Workspace. [See Documentation](/docs/lightning/cti-adapter/14-medialess#set-up-for-citrix-vdi-platform).
 - **Feature:** Early Get User Media(GUM): Enabled support for the CCP feature EarlyGUM. [See Documentation](/docs/lightning/cti-adapter/01-cti-adapter-configuration#update-the-cti-adapter-details)
