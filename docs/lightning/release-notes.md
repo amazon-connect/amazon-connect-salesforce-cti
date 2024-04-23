@@ -3,6 +3,8 @@ id: release-notes
 title: Release Notes
 ---
 
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
 ### Important Notes
 
 #### Google Chrome third-party cookies support
@@ -30,6 +32,47 @@ The Plan-B deprecation should not affect any current users of the CTI Adapter, a
 Please **confirm that the application was installed for admins only** (see [installation](/docs/lightning/installation/01-installation) for more details). If you did this by accident, then you will have to [manually edit the profiles](/docs/lightning/installation/06-adapter-installation-troubleshooting#how-to-remove-permissions-to-visualforce-pages-apex-classes-for-a-desired-profile) to remove the permissions to the objects and pages created by the app. If you are updating the package, please verify that all users have the proper AC permission set.
 
 **Important:** when upgrading the CTI Adapter, please make sure that the Salesforce Lambdas are also updated to the newest version. Also review the [CTI Adapter Installation Troubleshooting and Common Issues](/docs/lightning/installation/06-adapter-installation-troubleshooting) section for known issues and troubleshooting.
+
+## 5.22 February 2024
+- **Known Issue in v5.22 - Playback of Connect call recordings on Lightning Task or Case:** If you are utilizing the CTI Adapter's functionality for enabling call recording streaming and playback on the Lightning Task or Case page, we recommend not upgrade to CTI Adapter version 5.22 as we have discovered an issue where the playback of the call recording does not work as expected. An upcoming release v5.23 is planned to fix this issue, and hence we advise customers to pause upgrading to v5.22.  If you have upgraded to v5.22, the workaround is to use the [Connect Contact Channel Analytics (CCA)](/docs/lightning/salesforce-lambdas/04-contact-channel-analytics) page to access call recordings. To view recordings associated with a specific task or case, please copy the CallObject property and utilize it as a filter on the contactId field within CCAs.
+
+  In order to view the recordings for a Task, perform the below steps. Note that these are similar for Cases.
+
+  * Ensure Contact Channel Analytics is configured within the Salesforce environment, if not already done. Refer to the CTI Adapter documentation for guidance on setting up CCAs.
+  * Navigate to the task for which you wish to access the recording. Copy the value of the "Call Object Identifier" field from the user interface. For any task to display call recordings, it must have a valid call identifier value. If this field is not visible in the UI, ensure it is added to the Tasks layout. Follow the [provided guide](https://help.salesforce.com/s/articleView?id=sf.admin_local_name_fields_lex.htm&type=5) to add the field to the layout.
+  <img src={useBaseUrl('/img/lightning/v5.22-bug-img2.png')} />
+  * Once you have copied the call identifier object to the clipboard, proceed to the CCA pages and utilize the Salesforce Filter to paste the value, isolating the CCA recording associated for the contact. Click on the CCA record to view the call recording.
+  <img src={useBaseUrl('/img/lightning/v5.22-bug-img3.png')} />
+  <img src={useBaseUrl('/img/lightning/v5.22-bug-img1.png')} />
+
+
+- **Note:** If you wish to use the v5.22 lambdas, you will need to upgrade your CTI Adapter to v5.22. Consult the [compatibility chart](/docs/lightning/installation/04-salesforce-lambdas-manual-setup#compatibility-table).
+- **Feature:** Citrix Support: CTI Adapter now provides audio optimization for Citrix Workspace. [See Documentation](/docs/lightning/cti-adapter/14-medialess#set-up-for-citrix-vdi-platform).
+- **Feature:** Early Get User Media(GUM): Enabled support for the CCP feature EarlyGUM. [See Documentation](/docs/lightning/cti-adapter/01-cti-adapter-configuration#update-the-cti-adapter-details)
+- **Feature:** MultiChat Management: Provided support for Multi-Chat Management. [See Documentation](/docs/lightning/cti-adapter/11-chat-widget-integration#multichat-management).
+- **Enhancement:** Amazon Q: Amazon Q has undergone a change and goes by a new name. As such, it has been reflected in our documentation. Here is the documentation for [Amazon Q](https://aws.amazon.com/q/)
+- **Enhancement:** Recording Controls: Updated the Recording Controls feature to allow users to specify the Named Credential they want to use per CTI Adapter in the "Recording Named Credential" field. This field will not be use if this feature is enabled. If the feature is enabled but no value is provided, a default value of "AmazonConnectAPI" will be assumed.
+- **Enhancement:** Salesforce Lambdas: 
+  - Provided support for queue names with special characters.
+  - Updated the Salesforce Lambdas to support new fields for Agent Performance, Historic Queue Metrics, and Contact Lens.
+- **Enhancement:** Troubleshooting: Added new section with additional troubleshooting for known problems
+- **Enhancement:** Triggers:
+  - Fixed typo in CCA Case Trigger + CCA Contact Trigger
+- **Enhancement:** Presence Sync:
+  - Clarified in our documentation that Presence Sync is not supported in Salesforce Classic adapters. It's listed under the section for Salesforce classic, so this was done to prevent confusion
+- **Bug Fix:** AC Contact Channels: `InteractionDuration` value will be updated only once after the call ends.
+- **Bug Fix:** Phone numbers: Upgraded the library responsible for formatting numbers to latest version to support calls to more regions.
+- **Bug Fix:** Guided Setup: Improved the process to allowlist user URLs.
+- **Bug Fix:** Recording Controls: Recording Controls tab will now be visible on the first session load in the user's salesforce instance.
+- **Documentation Change:** Medialess: Created new documentation page for setting up medialess ([Link to page](/docs/lightning/cti-adapter/14-medialess)).
+- **Documentation Change:** Historical Metrics: Added clarifying information to setup historical metrics.
+- **Documentation Change:** Upgrading from an earlier version: Added new documentation on upgrading [Salesforce Lambdas](docs/lightning/installation/05-upgrading-from-an-earlier-version)
+- **Documentation Change:** CTI Flow Blocks: Updated with latest CTI Flow blocks. Added new section about accessing CTI flow block values ([Link to section](/docs/lightning/cti-adapter/03-cti-flows#accessing-cti-flow-block-values)).
+  
+## 5.21.1 November 2023
+
+- **Bug fix:** Google Chrome third party cookie support for GovCloud instances: The v5.21.1 patch includes updated third party cookie support for GovCloud instances. 
+- **Enhancement:** [Python 3.10 runtime](https://aws.amazon.com/blogs/compute/python-3-10-runtime-now-available-in-aws-lambda/) now available in Amazon Connect Salesforce Lambda package v5.19.7 to address AWS ending support for Python 3.7 in AWS Lambda.
 
 ## 5.21 October 2023
 
@@ -62,7 +105,7 @@ Please **confirm that the application was installed for admins only** (see [inst
 
 ## 5.17 November 2021
 
-- **Feature:** Added the integration with Amazon Connect Wisdom, which delivers articles and article recommendations to agents. See [here](/docs/lightning/cti-adapter/12-wisdom-integration) for more details.
+- **Feature:** Added the integration with Wisdom, which delivers articles and article recommendations to agents. See [here](/docs/lightning/cti-adapter/12-amazonq-integration) for more details.
 - **Feature:** Added the integration with Voice id, which provides real-time caller authentication. See [here](/docs/lightning/cti-adapter/13-voice-id) for more details.
 - **Bug Fix:** Fixed a bug where CTI Actions would only load if you switched overlay tabs. Now they will load immediately.
 - **Bug Fix:** Fixed a few bugs with Contact Attributes Overlay.

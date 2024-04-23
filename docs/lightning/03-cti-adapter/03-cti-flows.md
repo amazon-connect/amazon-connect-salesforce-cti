@@ -15,6 +15,8 @@ Salesforce or Amazon Connect API. Like a JavaScript function, each
 action can take inputs and provide outputs, or returns values, that you
 can use from other actions.
 
+## Create CTI Flow
+
 To create a new CTI Flow, log in into your Salesforce org and go to the
 **Service Console.** Expand the **navigation menu** by selecting the
 down arrow and choose **AC CTI Adapters**.
@@ -130,3 +132,113 @@ To test your flow, go to your **Service Console**, and make a call from
 a number that is in the profile of a Contact. As the call is displayed
 in your CCP dashboard, Salesforce will pop open the contact of the
 caller in a separate tab.
+
+## Accessing CTI Flow Block Values
+
+Internally, CTI flows are organized as JavaScript Object Notation (JSON) objects, and access to them is facilitated through JSON Paths.
+
+### JSON Paths
+
+JSON paths help you find specific data within a JSON structure, similar to giving directions to locate hidden treasure on a map.
+
+Basic Syntax:
+
+* Use dot notation (.) to traverse through object properties.
+* Use square brackets ([]) to index into arrays.
+
+### Accessing Object Properties
+
+Consider this JSON object below:
+```
+{
+  "name": "John",
+  "age": 25,
+  "address": {
+    "city": "New York",
+    "zip": "10001"
+  }
+}
+```
+
+To retrieve the value of the "name" field in this JSON object, you would utilize `$.name`. The same approach applies to accessing the value of "age" through `$.age`. If you wish to access the "city" value, you would use `$.address.city`.
+
+Consider this next JSON Object:
+
+```
+{
+  "fruits": ["apple", "orange", "banana"]
+}
+
+```
+
+To access the different fruits, you should use the following format: `$.fruits[0]` or `$.fruits[2]`. It's important to note that the first element (apple) is accessed with "0" rather than "1" due to arrays starting their indexing from 0.
+
+### Accessing CTI Flow Object Properties
+
+Having covered the fundamental concepts of accessing JSON objects, here is an illustration of a CTI flow JSON:
+
+```
+LogUtils.ts:41 [CTI ADAPTER]: [FLOW] [AC_clickToDialFlow]: actions: {"uid-0":{"success":true,"results":null,"exception":null},"uid-39":{"success":true,"results":{"value":{"number":"+12345678900"}},"exception":null},"uid-29":{"success":true,"results":true,"exception":null},"uid-16":{"success":true,"results":{"value":"+12345678900"},"exception":null},"uid-54":{"success":true,"results":{"endpointARN":null,"endpointId":null,"type":"phone_number","name":null,"phoneNumber":"+12345678900","agentLogin":null,"queue":null},"exception":null},"uid-44":{"success":true,"results":null,"exception":null},"uid-18":{"success":true,"exception":null}, uid-17":{“success”:true,“results”:{“value”:{“type”:“Task”,“Id”:null,“CustomField__c”:“RandomMessage”}, "uid-20":{"success":true,"results":null,"exception":null}}}}
+```
+
+It is presented in this format typically, but for this demo, it will be more convenient to conceptualize it like this (condensed for brevity):
+
+```
+{
+   "actions":{
+      "uid-39":{
+         "success":true,
+         "results":{
+            "value":{
+               "number":"+12345678900“
+            }
+         },
+         "exception":null
+      },
+      "uid-29":{
+         "success":true,
+         "results":true,
+         "exception":null
+      },
+      "uid-54":{
+         "success":true,
+         "results":{
+            "endpointARN":null,
+            "endpointId":null,
+            "type":"phone_number",
+            "name":null,
+            "phoneNumber":"+12345678900",
+            "agentLogin":null,
+            "queue":null
+         },
+         "exception":null
+      },
+      "uid-17": {
+         "success":true,
+         "results": {
+            "value": {
+               "type":"Task",
+               "Id":null,
+               "CustomField__c":"RandomMessage"
+            },
+          }
+      }
+   }
+}
+```
+
+Similar to the approach used for accessing values in smaller JSON objects, you can apply the same methodology here. To retrieve the phone number in the CTI flow block with "uid-54," you can use the following syntax: `$.actions.uid-54.results.phoneNumber`.
+
+For certain CTI flow blocks, the return values can be more intricate. Take, for instance, the CTI flow block with "uid-17," which generates a Task record in Salesforce. To access the values `type`, `Id`, or `CustomField__c`, you need to use the format: `$.actions.uid-17.results.value.[0].CustomField__c`. The use of "[0]" is essential in this case, as the particular CTI flow block can return multiple Task objects stored as an array.
+
+Note: It's crucial to verify the return values of a CTI flow object before attempting to access its value, as not every CTI flow block returns a value. Otherwise, you may receive `undefined`, indicating the requested value does not exist.
+
+### Why Would I Use This?
+
+In most instances, direct access to CTI flow values is unnecessary, as return values are selectable through a dropdown menu in the CTI flow block. 
+
+However, for scenarios where the dropdown menu is inaccessible, such as with CTI flow blocks like "Send Data to CCP Overlay," accessing the value directly becomes more practical.
+
+<img src={useBaseUrl('/img/shared/JSONAccess1.png')} />
+
+<img src={useBaseUrl('/img/shared/JSONAccess2.png')} />
