@@ -12,7 +12,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
   <img src={useBaseUrl("/img/lightning/image1.png")} />
 </p>
 
-<h3 align="center">July, 2023</h3>
+<h3 align="center">February, 2024</h3>
 
 *© Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved. SPDX-License-Identifier: CC-BY-SA-4.0*
 
@@ -38,6 +38,12 @@ Lightning. It covers the installation, configuration, and operation of
 the two primary components of the integration: the Amazon Connect CTI
 Adapter for Salesforce and the AWS Serverless Application Repository for
 Amazon Connect Salesforce integration.
+
+#### Salesforce Lambda Versions
+
+The Amazon Connect CTI Integration consists of two components - A salesforce package we refer to as the CTI Adapter, and an AWS Serverless application, which contain a set of lambdas to be deployed to your AWS environment. For more information on the lambdas, [visit here](https://github.com/amazon-connect/amazon-connect-salesforce-lambda).
+
+The version of the Lambdas and the version of the CTI Adapter may differ as they are two separate packages. If a specific version of the lambdas package is needed to run with the CTI Adapter and vice versa, it will be stated [here](/docs/classic/installation/04-salesforce-lambdas-manual-setup#compatibility-table).
 
 ## License Summary
 

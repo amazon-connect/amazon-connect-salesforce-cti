@@ -1,6 +1,6 @@
 ---
 id: 01-cti-adapter-configuration
-title: CTI Adapter Details
+title: CTI Adapter Configuration
 ---
 
 import useBaseUrl from "@docusaurus/useBaseUrl";
@@ -12,7 +12,7 @@ and supervisors that will be using the platform.
 
 <img src={useBaseUrl('/img/lightning/image113.png')} />
 
-#### Update the CTI Adapter Details
+## CTI Adapter Details
 
 1.  **CTI Adapter Name:** provide a unique name for this CTI adapter
     definition
@@ -50,32 +50,27 @@ and supervisors that will be using the platform.
     separate CCP. Selecting the medialess option will configure the
     Salesforce CCP to run in medialess mode, which provides the data
     that Salesforce needs for screenpop while the audio is streamed to a
-    local CCP.
+    local CCP. [See more information here](/docs/lightning/cti-adapter/14-medialess)
 
 9.  **Presence Sync Enabled:** This setting allows the adapter to use
     the presence rules to sync state from Amazon Connect to Salesforce
     Omni-Channel.
 
-10. **Audio Device Settings** Turning this setting on allows the Agent 
+10. **Early Get User Media (GUM)**: When enabled, the CCP will capture the agent's 
+    browser microphone media stream before the contact arrives to reduce the call setup latency. If disabled, CCP will only capture agent media stream after the contact arrives.
+
+    Note: Enabling this feature may lead to draining in wireless headset batteries and/or impacted music/video audio quality when the agent is not on the call. [Link to streams documentation](https://github.com/amazon-connect/amazon-connect-streams/blob/master/Documentation.md#initialization) 
+
+11. **Audio Device Settings** Turning this setting on allows the Agent 
     to setup a custom audio device for their speaker, microphone and 
     ringer in the adapter (Speaker and Ringer settings not available on Firefox). 
     You may have to add this field to the layout manually. [See troubleshooting](/docs/lightning/installation/06-adapter-installation-troubleshooting).
 
-11. **Phone Type Settings** Turning this setting on allows the Agent to 
+12. **Phone Type Settings** Turning this setting on allows the Agent to 
     change their Phone Type in the CCP. You may have to add this field to 
     the layout manually. [See troubleshooting](/docs/lightning/installation/06-adapter-installation-troubleshooting).
 
-#### Medialess Popout CCP
-To enable a popout CCP for agents to use, you need to enable it using `Features`. 
-
-1. Open the CTI Adapter that you have medialess enabled on.
-2. In the bottom tabs, select the `Features` section and click `New`.
-3. Set the `AC Feature Name` to be **EnableMedialessPopout**
-4. Set the `Value` to be **Enabled:true**
-5. Ensure that the `Active` checkbox is checked, then hit Save.
-6. Now refresh your page, and you should see the a popup created, which you can use to handle media.
-
-### Single Sign On Settings
+## Single Sign On Settings
 
 The Amazon Connect CTI Adapter supports single sign on(SSO) via SAML
 integration. This allows customers that use a SAML provider for
@@ -105,7 +100,7 @@ login the agent.
 
 > **Note: With the new Amazon Connect instance urls (`*.my.connect.aws`) you must put the full URL into the `Amazon Connect Instance` field in the AC CTI Adapter record for SSO to work. Ex: using `https://myinstance.my.connect.aws` instead of `my instance`.**
 
-#### Identify the SSO URL components
+### Identify the SSO URL components
 
 In order to authenticate with Amazon Connect, you need your IdP login
 URL from your SAML provider and a relay state URL that will redirect the
@@ -118,7 +113,7 @@ The 'RelayState' will be in the following format (replace `us-west-2` with the r
 
 <pre>https://us-west-2.console.aws.amazon.com/connect/federate/<b>InstanceId</b>?destination=%2Fconnect%2Fccp</pre>
 
-#### Configure the CTI Lightning Adapter in Salesforce
+### Configure the CTI Lightning Adapter in Salesforce
 
 Now we are ready to complete the last step in the configuration process:
 Adding the SSO settings to the Lightning Adapter. This will configure

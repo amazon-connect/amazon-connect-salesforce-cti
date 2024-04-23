@@ -90,7 +90,7 @@ your Service Console, you need to allowlist two (2) domains for your org
 with Amazon Connect. This allows for cross domain access to the
 underlying resources required for the CCP to function.
 
-1.  Log in into your Salesforce org and go to **Setup**
+1.  Log in into your Salesforce org and go to **Setup** -> **My Domain**
 
 2.  Copy the entire URL of this page and past it to a text document.
 
@@ -129,12 +129,8 @@ underlying resources required for the CCP to function.
 10. Select + Add origin
 
 11. In the Enter origin URL field, enter the URL of the page that you
-    copied in step 2. Only enter the url through the .com. If you are
-    on the "enhanced domains" update, then your url will match the
-    following format:
-    <pre>https://XXXXXXXX.sandbox.lightning.force.com</pre>
-    otherwise, it will match the following format:
-    <pre>https://XXXXXXXX.lightning.force.com</pre>
+    copied in step 2. The URL can vary depending on the instance due to a setting 
+    named "enhanced domain". You should copy and paste the domain name URL into the field. 
 
 12. Select Add. You should see your org domain listed in the Approved
     origins section.
@@ -144,12 +140,9 @@ underlying resources required for the CCP to function.
 13. Select + Add origin
 
 14. In the Enter origin URL field, enter the URL of the visualforce page
-    that you copied in step 5. Only enter the url through the .com. If you are
-    on the "enhanced domains" update, then your url will match the
-    following format:
-    <pre>https://XXXXXXXX--amazonconnect.sandbox.vf.force.com</pre>
-    otherwise, it will match the following format:
-    <pre>https://XXXXXXXX--amazonconnect.visualforce.com</pre>
+    that you copied in step 5. Only enter the url through the .com. The URL can vary 
+    depending on the instance due to a setting named "enhanced domain". You should copy 
+    and paste the visual force page domain URL into the field. 
 
 15. Select Add. You should see your org domain listed in the Approved
     origins section
@@ -431,4 +424,3 @@ functionality that is provided with the CTI adapter.
 
 8.  The new contact should automatically pop-up as it has been
     recognized by incoming phone number.
-

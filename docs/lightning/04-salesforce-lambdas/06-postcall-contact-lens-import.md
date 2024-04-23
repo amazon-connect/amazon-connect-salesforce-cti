@@ -35,7 +35,7 @@ Once enabled during the installation of AWS Serverless Application (Amazon Conne
 
 <img src={useBaseUrl('/img/lightning/contactlenslambda-1.png')} />
 
-9. In Trigger congiguration, select S3 from the dropdown list
+9. In Trigger configuration, select S3 from the dropdown list
 
 <img src={useBaseUrl('/img/lightning/image188.png')} />
 

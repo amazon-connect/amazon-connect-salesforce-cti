@@ -82,6 +82,22 @@ functionality depending on the event source.
 
 <a target="_blank" href={useBaseUrl('/json/cti-flow-examples/shared/10-Create+Callback+Task.json')} download="10-Create+Callback+Task.json">Download</a>
 
+### Create a Record on Chat Connected and Screenpop
+
+**Source**: Amazon Connect Chat Contact
+
+**Event**: onConnected
+
+<a target="_blank" href={useBaseUrl('/json/cti-flow-examples/shared/11-SalesforceContactCreation.json')} download="11-SalesforceContactCreation.json">Download</a>
+
+### Screenpop Chat Contact on View
+
+**Source**: Amazon Connect Chat Contact
+
+**Event**: onViewContact
+
+<a target="_blank" href={useBaseUrl('/json/cti-flow-examples/shared/12-ScreenPopContact-MultiChat.json')} download="12-ScreenPopContact-MultiChat.json">Download</a>
+
 ### Default CTI Flows
 
 The following zip file includes default flows, which are automatically
