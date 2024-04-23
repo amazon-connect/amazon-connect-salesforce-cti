@@ -179,9 +179,9 @@ Before you create the ExecuteAwsService Named Credential, **confirm that the app
 
 7. Navigate to your setup section of your Salesforce instance, and search for *Named Credentials*.
 
-<img src={useBaseUrl('/img/shared/installation4.png')} />
+<img src={useBaseUrl('/img/shared/installation_legacy_NC.png')} />
 
-8. Select **New Named Credential**. For the values in the next screen, enter the following:
+8. Select **New Legacy**. For the values in the next screen, enter the following:
 
 - **Label**: ExecuteAwsService
 - **URL**: ```https://lambda.{insert AWS region}.amazonaws.com/2015-03-31/functions/{insert lambda function name (copied above)}/invocations```

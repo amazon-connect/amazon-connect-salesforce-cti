@@ -14,7 +14,7 @@ test this function, please refer to the section [Configure Salesforce Omnichanne
 
 NOTE: In order for Presence Sync to work, the CTI Adapter must be
 configured to allow it. See [CTI Adapter Details](/docs/lightning/cti-adapter/01-cti-adapter-configuration)
-for more information.
+for more information. This feature is not turned on by default.
 
 NOTE: After Salesforce Winter ’22 Release, users need to have View Setup and Configuration OR View DeveloperName permission via a profile or permission set to use this feature. See [New Permission Requirements for DeveloperName Field](https://help.salesforce.com/s/articleView?id=000362829&type=1) for more information.
 
@@ -26,8 +26,11 @@ available events are:
 
 -   **Salesforce Agent State Change:** The Salesforce agent's state has
     changed.
+    - If a rule is set up with this event and the new state is set to "Offline", this will not trigger Salesforce Agent Logout
 
--   **Salesforce Agent Logout:** The Salesforce agent has logged out.
+-   **Salesforce Agent Logout:** The Salesforce agent has logged out 
+    - Logging out of Omnichannel does not automatically log you out of Connect or set CCP to offline. If you want this functionality, you will need to set up a Presence Sync rule.
+    - Rules triggered by Salesforce Agent Logout will only work if the rule is set to trigger when Salesforce New Agent Status is equal to the exact value "Offline" (case sensitive without quotes)
 
 -   **Salesforce Work Accepted:** The Salesforce agent has accepted
     work.

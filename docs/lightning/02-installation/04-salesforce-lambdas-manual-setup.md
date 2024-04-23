@@ -383,6 +383,85 @@ retrieve secrets.
 
 ### Install the Amazon Connect Salesforce Lambda package
 
+#### Compatibility Table
+
+The following table instructs users on the best CTI Adapter version to 
+use with the corresponding lambda version. If a minor version for the CTI Adapter is not 
+listed (ex. v5.21.1), it will be grouped with with its major version unless otherwise specified
+
+<table>
+  <tr>
+    <th>CTI Adapter Version</th>
+    <th>Lambda Version</th>
+  </tr>
+  <tr>
+    <td>v5.22</td>
+    <td>v5.22</td>
+  </tr>
+  <tr>
+    <td>v5.21</td>
+    <td>v5.19 - v5.19.7</td>
+  </tr>
+  <tr>
+    <td>v5.20</td>
+    <td>v5.19 - v5.19.7</td>
+  </tr>
+  <tr>
+    <td>v5.19</td>
+    <td>v5.19 - v5.19.7</td>
+  </tr>
+  <tr>
+    <td>v5.18</td>
+    <td>v5.18</td>
+  </tr>
+  <tr>
+    <td>v5.17</td>
+    <td>v5.17</td>
+  </tr>
+  <tr>
+    <td>v5.16</td>
+    <td>v5.16</td>
+  </tr>
+  <tr>
+    <td>v5.15</td>
+    <td>v5.15</td>
+  </tr>
+  <tr>
+    <td>v5.14</td>
+    <td>v5.14</td>
+  </tr>
+  <tr>
+    <td>v5.13</td>
+    <td>v5.13</td>
+  </tr>
+  <tr>
+    <td>v5.12</td>
+    <td>v5.11 - v5.12</td>
+  </tr>
+  <tr>
+    <td>v5.11</td>
+    <td>v5.11 - v5.12</td>
+  </tr>
+  <tr>
+    <td>v5.10</td>
+    <td>v5.10</td>
+  </tr>
+  <tr>
+    <td>v5.9</td>
+    <td>v5.9</td>
+  </tr>
+  <tr>
+    <td>v5.7</td>
+    <td>v5.7 - v5.8</td>
+  </tr>
+  <tr>
+    <td>v5.6</td>
+    <td>v5.7 - v5.8</td>
+  </tr>
+</table>
+
+#### Instructions
+
 1.  In a new browser tab, login to the [AWS
     console](https://console.aws.amazon.com/)
 

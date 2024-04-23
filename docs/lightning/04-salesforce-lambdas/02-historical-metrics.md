@@ -34,6 +34,12 @@ Lambda function included in the AWS Serverless Repository for
 Salesforce. This function will process the report and import the data to
 Salesforce.
 
+NOTE: 
+
+Each CTI adapter release will only be able to support a subset of all of the metrics available as new metrics are continuously being added by Connect after CTI adapter releases have already been released to the public. 
+
+When migrating from an older version of the CTI Adapter (At least earlier than v4.5), users may notice that `ACSFCCP_HistoricalReportData` is no longer being updated/populated. We have moved away from using this object but because Salesforce does not allow objects to be deleted, customers may still have these object types present in their Salesforce instance.
+
 #### Configuring the Historical Reports in Amazon Connect
 
 1.  Login to your Amazon Connect instance as an Administrator
@@ -64,6 +70,8 @@ Salesforce.
 7.  Select the **Metrics** Tab.
 
 8.  Select ALL selectable options
+
+    a. Note: With each release, we support a subset of the fields given. If you see an `INVALID_FIELD` error in your Lambda Cloudwatch (with the "Adherence__c" field for example), the selectable option for that field was most likely added after we released a new version.
 
 9.  Select **Apply**
 
@@ -123,6 +131,10 @@ Salesforce.
     c.  Time Range: Last 24 Hours
 
 22. Leave the **Groupings** and **Filters** tabs set to their defaults
+    
+    a. If you do decide to modify the groupings, be sure to keep Intervals as a grouping. We use this internally to categorize the reports on the Salesforce side
+    
+    - <img src={useBaseUrl('/img/lightning/SFMetricsIntervalGrouping.png')} />
 
 23. Select the **Metrics** Tab.
 
