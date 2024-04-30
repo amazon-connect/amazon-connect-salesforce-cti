@@ -219,13 +219,42 @@ configuration, you add users to the Call Center to provide access to it.
 triggers in the package, which you can configure to meet your needs. You
 can change these whenever you would like to. For more details, see below
 
-These are options we provide that allow you to toggle certain functionality in the adapter.
+#### These are options we provide that allow you to toggle certain functionality in the adapter.
 - CCA Case Trigger - This trigger looks for any ContactChannelAnalytics records that could be related to a updated/inserted Case, and creates a relationsihp between the two records. This trigger uses batching to process the update requests.
 - CCA Contact Trigger - This trigger looks for any ContactChannelAnalytics records that could be related to a updated/inserted Contact, and creates a relationsihp between the two records. This trigger uses batching to process the update requests.
 - Case Contact CCA Trigger - This trigger looks for any Case/Contact records that could be related to an updated/inserted ContactChannelAnalytics record, and creates a relationsihp between the records.
 - Task Trigger - This trigger creates a ContactChannel record for any inserted/updated task that with a `CallObject` field that does not currently have a ContactChannel record created before.
 
+
 6.  Select **Save**
+
+##### Configure the Scheduler for Batch processing for triggers
+
+The execution time for triggers that run in batches (refer the list above) can be managed using a cron-job scheduler in CTI Adapter. The scheduler allows you to configure the frequency at which triggers will execute in batches. By default, this job will run every hour. It's important to note that Salesforce's Lightning Platform has existing limits on lightning platforms, which you should consider when scheduling your apex batch jobs to avoid exceeding these constraints. For instance, there is a maximum limit of 100 concurrent Apex classes that can be scheduled (please refer to the [Salesforce documentation](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_gov_limits.htm#in_topic_non_transactional_gov_limits_section) for the latest limits). Therefore, if you anticipate more than 100 batch Apex executions per hour to fulfill all the associations from the triggers, you may need to increase the batch execution frequency accordingly. In order to setup the processing of these jobs, follow the below steps: 
+
+1. From the _Setup_, go to _Object Manager_, and click on _AC CTI Adapter_. 
+<img src={useBaseUrl('/img/lightning/cti_adapter_object.png')} />
+
+2. From the left navigation menu, select _Buttons, Links, and Actions_ and click on _New Action_.
+<img src={useBaseUrl('/img/lightning/create_new_action_one .png')} />
+
+3. In the Action Type, select _Lightning Component_. A drop down for lightning component will appear from which, select `amazonconnect:AC_ToggleScheduleBatchJob`.
+<img src={useBaseUrl('/img/lightning/create_new_action_two.png')} />
+
+4. Provide the Label to the action as `Schedule Batch Job` and click on _Save_.
+5. Click the _Page Layouts_ and select the current layout used for displaying CTI Adapter. The default layout provided currently is _AC CTI Adapter Layout - August 2020_. 
+6. In the page layout edit view, under _Salesforce Mobile and Lightning Experience Actions_, enable the option to _override the predefined actions_.
+<img src={useBaseUrl('/img/lightning/override_lightning_action.png')} />
+
+7. From the _Mobile and Lightning Actions_, drag the newly created action to the lightning experience actions section, and save the layout.
+<img src={useBaseUrl('/img/lightning/drag_scheduler.png')} />
+
+8. In the _Service Console_, under the _AC CTI Adapters_ from the menu, choose the `ACLightningAdapter` value been used in your Salesforce environment.
+9. From the drop down on the top right of the Cti Adapter, click on the newly created action _Schedule Batch Job_.
+<img src={useBaseUrl('/img/lightning/toggle_scheduler.png')} />
+
+10. A pop up will open that allows you to set the schedule for the batch jobs to run. If required, you can use any available cron generator (such as [this](https://crontab.cronhub.io/)) to create a cron job schedule.
+11. Finally, click on _Start Scheduled Job For Batching_ to save the schedule and start the batch jobs.
 
 #### Create the Softphone Layout
 

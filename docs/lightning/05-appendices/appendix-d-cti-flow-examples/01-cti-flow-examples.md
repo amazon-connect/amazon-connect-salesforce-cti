@@ -23,7 +23,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 ### Click-to-Dial 
 
-**Source**: Amazon Connect Chat Contact
+**Source**: Salesforce UI
 
 **Event**: onClickToDial
 
