@@ -33,6 +33,12 @@ Please **confirm that the application was installed for admins only** (see [inst
 
 **Important:** when upgrading the CTI Adapter, please make sure that the Salesforce Lambdas are also updated to the newest version. Also review the [CTI Adapter Installation Troubleshooting and Common Issues](/docs/lightning/installation/06-adapter-installation-troubleshooting) section for known issues and troubleshooting.
 
+## 5.23 May 2024
+- **Enhancement:** Added Scheduler for batch processing of triggers ([Link to Documentation](/docs/lightning/installation/03-managed-package-manual-setup#configure-the-schedule-for-batch-jobs-for-triggers))
+- **Enhancement:** A new value for Initiation method of a contact 'EXTERNAL_OUTBOUND` added as an item in the picklist for Contact Trace Records ([Link to AWS Documentaton](https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html)). 
+- **Bug Fix:** Fixed the issue of Call Recordings not being rendered on Tasks and Cases pages.
+- **Bug Fix:** Fixed infinite buffering of Contact Lens Data on the Contact Channel Analytics page.
+
 ## 5.22 February 2024
 - **Known Issue in v5.22 - Playback of Connect call recordings on Lightning Task or Case:** If you are utilizing the CTI Adapter's functionality for enabling call recording streaming and playback on the Lightning Task or Case page, we recommend not upgrade to CTI Adapter version 5.22 as we have discovered an issue where the playback of the call recording does not work as expected. An upcoming release v5.23 is planned to fix this issue, and hence we advise customers to pause upgrading to v5.22.  If you have upgraded to v5.22, the workaround is to use the [Connect Contact Channel Analytics (CCA)](/docs/lightning/salesforce-lambdas/04-contact-channel-analytics) page to access call recordings. To view recordings associated with a specific task or case, please copy the CallObject property and utilize it as a filter on the contactId field within CCAs.
 
@@ -49,7 +55,7 @@ Please **confirm that the application was installed for admins only** (see [inst
 - **Note:** If you wish to use the v5.22 lambdas, you will need to upgrade your CTI Adapter to v5.22. Consult the [compatibility chart](/docs/lightning/installation/04-salesforce-lambdas-manual-setup#compatibility-table).
 - **Feature:** Citrix Support: CTI Adapter now provides audio optimization for Citrix Workspace. [See Documentation](/docs/lightning/cti-adapter/14-medialess#set-up-for-citrix-vdi-platform).
 - **Feature:** Early Get User Media(GUM): Enabled support for the CCP feature EarlyGUM. [See Documentation](/docs/lightning/cti-adapter/01-cti-adapter-configuration#update-the-cti-adapter-details)
-- **Feature:** MultiChat Management: Provided support for Multi-Chat Management. [See Documentation](/docs/lightning/cti-adapter/11-chat-widget-integration#multichat-management).
+- **Feature:** Trigger multi-contact chat events: CTI Adapter enables users to trigger events on selected contact while handling multiple chats simultaneously. [See Documentation](cti-adapter/11-chat-widget-integration#trigger-multi-contact-chat-events).
 - **Enhancement:** Amazon Q: Amazon Q has undergone a change and goes by a new name. As such, it has been reflected in our documentation. Here is the documentation for [Amazon Q](https://aws.amazon.com/q/)
 - **Enhancement:** Recording Controls: Updated the Recording Controls feature to allow users to specify the Named Credential they want to use per CTI Adapter in the "Recording Named Credential" field. This field will not be use if this feature is enabled. If the feature is enabled but no value is provided, a default value of "AmazonConnectAPI" will be assumed.
 - **Enhancement:** Salesforce Lambdas: 

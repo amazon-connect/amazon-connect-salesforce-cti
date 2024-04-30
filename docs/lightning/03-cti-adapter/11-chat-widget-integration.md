@@ -248,9 +248,9 @@ Note: If you want to setup chat widget for authorized user group only, you could
 *** Verify the change:***
 Open your published website in a incognito window, you should be able to use chat widget to chat as a customer and chat to your agent without login
 
-## MultiChat Management
+## Trigger multi-contact chat events
 
-The Amazon Connect CTI Adapter enables Agents concurrently managing multiple Chat contacts efficiently. In the process of handling multiple Chat contacts, Agents need to switch between these chat contacts. With help of the MultiChat Management feature, agents will able to easily identify the contact while switching.
+The Amazon Connect CTI Adapter enables Agents concurrently managing multiple Chat contacts efficiently. In the process of handling multiple chat contacts, agents need to switch between these chat contacts, and they will be able to trigger events on the selected contact. 
 
 The Amazon Connect CTI Adapter provides a CTI Flow Event called "onViewContact" specifically designed for the "Amazon Connect Chat Contact" CTI Flow Source. It is available in versions v5.22+. With this event, when agents navigate between multiple chat contacts, the associated CTI Flow can be triggered. For example, a CTI Flow attached to Source : "Amazon Connect Chat Contact" | Event : "onViewContact" can be enabled to execute a ScreenPop action, revealing a related Salesforce object linked to the active Chat contact. Consequently, as agents switch between Chat contacts, the respective object for the ongoing chat will automatically open in the background within the Salesforce window. This functionality serves as a valuable identifier for the currently active Chat contact, enhancing the agent's workflow and efficiency.
  
