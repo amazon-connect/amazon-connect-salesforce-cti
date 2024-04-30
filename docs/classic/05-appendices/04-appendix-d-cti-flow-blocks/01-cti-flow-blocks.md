@@ -119,7 +119,7 @@ The command to screenpop a list view.
 ### Screenpop Search
 
 The command to screenpop search results based upon the search input. Not
-to be consued with "Search And Screenpop."
+to be confused with "Search And Screenpop."
 
 ### Screenpop New Record
 

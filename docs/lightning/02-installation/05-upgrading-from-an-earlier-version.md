@@ -91,6 +91,11 @@ If you are upgrading from an earlier version of CTI Adapter, there are a
 few additional things you need to do.
 
 ### AC CTI Adapter
+
+<div class ="grey-box">
+Note that if the page layout assigned is already <b>AC CTI Adapter Layout - August 2020</b>, then you do not need to follow below steps, and can move to <a href="05-upgrading-from-an-earlier-version#ac-cti-script">next section</a>
+</div>
+
 1.  Go to the **Setup** section and search for **Object Manager**.
 
 2.  In Object Manager section, search for "AC CTI"
@@ -133,7 +138,11 @@ few additional things you need to do.
 <img src={useBaseUrl('/img/lightning/image108.png')} />
 
 ### AC CTI Script
-Now we are going to do the same thing for **AC CTI Script Layout**.
+We will now change the layout for **AC CTI Script Layout**.
+
+<div class="grey-box">
+Note that you only need to perform the following steps if you are upgrading from 4.XX to 5.XX
+</div>
 
 1.  Open up **AC CTI Script Layout**
 
