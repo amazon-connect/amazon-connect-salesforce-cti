@@ -8,6 +8,11 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 If you are upgrading from an earlier version of CTI Adapter, there are a
 few additional things you need to do.
 
+<div class ="grey-box">
+<b>Note that you need to perform the following steps only if you are upgrading from 4.XX to 5.XX.</b>
+</div>
+
+
 1.  Go to the **Setup** section and search for **Object Manager**.
 
 2.  In Object Manager section, search for "AC CTI"

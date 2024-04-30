@@ -26,7 +26,7 @@ functionality depending on the event source.
 
 ### Click-to-Dial 
 
-**Source**: Amazon Connect Chat Contact
+**Source**: Salesforce UI
 
 **Event**: onClickToDial
 
