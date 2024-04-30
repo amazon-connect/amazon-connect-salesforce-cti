@@ -230,7 +230,7 @@ can change these whenever you would like to. For more details, see below
 
 ##### Configure the Scheduler for Batch processing for triggers
 
-The execution time for triggers that run in batches (refer the list above) can be managed using a cron-job scheduler in CTI Adapter. In order to setup the processing of these jobs, follow the below steps: 
+The execution time for triggers that run in batches (refer the list above) can be managed using a cron-job scheduler in CTI Adapter. The scheduler allows you to configure the frequency at which triggers will execute in batches. By default, this job will run every hour. It's important to note that Salesforce's Lightning Platform has existing limits on lightning platforms, which you should consider when scheduling your apex batch jobs to avoid exceeding these constraints. For instance, there is a maximum limit of 100 concurrent Apex classes that can be scheduled (please refer to the [Salesforce documentation](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_gov_limits.htm#in_topic_non_transactional_gov_limits_section) for the latest limits). Therefore, if you anticipate more than 100 batch Apex executions per hour to fulfill all the associations from the triggers, you may need to increase the batch execution frequency accordingly. In order to setup the processing of these jobs, follow the below steps: 
 
 1. From the _Setup_, go to _Object Manager_, and click on _AC CTI Adapter_. 
 <img src={useBaseUrl('/img/lightning/cti_adapter_object.png')} />
@@ -255,8 +255,6 @@ The execution time for triggers that run in batches (refer the list above) can b
 
 10. A pop up will open that allows you to set the schedule for the batch jobs to run. If required, you can use any available cron generator (such as [this](https://crontab.cronhub.io/)) to create a cron job schedule.
 11. Finally, click on _Start Scheduled Job For Batching_ to save the schedule and start the batch jobs.
-
-The scheduler allows you to configure the frequency at which triggers will execute in batches. By default, this job will run every hour. It's important to note that Salesforce's Lightning Platform has existing limits on lightning platforms, which you should consider when scheduling your apex batch jobs to avoid exceeding these constraints. For instance, there is a maximum limit of 100 concurrent Apex classes that can be scheduled (please refer to the [Salesforce documentation](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_gov_limits.htm#in_topic_non_transactional_gov_limits_section) for the latest limits). Therefore, if you anticipate more than 100 batch Apex executions per hour to fulfill all the associations from the triggers, you may need to increase the batch execution frequency accordingly.
 
 #### Create the Softphone Layout
 

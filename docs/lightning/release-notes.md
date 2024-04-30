@@ -34,7 +34,7 @@ Please **confirm that the application was installed for admins only** (see [inst
 **Important:** when upgrading the CTI Adapter, please make sure that the Salesforce Lambdas are also updated to the newest version. Also review the [CTI Adapter Installation Troubleshooting and Common Issues](/docs/lightning/installation/06-adapter-installation-troubleshooting) section for known issues and troubleshooting.
 
 ## 5.23.3 July 2024
-- **Enhancement:** Added Scheduler for batch processing of triggers ([Link to Documentation](/docs/lightning/installation/03-managed-package-manual-setup#configure-the-schedule-for-batch-jobs-for-triggers))
+- **Enhancement:** Added cron-job scheduler for batch processing of triggers ([Link to Documentation](/docs/lightning/installation/03-managed-package-manual-setup#configure-the-schedule-for-batch-jobs-for-triggers))
 - **Enhancement:** A new value for Initiation method of a contact 'EXTERNAL_OUTBOUND` added as an item in the picklist for Contact Trace Records ([Link to AWS Documentaton](https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html)). 
 - **Bug Fix:** Fixed the issue of Call Recordings not being rendered on Tasks and Cases pages.
 - **Bug Fix:** Fixed infinite buffering of Contact Lens Data on the Contact Channel Analytics page.
