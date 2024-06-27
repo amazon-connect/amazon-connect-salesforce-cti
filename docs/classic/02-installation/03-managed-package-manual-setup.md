@@ -167,9 +167,9 @@ AC_ConsoleAdapter page.
 
 Click on the **Preview** button. A new browser tab will open with the
 URL of this page. If you are using the "enhanced domains" update, it will be in this format:
-<pre>https://XXXXXXXX--amazonconnect.sandbox.vf.force.com/AC_ConsoleAdapter</pre>
+<pre>https://XXXXXXXX--amazonconnect.sandbox.vf.force.com/AC_ClassicAdapter</pre>
 Otherwise, it will be in this format:
-<pre>https://XXXXXXXX--amazonconnect.visualforce.com/apex/AC_ConsoleAdapter</pre>
+<pre>https://XXXXXXXX--amazonconnect.visualforce.com/apex/AC_ClassicAdapter</pre>
 
 This is what we are going to use as "Origin URL" in our Amazon Connect
 configuration. From AWS Console, select Amazon Connect service and then
