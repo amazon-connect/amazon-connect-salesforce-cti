@@ -40,7 +40,6 @@ This feature can sometimes cause issues if an existing contact flow manages call
 ## Recording Named Credential
 
 Starting with version v5.23.3, you now have an area in the CTI Adapter to specify the recording Named Credential you wish to use with the adapter. Follow the instructions in the "Setup" section above to create the Named Credentials. Once you have the names for the Named Credentials, add them directly to the Adapters you wish to use.
-Starting with version v5.23.3, you now have an area in the CTI Adapter to specify the recording Named Credential you wish to use with the adapter. Follow the instructions in the "Setup" section above to create the Named Credentials. Once you have the names for the Named Credentials, add them directly to the Adapters you wish to use.
 
 ** CTI Adapter Named Credential Location: ** 
 <img src={useBaseUrl('/img/lightning/ctiadapterGR-1.png')} />
