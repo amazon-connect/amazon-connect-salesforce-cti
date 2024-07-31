@@ -7,7 +7,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 Below are manual setup instructions for the Salesforce Lambdas.
 
-### Prerequisite Configuration and Data Collection
+## Prerequisite Configuration and Data Collection
 
 In order to successfully deploy and utilize the functions in the Amazon
 Connect Salesforce Lambda package, you will need to validate and
@@ -381,9 +381,9 @@ retrieve secrets.
 30. You should now have all of the information you need to install the
     package
 
-### Install the Amazon Connect Salesforce Lambda package
+## Install the Amazon Connect Salesforce Lambda package
 
-#### Compatibility Table
+### Compatibility Table
 
 The following table instructs users on the best CTI Adapter version to 
 use with the corresponding lambda version. If a minor version for the CTI Adapter is not 
@@ -393,6 +393,10 @@ listed (ex. v5.21.1), it will be grouped with with its major version unless othe
   <tr>
     <th>CTI Adapter Version</th>
     <th>Lambda Version</th>
+  </tr>
+  <tr>
+    <td>v5.23.3</td>
+    <td>v5.22</td>
   </tr>
   <tr>
     <td>v5.22</td>

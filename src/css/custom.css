@@ -38,30 +38,7 @@ p img {
 }
 
 table tr {
-  transition: background 0.2s ease-in;
-}
-
-table tr:hover {
-  background: #525252;
-  color: #F7F7F7;
-  cursor: pointer;
-}
-
-img {
-  border: 5px solid #555;
-  border-radius: 5px;
-}
-
-.navbar__logo img {
-  border: 0;
-}
-
-p img {
-  border: 0;
-}
-
-table tr {
-  transition: background 0.2s ease-in;
+  transition: background 0s ease-in;
 }
 
 table tr:hover {
