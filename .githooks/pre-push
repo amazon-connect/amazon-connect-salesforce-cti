@@ -1,6 +1,0 @@
-#!/bin/sh
-
-npm run build-pdf
-git add pdf/lightning.pdf
-git add pdf/classic.pdf
-git commit -m "generate pdfs"
