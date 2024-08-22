@@ -24,10 +24,17 @@ The Amazon Connect CTI Adapter enables the operation of a cloud contact center i
 
     6. Ensure that the `Active` checkbox is checked, then hit Save.
 
-### Set Up for CITRIX VDI Platform
+### Setting Up Audio Optimized Virtual Desktop Infrastructures (VDI)
 
-CTI Adapter enables agents to leverage Citrix remote desktop applications to offload audio processing to their local device and to automatically redirect audio to CTI Aadpter opened in remote application. In order to know about audio improvement in CCP using VDI, refer to [Amazon Connect audio optimization for Citrix cloud desktops](https://docs.aws.amazon.com/connect/latest/adminguide/using-ccp-vdi-citrix-step-by-step.html). Additionally, refer to [System Requirements](https://docs.aws.amazon.com/connect/latest/adminguide/using-ccp-vdi-citrix-step-by-step.html#using-ccp-vdi-citrix-step-by-step-requirements) for using the Citrix Unitied Communications SDK with Amazon Connect
+The CTI Adapter enables agents to leverage Citrix and Amazon Workspaces remote desktop applications to offload audio processing to their local device and to automatically redirect audio to CTI Adapter opened in remote application. 
+
+#### Audio Optimization
+
+- In order to know about audio improvement in CCP using Citrix VDI, refer to [Amazon Connect audio optimization for Citrix cloud desktops](https://docs.aws.amazon.com/connect/latest/adminguide/using-ccp-vdi-citrix-step-by-step.html). Additionally, refer to [System Requirements](https://docs.aws.amazon.com/connect/latest/adminguide/using-ccp-vdi-citrix-step-by-step.html#using-ccp-vdi-citrix-step-by-step-requirements) for using the Citrix United Communications SDK with Amazon Connect
  
+- To learn more about how to optimize audio in Amazon Workspaces, refer to [AWS WorkSpace audio optimization support](https://docs.aws.amazon.com/workspaces/latest/userguide/amazon_connect_support.html). Note that currently we only support integration with WSP Windows workspaces. Read [here](https://docs.aws.amazon.com/workspaces/latest/adminguide/group_policy.html) to learn more.
+
+#### CTI Adapter Configuration for VDI
 
 Once the Citrix Workspace is ready to use, make the below changes in CTI Adapter which can be used in the workspace. 
 
@@ -39,13 +46,15 @@ Once the Citrix Workspace is ready to use, make the below changes in CTI Adapter
 
 5. Set the `AC Feature Name` to be VDIPlatform
 
-6. Set the `Value` to be `Name:CITRIX`
+6. Set the `Value` to be `Name:CITRIX` or `Name:AWS_WORKSPACE`.
 
     a. Ensure that the `Active` checkbox is checked, then hit __Save__.
 
 8. Refresh the browser tab and launch the SoftPhone to log in to CCP.
 
 9. Verify the configuration by initiating a Voice contact. 
+
+#### Important Notes for Citrix Users
 
 <div class="grey-box"> Note that once this feature is active in CTI Adapter, the CCP can be only used in a CITRIX environment, otherwise it will show an error as shown below. 
 
