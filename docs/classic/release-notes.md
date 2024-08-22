@@ -12,7 +12,7 @@ The CTI Adapter v5.21 now provides support for third party cookies (see [Amazon 
 2. When agents choose **Grant access**, the browser displays a prompt to authorize the use of third-party cookies.
 3. Agents must select **Allow** on this second pop-up, and then proceed to log in.
 
-**Note**: If the agent does not follow steps above, please see [our documentation](https://docs.aws.amazon.com/connect/latest/adminguide/admin-3pcookies.html#upgrade3p-agent-exp) on how to resolve. 
+**Note**: If the agent does not follow steps above, please see [our documentation](https://docs.aws.amazon.com/connect/latest/adminguide/admin-3pcookies.html#upgrade3p-agent-exp) on how to resolve.
 
 #### Summer '23 Release
 The Salesforce summer release '23 blocks Username-Password Flow by default (see more details [here](https://help.salesforce.com/s/articleView?id=release-notes.rn_security_username-password_flow_blocked_by_default.htm&release=244&type=5)). If your org uses this version of Salesforce, please unblock the flow by following [these](/docs/classic/installation/02-guided-setup#allowing-the-api-user-to-authenticate-using-password) instructions.
@@ -27,19 +27,28 @@ The Salesforce Spring '22 release introduces a change that will likely cause an 
 The Plan-B deprecation should not affect any current users of the CTI Adapter, as we utilize the embedded CCP and do not build in connect-rtc-js seperately.
 
 #### Installing as Admin
-Please **confirm that the application was installed for admins only** (see [installation](/docs/classic/installation/01-installation) for more details). If you did this by accident, then you will have to [manually edit the profiles](/docs/classic/installation/06-cti-adapter-installation-troubleshooting#how-to-remove-permissions-to-visualforce-pages-apex-classes-for-a-desired-profile) to remove the permissions to the objects and pages created by the app. If you are updating the package, please verify that all users have the proper AC permission set.
+Please **confirm that the application was installed for admins only** (see [installation](/docs/classic/installation/01-installation) for more details). If you did this by accident, then you will have to [manually edit the profiles](/docs/classic/installation/06-cti-adapter-installation-troubleshooting#how-to-remove-permissions-to-visualforce-pages-apex-classes-for-a-desired-profile) to remove the permissions to the objects and pages created by the app. If you are updating the package, please verify that all users have the proper AC permission set. We strongly recommend when installing or upgrading to a new version of the CTI Adapter, customers thoroughly test the new version in a staging or test environment before deploying it to production to ensure compatibility and stability.
 
-**Important:** when upgrading the CTI Adapter, please make sure that the Salesforce Lambdas are also updated to the newest version.
+**Important:** When upgrading the CTI Adapter, please make sure that the Salesforce Lambdas are a [compatible version](/docs/classic/installation/04-salesforce-lambdas-manual-setup#compatibility-table). Also review the [CTI Adapter Installation Troubleshooting and Common Issues](/docs/classic/installation/06-cti-adapter-installation-troubleshooting) section for known issues and troubleshooting.
+
+#### Migrating CTI Flows to CTI Adapter 5.0+
+CTI Flows in v5.0+ replaces Lightning CTI Extensions in version v4.x allowing you to build your agent interface for both Lightning and Classic using a drag-and-drop UI. Many of the CTI blocks in CTI Flows correspond to the API calls in the previous Lightning CTI Extensions, making it easy to map them. However, your existing Lightning CTI Extension scripts will not be automatically migrated to CTI Flows. During the upgrade, you’ll have the option to download your existing scripts for reference as you rebuild them in CTI Flows. We highly recommend testing this version in a staging/non-production environment to ensure new CTI Flows match the functionality of your previous scripts. If you need additional functionality from your current scripts, please open a support ticket.
+
+## 5.24 August 2024
+- **Feature:** Amazon Workspaces Support: CTI Adapter now provides audio optimization for Amazon Workspaces. [See Documentation](/docs/classic/cti-adapter/15-medialess#setting-up-audio-optimized-virtual-desktop-infrastructure-vdi).
+- **Bug Fix:** Fixed an issue where our Contact Channel Analytics Records would display an error prompt when viewed in the Lightning App Builder.
+- **Bug Fix:** Fixed an issue where our Contact Channel interaction duration data would show erroneous values for missed calls.
 
 ## 5.23.3 July 2024
-- **Enhancement:** A new value for Initiation method of a contact 'EXTERNAL_OUTBOUND` added as an item in the picklist for Contact Trace Records ([Link to AWS Documentaton](https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html)). 
+- **Enhancement:** A new value for Initiation method of a contact 'EXTERNAL_OUTBOUND` added as an item in the picklist for Contact Trace Records ([Link to AWS Documentaton](https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html)).
+- **Enhancement:** Recording Controls: Resolved an issue where the recording controls feature would use the default named credential regardless of what was passed. 
 - **Bug Fix:** Fixed the issue of Call Recordings not being rendered on Tasks and Cases pages.
 - **Bug Fix:** Fixed infinite buffering of Contact Lens Data on the Contact Channel Analytics page.
 
 ## 5.22 February 2024
 - **Known Issue in v5.22 - Playback of Connect call recordings on Classic Task or Case:** If you are utilizing the CTI Adapter's functionality for enabling call recording streaming and playback on the Classic Task or Case page, we recommend not upgrading to CTI Adapter version 5.22 as we have discovered an issue where the playback of the call recording does not work as expected. The release v5.23.3 has the fix for this issue, and hence we advise customers to pause upgrading to v5.22.
 - **Note:** If you wish to use the v5.22 lambdas, you will need to upgrade your CTI Adapter to v5.22. Consult the [compatibility chart](/docs/classic/installation/04-salesforce-lambdas-manual-setup#compatibility-table).
-- **Feature:** Citrix Support: Enabled native VDI support for Citrix. [See Documentation](/docs/lightning/cti-adapter/14-medialess#set-up-for-citrix-vdi-platform).
+- **Feature:** Citrix Support: Enabled native VDI support for Citrix. [See Documentation](/docs/classic/cti-adapter/15-medialess#setting-up-audio-optimized-virtual-desktop-infrastructure-vdi).
 - **Feature:** Early Get User Media(GUM): Enabled support for the CCP feature EarlyGUM. [See Documentation](/docs/lightning/cti-adapter/01-cti-adapter-configuration#update-the-cti-adapter-details)
 - **Feature:** Trigger multi-contact chat events: CTI Adapter enables users to trigger events on selected contact while handling multiple chats simultaneously. [See Documentation](cti-adapter/12-chat-widget-integration#trigger-multi-contact-chat-events).
 - **Enhancement:** Amazon Q: Amazon Q has undergone a change and goes by a new name. As such, it has been reflected in our documentation. Here is the documentation for [Amazon Q](https://aws.amazon.com/q/)

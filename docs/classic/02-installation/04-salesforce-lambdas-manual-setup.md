@@ -314,7 +314,11 @@ listed (ex. v5.21.1), it will be grouped with with its major version unless othe
     <th>CTI Adapter Version</th>
     <th>Lambda Version</th>
   </tr>
-    <tr>
+  <tr>
+    <td>v5.24</td>
+    <td>v5.22</td>
+  </tr>
+  <tr>
     <td>v5.23.3</td>
     <td>v5.22</td>
   </tr>
