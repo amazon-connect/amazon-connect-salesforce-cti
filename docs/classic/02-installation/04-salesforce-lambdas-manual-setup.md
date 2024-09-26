@@ -316,15 +316,15 @@ listed (ex. v5.21.1), it will be grouped with with its major version unless othe
   </tr>
   <tr>
     <td>v5.24</td>
-    <td>v5.22</td>
+    <td>v5.22 - v5.23</td>
   </tr>
   <tr>
     <td>v5.23.3</td>
-    <td>v5.22</td>
+    <td>v5.22 - v5.23</td>
   </tr>
   <tr>
     <td>v5.22</td>
-    <td>v5.22</td>
+    <td>v5.22 - v5.23</td>
   </tr>
   <tr>
     <td>v5.21</td>
