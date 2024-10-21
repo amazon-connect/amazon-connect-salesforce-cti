@@ -85,8 +85,46 @@ Once you have confirmed your successful upgrade of the Amazon Connect Salesforce
     * <img src={useBaseUrl('/img/lightning/deletelambdastack3.png')} />
 
 
+## Upgrading the CTI Adapter (v5.0 and newer)
+To install the Amazon Connect CTI Adapter in Salesforce, you can follow these general steps:
 
-## Upgrading the CTI Adapter
+### AC CTI Adapter
+
+1. Prepare for the installation: Ensure that your Salesforce environment is ready for the installation. We strongly encourage you install new versions in your non-production environment before installing it in your production environment.
+
+2.  Locate the most recent version of the [CTI Adapter](https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000EJH4yUAH) from Salesforce AppExchange Marketplace. You can access this by:
+  
+  a. Logging into your Salesforce instance
+  
+  b. Navigating to the Setup page
+  
+  c. Typing "AppExchange" into the QuickFind box
+  
+  d. Clicking on "AppExchange Marketplace"
+  
+  e. Search for "Amazon Connect CTI Adapter"
+
+3.  Install the package:
+  
+  a. You may be prompted to sign in
+
+  <img src={useBaseUrl('/img/shared/upgradingCTIAdapter5_0_1.png')} />
+
+  b. You will be redirected to a screen similar to the following image. Acknowledge it and install (Ensure it's set to "Install for Admins Only")
+
+  <img src={useBaseUrl('/img/shared/upgradingCTIAdapter5_0_2.png')} />
+
+4.  Once the installation is complete:
+  
+  a. Navigate to "Installed Packages" from the Setup page
+  
+  b. Validate the CTI Adapter package is listed and enabled
+
+5.  Test the CTI Adapter and ensure everything is working as expected
+
+
+
+## Upgrading the CTI Adapter (v4.xx and older)
 If you are upgrading from an earlier version of CTI Adapter, there are a
 few additional things you need to do.
 
