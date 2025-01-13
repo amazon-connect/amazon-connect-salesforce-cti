@@ -5,9 +5,9 @@ title: Release Notes
 
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
-### Important Notes
+## Important Notes
 
-#### Google Chrome third-party cookies support
+### Google Chrome third-party cookies support
 
 The CTI Adapter v5.21 now provides support for third party cookies (see [Amazon Connect third party cookie documentation](https://docs.aws.amazon.com/connect/latest/adminguide/admin-3pcookies.html)). After you upgrade to the latest version of the CTI Adapter (v5.21+), agents will be prompted to allow third-party cookies from Amazon Connect: 
 1. When agents open the CCP within the CTI Adapter, a new **Allow access to cookies** banner appears. It has one action button: **Grant access**.
@@ -16,25 +16,41 @@ The CTI Adapter v5.21 now provides support for third party cookies (see [Amazon 
 
 **Note**: If the agent does not follow steps above, please see [our documentation](https://docs.aws.amazon.com/connect/latest/adminguide/admin-3pcookies.html#upgrade3p-agent-exp) on how to resolve.
 
-#### Summer '23 Release
+### Summer '23 Release
 The Salesforce summer release '23 blocks Username-Password Flow by default (see more details [here](https://help.salesforce.com/s/articleView?id=release-notes.rn_security_username-password_flow_blocked_by_default.htm&release=244&type=5)). If your org uses this version of Salesforce, please unblock the flow by following [these](/docs/lightning/installation/02-guided-setup#allowing-the-api-user-to-authenticate-using-password) instructions.
 
-#### Salesforce Enhanced Domains
+### Salesforce Enhanced Domains
 Salesforce is making changes to the instance domains on account of the [enhanced domains](https://help.salesforce.com/s/articleView?id=sf.domain_name_enhanced_enable.htm&type=5) feature in the Spring 23 release. Once this feature is enabled, you must migrate the CTI adapter to using these new domains. See [here](/docs/other/sf-enhanced-domains-migration) for migration instructions.
 
-#### Spring '22 Release
+### Spring '22 Release
 The Salesforce Spring '22 release introduces a change that will likely cause an install or update to any version of the adapter before 5.18 to fail. In addition if you are using the `ac_PhoneCallListView` component in any version of the adapter, the loading of your component may fail. This component has been depricated in v5.18.
 
-#### WebRTC Plan-B Deprecation
+### WebRTC Plan-B Deprecation
 The Plan-B deprecation should not affect any current users of the CTI Adapter, as we utilize the embedded CCP and do not build in connect-rtc-js seperately.
 
-#### Installing as Admin
+### Installing as Admin
 Please **confirm that the application was installed for admins only** (see [installation](/docs/lightning/installation/01-installation) for more details). If you did this by accident, then you will have to [manually edit the profiles](/docs/lightning/installation/06-adapter-installation-troubleshooting#how-to-remove-permissions-to-visualforce-pages-apex-classes-for-a-desired-profile) to remove the permissions to the objects and pages created by the app. If you are updating the package, please verify that all users have the proper AC permission set. We strongly recommend when installing or upgrading to a new version of the CTI Adapter, customers thoroughly test the new version in a staging or test environment before deploying it to production to ensure compatibility and stability.
 
 **Important:** When upgrading the CTI Adapter, please make sure that the Salesforce Lambdas are a [compatible version](/docs/lightning/installation/04-salesforce-lambdas-manual-setup#compatibility-table). Also review the [CTI Adapter Installation Troubleshooting and Common Issues](/docs/lightning/installation/06-adapter-installation-troubleshooting) section for known issues and troubleshooting.
 
-#### Migrating CTI Flows to CTI Adapter 5.0+
+### Important notes for CTI Flow Builders
+
+#### Migrating CTI Flows to CTI Adapter v5.0+
+
 CTI Flows in v5.0+ replaces Lightning CTI Extensions in version v4.x allowing you to build your agent interface for both Lightning and Classic using a drag-and-drop UI. Many of the CTI blocks in CTI Flows correspond to the API calls in the previous Lightning CTI Extensions, making it easy to map them. However, your existing Lightning CTI Extension scripts will not be automatically migrated to CTI Flows. During the upgrade, you’ll have the option to download your existing scripts for reference as you rebuild them in CTI Flows. We highly recommend testing this version in a staging/non-production environment to ensure new CTI Flows match the functionality of your previous scripts. If you need additional functionality from your current scripts, please open a support ticket.
+
+#### Improved Phone Number Handling with Updated Library (v5.22+)
+
+We've upgraded the `libphonenumber-js` library to the latest version, expanding support for various area codes that were previously causing call failures. This update ensures greater accuracy and compatibility when handling phone numbers globally.
+
+This upgrade introduces a breaking change to how you access parsed phone numbers within your CTI flows. While the previous path (`$.contact.parsedNumber.phone`) retrieved the phone number of the currenct contact, we recommend using the following updated paths for better reliability:
+
+  * **International Number:** `$.contact.parsedNumber.number`
+  * **National Number:** `$.contact.parsedNumber.nationalNumber`
+
+Please review your existing CTI flows and update any JSON paths referencing parsed phone numbers to ensure seamless functionality. 
+
+For detailed information about the `libphonenumber-js` library and its features, please visit: [https://gitlab.com/catamphetamine/libphonenumber-js](https://gitlab.com/catamphetamine/libphonenumber-js)
 
 ## 5.24 August 2024
 - **Feature:** Amazon Workspaces Support: CTI Adapter now provides audio optimization for Amazon Workspaces. [See Documentation](/docs/lightning/cti-adapter/14-medialess#setting-up-audio-optimized-virtual-desktop-infrastructure-vdi).
@@ -50,6 +66,7 @@ CTI Flows in v5.0+ replaces Lightning CTI Extensions in version v4.x allowing yo
 - **Bug Fix:** Fixed the issue that prevented the use of custom Named Credentials names with recording controls, as part of the enhancements introduced in v5.22 ([link to documentation](/docs/lightning/cti-adapter/09-recording-controls#recording-named-credential)).
 
 ## 5.22 February 2024
+
 - **Known Issue in v5.22 - Playback of Connect call recordings on Lightning Task or Case:** If you are utilizing the CTI Adapter's functionality for enabling call recording streaming and playback on the Lightning Task or Case page, we recommend not upgrading to CTI Adapter version 5.22 as we have discovered an issue where the playback of the call recording does not work as expected. The release v5.23.3 has the fix for this issue, and hence we advise customers to pause upgrading to v5.22.  If you have upgraded to v5.22, the workaround is to use the [Connect Contact Channel Analytics (CCA)](/docs/lightning/salesforce-lambdas/04-contact-channel-analytics) page to access call recordings. To view recordings associated with a specific task or case, please copy the CallObject property and utilize it as a filter on the contactId field within CCAs.
 
   In order to view the recordings for a Task, perform the below steps. Note that these are similar for Cases.
@@ -60,7 +77,6 @@ CTI Flows in v5.0+ replaces Lightning CTI Extensions in version v4.x allowing yo
   * Once you have copied the call identifier object to the clipboard, proceed to the CCA pages and utilize the Salesforce Filter to paste the value, isolating the CCA recording associated for the contact. Click on the CCA record to view the call recording.
   <img src={useBaseUrl('/img/lightning/v5.22-bug-img3.png')} />
   <img src={useBaseUrl('/img/lightning/v5.22-bug-img1.png')} />
-
 
 - **Note:** If you wish to use the v5.22 lambdas, you will need to upgrade your CTI Adapter to v5.22. Consult the [compatibility chart](/docs/lightning/installation/04-salesforce-lambdas-manual-setup#compatibility-table).
 - **Feature:** Citrix Support: CTI Adapter now provides audio optimization for Citrix Workspace. [See Documentation](/docs/lightning/cti-adapter/14-medialess#setting-up-audio-optimized-virtual-desktop-infrastructure-vdi).
