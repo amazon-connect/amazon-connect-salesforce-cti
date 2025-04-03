@@ -52,6 +52,15 @@ Please review your existing CTI flows and update any JSON paths referencing pars
 
 For detailed information about the `libphonenumber-js` library and its features, please visit: [https://gitlab.com/catamphetamine/libphonenumber-js](https://gitlab.com/catamphetamine/libphonenumber-js)
 
+## 5.27 April 2025
+- **Feature:** [Amazon Connect Global Resiliency](https://docs.aws.amazon.com/connect/latest/adminguide/setup-connect-global-resiliency.html) support: customers can now set up their CTI Adapter in Salesforce with their Connect replica instance, enabling agents’ CCP to failover to the specified traffic distribution set by Connect Admin. [See Documentation](/docs/lightning/03-cti-adapter/15-global-resiliency.md)
+- **Bug Fix:** Fixed an issue for `Show modal` CTI Flow block, updated documentation.
+- **Bug Fix:** Fixed an issue for `Clear properties` CTI Flow block (recordingNamedCredential uncleared).
+- **Bug Fix:** AC Contact Trace Record and AC Contact Channel supports initiation method for monitoring and “Get Contact Properties” CTI Flow block. Updated to include isMonitor (returns true if it is a monitoring contact).
+- **Bug Fix:** Disable echo cancellation field and permission set — Voice quality issue.
+- **Bug Fix:** If the agent has an ongoing contact, the Popout CCP in the Medialess feature will no longer close when the browser tab containing Salesforce Service Console where the embedded CCP is present, is refreshed or closed.
+- **Bug Fix:** Includes multiparty chat bug fix wherein only the first chat contact is getting used on CTI Actions.
+
 ## 5.24 August 2024
 - **Feature:** Amazon Workspaces Support: CTI Adapter now provides audio optimization for Amazon Workspaces. [See Documentation](/docs/lightning/cti-adapter/14-medialess#setting-up-audio-optimized-virtual-desktop-infrastructure-vdi).
 - **Bug Fix:** Fixed an issue where our Contact Channel Analytics Records would display an error prompt when viewed in the Lightning App Builder.
