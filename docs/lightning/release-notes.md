@@ -53,6 +53,14 @@ Please review your existing CTI flows and update any JSON paths referencing pars
 For detailed information about the `libphonenumber-js` library and its features, please visit: [https://gitlab.com/catamphetamine/libphonenumber-js](https://gitlab.com/catamphetamine/libphonenumber-js)
 
 ## 5.27 April 2025
+
+---
+**NOTE**
+
+Before installing this version, please install this [patch](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tKY000000gUAI) first to remove references to older components unused in the application which were removed on 5.27. Salesforce requires a two-step upgrade for removing components.
+
+---
+
 - **Feature:** [Amazon Connect Global Resiliency](https://docs.aws.amazon.com/connect/latest/adminguide/setup-connect-global-resiliency.html) support: customers can now set up their CTI Adapter in Salesforce with their Connect replica instance, enabling agents’ CCP to failover to the specified traffic distribution set by Connect Admin. [See Documentation](/docs/lightning/03-cti-adapter/15-global-resiliency.md)
 - **Bug Fix:** Fixed an issue for `Show modal` CTI Flow block, updated documentation.
 - **Bug Fix:** Fixed an issue for `Clear properties` CTI Flow block (recordingNamedCredential uncleared).
