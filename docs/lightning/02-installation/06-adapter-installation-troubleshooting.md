@@ -11,6 +11,10 @@ There is a bug with Salesforce that doesn't update a page layout when you upgrad
 
 <img src={useBaseUrl('/img/lightning/troubleshooting3.png')} />
 
+### CCP pop up login is not closing by itself and CCP is not getting initialized
+
+This issue can occur when the Salesforce URLs are not added on the approved origins for the Amazon Connect instance. Refer to this [section](/docs/lightning/02-installation/03-managed-package-manual-setup.md#allowlist-your-salesforce-org-with-amazon-connect).
+
 ### Error “refused to run the JavaScript URL because it violates the following Content Security Policy directive...”
 
 This is an allowlisting issue, please review the installation and ensure that both URLs are properly allowlisted.
