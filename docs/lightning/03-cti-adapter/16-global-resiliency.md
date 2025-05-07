@@ -1,5 +1,5 @@
 ---
-id: 15-global-resiliency
+id: 16-global-resiliency
 title: Global Resiliency
 ---
 import useBaseUrl from "@docusaurus/useBaseUrl";
