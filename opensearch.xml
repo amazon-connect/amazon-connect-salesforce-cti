@@ -4,8 +4,8 @@
   <ShortName>Amazon Connect Salesforce CTI Adapter</ShortName>
   <Description>Search Amazon Connect Salesforce CTI Adapter</Description>
   <InputEncoding>UTF-8</InputEncoding>
-  <Image width="16" height="16" type="image/x-icon">https://amazon-connect.github.io/amazon-connect-salesforce-cti/amazon-connect-salesforce-cti/img/favicon.png</Image>
-  <Url type="text/html" method="get" template="https://amazon-connect.github.io/amazon-connect-salesforce-cti/amazon-connect-salesforce-cti/search?q={searchTerms}"/>
-  <Url type="application/opensearchdescription+xml" rel="self" template="https://amazon-connect.github.io/amazon-connect-salesforce-cti/amazon-connect-salesforce-cti/opensearch.xml" />
-  <moz:SearchForm>https://amazon-connect.github.io/amazon-connect-salesforce-cti/amazon-connect-salesforce-cti/</moz:SearchForm>
+  <Image width="16" height="16" type="image/x-icon">https://amazon-connect.github.io/amazon-connect-salesforce-cti/img/favicon.png</Image>
+  <Url type="text/html" method="get" template="https://amazon-connect.github.io/amazon-connect-salesforce-cti/search?q={searchTerms}"/>
+  <Url type="application/opensearchdescription+xml" rel="self" template="https://amazon-connect.github.io/amazon-connect-salesforce-cti/opensearch.xml" />
+  <moz:SearchForm>https://amazon-connect.github.io/amazon-connect-salesforce-cti/</moz:SearchForm>
 </OpenSearchDescription>
