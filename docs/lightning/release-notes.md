@@ -52,6 +52,15 @@ Please review your existing CTI flows and update any JSON paths referencing pars
 
 For detailed information about the `libphonenumber-js` library and its features, please visit: [https://gitlab.com/catamphetamine/libphonenumber-js](https://gitlab.com/catamphetamine/libphonenumber-js)
 
+
+## 5.28 Sep 2025
+- **Feature:** Introduction of *Mini Lightning Adapter* which shows agent status, replacing embedded SoftPhone CCP for customers using Amazon Connect native CCP in a different window.
+- **Enhancement:** Support for both VDI and Medialess Pop-out.
+- **Bug Fix:** Fixed bug on negative interaction duration.
+- **Bug Fix:** Fixed bug on CTI Flow execution for event-driven sources mismatching contact to execute.
+- **Enhancement:** Addition of more supported metrics on `AC_AgentPerformance` and `AC_HistoricalQueueMetrics`.
+
+
 ## 5.27 April 2025
 
 ---
