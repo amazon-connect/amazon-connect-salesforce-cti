@@ -31,6 +31,7 @@ module.exports = {
         'lightning/cti-adapter/14-medialess',
         'lightning/cti-adapter/15-vdi',
         'lightning/cti-adapter/16-global-resiliency',
+        'lightning/cti-adapter/17-mini-lightning-adapter',
       ],
     },
     {
@@ -95,6 +96,7 @@ module.exports = {
         'classic/cti-adapter/14-voice-id',
         'classic/cti-adapter/15-medialess',
         'classic/cti-adapter/16-global-resiliency',
+        'classic/cti-adapter/17-mini-lightning-adapter',
       ],
     },
     {
