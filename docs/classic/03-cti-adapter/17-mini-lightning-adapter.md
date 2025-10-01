@@ -31,3 +31,6 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
     3. For **Value**, enter a message you want displayed on the mini adapter above the agent status.  
        - Example: `Use the external window for call control`
     4. **Note:** This message should be a static string value (not something you plan to change often) since it loads into the mini adapter’s UI on page load.
+    5. This message will be displayed in the mini adapter such as below:
+       - <img src={useBaseUrl('/img/lightning/MiniLightningAdapter2.png')} />
+
