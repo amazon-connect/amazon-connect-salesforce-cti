@@ -41,12 +41,11 @@ with OAuth settings enabled.
 
 1.  Log in into your Salesforce org and go to **Setup**
 
-2.  In the **Quick Find** field, type **app manager**, then select **App
-    Manager** from the results
+2.  In the **Quick Find** field, type **External Client Apps**, then select **Settings** from the results
 
-3.  In the upper right corner, select **New Connected App**
+3.  In the **Connected Apps** section, toggle on **Allow creation of connected apps** and select **Enable** on the pop-up that appears. Then, select the enabled **New Connected App** button.
 
-<img src={useBaseUrl('/img/lightning/image60.png')} />
+**Note: If you're not able to enable creation of Connected Apps in Salesforce, contact Salesforce Customer Support to have this re-enabled. This can be done by creating a Salesforce Support case.*
 
 4.  On the New Connected App form, enter a name for the Connected App,
     such as **Amazon Connect Integration** and press tab. This will
