@@ -45,7 +45,7 @@ with OAuth settings enabled.
 
 3.  In the **Connected Apps** section, toggle on **Allow creation of connected apps** and select **Enable** on the pop-up that appears. Then, select the enabled **New Connected App** button.
 
-**Note: Starting Feb 16th, 2026, to enable creation of Connected Apps in Salesforce you will need to contact Salesforce Customer Support. This can be done by creating a Salesforce Support case.*
+**Note: If you're not able to enable creation of Connected Apps in Salesforce, contact Salesforce Customer Support to have this re-enabled. This can be done by creating a Salesforce Support case.*
 
 4.  On the New Connected App form, enter a name for the Connected App,
     such as **Amazon Connect Integration** and press tab. This will

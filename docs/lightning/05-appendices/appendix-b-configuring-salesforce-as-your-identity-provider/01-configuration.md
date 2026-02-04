@@ -178,7 +178,7 @@ further configuration to complete the SAML integration.
 
 3.  In the **Connected Apps** section, toggle on **Allow creation of connected apps** if it is not yet enabled and select **Enable** on the pop-up that appears. Then, select the enabled **New Connected App** button.
 
-**Note: Starting Feb 16th, 2026, to enable creation of Connected Apps in Salesforce you will need to contact Salesforce Customer Support. This can be done by creating a Salesforce Support case.*
+**Note: If you're not able to enable creation of Connected Apps in Salesforce, contact Salesforce Customer Support to have this re-enabled. This can be done by creating a Salesforce Support case.*
 
 4.  Provide a name for the Connected App, such as **AmazonConnectSAML,**
     then press tab and the API Name should auto-populate
