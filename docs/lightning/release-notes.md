@@ -52,6 +52,41 @@ Please review your existing CTI flows and update any JSON paths referencing pars
 
 For detailed information about the `libphonenumber-js` library and its features, please visit: [https://gitlab.com/catamphetamine/libphonenumber-js](https://gitlab.com/catamphetamine/libphonenumber-js)
 
+### :warning: Open CTI API Deprecation
+
+
+>**Effective Notice: The Salesforce Open CTI API is being deprecated.**
+
+Salesforce has [announced the deprecation of the Open CTI API](https://help.salesforce.com/s/articleView?id=005306437&type=1) in favor of their newer Service Cloud Voice integration capabilities. According to [Salesforce's official documentation](https://help.salesforce.com/s/articleView?id=service.cloud_cti_api_overview.htm&type=5), customers should begin planning their migration to supported integration methods.
+
+**What this means for Amazon Connect Salesforce CTI users:**
+
+
+* The Open CTI API, which has been the foundation for our CTI Adapter, will no longer be supported by Salesforce in future releases
+* We recommend all customers review Salesforce's migration guidance and timeline
+* Amazon Connect customers should transition to Service Cloud Voice (SCV) and Service Cloud Connector for Amazon Connect (SCC-AC)
+
+**Recommended Migration Paths:**
+
+
+* Service Cloud Voice (SCV): Review the [Salesforce Voice Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.voice_developer_guide.meta/voice_developer_guide/voice_intro.htm) for implementation details
+* Service Cloud Connector for Amazon Connect (SCC-AC): Visit the [SCC-AC documentation](https://amazon-connect.github.io/amazon-connect-sccac-docs/) for setup and configuration guidance
+
+**Action Required:**
+
+Please review the official [Salesforce CTI API documentation](https://help.salesforce.com/s/articleView?id=service.cloud_cti_api_overview.htm&type=5) for detailed information about the deprecation timeline and begin planning your migration to SCV and SCC-AC.
+
+For questions about how this impacts your Amazon Connect implementation, please contact AWS Support or your account team.
+
+
+
+## 5.31 March 2026
+- **Enhancement:** StreamsJS Update from 2.18.7 to 2.25.0
+- **Enhancement:** Phone number parsing improvements
+- **Bug fix:** Caching added to populate context for GetAllProperties CTI Flow block on onContactDestroy events
+- **Bug fix:** Connect assistant (formerly Amazon Q) CCP Overlay split screen issue
+- **Bug fix:** CCP Overlay disappearing issue when Connect assistant (formerly Amazon Q) is enabled
+- **Bug fix:** Fix on Mini Adapter Message used text for display value
 
 ## 5.29 November 2025
 - **Bug Fix:** Resolved an issue where a misconfigured Salesforce CTI Adapter base URL caused malformed CCP paths, leading to delayed UI updates and initialization failures.
