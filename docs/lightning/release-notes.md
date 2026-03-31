@@ -61,23 +61,20 @@ Salesforce has [announced the deprecation of the Open CTI API](https://help.sale
 
 **What this means for Amazon Connect Salesforce CTI users:**
 
-
-* The Open CTI API, which has been the foundation for our CTI Adapter, will no longer be supported by Salesforce in future releases
-* We recommend all customers review Salesforce's migration guidance and timeline
-* Amazon Connect customers should transition to Service Cloud Voice (SCV) and Service Cloud Connector for Amazon Connect (SCC-AC)
+* The Open CTI API, which has been the foundation for our CTI Adapter, will no longer be supported by Salesforce after February 2028. In February 2028, CTI Adapter will no longer work due to this dependency.
+* AWS and Salesforce will publish detailed migration guidance and timeline in April 2026. Please reach out to your AWS and Salesforce account teams in the interim if you need additional guidance.
+* Amazon Connect customers should plan to transition to **Service Cloud Voice (SCV) and Service Cloud Connector for Amazon Connect (SCC-AC)** or **Amazon Connect Agent Workspace** before February 2028.
 
 **Recommended Migration Paths:**
 
 
 * Service Cloud Voice (SCV): Review the [Salesforce Voice Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.voice_developer_guide.meta/voice_developer_guide/voice_intro.htm) for implementation details
 * Service Cloud Connector for Amazon Connect (SCC-AC): Visit the [SCC-AC documentation](https://amazon-connect.github.io/amazon-connect-sccac-docs/) for setup and configuration guidance
+* [Amazon Connect Agent Workspace](https://aws.amazon.com/connect/agent-workspace/): Follow up with your account team for detailed discussion.
 
 **Action Required:**
 
-Please review the official [Salesforce CTI API documentation](https://help.salesforce.com/s/articleView?id=service.cloud_cti_api_overview.htm&type=5) for detailed information about the deprecation timeline and begin planning your migration to SCV and SCC-AC.
-
-For questions about how this impacts your Amazon Connect implementation, please contact AWS Support or your account team.
-
+Please review the official [Salesforce CTI API documentation](https://help.salesforce.com/s/articleView?id=service.cloud_cti_api_overview.htm&type=5) for detailed information about the deprecation timeline and begin planning your migration.  For questions about how this impacts your Amazon Connect implementation, please contact AWS Support or your account team.
 
 
 ## 5.31 March 2026
@@ -85,7 +82,7 @@ For questions about how this impacts your Amazon Connect implementation, please 
 - **Enhancement:** Phone number parsing improvements
 - **Bug fix:** Caching added to populate context for GetAllProperties CTI Flow block on onContactDestroy events
 - **Bug fix:** Connect assistant (formerly Amazon Q) CCP Overlay split screen issue
-- **Bug fix:** CCP Overlay disappearing issue when Connect assistant (formerly Amazon Q) is enabled
+- **Bug fix:** Fix on CCP Overlay disappearing issue when Connect assistant (formerly Amazon Q) is enabled
 - **Bug fix:** Fix on Mini Adapter Message used text for display value
 
 ## 5.29 November 2025
