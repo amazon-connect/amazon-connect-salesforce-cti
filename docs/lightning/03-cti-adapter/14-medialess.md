@@ -1,13 +1,17 @@
 ---
 id: 14-medialess
-title: Setting up Medialess
+title: Setting up Medialess & Medialess Popout
 ---
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
 ## Medialess
 The Amazon Connect CTI Adapter enables the operation of a cloud contact center in Salesforce within Virtual Desktop Infrastructure (VDI) environments through the utilization of the Medialess feature. The Medialess feature offers advantages for agents using VDI setups, ensuring that audio is accessible on the agent's local system for an enhanced experience. Enabling Medialess mode configures the Salesforce CCP to operate without media, delivering the necessary data for screen pops, etc. while streaming audio to the local system, dependent on your VDI platform.
 
-### Prerequisites
+1. Go to the **Service Console** and open the **AC CTI Adapter** tab.  
+
+2. Open **ACLightningAdapter** and check/enable **‘Medialess’** under *Details*.  
+
+### Medialess Popout
 
 1. Install Amazon Connect CTI Adapter version v5.16 or higher in your salesforce instance. For more information, see [the guide here](https://amazon-connect.github.io/amazon-connect-salesforce-cti/docs/lightning/notices)
 
