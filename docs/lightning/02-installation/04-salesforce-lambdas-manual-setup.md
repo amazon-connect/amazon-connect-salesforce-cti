@@ -394,20 +394,24 @@ listed (ex. v5.21.1), it will be grouped with with its major version unless othe
     <th>Lambda Version</th>
   </tr>
   <tr>
+    <td>v5.32</td>
+    <td>v5.22 - v5.26</td>
+  </tr>
+  <tr>
     <td>v5.31</td>
-    <td>v5.22 - v5.24</td>
+    <td>v5.22 - v5.26</td>
   </tr>
   <tr>
     <td>v5.29</td>
-    <td>v5.22 - v5.24</td>
+    <td>v5.22 - v5.26</td>
   </tr>
   <tr>
     <td>v5.28</td>
-    <td>v5.22 - v5.24</td>
+    <td>v5.22 - v5.26</td>
   </tr>
   <tr>
     <td>v5.27</td>
-    <td>v5.22 - v5.24</td>
+    <td>v5.22 - v5.26</td>
   </tr>
   <tr>
     <td>v5.24</td>

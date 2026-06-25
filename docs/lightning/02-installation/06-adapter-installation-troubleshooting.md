@@ -79,3 +79,15 @@ When upgrading from a version of the package to a higher version of the package 
 <img src={useBaseUrl('/img/shared/removepermissionstroublshooting0.png')} />
 
 4. Select **Edit** and remove any desired permissions. All permissions can be removed because permissions are managed through permission sets, not through profiles.
+
+### I previously installed CTI Adapter v5.27 and upgraded to a version between v5.28 and v5.31. “MONITOR” initiation method are not available on my new AC Contact Trace Records. 
+
+1. Upgrade to version v5.32 or above.
+
+2. Go to Setup > Object Manager > AC Contact Trace Record.
+
+3. Go to Fields & Relationships tab.
+
+4. Select the “Initiation Method” field from the list.
+
+5. Scroll down and under the “Inactive Values” section, select “Activate” on the inactive values. 
