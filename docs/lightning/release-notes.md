@@ -77,6 +77,14 @@ Salesforce has [announced the deprecation of the Open CTI API](https://help.sale
 Please review the official [Salesforce CTI API documentation](https://help.salesforce.com/s/articleView?id=service.cloud_cti_api_overview.htm&type=5) for detailed information about the deprecation timeline and begin planning your migration.  For questions about how this impacts your Amazon Connect implementation, please contact AWS Support or your account team.
 
 
+## 5.32 June 2026
+- **Bug Fix:** Monitoring contacts are again identifiable in contact records and CTI Flows
+  * Supervisors who monitor agent calls will once again see those contacts correctly flagged. The Amazon Connect Contact Trace Record (CTR) and Contact Channel now report the initiation method for monitoring contacts, and the "Get Contact Properties" CTI Flow block returns the isMonitor property, which is true when the contact is a monitoring contact. If you build CTI Flows that branch on contact type, you can now rely on isMonitor to detect monitoring sessions. See here for steps post-upgrade.
+  * This fix first shipped in v5.27 (April 2025) and was unintentionally dropped in later releases. We have permanently restored it and added test coverage so it remains in all future releases.
+
+- **Enhancement:** Mini Adapter ringtone is now off by default to prevent duplicate ringing
+  * Agents who run the Mini Adapter alongside another CCP no longer hear two ringtones on an incoming contact. The Mini Adapter now ships with its ringtone disabled by default, which removes the duplicate ring for agents also using the Native CCP, Custom CCP, or Agent Workspace.
+
 ## 5.31 March 2026
 - **Enhancement:** StreamsJS Update from 2.18.7 to 2.25.0
 - **Enhancement:** Phone number parsing improvements
