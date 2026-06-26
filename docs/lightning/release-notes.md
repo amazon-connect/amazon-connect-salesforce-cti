@@ -79,7 +79,7 @@ Please review the official [Salesforce CTI API documentation](https://help.sales
 
 ## 5.32 June 2026
 - **Bug Fix:** Monitoring contacts are again identifiable in contact records and CTI Flows
-  * Supervisors who monitor agent calls will once again see those contacts correctly flagged. The Amazon Connect Contact Trace Record (CTR) and Contact Channel now report the initiation method for monitoring contacts, and the "Get Contact Properties" CTI Flow block returns the isMonitor property, which is true when the contact is a monitoring contact. If you build CTI Flows that branch on contact type, you can now rely on isMonitor to detect monitoring sessions. See here for steps post-upgrade.
+  * Supervisors who monitor agent calls will once again see those contacts correctly flagged. The Amazon Connect Contact Trace Record (CTR) and Contact Channel now report the initiation method for monitoring contacts, and the "Get Contact Properties" CTI Flow block returns the isMonitor property, which is true when the contact is a monitoring contact. If you build CTI Flows that branch on contact type, you can now rely on isMonitor to detect monitoring sessions. See [here](02-installation/06-adapter-installation-troubleshooting.md/#i-previously-installed-cti-adapter-v527-and-upgraded-to-a-version-between-v528-and-v531-monitor-initiation-method-are-not-available-on-my-new-ac-contact-trace-records-) for steps post-upgrade.
   * This fix first shipped in v5.27 (April 2025) and was unintentionally dropped in later releases. We have permanently restored it and added test coverage so it remains in all future releases.
 
 - **Enhancement:** Mini Adapter ringtone is now off by default to prevent duplicate ringing
