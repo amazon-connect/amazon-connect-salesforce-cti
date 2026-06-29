@@ -10,7 +10,7 @@ module.exports = {
   projectName: 'amazon-connect-salesforce-cti',
   themeConfig: {
     navbar: {
-      title: 'v5.31',
+      title: 'v5.32',
       logo: {
         src: 'img/logo.svg',
       },
