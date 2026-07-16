@@ -62,7 +62,7 @@ Salesforce has [announced the deprecation of the Open CTI API](https://help.sale
 **What this means for Amazon Connect Salesforce CTI users:**
 
 * The Open CTI API, which has been the foundation for our CTI Adapter, will no longer be supported by Salesforce after February 2028. In February 2028, CTI Adapter will no longer work due to this dependency.
-* AWS and Salesforce will publish detailed migration guidance and timeline in April 2026. Please reach out to your AWS and Salesforce account teams in the interim if you need additional guidance.
+* AWS and Salesforce will publish detailed migration guidance and timeline in August 2026. Please reach out to your AWS and Salesforce account teams in the interim if you need additional guidance.
 * Amazon Connect customers should plan to transition to **Service Cloud Voice (SCV) and Service Cloud Connector for Amazon Connect (SCC-AC)** or **Amazon Connect Agent Workspace** before February 2028.
 
 **Recommended Migration Paths:**
