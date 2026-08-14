@@ -6,13 +6,15 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 ## Setting Up Audio Optimized Virtual Desktop Infrastructures (VDI)
 
-The CTI Adapter enables agents to leverage Citrix and Amazon Workspaces remote desktop applications to offload audio processing to their local device and to automatically redirect audio to CTI Adapter opened in remote application. 
+The CTI Adapter enables agents to leverage Citrix, Amazon WorkSpaces, and Azure Virtual Desktop remote desktop applications to offload audio processing to their local device and to automatically redirect audio to CTI Adapter opened in remote application. 
 
 #### Audio Optimization
 
 - In order to know about audio improvement in CCP using Citrix VDI, refer to [Amazon Connect audio optimization for Citrix cloud desktops](https://docs.aws.amazon.com/connect/latest/adminguide/using-ccp-vdi-citrix-step-by-step.html). Additionally, refer to [System Requirements](https://docs.aws.amazon.com/connect/latest/adminguide/using-ccp-vdi-citrix-step-by-step.html#using-ccp-vdi-citrix-step-by-step-requirements) for using the Citrix United Communications SDK with Amazon Connect
  
 - To learn more about how to optimize audio in Amazon Workspaces, refer to [AWS WorkSpace audio optimization support](https://docs.aws.amazon.com/workspaces/latest/userguide/amazon_connect_support.html). Note that currently we only support integration with WSP Windows workspaces. Read [here](https://docs.aws.amazon.com/workspaces/latest/adminguide/group_policy.html) to learn more.
+
+- To learn more about optimizing audio for Azure Virtual Desktop and Windows 365, refer to [Optimize Amazon Connect audio for Azure Virtual Desktop and Windows 365](https://docs.aws.amazon.com/connect/latest/adminguide/using-ccp-vdi-azure-step-by-step.html). Audio is redirected by the Microsoft multimedia redirection (MMR) browser extension.
 
 #### CTI Adapter Configuration for VDI
 
@@ -26,7 +28,7 @@ Once the Citrix Workspace is ready to use, make the below changes in CTI Adapter
 
 5. Set the `AC Feature Name` to be VDIPlatform
 
-6. Set the `Value` to be `Name:CITRIX` or `Name:AWS_WORKSPACE`.
+6. Set the `Value` to be `Name:CITRIX`, `Name:AWS_WORKSPACE`, or `Name:AZURE`.
 
     a. Ensure that the `Active` checkbox is checked, then hit __Save__.
 
