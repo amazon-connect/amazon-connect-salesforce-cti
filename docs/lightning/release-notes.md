@@ -77,6 +77,10 @@ Salesforce has [announced the deprecation of the Open CTI API](https://help.sale
 Please review the official [Salesforce CTI API documentation](https://help.salesforce.com/s/articleView?id=service.cloud_cti_api_overview.htm&type=5) for detailed information about the deprecation timeline and begin planning your migration.  For questions about how this impacts your Amazon Connect implementation, please contact AWS Support or your account team.
 
 
+## 5.33 August 2026
+- **Enhancement:** StreamsJS Update from 2.25.0 to 2.28.2
+- **Bug Fix:** Resolved an issue where contact attributes could be returned blank due to an undefined `connect` reference
+
 ## 5.32 June 2026
 - **Bug Fix:** Monitoring contacts are again identifiable in contact records and CTI Flows
   * Supervisors who monitor agent calls will once again see those contacts correctly flagged. The Amazon Connect Contact Trace Record (CTR) and Contact Channel now report the initiation method for monitoring contacts, and the "Get Contact Properties" CTI Flow block returns the isMonitor property, which is true when the contact is a monitoring contact. If you build CTI Flows that branch on contact type, you can now rely on isMonitor to detect monitoring sessions. See [here](02-installation/06-adapter-installation-troubleshooting.md/#i-previously-installed-cti-adapter-v527-and-upgraded-to-a-version-between-v528-and-v531-monitor-initiation-method-are-not-available-on-my-new-ac-contact-trace-records-) for steps post-upgrade.
