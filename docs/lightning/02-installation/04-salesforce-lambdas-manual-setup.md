@@ -395,7 +395,7 @@ listed (ex. v5.21.1), it will be grouped with with its major version unless othe
   </tr>
   <tr>
     <td>v5.33</td>
-    <td>v5.22 - v5.27</td>
+    <td>v5.22 - v5.28</td>
   </tr>
   <tr>
     <td>v5.32</td>

@@ -42,6 +42,7 @@ module.exports = {
         'lightning/salesforce-lambdas/04-contact-channel-analytics',
         'lightning/salesforce-lambdas/05-contact-trace-record-import',
         'lightning/salesforce-lambdas/06-postcall-contact-lens-import',
+        'lightning/salesforce-lambdas/07-client-credentials-migration',
       ],
     },
     {
@@ -57,6 +58,7 @@ module.exports = {
         'lightning/appendices/appendix-d-cti-flow-examples/01-cti-flow-examples',
         'lightning/appendices/appendix-e-salesforce-high-velocity-sales/01-high-velocity-sales',
         'lightning/appendices/appendix-f-cti-flow-blocks/01-cti-flow-blocks',
+        'lightning/appendices/appendix-g-rollback-to-username-password/01-rollback-to-username-password',
       ],
     },
   ],
