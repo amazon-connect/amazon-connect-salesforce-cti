@@ -78,6 +78,7 @@ Please review the official [Salesforce CTI API documentation](https://help.sales
 
 
 ## 5.33 August 2026
+- **Enhancement:** Support for Global Routing in Amazon Connect Customer Global Resiliency. The CTI Adapter now supports embedding the Contact Control Panel (CCP) for Amazon Connect instances configured for Connect Customer Global Resiliency with [Global Routing](https://aws.amazon.com/about-aws/whats-new/2026/08/amazon-connect-global-resiliency-cross-region-routing/) enabled. To request access to Global Routing, reach out to your AWS account team. For more details, see the [Connect Customer Global Resiliency documentation](https://docs.aws.amazon.com/connect/latest/adminguide/global-routing-across-acgr-regions.html).
 - **Enhancement:** StreamsJS Update from 2.25.0 to 2.28.2
 - **Bug Fix:** Resolved an issue where contact attributes could be returned blank due to an undefined `connect` reference
 
