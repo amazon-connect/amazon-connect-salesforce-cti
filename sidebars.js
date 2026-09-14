@@ -59,6 +59,7 @@ module.exports = {
         'lightning/appendices/appendix-e-salesforce-high-velocity-sales/01-high-velocity-sales',
         'lightning/appendices/appendix-f-cti-flow-blocks/01-cti-flow-blocks',
         'lightning/appendices/appendix-g-rollback-to-username-password/01-rollback-to-username-password',
+        'lightning/appendices/appendix-h-restricting-sfexecuteawsservice/01-restricting-sfexecuteawsservice',
       ],
     },
   ],
