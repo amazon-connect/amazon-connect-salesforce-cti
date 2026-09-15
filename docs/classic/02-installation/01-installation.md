@@ -196,12 +196,25 @@ Before you create the ExecuteAwsService Named Credential, **confirm that the app
 
 9. Click **Save**.
 
+10. Finally, grant the IAM user you created above permission to invoke the `sfExecuteAWSService` function. In the CloudFormation
+console, open the **serverlessrepo-AmazonConnectSalesforceLambda** stack and select **Update stack > Create a change set**. Keep
+**Use existing template**, set the **SalesforceExecuteAWSServiceUser** parameter to the IAM user name from step 2 (for example
+*sfExecuteAwsServiceIamUser*), and leave every other parameter unchanged. Create the change set, then execute it. This makes that
+user the intended and only externally reachable path to the function. Note that it grants access rather than denying it — principals
+inside your AWS account that already hold `lambda:InvokeFunction` can still invoke the function, so also avoid granting that
+permission to other principals and follow the Post-Setup Cleanup guidance below. For the full walkthrough, see
+[Appendix E: Restricting Access to sfExecuteAWSService](/docs/classic/appendices/appendix-e-restricting-sfexecuteawsservice/01-restricting-sfexecuteawsservice).
+
 #### Post-Setup Cleanup (Recommended)
 
 The `sfExecuteAWSService` Lambda function is used only during initial setup to configure your Amazon Connect instance and related AWS resources. Once your CTI Adapter configuration is complete, this function is no longer needed for day-to-day operations.
 
-As a best practice, we recommend **disabling or deleting** the `sfExecuteAWSService` Lambda function and its associated IAM user (e.g., `sfExecuteAwsServiceIamUser`) to keep your environment clean and minimize unused resources.
+As a best practice, we recommend **disabling or deleting** the `sfExecuteAWSService` Lambda function to keep your environment clean and minimize unused resources.
 
-**Note:** If you need to re-run the Guided Setup wizard in the future, you can re-deploy the Lambda package from the AWS Serverless Application Repository.
+**Do this in the following order:** first update the stack, clearing the **SalesforceExecuteAWSServiceUser** parameter back to
+blank, and only then delete the IAM user. If you delete the user while the parameter still names it, the function's permission
+refers to a user that no longer exists and a later stack update that recreates that permission will fail.
+
+**Note:** If you need to re-run the Guided Setup wizard in the future, you can re-deploy the Lambda package from the AWS Serverless Application Repository. Create the IAM user again by following steps 1 through 4 above, update the `ExecuteAwsService` Named Credential with the new **Access Key ID** and **Secret Access Key**, and set the **SalesforceExecuteAWSServiceUser** parameter to the new user name as described in step 10.
 
 After following the above instructions, follow [these instructions](/docs/classic/installation/02-guided-setup) to navigate to the Guided Setup feature.

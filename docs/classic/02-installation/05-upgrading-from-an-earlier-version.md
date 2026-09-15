@@ -105,3 +105,13 @@ Now we are going to do the same thing for **AC CTI Script Layout**.
     as a CTI Flow.
 
 16. Refer to the Sample Flows in the Appendix of this manual.
+
+## Upgrading the Salesforce Lambdas
+
+The Salesforce Lambda package is the same for Classic and Lightning, so follow the
+[Upgrading the Salesforce Lambdas](/docs/lightning/installation/05-upgrading-from-an-earlier-version#upgrading-the-salesforce-lambdas)
+instructions.
+
+While you are reviewing the parameters of your previously-deployed stack, check that **SalesforceExecuteAWSServiceUser** names the
+IAM user behind your `ExecuteAwsService` Named Credential. If it is blank, supply that user name on the new stack — see
+[Appendix E: Restricting Access to sfExecuteAWSService](/docs/classic/appendices/appendix-e-restricting-sfexecuteawsservice/01-restricting-sfexecuteawsservice).

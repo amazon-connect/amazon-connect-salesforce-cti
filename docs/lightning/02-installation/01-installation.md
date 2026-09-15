@@ -196,11 +196,13 @@ Before you create the ExecuteAwsService Named Credential, **confirm that the app
 
 9. Click **Save**.
 
-10. Finally, restrict access to the `sfExecuteAWSService` function to the IAM user you created above. In the CloudFormation
+10. Finally, grant the IAM user you created above permission to invoke the `sfExecuteAWSService` function. In the CloudFormation
 console, open the **serverlessrepo-AmazonConnectSalesforceLambda** stack and select **Update stack > Create a change set**. Keep
 **Use existing template**, set the **SalesforceExecuteAWSServiceUser** parameter to the IAM user name from step 2 (for example
-*sfExecuteAwsServiceIamUser*), and leave every other parameter unchanged. Create the change set, then execute it. This makes sure
-the function can only be called by that user, and not by anything else in your AWS account. For the full walkthrough, see
+*sfExecuteAwsServiceIamUser*), and leave every other parameter unchanged. Create the change set, then execute it. This makes that
+user the intended and only externally reachable path to the function. Note that it grants access rather than denying it — principals
+inside your AWS account that already hold `lambda:InvokeFunction` can still invoke the function, so also avoid granting that
+permission to other principals and follow the Post-Setup Cleanup guidance below. For the full walkthrough, see
 [Appendix H: Restricting Access to sfExecuteAWSService](/docs/lightning/appendices/appendix-h-restricting-sfexecuteawsservice/01-restricting-sfexecuteawsservice).
 
 #### Post-Setup Cleanup (Recommended)

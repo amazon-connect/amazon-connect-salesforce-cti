@@ -656,8 +656,14 @@ listed (ex. v5.21.1), it will be grouped with with its major version unless othe
 ### Restrict invocation of sfExecuteAWSService
 
 The `sfExecuteAWSService` function is the entrypoint the CTI Adapter uses to reach your AWS account. Setting the
-**SalesforceExecuteAWSServiceUser** parameter is a required security measure: it makes sure the function can only be called by the
-IAM user the CTI Adapter authenticates as, and not by anything else in your AWS account.
+**SalesforceExecuteAWSServiceUser** parameter is a required security measure: it grants the IAM user that the CTI Adapter
+authenticates as permission to invoke the function, making that user the intended and only externally reachable path to it.
+
+**Note:** this grants access; it does not deny it. Principals inside your AWS account that already hold `lambda:InvokeFunction` —
+an administrator, for example — can still invoke the function regardless of this parameter. To limit access from inside the
+account, do not grant `lambda:InvokeFunction` on this function to any other principal, and disable or delete the function once
+setup is complete, as described in
+[Post-Setup Cleanup](/docs/lightning/installation/01-installation#post-setup-cleanup-recommended).
 
 This is done after the deployment rather than during it. The *invokeSfExecuteAWSServicePolicy* policy that the IAM user needs is
 created by the stack you just deployed, so the user cannot be fully configured beforehand. Complete the following in order.
