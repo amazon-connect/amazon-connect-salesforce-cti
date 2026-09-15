@@ -196,11 +196,18 @@ Before you create the ExecuteAwsService Named Credential, **confirm that the app
 
 9. Click **Save**.
 
+10. Finally, restrict access to the `sfExecuteAWSService` function to the IAM user you created above. In the CloudFormation
+console, open the **serverlessrepo-AmazonConnectSalesforceLambda** stack and select **Update stack > Create a change set**. Keep
+**Use existing template**, set the **SalesforceExecuteAWSServiceUser** parameter to the IAM user name from step 2 (for example
+*sfExecuteAwsServiceIamUser*), and leave every other parameter unchanged. Create the change set, then execute it. This makes sure
+the function can only be called by that user, and not by anything else in your AWS account. For the full walkthrough, see
+[Appendix H: Restricting Access to sfExecuteAWSService](/docs/lightning/appendices/appendix-h-restricting-sfexecuteawsservice/01-restricting-sfexecuteawsservice).
+
 #### Post-Setup Cleanup (Recommended)
 
 The `sfExecuteAWSService` Lambda function is used only during initial setup to configure your Amazon Connect instance and related AWS resources. Once your CTI Adapter configuration is complete, this function is no longer needed for day-to-day operations.
 
-As a best practice, we recommend **disabling or deleting** the `sfExecuteAWSService` Lambda function and its associated IAM user (e.g., `sfExecuteAwsServiceIamUser`) to keep your environment clean and minimize unused resources.
+As a best practice, we recommend **disabling or deleting** the `sfExecuteAWSService` Lambda function to keep your environment clean and minimize unused resources.
 
 **Note:** If you need to re-run the Guided Setup wizard in the future, you can re-deploy the Lambda package from the AWS Serverless Application Repository.
 

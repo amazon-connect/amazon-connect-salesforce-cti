@@ -740,6 +740,6 @@ to invoke the function.
 
 The `sfExecuteAWSService` Lambda function is used only during initial setup to configure your Amazon Connect instance and related AWS resources. Once your CTI Adapter configuration is complete, this function is no longer needed for day-to-day operations.
 
-As a best practice, we recommend **disabling or deleting** the `sfExecuteAWSService` Lambda function and its associated IAM user (e.g., `sfExecuteAwsServiceIamUser`) to keep your environment clean and minimize unused resources.
+As a best practice, we recommend **disabling or deleting** the `sfExecuteAWSService` Lambda function  to keep your environment clean and minimize unused resources.
 
 **Note:** If you need to re-run the Guided Setup wizard in the future, you can re-deploy the Lambda package from the AWS Serverless Application Repository.

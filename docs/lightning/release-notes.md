@@ -7,6 +7,14 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 ## Important Notes
 
+### Restricting who can invoke sfExecuteAWSService
+
+Salesforce Lambda v5.27 adds a **SalesforceExecuteAWSServiceUser** parameter that restricts `lambda:InvokeFunction` on the `sfExecuteAWSService` function to the single IAM user backing your `ExecuteAwsService` Named Credential. The parameter defaults to blank, in which case no resource policy is deployed and any principal in the account holding `lambda:InvokeFunction` can invoke the function.
+
+**Action required for existing stacks:** set this parameter on your deployed stack. It is a single-parameter change set with no code change and no Salesforce-side change. See [Appendix H: Restricting Access to sfExecuteAWSService](/docs/lightning/appendices/appendix-h-restricting-sfexecuteawsservice/01-restricting-sfexecuteawsservice).
+
+New installations set it during deployment — see [SalesforceExecuteAWSServiceUser](/docs/lightning/installation/04-salesforce-lambdas-manual-setup) in the Salesforce Lambdas setup guide.
+
 ### Google Chrome third-party cookies support
 
 The CTI Adapter v5.21 now provides support for third party cookies (see [Amazon Connect third party cookie documentation](https://docs.aws.amazon.com/connect/latest/adminguide/admin-3pcookies.html)). After you upgrade to the latest version of the CTI Adapter (v5.21+), agents will be prompted to allow third-party cookies from Amazon Connect: 
