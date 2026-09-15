@@ -9,7 +9,9 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 ### Restricting who can invoke sfExecuteAWSService
 
-Salesforce Lambda v5.27 adds a **SalesforceExecuteAWSServiceUser** parameter that restricts `lambda:InvokeFunction` on the `sfExecuteAWSService` function to the single IAM user backing your `ExecuteAwsService` Named Credential. The parameter defaults to blank, in which case no resource policy is deployed and any principal in the account holding `lambda:InvokeFunction` can invoke the function.
+The Salesforce Lambda stack includes a **SalesforceExecuteAWSServiceUser** parameter that grants `lambda:InvokeFunction` on the `sfExecuteAWSService` function to the single IAM user backing your `ExecuteAwsService` Named Credential, making that user the intended and only externally reachable path to the function. The parameter defaults to blank, in which case no resource policy is deployed.
+
+Note that this grants access rather than denying it: principals inside your AWS account that already hold `lambda:InvokeFunction` can still invoke the function regardless of this parameter. To limit access from inside the account, do not grant that permission on this function to other principals, and disable or delete the function once setup is complete — see [Post-Setup Cleanup](/docs/lightning/installation/01-installation#post-setup-cleanup-recommended).
 
 **Action required for existing stacks:** set this parameter on your deployed stack. It is a single-parameter change set with no code change and no Salesforce-side change. See [Appendix H: Restricting Access to sfExecuteAWSService](/docs/lightning/appendices/appendix-h-restricting-sfexecuteawsservice/01-restricting-sfexecuteawsservice).
 

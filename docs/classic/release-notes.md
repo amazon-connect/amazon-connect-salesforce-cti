@@ -5,6 +5,16 @@ title: Release Notes
 
 ## Important Notes
 
+### Restricting who can invoke sfExecuteAWSService
+
+The Salesforce Lambda stack includes a **SalesforceExecuteAWSServiceUser** parameter that grants `lambda:InvokeFunction` on the `sfExecuteAWSService` function to the single IAM user backing your `ExecuteAwsService` Named Credential, making that user the intended and only externally reachable path to the function. The parameter defaults to blank, in which case no resource policy is deployed.
+
+Note that this grants access rather than denying it: principals inside your AWS account that already hold `lambda:InvokeFunction` can still invoke the function regardless of this parameter. To limit access from inside the account, do not grant that permission on this function to other principals, and disable or delete the function once setup is complete — see [Post-Setup Cleanup](/docs/classic/installation/01-installation#post-setup-cleanup-recommended).
+
+**Action required for existing stacks:** if you deployed without this parameter, set it now. It is a single-parameter change set — no code change, no redeploy, and no Salesforce-side change. See [Appendix E: Restricting Access to sfExecuteAWSService](/docs/classic/appendices/appendix-e-restricting-sfexecuteawsservice/01-restricting-sfexecuteawsservice).
+
+New installations set it during deployment — see [Restrict invocation of sfExecuteAWSService](/docs/classic/installation/04-salesforce-lambdas-manual-setup#restrict-invocation-of-sfexecuteawsservice) in the Salesforce Lambdas setup guide.
+
 ### Google Chrome third-party cookies support
 
 The CTI Adapter v5.21 now provides support for third party cookies (see [Amazon Connect third party cookie documentation](https://docs.aws.amazon.com/connect/latest/adminguide/admin-3pcookies.html)). After you upgrade to the latest version of the CTI Adapter (v5.21+), agents will be prompted to allow third-party cookies from Amazon Connect: 
@@ -106,7 +116,7 @@ For detailed information about the `libphonenumber-js` library and its features,
  - **Bug Fix:** Recording Controls: Recording Controls tab will now be visible on the first session load in the user's salesforce instance.
 - **Documentation Change:** Medialess: Created new documentation page for setting up medialess ([Link to page](/docs/lightning/cti-adapter/14-medialess)).
 - **Documentation Change:** Historical Metrics: Added clarifying information to setup historical metrics.
-- **Documentation Change:** Upgrading from an earlier version: Added new documentation on upgrading [Salesforce Lambdas](docs/lightning/installation/05-upgrading-from-an-earlier-version)
+- **Documentation Change:** Upgrading from an earlier version: Added new documentation on upgrading [Salesforce Lambdas](/docs/classic/installation/05-upgrading-from-an-earlier-version#upgrading-the-salesforce-lambdas)
 - **Documentation Change:** CTI Flow Blocks: Updated with latest CTI Flow blocks. Added new section about accessing CTI flow block values ([Link to section](/docs/lightning/cti-adapter/03-cti-flows#accessing-cti-flow-block-values)).
 
 ## 5.21.1 November 2023

@@ -113,6 +113,7 @@ module.exports = {
         'classic/appendices/appendix-b-configuring-salesforce-as-your-identity-provider/01-configuring-salesforce-as-your-identity-provider',
         'classic/appendices/appendix-c-cti-flow-examples/01-cti-flow-examples',
         'classic/appendices/appendix-d-cti-flow-blocks/01-cti-flow-blocks',
+        'classic/appendices/appendix-e-restricting-sfexecuteawsservice/01-restricting-sfexecuteawsservice',
       ],
     },
   ],

@@ -478,70 +478,82 @@ listed (ex. v5.21.1), it will be grouped with with its major version unless othe
         the Secrets Manager Secret that you created in the previous
         section.
 
-    12.  **SalesforceHost:** The full domain for your salesforce org. For
+    12.  **SalesforceExecuteAWSServiceUser:** The name of the IAM user that
+        invokes the `sfExecuteAWSService` function. Leave this blank on the
+        initial deployment and set it in a stack update after creating the
+        user, as described in
+        [Restrict invocation of sfExecuteAWSService](#restrict-invocation-of-sfexecuteawsservice)
+        below. The IAM policy this user needs is created by this stack, so the
+        user cannot be fully configured beforehand.
+
+    13.  **SalesforceHost:** The full domain for your salesforce org. For
         example
         `https://mydevorg-dev-ed.my.salesforce.com`.
         Please make sure that the host starts with `https`, and that the url
         ends with `.my.salesforce.com`. This url can be found in `Setup` -> `My Domain`.
 
-    13.  **SalesforceProduction:** true \| false - True for Production
+    14.  **SalesforceProduction:** true \| false - True for Production
         Environment, False for Sandbox
 
-    14.  **SalesforceUsername:** The username for the API user that you
+    15.  **SalesforceUsername:** The username for the API user that you
         configured in the previous section. Salesforce usernames are in the form of an email address.
 
-    15.  **SalesforceVersion:** This is the Salesforce.com API version
+    16.  **SalesforceVersion:** This is the Salesforce.com API version
         that you noted in the previous section. The pattern of this value is ```vXX.X```.
 
-    16.  **TranscribeOutputS3BucketName:** This is the S3 bucket where
+    17.  **TranscribeOutputS3BucketName:** This is the S3 bucket where
         Amazon Transcribe stores the output. Typically, this is the same
         bucket that call recordings are stored in, so you can use the
         same value as found in **ConnectRecordingS3BucketName**. Not
         required if PostcallRecordingImportEnabled,
         PostcallTranscribeEnabled, ContactLensImportEnabled set to false.
 
-    17.  **VpcSecurityGroupList:** The list of SecurityGroupIds for
+    18.  **VpcSecurityGroupList:** The list of SecurityGroupIds for
         Virtual Private Cloud (VPC). Not required if PrivateVpcEnabled
         is set to false.
 
-    18.  **VpcSubnetList:** The list of Subnets for the Virtual Private
+    19.  **VpcSubnetList:** The list of Subnets for the Virtual Private
         Cloud (VPC). Not required if PrivateVpcEnabled is set to false.
 
-    19.  **AmazonConnectQueueMaxRecords:** Enter record set size for list
+    20.  **AmazonConnectQueueMaxRecords:** Enter record set size for list
         queue query. Max is 100.
 
-    20.  **AmazonConnectQueueMetricsMaxRecords:** Enter record set size
+    21.  **AmazonConnectQueueMetricsMaxRecords:** Enter record set size
         for queue metrics query. Max is 100.
 
-    21.  **CTREventSourceMappingMaximumRetryAttempts:** Maximum retry
+    22.  **CTREventSourceMappingMaximumRetryAttempts:** Maximum retry
         attempts on failure for lambdas triggered by Kinesis Events.
 
-    22.  **ConnectRecordingS3BucketName:** This is the name of the S3
+    23.  **ConnectRecordingS3BucketName:** This is the name of the S3
         bucket used to store recordings for your Amazon Connect
         instance. This is ONLY the bucket name, no sub-folders or
         suffixes
 
-    23.  **ContactLensImportEnabled:** true \| false - Set to false if
+    24.  **ContactLensImportEnabled:** true \| false - Set to false if
         importing Contact Lens into Salesforce should not be enabled.
 
-    24.  **PostcallCTRImportEnabled:** true \| false - Set to false if
+    25.  **PostcallCTRImportEnabled:** true \| false - Set to false if
         importing CTRs into Salesforce should not be enabled on the
         package level. This setting can be disabled on a call-by-call
         basis.
 
-    25.  **PostcallRecordingImportEnabled:** true \| false - Set to false
+    26.  **PostcallRecordingImportEnabled:** true \| false - Set to false
         if importing call recordings into Salesforce should not be
         enabled on the package level. This setting can be disabled on a
         call-by-call basis.
 
-    26.  **PostcallTranscribeEnabled:** true \| false - Set to false if
+    27.  **PostcallTranscribeEnabled:** true \| false - Set to false if
         post-call transcription should not be enabled on the package
         level. This setting can be disabled on a call-by-call basis.
 
-    27.  **TranscriptionJobCheckWaitTime:** Time between transcription
+    28.  **TranscriptionJobCheckWaitTime:** Time between transcription
         job checks
 
 7.  Once completed, click "Deploy" function:
+
+    After the deployment finishes, complete
+    [Restrict invocation of sfExecuteAWSService](#restrict-invocation-of-sfexecuteawsservice) at the end of this page. It sets the
+    **SalesforceExecuteAWSServiceUser** parameter you left blank above.
 
 <img src={useBaseUrl('/img/classic/image137.png')} />
 
@@ -640,3 +652,34 @@ listed (ex. v5.21.1), it will be grouped with with its major version unless othe
 
 27. Login in to Salesforce and search for Case and it's details. The
     Case status should be "Closed".
+
+### Restrict invocation of sfExecuteAWSService
+
+The `sfExecuteAWSService` function is the entrypoint the CTI Adapter uses to reach your AWS account. Setting the
+**SalesforceExecuteAWSServiceUser** parameter is a required security measure: it grants the IAM user that the CTI Adapter
+authenticates as permission to invoke the function, making that user the intended and only externally reachable path to it.
+
+**Note:** this grants access; it does not deny it. Principals inside your AWS account that already hold `lambda:InvokeFunction` —
+an administrator, for example — can still invoke the function regardless of this parameter. To limit access from inside the
+account, do not grant `lambda:InvokeFunction` on this function to any other principal, and disable or delete the function once
+setup is complete, as described in
+[Post-Setup Cleanup](/docs/classic/installation/01-installation#post-setup-cleanup-recommended).
+
+This is done after the deployment rather than during it. The *invokeSfExecuteAWSServicePolicy* policy that the IAM user needs is
+created by the stack you just deployed, so the user cannot be fully configured beforehand. Complete the following in order.
+
+1.  Create the IAM user with programmatic access, attach *invokeSfExecuteAWSServicePolicy*, and capture the **Access Key ID** and
+    **Secret Access Key** — steps 1 through 4 of
+    [Setting up the ExecuteAwsService Named Credential](/docs/classic/installation/01-installation#setting-up-the-executeawsservice-named-credential).
+
+2.  Copy the exact `sfExecuteAWSService` function name from the Lambda console — steps 5 and 6 of the same section.
+
+3.  Create the `ExecuteAwsService` Named Credential — steps 7 through 9 of the same section.
+
+4.  Update this CloudFormation stack, setting **SalesforceExecuteAWSServiceUser** to the IAM user name from step 1. In the
+    CloudFormation console, open the **serverlessrepo-AmazonConnectSalesforceLambda** stack and select
+    **Update stack > Create a change set**. Keep **Use existing template**, set the parameter, and leave every other parameter
+    unchanged. Create the change set, then execute it. For the full walkthrough, see
+    [Appendix E: Restricting Access to sfExecuteAWSService](/docs/classic/appendices/appendix-e-restricting-sfexecuteawsservice/01-restricting-sfexecuteawsservice).
+
+Complete step 4 in the same sitting as the deployment. Until it is done, the restriction is not yet in place.
