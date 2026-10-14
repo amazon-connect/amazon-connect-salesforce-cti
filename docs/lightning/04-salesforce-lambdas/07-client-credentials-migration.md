@@ -23,9 +23,13 @@ Find the value at **Setup > Quick Find > My Domain**.
 
 ### Update Lambda
 
+**NOTE:** You do not need to update your package for this Migration, only the lambdas
+
+
 Please follow these instructions for [upgrading the Salesforce lambdas](/docs/lightning/installation/05-upgrading-from-an-earlier-version#upgrading-the-salesforce-lambdas).
 
 Release v5.28 introduces a new parameter to the stack called **SalesforceAuthMode**.
+
 
 <img src={useBaseUrl('/img/lightning/client-credentials-01.png')} />
 
