@@ -18,7 +18,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
     3. Following the [Onboarding guide](https://catalog.workshops.aws/amazon-connect-global-resiliency/en-US/cli/configuring). After completing the onboarding process, you should have created a Replica Connect Instance, and associated a new or existing phone number to a Traffic Distribution Group (TDG).
 
-3. Set up your CTI Adapter in your Source Region ([Guided Setup](/docs/classic/installation/02-guided-setup)).
+3. Set up your CTI Adapter in your Source Region ([Managed Package Manual Setup](/docs/classic/installation/03-managed-package-manual-setup) and [Salesforce Lambdas Manual Setup](/docs/classic/installation/04-salesforce-lambdas-manual-setup)).
 
 ### Set up Global Sign-in with SSO
 
@@ -177,32 +177,12 @@ Additional setup is required to set-up AmazonConnectSalesforceLambda in the Repl
 ## Additional Setup
 
 ### Set up Salesforce Lambda in Replica Region
-1. Install the latest Amazon Connect Salesforce Lambda package in your Replica Region ([guide](/docs/classic/installation/01-installation#amazon-connect-salesforce-lambda-package)).
-2. Update your `sfExecuteAwsServiceIamUser` user with a `invokeSfExecuteAWSServicePolicy` policy for the Replica Region Lambda (see Step 3 of [Setting up the ExecuteAwsService Named Credential](/docs/classic/installation/01-installation#setting-up-the-executeawsservice-named-credential)). The `sfExecuteAwsServiceIamUser` user should already be created. If not, follow Step 1 and 2 of [Setting up the ExecuteAwsService Named Credential](/docs/classic/installation/01-installation#setting-up-the-executeawsservice-named-credential).
+1. Install the latest Amazon Connect Salesforce Lambda package in your Replica Region ([guide](/docs/classic/installation/04-salesforce-lambdas-manual-setup#install-the-amazon-connect-salesforce-lambda-package)).
+2. For the Salesforce API user ([Determine your Username, Password and Security Token](/docs/classic/installation/04-salesforce-lambdas-manual-setup#determine-your-username-password-and-security-token)), create a new secret in the Replica Region. Follow [Store Salesforce Credentials in AWS Secrets Manager](/docs/classic/installation/04-salesforce-lambdas-manual-setup#store-salesforce-credentials-in-aws-secrets-manager).
 
-    <img src={useBaseUrl('/img/lightning/v5.27-gr-9.png')} />
+3. S3 buckets and Kinesis streams are regional. To gather information from your Replica Connect Instance, create new S3 buckets and Kinesis streams in the corresponding region. You can gather information by enabling Call recording/Chat transcripts/Exported reports/Data streaming. For more information, see [Gather Amazon Connect information](/docs/lightning/installation/04-salesforce-lambdas-manual-setup#gather-amazon-connect-information).
 
-3. Create a new `ExecuteAwsService` Named Credential for the Replica Region. 
-    1. Follow the [Setting up the ExecuteAwsService Named Credential](/docs/classic/installation/01-installation#setting-up-the-executeawsservice-named-credential) guide. 
-    2. For the `Name` and `Label`, use **ExecuteAwsService** followed by under score of the region, e.g: `ExecuteAwsService_us_west_2`
-    3. For `AWS Region`, use your Replica Region, e.g: `us-west-2`
-    4. For `AWS Service`, use **Lamda**
-
-    Sample Replica Region Named Credential:
-
-    <img src={useBaseUrl('/img/lightning/v5.27-gr-10.png')} />
-
-    Sample Source Region Named Credential:
-
-     <img src={useBaseUrl('/img/lightning/v5.27-gr-14.png')} />
-
-    **Note:** The `AWS Access Key ID` and `AWS Secret Access Key` of the Replica Region can be the same as the Source Region’s Named Credential, since the two Named Credentials can share the same IAM user.
-
-4. For the [Salesforce API User](/docs/classic/installation/02-guided-setup#setting-up-the-salesforce-api-user), create a new secret in the Replica Region by following the [Setting up the SecretsManager Secret](/docs/classic/installation/02-guided-setup#setting-up-the-secretsmanager-secret) guide.
-
-5. S3 buckets and Kinesis streams are regional. To gather information from your Replica Connect Instance, create new S3 buckets and Kinesis streams in the corresponding region. You can gather information by enabling Call recording/Chat transcripts/Exported reports/Data streaming. For more information, see [Gather Amazon Connect information](/docs/lightning/installation/04-salesforce-lambdas-manual-setup#gather-amazon-connect-information).
-
-6. Update your Cloudformation parameters of your **serverlessrepo-AmazonConnectSalesforceLambda** stack
+4. Update your Cloudformation parameters of your **serverlessrepo-AmazonConnectSalesforceLambda** stack
     1. Go to your AWS Console, and search for `CloudFormation`
     2. Change your AWS Region to your Replica Region
 
@@ -220,7 +200,7 @@ Additional setup is required to set-up AmazonConnectSalesforceLambda in the Repl
 
     7. Confirm the changes and Submit the deployment.
 
-7. After setting up your Lambda in the Replica Region with S3 and Kinesis triggers, you should receive `AC Contact Trace Records` and `AC Contact Channel Analytics` from both regions. After upgrading the **AmazonConnectSalesforceLambda** to version `v5.24` in both regions, and the **CTI Adapter** to `v5.27`, you will be able to see the Contact's Region.
+5. After setting up your Lambda in the Replica Region with S3 and Kinesis triggers, you should receive `AC Contact Trace Records` and `AC Contact Channel Analytics` from both regions. After upgrading the **AmazonConnectSalesforceLambda** to version `v5.24` in both regions, and the **CTI Adapter** to `v5.27`, you will be able to see the Contact's Region.
 
 `AC Contact Channel Analytics` record from us-west-2
 
@@ -244,10 +224,10 @@ For more infomation, see [Contact Channel Analytics](/docs/lightning/salesforce-
 
 2. Create a new legacy `AmazonConnectAPI` Named Credential for the Replica Region. 
     1. Follow the Recording Controls [Setup](/docs/classic/cti-adapter/11-recording-controls#setup) guide. 
-    2. For the `Name` and `Label`, use **AmazonConnectAPI** followed by under score of the region, e.g: `ExecuteAwsService_us_west_2`
+    2. For the `Name` and `Label`, use **AmazonConnectAPI** followed by under score of the region, e.g: `AmazonConnectAPI_us_west_2`
     3. For the `URL`, use the corresponding Connect URL, e.g.: `https://connect.us-west-2.amazonaws.com`
-    3. For `AWS Region`, use your Replica Region, e.g: `us-west-2`
-    4. For `AWS Service`, use **connect**
+    4. For `AWS Region`, use your Replica Region, e.g: `us-west-2`
+    5. For `AWS Service`, use **connect**
 
     Sample Replica Region Named Credential:
 

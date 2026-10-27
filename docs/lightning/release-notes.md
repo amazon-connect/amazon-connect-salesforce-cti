@@ -7,15 +7,15 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 ## Important Notes
 
-### Restricting who can invoke sfExecuteAWSService
+### Guided Setup retired and sfExecuteAWSService removed
 
-The Salesforce Lambda stack includes a **SalesforceExecuteAWSServiceUser** parameter that grants `lambda:InvokeFunction` on the `sfExecuteAWSService` function to the single IAM user backing your `ExecuteAwsService` Named Credential, making that user the intended and only externally reachable path to the function. The parameter defaults to blank, in which case no resource policy is deployed.
+Guided Setup is retired. Version v5.29 and later of the Salesforce Lambda package remove the resources that Guided Setup used. If your CTI Adapter is v5.15 to v5.18, upgrade it to v5.19 or later first, because audio recording playback in those versions uses the `sfExecuteAWSService` function.
 
-Note that this grants access rather than denying it: principals inside your AWS account that already hold `lambda:InvokeFunction` can still invoke the function regardless of this parameter. To limit access from inside the account, do not grant that permission on this function to other principals, and disable or delete the function once setup is complete — see [Post-Setup Cleanup](/docs/lightning/installation/01-installation#post-setup-cleanup-recommended).
+To set up a new installation, follow [Managed Package Manual Setup](/docs/lightning/installation/03-managed-package-manual-setup) and [Salesforce Lambdas Manual Setup](/docs/lightning/installation/04-salesforce-lambdas-manual-setup).
 
-**Action required for existing stacks:** set this parameter on your deployed stack. It is a single-parameter change set with no code change and no Salesforce-side change. See [Appendix H: Restricting Access to sfExecuteAWSService](/docs/lightning/appendices/appendix-h-restricting-sfexecuteawsservice/01-restricting-sfexecuteawsservice).
+If you used Guided Setup, you must remove the setup IAM user, its access keys, the Named Credential, and the *invokeSfExecuteAWSServicePolicy* policy. Start these steps before you upgrade. See [Appendix H: Removing the Guided Setup Resources](/docs/lightning/appendices/appendix-h-restricting-sfexecuteawsservice/01-restricting-sfexecuteawsservice). The appendix also covers what to do if you cannot upgrade yet, or if you already deleted the `sfExecuteAWSService` function.
 
-New installations set it during deployment — see [SalesforceExecuteAWSServiceUser](/docs/lightning/installation/04-salesforce-lambdas-manual-setup) in the Salesforce Lambdas setup guide.
+If you update the stack with `aws cloudformation create-change-set` or `aws cloudformation update-stack`, remove **SalesforceExecuteAWSServiceUser** from the parameters that you pass. Otherwise, CloudFormation rejects the update with a `ValidationError`. If you deploy the package as a nested application, remove the parameter from your parent template.
 
 ### Google Chrome third-party cookies support
 
@@ -27,7 +27,7 @@ The CTI Adapter v5.21 now provides support for third party cookies (see [Amazon 
 **Note**: If the agent does not follow steps above, please see [our documentation](https://docs.aws.amazon.com/connect/latest/adminguide/admin-3pcookies.html#upgrade3p-agent-exp) on how to resolve.
 
 ### Summer '23 Release
-The Salesforce summer release '23 blocks Username-Password Flow by default (see more details [here](https://help.salesforce.com/s/articleView?id=release-notes.rn_security_username-password_flow_blocked_by_default.htm&release=244&type=5)). If your org uses this version of Salesforce, please unblock the flow by following [these](/docs/lightning/installation/02-guided-setup#allowing-the-api-user-to-authenticate-using-password) instructions.
+The Salesforce summer release '23 blocks Username-Password Flow by default (see more details [here](https://help.salesforce.com/s/articleView?id=release-notes.rn_security_username-password_flow_blocked_by_default.htm&release=244&type=5)). If your org uses this version of Salesforce, please unblock the flow by following [these](/docs/lightning/installation/04-salesforce-lambdas-manual-setup#allowing-the-api-user-to-authenticate-using-password) instructions.
 
 ### Salesforce Enhanced Domains
 Salesforce is making changes to the instance domains on account of the [enhanced domains](https://help.salesforce.com/s/articleView?id=sf.domain_name_enhanced_enable.htm&type=5) feature in the Spring 23 release. Once this feature is enabled, you must migrate the CTI adapter to using these new domains. See [here](/docs/other/sf-enhanced-domains-migration) for migration instructions.
@@ -257,7 +257,7 @@ When installing v5.15, please **confirm that the application was installed for a
 - **Feature: Guided Setup** The Guided Setup feature helps make the setup process easier. See [Guided Setup](/docs/lightning/installation/02-guided-setup) for more details.
 - **Feature: Chat Widget Integration for SalesForce Experience Cloud(formerly Community Cloud)** Added VisualForce Page component that allows you to add Amazon Connect Chat Widget in your Salesforce Experience Cloud Site.
 - **Enhancement:** Changed the default audio recording component in the Contact Channel Analytics for easier setup. See [Contact Channel Analytics](/docs/lightning/salesforce-lambdas/04-contact-channel-analytics) for more details.
-- **Enhancement:** Created the ExecuteAwsService service for simpler communication between Salesforce and AWS. **WARNING:** If you are using Contact Lens for audio recording you *must* replace your existing AwsGenerateAudioRecordingUrl named credential with with the ExecuteAwsService named credential. See [here](/docs/lightning/installation/01-installation#setting-up-the-executeawsservice-named-credential) for more details.
+- **Enhancement:** Created the ExecuteAwsService service for simpler communication between Salesforce and AWS. **WARNING:** If you are using Contact Lens for audio recording you *must* replace your existing AwsGenerateAudioRecordingUrl named credential with the ExecuteAwsService named credential. This requirement applies only to CTI Adapter v5.15 to v5.18. CTI Adapter v5.19 and later do not use the `ExecuteAwsService` Named Credential for Contact Lens or for audio recording.
 - **Bug Fix:** Fixed an issue with the lambda package that caused Contact Lens Call Recording Streaming to be broken for redacted calls.
 - **Bug Fix:** Fixed an issue that caused the "Clear All Properties" CTI Flow Block to clear properties important to the CTI adpater working.
 - **Bug Fix:** Added the `DISCONNECT` field to the `Initiation Method` field in Contact Trace Records.

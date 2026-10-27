@@ -5,6 +5,10 @@ title: Setting Up The CTI Adapter Managed Package Manually
 
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
+> **Note:** Guided Setup is retired. Do not use the Guided Setup wizard. Set up the CTI Adapter with this guide, then with [Salesforce Lambdas Manual Setup](/docs/classic/installation/04-salesforce-lambdas-manual-setup).
+>
+> If you set up the CTI Adapter with Guided Setup before, remove the resources that it used. See [Appendix E: Removing the Guided Setup Resources](/docs/classic/appendices/appendix-e-restricting-sfexecuteawsservice/01-restricting-sfexecuteawsservice).
+
 Below are manual setup instructions for the Salesforce CTI Adapter Managed Package. After following the below steps, be sure to follow the instructions for setting up the Salesforce Lambdas [here](/docs/classic/installation/04-salesforce-lambdas-manual-setup).
 
 Before proceeding, please **confirm that the application was installed for admins only** (see [installation](/docs/classic/installation/01-installation) for more details). If you did this by accident, then you will have to [manually edit the profiles](/docs/classic/installation/06-cti-adapter-installation-troubleshooting#how-to-remove-permissions-to-visualforce-pages-apex-classes-for-a-desired-profile) to remove the permissions to the objects and pages created by the app.
