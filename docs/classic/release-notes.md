@@ -5,15 +5,45 @@ title: Release Notes
 
 ## Important Notes
 
-### Restricting who can invoke sfExecuteAWSService
+### Guided Setup retired
 
-The Salesforce Lambda stack includes a **SalesforceExecuteAWSServiceUser** parameter that grants `lambda:InvokeFunction` on the `sfExecuteAWSService` function to the single IAM user backing your `ExecuteAwsService` Named Credential, making that user the intended and only externally reachable path to the function. The parameter defaults to blank, in which case no resource policy is deployed.
+We retired Guided Setup in CTI Adapter v5.34 and Salesforce Lambdas v5.29 to make your integration more secure. This change does not affect how your existing integration operates, unless your CTI Adapter is v5.15 to v5.18. Guided Setup used a setup function in the Salesforce Lambdas (`sfExecuteAWSService`), and a separate IAM user and access keys. Your integration does not use Guided Setup. Before you upgrade, read the items below.
 
-Note that this grants access rather than denying it: principals inside your AWS account that already hold `lambda:InvokeFunction` can still invoke the function regardless of this parameter. To limit access from inside the account, do not grant that permission on this function to other principals, and disable or delete the function once setup is complete — see [Post-Setup Cleanup](/docs/classic/installation/01-installation#post-setup-cleanup-recommended).
+- For a new setup, follow [Managed Package Manual Setup](/docs/classic/installation/03-managed-package-manual-setup), then [Salesforce Lambdas Manual Setup](/docs/classic/installation/04-salesforce-lambdas-manual-setup).
+- If your CTI Adapter is v5.15 to v5.18, upgrade it to v5.19 or later first. Do this before you remove the Guided Setup resources, and before you upgrade the Salesforce Lambdas. CTI Adapter v5.15 to v5.18 uses the setup function to play recordings in the Contact Lens audio player. If you do not upgrade it first, that player stops.
+- If you used Guided Setup before, follow [Appendix E: Removing the Guided Setup Resources](/docs/classic/appendices/appendix-e-restricting-sfexecuteawsservice/01-restricting-sfexecuteawsservice). It shows how to remove the setup IAM user, its access keys, the Named Credential, and the policy that Guided Setup used. Do some steps before you upgrade the Salesforce Lambdas. Do the other steps after the upgrade.
+- If you cannot upgrade the Salesforce Lambdas yet, first make sure that your CTI Adapter is not v5.15 to v5.18. Then throttle the setup function, as [the appendix](/docs/classic/appendices/appendix-e-restricting-sfexecuteawsservice/01-restricting-sfexecuteawsservice#if-you-cannot-upgrade-yet) shows. It also shows what to do if you already deleted the function.
+- If you upgrade with `aws cloudformation create-change-set` or `aws cloudformation update-stack`, remove the **SalesforceExecuteAWSServiceUser** parameter. If you keep it, CloudFormation rejects the update with a `ValidationError`. If you use a nested application or the AWS CDK, remove the parameter from your parent template or CDK code.
 
-**Action required for existing stacks:** if you deployed without this parameter, set it now. It is a single-parameter change set — no code change, no redeploy, and no Salesforce-side change. See [Appendix E: Restricting Access to sfExecuteAWSService](/docs/classic/appendices/appendix-e-restricting-sfexecuteawsservice/01-restricting-sfexecuteawsservice).
+Other changes in v5.29 of the Salesforce Lambdas can affect your contact flows. Before you upgrade, read [Contact flow changes in Salesforce Lambdas v5.29](#contact-flow-changes-in-salesforce-lambdas-v529).
 
-New installations set it during deployment — see [Restrict invocation of sfExecuteAWSService](/docs/classic/installation/04-salesforce-lambdas-manual-setup#restrict-invocation-of-sfexecuteawsservice) in the Salesforce Lambdas setup guide.
+### Contact flow changes in Salesforce Lambdas v5.29
+
+Version v5.29 of the Salesforce Lambdas changes how the `sfInvokeAPI` function gets Salesforce data for your contact flows. The changes take effect only when you install v5.29 or later on your stack. Before you upgrade, check your contact flows. Change each flow that v5.29 affects.
+
+- The `query`, `queryOne`, `searchSOSL`, and `searchOneSOSL` operations are removed. A flow that uses one of them takes its Error branch, and the `sfInvokeAPI` log in CloudWatch names the operation.
+- The `search`, `searchOne`, `lookup`, and `lookup_all` operations continue to work with plain field names, relationship paths such as `Account.Name`, and plain values. Wildcards, search operators such as AND and OR, the `where` filter, and field functions no longer work.
+
+To find the flows that you must change, check each contact flow that calls `sfInvokeAPI`:
+
+- If a flow uses `query`, `queryOne`, `searchSOSL`, or `searchOneSOSL`, change it before you upgrade.
+- If a flow uses `search`, `searchOne`, `lookup`, or `lookup_all` with only plain field names and plain values, you do not need to change it. Examples are a phone number, an account number, or a case number.
+- If a flow sends other input to these operations, test the flow on a test stack with v5.29. Examples are a filter, a search pattern, a formatted field, or an `overallLimit` value. Other examples are a company or person name such as `Smith and Sons`, or text that a caller enters or speaks. Make sure that the flow finds the correct records before you upgrade.
+
+If a `lookup` or `lookup_all` value contains `%`, the flow does not take the Error branch. It usually finds no record, because `%` is now an ordinary character. Before you upgrade, look for `%` in your flows. Also look for it in the values that your flows get from callers, contact attributes, or other Lambda functions. To find whole words, use `search`. For other partial matches, use your own Lambda function.
+
+To change a flow:
+
+- For a simple lookup, use `lookup`, `lookup_all`, `search`, or `searchOne`. A simple lookup finds a record from a value that the caller gives. After you change the flow, test it.
+- For a more complex query, use your own Lambda function. Examples are a query that sorts, counts, or totals records, gets lists of related records, or combines many conditions, for example with OR. Your team owns and maintains that function. The function must check the caller input before it uses the input in a query.
+
+Version v5.29 also has these changes:
+
+- The `create`, `update`, `delete`, `lookup`, `lookup_all`, `search`, and `searchOne` operations check the object name before they send the request. The `lookup`, `lookup_all`, `search`, and `searchOne` operations also check the field names. A request with an unknown object or field name takes the Error branch.
+- For an unknown object, the `sfInvokeAPI` log in CloudWatch shows `Invalid sf_object: not a known Salesforce object`. The log shows the same message when the Salesforce API user cannot read the object. It also shows it when the object check fails for another reason, for example an authentication error or an API limit. An earlier log entry shows the cause.
+- After you add a field in Salesforce, or give the API user access to it, wait 15 minutes. Until then, a flow that uses the field can take the Error branch.
+
+For the rules of each operation, see [Salesforce Lookup](/docs/classic/salesforce-lambdas/01-contact-flow-salesforce-lambdas#salesforce-lookup) and [Salesforce search](/docs/classic/salesforce-lambdas/01-contact-flow-salesforce-lambdas#salesforce-search).
 
 ### Google Chrome third-party cookies support
 
@@ -25,7 +55,7 @@ The CTI Adapter v5.21 now provides support for third party cookies (see [Amazon 
 **Note**: If the agent does not follow steps above, please see [our documentation](https://docs.aws.amazon.com/connect/latest/adminguide/admin-3pcookies.html#upgrade3p-agent-exp) on how to resolve.
 
 ### Summer '23 Release
-The Salesforce summer release '23 blocks Username-Password Flow by default (see more details [here](https://help.salesforce.com/s/articleView?id=release-notes.rn_security_username-password_flow_blocked_by_default.htm&release=244&type=5)). If your org uses this version of Salesforce, please unblock the flow by following [these](/docs/classic/installation/02-guided-setup#allowing-the-api-user-to-authenticate-using-password) instructions.
+The Salesforce summer release '23 blocks Username-Password Flow by default (see more details [here](https://help.salesforce.com/s/articleView?id=release-notes.rn_security_username-password_flow_blocked_by_default.htm&release=244&type=5)). If your org uses this version of Salesforce, please unblock the flow by following [these](/docs/classic/installation/04-salesforce-lambdas-manual-setup#allowing-the-api-user-to-authenticate-using-password) instructions.
 
 ### Salesforce Enhanced Domains
 Salesforce is making changes to the instance domains on account of the [enhanced domains](https://help.salesforce.com/s/articleView?id=sf.domain_name_enhanced_enable.htm&type=5) feature in the Spring 23 release. Once this feature is enabled, you must migrate the CTI adapter to using these new domains. See [here](/docs/other/sf-enhanced-domains-migration) for migration instructions.
@@ -60,6 +90,19 @@ Please review your existing CTI flows and update any JSON paths referencing pars
 
 For detailed information about the `libphonenumber-js` library and its features, please visit: [https://gitlab.com/catamphetamine/libphonenumber-js](https://gitlab.com/catamphetamine/libphonenumber-js)
 
+
+## 5.34 November 2026
+- **Retired:** Guided Setup is retired to make your integration more secure. Salesforce Lambdas v5.29 removes its setup function, `sfExecuteAWSService`. The **AC Guided Setup (Retired)** tab shows a retirement notice, and the **AC_Administrator** permission set no longer gives access to it. This change does not affect how your existing integration operates, unless your CTI Adapter is v5.15 to v5.18. Before you upgrade, read [Guided Setup retired](#guided-setup-retired).
+- **Security:** Salesforce Lambdas v5.29 changes the `sfInvokeAPI` operations that contact flows call. It removes `query`, `queryOne`, `searchSOSL`, and `searchOneSOSL`. In `search`, `searchOne`, `lookup`, and `lookup_all`, wildcards, search operators, the `where` filter, and field functions no longer work. Before you upgrade, read [Contact flow changes in Salesforce Lambdas v5.29](#contact-flow-changes-in-salesforce-lambdas-v529).
+- **Enhancement:** Salesforce Lambdas v5.29 keeps the result of the field check in `sfRealTimeQueueMetrics` and `sfContactTraceRecord` for 15 minutes. This reduces the CloudWatch Logs volume and the number of Salesforce API calls of these functions.
+- **Enhancement:** StreamsJS Update from 2.28.2 to 2.30.2, for Citrix audio-optimized VDI in Google Chrome and Microsoft Edge 147 and later.
+- **Bug Fix:** The Attributes tab of the CCP Overlay shows the attributes of the contact that the agent views. This is also correct when the agent has more than one contact.
+- **Bug Fix:** The login window that the CTI Adapter opens no longer takes the softphone connection of the embedded CCP. Before, after an agent logged in, the embedded CCP sometimes failed with a `409 Duplicate RTC invite` error.
+- **Security:** Recording controls, the recording CTI Flow blocks, and the Update Contact Attributes CTI Flow block use only the CTI Adapter of the user. They use its Named Credential and Amazon Connect instance, or those of its replica instances. A user with no call center or no CTI Adapter cannot use these features. If your custom code calls `AC_AmazonConnectAPI` or `AC_X_AmazonConnectAPI`, run it as a user with a call center and a CTI Adapter. Send the Named Credential and the instance alias of that CTI Adapter.
+- **Security:** The Update Contact Attributes CTI Flow block accepts only a JSON object with string values. Other input takes the failure branch.
+- **Security:** The Mini Adapter handles the user name more safely in its error messages.
+- **Security:** The CTI Flow editor, the Contact Lens audio player, and the Connect assistant (formerly Amazon Q) panel handle browser messages more safely.
+- **Deprecated:** `AC_Utils.getS3Object` now always throws an exception and makes no callout. If your custom code calls it, change that code before you upgrade.
 
 ## 5.29 November 2025
 - **Bug Fix:** Resolved an issue where a misconfigured Salesforce CTI Adapter base URL caused malformed CCP paths, leading to delayed UI updates and initialization failures.
@@ -189,7 +232,7 @@ When installing v5.15, please **confirm that the application was installed for a
 - **Feature: Guided Setup** The Guided Setup feature helps make the setup process easier. See [Guided Setup](/docs/classic/installation/02-guided-setup) for more details.
 - **Feature: Chat Widget Integration for SalesForce Experience Cloud(formerly Community Cloud)** Added VisualForce Page component that allows you to add Amazon Connect Chat Widget in your Salesforce Experience Cloud Site.
 - **Enhancement:** Changed the default audio recording component in the Contact Channel Analytics for easier setup. See [Call Recording Playback](/docs/classic/cti-adapter/04-call-recording-playback) for more details.
-- **Enhancement:** Created the ExecuteAwsService service for simpler communication between Salesforce and AWS. **WARNING:** If you are using Contact Lens for audio recording you *must* replace your existing AwsGenerateAudioRecordingUrl named credential with with the ExecuteAwsService named credential. See [here](/docs/classic/installation/01-installation#setting-up-the-executeawsservice-named-credential) for more details.
+- **Enhancement:** Created the ExecuteAwsService service for simpler communication between Salesforce and AWS. **WARNING:** If you are using Contact Lens for audio recording you *must* replace your existing AwsGenerateAudioRecordingUrl named credential with the ExecuteAwsService named credential. This requirement applies only to CTI Adapter v5.15 to v5.18. CTI Adapter v5.19 and later do not use the `ExecuteAwsService` Named Credential for Contact Lens or for audio recording.
 - **Bug Fix:** Fixed an issue with the lambda package that caused Contact Lens Call Recording Streaming to be broken for redacted calls.
 - **Bug Fix:** Fixed an issue that caused the "Clear All Properties" CTI Flow Block to clear properties important to the CTI adpater working.
 - **Bug Fix:** Added the `DISCONNECT` field to the `Initiation Method` field in Contact Trace Records.

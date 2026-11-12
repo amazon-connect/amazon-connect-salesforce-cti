@@ -105,112 +105,12 @@ resources used. There is no additional charge to use the Serverless
 Application Repository - you only pay for the AWS resources used in the
 applications you deploy.
 
-1.  In a new browser tab, login to the [AWS
-    console](https://console.aws.amazon.com/)
+To install the Lambda package, first complete the [Managed Package Manual Setup](/docs/lightning/installation/03-managed-package-manual-setup).
+Then follow the [Salesforce Lambdas Manual Setup](/docs/lightning/installation/04-salesforce-lambdas-manual-setup) guide from the start. It tells you which data to
+collect, and which parameters to set before you deploy.
 
-2.  Make sure you are in the same region as your Amazon Connect instance
+### Upgrading from a Guided Setup installation
 
-3.  Once you have selected the region, navigate to the [Amazon Connect
-    Console](https://console.aws.amazon.com/connect/home)
-
-4.  Verify that the Amazon Connect instance that you wish to configure
-    is listed
-
-5.  Once you have verified your Amazon Connect instance, Open the
-    [Serverless Application Repository
-    Console](https://console.aws.amazon.com/serverlessrepo/home)
-
-6.  In the left navigation, select **Available Applications**
-
-<img src={useBaseUrl('/img/lightning/image78.png')} />
-
-7.  In the search area, make sure that **Public applications** is
-    selected, check the box for **Show apps that create custom IAM roles
-    or resource policies**, and enter **Salesforce** in the search
-    field, this will automatically filter the available packages
-
-<img src={useBaseUrl('/img/lightning/image79.png')} />
-
-8.  Select AmazonConnectSalesForceLambda
-
-<img src={useBaseUrl('/img/lightning/image80.png')} />
-
-9.  When the Application loads, scroll down to the **Application
-    settings** section
-
-10. If you would like to use the Guided Setup feature, **don't change any parameters in the template** and select **Deploy**, 
-    and wait for the stack to finish deployment. Then, follow the section below on setting up the ExecuteAwsService named credential.
-    If you are not using the Guided Setup feature, navigate to [here](/docs/lightning/installation/03-managed-package-manual-setup) for manual setup instructions (skipping the rest of the instructions on the page).
-
-<img src={useBaseUrl('/img/lightning/image81.png')} />
-
-### Setting up the ExecuteAwsService Named Credential
-
-The ExecuteAwsService Named Credential is the entrypoint for the CTI Adapter to communicate with your AWS account.
-The Apex code uses the Named Credential to call the `sfExecuteAwsService.py` lambda, which uses boto3 to make changes
-in and retrieve data from your AWS account. Setting up this Named Credential is **not required** if you do not wish
-to use the features that rely on it (Guided Setup and Contact Lens). In addition, you can alter the permissions given
-to the `sfExecuteAwsService` lambda to match your security requirements (NOTE: if you choose to do so, do so after you
-configure up the lambdas as some permissions are added/removed based on how the lambdas are configured).
-
-Before you create the ExecuteAwsService Named Credential, **confirm that the application was installed for admins only**. If not, then standard users may be able to invoke methods that call named credentials. If you did this by accident, then you will have to [manually edit the profiles](/docs/lightning/installation/06-adapter-installation-troubleshooting#how-to-remove-permissions-to-visualforce-pages-apex-classes-for-a-desired-profile) to remove the permissions to the objects and pages created by the app.
-
-<img src={useBaseUrl('/img/lightning/image8.png')} />
-
-1. Navigate to the IAM console in your AWS account, select the **Users** tab, and select **Add Users** to create a new user.
-
-<img src={useBaseUrl('/img/shared/installation0.png')} />
-
-2. Give your IAM user a name (like *sfExecuteAwsServiceIamUser*). For the Access type, select **Programmatic access**. Click Next.
-
-3. Select **Attach existing policies directly**, then search for and select *invokeSfExecuteAWSServicePolicy*.
-
-<img src={useBaseUrl('/img/shared/installation1.png')} />
-
-4. Click next until the user is created. In the final screen, copy down the **Access Key ID** and the **Secret Access Key**.
-
-<img src={useBaseUrl('/img/shared/installation2.png')} />
-
-5. Next, navigate to the Lambda Console. In the functions tab, search for *sfExecuteAwsService*.
-
-<img src={useBaseUrl('/img/shared/installation3.png')} />
-
-6. Copy down the name of the function. Make sure you are not copying any extra characters.
-
-7. Navigate to your setup section of your Salesforce instance, and search for *Named Credentials*.
-
-<img src={useBaseUrl('/img/shared/installation_legacy_NC.png')} />
-
-8. Select **New Legacy**. For the values in the next screen, enter the following:
-
-- **Label**: ExecuteAwsService
-- **URL**: ```https://lambda.{insert AWS region}.amazonaws.com/2015-03-31/functions/{insert lambda function name (copied above)}/invocations```
-- **Identity Type**: Named Principle
-- **Authentication Protocol**: AWS Signature Version 4
-- **AWS Access Key ID**: **Access Key ID** copied above
-- **AWS Secret Access Key**: **Secret Access Key**
-- **AWS Region**: {insert AWS region}
-- **AWS Service**: lambda
-
-<img src={useBaseUrl('/img/shared/installation5.png')} />
-
-9. Click **Save**.
-
-10. Finally, grant the IAM user you created above permission to invoke the `sfExecuteAWSService` function. In the CloudFormation
-console, open the **serverlessrepo-AmazonConnectSalesforceLambda** stack and select **Update stack > Create a change set**. Keep
-**Use existing template**, set the **SalesforceExecuteAWSServiceUser** parameter to the IAM user name from step 2 (for example
-*sfExecuteAwsServiceIamUser*), and leave every other parameter unchanged. Create the change set, then execute it. This makes that
-user the intended and only externally reachable path to the function. Note that it grants access rather than denying it — principals
-inside your AWS account that already hold `lambda:InvokeFunction` can still invoke the function, so also avoid granting that
-permission to other principals and follow the Post-Setup Cleanup guidance below. For the full walkthrough, see
-[Appendix H: Restricting Access to sfExecuteAWSService](/docs/lightning/appendices/appendix-h-restricting-sfexecuteawsservice/01-restricting-sfexecuteawsservice).
-
-#### Post-Setup Cleanup (Recommended)
-
-The `sfExecuteAWSService` Lambda function is used only during initial setup to configure your Amazon Connect instance and related AWS resources. Once your CTI Adapter configuration is complete, this function is no longer needed for day-to-day operations.
-
-As a best practice, we recommend **disabling or deleting** the `sfExecuteAWSService` Lambda function to keep your environment clean and minimize unused resources.
-
-**Note:** If you need to re-run the Guided Setup wizard in the future, you can re-deploy the Lambda package from the AWS Serverless Application Repository.
-
-After following the above instructions, follow [these instructions](/docs/lightning/installation/02-guided-setup) to navigate to the Guided Setup feature.
+Guided Setup is retired.
+If you used Guided Setup, start to remove the resources that you created for it before you upgrade the Salesforce Lambdas.
+See [Appendix H: Removing the Guided Setup Resources](/docs/lightning/appendices/appendix-h-restricting-sfexecuteawsservice/01-restricting-sfexecuteawsservice).
