@@ -26,7 +26,11 @@ Gather the data in your lambda CloudFormation stack.
 
 Verify the information you used to create the lambdas. For a refresher, this would be the information you found as part of [Prerequisite Configuration and Data Collection](/docs/lightning/installation/04-salesforce-lambdas-manual-setup/#prerequisite-configuration-and-data-collection), [Finding your salesforce version](/docs/lightning/installation/04-salesforce-lambdas-manual-setup/#check-your-salesforce-api-version), and [Gather Amazon Connect Information](/docs/lightning/installation/04-salesforce-lambdas-manual-setup/#gather-amazon-connect-information).
 
-While you are reviewing the parameters, check that **SalesforceExecuteAWSServiceUser** names the IAM user behind your `ExecuteAwsService` Named Credential. If it is blank, supply that user name on the new stack — see [Appendix H: Restricting Access to sfExecuteAWSService](/docs/lightning/appendices/appendix-h-restricting-sfexecuteawsservice/01-restricting-sfexecuteawsservice).
+If your CTI Adapter is v5.15 to v5.18, upgrade it to v5.19 or later first. Audio recording playback in those versions uses the `sfExecuteAWSService` function.
+
+Before you upgrade, complete the first two sections of [Appendix H: Removing the Guided Setup Resources](/docs/lightning/appendices/appendix-h-restricting-sfexecuteawsservice/01-restricting-sfexecuteawsservice#find-the-resources-to-remove).
+
+The new version does not have the **SalesforceExecuteAWSServiceUser** parameter.
 
 Once you have verified and gathered all of the information, you will install the salesforce lambda package. Instructions on how to install the lambda package [can be found here](/docs/lightning/installation/04-salesforce-lambdas-manual-setup/#install-the-amazon-connect-salesforce-lambda-package), and instructions on testing the lambda package after installation [can be found here](/docs/lightning/installation/04-salesforce-lambdas-manual-setup/#test-the-core-functionality)
 
