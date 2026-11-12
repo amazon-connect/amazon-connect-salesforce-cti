@@ -17,7 +17,13 @@ This issue can occur when the Salesforce URLs are not added on the approved orig
 
 ### Error “refused to run the JavaScript URL because it violates the following Content Security Policy directive...”
 
-This is an allowlisting issue, please review the installation and ensure that both URLs are properly allowlisted.
+This is an allowlisting issue. Make sure that the approved origins of your instance include these three URLs:
+
+- The URL of the My Domain page
+- The Visualforce URL
+- The Lightning domain URL
+
+See [Allowlist Your Salesforce Org with Amazon Connect](/docs/lightning/installation/03-managed-package-manual-setup#allowlist-your-salesforce-org-with-amazon-connect).
 
 ### Error “refused to frame” Visualforce page
 

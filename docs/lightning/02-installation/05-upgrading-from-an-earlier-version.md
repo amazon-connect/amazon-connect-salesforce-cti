@@ -13,9 +13,9 @@ To upgrade your lambdas to use the new python version, continue reading.
 ### Deploying the New Lambda Package
 
 Gather the data in your lambda CloudFormation stack. 
-1. In a new browser tab, login to the [AWS console](https://console.aws.amazon.com/).
+1. In a new browser tab, log in to the [AWS console](https://console.aws.amazon.com/).
 2. Navigate to the CloudFormation console.
-3. Ensure you are in the correct region.
+3. Make sure that you are in the AWS Region of your Amazon Connect instance.
 4. If you are not already on the Stacks page, click Stacks listed in the left-hand navigation pane.
     * It should look similar to this
     * <img src={useBaseUrl('/img/lightning/lambdacf1.png')} />
@@ -26,7 +26,11 @@ Gather the data in your lambda CloudFormation stack.
 
 Verify the information you used to create the lambdas. For a refresher, this would be the information you found as part of [Prerequisite Configuration and Data Collection](/docs/lightning/installation/04-salesforce-lambdas-manual-setup/#prerequisite-configuration-and-data-collection), [Finding your salesforce version](/docs/lightning/installation/04-salesforce-lambdas-manual-setup/#check-your-salesforce-api-version), and [Gather Amazon Connect Information](/docs/lightning/installation/04-salesforce-lambdas-manual-setup/#gather-amazon-connect-information).
 
-While you are reviewing the parameters, check that **SalesforceExecuteAWSServiceUser** names the IAM user behind your `ExecuteAwsService` Named Credential. If it is blank, supply that user name on the new stack — see [Appendix H: Restricting Access to sfExecuteAWSService](/docs/lightning/appendices/appendix-h-restricting-sfexecuteawsservice/01-restricting-sfexecuteawsservice).
+Upgrade the CTI Adapter to v5.34 before you upgrade the Salesforce Lambdas to v5.29. [Upgrading the CTI Adapter (v5.0 and newer)](#upgrading-the-cti-adapter-v50-and-newer) shows the steps. If your CTI Adapter is v5.15 to v5.18, you must use this order. Audio recording playback in those versions uses the `sfExecuteAWSService` function. With Amazon Connect Global Resiliency, do the Salesforce Lambdas steps in the Region of each instance.
+
+Before you upgrade, complete the first two sections of [Appendix H: Removing the Guided Setup Resources](/docs/lightning/appendices/appendix-h-restricting-sfexecuteawsservice/01-restricting-sfexecuteawsservice#find-the-resources-to-remove).
+
+The new version does not have the **SalesforceExecuteAWSServiceUser** parameter.
 
 Once you have verified and gathered all of the information, you will install the salesforce lambda package. Instructions on how to install the lambda package [can be found here](/docs/lightning/installation/04-salesforce-lambdas-manual-setup/#install-the-amazon-connect-salesforce-lambda-package), and instructions on testing the lambda package after installation [can be found here](/docs/lightning/installation/04-salesforce-lambdas-manual-setup/#test-the-core-functionality)
 
@@ -36,20 +40,20 @@ At this point, you now have the newer version of the lambda package and the olde
 
 #### Unlink the sfInvokeAPI Function
 
-1. In a new browser tab, login to the [AWS console](https://console.aws.amazon.com/).
+Add the new function and point your flows to it before you remove the old one. Flows that still call the old function fail after you delete the old stack. They can fail as soon as you remove the old function from your instance.
+
+1. In a new browser tab, log in to the [AWS console](https://console.aws.amazon.com/).
 2. Navigate to the Amazon Connect Console.
 3. Select your Instance Alias.
 4. In the navigation pane, choose "Flows".
     * <img src={useBaseUrl('/img/lightning/connectflowpane1.png')} />
-
-Once in the "Flows" pane of the Connect console of the instance to be configured, verify that the previous Lambda function is listed, then remove it by clicking “Remove.” 
-<img src={useBaseUrl('/img/lightning/connectflowpane2.png')} />
-
-After the old Lambda function has been removed, proceed with the remaining steps:
-
-1. For AWS Lambda, select the function that includes sfInvokeAPI from the new lambda package in the name.
-2. Choose Add Lambda Function. Confirm that the function is added under Lambda Functions.
-3. The AWS Lambda function has been added to your Amazon Connect instance!
+5. If the AWS Lambda section shows a **Use case** list, select **Invoke Lambda**.
+6. Select the function of the new Lambda package whose name includes `sfInvokeAPI`.
+7. Choose **Add Lambda function**. Make sure that the new function is in the list of Lambda functions.
+8. In the navigation pane, choose **Overview**. In a new browser tab, open the access URL of your instance. Log in to the Amazon Connect admin website.
+9. Go to **Routing** > **Flows**. Open each flow that invokes the old `sfInvokeAPI` function. In each **AWS Lambda function** block, under **Select a function**, select the new function. Then choose **Publish**.
+10. Go back to the AWS console tab. In the navigation pane, choose **Flows**. In the list of Lambda functions, find the old `sfInvokeAPI` function, and choose **Remove**.
+    * <img src={useBaseUrl('/img/lightning/connectflowpane2.png')} />
 
 #### Remove triggers from the Lambda functions of the previously-deployed stack
 
@@ -57,7 +61,7 @@ In the documentation steps [“Amazon Connect Historical Metrics in Salesforce�
 
 To delete the old triggers, 
 
-1. In a new browser tab, login to the AWS console.
+1. In a new browser tab, log in to the AWS console.
 2. Navigate to the Lambda console.
 3. Navigate to a specific function which holds an old trigger.
     * <img src={useBaseUrl('/img/lightning/deletetrigger1.png')} /> 
@@ -72,15 +76,15 @@ To delete the old triggers,
 
 Once you have confirmed your successful upgrade of the Amazon Connect Salesforce Lambda, you may delete your previously-deployed stack of the older version of the Lambda package. To delete the previously-deployed stack, 
 
-1. In a new browser tab, login to the AWS console.
+1. In a new browser tab, log in to the AWS console.
 2. Navigate to the CloudFormation console.
-3. Ensure you are in the correct region.
+3. Make sure that you are in the AWS Region of your Amazon Connect instance.
 4. If you are not already on the Stacks page, click Stacks listed in the left-hand navigation pane.
     * <img src={useBaseUrl('/img/lightning/lambdacf1.png')} />
 5. Find and click the previously-deployed stack in the list.
 6. In the split panel that appears for the stack, validate in the Stack info tab that the selected stack is the one you wish to delete.
     * <img src={useBaseUrl('/img/lightning/deletelambdastack1.png')} />
-7. Click the Delete button in the split panel, then Delete in the pop-up confirmation message that appears.
+7. Choose **Delete stack** in the split panel. In the confirmation dialog, enter the stack name. Then choose **Delete stack**. Keep the default values of the other options, for example **Express mode**.
     * <img src={useBaseUrl('/img/lightning/deletelambdastack2.png')} />
 8. The stack will then begin to be deleted. This may take a few minutes; it is not necessary to stay on the page.
 9. Confirm that the stack was successfully completed. If you have navigated away from the page, change the Filter status at the top of the Stacks list to Deleted, and verify that the previously-deployed Lambda stack appears marked DELETE_COMPLETE.

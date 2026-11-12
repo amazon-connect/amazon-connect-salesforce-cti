@@ -28,7 +28,7 @@ will point out the items you will need to provide.
 
 ### Check your Salesforce API Version
 
-1.  Log in into your Salesforce org and go to **Setup**
+1.  Log in to your Salesforce org and go to **Setup**
 
 2.  In the **Quick Find** field, type **apex**, then select **Apex
     Classes** from the results
@@ -58,13 +58,14 @@ access Salesforce using the Salesforce REST API.
 To get access to the environment, a Connected App must be configured
 with OAuth settings enabled.
 
-1.  Log in into your Salesforce org and go to **Setup**
+If your org cannot create Connected Apps, use an External Client App with the client credentials flow.
+See [Create an External Client App](#create-an-external-client-app). You can also ask Salesforce Customer Support to turn on Connected Apps.
+
+1.  Log in to your Salesforce org and go to **Setup**
 
 2.  In the **Quick Find** field, type **External Client Apps**, then select **Settings** from the results
 
 3.  In the **Connected Apps** section, toggle on **Allow creation of connected apps** and select **Enable** on the pop-up that appears. Then, select the enabled **New Connected App** button.
-
-**Note: If you're not able to enable creation of Connected Apps in Salesforce, contact Salesforce Customer Support to have this re-enabled. This can be done by creating a Salesforce Support case.*
 
 4.  On the New Connected App form, enter a name for the Connected App,
     such as **Amazon Connect Integration** and press tab. This will
@@ -122,12 +123,84 @@ with OAuth settings enabled.
 
 22. Select **Save**
 
+#### Create an External Client App
+
+New Salesforce orgs cannot create Connected Apps. In that case, use an External Client App with the
+client credentials flow. With this flow, the Salesforce Lambdas sign in as the API user, without a
+password or a security token. This flow needs Salesforce Lambdas v5.28 or later.
+
+Before you start, create the API user, because the app needs this user:
+
+1.  In [Create a new API user](#create-a-new-api-user), do steps 1 to 14 and steps 20 to 27.
+2.  Skip steps 15 to 19. Step 11 of the app steps below gives the profile access to the app.
+3.  Skip steps 28 to 34. This flow uses no password and no security token.
+4.  Then come back to this section.
+
+Then create the app:
+
+1.  Log in to your Salesforce org and go to **Setup**
+
+2.  In the **Quick Find** field, type **External Client App**, then select **External Client App
+    Manager** from the results
+
+3.  Select **New External Client App**
+
+4.  In **Basic Information**, enter an **External Client App Name**, such as **Amazon Connect
+    Integration**, and a **Contact Email**. The **API Name** fills in automatically. Keep
+    **Distribution State** set to **Local**.
+
+5.  Expand **API (Enable OAuth Settings)**, and select **Enable OAuth**
+
+6.  Set the **Callback URL** to your domain URL. Find the domain at _Setup_ -> _My Domain_.
+
+7.  In **OAuth Scopes**, move these scopes from **Available OAuth Scopes** to **Selected OAuth
+    Scopes**:
+    - Access the identity URL service (id, profile, email, address, phone)
+    - Manage user data via APIs (api)
+
+8.  Under **Flow Enablement**, select **Enable Client Credentials Flow**
+
+9.  Select **Create**
+
+10. In **External Client App Manager**, open the menu at the end of the row of the new app, and
+    select **Edit Policies**
+
+11. In **App Policies**, under **Select Profiles**, move the profile of the API user to **Selected
+    Profiles**
+
+12. Expand **OAuth Policies**. Set **Permitted Users** to **Admin approved users are
+    pre-authorized**.
+
+13. Under **OAuth Flows and External Client App Enhancements**, make sure that **Enable Client
+    Credentials Flow** is selected. Set **Run As (Username)** to the username of the API user.
+
+14. Set **IP Relaxation** to **Relax IP restrictions**
+
+15. Select **Save**
+
+16. Open the **Settings** tab, expand **OAuth Settings**, and select **Consumer Key and Secret**.
+    Salesforce sends a verification code to your email address. Enter the code, then copy the
+    consumer key and the consumer secret to your notepad.
+
+Then continue at [Gather Amazon Connect information](#gather-amazon-connect-information). Make these
+changes for the client credentials flow:
+
+-   Skip [Allowing the API user to authenticate using password](#allowing-the-api-user-to-authenticate-using-password).
+    Do not turn on the username-password flows for this path.
+-   In [Store Salesforce Credentials in AWS Secrets Manager](#store-salesforce-credentials-in-aws-secrets-manager),
+    store only the **ConsumerKey** and **ConsumerSecret** keys.
+-   When you deploy the package, set **SalesforceAuthMode** to `client_credentials`.
+
+For more information about this flow, see [Client Credentials Migration](/docs/lightning/salesforce-lambdas/07-client-credentials-migration).
+
 ### Create a new API user
 
 The Lambda functions authenticate with Salesforce via user credentials.
 It is a common practice to create an API user account for this purpose.
+If you use an External Client App, the Lambda functions use the client credentials flow. See
+[Create an External Client App](#create-an-external-client-app).
 
-1.  Log in into your Salesforce org and go to **Setup**
+1.  Log in to your Salesforce org and go to **Setup**
 
 2.  In the **Quick Find** field, type **profiles**, then select
     **Profiles** from the results
@@ -238,6 +311,8 @@ It is a common practice to create an API user account for this purpose.
 
 #### Allowing the API user to authenticate using password
 
+If you use an External Client App with the client credentials flow, skip this section.
+
 The api user created above authenticates using username-password flow in Salesforce. This flow needs to be unblocked and to do that, go to _Setup_ and in the Quick Find box, search for __OAuth and OpenID Connect Settings__. After that, make sure that the toggles for __Allow OAuth Username-Password Flows__ and __Allow OAuth User-Agent Flows__ are turned ON, as shown in below image.
 
 <img src={useBaseUrl('/img/lightning/image292.png')} />
@@ -248,7 +323,7 @@ The last thing to do before you can install the Amazon Connect
 Salesforce Lambda Package is gather some details about your Amazon
 Connect instance. These will be used during the package installation.
 
-1.  In a new browser tab, login to the [**AWS
+1.  In a new browser tab, log in to the [**AWS
     console**](https://console.aws.amazon.com/)
 
 2.  Navigate to the [Amazon Connect
@@ -291,7 +366,7 @@ require that the credentials are stored in AWS Secrets Manager. AWS
 Secrets Manager is a highly secure service that helps you store and
 retrieve secrets.
 
-1.  In a new browser tab, login to the AWS console
+1.  In a new browser tab, log in to the AWS console
 
 2.  Make sure you are in the same region as your Amazon Connect
     instance. You can set the region by expanding the region selector in
@@ -323,6 +398,9 @@ retrieve secrets.
 
     d.  **Key:** AccessToken, **Value:** this is the access token for
         the API user that you configured in the previous section
+
+    If you use an External Client App with the client credentials flow, enter only the
+    **ConsumerKey** and **ConsumerSecret** keys.
 
 9.  For the encryption key, click **Add new key**
 
@@ -386,12 +464,16 @@ retrieve secrets.
 
 The following table instructs users on the best CTI Adapter version to 
 use with the corresponding lambda version. If a minor version for the CTI Adapter is not 
-listed (ex. v5.21.1), it will be grouped with with its major version unless otherwise specified
+listed (ex. v5.21.1), it will be grouped with its major version unless otherwise specified
 
 <table>
   <tr>
     <th>CTI Adapter Version</th>
     <th>Lambda Version</th>
+  </tr>
+  <tr>
+    <td>v5.34</td>
+    <td>v5.22 - v5.29</td>
   </tr>
   <tr>
     <td>v5.33</td>
@@ -491,9 +573,11 @@ listed (ex. v5.21.1), it will be grouped with with its major version unless othe
   </tr>
 </table>
 
+To upgrade to Salesforce Lambdas v5.29, upgrade the CTI Adapter to v5.34 first.
+
 #### Instructions
 
-1.  In a new browser tab, login to the [AWS
+1.  In a new browser tab, log in to the [AWS
     console](https://console.aws.amazon.com/)
 
 2.  Make sure you are in the same region as your Amazon Connect instance
@@ -574,75 +658,69 @@ listed (ex. v5.21.1), it will be grouped with with its major version unless othe
         the Secrets Manager Secret that you created in the previous
         section.
 
-    12.  **SalesforceExecuteAWSServiceUser:** The name of the IAM user that
-        invokes the `sfExecuteAWSService` function. Leave this blank on the
-        initial deployment and set it in a stack update after creating the
-        user, as described in
-        [Restrict invocation of sfExecuteAWSService](#restrict-invocation-of-sfexecuteawsservice)
-        below. The IAM policy this user needs is created by this stack, so the
-        user cannot be fully configured beforehand.
-
-    13.  **SalesforceHost:** The full domain for your salesforce org. For
+    12.  **SalesforceHost:** The full domain for your salesforce org. For
         example
         `https://mydevorg-dev-ed.my.salesforce.com`.
         Please make sure that the host starts with `https`, and that the url
         ends with `.my.salesforce.com`. This url can be found in `Setup` -> `My Domain`.
 
-    14.  **SalesforceProduction:** true \| false - True for Production
+    13.  **SalesforceProduction:** true \| false - True for Production
         Environment, False for Sandbox
 
-    15.  **SalesforceUsername:** The username for the API user that you
+    14.  **SalesforceUsername:** The username for the API user that you
         configured in the previous section. Salesforce usernames are in the form of an email address.
+        If you use an External Client App with the client credentials flow, also set
+        **SalesforceAuthMode** to `client_credentials`.
 
-    16.  **SalesforceVersion:** This is the Salesforce.com API version
+    15.  **SalesforceVersion:** This is the Salesforce.com API version
         that you noted in the previous section. The pattern of this value is ```vXX.X```.
 
-    17.  **TranscribeOutputS3BucketName:** This is the S3 bucket where
+    16.  **TranscribeOutputS3BucketName:** This is the S3 bucket where
         Amazon Transcribe stores the output. Typically, this is the same
         bucket that call recordings are stored in, so you can use the
         same value as found in **ConnectRecordingS3BucketName**. Not
         required if PostcallRecordingImportEnabled,
         PostcallTranscribeEnabled, ContactLensImportEnabled set to false.
 
-    18.  **VpcSecurityGroupList:** The list of SecurityGroupIds for
+    17.  **VpcSecurityGroupList:** The list of SecurityGroupIds for
         Virtual Private Cloud (VPC). Not required if PrivateVpcEnabled
         is set to false.
 
-    19.  **VpcSubnetList:** The list of Subnets for the Virtual Private
+    18.  **VpcSubnetList:** The list of Subnets for the Virtual Private
         Cloud (VPC). Not required if PrivateVpcEnabled is set to false.
 
-    20.  **AmazonConnectQueueMaxRecords:** Enter record set size for list
+    19.  **AmazonConnectQueueMaxRecords:** Enter record set size for list
         queue query. Max is 100.
 
-    21.  **AmazonConnectQueueMetricsMaxRecords:** Enter record set size
+    20.  **AmazonConnectQueueMetricsMaxRecords:** Enter record set size
         for queue metrics query. Max is 100.
 
-    22.  **CTREventSourceMappingMaximumRetryAttempts:** Maximum retry
+    21.  **CTREventSourceMappingMaximumRetryAttempts:** Maximum retry
         attempts on failure for lambdas triggered by Kinesis Events.
 
-    23.  **ConnectRecordingS3BucketName:** This is the name of the S3
+    22.  **ConnectRecordingS3BucketName:** This is the name of the S3
         bucket used to store recordings for your Amazon Connect
         instance. This is ONLY the bucket name, no sub-folders or
         suffixes
 
-    24.  **ContactLensImportEnabled:** true \| false - Set to false if
+    23.  **ContactLensImportEnabled:** true \| false - Set to false if
         importing Contact Lens into Salesforce should not be enabled.
 
-    25.  **PostcallCTRImportEnabled:** true \| false - Set to false if
+    24.  **PostcallCTRImportEnabled:** true \| false - Set to false if
         importing CTRs into Salesforce should not be enabled on the
         package level. This setting can be disabled on a call-by-call
         basis.
 
-    26.  **PostcallRecordingImportEnabled:** true \| false - Set to false
+    25.  **PostcallRecordingImportEnabled:** true \| false - Set to false
         if importing call recordings into Salesforce should not be
         enabled on the package level. This setting can be disabled on a
         call-by-call basis.
 
-    27.  **PostcallTranscribeEnabled:** true \| false - Set to false if
+    26.  **PostcallTranscribeEnabled:** true \| false - Set to false if
         post-call transcription should not be enabled on the package
         level. This setting can be disabled on a call-by-call basis.
 
-    28.  **TranscriptionJobCheckWaitTime:** Time between transcription
+    27.  **TranscriptionJobCheckWaitTime:** Time between transcription
         job checks
 
 11. Once you have completed the form, select **Deploy**
@@ -652,37 +730,6 @@ listed (ex. v5.21.1), it will be grouped with with its major version unless othe
     notification on the screen
 
 <img src={useBaseUrl('/img/lightning/image81.png')} />
-
-### Restrict invocation of sfExecuteAWSService
-
-The `sfExecuteAWSService` function is the entrypoint the CTI Adapter uses to reach your AWS account. Setting the
-**SalesforceExecuteAWSServiceUser** parameter is a required security measure: it grants the IAM user that the CTI Adapter
-authenticates as permission to invoke the function, making that user the intended and only externally reachable path to it.
-
-**Note:** this grants access; it does not deny it. Principals inside your AWS account that already hold `lambda:InvokeFunction` —
-an administrator, for example — can still invoke the function regardless of this parameter. To limit access from inside the
-account, do not grant `lambda:InvokeFunction` on this function to any other principal, and disable or delete the function once
-setup is complete, as described in
-[Post-Setup Cleanup](/docs/lightning/installation/01-installation#post-setup-cleanup-recommended).
-
-This is done after the deployment rather than during it. The *invokeSfExecuteAWSServicePolicy* policy that the IAM user needs is
-created by the stack you just deployed, so the user cannot be fully configured beforehand. Complete the following in order.
-
-1.  Create the IAM user with programmatic access, attach *invokeSfExecuteAWSServicePolicy*, and capture the **Access Key ID** and
-    **Secret Access Key** — steps 1 through 4 of
-    [Setting up the ExecuteAwsService Named Credential](/docs/lightning/installation/01-installation#setting-up-the-executeawsservice-named-credential).
-
-2.  Copy the exact `sfExecuteAWSService` function name from the Lambda console — steps 5 and 6 of the same section.
-
-3.  Create the `ExecuteAwsService` Named Credential — steps 7 through 9 of the same section.
-
-4.  Update this CloudFormation stack, setting **SalesforceExecuteAWSServiceUser** to the IAM user name from step 1. In the
-    CloudFormation console, open the **serverlessrepo-AmazonConnectSalesforceLambda** stack and select
-    **Update stack > Create a change set**. Keep **Use existing template**, set the parameter, and leave every other parameter
-    unchanged. Create the change set, then execute it. For the full walkthrough, see
-    [Appendix H: Restricting Access to sfExecuteAWSService](/docs/lightning/appendices/appendix-h-restricting-sfexecuteawsservice/01-restricting-sfexecuteawsservice).
-
-Complete step 4 in the same sitting as the deployment. Until it is done, the restriction is not yet in place.
 
 ### Test the Core Functionality
 
@@ -699,7 +746,7 @@ make validation easier.
 
 #### Validate the core functionality
 
-1.  In a new browser tab, login to the [**AWS
+1.  In a new browser tab, log in to the [**AWS
     console**](https://console.aws.amazon.com/)
 
 2.  Open the [AWS Lambda
@@ -838,7 +885,7 @@ make validation easier.
 
 <img src={useBaseUrl('/img/lightning/image98.png')} />
 
-37. Log in into your Salesforce org and go to the **Service Console**
+37. Log in to your Salesforce org and go to the **Service Console**
 
 38. In the search box, change the object type to Cases and type Amazon
     Connect Case, then press enter
@@ -861,7 +908,7 @@ to invoke the function.
 
 #### Add the Lambda function to your Amazon Connect instance
 
-1.  In a new browser tab, login to the [**AWS
+1.  In a new browser tab, log in to the [**AWS
     console**](https://console.aws.amazon.com/)
 
 2.  Navigate to the [Amazon Connect

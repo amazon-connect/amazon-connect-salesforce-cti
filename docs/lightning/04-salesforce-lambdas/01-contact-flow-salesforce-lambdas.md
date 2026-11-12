@@ -28,13 +28,6 @@ org:
 -   **Delete:** deletes a Salesforce object based on the parameters
     passed to it
 
--   **Query:** executes a Salesforce Object Query Language (SOQL) query
-    on the Salesforce instance. Can return multiple entries.
-
--   **QueryOne:** executes a Salesforce Object Query Language (SOQL)
-    query on the Salesforce instance. Returns result only when one entry
-    is returned from the query.
-
 -   **CreateChatterPost:** creates a chatter post.
 
 -   **CreateChatterComment:** creates a chatter comment.
@@ -57,8 +50,8 @@ API](https://developer.salesforce.com/docs/atlas.en-us.chatterapi.meta/chatterap
 documentation. The core parameters are:
 
 -   **sf_operation:** specifies with operation to run. Options are
-    lookup, create, update, phoneLookup, query, queryOne,
-    createChatterPost, createChatterComment
+    lookup, lookup_all, create, update, phoneLookup, delete,
+    createChatterPost, createChatterComment, search, searchOne
 
 -   **sf_object:** defines what type of object you are referencing.
     Examples include Case, Contact, Task, etc.
@@ -85,6 +78,16 @@ required:
 
 Any additional parameters passed will be evaluated as conditional
 arguments for the lookup.
+
+In version v5.29 and later of the Salesforce Lambda package, lookup and lookup_all check the object
+name and the field names before they run the query. A request with an unknown object or field name
+takes the Error branch. In sf_fields, use plain field names or relationship paths, for example
+`Account.Name`. After you add a field in Salesforce, lookup and lookup_all can take up to 15 minutes
+to accept it.
+
+In version v5.29 and later of the Salesforce Lambda package, lookup and lookup_all compare the full
+value. The `%` and `_` characters in a value are ordinary characters, not wildcards. For mobilephone
+and homephone, lookup and lookup_all match the phone number as before.
 
 Note that this operation only returns the first item of the query
 results. If you want to have all results returned from Salesforce, set
@@ -139,6 +142,9 @@ required:
     created. Please be sure to include all parameters required to create
     the Salesforce object.
 
+In version v5.29 and later of the Salesforce Lambda package, create checks the object name before it
+sends the request. A request with an unknown object takes the Error branch.
+
 In the contact flow example below, we creating a new case based on
 customer input.
 
@@ -166,6 +172,9 @@ required:
 -   Specify additional parameters for the Salesforce object to be
     created. Please be sure to include all parameters required to create
     the Salesforce object.
+
+In version v5.29 and later of the Salesforce Lambda package, update checks the object name before it
+sends the request. A request with an unknown object takes the Error branch.
 
 In the contact flow example below, we are updating a specific case.
 
@@ -218,6 +227,9 @@ required:
 
 -   sf_id
 
+In version v5.29 and later of the Salesforce Lambda package, delete checks the object name before it
+sends the request. A request with an unknown object takes the Error branch.
+
 In the contact flow example below, we deleting an existing case based on
 customer input.
 
@@ -234,99 +246,19 @@ This operation returns a response of:
 
 ### Salesforce query
 
-This operation is invoked by setting **sf_operation** to **query**. In
-this case, the Lambda function uses Salesforce Object Query Language
-(SOQL) to conduct a query against the Salesforce instance. For query,
-the following parameter is required:
-
--   query
-
-Any additional parameters will replace text values in the original query
-so that queries can be dynamic based on values stored within the contact
-flow. For example, the parameter set:
-
--   query: "select field from object"
-
--   field: "Id"
-
--   object: "Task"
-
-Will result in the query: "select Id from Task".
-
-In the contact flow example below, we look for a customer by phone
-number.
-
-<img src={useBaseUrl('/img/lightning/image162.png')} />
-
-<img src={useBaseUrl('/img/lightning/image163.png')} />
-
-(full text of the value is "select Id from Contact where Phone LIKE
-'%number%'")
-
-<img src={useBaseUrl('/img/lightning/image164.png')} />
-
-This operation returns a response of:
-
-```json
-{
-    "sf_records_0_Id": "00303000001RZfIAAW",
-    "sf_count": 1
-}
-```
-Note that `sf_count` is the count of records matched and not the count of fields in the response. This means all fields that start with `sf_records_i_` count as one record. If the query above returned the Name as well as the Id and matched more than one record, the response will be:
-
-```json
-{
-    "sf_records_0_Id": "00303000001RZfIAAW",
-    "sf_records_0_Name": "Name0",
-    "sf_records_1_Id": "00303000001RZfIAAE",
-    "sf_records_1_Name": "Name1",
-    "sf_count": 2
-}
-```
+Version v5.29 of the Salesforce Lambda package removes this operation. Change each flow that
+uses it before you upgrade. After the upgrade, a flow that calls it takes the Error branch. To
+search for text, use [Salesforce search](#salesforce-search) or
+[Salesforce searchOne](#salesforce-searchone). To find records by their field values, use
+[Salesforce Lookup](#salesforce-lookup).
 
 ### Salesforce queryOne
 
-This operation is invoked by setting **sf_operation** to **queryOne**
-(case sensitive). In this case, the Lambda function uses Salesforce
-Object Query Language (SOQL) to conduct a query against the Salesforce
-instance, returning a result only when one record is returned from the
-query. For query, the following parameter is required:
-
--   query
-
-Any additional parameters will replace text values in the original query
-so that queries can be dynamic based on values stored within the contact
-flow. For example, the parameter set:
-
--   query: "select field from object"
-
--   field: "Id"
-
--   object: "Task"
-
-Will result in the query: "select Id from Task".
-
-In the contact flow example below, we look for a customer by phone
-number.
-
-<img src={useBaseUrl('/img/lightning/image165.png')} />
-
-<img src={useBaseUrl('/img/lightning/image163.png')} />
-
-(full text of the value is "select Id from Contact where Phone LIKE
-'%number%'")
-
-<img src={useBaseUrl('/img/lightning/image164.png')} />
-
-This operation returns a response of:
-
-```json
-{
-    "Id": "00303000001RZfIAAW",
-    "sf_count": 1
-}
-```
+Version v5.29 of the Salesforce Lambda package removes this operation. Change each flow that
+uses it before you upgrade. After the upgrade, a flow that calls it takes the Error branch. To
+search for text, use [Salesforce search](#salesforce-search) or
+[Salesforce searchOne](#salesforce-searchone). To find records by their field values, use
+[Salesforce Lookup](#salesforce-lookup).
 
 ### Salesforce createChatterPost
 
@@ -452,13 +384,37 @@ For search, the following parameters are required:
 
 -   sf_object
 
-The following parameters are optional:
-
--   where
+The following parameter is optional:
 
 -   overallLimit
 
 (refer to the api reference for value types)
+
+In version v5.29 and later of the Salesforce Lambda package, search checks these parameters before
+it sends the request. A request that does not obey these rules takes the Error branch:
+
+-   `q` must have 1 to 1,000 characters without the spaces at the start and the end. It can
+    contain letters and digits in any language, accent marks that are part of a letter, underscores,
+    spaces, and these characters: `. @ , + - ' ( ) # / & :`. Search does not accept other
+    characters, for example wildcards and double quotes.
+
+-   Search does not accept AND, OR, or NOT as a separate word in `q`, in any letter case. Spaces,
+    parentheses, and the start and the end of `q` separate the words. For example, `Smith and Sons`
+    takes the Error branch, but `Anderson` does not.
+
+-   `sf_object` must be an object that the Salesforce API user can read. Each plain field name in
+    `sf_fields` must be a field of that object, and `sf_fields` must have at least one field. You
+    can also use relationship paths, for example `Account.Name`. Search does not accept field
+    functions, such as `toLabel`, or aliases. After you add a field in Salesforce, search can take
+    up to 15 minutes to accept it.
+
+-   `overallLimit` must be a whole number from 1 to 2,000. Use digits only, for example `500`.
+
+Version v5.29 removes the `where` parameter. The Lambda finds the parameter in any letter case, for
+example `Where`. A request with a `where` value that has text other than spaces takes the Error
+branch. A `where` value that is empty or has only spaces has no effect. To find records by their
+field values, use [Salesforce Lookup](#salesforce-lookup). If a flow needs a text search and a field
+filter together, use your own Lambda function.
 
 See the below example:
 
@@ -471,8 +427,6 @@ See the below example:
 <img src={useBaseUrl('/img/lightning/image261.png')} />
 
 <img src={useBaseUrl('/img/lightning/image262.png')} />
-
-<img src={useBaseUrl('/img/lightning/image263.png')} />
 
 The operation returns a response of:
 
@@ -508,11 +462,13 @@ For search, the following parameters are required:
 
 -   sf_object
 
-The following parameter is optional:
-
--   where
-
 (refer to the api reference for value types)
+
+In version v5.29 and later of the Salesforce Lambda package, searchOne checks `q`, `sf_object`, and
+`sf_fields` with the same rules as [Salesforce search](#salesforce-search). Version v5.29 removes
+the `where` parameter in the same way as search. To find records by their field values, use
+[Salesforce Lookup](#salesforce-lookup). If a flow needs a text search and a field filter together,
+use your own Lambda function.
 
 See the below example:
 
@@ -523,10 +479,6 @@ See the below example:
 <img src={useBaseUrl('/img/lightning/image260.png')} />
 
 <img src={useBaseUrl('/img/lightning/image261.png')} />
-
-<img src={useBaseUrl('/img/lightning/image262.png')} />
-
-<img src={useBaseUrl('/img/lightning/image263.png')} />
 
 The operation returns a response of:
 
