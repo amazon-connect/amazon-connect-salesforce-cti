@@ -5,6 +5,10 @@ title: Setting Up The CTI Adapter Managed Package Manually
 
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
+> **Note:** Guided Setup is retired to remove AWS access that your integration does not need after setup. Do not use the Guided Setup wizard. For a new setup, use this guide, then [Salesforce Lambdas Manual Setup](/docs/lightning/installation/04-salesforce-lambdas-manual-setup).
+>
+> If you used Guided Setup before, follow [Appendix H: Removing the Guided Setup Resources](/docs/lightning/appendices/appendix-h-restricting-sfexecuteawsservice/01-restricting-sfexecuteawsservice). It shows how to remove the setup IAM user, its access keys, the Named Credential, and the policy that Guided Setup used. To learn what changes for your integration, see [Guided Setup (Retired)](/docs/lightning/installation/02-guided-setup).
+
 Below are manual setup instructions for the Salesforce CTI Adapter Managed Package. After following the below steps, be sure to follow the instructions for setting up the Salesforce Lambdas [here](/docs/lightning/installation/04-salesforce-lambdas-manual-setup).
 
 When installing v5.15, please **confirm that the application was installed for admins only** (see [installation](/docs/lightning/installation/01-installation) for more details). If you did this by accident, then you will have to [manually edit the profiles](/docs/lightning/installation/06-adapter-installation-troubleshooting#how-to-remove-permissions-to-visualforce-pages-apex-classes-for-a-desired-profile) to remove the permissions to the objects and pages created by the app.
@@ -86,7 +90,7 @@ First, you need to add the CTI softphone to your Service Console.
 #### Allowlist Your Salesforce Org with Amazon Connect
 
 In order to embed the Amazon Connect Contact Control Panel (CCP) into
-your Service Console, you need to allowlist two (2) domains for your org
+your Service Console, you need to allowlist three (3) domains for your org
 with Amazon Connect. This allows for cross domain access to the
 underlying resources required for the CCP to function.
 
@@ -112,7 +116,7 @@ underlying resources required for the CCP to function.
 
 <img src={useBaseUrl('/img/lightning/image24.png')} />
 
-6.  In a new browser tab, login to the [**AWS
+6.  In a new browser tab, log in to the [**AWS
     console**](https://console.aws.amazon.com/)
 
 7.  Navigate to the [Amazon Connect
@@ -148,6 +152,17 @@ underlying resources required for the CCP to function.
     origins section
 
 <img src={useBaseUrl('/img/lightning/image27.png')} />
+
+16. Select + Add origin
+
+17. In the Enter origin URL field, enter the Lightning domain of your org, for example
+    `https://mycompany.lightning.force.com`. To find it, open your org in Lightning
+    Experience, and copy the URL in the address bar through the .com. In a Developer
+    Edition org, the domain looks like `https://mycompany.develop.lightning.force.com`.
+
+18. Select Add. Make sure that the Lightning domain shows in the Approved origins section.
+    Without this origin, the browser blocks the embedded CCP, and the CCP stays on
+    **Sign in to CCP**.
 
 #### Modify the Call Center
 
